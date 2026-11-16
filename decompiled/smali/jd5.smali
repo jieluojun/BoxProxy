@@ -1,211 +1,112 @@
-.class public final Ljd5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/util/concurrent/Future;
+.class public final enum Ljd5;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Lkd5;
+# static fields
+.field public static final enum i:Ljd5;
 
-.field public final k:Ljava/util/concurrent/CountDownLatch;
+.field public static final synthetic j:[Ljd5;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Ljava/util/concurrent/CountDownLatch;
-
-    .line 5
-    .line 6
-    const/4 v1, 0x1
-
-    .line 7
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
-
-    .line 8
-    .line 9
-    .line 10
-    iput-object v0, p0, Ljd5;->k:Ljava/util/concurrent/CountDownLatch;
-
-    .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final cancel(Z)Z
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Ljd5;->k:Ljava/util/concurrent/CountDownLatch;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->getCount()J
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-wide p0
-
-    .line 7
-    const-wide/16 v0, 0x0
-
-    .line 8
-    .line 9
-    cmp-long p0, p0, v0
-
-    .line 10
-    .line 11
-    if-eqz p0, :cond_0
-
-    .line 12
-    .line 13
-    const/4 p0, 0x1
-
-    .line 14
-    return p0
-
-    .line 15
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 16
-    return p0
-.end method
-
-.method public final get()Ljava/lang/Object;
-    .locals 1
-
-    .line 25
-    iget-object v0, p0, Ljd5;->k:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
-
-    .line 26
-    iget-object p0, p0, Ljd5;->j:Lkd5;
-
-    if-nez p0, :cond_0
-
-    new-instance p0, Lkd5;
-
-    invoke-direct {p0}, Lkd5;-><init>()V
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ljd5;->k:Ljava/util/concurrent/CountDownLatch;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0, p1, p2, p3}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p1
-
-    .line 7
-    if-eqz p1, :cond_1
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Ljd5;->j:Lkd5;
-
-    .line 10
-    .line 11
-    if-nez p0, :cond_0
-
-    .line 12
-    .line 13
-    new-instance p0, Lkd5;
-
-    .line 14
-    .line 15
-    invoke-direct {p0}, Lkd5;-><init>()V
-
-    .line 16
-    .line 17
-    .line 18
-    :cond_0
-    return-object p0
-
-    .line 19
-    :cond_1
-    new-instance p0, Ljava/util/concurrent/TimeoutException;
-
-    .line 20
-    .line 21
-    invoke-direct {p0}, Ljava/util/concurrent/TimeoutException;-><init>()V
-
-    .line 22
-    .line 23
-    .line 24
-    throw p0
-.end method
-
-.method public final isCancelled()Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final isDone()Z
+.method static constructor <clinit>()V
     .locals 4
 
     .line 1
-    iget-object p0, p0, Ljd5;->k:Ljava/util/concurrent/CountDownLatch;
+    new-instance v0, Ljd5;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->getCount()J
+    const-string v1, "Start"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
+    .line 8
+    .line 9
+    new-instance v1, Ljd5;
+
+    .line 10
+    .line 11
+    const-string v2, "End"
+
+    .line 12
+    .line 13
+    const/4 v3, 0x1
+
+    .line 14
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v1, Ljd5;->i:Ljd5;
+
+    .line 18
+    .line 19
+    filled-new-array {v0, v1}, [Ljd5;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v0
+
+    .line 23
+    sput-object v0, Ljd5;->j:[Ljd5;
+
+    .line 24
+    .line 25
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ljd5;
+    .locals 1
+
+    .line 1
+    const-class v0, Ljd5;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    move-result-wide v0
+    move-result-object p0
 
     .line 7
-    const-wide/16 v2, 0x0
+    check-cast p0, Ljd5;
 
     .line 8
     .line 9
-    cmp-long p0, v0, v2
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    if-nez p0, :cond_0
+.method public static values()[Ljd5;
+    .locals 1
 
-    .line 12
-    .line 13
-    const/4 p0, 0x1
+    .line 1
+    sget-object v0, Ljd5;->j:[Ljd5;
 
-    .line 14
-    return p0
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 15
-    :cond_0
-    const/4 p0, 0x0
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 16
-    return p0
+    .line 7
+    check-cast v0, [Ljd5;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,195 +1,177 @@
-.class public final synthetic Ldw6;
+.class public abstract Ldw6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:Ljava/lang/ThreadLocal;
 
-.field public final synthetic k:Low6;
+.field public static final b:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Low6;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-byte p2, p0, Ldw6;->j:B
+    new-instance v0, Ljava/lang/ThreadLocal;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ldw6;->k:Low6;
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    iget-byte v0, p0, Ldw6;->j:B
-
-    .line 2
-    .line 3
-    const/16 v1, 0xa
-
-    .line 4
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    const-string v3, "tools-update-local-states"
+    sput-object v0, Ldw6;->a:Ljava/lang/ThreadLocal;
 
     .line 7
     .line 8
-    const/4 v4, 0x1
+    const/4 v0, 0x0
 
     .line 9
-    sget-object v5, La47;->a:La47;
+    invoke-static {v0, v0}, Ldw6;->a(II)J
 
     .line 10
     .line 11
-    iget-object p0, p0, Ldw6;->k:Low6;
-
     .line 12
+    move-result-wide v0
+
     .line 13
-    packed-switch v0, :pswitch_data_0
+    sput-wide v0, Ldw6;->b:J
 
     .line 14
     .line 15
+    return-void
+.end method
+
+.method public static final a(II)J
+    .locals 4
+
+    .line 1
+    int-to-long v0, p0
+
+    .line 2
+    const/16 p0, 0x20
+
+    .line 3
+    .line 4
+    shl-long/2addr v0, p0
+
+    .line 5
+    int-to-long p0, p1
+
+    .line 6
+    const-wide v2, 0xffffffffL
+
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    and-long/2addr p0, v2
+
+    .line 12
+    or-long/2addr v0, p0
+
+    .line 13
+    return-wide v0
+.end method
+
+.method public static final b(I)Landroid/text/TextDirectionHeuristic;
+    .locals 1
+
+    .line 1
+    if-eqz p0, :cond_5
+
+    .line 2
+    .line 3
+    const/4 v0, 0x1
+
+    .line 4
+    if-eq p0, v0, :cond_4
+
+    .line 5
+    .line 6
+    const/4 v0, 0x2
+
+    .line 7
+    if-eq p0, v0, :cond_3
+
+    .line 8
+    .line 9
+    const/4 v0, 0x3
+
+    .line 10
+    if-eq p0, v0, :cond_2
+
+    .line 11
+    .line 12
+    const/4 v0, 0x4
+
+    .line 13
+    if-eq p0, v0, :cond_1
+
+    .line 14
+    .line 15
+    const/4 v0, 0x5
+
     .line 16
-    invoke-virtual {p0, v4}, Low6;->d(Z)V
+    if-eq p0, v0, :cond_0
 
     .line 17
     .line 18
-    .line 19
-    iget-object v0, p0, Low6;->c:Lj26;
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
+    .line 19
     .line 20
+    return-object p0
+
     .line 21
-    new-instance v4, Lh9;
+    :cond_0
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->LOCALE:Landroid/text/TextDirectionHeuristic;
 
     .line 22
     .line 23
-    invoke-direct {v4, p0, v2, v1}, Lh9;-><init>(Ljava/lang/Object;Ly81;B)V
+    return-object p0
 
     .line 24
+    :cond_1
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->ANYRTL_LTR:Landroid/text/TextDirectionHeuristic;
+
     .line 25
     .line 26
-    invoke-virtual {v0, v4, v3}, Lj26;->e(Lp62;Ljava/lang/String;)V
+    return-object p0
 
     .line 27
+    :cond_2
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
+
     .line 28
     .line 29
-    return-object v5
+    return-object p0
 
     .line 30
-    :pswitch_0
-    invoke-virtual {p0, v4}, Low6;->e(Z)V
+    :cond_3
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
     .line 31
     .line 32
+    return-object p0
+
     .line 33
-    return-object v5
+    :cond_4
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
 
     .line 34
-    :pswitch_1
-    iget-object v0, p0, Low6;->l:Lum4;
-
     .line 35
+    return-object p0
+
     .line 36
-    invoke-virtual {v0}, Lum4;->getValue()Ljava/lang/Object;
+    :cond_5
+    sget-object p0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
 
     .line 37
     .line 38
-    .line 39
-    move-result-object v0
-
-    .line 40
-    check-cast v0, Ljava/lang/String;
-
-    .line 41
-    .line 42
-    iget-object v1, p0, Low6;->m:Lum4;
-
-    .line 43
-    .line 44
-    invoke-virtual {v1}, Lum4;->getValue()Ljava/lang/Object;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object v1
-
-    .line 48
-    check-cast v1, Ljava/lang/String;
-
-    .line 49
-    .line 50
-    invoke-virtual {p0, v0, v1}, Low6;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 51
-    .line 52
-    .line 53
-    return-object v5
-
-    .line 54
-    :pswitch_2
-    invoke-virtual {p0, v4}, Low6;->e(Z)V
-
-    .line 55
-    .line 56
-    .line 57
-    return-object v5
-
-    .line 58
-    :pswitch_3
-    invoke-virtual {p0, v4}, Low6;->d(Z)V
-
-    .line 59
-    .line 60
-    .line 61
-    iget-object v0, p0, Low6;->c:Lj26;
-
-    .line 62
-    .line 63
-    new-instance v4, Lh9;
-
-    .line 64
-    .line 65
-    invoke-direct {v4, p0, v2, v1}, Lh9;-><init>(Ljava/lang/Object;Ly81;B)V
-
-    .line 66
-    .line 67
-    .line 68
-    invoke-virtual {v0, v4, v3}, Lj26;->e(Lp62;Ljava/lang/String;)V
-
-    .line 69
-    .line 70
-    .line 71
-    return-object v5
-
-    .line 72
-    nop
-
-    .line 73
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

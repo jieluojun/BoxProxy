@@ -1,60 +1,217 @@
 .class public final Lvm1;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Lrh6;
-
-.field public k:Lpq4;
-
-.field public l:Lma5;
-
-.field public m:Lqa2;
-
-.field public n:I
-
-.field public o:F
-
-.field public synthetic p:Ljava/lang/Object;
-
-.field public q:I
+.field public final a:J
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method public synthetic constructor <init>(J)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lvm1;->p:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lvm1;->q:I
+    .line 4
+    iput-wide p1, p0, Lvm1;->a:J
 
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static a(J)Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
+
+    .line 2
+    .line 3
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    cmp-long v0, p0, v0
 
+    .line 7
     .line 8
-    iput p1, p0, Lvm1;->q:I
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    const/16 v0, 0x20
 
     .line 11
-    invoke-static {p1, p1, p1, p0}, Lfm;->x(Lrh6;Lwq4;Lpq4;Lc00;)Ljava/lang/Object;
+    .line 12
+    shr-long v0, p0, v0
+
+    .line 13
+    .line 14
+    long-to-int v0, v0
+
+    .line 15
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v0
+
+    .line 19
+    invoke-static {v0}, Ltm1;->c(F)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v0
+
+    .line 23
+    const-wide v1, 0xffffffffL
+
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    and-long/2addr p0, v1
+
+    .line 29
+    long-to-int p0, p0
+
+    .line 30
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p0
+
+    .line 34
+    invoke-static {p0}, Ltm1;->c(F)Ljava/lang/String;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    const-string p1, ", "
+
+    .line 39
+    .line 40
+    const-string v1, ")"
+
+    .line 41
+    .line 42
+    const-string v2, "("
+
+    .line 43
+    .line 44
+    invoke-static {v2, v0, p1, p0, v1}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object p0
+
+    .line 48
+    return-object p0
+
+    .line 49
+    :cond_0
+    const-string p0, "DpOffset.Unspecified"
+
+    .line 50
+    .line 51
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    instance-of v0, p1, Lvm1;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p1, Lvm1;
+
+    .line 6
+    .line 7
+    iget-wide v0, p1, Lvm1;->a:J
+
+    .line 8
+    .line 9
+    iget-wide p0, p0, Lvm1;->a:J
+
+    .line 10
+    .line 11
+    cmp-long p0, p0, v0
 
     .line 12
     .line 13
+    if-eqz p0, :cond_1
+
     .line 14
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+
+    .line 17
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 18
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lvm1;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lvm1;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Lvm1;->a(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 15
+    .line 7
     return-object p0
 .end method

@@ -1,111 +1,102 @@
 .class public final Lms3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lvs2;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Ly06;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final i:Lms3;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lms3;
 
     .line 2
     .line 3
-    .line 4
-    sget-object v0, Lle0;->k:Lle0;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    const/4 v1, 0x1
+    sput-object v0, Lms3;->i:Lms3;
 
     .line 7
-    const/16 v2, 0x10
-
     .line 8
-    .line 9
-    invoke-static {v2, v1, v0}, Lg61;->e(IILle0;)Ly06;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v0
-
-    .line 13
-    iput-object v0, p0, Lms3;->a:Ly06;
-
-    .line 14
-    .line 15
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lg12;
+.method public final a()Lrw3;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lms3;->a:Ly06;
+    new-instance p0, Lns3;
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final b(Lus2;Ly81;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lms3;->a:Ly06;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1, p2}, Ly06;->e(Ljava/lang/Object;Ly81;)Ljava/lang/Object;
+    invoke-direct {p0}, Lrw3;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
-
-    .line 7
-    sget-object p1, Lbc1;->j:Lbc1;
-
-    .line 8
-    .line 9
-    if-ne p0, p1, :cond_0
-
-    .line 10
-    .line 11
-    return-object p0
-
-    .line 12
-    :cond_0
-    sget-object p0, La47;->a:La47;
-
-    .line 13
-    .line 14
     return-object p0
 .end method
 
-.method public final c(Lus2;)V
+.method public final b(Lrw3;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lms3;->a:Ly06;
+    check-cast p1, Lns3;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Ly06;->f(Ljava/lang/Object;)Z
-
-    .line 4
-    .line 5
-    .line 6
     return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    if-ne p1, p0, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
 .end method

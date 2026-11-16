@@ -1,180 +1,241 @@
-.class public final synthetic Lb12;
+.class public final Lb12;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lqm4;
+.field public final a:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lqm4;B)V
+.method public synthetic constructor <init>(J)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lb12;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lb12;->k:Lqm4;
-
     .line 4
+    iput-wide p1, p0, Lb12;->a:J
+
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 6
+    return-void
+.end method
+
+.method public static a(FF)J
+    .locals 4
+
+    .line 1
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    int-to-long v0, p0
 
     .line 6
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
     .line 7
     .line 8
-    return-void
+    .line 9
+    move-result p0
+
+    .line 10
+    int-to-long p0, p0
+
+    .line 11
+    const/16 v2, 0x20
+
+    .line 12
+    .line 13
+    shl-long/2addr v0, v2
+
+    .line 14
+    const-wide v2, 0xffffffffL
+
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    and-long/2addr p0, v2
+
+    .line 20
+    or-long/2addr v0, p0
+
+    .line 21
+    return-wide v0
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    iget-byte v0, p0, Lb12;->j:B
+    instance-of v0, p1, Lb12;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    iget-object p0, p0, Lb12;->k:Lqm4;
+    check-cast p1, Lb12;
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    iget-wide v0, p1, Lb12;->a:J
 
     .line 8
     .line 9
+    iget-wide p0, p0, Lb12;->a:J
+
     .line 10
-    check-cast p1, Ljava/lang/Float;
+    .line 11
+    cmp-long p0, p0, v0
+
+    .line 12
+    .line 13
+    if-eqz p0, :cond_1
+
+    .line 14
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+
+    .line 17
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 18
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lb12;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "("
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    const/16 v1, 0x20
+
+    .line 9
+    .line 10
+    iget-wide v2, p0, Lb12;->a:J
 
     .line 11
     .line 12
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    shr-long v4, v2, v1
 
     .line 13
     .line 14
+    long-to-int p0, v4
+
     .line 15
-    move-result p1
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 16
-    invoke-virtual {p0, p1}, Lqm4;->h(F)V
-
     .line 17
     .line 18
+    move-result p0
+
     .line 19
-    return-object v1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     .line 20
-    :pswitch_0
-    check-cast p1, Ljava/lang/Float;
-
     .line 21
     .line 22
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    const-string p0, ", "
 
     .line 23
     .line 24
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 25
-    move-result p1
-
     .line 26
-    invoke-virtual {p0, p1}, Lqm4;->h(F)V
-
     .line 27
+    const-wide v4, 0xffffffffL
+
     .line 28
     .line 29
-    return-object v1
-
     .line 30
-    :pswitch_1
-    check-cast p1, Lxa4;
-
     .line 31
     .line 32
-    invoke-virtual {p0}, Lqm4;->g()F
+    and-long/2addr v2, v4
 
     .line 33
+    long-to-int p0, v2
+
     .line 34
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
     .line 35
+    .line 36
+    .line 37
     move-result p0
 
-    .line 36
-    iget-wide v0, p1, Lxa4;->a:J
-
-    .line 37
     .line 38
-    const/16 p1, 0x20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     .line 39
     .line 40
-    shr-long/2addr v0, p1
-
     .line 41
-    long-to-int p1, v0
+    const/16 p0, 0x29
 
     .line 42
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
     .line 43
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
     .line 44
     .line 45
-    move-result p1
-
     .line 46
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 47
-    cmpg-float v0, v0, p1
-
     .line 48
     .line 49
-    const/4 v1, 0x0
-
-    .line 50
-    if-gtz v0, :cond_0
-
-    .line 51
-    .line 52
-    cmpg-float p0, p1, p0
-
-    .line 53
-    .line 54
-    if-gtz p0, :cond_0
-
-    .line 55
-    .line 56
-    const/4 v1, 0x1
-
-    .line 57
-    :cond_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 58
-    .line 59
-    .line 60
     move-result-object p0
 
-    .line 61
+    .line 50
     return-object p0
-
-    .line 62
-    nop
-
-    .line 63
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

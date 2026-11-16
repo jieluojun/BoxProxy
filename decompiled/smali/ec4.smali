@@ -1,14 +1,16 @@
 .class public final Lec4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
 .field public final a:J
 
+.field public final b:J
+
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(JJ)V
     .locals 0
 
     .line 1
@@ -21,5 +23,9 @@
 
     .line 5
     .line 6
+    iput-wide p3, p0, Lec4;->b:J
+
+    .line 7
+    .line 8
     return-void
 .end method

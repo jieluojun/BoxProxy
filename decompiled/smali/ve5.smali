@@ -1,78 +1,130 @@
 .class public final Lve5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# instance fields
-.field public j:Lun;
-
-.field public k:Ljava/io/File;
-
-.field public l:Ljava/lang/Object;
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lge5;
-
-.field public o:I
-
-
-# direct methods
-.method public constructor <init>(Lge5;Lz81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lve5;->n:Lge5;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
+# interfaces
+.implements Lyb6;
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lp91;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lve5;->m:Ljava/lang/Object;
+    sget-object p0, Lpb6;->c:Lpb6;
 
     .line 2
     .line 3
-    iget p1, p0, Lve5;->o:I
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    if-eq p0, p1, :cond_1
+
+    .line 2
+    .line 3
+    instance-of p0, p1, Lve5;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    if-eqz p0, :cond_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    sget-object p0, Lpb6;->c:Lpb6;
 
     .line 8
-    iput p1, p0, Lve5;->o:I
-
     .line 9
-    .line 10
-    iget-object p1, p0, Lve5;->n:Lge5;
+    invoke-virtual {p0, p0}, Lpb6;->equals(Ljava/lang/Object;)Z
 
+    .line 10
     .line 11
     .line 12
-    const/4 v0, 0x0
+    move-result p0
 
     .line 13
-    invoke-virtual {p1, v0, v0, v0, p0}, Lge5;->r(Ljava/io/File;Ljava/io/File;Lun;Lz81;)Ljava/lang/Object;
+    if-nez p0, :cond_1
 
     .line 14
     .line 15
+    :cond_0
+    const/4 p0, 0x0
+
     .line 16
-    move-result-object p0
+    return p0
 
     .line 17
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 18
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    sget-object p0, Lpb6;->c:Lpb6;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lpb6;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    sget-object p0, Lpb6;->c:Lpb6;
+
+    .line 2
+    .line 3
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 4
+    .line 5
+    const-string v1, "RealSizeResolver(size="
+
+    .line 6
+    .line 7
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string p0, ")"
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
     return-object p0
 .end method

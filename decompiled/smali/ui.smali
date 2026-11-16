@@ -1,89 +1,103 @@
-.class public abstract Lui;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lui;
+.super Landroid/text/SegmentFinder;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public final synthetic a:Li86;
 
 
 # direct methods
-.method public static final a(JJII[Landroid/view/MotionEvent$PointerProperties;[Landroid/view/MotionEvent$PointerCoords;IIFFIIIII)Landroid/view/MotionEvent;
-    .locals 19
+.method public constructor <init>(Li86;)V
+    .locals 0
 
     .line 1
-    const/16 v16, 0x0
+    iput-object p1, p0, Lui;->a:Li86;
 
     .line 2
     .line 3
-    move-wide/from16 v1, p0
+    invoke-direct {p0}, Landroid/text/SegmentFinder;-><init>()V
 
     .line 4
     .line 5
-    move-wide/from16 v3, p2
-
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final nextEndBoundary(I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lui;->a:Li86;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Li86;->e(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
     .line 7
-    move/from16 v5, p4
+    return p0
+.end method
 
-    .line 8
-    .line 9
-    move/from16 v6, p5
+.method public final nextStartBoundary(I)I
+    .locals 0
 
-    .line 10
-    .line 11
-    move-object/from16 v7, p6
+    .line 1
+    iget-object p0, p0, Lui;->a:Li86;
 
-    .line 12
-    .line 13
-    move-object/from16 v8, p7
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Li86;->k(I)I
 
-    .line 14
-    .line 15
-    move/from16 v9, p8
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 16
-    .line 17
-    move/from16 v10, p9
+    .line 7
+    return p0
+.end method
 
-    .line 18
-    .line 19
-    move/from16 v11, p10
+.method public final previousEndBoundary(I)I
+    .locals 0
 
-    .line 20
-    .line 21
-    move/from16 v12, p11
+    .line 1
+    iget-object p0, p0, Lui;->a:Li86;
 
-    .line 22
-    .line 23
-    move/from16 v13, p12
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Li86;->l(I)I
 
-    .line 24
-    .line 25
-    move/from16 v14, p13
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 26
-    .line 27
-    move/from16 v15, p14
+    .line 7
+    return p0
+.end method
 
-    .line 28
-    .line 29
-    move/from16 v17, p15
+.method public final previousStartBoundary(I)I
+    .locals 0
 
-    .line 30
-    .line 31
-    move/from16 v18, p16
+    .line 1
+    iget-object p0, p0, Lui;->a:Li86;
 
-    .line 32
-    .line 33
-    invoke-static/range {v1 .. v18}, Landroid/view/MotionEvent;->obtain(JJII[Landroid/view/MotionEvent$PointerProperties;[Landroid/view/MotionEvent$PointerCoords;IIFFIIIIII)Landroid/view/MotionEvent;
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Li86;->c(I)I
 
-    .line 34
-    .line 35
-    .line 36
-    move-result-object v0
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 37
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 38
-    .line 39
-    .line 40
-    return-object v0
+    .line 7
+    return p0
 .end method

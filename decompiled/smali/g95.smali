@@ -1,71 +1,113 @@
 .class public final Lg95;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lp72;
 
 
 # instance fields
-.field public j:Ljv1;
+.field public final synthetic i:Z
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final synthetic j:Lp72;
 
-.field public final synthetic l:Li95;
+.field public final synthetic k:Ljava/util/Map;
 
-.field public m:I
+.field public final synthetic l:Lga5;
+
+.field public final synthetic m:Lh04;
 
 
 # direct methods
-.method public constructor <init>(Li95;Lz81;)V
+.method public constructor <init>(ZLp72;Ljava/util/Map;Lga5;Lh04;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lg95;->l:Li95;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-boolean p1, p0, Lg95;->i:Z
+
     .line 5
     .line 6
+    iput-object p2, p0, Lg95;->j:Lp72;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lg95;->k:Ljava/util/Map;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lg95;->l:Lga5;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lg95;->m:Lh04;
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lg95;->k:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/String;
 
     .line 2
     .line 3
-    iget p1, p0, Lg95;->m:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    iget-boolean v0, p0, Lg95;->i:Z
 
+    .line 7
     .line 8
-    iput p1, p0, Lg95;->m:I
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
-    iget-object p1, p0, Lg95;->l:Li95;
+    iget-object v0, p0, Lg95;->l:Lga5;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Li95;->b(Lz81;)Ljava/lang/Object;
+    iget-object v1, p0, Lg95;->m:Lh04;
 
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    iget-object p0, p0, Lg95;->k:Ljava/util/Map;
 
+    .line 15
     .line 16
+    invoke-static {p0, v0, v1, p1}, Ljy2;->q(Ljava/util/Map;Lga5;Lh04;Ljava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    goto :goto_0
+
+    .line 20
+    :cond_0
+    iget-object p0, p0, Lg95;->j:Lp72;
+
+    .line 21
+    .line 22
+    invoke-interface {p0, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    :goto_0
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 26
+    .line 27
     return-object p0
 .end method

@@ -1,93 +1,133 @@
-.class public final Lj54;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.class public final enum Lj54;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum i:Lj54;
 
-.field public final synthetic k:Le54;
+.field public static final enum j:Lj54;
 
-.field public final synthetic l:Lmt3;
+.field public static final synthetic k:[Lj54;
+
+.field public static final synthetic l:Lvw1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le54;Lmt3;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-byte p3, p0, Lj54;->j:B
+    new-instance v0, Lj54;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lj54;->k:Le54;
+    const-string v1, "Collapsed"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lj54;->l:Lmt3;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lj54;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Lj54;->k:Le54;
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lj54;->l:Lmt3;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
+    sput-object v0, Lj54;->i:Lj54;
 
     .line 10
     .line 11
-    .line 12
-    invoke-interface {p0, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
+    new-instance v1, Lj54;
 
+    .line 12
     .line 13
+    const-string v2, "Expanded"
+
     .line 14
     .line 15
-    return-object v1
+    const/4 v3, 0x1
 
     .line 16
-    :pswitch_0
-    invoke-interface {p0, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    return-object v1
+    sput-object v1, Lj54;->j:Lj54;
 
     .line 20
-    nop
-
     .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    filled-new-array {v0, v1}, [Lj54;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
+
+    .line 25
+    sput-object v0, Lj54;->k:[Lj54;
+
+    .line 26
+    .line 27
+    new-instance v1, Lvw1;
+
+    .line 28
+    .line 29
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
+
+    .line 30
+    .line 31
+    .line 32
+    sput-object v1, Lj54;->l:Lvw1;
+
+    .line 33
+    .line 34
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lj54;
+    .locals 1
+
+    .line 1
+    const-class v0, Lj54;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lj54;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lj54;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lj54;->k:[Lj54;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lj54;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

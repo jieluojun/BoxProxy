@@ -1,36 +1,15 @@
-.class public abstract Lt71;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lt71;
+.super Ln71;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lkq1;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
+# virtual methods
+.method public final a(Lie4;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    sget-object v0, Lcy;->o:Lcy;
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    new-instance v1, Lkq1;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
-
-    .line 7
-    .line 8
-    .line 9
-    sput-object v1, Lt71;->a:Lkq1;
-
-    .line 10
-    .line 11
-    return-void
+    return-object p0
 .end method

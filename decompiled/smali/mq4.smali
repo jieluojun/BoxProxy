@@ -1,8 +1,92 @@
-.class public interface abstract Lmq4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lmq4;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public i:Lkr4;
+
+.field public j:Lsf5;
+
+.field public k:F
+
+.field public l:F
+
+.field public synthetic m:Ljava/lang/Object;
+
+.field public final synthetic n:Lpq4;
+
+.field public o:I
+
+
+# direct methods
+.method public constructor <init>(Lpq4;Lq91;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lmq4;->n:Lpq4;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(FF)J
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    .line 1
+    iput-object p1, p0, Lmq4;->m:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lmq4;->o:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lmq4;->o:I
+
+    .line 9
+    .line 10
+    const/4 v3, 0x0
+
+    .line 11
+    const/4 v4, 0x0
+
+    .line 12
+    iget-object v0, p0, Lmq4;->n:Lpq4;
+
+    .line 13
+    .line 14
+    const/4 v1, 0x0
+
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    move-object v5, p0
+
+    .line 17
+    invoke-virtual/range {v0 .. v5}, Lpq4;->d(Lkr4;Llq4;FFLq91;)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p0
+
+    .line 21
+    return-object p0
 .end method

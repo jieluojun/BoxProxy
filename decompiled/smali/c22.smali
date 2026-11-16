@@ -1,52 +1,206 @@
 .class public final Lc22;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Landroid/view/ActionMode$Callback2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/view/ActionMode$Callback;
 
 
 # instance fields
-.field public j:Lna5;
-
-.field public k:Lol;
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public m:I
+.field public final a:Lre;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method public constructor <init>(Lre;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lc22;->l:Ljava/lang/Object;
+    invoke-direct {p0}, Landroid/view/ActionMode$Callback2;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lc22;->m:I
+    .line 4
+    iput-object p1, p0, Lc22;->a:Lre;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lc22;->a:Lre;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    .line 6
+    const/4 p0, 0x0
+
+    .line 7
+    return p0
+.end method
+
+.method public final onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lc22;->a:Lre;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p2}, Lre;->a(Landroid/view/Menu;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-interface {p2}, Landroid/view/Menu;->size()I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    if-lez p0, :cond_0
+
+    .line 11
+    .line 12
+    const/4 p0, 0x1
+
+    .line 13
+    return p0
+
+    .line 14
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 15
+    return p0
+.end method
+
+.method public final onDestroyActionMode(Landroid/view/ActionMode;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lc22;->a:Lre;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lre;->a:Lse;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lse;->close()V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lc22;->m:I
+    return-void
+.end method
+
+.method public final onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lc22;->a:Lre;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lre;->c:Lpe;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lpe;->invoke()Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
 
     .line 9
-    .line 10
-    const/4 p1, 0x0
+    check-cast p0, Lpf5;
 
+    .line 10
     .line 11
-    invoke-static {p1, p1, p0}, Lbn;->N(Lg12;Lt62;Lz81;)Ljava/lang/Object;
+    iget p1, p0, Lpf5;->a:F
 
     .line 12
     .line 13
-    .line 14
-    move-result-object p0
+    invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
+    .line 14
     .line 15
-    return-object p0
+    .line 16
+    move-result p1
+
+    .line 17
+    iget p2, p0, Lpf5;->b:F
+
+    .line 18
+    .line 19
+    invoke-static {p2}, Ljava/lang/Math;->round(F)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p2
+
+    .line 23
+    iget v0, p0, Lpf5;->c:F
+
+    .line 24
+    .line 25
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v0
+
+    .line 29
+    iget p0, p0, Lpf5;->d:F
+
+    .line 30
+    .line 31
+    invoke-static {p0}, Ljava/lang/Math;->round(F)I
+
+    .line 32
+    .line 33
+    .line 34
+    move-result p0
+
+    .line 35
+    invoke-virtual {p3, p1, p2, v0, p0}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 36
+    .line 37
+    .line 38
+    return-void
+.end method
+
+.method public final onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lc22;->a:Lre;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p2}, Lre;->a(Landroid/view/Menu;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

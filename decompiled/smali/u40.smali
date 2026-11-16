@@ -1,25 +1,27 @@
 .class public final synthetic Lu40;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic j:Lgg;
+.field public final synthetic i:Lhg;
 
-.field public final synthetic k:F
+.field public final synthetic j:F
+
+.field public final synthetic k:J
 
 .field public final synthetic l:J
 
-.field public final synthetic m:J
+.field public final synthetic m:Lq90;
 
 .field public final synthetic n:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgg;FJJI)V
+.method public synthetic constructor <init>(Lhg;FJJLq90;I)V
     .locals 0
 
     .line 1
@@ -28,39 +30,43 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lu40;->j:Lgg;
+    iput-object p1, p0, Lu40;->i:Lhg;
 
     .line 5
     .line 6
-    iput p2, p0, Lu40;->k:F
+    iput p2, p0, Lu40;->j:F
 
     .line 7
     .line 8
-    iput-wide p3, p0, Lu40;->l:J
+    iput-wide p3, p0, Lu40;->k:J
 
     .line 9
     .line 10
-    iput-wide p5, p0, Lu40;->m:J
+    iput-wide p5, p0, Lu40;->l:J
 
     .line 11
     .line 12
-    iput p7, p0, Lu40;->n:I
+    iput-object p7, p0, Lu40;->m:Lq90;
 
     .line 13
     .line 14
+    iput p8, p0, Lu40;->n:I
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    .locals 9
 
     .line 1
-    move-object v6, p1
+    move-object v7, p1
 
     .line 2
-    check-cast v6, Lz11;
+    check-cast v7, Lt82;
 
     .line 3
     .line 4
@@ -81,38 +87,42 @@
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    invoke-static {p1}, Lp06;->W(I)I
 
     .line 14
     .line 15
     .line 16
-    move-result v7
+    move-result v8
 
     .line 17
-    iget-object v0, p0, Lu40;->j:Lgg;
+    iget-object v0, p0, Lu40;->i:Lhg;
 
     .line 18
     .line 19
-    iget v1, p0, Lu40;->k:F
+    iget v1, p0, Lu40;->j:F
 
     .line 20
     .line 21
-    iget-wide v2, p0, Lu40;->l:J
+    iget-wide v2, p0, Lu40;->k:J
 
     .line 22
     .line 23
-    iget-wide v4, p0, Lu40;->m:J
+    iget-wide v4, p0, Lu40;->l:J
 
     .line 24
     .line 25
-    invoke-static/range {v0 .. v7}, Lim;->m(Lgg;FJJLz11;I)V
+    iget-object v6, p0, Lu40;->m:Lq90;
 
     .line 26
     .line 27
-    .line 28
-    sget-object p0, La47;->a:La47;
+    invoke-static/range {v0 .. v8}, Lu50;->f(Lhg;FJJLq90;Lt82;I)V
 
+    .line 28
     .line 29
     .line 30
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 31
+    .line 32
     return-object p0
 .end method

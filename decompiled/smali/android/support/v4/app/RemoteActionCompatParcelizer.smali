@@ -1,6 +1,6 @@
 .class public final Landroid/support/v4/app/RemoteActionCompatParcelizer;
 .super Landroidx/core/app/RemoteActionCompatParcelizer;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
@@ -16,11 +16,11 @@
     return-void
 .end method
 
-.method public static read(Ln67;)Landroidx/core/app/RemoteActionCompat;
+.method public static read(Lvb7;)Landroidx/core/app/RemoteActionCompat;
     .locals 0
 
     .line 1
-    invoke-static {p0}, Landroidx/core/app/RemoteActionCompatParcelizer;->read(Ln67;)Landroidx/core/app/RemoteActionCompat;
+    invoke-static {p0}, Landroidx/core/app/RemoteActionCompatParcelizer;->read(Lvb7;)Landroidx/core/app/RemoteActionCompat;
 
     .line 2
     .line 3
@@ -31,11 +31,11 @@
     return-object p0
 .end method
 
-.method public static write(Landroidx/core/app/RemoteActionCompat;Ln67;)V
+.method public static write(Landroidx/core/app/RemoteActionCompat;Lvb7;)V
     .locals 0
 
     .line 1
-    invoke-static {p0, p1}, Landroidx/core/app/RemoteActionCompatParcelizer;->write(Landroidx/core/app/RemoteActionCompat;Ln67;)V
+    invoke-static {p0, p1}, Landroidx/core/app/RemoteActionCompatParcelizer;->write(Landroidx/core/app/RemoteActionCompat;Lvb7;)V
 
     .line 2
     .line 3

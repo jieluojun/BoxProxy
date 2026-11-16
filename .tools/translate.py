@@ -352,7 +352,7 @@ LABEL_DEF = re.compile(r'^:([A-Za-z_][\w$-]*)$')
 # match label refs at start-of-line too (custom lines may be column-0);
 # ':(?<![A-Za-z0-9_$])' style would over-match descriptors, so use bounded lookbehind
 LABEL_REF = re.compile(r'(?<![\w$.]):([A-Za-z_][\w$-]*)')
-STRING_LIT = re.compile(r'"(?:\\.|[^"\\])*"')
+STRING_LIT = re.compile(r'("(?:\\.|[^"\\])*")')  # capture group: split keeps literals
 LABEL_SKIP = ('.local', '.end local', '.restart local', '.param')
 
 
@@ -776,10 +776,9 @@ def apply_manifest_delta(man141):
     if not add_perms:
         add_perms = [f'    <uses-permission android:name="{p}"/>' for p in PERMS]
     insert = ''.join(p + '\n' for p in add_perms)
-    man141 = re.sub(r'(<application[^>]*>)\n', r'\1\n', man141, count=1)
     idx = man141.find('<application')
-    idx = man141.find('>', idx) + 1
-    man141 = man141[:idx] + '\n' + insert + man141[idx:]
+    line_start = man141.rfind('\n', 0, idx) + 1
+    man141 = man141[:line_start] + insert + man141[line_start:]
     custom_elems = []
     for tag in ('service', 'receiver', 'activity'):
         pat = re.compile(r'<' + tag + r'[^>]*android:name="com\.box\.app\.[^"]*"[^>]*(?:/>|>.*?</' + tag + r'>)', re.S)

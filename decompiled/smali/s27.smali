@@ -1,3336 +1,483 @@
-.class public final Ls27;
-.super Lv37;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Ls27;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final v:[I
+.field public static final a:Lsp4;
 
-.field public static final w:[[I
+.field public static final b:F
 
-.field public static final x:Ls27;
+.field public static final c:F
+
+.field public static final d:F
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
-
-    .line 1
-    const/16 v0, 0x100
-
-    .line 2
-    .line 3
-    new-array v1, v0, [I
-
-    .line 4
-    .line 5
-    fill-array-data v1, :array_0
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v1, Ls27;->v:[I
-
-    .line 9
-    .line 10
-    new-array v2, v0, [I
-
-    .line 11
-    .line 12
-    fill-array-data v2, :array_1
-
-    .line 13
-    .line 14
-    .line 15
-    new-array v3, v0, [I
-
-    .line 16
-    .line 17
-    fill-array-data v3, :array_2
-
-    .line 18
-    .line 19
-    .line 20
-    new-array v4, v0, [I
-
-    .line 21
-    .line 22
-    fill-array-data v4, :array_3
-
-    .line 23
-    .line 24
-    .line 25
-    new-array v5, v0, [I
-
-    .line 26
-    .line 27
-    fill-array-data v5, :array_4
-
-    .line 28
-    .line 29
-    .line 30
-    new-array v6, v0, [I
-
-    .line 31
-    .line 32
-    fill-array-data v6, :array_5
-
-    .line 33
-    .line 34
-    .line 35
-    new-array v7, v0, [I
-
-    .line 36
-    .line 37
-    fill-array-data v7, :array_6
-
-    .line 38
-    .line 39
-    .line 40
-    new-array v8, v0, [I
-
-    .line 41
-    .line 42
-    fill-array-data v8, :array_7
-
-    .line 43
-    .line 44
-    .line 45
-    new-array v9, v0, [I
-
-    .line 46
-    .line 47
-    fill-array-data v9, :array_8
-
-    .line 48
-    .line 49
-    .line 50
-    filled-new-array/range {v2 .. v9}, [[I
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object v0
-
-    .line 54
-    sput-object v0, Ls27;->w:[[I
-
-    .line 55
-    .line 56
-    new-instance v0, Ls27;
-
-    .line 57
-    .line 58
-    invoke-direct {v0}, Ls27;-><init>()V
-
-    .line 59
-    .line 60
-    .line 61
-    sput-object v0, Ls27;->x:Ls27;
-
-    .line 62
-    .line 63
-    return-void
-
-    .line 64
-    nop
-
-    .line 65
-    :array_0
-    .array-data 4
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x4
-        0x4
-        0x4
-        0x4
-        0x4
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-    .end array-data
-
-    .line 66
-    .line 67
-    .line 68
-    .line 69
-    .line 70
-    .line 71
-    .line 72
-    .line 73
-    .line 74
-    .line 75
-    .line 76
-    .line 77
-    .line 78
-    .line 79
-    .line 80
-    .line 81
-    .line 82
-    .line 83
-    .line 84
-    .line 85
-    .line 86
-    .line 87
-    .line 88
-    .line 89
-    .line 90
-    .line 91
-    .line 92
-    .line 93
-    .line 94
-    .line 95
-    .line 96
-    .line 97
-    .line 98
-    .line 99
-    .line 100
-    .line 101
-    .line 102
-    .line 103
-    .line 104
-    .line 105
-    .line 106
-    .line 107
-    .line 108
-    :array_1
-    .array-data 4
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x2
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x4
-        0x3
-        0x3
-        0x5
-        0x6
-        0x6
-        0x6
-        0x7
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_2
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_3
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_4
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_5
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_6
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_7
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-
-    :array_8
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
-.end method
-
-.method public constructor <init>()V
-    .locals 6
-
-    .line 1
-    const/4 v2, 0x1
-
-    .line 2
-    const/4 v3, 0x4
-
-    .line 3
-    const-string v1, "UTF-8"
-
-    .line 4
-    .line 5
-    sget-object v4, Ls27;->v:[I
-
-    .line 6
-    .line 7
-    sget-object v5, Ls27;->w:[[I
-
-    .line 8
-    .line 9
-    move-object v0, p0
-
-    .line 10
-    invoke-direct/range {v0 .. v5}, Lv37;-><init>(Ljava/lang/String;II[I[[I)V
-
-    .line 11
-    .line 12
-    .line 13
-    return-void
-.end method
-
-
-# virtual methods
-.method public final f(II[B)I
-    .locals 5
-
-    .line 1
-    and-int/lit8 p0, p1, -0x80
-
-    .line 2
-    .line 3
-    const/4 v0, 0x1
-
-    .line 4
-    if-nez p0, :cond_0
-
-    .line 5
-    .line 6
-    int-to-byte p0, p1
-
-    .line 7
-    aput-byte p0, p3, p2
-
-    .line 8
-    .line 9
-    return v0
-
-    .line 10
-    :cond_0
-    and-int/lit16 p0, p1, -0x800
-
-    .line 11
-    .line 12
-    if-nez p0, :cond_1
-
-    .line 13
-    .line 14
-    add-int/lit8 p0, p2, 0x1
-
-    .line 15
-    .line 16
-    ushr-int/lit8 v0, p1, 0x6
-
-    .line 17
-    .line 18
-    and-int/lit8 v0, v0, 0x1f
-
-    .line 19
-    .line 20
-    or-int/lit16 v0, v0, 0xc0
-
-    .line 21
-    .line 22
-    int-to-byte v0, v0
-
-    .line 23
-    aput-byte v0, p3, p2
-
-    .line 24
-    .line 25
-    goto :goto_0
-
-    .line 26
-    :cond_1
-    const/high16 p0, -0x10000
-
-    .line 27
-    .line 28
-    and-int/2addr p0, p1
-
-    .line 29
-    if-nez p0, :cond_2
-
-    .line 30
-    .line 31
-    add-int/lit8 p0, p2, 0x1
-
-    .line 32
-    .line 33
-    ushr-int/lit8 v0, p1, 0xc
-
-    .line 34
-    .line 35
-    and-int/lit8 v0, v0, 0xf
-
-    .line 36
-    .line 37
-    or-int/lit16 v0, v0, 0xe0
-
-    .line 38
-    .line 39
-    int-to-byte v0, v0
-
-    .line 40
-    aput-byte v0, p3, p2
-
-    .line 41
-    .line 42
-    add-int/lit8 v0, p2, 0x2
-
-    .line 43
-    .line 44
-    ushr-int/lit8 v1, p1, 0x6
-
-    .line 45
-    .line 46
-    and-int/lit8 v1, v1, 0x3f
-
-    .line 47
-    .line 48
-    or-int/lit16 v1, v1, 0x80
-
-    .line 49
-    .line 50
-    int-to-byte v1, v1
-
-    .line 51
-    aput-byte v1, p3, p0
-
-    .line 52
-    .line 53
-    move p0, v0
-
-    .line 54
-    goto :goto_0
-
-    .line 55
-    :cond_2
-    invoke-static {p1}, Ljava/lang/Integer;->toUnsignedLong(I)J
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-wide v1
-
-    .line 59
-    const-wide/32 v3, 0x10ffff
-
-    .line 60
-    .line 61
-    .line 62
-    cmp-long p0, v1, v3
-
-    .line 63
-    .line 64
-    if-gtz p0, :cond_3
-
-    .line 65
-    .line 66
-    add-int/lit8 p0, p2, 0x1
-
-    .line 67
-    .line 68
-    ushr-int/lit8 v0, p1, 0x12
-
-    .line 69
-    .line 70
-    and-int/lit8 v0, v0, 0x7
-
-    .line 71
-    .line 72
-    or-int/lit16 v0, v0, 0xf0
-
-    .line 73
-    .line 74
-    int-to-byte v0, v0
-
-    .line 75
-    aput-byte v0, p3, p2
-
-    .line 76
-    .line 77
-    add-int/lit8 v0, p2, 0x2
-
-    .line 78
-    .line 79
-    ushr-int/lit8 v1, p1, 0xc
-
-    .line 80
-    .line 81
-    and-int/lit8 v1, v1, 0x3f
-
-    .line 82
-    .line 83
-    or-int/lit16 v1, v1, 0x80
-
-    .line 84
-    .line 85
-    int-to-byte v1, v1
-
-    .line 86
-    aput-byte v1, p3, p0
-
-    .line 87
-    .line 88
-    add-int/lit8 p0, p2, 0x3
-
-    .line 89
-    .line 90
-    ushr-int/lit8 v1, p1, 0x6
-
-    .line 91
-    .line 92
-    and-int/lit8 v1, v1, 0x3f
-
-    .line 93
-    .line 94
-    or-int/lit16 v1, v1, 0x80
-
-    .line 95
-    .line 96
-    int-to-byte v1, v1
-
-    .line 97
-    aput-byte v1, p3, v0
-
-    .line 98
-    .line 99
-    :goto_0
-    add-int/lit8 v0, p0, 0x1
-
-    .line 100
-    .line 101
-    and-int/lit8 p1, p1, 0x3f
-
-    .line 102
-    .line 103
-    or-int/lit16 p1, p1, 0x80
-
-    .line 104
-    .line 105
-    int-to-byte p1, p1
-
-    .line 106
-    aput-byte p1, p3, p0
-
-    .line 107
-    .line 108
-    sub-int/2addr v0, p2
-
-    .line 109
-    return v0
-
-    .line 110
-    :cond_3
-    const/4 p0, -0x2
-
-    .line 111
-    if-ne p1, p0, :cond_4
-
-    .line 112
-    .line 113
-    aput-byte p0, p3, p2
-
-    .line 114
-    .line 115
-    return v0
-
-    .line 116
-    :cond_4
-    const/4 p0, -0x1
-
-    .line 117
-    if-ne p1, p0, :cond_5
-
-    .line 118
-    .line 119
-    aput-byte p0, p3, p2
-
-    .line 120
-    .line 121
-    return v0
-
-    .line 122
-    :cond_5
-    const/16 p0, -0x191
-
-    .line 123
-    .line 124
-    return p0
-.end method
-
-.method public final g(I)I
-    .locals 5
-
-    .line 1
-    and-int/lit8 p0, p1, -0x80
-
-    .line 2
-    .line 3
-    const/4 v0, 0x1
-
-    .line 4
-    if-nez p0, :cond_0
-
-    .line 5
-    .line 6
-    return v0
-
-    .line 7
-    :cond_0
-    and-int/lit16 p0, p1, -0x800
-
-    .line 8
-    .line 9
-    if-nez p0, :cond_1
-
-    .line 10
-    .line 11
-    const/4 p0, 0x2
-
-    .line 12
-    return p0
-
-    .line 13
-    :cond_1
-    const/high16 p0, -0x10000
-
-    .line 14
-    .line 15
-    and-int/2addr p0, p1
-
-    .line 16
-    if-nez p0, :cond_2
-
-    .line 17
-    .line 18
-    const/4 p0, 0x3
-
-    .line 19
-    return p0
-
-    .line 20
-    :cond_2
-    invoke-static {p1}, Ljava/lang/Integer;->toUnsignedLong(I)J
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-wide v1
-
-    .line 24
-    const-wide/32 v3, 0x10ffff
-
-    .line 25
-    .line 26
-    .line 27
-    cmp-long p0, v1, v3
-
-    .line 28
-    .line 29
-    if-gtz p0, :cond_3
-
-    .line 30
-    .line 31
-    const/4 p0, 0x4
-
-    .line 32
-    return p0
-
-    .line 33
-    :cond_3
-    const/4 p0, -0x2
-
-    .line 34
-    if-ne p1, p0, :cond_4
-
-    .line 35
-    .line 36
-    return v0
-
-    .line 37
-    :cond_4
-    const/4 p0, -0x1
-
-    .line 38
-    if-ne p1, p0, :cond_5
-
-    .line 39
-    .line 40
-    return v0
-
-    .line 41
-    :cond_5
-    const/16 p0, -0x191
-
-    .line 42
-    .line 43
-    return p0
-.end method
-
-.method public final h(ILl8;)[I
-    .locals 0
-
-    .line 1
-    const/16 p0, 0x80
-
-    .line 2
-    .line 3
-    iput p0, p2, Lus1;->c:I
-
-    .line 4
-    .line 5
-    invoke-static {p1}, Lv37;->J(I)[I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public final m(II[B)Z
-    .locals 0
-
-    .line 1
-    if-ge p1, p2, :cond_0
-
-    .line 2
-    .line 3
-    aget-byte p0, p3, p1
-
-    .line 4
-    .line 5
-    const/16 p1, 0xa
-
-    .line 6
-    .line 7
-    if-ne p0, p1, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
-.end method
-
-.method public final n([B)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final q(I[BII)I
-    .locals 0
-
-    .line 1
-    if-gt p3, p1, :cond_0
-
-    .line 2
-    .line 3
-    return p3
-
-    .line 4
-    :cond_0
-    :goto_0
-    aget-byte p0, p2, p3
-
-    .line 5
-    .line 6
-    and-int/lit16 p0, p0, 0xc0
-
-    .line 7
-    .line 8
-    const/16 p4, 0x80
-
-    .line 9
-    .line 10
-    if-eq p0, p4, :cond_1
-
-    .line 11
-    .line 12
-    return p3
-
-    .line 13
-    :cond_1
-    if-le p3, p1, :cond_2
-
-    .line 14
-    .line 15
-    add-int/lit8 p3, p3, -0x1
-
-    .line 16
-    .line 17
-    goto :goto_0
-
-    .line 18
-    :cond_2
-    return p3
-.end method
-
-.method public final r(II[B)I
-    .locals 7
-
-    .line 1
-    aget-byte v0, p3, p1
-
-    .line 2
-    .line 3
-    and-int/lit16 v5, v0, 0xff
-
-    .line 4
-    .line 5
-    const/16 v0, 0x7f
-
-    .line 6
-    .line 7
-    if-gt v5, v0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    iget-object v0, p0, Ldr3;->s:[I
-
-    .line 12
-    .line 13
-    aget v6, v0, v5
-
-    .line 14
-    .line 15
-    if-gez v6, :cond_1
-
-    .line 16
-    .line 17
-    const/4 p0, -0x1
-
-    .line 18
-    return p0
-
-    .line 19
-    :cond_1
-    move-object v1, p0
-
-    .line 20
-    move v3, p1
-
-    .line 21
-    move v4, p2
-
-    .line 22
-    move-object v2, p3
-
-    .line 23
-    invoke-virtual/range {v1 .. v6}, Ldr3;->C([BIIII)I
-
-    .line 24
-    .line 25
-    .line 26
-    move-result p0
-
-    .line 27
-    return p0
-.end method
-
-.method public final s(I[BLus1;I[B)I
-    .locals 7
-
-    .line 1
-    iget v0, p3, Lus1;->c:I
-
-    .line 2
-    .line 3
-    aget-byte v1, p2, v0
-
-    .line 4
-    .line 5
-    and-int/lit16 v2, v1, 0xff
-
-    .line 6
-    .line 7
-    const/16 v3, 0x80
-
-    .line 8
-    .line 9
-    if-ge v2, v3, :cond_0
-
-    .line 10
-    .line 11
-    sget-object p0, Lg17;->c:[B
-
-    .line 12
-    .line 13
-    and-int/lit16 p1, v1, 0xff
-
-    .line 14
-    .line 15
-    aget-byte p0, p0, p1
-
-    .line 16
-    .line 17
-    const/4 p1, 0x0
-
-    .line 18
-    aput-byte p0, p5, p1
-
-    .line 19
-    .line 20
-    const/4 p0, 0x1
-
-    .line 21
-    add-int/2addr v0, p0
-
-    .line 22
-    iput v0, p3, Lus1;->c:I
-
-    .line 23
-    .line 24
-    return p0
-
-    .line 25
-    :cond_0
-    move-object v1, p0
-
-    .line 26
-    move v2, p1
-
-    .line 27
-    move-object v3, p2
-
-    .line 28
-    move-object v4, p3
-
-    .line 29
-    move v5, p4
-
-    .line 30
-    move-object v6, p5
-
-    .line 31
-    invoke-super/range {v1 .. v6}, Lv37;->s(I[BLus1;I[B)I
-
-    .line 32
-    .line 33
-    .line 34
-    move-result p0
-
-    .line 35
-    return p0
-.end method
-
-.method public final t(II[B)I
     .locals 2
 
     .line 1
-    invoke-virtual {p0, p1, p2, p3}, Ly2;->r(II[B)I
+    new-instance v0, Lsp4;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-direct {v0, v1, v1, v1, v1}, Lsp4;-><init>(FFFF)V
+
+    .line 5
+    .line 6
+    .line 7
+    sput-object v0, Ls27;->a:Lsp4;
+
+    .line 8
+    .line 9
+    const/high16 v0, 0x42800000    # 64.0f
+
+    .line 10
+    .line 11
+    sput v0, Ls27;->b:F
+
+    .line 12
+    .line 13
+    sput v0, Ls27;->c:F
+
+    .line 14
+    .line 15
+    const/high16 v0, 0x42f00000    # 120.0f
+
+    .line 16
+    .line 17
+    sput v0, Ls27;->d:F
+
+    .line 18
+    .line 19
+    return-void
+.end method
+
+.method public static a(Li37;Lt82;)Lqy1;
+    .locals 6
+
+    .line 1
+    invoke-virtual {p1}, Lt82;->N()Ljava/lang/Object;
 
     .line 2
     .line 3
     .line 4
-    move-result p0
+    move-result-object v0
 
     .line 5
-    add-int/lit8 p2, p1, 0x1
+    sget-object v1, Lt11;->a:Lje;
 
     .line 6
     .line 7
-    aget-byte p1, p3, p1
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
-    and-int/lit16 p1, p1, 0xff
+    new-instance v0, Ln21;
 
     .line 10
     .line 11
-    const/4 v0, -0x1
+    const/16 v2, 0x11
 
     .line 12
-    const/4 v1, 0x1
-
     .line 13
-    if-le p0, v1, :cond_1
+    invoke-direct {v0, v2}, Ln21;-><init>(B)V
 
     .line 14
     .line 15
-    add-int/2addr p0, v0
-
     .line 16
-    rsub-int/lit8 v0, p0, 0x6
+    invoke-virtual {p1, v0}, Lt82;->k0(Ljava/lang/Object;)V
 
     .line 17
     .line 18
-    shl-int v0, v1, v0
-
     .line 19
-    .line 20
-    sub-int/2addr v0, v1
+    :cond_0
+    check-cast v0, Le72;
 
+    .line 20
     .line 21
-    and-int/2addr p1, v0
+    const/4 v2, 0x3
 
     .line 22
-    :goto_0
-    add-int/lit8 v0, p0, -0x1
+    invoke-static {v2, p1}, Ly93;->k0(ILt82;)Lm02;
 
     .line 23
     .line 24
-    if-eqz p0, :cond_0
-
     .line 25
+    move-result-object v2
+
     .line 26
-    add-int/lit8 p0, p2, 0x1
+    invoke-static {p1}, Lbg6;->a(Lt82;)Llf1;
 
     .line 27
     .line 28
-    aget-byte p2, p3, p2
-
     .line 29
+    move-result-object v3
+
     .line 30
-    shl-int/lit8 p1, p1, 0x6
+    invoke-virtual {p1, p0}, Lt82;->g(Ljava/lang/Object;)Z
 
     .line 31
     .line 32
-    and-int/lit8 p2, p2, 0x3f
-
     .line 33
+    move-result v4
+
     .line 34
-    or-int/2addr p1, p2
+    invoke-virtual {p1, v0}, Lt82;->g(Ljava/lang/Object;)Z
 
     .line 35
-    move p2, p0
-
     .line 36
-    move p0, v0
-
     .line 37
-    goto :goto_0
+    move-result v5
 
     .line 38
-    :cond_0
-    return p1
+    or-int/2addr v4, v5
 
     .line 39
-    :cond_1
-    const/16 p0, 0xfd
+    invoke-virtual {p1, v2}, Lt82;->g(Ljava/lang/Object;)Z
 
     .line 40
     .line 41
-    if-le p1, p0, :cond_3
-
     .line 42
+    move-result v5
+
     .line 43
-    const/16 p0, 0xfe
+    or-int/2addr v4, v5
+
+    .line 44
+    invoke-virtual {p1, v3}, Lt82;->g(Ljava/lang/Object;)Z
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v5
+
+    .line 48
+    or-int/2addr v4, v5
+
+    .line 49
+    invoke-virtual {p1}, Lt82;->N()Ljava/lang/Object;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object v5
+
+    .line 53
+    if-nez v4, :cond_1
+
+    .line 54
+    .line 55
+    if-ne v5, v1, :cond_2
+
+    .line 56
+    .line 57
+    :cond_1
+    new-instance v5, Lqy1;
+
+    .line 58
+    .line 59
+    invoke-direct {v5, p0, v2, v3, v0}, Lqy1;-><init>(Li37;Lm02;Llf1;Le72;)V
+
+    .line 60
+    .line 61
+    .line 62
+    invoke-virtual {p1, v5}, Lt82;->k0(Ljava/lang/Object;)V
+
+    .line 63
+    .line 64
+    .line 65
+    :cond_2
+    check-cast v5, Lqy1;
+
+    .line 66
+    .line 67
+    return-object v5
+.end method
+
+.method public static b(JJJJJLt82;)Lr27;
+    .locals 21
+
+    .line 1
+    sget-wide v0, Ldv0;->h:J
+
+    .line 2
+    .line 3
+    sget-object v2, Lln3;->b:Lwq1;
+
+    .line 4
+    .line 5
+    move-object/from16 v3, p10
+
+    .line 6
+    .line 7
+    invoke-virtual {v3, v2}, Lt82;->k(Le25;)Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v2
+
+    .line 11
+    check-cast v2, Lin3;
+
+    .line 12
+    .line 13
+    iget-object v2, v2, Lin3;->a:Ljv0;
+
+    .line 14
+    .line 15
+    iget-object v3, v2, Ljv0;->a0:Lr27;
+
+    .line 16
+    .line 17
+    if-nez v3, :cond_0
+
+    .line 18
+    .line 19
+    new-instance v4, Lr27;
+
+    .line 20
+    .line 21
+    const/16 v3, 0x22
+
+    .line 22
+    .line 23
+    invoke-static {v2, v3}, Lkv0;->d(Ljv0;I)J
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-wide v5
+
+    .line 27
+    const/16 v3, 0x24
+
+    .line 28
+    .line 29
+    invoke-static {v2, v3}, Lkv0;->d(Ljv0;I)J
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-wide v7
+
+    .line 33
+    const/16 v3, 0x11
+
+    .line 34
+    .line 35
+    invoke-static {v2, v3}, Lkv0;->d(Ljv0;I)J
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-wide v9
+
+    .line 39
+    invoke-static {v2, v3}, Lkv0;->d(Ljv0;I)J
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-wide v11
+
+    .line 43
+    const/16 v3, 0x12
 
     .line 44
     .line 45
-    if-ne p1, p0, :cond_2
+    invoke-static {v2, v3}, Lkv0;->d(Ljv0;I)J
 
     .line 46
     .line 47
-    const/4 p0, -0x2
-
     .line 48
-    return p0
+    move-result-wide v13
 
     .line 49
-    :cond_2
-    return v0
+    invoke-static {v2, v3}, Lkv0;->d(Ljv0;I)J
 
     .line 50
+    .line 51
+    .line 52
+    move-result-wide v15
+
+    .line 53
+    invoke-direct/range {v4 .. v16}, Lr27;-><init>(JJJJJJ)V
+
+    .line 54
+    .line 55
+    .line 56
+    iput-object v4, v2, Ljv0;->a0:Lr27;
+
+    .line 57
+    .line 58
+    move-object v3, v4
+
+    .line 59
+    :cond_0
+    const-wide/16 v4, 0x10
+
+    .line 60
+    .line 61
+    cmp-long v2, p0, v4
+
+    .line 62
+    .line 63
+    if-eqz v2, :cond_1
+
+    .line 64
+    .line 65
+    move-wide/from16 v9, p0
+
+    .line 66
+    .line 67
+    goto :goto_0
+
+    .line 68
+    :cond_1
+    iget-wide v6, v3, Lr27;->a:J
+
+    .line 69
+    .line 70
+    move-wide v9, v6
+
+    .line 71
+    :goto_0
+    cmp-long v2, p2, v4
+
+    .line 72
+    .line 73
+    if-eqz v2, :cond_2
+
+    .line 74
+    .line 75
+    move-wide/from16 v11, p2
+
+    .line 76
+    .line 77
+    goto :goto_1
+
+    .line 78
+    :cond_2
+    iget-wide v6, v3, Lr27;->b:J
+
+    .line 79
+    .line 80
+    move-wide v11, v6
+
+    .line 81
+    :goto_1
+    cmp-long v2, p4, v4
+
+    .line 82
+    .line 83
+    if-eqz v2, :cond_3
+
+    .line 84
+    .line 85
+    move-wide/from16 v13, p4
+
+    .line 86
+    .line 87
+    goto :goto_2
+
+    .line 88
     :cond_3
-    return p1
+    iget-wide v6, v3, Lr27;->c:J
+
+    .line 89
+    .line 90
+    move-wide v13, v6
+
+    .line 91
+    :goto_2
+    cmp-long v2, p6, v4
+
+    .line 92
+    .line 93
+    if-eqz v2, :cond_4
+
+    .line 94
+    .line 95
+    move-wide/from16 v15, p6
+
+    .line 96
+    .line 97
+    goto :goto_3
+
+    .line 98
+    :cond_4
+    iget-wide v6, v3, Lr27;->d:J
+
+    .line 99
+    .line 100
+    move-wide v15, v6
+
+    .line 101
+    :goto_3
+    cmp-long v2, p8, v4
+
+    .line 102
+    .line 103
+    if-eqz v2, :cond_5
+
+    .line 104
+    .line 105
+    move-wide/from16 v17, p8
+
+    .line 106
+    .line 107
+    goto :goto_4
+
+    .line 108
+    :cond_5
+    iget-wide v6, v3, Lr27;->e:J
+
+    .line 109
+    .line 110
+    move-wide/from16 v17, v6
+
+    .line 111
+    .line 112
+    :goto_4
+    cmp-long v2, v0, v4
+
+    .line 113
+    .line 114
+    if-eqz v2, :cond_6
+
+    .line 115
+    .line 116
+    :goto_5
+    move-wide/from16 v19, v0
+
+    .line 117
+    .line 118
+    goto :goto_6
+
+    .line 119
+    :cond_6
+    iget-wide v0, v3, Lr27;->f:J
+
+    .line 120
+    .line 121
+    goto :goto_5
+
+    .line 122
+    :goto_6
+    new-instance v8, Lr27;
+
+    .line 123
+    .line 124
+    invoke-direct/range {v8 .. v20}, Lr27;-><init>(JJJJJJ)V
+
+    .line 125
+    .line 126
+    .line 127
+    return-object v8
 .end method

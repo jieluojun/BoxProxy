@@ -1,25 +1,25 @@
 .class public abstract Ly2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/lang/Cloneable;
 
 
 # instance fields
+.field public final i:B
+
 .field public final j:B
 
-.field public final k:B
+.field public final k:Z
 
-.field public final l:Z
+.field public l:Z
 
-.field public m:Z
+.field public m:I
 
-.field public n:I
+.field public n:Ljava/lang/String;
 
-.field public o:Ljava/lang/String;
-
-.field public final p:[S
+.field public final o:[S
 
 
 # direct methods
@@ -35,7 +35,7 @@
     const/4 v0, 0x0
 
     .line 5
-    iput-boolean v0, p0, Ly2;->m:Z
+    iput-boolean v0, p0, Ly2;->l:Z
 
     .line 6
     .line 7
@@ -50,7 +50,7 @@
     array-length v2, v1
 
     .line 12
-    invoke-static {v0, v2, v1}, Lfh0;->d(II[B)I
+    invoke-static {v0, v2, v1}, Leh0;->d(II[B)I
 
     .line 13
     .line 14
@@ -58,19 +58,19 @@
     move-result v1
 
     .line 16
-    iput v1, p0, Ly2;->n:I
+    iput v1, p0, Ly2;->m:I
 
     .line 17
     .line 18
-    iput-object p1, p0, Ly2;->o:Ljava/lang/String;
+    iput-object p1, p0, Ly2;->n:Ljava/lang/String;
 
     .line 19
     .line 20
-    iput-byte p2, p0, Ly2;->j:B
+    iput-byte p2, p0, Ly2;->i:B
 
     .line 21
     .line 22
-    iput-byte p3, p0, Ly2;->k:B
+    iput-byte p3, p0, Ly2;->j:B
 
     .line 23
     .line 24
@@ -89,249 +89,18 @@
 
     .line 30
     :cond_0
-    iput-boolean v0, p0, Ly2;->l:Z
+    iput-boolean v0, p0, Ly2;->k:Z
 
     .line 31
     .line 32
-    iput-object p4, p0, Ly2;->p:[S
+    iput-object p4, p0, Ly2;->o:[S
 
     .line 33
     .line 34
     return-void
 .end method
 
-.method public static b(Lw82;)V
-    .locals 7
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    new-array v1, v0, [I
-
-    .line 3
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    aput v2, v1, v2
-
-    .line 6
-    .line 7
-    move v3, v2
-
-    .line 8
-    :goto_0
-    sget-object v4, Lg17;->d:[[I
-
-    .line 9
-    .line 10
-    const/16 v5, 0x1a
-
-    .line 11
-    .line 12
-    if-ge v3, v5, :cond_0
-
-    .line 13
-    .line 14
-    aget-object v5, v4, v3
-
-    .line 15
-    .line 16
-    aget v6, v5, v0
-
-    .line 17
-    .line 18
-    aput v6, v1, v2
-
-    .line 19
-    .line 20
-    aget v5, v5, v2
-
-    .line 21
-    .line 22
-    invoke-static {v5, v1, v0, p0}, Lr6;->h(I[IILw82;)V
-
-    .line 23
-    .line 24
-    .line 25
-    aget-object v4, v4, v3
-
-    .line 26
-    .line 27
-    aget v5, v4, v2
-
-    .line 28
-    .line 29
-    aput v5, v1, v2
-
-    .line 30
-    .line 31
-    aget v4, v4, v0
-
-    .line 32
-    .line 33
-    invoke-static {v4, v1, v0, p0}, Lr6;->h(I[IILw82;)V
-
-    .line 34
-    .line 35
-    .line 36
-    add-int/lit8 v3, v3, 0x1
-
-    .line 37
-    .line 38
-    goto :goto_0
-
-    .line 39
-    :cond_0
-    return-void
-.end method
-
-.method public static c([BI)[Lxm0;
-    .locals 1
-
-    .line 1
-    aget-byte p0, p0, p1
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0xff
-
-    .line 4
-    .line 5
-    const/16 p1, 0x41
-
-    .line 6
-    .line 7
-    const/4 v0, 0x1
-
-    .line 8
-    if-gt p1, p0, :cond_0
-
-    .line 9
-    .line 10
-    const/16 p1, 0x5a
-
-    .line 11
-    .line 12
-    if-gt p0, p1, :cond_0
-
-    .line 13
-    .line 14
-    add-int/lit8 p0, p0, 0x20
-
-    .line 15
-    .line 16
-    invoke-static {v0, p0}, Lxm0;->g(II)Lxm0;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    filled-new-array {p0}, [Lxm0;
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-object p0
-
-    .line 24
-    return-object p0
-
-    .line 25
-    :cond_0
-    const/16 p1, 0x61
-
-    .line 26
-    .line 27
-    if-gt p1, p0, :cond_1
-
-    .line 28
-    .line 29
-    const/16 p1, 0x7a
-
-    .line 30
-    .line 31
-    if-gt p0, p1, :cond_1
-
-    .line 32
-    .line 33
-    add-int/lit8 p0, p0, -0x20
-
-    .line 34
-    .line 35
-    invoke-static {v0, p0}, Lxm0;->g(II)Lxm0;
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-object p0
-
-    .line 39
-    filled-new-array {p0}, [Lxm0;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object p0
-
-    .line 43
-    return-object p0
-
-    .line 44
-    :cond_1
-    sget-object p0, Lxm0;->d:[Lxm0;
-
-    .line 45
-    .line 46
-    return-object p0
-.end method
-
-.method public static d([BLus1;[B)V
-    .locals 2
-
-    .line 1
-    sget-object v0, Lg17;->c:[B
-
-    .line 2
-    .line 3
-    iget v1, p1, Lus1;->c:I
-
-    .line 4
-    .line 5
-    aget-byte p0, p0, v1
-
-    .line 6
-    .line 7
-    and-int/lit16 p0, p0, 0xff
-
-    .line 8
-    .line 9
-    aget-byte p0, v0, p0
-
-    .line 10
-    .line 11
-    const/4 v0, 0x0
-
-    .line 12
-    aput-byte p0, p2, v0
-
-    .line 13
-    .line 14
-    add-int/lit8 v1, v1, 0x1
-
-    .line 15
-    .line 16
-    iput v1, p1, Lus1;->c:I
-
-    .line 17
-    .line 18
-    return-void
-.end method
-
-.method public static i(I)Z
+.method public static c(I)Z
     .locals 1
 
     .line 1
@@ -356,7 +125,7 @@
     return p0
 .end method
 
-.method public static p(I)Z
+.method public static h(I)Z
     .locals 1
 
     .line 1
@@ -364,103 +133,40 @@
 
     .line 2
     .line 3
-    if-eq p0, v0, :cond_1
+    if-eq p0, v0, :cond_0
 
     .line 4
     .line 5
     const/4 v0, 0x5
 
     .line 6
-    if-eq p0, v0, :cond_1
+    if-eq p0, v0, :cond_0
 
     .line 7
     .line 8
     const/4 v0, 0x7
 
     .line 9
-    if-ne p0, v0, :cond_0
+    if-eq p0, v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_0
     const/4 p0, 0x0
 
-    .line 13
+    .line 12
     return p0
 
-    .line 14
-    :cond_1
-    :goto_0
+    .line 13
+    :cond_0
     const/4 p0, 0x1
 
-    .line 15
+    .line 14
     return p0
 .end method
 
 
 # virtual methods
-.method public A()[B
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return-object p0
-.end method
-
-.method public a(ILw82;)V
-    .locals 0
-
-    .line 1
-    invoke-static {p2}, Ly2;->b(Lw82;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public e(I[BII)[Lxm0;
-    .locals 0
-
-    .line 1
-    invoke-static {p2, p3}, Ly2;->c([BI)[Lxm0;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    const/4 p0, 0x1
-
-    .line 4
-    return p0
-
-    .line 5
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 6
-    return p0
-.end method
-
-.method public f(II[B)I
+.method public a(II[B)I
     .locals 0
 
     .line 1
@@ -493,7 +199,7 @@
     return p0
 .end method
 
-.method public g(I)I
+.method public b(I)I
     .locals 0
 
     .line 1
@@ -502,10 +208,10 @@
     .line 2
     .line 3
     .line 4
-    and-int/2addr p0, p1
+    and-int/2addr p1, p0
 
     .line 5
-    if-eqz p0, :cond_0
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -522,28 +228,7 @@
     return p0
 .end method
 
-.method public h(ILl8;)[I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Ly2;->n:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public j(II)Z
+.method public d(II)Z
     .locals 1
 
     .line 1
@@ -555,7 +240,7 @@
 
     .line 4
     .line 5
-    invoke-virtual {p0, p1, p2}, Ly2;->k(II)Z
+    invoke-virtual {p0, p1, p2}, Ly2;->e(II)Z
 
     .line 6
     .line 7
@@ -573,11 +258,11 @@
     return p0
 .end method
 
-.method public final k(II)Z
+.method public final e(II)Z
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ly2;->p:[S
+    iget-object p0, p0, Ly2;->o:[S
 
     .line 2
     .line 3
@@ -609,11 +294,32 @@
     return p0
 .end method
 
-.method public final l(II[B)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1, p2, p3}, Ly2;->t(II[B)I
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+.end method
+
+.method public final f(II[B)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1, p2, p3}, Ly2;->k(II[B)I
 
     .line 2
     .line 3
@@ -625,7 +331,7 @@
 
     .line 6
     .line 7
-    invoke-virtual {p0, p1, p2}, Ly2;->j(II)Z
+    invoke-virtual {p0, p1, p2}, Ly2;->d(II)Z
 
     .line 8
     .line 9
@@ -636,51 +342,11 @@
     return p0
 .end method
 
-.method public m(II[B)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    if-ge p1, p2, :cond_0
-
-    .line 3
-    .line 4
-    aget-byte p1, p3, p1
-
-    .line 5
-    .line 6
-    const/16 p2, 0xa
-
-    .line 7
-    .line 8
-    if-ne p1, p2, :cond_0
-
-    .line 9
-    .line 10
-    const/4 p0, 0x1
-
-    .line 11
-    :cond_0
-    return p0
-.end method
-
-.method public n([B)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final o(I)Z
+.method public final g(I)Z
     .locals 1
 
     .line 1
-    invoke-static {p1}, Ly2;->i(I)Z
+    invoke-static {p1}, Ly2;->c(I)Z
 
     .line 2
     .line 3
@@ -696,7 +362,7 @@
 
     .line 8
     .line 9
-    invoke-virtual {p0, p1, v0}, Ly2;->j(II)Z
+    invoke-virtual {p0, p1, v0}, Ly2;->d(II)Z
 
     .line 10
     .line 11
@@ -721,20 +387,31 @@
     return p0
 .end method
 
-.method public q(I[BII)I
+.method public final hashCode()I
     .locals 0
 
     .line 1
-    if-gt p3, p1, :cond_0
+    iget p0, p0, Ly2;->m:I
 
     .line 2
     .line 3
-    return p3
+    return p0
+.end method
+
+.method public i(III[B)I
+    .locals 0
+
+    .line 1
+    if-gt p2, p1, :cond_0
+
+    .line 2
+    .line 3
+    return p2
 
     .line 4
     :cond_0
     :goto_0
-    aget-byte p0, p2, p3
+    aget-byte p0, p4, p2
 
     .line 5
     .line 6
@@ -742,23 +419,23 @@
 
     .line 7
     .line 8
-    const/16 p4, 0x9d
+    const/16 p3, 0x9d
 
     .line 9
     .line 10
-    if-ge p0, p4, :cond_1
+    if-ge p0, p3, :cond_1
 
     .line 11
     .line 12
-    return p3
+    return p2
 
     .line 13
     :cond_1
-    if-le p3, p1, :cond_2
+    if-le p2, p1, :cond_2
 
     .line 14
     .line 15
-    add-int/lit8 p3, p3, -0x1
+    add-int/lit8 p2, p2, -0x1
 
     .line 16
     .line 17
@@ -766,10 +443,10 @@
 
     .line 18
     :cond_2
-    return p3
+    return p2
 .end method
 
-.method public r(II[B)I
+.method public j(II[B)I
     .locals 0
 
     .line 1
@@ -779,22 +456,7 @@
     return p0
 .end method
 
-.method public s(I[BLus1;I[B)I
-    .locals 0
-
-    .line 1
-    invoke-static {p2, p3, p5}, Ly2;->d([BLus1;[B)V
-
-    .line 2
-    .line 3
-    .line 4
-    const/4 p0, 0x1
-
-    .line 5
-    return p0
-.end method
-
-.method public t(II[B)I
+.method public k(II[B)I
     .locals 0
 
     .line 1
@@ -809,22 +471,11 @@
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final l(III[B)I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ly2;->o:Ljava/lang/String;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final u(I[BII)I
-    .locals 0
-
-    .line 1
-    if-gt p3, p1, :cond_0
+    if-gt p2, p1, :cond_0
 
     .line 2
     .line 3
@@ -835,11 +486,11 @@
 
     .line 5
     :cond_0
-    add-int/lit8 p3, p3, -0x1
+    add-int/lit8 p2, p2, -0x1
 
     .line 6
     .line 7
-    invoke-virtual {p0, p1, p2, p3, p4}, Ly2;->q(I[BII)I
+    invoke-virtual {p0, p1, p2, p3, p4}, Ly2;->i(III[B)I
 
     .line 8
     .line 9
@@ -850,62 +501,7 @@
     return p0
 .end method
 
-.method public v([BII)I
-    .locals 1
-
-    .line 1
-    sget-object p0, Lus4;->c:Lfh0;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p2, p3, p1}, Lfh0;->b(II[B)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljava/lang/Integer;
-
-    .line 8
-    .line 9
-    if-eqz p0, :cond_0
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    return p0
-
-    .line 16
-    :cond_0
-    new-instance p0, Lco0;
-
-    .line 17
-    .line 18
-    sget-object v0, Lbv1;->k:Lfh0;
-
-    .line 19
-    .line 20
-    sub-int/2addr p3, p2
-
-    .line 21
-    invoke-direct {p0, p2, p3, p1}, Lcv1;-><init>(II[B)V
-
-    .line 22
-    .line 23
-    .line 24
-    throw p0
-.end method
-
-.method public final w([B)Ly2;
+.method public final m([B)Ly2;
     .locals 2
 
     .line 1
@@ -933,7 +529,7 @@
     const/4 v1, 0x0
 
     .line 12
-    invoke-static {v1, v0, p1}, Lfh0;->d(II[B)I
+    invoke-static {v1, v0, p1}, Leh0;->d(II[B)I
 
     .line 13
     .line 14
@@ -941,7 +537,7 @@
     move-result v0
 
     .line 16
-    iput v0, p0, Ly2;->n:I
+    iput v0, p0, Ly2;->m:I
 
     .line 17
     .line 18
@@ -954,7 +550,7 @@
     .line 21
     .line 22
     .line 23
-    iput-object v0, p0, Ly2;->o:Ljava/lang/String;
+    iput-object v0, p0, Ly2;->n:Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -964,11 +560,11 @@
 
     .line 26
     :catch_0
-    new-instance p0, Lcv1;
+    new-instance p0, Ltv1;
 
     .line 27
     .line 28
-    sget-object v0, Lbv1;->k:Lfh0;
+    sget-object v0, Lsv1;->j:Leh0;
 
     .line 29
     .line 30
@@ -993,7 +589,7 @@
     throw p0
 .end method
 
-.method public final x(I[BII)I
+.method public final n(III[B)I
     .locals 2
 
     .line 1
@@ -1005,11 +601,11 @@
 
     .line 3
     .line 4
-    add-int/lit8 v1, p4, -0x1
+    add-int/lit8 v1, p3, -0x1
 
     .line 5
     .line 6
-    if-lez p4, :cond_1
+    if-lez p3, :cond_1
 
     .line 7
     .line 8
@@ -1025,10 +621,10 @@
 
     .line 12
     .line 13
-    const/4 p4, 0x0
+    const/4 p3, 0x0
 
     .line 14
-    invoke-virtual {p0, p4, p2, p1, p3}, Ly2;->q(I[BII)I
+    invoke-virtual {p0, p3, p1, p2, p4}, Ly2;->i(III[B)I
 
     .line 15
     .line 16
@@ -1036,7 +632,7 @@
     move-result p1
 
     .line 18
-    move p4, v1
+    move p3, v1
 
     .line 19
     goto :goto_0
@@ -1046,41 +642,7 @@
     return p1
 .end method
 
-.method public y(II[B)I
-    .locals 2
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    :goto_0
-    if-ge p1, p2, :cond_0
-
-    .line 3
-    .line 4
-    invoke-virtual {p0, p1, p2, p3}, Ly2;->r(II[B)I
-
-    .line 5
-    .line 6
-    .line 7
-    move-result v1
-
-    .line 8
-    add-int/2addr p1, v1
-
-    .line 9
-    add-int/lit8 v0, v0, 0x1
-
-    .line 10
-    .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_0
-    return v0
-.end method
-
-.method public final z(III[B[B)I
+.method public final o(III[B[B)I
     .locals 4
 
     .line 1
@@ -1111,7 +673,7 @@
 
     .line 12
     :cond_0
-    invoke-virtual {p0, p1, p2, p4}, Ly2;->t(II[B)I
+    invoke-virtual {p0, p1, p2, p4}, Ly2;->k(II[B)I
 
     .line 13
     .line 14
@@ -1138,7 +700,7 @@
 
     .line 23
     .line 24
-    invoke-virtual {p0, p1, p2, p4}, Ly2;->r(II[B)I
+    invoke-virtual {p0, p1, p2, p4}, Ly2;->j(II[B)I
 
     .line 25
     .line 26
@@ -1157,4 +719,15 @@
     .line 31
     :cond_2
     return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ly2;->n:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

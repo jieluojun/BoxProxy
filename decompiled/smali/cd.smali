@@ -1,50 +1,46 @@
-.class public final Lcd;
+.class public abstract Lcd;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# instance fields
-.field public final a:Landroid/graphics/PathMeasure;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/PathMeasure;)V
-    .locals 0
+.method public static final a()Lad;
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lad;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lcd;->a:Landroid/graphics/PathMeasure;
+    new-instance v1, Landroid/graphics/Path;
 
+    .line 4
     .line 5
+    invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
+
     .line 6
-    return-void
+    .line 7
+    .line 8
+    invoke-direct {v0, v1}, Lad;-><init>(Landroid/graphics/Path;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-object v0
 .end method
 
-
-# virtual methods
-.method public final a(FFLbd;)V
+.method public static final b(Ljava/lang/String;)V
     .locals 1
 
     .line 1
-    iget-object p0, p0, Lcd;->a:Landroid/graphics/PathMeasure;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    iget-object p3, p3, Lbd;->a:Landroid/graphics/Path;
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     .line 4
     .line 5
-    const/4 v0, 0x1
-
     .line 6
-    invoke-virtual {p0, p1, p2, p3, v0}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
-
-    .line 7
-    .line 8
-    .line 9
-    return-void
+    throw v0
 .end method

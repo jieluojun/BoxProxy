@@ -1,66 +1,172 @@
-.class public final Lj97;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lj97;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public k:I
+.field public final i:Lhh7;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+# direct methods
+.method public constructor <init>(Lhh7;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lj97;->j:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lj97;->k:I
+    .line 4
+    iput-object p1, p0, Lj97;->i:Lhh7;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lrw3;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lk97;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lkv2;-><init>()V
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lj97;->i:Lhh7;
 
+    .line 7
     .line 8
-    iput p1, p0, Lj97;->k:I
+    iput-object p0, v0, Lk97;->y:Lhh7;
 
     .line 9
     .line 10
-    const/4 v4, 0x0
+    return-object v0
+.end method
+
+.method public final b(Lrw3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lk97;
+
+    .line 2
+    .line 3
+    iget-object v0, p1, Lk97;->y:Lhh7;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lj97;->i:Lhh7;
+
+    .line 6
+    .line 7
+    invoke-static {p0, v0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v0
 
     .line 11
-    const/4 v5, 0x0
+    if-nez v0, :cond_0
 
     .line 12
-    const/4 v0, 0x0
-
     .line 13
-    const/4 v1, 0x0
+    iput-object p0, p1, Lk97;->y:Lhh7;
 
     .line 14
-    const/4 v2, 0x0
-
     .line 15
-    const/4 v3, 0x0
+    invoke-virtual {p1}, Lkv2;->H1()V
 
     .line 16
-    move-object v6, p0
-
     .line 17
-    invoke-static/range {v0 .. v6}, Lu47;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Lz81;)Ljava/lang/Object;
+    .line 18
+    :cond_0
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    instance-of v0, p1, Lj97;
+
+    .line 6
+    .line 7
+    if-nez v0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_1
+    check-cast p1, Lj97;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Lj97;->i:Lhh7;
+
+    .line 14
+    .line 15
+    iget-object p0, p0, Lj97;->i:Lhh7;
+
+    .line 16
+    .line 17
+    invoke-static {p1, p0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 18
     .line 19
     .line 20
-    move-result-object p0
+    move-result p0
 
     .line 21
-    return-object p0
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lj97;->i:Lhh7;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

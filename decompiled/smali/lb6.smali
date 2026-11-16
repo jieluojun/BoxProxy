@@ -1,50 +1,21 @@
-.class public final Llb6;
+.class public interface abstract Llb6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/io/Closeable;
+.implements Ljava/io/Flushable;
 
 
-# static fields
-.field public static final a:Ljava/util/HashSet;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/util/HashSet;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Llb6;->a:Ljava/util/HashSet;
-
-    .line 7
-    .line 8
-    return-void
+# virtual methods
+.method public abstract a()Ln07;
 .end method
 
-.method public constructor <init>()V
-    .locals 1
+.method public abstract close()V
+.end method
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract e(Lge0;J)V
+.end method
 
-    .line 2
-    .line 3
-    .line 4
-    sget-object v0, Llb6;->a:Ljava/util/HashSet;
-
-    .line 5
-    .line 6
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 7
-    .line 8
-    .line 9
-    return-void
+.method public abstract flush()V
 .end method

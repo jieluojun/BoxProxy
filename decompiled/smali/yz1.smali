@@ -1,25 +1,17 @@
 .class public final Lyz1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/util/Iterator;
-.implements Lfy2;
+.super La3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Ljava/util/Iterator;
+.field public final k:Ljava/util/ArrayDeque;
 
-.field public k:Ljava/util/Iterator;
-
-.field public l:B
-
-.field public final synthetic m:Lel1;
+.field public final synthetic l:La02;
 
 
 # direct methods
-.method public constructor <init>(Lel1;)V
-    .locals 0
+.method public constructor <init>(La02;)V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,310 +19,315 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lyz1;->m:Lel1;
+    iput-object p1, p0, Lyz1;->l:La02;
 
     .line 5
     .line 6
-    iget-object p1, p1, Lel1;->b:Lny5;
+    new-instance v0, Ljava/util/ArrayDeque;
 
     .line 7
     .line 8
-    invoke-interface {p1}, Lny5;->iterator()Ljava/util/Iterator;
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     .line 9
     .line 10
     .line 11
-    move-result-object p1
+    iput-object v0, p0, Lyz1;->k:Ljava/util/ArrayDeque;
 
     .line 12
-    iput-object p1, p0, Lyz1;->j:Ljava/util/Iterator;
-
     .line 13
+    iget-object p1, p1, La02;->a:Ljava/io/File;
+
     .line 14
+    .line 15
+    invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v1
+
+    .line 19
+    if-eqz v1, :cond_0
+
+    .line 20
+    .line 21
+    invoke-virtual {p0, p1}, Lyz1;->b(Ljava/io/File;)Luz1;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+
+    .line 29
+    :cond_0
+    invoke-virtual {p1}, Ljava/io/File;->isFile()Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v1
+
+    .line 33
+    if-eqz v1, :cond_1
+
+    .line 34
+    .line 35
+    new-instance p0, Lwz1;
+
+    .line 36
+    .line 37
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 38
+    .line 39
+    .line 40
+    invoke-direct {p0, p1}, Lzz1;-><init>(Ljava/io/File;)V
+
+    .line 41
+    .line 42
+    .line 43
+    invoke-virtual {v0, p0}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
+
+    .line 44
+    .line 45
+    .line 46
+    return-void
+
+    .line 47
+    :cond_1
+    const/4 p1, 0x2
+
+    .line 48
+    iput-byte p1, p0, La3;->i:B
+
+    .line 49
+    .line 50
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final a()V
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lyz1;->k:Ljava/util/Iterator;
+    :goto_0
+    iget-object v0, p0, Lyz1;->k:Ljava/util/ArrayDeque;
 
     .line 2
     .line 3
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->peek()Ljava/lang/Object;
 
     .line 4
-    if-eqz v0, :cond_0
-
     .line 5
     .line 6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v1
 
     .line 7
+    check-cast v1, Lzz1;
+
     .line 8
     .line 9
-    move-result v0
+    if-nez v1, :cond_0
 
     .line 10
-    if-eqz v0, :cond_0
-
     .line 11
+    const/4 v0, 0x0
+
     .line 12
-    iput-byte v1, p0, Lyz1;->l:B
+    goto :goto_1
 
     .line 13
-    .line 14
-    return v1
-
-    .line 15
     :cond_0
-    iget-object v0, p0, Lyz1;->j:Ljava/util/Iterator;
+    invoke-virtual {v1}, Lzz1;->a()Ljava/io/File;
 
+    .line 14
+    .line 15
     .line 16
+    move-result-object v2
+
     .line 17
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-nez v2, :cond_1
 
     .line 18
     .line 19
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->pop()Ljava/lang/Object;
+
     .line 20
-    move-result v2
-
     .line 21
-    if-eqz v2, :cond_1
-
     .line 22
+    goto :goto_0
+
     .line 23
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :cond_1
+    iget-object v1, v1, Lzz1;->a:Ljava/io/File;
 
     .line 24
     .line 25
+    invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 26
-    move-result-object v0
-
     .line 27
-    sget-object v2, Lty5;->k:Lty5;
-
     .line 28
+    move-result v1
+
     .line 29
-    iget-object v3, p0, Lyz1;->m:Lel1;
+    if-nez v1, :cond_2
 
     .line 30
     .line 31
-    iget-object v3, v3, Lel1;->c:Lp62;
+    invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
 
     .line 32
     .line 33
-    invoke-interface {v3, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 34
-    .line 35
-    .line 36
-    move-result-object v0
+    move-result v1
 
+    .line 35
+    if-eqz v1, :cond_2
+
+    .line 36
     .line 37
-    invoke-virtual {v2, v0}, Lty5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->size()I
 
     .line 38
     .line 39
     .line 40
-    move-result-object v0
+    move-result v1
 
     .line 41
-    check-cast v0, Ljava/util/Iterator;
+    const v3, 0x7fffffff
 
     .line 42
     .line 43
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
     .line 44
+    if-ge v1, v3, :cond_2
+
     .line 45
     .line 46
-    move-result v2
+    invoke-virtual {p0, v2}, Lyz1;->b(Ljava/io/File;)Luz1;
 
     .line 47
-    if-eqz v2, :cond_0
-
     .line 48
     .line 49
-    iput-object v0, p0, Lyz1;->k:Ljava/util/Iterator;
+    move-result-object v1
 
     .line 50
-    .line 51
-    iput-byte v1, p0, Lyz1;->l:B
+    invoke-virtual {v0, v1}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
+    .line 51
     .line 52
     .line 53
-    return v1
+    goto :goto_0
 
     .line 54
-    :cond_1
-    const/4 v0, 0x2
+    :cond_2
+    move-object v0, v2
 
     .line 55
-    iput-byte v0, p0, Lyz1;->l:B
+    :goto_1
+    if-eqz v0, :cond_3
 
     .line 56
     .line 57
-    const/4 v0, 0x0
+    iput-object v0, p0, La3;->j:Ljava/lang/Object;
 
     .line 58
-    iput-object v0, p0, Lyz1;->k:Ljava/util/Iterator;
-
     .line 59
+    const/4 v0, 0x1
+
     .line 60
-    const/4 p0, 0x0
+    iput-byte v0, p0, La3;->i:B
 
     .line 61
-    return p0
+    .line 62
+    return-void
+
+    .line 63
+    :cond_3
+    const/4 v0, 0x2
+
+    .line 64
+    iput-byte v0, p0, La3;->i:B
+
+    .line 65
+    .line 66
+    return-void
 .end method
 
-.method public final hasNext()Z
+.method public final b(Ljava/io/File;)Luz1;
     .locals 2
 
     .line 1
-    iget-byte v0, p0, Lyz1;->l:B
+    iget-object v0, p0, Lyz1;->l:La02;
 
     .line 2
     .line 3
-    const/4 v1, 0x1
+    iget-object v0, v0, La02;->b:Lb02;
 
     .line 4
-    if-ne v0, v1, :cond_0
-
     .line 5
-    .line 6
-    return v1
-
-    .line 7
-    :cond_0
-    const/4 v1, 0x2
-
-    .line 8
-    if-ne v0, v1, :cond_1
-
-    .line 9
-    .line 10
-    const/4 p0, 0x0
-
-    .line 11
-    return p0
-
-    .line 12
-    :cond_1
-    invoke-virtual {p0}, Lyz1;->a()Z
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lyz1;->l:B
-
-    .line 2
-    .line 3
-    const/4 v1, 0x2
-
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    if-eq v0, v1, :cond_2
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     .line 6
     .line 7
-    if-nez v0, :cond_1
-
     .line 8
-    .line 9
-    invoke-virtual {p0}, Lyz1;->a()Z
-
-    .line 10
-    .line 11
-    .line 12
     move-result v0
 
+    .line 9
+    if-eqz v0, :cond_1
+
+    .line 10
+    .line 11
+    const/4 v1, 0x1
+
+    .line 12
+    if-ne v0, v1, :cond_0
+
     .line 13
-    if-eqz v0, :cond_0
-
     .line 14
-    .line 15
-    goto :goto_0
+    new-instance v0, Lvz1;
 
+    .line 15
     .line 16
-    :cond_0
-    invoke-static {}, Lue1;->p()V
+    invoke-direct {v0, p0, p1}, Lvz1;-><init>(Lyz1;Ljava/io/File;)V
 
     .line 17
     .line 18
     .line 19
-    return-object v2
+    return-object v0
 
     .line 20
-    :cond_1
-    :goto_0
-    const/4 v0, 0x0
+    :cond_0
+    invoke-static {}, Lnf1;->c()V
 
     .line 21
-    iput-byte v0, p0, Lyz1;->l:B
-
     .line 22
     .line 23
-    iget-object p0, p0, Lyz1;->k:Ljava/util/Iterator;
+    const/4 p0, 0x0
 
     .line 24
+    return-object p0
+
     .line 25
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_1
+    new-instance v0, Lxz1;
 
     .line 26
     .line 27
-    .line 28
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v0, p0, p1}, Lxz1;-><init>(Lyz1;Ljava/io/File;)V
 
+    .line 28
     .line 29
     .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
-    return-object p0
-
-    .line 33
-    :cond_2
-    invoke-static {}, Lue1;->p()V
-
-    .line 34
-    .line 35
-    .line 36
-    return-object v2
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
+    return-object v0
 .end method

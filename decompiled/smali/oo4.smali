@@ -1,226 +1,145 @@
-.class public final Loo4;
+.class public final synthetic Loo4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lob1;
+.implements Lp72;
 
 
 # instance fields
-.field public final a:F
+.field public final synthetic i:B
+
+.field public final synthetic j:Landroid/content/Context;
+
+.field public final synthetic k:Lyo4;
+
+.field public final synthetic l:Lh04;
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public synthetic constructor <init>(Landroid/content/Context;Lyo4;Lh04;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p4, p0, Loo4;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Loo4;->j:Landroid/content/Context;
+
     .line 4
-    iput p1, p0, Loo4;->a:F
-
     .line 5
-    .line 6
-    const/4 p0, 0x0
+    iput-object p2, p0, Loo4;->k:Lyo4;
 
+    .line 6
     .line 7
-    cmpg-float p0, p1, p0
+    iput-object p3, p0, Loo4;->l:Lh04;
 
     .line 8
     .line 9
-    if-ltz p0, :cond_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     .line 11
-    const/high16 p0, 0x42c80000    # 100.0f
-
     .line 12
-    .line 13
-    cmpl-float p0, p1, p0
-
-    .line 14
-    .line 15
-    if-lez p0, :cond_0
-
-    .line 16
-    .line 17
-    goto :goto_0
-
-    .line 18
-    :cond_0
-    return-void
-
-    .line 19
-    :cond_1
-    :goto_0
-    const-string p0, "The percent should be in the range of [0, 100]"
-
-    .line 20
-    .line 21
-    invoke-static {p0}, Lcq2;->a(Ljava/lang/String;)V
-
-    .line 22
-    .line 23
-    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(JLyh1;)F
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    invoke-static {p1, p2}, Lw56;->b(J)F
+    iget-byte v0, p0, Loo4;->i:B
 
     .line 2
     .line 3
-    .line 4
-    move-result p1
+    sget-object v1, Ll97;->a:Ll97;
 
+    .line 4
     .line 5
-    iget p0, p0, Loo4;->a:F
+    iget-object v2, p0, Loo4;->l:Lh04;
 
     .line 6
     .line 7
-    const/high16 p2, 0x42c80000    # 100.0f
+    iget-object v3, p0, Loo4;->k:Lyo4;
 
     .line 8
     .line 9
-    div-float/2addr p0, p2
+    iget-object p0, p0, Loo4;->j:Landroid/content/Context;
 
     .line 10
-    mul-float/2addr p0, p1
-
     .line 11
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Loo4;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Loo4;
+    check-cast p1, Ljava/lang/String;
 
     .line 12
     .line 13
-    iget p0, p0, Loo4;->a:F
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
-    iget p1, p1, Loo4;->a:F
-
     .line 16
-    .line 17
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 17
     .line 18
     .line 19
+    invoke-interface {v2, p1}, Lh04;->setValue(Ljava/lang/Object;)V
+
     .line 20
-    move-result p0
-
     .line 21
-    if-eqz p0, :cond_2
-
     .line 22
+    invoke-static {p0, p1}, Lwo4;->k(Landroid/content/Context;Ljava/lang/String;)V
+
     .line 23
-    return v2
-
     .line 24
-    :cond_2
-    return v0
-.end method
+    .line 25
+    iget-object p0, v3, Lyo4;->r:Lp72;
 
-.method public final hashCode()I
-    .locals 0
+    .line 26
+    .line 27
+    invoke-interface {p0, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1
-    iget p0, p0, Loo4;->a:F
+    .line 28
+    .line 29
+    .line 30
+    return-object v1
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    .line 31
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 32
+    .line 33
+    .line 34
+    invoke-interface {v2, p1}, Lh04;->setValue(Ljava/lang/Object;)V
 
-    .line 7
-    return p0
-.end method
+    .line 35
+    .line 36
+    .line 37
+    invoke-static {p0, p1}, Lwo4;->k(Landroid/content/Context;Ljava/lang/String;)V
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 38
+    .line 39
+    .line 40
+    iget-object p0, v3, Lyo4;->r:Lp72;
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 41
+    .line 42
+    invoke-interface {p0, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2
-    .line 3
-    const-string v1, "CornerSize(size = "
+    .line 43
+    .line 44
+    .line 45
+    return-object v1
 
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 46
+    nop
 
-    .line 6
-    .line 7
-    .line 8
-    iget p0, p0, Loo4;->a:F
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, "%)"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    .line 47
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,336 +1,148 @@
-.class public final Lez5;
-.super Lm3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/io/Serializable;
+.class final Lez5;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final k:Lez5;
-
-
-# instance fields
-.field public final j:Ltg3;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lez5;
-
-    .line 2
-    .line 3
-    sget-object v1, Ltg3;->w:Ltg3;
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lez5;-><init>(Ltg3;)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lez5;->k:Lez5;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ltg3;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ltg3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
-
-    .line 7
-    .line 8
-    .line 9
-    iput-object v0, p0, Lez5;->j:Ltg3;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public constructor <init>(Ltg3;)V
-    .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 12
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
-
-    .line 13
-    iput-object p1, p0, Lez5;->j:Ltg3;
-
-    return-void
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lez5;->j:Ltg3;
-
-    .line 2
-    .line 3
-    iget p0, p0, Ltg3;->r:I
-
-    .line 4
-    .line 5
-    return p0
-.end method
-
-.method public final add(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lez5;->j:Ltg3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Ltg3;->a(Ljava/lang/Object;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    if-ltz p0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
-.end method
-
-.method public final addAll(Ljava/util/Collection;)Z
+.method public final a()Lrw3;
     .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance p0, Lgz5;
 
     .line 2
     .line 3
-    .line 4
-    iget-object v0, p0, Lez5;->j:Ltg3;
+    invoke-direct {p0}, Lgi1;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {v0}, Ltg3;->c()V
+    const/16 v0, 0x9
 
     .line 7
     .line 8
-    .line 9
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+    iput-byte v0, p0, Lgz5;->y:B
 
+    .line 9
     .line 10
+    sget-object v0, Lfz5;->i:Lfz5;
+
     .line 11
     .line 12
-    move-result p0
+    iput-object v0, p0, Lgz5;->z:Lfz5;
 
     .line 13
-    return p0
+    .line 14
+    return-object p0
 .end method
 
-.method public final clear()V
+.method public final b(Lrw3;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lez5;->j:Ltg3;
+    check-cast p1, Lgz5;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ltg3;->clear()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
     .line 6
+    const/16 p0, 0x9
+
+    .line 7
+    .line 8
+    iput-byte p0, p1, Lgz5;->y:B
+
+    .line 9
+    .line 10
     return-void
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lez5;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lez5;->j:Ltg3;
+    const/16 p0, 0x9
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Ltg3;->containsKey(Ljava/lang/Object;)Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
     return p0
 .end method
 
-.method public final isEmpty()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lez5;->j:Ltg3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ltg3;->isEmpty()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
+.method public final toString()Ljava/lang/String;
     .locals 2
 
     .line 1
-    new-instance v0, Lqg3;
+    const/16 p0, 0x9
 
     .line 2
     .line 3
-    const/4 v1, 0x1
-
-    .line 4
-    iget-object p0, p0, Lez5;->j:Ltg3;
-
-    .line 5
-    .line 6
-    invoke-direct {v0, p0, v1}, Lqg3;-><init>(Ltg3;B)V
-
-    .line 7
-    .line 8
-    .line 9
-    return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lez5;->j:Ltg3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ltg3;->c()V
+    invoke-static {p0}, Laf2;->a(I)Ljava/lang/String;
 
     .line 4
     .line 5
     .line 6
-    invoke-virtual {p0, p1}, Ltg3;->g(Ljava/lang/Object;)I
+    move-result-object p0
 
     .line 7
+    const-string v0, "ScrollEndHapticElement(hapticFeedbackType="
+
     .line 8
     .line 9
-    move-result p1
+    const-string v1, ")"
 
     .line 10
-    if-gez p1, :cond_0
-
     .line 11
+    invoke-static {v0, p0, v1}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 12
-    const/4 p0, 0x0
-
     .line 13
-    return p0
-
     .line 14
-    :cond_0
-    invoke-virtual {p0, p1}, Ltg3;->k(I)V
+    move-result-object p0
 
     .line 15
-    .line 16
-    .line 17
-    const/4 p0, 0x1
-
-    .line 18
-    return p0
-.end method
-
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object v0, p0, Lez5;->j:Ltg3;
-
-    .line 5
-    .line 6
-    invoke-virtual {v0}, Ltg3;->c()V
-
-    .line 7
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->removeAll(Ljava/util/Collection;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object v0, p0, Lez5;->j:Ltg3;
-
-    .line 5
-    .line 6
-    invoke-virtual {v0}, Ltg3;->c()V
-
-    .line 7
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->retainAll(Ljava/util/Collection;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
+    return-object p0
 .end method

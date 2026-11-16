@@ -1,154 +1,165 @@
 .class public final synthetic Lr1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Lt62;
+.field public final synthetic j:Le72;
+
+.field public final synthetic k:Lsw3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt62;B)V
+.method public synthetic constructor <init>(Le72;Lsw3;IB)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lr1;->j:B
+    iput-byte p4, p0, Lr1;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lr1;->k:Lt62;
+    iput-object p1, p0, Lr1;->j:Le72;
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lr1;->k:Lsw3;
 
     .line 6
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    iget-byte v0, p0, Lr1;->j:B
+    iget-byte v0, p0, Lr1;->i:B
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    iget-object p0, p0, Lr1;->k:Lt62;
+    const/16 v2, 0x31
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    iget-object v3, p0, Lr1;->k:Lsw3;
 
     .line 8
     .line 9
+    iget-object p0, p0, Lr1;->j:Le72;
+
     .line 10
-    check-cast p1, Ls03;
-
     .line 11
-    .line 12
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lt82;
 
+    .line 12
     .line 13
+    check-cast p2, Ljava/lang/Integer;
+
     .line 14
     .line 15
-    const-wide/16 v2, 0x0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 16
     .line 17
-    invoke-interface {p1, v2, v3}, Ls03;->T(J)J
-
     .line 18
+    packed-switch v0, :pswitch_data_0
+
     .line 19
     .line 20
-    move-result-wide v2
-
     .line 21
-    new-instance v0, Lxa4;
+    invoke-static {v2}, Lp06;->W(I)I
 
     .line 22
     .line 23
-    invoke-direct {v0, v2, v3}, Lxa4;-><init>(J)V
-
     .line 24
-    .line 25
-    .line 26
-    invoke-interface {p1}, Ls03;->Q()J
+    move-result p2
 
+    .line 25
+    invoke-static {p0, v3, p1, p2}, Ljf1;->u(Le72;Lsw3;Lt82;I)V
+
+    .line 26
     .line 27
     .line 28
-    .line 29
-    move-result-wide v2
-
-    .line 30
-    new-instance p1, Ljs2;
-
-    .line 31
-    .line 32
-    invoke-direct {p1, v2, v3}, Ljs2;-><init>(J)V
-
-    .line 33
-    .line 34
-    .line 35
-    invoke-interface {p0, v0, p1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 36
-    .line 37
-    .line 38
     return-object v1
 
-    .line 39
+    .line 29
     :pswitch_0
-    sget-object v0, Lyt2;->q0:Lyz6;
+    invoke-static {v2}, Lp06;->W(I)I
 
+    .line 30
+    .line 31
+    .line 32
+    move-result p2
+
+    .line 33
+    invoke-static {p0, v3, p1, p2}, Lx61;->H(Le72;Lsw3;Lt82;I)V
+
+    .line 34
+    .line 35
+    .line 36
+    return-object v1
+
+    .line 37
+    :pswitch_1
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 38
+    .line 39
     .line 40
+    move-result p2
+
     .line 41
-    check-cast p1, Lqh;
+    invoke-static {p0, v3, p1, p2}, Ljf1;->m(Le72;Lsw3;Lt82;I)V
 
     .line 42
     .line 43
-    iget-object v2, p1, Lqh;->e:Lum4;
-
     .line 44
+    return-object v1
+
     .line 45
-    invoke-virtual {v2}, Lum4;->getValue()Ljava/lang/Object;
+    :pswitch_2
+    invoke-static {v2}, Lp06;->W(I)I
 
     .line 46
     .line 47
     .line 48
-    move-result-object v2
+    move-result p2
 
     .line 49
-    iget-object v0, v0, Lyz6;->b:Lp62;
+    invoke-static {p0, v3, p1, p2}, Lx61;->y(Le72;Lsw3;Lt82;I)V
 
     .line 50
     .line 51
-    iget-object p1, p1, Lqh;->f:Lxh;
-
     .line 52
+    return-object v1
+
     .line 53
-    invoke-interface {v0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    :pswitch_3
+    invoke-static {v2}, Lp06;->W(I)I
 
     .line 54
     .line 55
     .line 56
-    move-result-object p1
+    move-result p2
 
     .line 57
-    invoke-interface {p0, v2, p1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v3, p1, p2}, Ly67;->A(Le72;Lsw3;Lt82;I)V
 
     .line 58
     .line 59
@@ -156,52 +167,333 @@
     return-object v1
 
     .line 61
-    :pswitch_1
-    check-cast p1, Ljava/lang/String;
+    :pswitch_4
+    invoke-static {v2}, Lp06;->W(I)I
 
     .line 62
     .line 63
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 64
-    .line 65
-    .line 66
-    const-string v0, "USDT (TRC20)"
+    move-result p2
 
+    .line 65
+    invoke-static {p0, v3, p1, p2}, Lyp6;->l(Le72;Lsw3;Lt82;I)V
+
+    .line 66
     .line 67
     .line 68
-    invoke-interface {p0, v0, p1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 69
-    .line 70
-    .line 71
     return-object v1
 
+    .line 69
+    :pswitch_5
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 70
+    .line 71
     .line 72
-    :pswitch_2
-    check-cast p1, Ljava/lang/String;
+    move-result p2
 
     .line 73
-    .line 74
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0, v3, p1, p2}, Lla3;->g(Le72;Lsw3;Lt82;I)V
 
+    .line 74
     .line 75
     .line 76
+    return-object v1
+
     .line 77
-    const-string v0, "USDT (TON)"
+    :pswitch_6
+    invoke-static {v2}, Lp06;->W(I)I
 
     .line 78
     .line 79
-    invoke-interface {p0, v0, p1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 80
+    move-result p2
+
     .line 81
+    invoke-static {p0, v3, p1, p2}, Lyp6;->k(Le72;Lsw3;Lt82;I)V
+
     .line 82
+    .line 83
+    .line 84
     return-object v1
 
-    .line 83
+    .line 85
+    :pswitch_7
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 86
+    .line 87
+    .line 88
+    move-result p2
+
+    .line 89
+    invoke-static {p0, v3, p1, p2}, Lqn3;->T(Le72;Lsw3;Lt82;I)V
+
+    .line 90
+    .line 91
+    .line 92
+    return-object v1
+
+    .line 93
+    :pswitch_8
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 94
+    .line 95
+    .line 96
+    move-result p2
+
+    .line 97
+    invoke-static {p0, v3, p1, p2}, Lga7;->d(Le72;Lsw3;Lt82;I)V
+
+    .line 98
+    .line 99
+    .line 100
+    return-object v1
+
+    .line 101
+    :pswitch_9
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 102
+    .line 103
+    .line 104
+    move-result p2
+
+    .line 105
+    invoke-static {p0, v3, p1, p2}, Ly67;->g(Le72;Lsw3;Lt82;I)V
+
+    .line 106
+    .line 107
+    .line 108
+    return-object v1
+
+    .line 109
+    :pswitch_a
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 110
+    .line 111
+    .line 112
+    move-result p2
+
+    .line 113
+    invoke-static {p0, v3, p1, p2}, Ly67;->f(Le72;Lsw3;Lt82;I)V
+
+    .line 114
+    .line 115
+    .line 116
+    return-object v1
+
+    .line 117
+    :pswitch_b
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 118
+    .line 119
+    .line 120
+    move-result p2
+
+    .line 121
+    invoke-static {p0, v3, p1, p2}, Lyp6;->h(Le72;Lsw3;Lt82;I)V
+
+    .line 122
+    .line 123
+    .line 124
+    return-object v1
+
+    .line 125
+    :pswitch_c
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 126
+    .line 127
+    .line 128
+    move-result p2
+
+    .line 129
+    invoke-static {p0, v3, p1, p2}, Lqn3;->F(Le72;Lsw3;Lt82;I)V
+
+    .line 130
+    .line 131
+    .line 132
+    return-object v1
+
+    .line 133
+    :pswitch_d
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 134
+    .line 135
+    .line 136
+    move-result p2
+
+    .line 137
+    invoke-static {p0, v3, p1, p2}, Lky2;->k(Le72;Lsw3;Lt82;I)V
+
+    .line 138
+    .line 139
+    .line 140
+    return-object v1
+
+    .line 141
+    :pswitch_e
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 142
+    .line 143
+    .line 144
+    move-result p2
+
+    .line 145
+    invoke-static {p0, v3, p1, p2}, Lx61;->g(Le72;Lsw3;Lt82;I)V
+
+    .line 146
+    .line 147
+    .line 148
+    return-object v1
+
+    .line 149
+    :pswitch_f
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 150
+    .line 151
+    .line 152
+    move-result p2
+
+    .line 153
+    invoke-static {p0, v3, p1, p2}, Lye0;->g(Le72;Lsw3;Lt82;I)V
+
+    .line 154
+    .line 155
+    .line 156
+    return-object v1
+
+    .line 157
+    :pswitch_10
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 158
+    .line 159
+    .line 160
+    move-result p2
+
+    .line 161
+    invoke-static {p0, v3, p1, p2}, Ly67;->d(Le72;Lsw3;Lt82;I)V
+
+    .line 162
+    .line 163
+    .line 164
+    return-object v1
+
+    .line 165
+    :pswitch_11
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 166
+    .line 167
+    .line 168
+    move-result p2
+
+    .line 169
+    invoke-static {p0, v3, p1, p2}, Lyp6;->e(Le72;Lsw3;Lt82;I)V
+
+    .line 170
+    .line 171
+    .line 172
+    return-object v1
+
+    .line 173
+    :pswitch_12
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 174
+    .line 175
+    .line 176
+    move-result p2
+
+    .line 177
+    invoke-static {p0, v3, p1, p2}, Lky2;->d(Le72;Lsw3;Lt82;I)V
+
+    .line 178
+    .line 179
+    .line 180
+    return-object v1
+
+    .line 181
+    :pswitch_13
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 182
+    .line 183
+    .line 184
+    move-result p2
+
+    .line 185
+    invoke-static {p0, v3, p1, p2}, Ljy2;->e(Le72;Lsw3;Lt82;I)V
+
+    .line 186
+    .line 187
+    .line 188
+    return-object v1
+
+    .line 189
+    :pswitch_14
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 190
+    .line 191
+    .line 192
+    move-result p2
+
+    .line 193
+    invoke-static {p0, v3, p1, p2}, Lx61;->c(Le72;Lsw3;Lt82;I)V
+
+    .line 194
+    .line 195
+    .line 196
+    return-object v1
+
+    .line 197
+    :pswitch_15
+    invoke-static {v2}, Lp06;->W(I)I
+
+    .line 198
+    .line 199
+    .line 200
+    move-result p2
+
+    .line 201
+    invoke-static {p0, v3, p1, p2}, Lye0;->a(Le72;Lsw3;Lt82;I)V
+
+    .line 202
+    .line 203
+    .line 204
+    return-object v1
+
+    .line 205
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

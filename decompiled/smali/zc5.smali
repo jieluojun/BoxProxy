@@ -1,158 +1,232 @@
-.class public final Lzc5;
+.class public abstract Lzc5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final a:Landroid/content/res/Resources;
+# static fields
+.field public static final a:[I
 
-.field public final b:Landroid/content/res/Resources$Theme;
+.field public static final b:[I
+
+.field public static final c:[I
+
+.field public static final d:[I
+
+.field public static final e:[I
+
+.field public static final f:[I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const v0, 0x7f04002b
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzc5;->a:Landroid/content/res/Resources;
+    const v1, 0x7f0400b4
 
     .line 5
     .line 6
-    iput-object p2, p0, Lzc5;->b:Landroid/content/res/Resources$Theme;
-
     .line 7
+    const v2, 0x10101a5
+
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    const/4 v1, 0x0
-
-    .line 6
-    if-eqz p1, :cond_2
-
-    .line 7
-    .line 8
-    const-class v2, Lzc5;
-
     .line 9
     .line 10
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const v3, 0x101031f
 
     .line 11
     .line 12
     .line 13
-    move-result-object v3
+    const v4, 0x1010647
 
     .line 14
-    if-eq v2, v3, :cond_1
-
     .line 15
     .line 16
-    goto :goto_0
+    filled-new-array {v2, v3, v4, v0, v1}, [I
 
     .line 17
-    :cond_1
-    check-cast p1, Lzc5;
-
     .line 18
     .line 19
-    iget-object v2, p0, Lzc5;->a:Landroid/content/res/Resources;
+    move-result-object v0
 
     .line 20
+    sput-object v0, Lzc5;->a:[I
+
     .line 21
-    iget-object v3, p1, Lzc5;->a:Landroid/content/res/Resources;
-
     .line 22
-    .line 23
-    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/16 v0, 0x8
 
+    .line 23
     .line 24
+    new-array v0, v0, [I
+
     .line 25
     .line 26
-    move-result v2
+    fill-array-data v0, :array_0
 
     .line 27
-    if-eqz v2, :cond_2
-
     .line 28
     .line 29
-    iget-object p0, p0, Lzc5;->b:Landroid/content/res/Resources$Theme;
+    sput-object v0, Lzc5;->b:[I
 
     .line 30
     .line 31
-    iget-object p1, p1, Lzc5;->b:Landroid/content/res/Resources$Theme;
+    const/16 v0, 0xa
 
     .line 32
     .line 33
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    new-array v0, v0, [I
 
     .line 34
     .line 35
+    fill-array-data v0, :array_1
+
     .line 36
-    move-result p0
-
     .line 37
-    if-eqz p0, :cond_2
-
     .line 38
+    sput-object v0, Lzc5;->c:[I
+
     .line 39
-    return v0
-
     .line 40
-    :cond_2
-    :goto_0
-    return v1
-.end method
+    const v0, 0x7f04009b
 
-.method public final hashCode()I
-    .locals 1
+    .line 41
+    .line 42
+    .line 43
+    const v1, 0x7f04009c
 
-    .line 1
-    iget-object v0, p0, Lzc5;->a:Landroid/content/res/Resources;
+    .line 44
+    .line 45
+    .line 46
+    const v3, 0x7f04009e
 
-    .line 2
-    .line 3
-    iget-object p0, p0, Lzc5;->b:Landroid/content/res/Resources$Theme;
+    .line 47
+    .line 48
+    .line 49
+    filled-new-array {v0, v1, v3}, [I
 
-    .line 4
-    .line 5
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
+    .line 50
+    .line 51
+    .line 52
+    move-result-object v0
 
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
+    .line 53
+    sput-object v0, Lzc5;->d:[I
 
-    .line 9
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    .line 54
+    .line 55
+    const/16 v0, 0xc
 
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
+    .line 56
+    .line 57
+    new-array v0, v0, [I
 
-    .line 13
-    return p0
+    .line 58
+    .line 59
+    fill-array-data v0, :array_2
+
+    .line 60
+    .line 61
+    .line 62
+    sput-object v0, Lzc5;->e:[I
+
+    .line 63
+    .line 64
+    const v0, 0x1010514
+
+    .line 65
+    .line 66
+    .line 67
+    filled-new-array {v2, v0}, [I
+
+    .line 68
+    .line 69
+    .line 70
+    move-result-object v0
+
+    .line 71
+    sput-object v0, Lzc5;->f:[I
+
+    .line 72
+    .line 73
+    return-void
+
+    .line 74
+    nop
+
+    .line 75
+    :array_0
+    .array-data 4
+        0x7f040095
+        0x7f040096
+        0x7f040097
+        0x7f040098
+        0x7f040099
+        0x7f04009a
+        0x7f04009b
+        0x7f04009c
+    .end array-data
+
+    .line 76
+    .line 77
+    .line 78
+    .line 79
+    .line 80
+    .line 81
+    .line 82
+    .line 83
+    .line 84
+    .line 85
+    .line 86
+    .line 87
+    .line 88
+    .line 89
+    .line 90
+    .line 91
+    .line 92
+    .line 93
+    .line 94
+    .line 95
+    :array_1
+    .array-data 4
+        0x1010532
+        0x1010533
+        0x101053f
+        0x101056f
+        0x1010570
+        0x7f040093
+        0x7f04009d
+        0x7f04009e
+        0x7f04009f
+        0x7f0401b7
+    .end array-data
+
+    .line 96
+    .line 97
+    .line 98
+    .line 99
+    .line 100
+    .line 101
+    .line 102
+    .line 103
+    .line 104
+    :array_2
+    .array-data 4
+        0x101019d
+        0x101019e
+        0x10101a1
+        0x10101a2
+        0x10101a3
+        0x10101a4
+        0x1010201
+        0x101020b
+        0x1010510
+        0x1010511
+        0x1010512
+        0x1010513
+    .end array-data
 .end method

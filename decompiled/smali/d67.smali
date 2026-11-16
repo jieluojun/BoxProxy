@@ -1,17 +1,10 @@
-.class public final Ld67;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lx57;
-
-
-# instance fields
-.field public final j:B
+.class public Ld67;
+.super Ls57;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
@@ -20,73 +13,59 @@
     .line 2
     .line 3
     .line 4
-    iput-byte p1, p0, Ld67;->j:B
-
-    .line 5
-    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public final o()I
-    .locals 0
+.method public final b(Le23;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte p0, p0, Ld67;->j:B
+    invoke-virtual {p1}, Le23;->L()I
 
     .line 2
     .line 3
-    return p0
-.end method
-
-.method public final p(JLxh;Lxh;Lxh;)Lxh;
-    .locals 0
-
-    .line 1
-    return-object p5
-.end method
-
-.method public final r()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final s(JLxh;Lxh;Lxh;)Lxh;
-    .locals 4
-
-    .line 1
-    iget-byte p0, p0, Ld67;->j:B
-
-    .line 2
-    .line 3
-    int-to-long v0, p0
-
     .line 4
-    const-wide/32 v2, 0xf4240
+    move-result p0
 
     .line 5
+    const/16 v0, 0x9
+
     .line 6
     .line 7
-    mul-long/2addr v0, v2
+    if-ne p0, v0, :cond_0
 
     .line 8
-    cmp-long p0, p1, v0
-
     .line 9
-    .line 10
-    if-gez p0, :cond_0
+    invoke-virtual {p1}, Le23;->H()V
 
+    .line 10
     .line 11
     .line 12
-    return-object p3
+    const/4 p0, 0x0
 
     .line 13
+    return-object p0
+
+    .line 14
     :cond_0
-    return-object p4
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    .line 15
+    .line 16
+    invoke-virtual {p1}, Le23;->J()Ljava/lang/String;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p1
+
+    .line 20
+    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 21
+    .line 22
+    .line 23
+    return-object p0
 .end method

@@ -1,133 +1,170 @@
-.class public final synthetic Ld14;
+.class public final Ld14;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Z
-
-.field public final synthetic l:Le62;
-
-.field public final synthetic m:Lp62;
+.field public final a:[J
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLe62;Lp62;IB)V
-    .locals 0
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 2
 
     .line 1
-    iput-byte p5, p0, Ld14;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-boolean p1, p0, Ld14;->k:Z
-
     .line 4
-    .line 5
-    iput-object p2, p0, Ld14;->l:Le62;
+    invoke-interface {p1}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
 
+    .line 5
     .line 6
     .line 7
-    iput-object p3, p0, Ld14;->m:Lp62;
+    move-result-object p1
 
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lvz;
 
+    .line 9
     .line 10
+    const/4 v1, 0x5
+
     .line 11
+    invoke-direct {v0, v1}, Lvz;-><init>(B)V
+
     .line 12
+    .line 13
+    .line 14
+    invoke-interface {p1, v0}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p1
+
+    .line 18
+    invoke-static {}, Ljava/util/stream/Collectors;->toList()Ljava/util/stream/Collector;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v0
+
+    .line 22
+    invoke-interface {p1, v0}, Ljava/util/stream/Stream;->collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p1
+
+    .line 26
+    check-cast p1, Ljava/util/List;
+
+    .line 27
+    .line 28
+    invoke-interface {p1}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p1
+
+    .line 32
+    new-instance v0, Lc14;
+
+    .line 33
+    .line 34
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-interface {p1, v0}, Ljava/util/stream/Stream;->mapToLong(Ljava/util/function/ToLongFunction;)Ljava/util/stream/LongStream;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p1
+
+    .line 41
+    invoke-interface {p1}, Ljava/util/stream/LongStream;->toArray()[J
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p1
+
+    .line 45
+    iput-object p1, p0, Ld14;->a:[J
+
+    .line 46
+    .line 47
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final a(Loj4;I)Lwm0;
+    .locals 6
 
     .line 1
-    iget-byte v0, p0, Ld14;->j:B
+    invoke-virtual {p1, p2}, Loj4;->a(I)I
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
-
     .line 4
+    move-result v4
+
     .line 5
-    const/16 v2, 0x31
+    iget-wide v1, p1, Loj4;->d:J
 
     .line 6
     .line 7
-    iget-object v3, p0, Ld14;->m:Lp62;
+    iget-object v3, p1, Loj4;->c:[B
 
     .line 8
     .line 9
-    iget-object v4, p0, Ld14;->l:Le62;
+    iget v5, p1, Loj4;->b:I
 
     .line 10
     .line 11
-    iget-boolean p0, p0, Ld14;->k:Z
+    iget-object v0, p0, Ld14;->a:[J
 
     .line 12
     .line 13
-    check-cast p1, Lz11;
+    invoke-static/range {v0 .. v5}, Lio/github/rosemoe/oniguruma/OnigNative;->regexSearchBatch([JJ[BII)[I
 
     .line 14
     .line 15
-    check-cast p2, Ljava/lang/Integer;
-
     .line 16
+    move-result-object p0
+
     .line 17
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez p0, :cond_0
 
     .line 18
     .line 19
+    const/4 p0, 0x0
+
     .line 20
-    packed-switch v0, :pswitch_data_0
+    return-object p0
 
     .line 21
+    :cond_0
+    new-instance p1, Lwm0;
+
     .line 22
     .line 23
-    invoke-static {v2}, Lqu5;->f0(I)I
+    const/4 p2, 0x1
 
     .line 24
+    invoke-direct {p1, p0, p2}, Lwm0;-><init>([IZ)V
+
     .line 25
     .line 26
-    move-result p2
-
     .line 27
-    invoke-static {p0, v4, v3, p1, p2}, Lyt2;->H(ZLe62;Lp62;Lz11;I)V
-
-    .line 28
-    .line 29
-    .line 30
-    return-object v1
-
-    .line 31
-    :pswitch_0
-    invoke-static {v2}, Lqu5;->f0(I)I
-
-    .line 32
-    .line 33
-    .line 34
-    move-result p2
-
-    .line 35
-    invoke-static {p0, v4, v3, p1, p2}, Lxt2;->h(ZLe62;Lp62;Lz11;I)V
-
-    .line 36
-    .line 37
-    .line 38
-    return-object v1
-
-    .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p1
 .end method

@@ -1,6 +1,6 @@
 .class abstract Lcom/sun/jna/Klass;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
@@ -71,134 +71,126 @@
     move-exception v2
 
     .line 16
-    goto :goto_0
+    invoke-virtual {v2}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     .line 17
-    :catch_1
-    move-exception v2
-
     .line 18
-    goto :goto_1
-
     .line 19
-    :goto_0
-    invoke-virtual {v2}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    .line 20
-    .line 21
-    .line 22
     move-result-object v3
 
-    .line 23
+    .line 20
     instance-of v3, v3, Ljava/lang/RuntimeException;
 
-    .line 24
-    .line 25
+    .line 21
+    .line 22
     if-eqz v3, :cond_0
 
-    .line 26
-    .line 27
+    .line 23
+    .line 24
     invoke-virtual {v2}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
-    .line 28
-    .line 29
-    .line 30
+    .line 25
+    .line 26
+    .line 27
     move-result-object p0
 
-    .line 31
+    .line 28
     check-cast p0, Ljava/lang/RuntimeException;
 
-    .line 32
-    .line 33
+    .line 29
+    .line 30
     throw p0
 
-    .line 34
+    .line 31
     :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
+    .line 32
+    .line 33
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 34
     .line 35
     .line 36
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 37
     .line 38
     .line 39
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 40
     .line 41
     .line 42
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 43
     .line 44
     .line 45
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 46
     .line 47
     .line 48
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 49
-    .line 50
-    .line 51
     move-result-object p0
 
-    .line 52
+    .line 49
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 53
-    .line 54
+    .line 50
+    .line 51
     invoke-direct {v0, p0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 55
-    .line 56
-    .line 57
+    .line 52
+    .line 53
+    .line 54
     throw v0
 
-    .line 58
-    :goto_1
+    .line 55
+    :catch_1
+    move-exception v2
+
+    .line 56
     new-instance v3, Ljava/lang/StringBuilder;
+
+    .line 57
+    .line 58
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 59
     .line 60
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 61
-    .line 62
-    .line 63
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 62
+    .line 63
     .line 64
-    .line 65
-    .line 66
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 65
+    .line 66
     .line 67
-    .line 68
-    .line 69
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 68
+    .line 69
     .line 70
-    .line 71
-    .line 72
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 71
+    .line 72
     .line 73
-    .line 74
-    .line 75
     move-result-object p0
 
-    .line 76
+    .line 74
     new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    .line 75
+    .line 76
+    invoke-direct {v0, p0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 77
     .line 78
-    invoke-direct {v0, p0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
     .line 79
-    .line 80
-    .line 81
     throw v0
 .end method

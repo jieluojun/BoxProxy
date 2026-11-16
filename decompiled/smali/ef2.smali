@@ -1,1450 +1,1154 @@
-.class public final synthetic Lef2;
+.class public final Lef2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lu62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic A:Le62;
+.field public final a:D
 
-.field public final synthetic B:Le62;
+.field public final b:D
 
-.field public final synthetic C:F
+.field public final c:D
 
-.field public final synthetic D:Lmt3;
-
-.field public final synthetic j:Lj03;
-
-.field public final synthetic k:Lrb2;
-
-.field public final synthetic l:Lsg2;
-
-.field public final synthetic m:Lsb2;
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Lp62;
-
-.field public final synthetic p:Ltx1;
-
-.field public final synthetic q:Lk53;
-
-.field public final synthetic r:Lmb6;
-
-.field public final synthetic s:Lwh2;
-
-.field public final synthetic t:Le62;
-
-.field public final synthetic u:Z
-
-.field public final synthetic v:Lih2;
-
-.field public final synthetic w:Le62;
-
-.field public final synthetic x:Le62;
-
-.field public final synthetic y:Le62;
-
-.field public final synthetic z:Lsc2;
+.field public final d:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj03;Lrb2;Lsg2;Lsb2;ZLp62;Ltx1;Lk53;Lhg;Lwh2;Le62;ZLih2;Le62;Le62;Le62;Lsc2;Le62;Le62;FLmt3;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lef2;->j:Lj03;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lef2;->k:Lrb2;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lef2;->l:Lsg2;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lef2;->m:Lsb2;
-
-    .line 11
-    .line 12
-    iput-boolean p5, p0, Lef2;->n:Z
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lef2;->o:Lp62;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lef2;->p:Ltx1;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lef2;->q:Lk53;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lef2;->r:Lmb6;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lef2;->s:Lwh2;
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Lef2;->t:Le62;
-
-    .line 25
-    .line 26
-    iput-boolean p12, p0, Lef2;->u:Z
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Lef2;->v:Lih2;
-
-    .line 29
-    .line 30
-    iput-object p14, p0, Lef2;->w:Le62;
-
-    .line 31
-    .line 32
-    iput-object p15, p0, Lef2;->x:Le62;
-
-    .line 33
-    .line 34
-    move-object/from16 p1, p16
-
-    .line 35
-    .line 36
-    iput-object p1, p0, Lef2;->y:Le62;
-
-    .line 37
-    .line 38
-    move-object/from16 p1, p17
-
-    .line 39
-    .line 40
-    iput-object p1, p0, Lef2;->z:Lsc2;
-
-    .line 41
-    .line 42
-    move-object/from16 p1, p18
-
-    .line 43
-    .line 44
-    iput-object p1, p0, Lef2;->A:Le62;
-
-    .line 45
-    .line 46
-    move-object/from16 p1, p19
-
-    .line 47
-    .line 48
-    iput-object p1, p0, Lef2;->B:Le62;
-
-    .line 49
-    .line 50
-    move/from16 p1, p20
-
-    .line 51
-    .line 52
-    iput p1, p0, Lef2;->C:F
-
-    .line 53
-    .line 54
-    move-object/from16 p1, p21
-
-    .line 55
-    .line 56
-    iput-object p1, p0, Lef2;->D:Lmt3;
-
-    .line 57
-    .line 58
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 33
+.method public constructor <init>(I)V
+    .locals 36
 
     .line 1
     move-object/from16 v0, p0
 
     .line 2
     .line 3
-    move-object/from16 v3, p1
+    move/from16 v1, p1
 
     .line 4
     .line 5
-    check-cast v3, Lnj4;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
-
     .line 8
+    iput v1, v0, Lef2;->d:I
+
     .line 9
-    check-cast v1, Lz11;
-
     .line 10
+    sget-object v2, Lce7;->k:Lce7;
+
     .line 11
-    move-object/from16 v2, p3
-
     .line 12
-    .line 13
-    check-cast v2, Ljava/lang/Integer;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 13
     .line 14
     .line 15
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    const/high16 v3, 0xff0000
 
     .line 16
     .line 17
+    and-int/2addr v3, v1
+
     .line 18
-    move-result v2
+    shr-int/lit8 v3, v3, 0x10
 
     .line 19
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 20
+    const v4, 0xff00
+
     .line 21
     .line 22
-    and-int/lit8 v4, v2, 0x6
-
     .line 23
+    and-int/2addr v4, v1
+
     .line 24
-    const/4 v5, 0x2
+    shr-int/lit8 v4, v4, 0x8
 
     .line 25
-    if-nez v4, :cond_1
-
     .line 26
-    .line 27
-    move-object v4, v1
+    and-int/lit16 v5, v1, 0xff
 
+    .line 27
     .line 28
-    check-cast v4, Lt72;
+    invoke-static {v3}, Lky2;->N(I)D
 
     .line 29
     .line 30
-    invoke-virtual {v4, v3}, Lt72;->g(Ljava/lang/Object;)Z
-
     .line 31
+    move-result-wide v6
+
     .line 32
+    invoke-static {v4}, Lky2;->N(I)D
+
     .line 33
-    move-result v4
-
     .line 34
-    if-eqz v4, :cond_0
-
     .line 35
+    move-result-wide v3
+
     .line 36
-    const/4 v4, 0x4
+    invoke-static {v5}, Lky2;->N(I)D
 
     .line 37
-    goto :goto_0
-
     .line 38
-    :cond_0
-    move v4, v5
-
     .line 39
-    :goto_0
-    or-int/2addr v2, v4
+    move-result-wide v8
 
     .line 40
-    :cond_1
-    and-int/lit8 v4, v2, 0x13
+    const-wide v10, 0x3fda63c2e8477c96L    # 0.41233895
 
     .line 41
     .line 42
-    const/16 v6, 0x12
-
     .line 43
     .line 44
-    const/4 v13, 0x0
-
     .line 45
-    const/4 v14, 0x1
+    mul-double/2addr v10, v6
 
     .line 46
-    if-eq v4, v6, :cond_2
+    const-wide v12, 0x3fd6e341ae4b2c79L    # 0.35762064
 
     .line 47
     .line 48
-    move v4, v14
-
     .line 49
-    goto :goto_1
-
     .line 50
-    :cond_2
-    move v4, v13
-
     .line 51
-    :goto_1
-    and-int/lit8 v6, v2, 0x1
+    mul-double/2addr v12, v3
 
     .line 52
+    add-double/2addr v12, v10
+
     .line 53
-    move-object v10, v1
+    const-wide v10, 0x3fc71af7273e5d5eL    # 0.18051042
 
     .line 54
-    check-cast v10, Lt72;
-
     .line 55
     .line 56
-    invoke-virtual {v10, v6, v4}, Lt72;->T(IZ)Z
-
     .line 57
     .line 58
+    mul-double/2addr v10, v8
+
     .line 59
-    move-result v1
+    add-double/2addr v10, v12
 
     .line 60
-    if-eqz v1, :cond_d
+    const-wide v12, 0x3fcb367a0f9096bcL    # 0.2126
 
     .line 61
     .line 62
-    sget-object v1, Lc66;->c:Ljz1;
-
     .line 63
     .line 64
-    iget-object v4, v0, Lef2;->j:Lj03;
-
     .line 65
+    mul-double/2addr v12, v6
+
     .line 66
-    invoke-static {v1, v4, v14}, Ljo3;->c(Lwp3;Lj03;Z)Lwp3;
+    const-wide v14, 0x3fe6e2eb1c432ca5L    # 0.7152
 
     .line 67
     .line 68
     .line 69
-    move-result-object v1
-
     .line 70
-    sget-object v4, Lr6;->l:Lq20;
-
     .line 71
+    mul-double/2addr v14, v3
+
     .line 72
-    invoke-static {v4, v13}, Lcb0;->c(Lf8;Z)Lrj3;
+    add-double/2addr v14, v12
 
     .line 73
+    const-wide v12, 0x3fb27bb2fec56d5dL    # 0.0722
+
     .line 74
     .line 75
-    move-result-object v4
-
     .line 76
-    iget-wide v6, v10, Lt72;->U:J
-
     .line 77
     .line 78
-    invoke-static {v6, v7}, Ljava/lang/Long;->hashCode(J)I
+    mul-double/2addr v12, v8
 
     .line 79
+    add-double/2addr v12, v14
+
     .line 80
+    const-wide v14, 0x3f93c8fde0401c25L    # 0.01932141
+
     .line 81
-    move-result v6
-
     .line 82
-    invoke-virtual {v10}, Lt72;->m()Lro4;
-
     .line 83
     .line 84
     .line 85
-    move-result-object v7
+    mul-double/2addr v6, v14
 
     .line 86
-    invoke-static {v10, v1}, Ldn;->T(Lz11;Lwp3;)Lwp3;
+    const-wide v14, 0x3fbe818525c434ceL    # 0.11916382
 
     .line 87
     .line 88
     .line 89
-    move-result-object v1
-
     .line 90
-    sget-object v8, Lq11;->d:Lr6;
-
     .line 91
+    mul-double/2addr v3, v14
+
     .line 92
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    add-double/2addr v3, v6
 
     .line 93
+    const-wide v6, 0x3fee693974c0c730L    # 0.95034478
+
     .line 94
     .line 95
-    invoke-virtual {v10}, Lt72;->f0()V
-
     .line 96
     .line 97
     .line 98
-    iget-boolean v8, v10, Lt72;->T:Z
+    mul-double/2addr v8, v6
 
     .line 99
+    add-double/2addr v8, v3
+
     .line 100
-    if-eqz v8, :cond_3
+    iget-wide v3, v2, Lce7;->e:D
 
     .line 101
     .line 102
-    sget-object v8, Lj13;->b0:Lz02;
+    iget-wide v6, v2, Lce7;->b:D
 
     .line 103
     .line 104
-    invoke-virtual {v10, v8}, Lt72;->l(Le62;)V
+    sget-object v14, Lga7;->f:[[D
 
     .line 105
     .line 106
+    const/4 v15, 0x0
+
     .line 107
-    goto :goto_2
+    aget-object v16, v14, v15
 
     .line 108
-    :cond_3
-    invoke-virtual {v10}, Lt72;->o0()V
-
     .line 109
+    aget-wide v17, v16, v15
+
     .line 110
     .line 111
-    :goto_2
-    sget-object v8, Lr6;->R:Lw01;
+    mul-double v17, v17, v10
 
     .line 112
     .line 113
-    invoke-static {v10, v8, v4}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    const/16 v19, 0x1
 
     .line 114
     .line 115
+    aget-wide v20, v16, v19
+
     .line 116
-    sget-object v4, Lr6;->Q:Lw01;
-
     .line 117
-    .line 118
-    invoke-static {v10, v4, v7}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    mul-double v20, v20, v12
 
+    .line 118
     .line 119
+    add-double v20, v20, v17
+
     .line 120
     .line 121
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/16 v17, 0x2
 
     .line 122
     .line 123
-    .line 124
-    move-result-object v4
+    aget-wide v22, v16, v17
 
+    .line 124
     .line 125
-    sget-object v6, Lr6;->S:Lw01;
+    mul-double v22, v22, v8
 
     .line 126
     .line 127
-    invoke-static {v10, v6, v4}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    add-double v22, v22, v20
 
     .line 128
     .line 129
-    .line 130
-    invoke-static {v10}, Lu47;->g(Lz11;)V
+    aget-object v16, v14, v19
 
+    .line 130
     .line 131
+    aget-wide v20, v16, v15
+
     .line 132
     .line 133
-    sget-object v4, Lr6;->P:Lw01;
+    mul-double v20, v20, v10
 
     .line 134
     .line 135
-    invoke-static {v10, v4, v1}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    aget-wide v24, v16, v19
 
     .line 136
     .line 137
+    mul-double v24, v24, v12
+
     .line 138
-    const/high16 v1, 0x3f800000    # 1.0f
-
     .line 139
+    add-double v24, v24, v20
+
     .line 140
-    sget-object v4, Ltp3;->j:Ltp3;
-
     .line 141
-    .line 142
-    invoke-static {v4, v1}, Lc66;->c(Lwp3;F)Lwp3;
+    aget-wide v20, v16, v17
 
+    .line 142
     .line 143
+    mul-double v20, v20, v8
+
     .line 144
     .line 145
-    move-result-object v1
+    add-double v20, v20, v24
 
     .line 146
-    invoke-static {v1}, Lyt2;->o0(Lwp3;)Lwp3;
-
     .line 147
+    aget-object v14, v14, v17
+
     .line 148
     .line 149
-    move-result-object v1
+    aget-wide v24, v14, v15
 
     .line 150
-    invoke-static {v1}, Lyg4;->b(Lwp3;)Lwp3;
-
     .line 151
+    mul-double v10, v10, v24
+
     .line 152
     .line 153
-    move-result-object v1
+    aget-wide v24, v14, v19
 
     .line 154
-    iget-object v4, v0, Lef2;->p:Ltx1;
-
     .line 155
-    .line 156
-    iget-object v4, v4, Ltx1;->e:Lsx1;
+    mul-double v12, v12, v24
 
+    .line 156
     .line 157
+    add-double/2addr v12, v10
+
     .line 158
-    const/4 v6, 0x0
+    aget-wide v10, v14, v17
 
     .line 159
-    invoke-static {v1, v4, v6}, Lqe1;->V(Lwp3;Lvy3;Lyy3;)Lwp3;
-
     .line 160
+    mul-double/2addr v8, v10
+
     .line 161
+    add-double/2addr v8, v12
+
     .line 162
-    move-result-object v1
+    iget-object v10, v2, Lce7;->g:[D
 
     .line 163
-    const/high16 v4, 0x41400000    # 12.0f
-
     .line 164
-    .line 165
-    const/4 v6, 0x0
+    aget-wide v11, v10, v15
 
+    .line 165
     .line 166
-    invoke-static {v1, v4, v6, v5}, Lag7;->H(Lwp3;FFI)Lwp3;
+    mul-double v11, v11, v22
 
     .line 167
     .line 168
-    .line 169
-    move-result-object v1
+    aget-wide v13, v10, v19
 
+    .line 169
     .line 170
-    iget-object v4, v0, Lef2;->r:Lmb6;
+    mul-double v13, v13, v20
 
     .line 171
     .line 172
-    invoke-virtual {v10, v4}, Lt72;->g(Ljava/lang/Object;)Z
+    aget-wide v20, v10, v17
 
     .line 173
     .line 174
-    .line 175
-    move-result v5
+    mul-double v20, v20, v8
 
+    .line 175
     .line 176
-    iget-object v6, v0, Lef2;->s:Lwh2;
+    iget-wide v8, v2, Lce7;->h:D
 
     .line 177
     .line 178
-    invoke-virtual {v10, v6}, Lt72;->i(Ljava/lang/Object;)Z
+    invoke-static {v11, v12}, Ljava/lang/Math;->abs(D)D
 
     .line 179
     .line 180
     .line 181
-    move-result v7
+    move-result-wide v22
 
     .line 182
-    or-int/2addr v5, v7
+    mul-double v22, v22, v8
 
     .line 183
-    iget-object v7, v0, Lef2;->t:Le62;
-
     .line 184
-    .line 185
-    invoke-virtual {v10, v7}, Lt72;->g(Ljava/lang/Object;)Z
+    const-wide/high16 v24, 0x4059000000000000L    # 100.0
 
+    .line 185
     .line 186
+    move-wide/from16 v26, v3
+
     .line 187
     .line 188
-    move-result v8
+    div-double v3, v22, v24
 
     .line 189
-    or-int/2addr v5, v8
-
     .line 190
-    iget-boolean v8, v0, Lef2;->u:Z
+    move v10, v5
 
     .line 191
-    .line 192
-    invoke-virtual {v10, v8}, Lt72;->h(Z)Z
+    move-wide/from16 v22, v6
 
+    .line 192
     .line 193
+    const-wide v5, 0x3fdae147ae147ae1L    # 0.42
+
     .line 194
     .line 195
-    move-result v9
-
     .line 196
-    or-int/2addr v5, v9
-
     .line 197
-    iget-object v9, v0, Lef2;->v:Lih2;
-
     .line 198
-    .line 199
-    invoke-virtual {v10, v9}, Lt72;->g(Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
+    .line 199
     .line 200
     .line 201
+    move-result-wide v3
+
     .line 202
-    move-result v11
+    invoke-static {v13, v14}, Ljava/lang/Math;->abs(D)D
 
     .line 203
-    or-int/2addr v5, v11
-
     .line 204
-    iget-object v11, v0, Lef2;->w:Le62;
-
     .line 205
+    move-result-wide v28
+
     .line 206
-    invoke-virtual {v10, v11}, Lt72;->g(Ljava/lang/Object;)Z
+    mul-double v28, v28, v8
 
     .line 207
     .line 208
-    .line 209
-    move-result v12
+    move-wide/from16 v30, v3
 
+    .line 209
     .line 210
-    or-int/2addr v5, v12
+    div-double v3, v28, v24
 
     .line 211
-    iget-object v12, v0, Lef2;->m:Lsb2;
-
     .line 212
-    .line 213
-    invoke-virtual {v10, v12}, Lt72;->g(Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
+    .line 213
     .line 214
     .line 215
+    move-result-wide v3
+
     .line 216
-    move-result v15
+    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->abs(D)D
 
     .line 217
-    or-int/2addr v5, v15
-
     .line 218
-    iget-object v15, v0, Lef2;->x:Le62;
-
     .line 219
+    move-result-wide v28
+
     .line 220
-    invoke-virtual {v10, v15}, Lt72;->g(Ljava/lang/Object;)Z
+    mul-double v28, v28, v8
 
     .line 221
     .line 222
-    .line 223
-    move-result v16
+    div-double v7, v28, v24
 
+    .line 223
     .line 224
-    or-int v5, v5, v16
+    invoke-static {v7, v8, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
     .line 225
     .line 226
-    iget-object v13, v0, Lef2;->y:Le62;
-
     .line 227
+    move-result-wide v5
+
     .line 228
-    invoke-virtual {v10, v13}, Lt72;->g(Ljava/lang/Object;)Z
+    invoke-static {v11, v12}, Ljava/lang/Math;->signum(D)D
 
     .line 229
     .line 230
     .line 231
-    move-result v16
+    move-result-wide v7
 
     .line 232
-    or-int v5, v5, v16
+    const-wide/high16 v11, 0x4079000000000000L    # 400.0
 
     .line 233
     .line 234
-    iget-object v14, v0, Lef2;->k:Lrb2;
+    mul-double/2addr v7, v11
 
     .line 235
-    .line 236
-    invoke-virtual {v10, v14}, Lt72;->g(Ljava/lang/Object;)Z
+    mul-double v7, v7, v30
 
+    .line 236
     .line 237
+    const-wide v28, 0x403b2147ae147ae1L    # 27.13
+
     .line 238
     .line 239
-    move-result v16
-
     .line 240
-    or-int v5, v5, v16
-
     .line 241
     .line 242
-    move-object/from16 p3, v1
+    add-double v30, v30, v28
 
     .line 243
     .line 244
-    iget-object v1, v0, Lef2;->z:Lsc2;
+    div-double v7, v7, v30
 
     .line 245
     .line 246
-    invoke-virtual {v10, v1}, Lt72;->i(Ljava/lang/Object;)Z
+    invoke-static {v13, v14}, Ljava/lang/Math;->signum(D)D
 
     .line 247
     .line 248
     .line 249
-    move-result v16
+    move-result-wide v13
 
     .line 250
-    or-int v5, v5, v16
+    mul-double/2addr v13, v11
 
     .line 251
+    mul-double/2addr v13, v3
+
     .line 252
-    move-object/from16 v26, v1
+    add-double v3, v3, v28
 
     .line 253
     .line 254
-    iget-object v1, v0, Lef2;->A:Le62;
+    div-double/2addr v13, v3
 
     .line 255
-    .line 256
-    invoke-virtual {v10, v1}, Lt72;->g(Ljava/lang/Object;)Z
+    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->signum(D)D
 
+    .line 256
     .line 257
     .line 258
+    move-result-wide v3
+
     .line 259
-    move-result v16
+    mul-double/2addr v3, v11
 
     .line 260
-    or-int v5, v5, v16
+    mul-double/2addr v3, v5
 
     .line 261
+    add-double v5, v5, v28
+
     .line 262
-    move-object/from16 v27, v1
-
     .line 263
+    div-double v28, v3, v5
+
     .line 264
-    iget-object v1, v0, Lef2;->l:Lsg2;
-
     .line 265
-    .line 266
-    invoke-virtual {v10, v1}, Lt72;->i(Ljava/lang/Object;)Z
+    const-wide/high16 v3, 0x4026000000000000L    # 11.0
 
+    .line 266
     .line 267
+    mul-double v5, v7, v3
+
     .line 268
     .line 269
-    move-result v16
+    const-wide/high16 v11, -0x3fd8000000000000L    # -12.0
 
     .line 270
-    or-int v5, v5, v16
-
     .line 271
+    mul-double/2addr v11, v13
+
     .line 272
-    move-object/from16 v28, v1
+    add-double/2addr v11, v5
 
     .line 273
-    .line 274
-    iget-object v1, v0, Lef2;->B:Le62;
+    add-double v11, v11, v28
 
+    .line 274
     .line 275
+    div-double/2addr v11, v3
+
     .line 276
-    invoke-virtual {v10, v1}, Lt72;->g(Ljava/lang/Object;)Z
+    add-double v32, v7, v13
 
     .line 277
     .line 278
-    .line 279
-    move-result v16
+    const-wide/high16 v34, 0x4022000000000000L    # 9.0
 
+    .line 279
     .line 280
-    or-int v5, v5, v16
+    const-wide/high16 v30, 0x4000000000000000L    # 2.0
 
     .line 281
     .line 282
-    move-object/from16 v29, v1
+    invoke-static/range {v28 .. v35}, Lrf6;->b(DDDD)D
 
     .line 283
     .line 284
-    iget v1, v0, Lef2;->C:F
-
     .line 285
+    move-result-wide v3
+
     .line 286
-    invoke-virtual {v10, v1}, Lt72;->d(F)Z
+    const-wide/high16 v5, 0x4034000000000000L    # 20.0
 
     .line 287
     .line 288
-    .line 289
-    move-result v16
+    mul-double v20, v7, v5
 
+    .line 289
     .line 290
-    or-int v5, v5, v16
+    mul-double/2addr v13, v5
 
     .line 291
+    add-double v20, v20, v13
+
     .line 292
-    move/from16 v31, v1
-
     .line 293
-    .line 294
-    invoke-virtual {v10}, Lt72;->O()Ljava/lang/Object;
+    const-wide/high16 v32, 0x4035000000000000L    # 21.0
 
+    .line 294
     .line 295
+    mul-double v32, v32, v28
+
     .line 296
     .line 297
-    move-result-object v1
+    add-double v32, v32, v20
 
     .line 298
-    move/from16 v32, v2
-
     .line 299
+    div-double v32, v32, v5
+
     .line 300
-    iget-object v2, v0, Lef2;->D:Lmt3;
-
     .line 301
+    const-wide/high16 v20, 0x4044000000000000L    # 40.0
+
     .line 302
-    move-object/from16 v18, v4
-
     .line 303
-    .line 304
-    sget-object v4, Lx11;->a:Lv8;
+    mul-double v7, v7, v20
 
+    .line 304
     .line 305
+    add-double/2addr v7, v13
+
     .line 306
-    if-nez v5, :cond_4
+    add-double v7, v7, v28
 
     .line 307
     .line 308
-    if-ne v1, v4, :cond_5
+    div-double/2addr v7, v5
 
     .line 309
-    .line 310
-    :cond_4
-    move-object/from16 v23, v15
+    invoke-static {v3, v4, v11, v12}, Ljava/lang/Math;->atan2(DD)D
 
+    .line 310
     .line 311
     .line 312
-    goto :goto_3
+    move-result-wide v5
 
     .line 313
-    :cond_5
-    move-object/from16 v30, v2
+    const-wide v13, 0x404ca5dc1a63c1f8L    # 57.29577951308232
 
     .line 314
     .line 315
-    move-object/from16 v22, v12
-
     .line 316
     .line 317
-    move-object v13, v14
-
     .line 318
-    move-object/from16 v14, v28
+    mul-double/2addr v5, v13
 
     .line 319
+    const-wide v13, 0x4076800000000000L    # 360.0
+
     .line 320
-    goto :goto_4
-
     .line 321
-    :goto_3
-    new-instance v15, Lhf2;
-
     .line 322
     .line 323
-    move-object/from16 v30, v2
-
     .line 324
+    rem-double/2addr v5, v13
+
     .line 325
-    move-object/from16 v16, v6
+    const-wide/16 v20, 0x0
 
     .line 326
     .line 327
-    move-object/from16 v17, v7
+    cmpg-double v9, v5, v20
 
     .line 328
     .line 329
-    move/from16 v19, v8
+    if-gez v9, :cond_0
 
     .line 330
     .line 331
-    move-object/from16 v20, v9
+    add-double/2addr v5, v13
 
     .line 332
+    :cond_0
+    move-wide/from16 v20, v13
+
     .line 333
-    move-object/from16 v21, v11
-
     .line 334
-    .line 335
-    move-object/from16 v22, v12
+    iget-wide v13, v2, Lce7;->c:D
 
+    .line 335
     .line 336
+    mul-double/2addr v7, v13
+
     .line 337
-    move-object/from16 v24, v13
+    div-double v7, v7, v22
 
     .line 338
     .line 339
-    move-object/from16 v25, v14
+    iget-wide v13, v2, Lce7;->j:D
 
     .line 340
     .line 341
-    invoke-direct/range {v15 .. v31}, Lhf2;-><init>(Lwh2;Le62;Lmb6;ZLih2;Le62;Lsb2;Le62;Le62;Lrb2;Lsc2;Le62;Lsg2;Le62;Lmt3;F)V
+    mul-double v13, v13, v26
 
     .line 342
     .line 343
-    .line 344
-    move-object/from16 v13, v25
+    invoke-static {v7, v8, v13, v14}, Ljava/lang/Math;->pow(DD)D
 
+    .line 344
     .line 345
     .line 346
-    move-object/from16 v14, v28
+    move-result-wide v7
 
     .line 347
-    .line 348
-    invoke-virtual {v10, v15}, Lt72;->l0(Ljava/lang/Object;)V
+    mul-double v7, v7, v24
 
+    .line 348
     .line 349
+    div-double v7, v7, v24
+
     .line 350
     .line 351
-    move-object v1, v15
+    const-wide v13, 0x403423d70a3d70a4L    # 20.14
 
     .line 352
-    :goto_4
-    move-object v9, v1
-
     .line 353
-    check-cast v9, Lp62;
-
     .line 354
     .line 355
-    shl-int/lit8 v1, v32, 0x6
-
     .line 356
+    cmpg-double v9, v5, v13
+
     .line 357
-    and-int/lit16 v1, v1, 0x380
-
     .line 358
+    if-gez v9, :cond_1
+
     .line 359
-    const/high16 v2, 0x6000000
-
     .line 360
-    .line 361
-    or-int v11, v1, v2
+    add-double v13, v5, v20
 
+    .line 361
     .line 362
+    goto :goto_0
+
     .line 363
-    const/16 v12, 0xf8
+    :cond_1
+    move-wide v13, v5
 
     .line 364
-    .line 365
-    iget-object v2, v0, Lef2;->q:Lk53;
+    :goto_0
+    const-wide v20, 0x3f91df46a2529d39L    # 0.017453292519943295
 
+    .line 365
     .line 366
     .line 367
-    move-object v1, v4
-
     .line 368
-    const/4 v4, 0x0
-
     .line 369
-    const/4 v5, 0x0
+    mul-double v13, v13, v20
 
     .line 370
-    const/4 v6, 0x0
-
     .line 371
-    const/4 v7, 0x0
+    add-double v13, v13, v30
 
     .line 372
-    const/4 v8, 0x0
-
     .line 373
-    move-object v0, v1
+    invoke-static {v13, v14}, Ljava/lang/Math;->cos(D)D
 
     .line 374
-    move-object/from16 v15, v22
-
     .line 375
     .line 376
-    move-object/from16 v1, p3
+    move-result-wide v13
 
     .line 377
-    .line 378
-    invoke-static/range {v1 .. v12}, Laq;->v(Lwp3;Lk53;Lnj4;Lxv;Le8;Lzz1;ZLvg4;Lp62;Lz11;II)V
+    const-wide v20, 0x400e666666666666L    # 3.8
 
+    .line 378
     .line 379
     .line 380
     .line 381
-    const/4 v1, 0x1
-
     .line 382
-    invoke-virtual {v10, v1}, Lt72;->r(Z)V
+    add-double v13, v13, v20
 
     .line 383
     .line 384
+    const-wide/high16 v20, 0x3fd0000000000000L    # 0.25
+
     .line 385
-    iget-object v1, v13, Lrb2;->e:Lmt3;
-
     .line 386
-    .line 387
-    invoke-interface {v1}, Lmb6;->getValue()Ljava/lang/Object;
+    mul-double v13, v13, v20
 
+    .line 387
     .line 388
+    const-wide v20, 0x40ae0c4ec4ec4ec5L    # 3846.153846153846
+
     .line 389
     .line 390
-    move-result-object v1
-
     .line 391
-    check-cast v1, Ljava/lang/Boolean;
-
     .line 392
     .line 393
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    mul-double v13, v13, v20
 
     .line 394
     .line 395
-    .line 396
-    move-result v1
+    move-wide/from16 v20, v7
 
+    .line 396
     .line 397
-    iget-object v2, v14, Lsg2;->a:Ljc2;
+    iget-wide v7, v2, Lce7;->f:D
 
     .line 398
     .line 399
-    invoke-virtual {v10, v13}, Lt72;->g(Ljava/lang/Object;)Z
+    mul-double/2addr v13, v7
 
     .line 400
+    iget-wide v7, v2, Lce7;->d:D
+
     .line 401
     .line 402
-    move-result v3
+    mul-double/2addr v13, v7
 
     .line 403
-    invoke-virtual {v10}, Lt72;->O()Ljava/lang/Object;
+    invoke-static {v11, v12, v3, v4}, Ljava/lang/Math;->hypot(DD)D
 
     .line 404
     .line 405
     .line 406
-    move-result-object v4
+    move-result-wide v3
 
     .line 407
-    if-nez v3, :cond_6
+    mul-double/2addr v3, v13
 
     .line 408
-    .line 409
-    if-ne v4, v0, :cond_7
+    const-wide v7, 0x3fd3851eb851eb85L    # 0.305
 
+    .line 409
     .line 410
     .line 411
-    :cond_6
-    new-instance v16, Lwd1;
-
     .line 412
     .line 413
-    const/16 v22, 0x0
+    add-double v32, v32, v7
 
     .line 414
     .line 415
-    const/16 v23, 0x15
+    div-double v3, v3, v32
 
     .line 416
     .line 417
-    const/16 v17, 0x0
+    const-wide v7, 0x3fd28f5c28f5c28fL    # 0.29
 
     .line 418
     .line 419
-    const-class v19, Lrb2;
-
     .line 420
     .line 421
-    const-string v20, "dismissIpDetails"
-
     .line 422
+    iget-wide v11, v2, Lce7;->a:D
+
     .line 423
-    const-string v21, "dismissIpDetails()V"
-
     .line 424
-    .line 425
-    move-object/from16 v18, v13
+    invoke-static {v7, v8, v11, v12}, Ljava/lang/Math;->pow(DD)D
 
+    .line 425
     .line 426
     .line 427
-    invoke-direct/range {v16 .. v23}, Lwd1;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
+    move-result-wide v7
 
     .line 428
+    const-wide v11, 0x3ffa3d70a3d70a3dL    # 1.64
+
     .line 429
     .line 430
-    move-object/from16 v4, v16
-
     .line 431
     .line 432
-    invoke-virtual {v10, v4}, Lt72;->l0(Ljava/lang/Object;)V
-
     .line 433
-    .line 434
-    .line 435
-    :cond_7
-    check-cast v4, Ley2;
+    sub-double/2addr v11, v7
 
+    .line 434
+    const-wide v7, 0x3fe75c28f5c28f5cL    # 0.73
+
+    .line 435
     .line 436
     .line 437
-    check-cast v4, Le62;
-
     .line 438
     .line 439
-    const/4 v3, 0x0
+    invoke-static {v11, v12, v7, v8}, Ljava/lang/Math;->pow(DD)D
 
     .line 440
-    invoke-static {v1, v2, v4, v10, v3}, Ldn;->l(ZLjc2;Le62;Lz11;I)V
-
     .line 441
     .line 442
+    move-result-wide v7
+
     .line 443
-    iget-object v1, v13, Lrb2;->f:Lmt3;
+    const-wide v11, 0x3feccccccccccccdL    # 0.9
 
     .line 444
     .line 445
-    invoke-interface {v1}, Lmb6;->getValue()Ljava/lang/Object;
-
     .line 446
     .line 447
     .line 448
-    move-result-object v1
+    invoke-static {v3, v4, v11, v12}, Ljava/lang/Math;->pow(DD)D
 
     .line 449
-    check-cast v1, Ljava/lang/Boolean;
-
     .line 450
     .line 451
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-wide v2
 
     .line 452
+    mul-double/2addr v2, v7
+
     .line 453
+    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->sqrt(D)D
+
     .line 454
-    move-result v1
-
     .line 455
-    iget-object v2, v15, Lsb2;->g:Luj2;
-
     .line 456
+    move-result-wide v7
+
     .line 457
-    iget-object v3, v2, Luj2;->b:Lum4;
+    mul-double/2addr v7, v2
 
     .line 458
-    .line 459
-    invoke-virtual {v3}, Lum4;->getValue()Ljava/lang/Object;
+    iput-wide v5, v0, Lef2;->a:D
 
+    .line 459
     .line 460
+    iput-wide v7, v0, Lef2;->b:D
+
     .line 461
     .line 462
-    move-result-object v3
+    shr-int/lit8 v2, v1, 0x10
 
     .line 463
-    check-cast v3, Ljava/lang/Boolean;
-
     .line 464
-    .line 465
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+    and-int/lit16 v2, v2, 0xff
 
+    .line 465
     .line 466
+    invoke-static {v2}, Lky2;->N(I)D
+
     .line 467
     .line 468
-    move-result v3
-
     .line 469
-    iget-object v4, v2, Luj2;->a:Lum4;
+    move-result-wide v2
 
     .line 470
-    .line 471
-    invoke-virtual {v4}, Lum4;->getValue()Ljava/lang/Object;
+    shr-int/lit8 v1, v1, 0x8
 
+    .line 471
     .line 472
+    and-int/lit16 v1, v1, 0xff
+
     .line 473
     .line 474
-    move-result-object v4
+    invoke-static {v1}, Lky2;->N(I)D
 
     .line 475
-    check-cast v4, Lsj2;
-
     .line 476
     .line 477
-    iget-object v2, v2, Luj2;->c:Lum4;
+    move-result-wide v4
 
     .line 478
-    .line 479
-    invoke-virtual {v2}, Lum4;->getValue()Ljava/lang/Object;
+    invoke-static {v10}, Lky2;->N(I)D
 
+    .line 479
     .line 480
     .line 481
+    move-result-wide v6
+
     .line 482
-    move-result-object v2
+    const/4 v1, 0x3
 
     .line 483
-    check-cast v2, Ljava/lang/String;
+    new-array v1, v1, [D
 
     .line 484
     .line 485
-    invoke-virtual {v10, v13}, Lt72;->g(Ljava/lang/Object;)Z
+    aput-wide v2, v1, v15
 
     .line 486
     .line 487
-    .line 488
-    move-result v5
+    aput-wide v4, v1, v19
 
+    .line 488
     .line 489
-    invoke-virtual {v10}, Lt72;->O()Ljava/lang/Object;
+    aput-wide v6, v1, v17
 
     .line 490
     .line 491
-    .line 492
-    move-result-object v6
+    sget-object v2, Lky2;->d:[[D
 
+    .line 492
     .line 493
-    if-nez v5, :cond_8
+    invoke-static {v1, v2}, Ly93;->T([D[[D)[D
 
     .line 494
     .line 495
-    if-ne v6, v0, :cond_9
-
     .line 496
+    move-result-object v1
+
     .line 497
-    :cond_8
-    new-instance v16, Lwd1;
+    aget-wide v1, v1, v19
 
     .line 498
     .line 499
-    const/16 v22, 0x0
+    div-double v1, v1, v24
 
     .line 500
     .line 501
-    const/16 v23, 0x16
+    invoke-static {v1, v2}, Lky2;->M(D)D
 
     .line 502
     .line 503
-    const/16 v17, 0x0
-
     .line 504
+    move-result-wide v1
+
     .line 505
-    const-class v19, Lrb2;
+    const-wide/high16 v3, 0x405d000000000000L    # 116.0
 
     .line 506
     .line 507
-    const-string v20, "dismissSystemDetails"
+    mul-double/2addr v1, v3
 
     .line 508
-    .line 509
-    const-string v21, "dismissSystemDetails()V"
+    const-wide/high16 v3, 0x4030000000000000L    # 16.0
 
+    .line 509
     .line 510
+    sub-double/2addr v1, v3
+
     .line 511
-    move-object/from16 v18, v13
+    iput-wide v1, v0, Lef2;->c:D
 
     .line 512
     .line 513
-    invoke-direct/range {v16 .. v23}, Lwd1;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
+    return-void
+.end method
 
-    .line 514
-    .line 515
-    .line 516
-    move-object/from16 v6, v16
 
-    .line 517
-    .line 518
-    invoke-virtual {v10, v6}, Lt72;->l0(Ljava/lang/Object;)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    .line 519
-    .line 520
-    .line 521
-    :cond_9
-    check-cast v6, Ley2;
+    .line 1
+    instance-of v0, p1, Lef2;
 
-    .line 522
-    .line 523
-    move-object/from16 v19, v6
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
 
-    .line 524
-    .line 525
-    check-cast v19, Le62;
+    .line 4
+    .line 5
+    check-cast p1, Lef2;
 
-    .line 526
-    .line 527
-    const/16 v21, 0x0
+    .line 6
+    .line 7
+    iget p1, p1, Lef2;->d:I
 
-    .line 528
-    .line 529
-    move v15, v1
+    .line 8
+    .line 9
+    iget p0, p0, Lef2;->d:I
 
-    .line 530
-    move-object/from16 v18, v2
+    .line 10
+    .line 11
+    if-ne p0, p1, :cond_0
 
-    .line 531
-    .line 532
-    move/from16 v16, v3
+    .line 12
+    .line 13
+    const/4 p0, 0x1
 
-    .line 533
-    .line 534
-    move-object/from16 v17, v4
+    .line 14
+    return p0
 
-    .line 535
-    .line 536
-    move-object/from16 v20, v10
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
 
-    .line 537
-    .line 538
-    invoke-static/range {v15 .. v21}, Ldn;->o(ZZLsj2;Ljava/lang/String;Le62;Lz11;I)V
+    .line 16
+    return p0
+.end method
 
-    .line 539
-    .line 540
-    .line 541
-    invoke-interface/range {v30 .. v30}, Lmb6;->getValue()Ljava/lang/Object;
+.method public final hashCode()I
+    .locals 0
 
-    .line 542
-    .line 543
-    .line 544
-    move-result-object v1
+    .line 1
+    iget p0, p0, Lef2;->d:I
 
-    .line 545
-    check-cast v1, Ljava/lang/Boolean;
+    .line 2
+    .line 3
+    return p0
+.end method
 
-    .line 546
-    .line 547
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    .line 548
-    .line 549
-    .line 550
-    move-result v7
+    .line 1
+    iget-wide v0, p0, Lef2;->a:D
 
-    .line 551
-    invoke-virtual {v10}, Lt72;->O()Ljava/lang/Object;
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Lqn3;->f0(D)I
 
-    .line 552
-    .line 553
-    .line 554
-    move-result-object v1
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
 
-    .line 555
-    if-ne v1, v0, :cond_a
+    .line 7
+    iget-wide v1, p0, Lef2;->b:D
 
-    .line 556
-    .line 557
-    new-instance v1, Lv51;
+    .line 8
+    .line 9
+    invoke-static {v1, v2}, Lqn3;->f0(D)I
 
-    .line 558
-    .line 559
-    const/16 v2, 0x13
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
 
-    .line 560
-    .line 561
-    move-object/from16 v3, v30
+    .line 13
+    iget-wide v2, p0, Lef2;->c:D
 
-    .line 562
-    .line 563
-    invoke-direct {v1, v3, v2}, Lv51;-><init>(Lmt3;B)V
+    .line 14
+    .line 15
+    invoke-static {v2, v3}, Lqn3;->f0(D)I
 
-    .line 564
-    .line 565
-    .line 566
-    invoke-virtual {v10, v1}, Lt72;->l0(Ljava/lang/Object;)V
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
 
-    .line 567
-    .line 568
-    .line 569
-    goto :goto_5
+    .line 19
+    const-string v2, "HCT("
 
-    .line 570
-    :cond_a
-    move-object/from16 v3, v30
+    .line 20
+    .line 21
+    const-string v3, ", "
 
-    .line 571
-    .line 572
-    :goto_5
-    move-object v9, v1
+    .line 22
+    .line 23
+    invoke-static {v0, v1, v2, v3, v3}, Lky1;->p(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 573
-    check-cast v9, Le62;
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v0
 
-    .line 574
-    .line 575
-    move-object/from16 v1, p0
+    .line 27
+    const-string v1, ")"
 
-    .line 576
-    .line 577
-    iget-object v2, v1, Lef2;->o:Lp62;
+    .line 28
+    .line 29
+    invoke-static {v1, v0, p0}, Llj6;->m(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
 
-    .line 578
-    .line 579
-    invoke-virtual {v10, v2}, Lt72;->g(Ljava/lang/Object;)Z
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p0
 
-    .line 580
-    .line 581
-    .line 582
-    move-result v4
-
-    .line 583
-    invoke-virtual {v10}, Lt72;->O()Ljava/lang/Object;
-
-    .line 584
-    .line 585
-    .line 586
-    move-result-object v5
-
-    .line 587
-    if-nez v4, :cond_b
-
-    .line 588
-    .line 589
-    if-ne v5, v0, :cond_c
-
-    .line 590
-    .line 591
-    :cond_b
-    new-instance v5, Lc61;
-
-    .line 592
-    .line 593
-    const/4 v0, 0x3
-
-    .line 594
-    invoke-direct {v5, v2, v3, v0}, Lc61;-><init>(Lp62;Lmt3;B)V
-
-    .line 595
-    .line 596
-    .line 597
-    invoke-virtual {v10, v5}, Lt72;->l0(Ljava/lang/Object;)V
-
-    .line 598
-    .line 599
-    .line 600
-    :cond_c
-    check-cast v5, Lp62;
-
-    .line 601
-    .line 602
-    const/16 v12, 0x180
-
-    .line 603
-    .line 604
-    iget-boolean v8, v1, Lef2;->n:Z
-
-    .line 605
-    .line 606
-    move-object v11, v10
-
-    .line 607
-    move-object v10, v5
-
-    .line 608
-    invoke-static/range {v7 .. v12}, Lkj3;->k(ZZLe62;Lp62;Lz11;I)V
-
-    .line 609
-    .line 610
-    .line 611
-    goto :goto_6
-
-    .line 612
-    :cond_d
-    invoke-virtual {v10}, Lt72;->W()V
-
-    .line 613
-    .line 614
-    .line 615
-    :goto_6
-    sget-object v0, La47;->a:La47;
-
-    .line 616
-    .line 617
-    return-object v0
+    .line 33
+    return-object p0
 .end method

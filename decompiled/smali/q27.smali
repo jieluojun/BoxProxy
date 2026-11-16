@@ -1,419 +1,543 @@
 .class public final Lq27;
-.super Lwz1;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lh66;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final w:Lq27;
+.field public static final e:Ljava/util/ArrayList;
+
+.field public static final f:Ljava/util/ArrayList;
+
+
+# instance fields
+.field public final c:J
+
+.field public final d:Ljava/util/ArrayList;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 5
 
     .line 1
-    new-instance v0, Lq27;
+    new-instance v0, Ljava/util/ArrayList;
 
     .line 2
     .line 3
-    const-string v1, "UTF-32BE"
+    const/16 v1, 0x11
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lwz1;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 6
     .line 7
     .line 8
-    sput-object v0, Lq27;->w:Lq27;
+    const/4 v2, 0x0
+
+    .line 9
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    .line 10
+    .line 11
+    int-to-float v3, v2
+
+    .line 12
+    const/high16 v4, 0x41800000    # 16.0f
+
+    .line 13
+    .line 14
+    div-float/2addr v3, v4
+
+    .line 15
+    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v3
+
+    .line 19
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 20
+    .line 21
+    .line 22
+    add-int/lit8 v2, v2, 0x1
+
+    .line 23
+    .line 24
+    goto :goto_0
+
+    .line 25
+    :cond_0
+    sput-object v0, Lq27;->e:Ljava/util/ArrayList;
+
+    .line 26
+    .line 27
+    new-instance v1, Ljava/util/ArrayList;
+
+    .line 28
+    .line 29
+    const/16 v2, 0xa
+
+    .line 30
+    .line 31
+    invoke-static {v0, v2}, Lyu0;->e0(Ljava/lang/Iterable;I)I
+
+    .line 32
+    .line 33
+    .line 34
+    move-result v2
+
+    .line 35
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v0
+
+    .line 42
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v2
+
+    .line 46
+    if-eqz v2, :cond_1
+
+    .line 47
+    .line 48
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object v2
+
+    .line 52
+    check-cast v2, Ljava/lang/Number;
+
+    .line 53
+    .line 54
+    invoke-virtual {v2}, Ljava/lang/Number;->floatValue()F
+
+    .line 55
+    .line 56
+    .line 57
+    move-result v2
+
+    .line 58
+    mul-float v3, v2, v2
+
+    .line 59
+    .line 60
+    const/high16 v4, 0x40000000    # 2.0f
+
+    .line 61
+    .line 62
+    mul-float/2addr v2, v4
+
+    .line 63
+    const/high16 v4, 0x40400000    # 3.0f
+
+    .line 64
+    .line 65
+    sub-float/2addr v4, v2
+
+    .line 66
+    mul-float/2addr v4, v3
+
+    .line 67
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 68
+    .line 69
+    sub-float/2addr v2, v4
+
+    .line 70
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object v2
+
+    .line 74
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 75
+    .line 76
+    .line 77
+    goto :goto_1
+
+    .line 78
+    :cond_1
+    sput-object v1, Lq27;->f:Ljava/util/ArrayList;
+
+    .line 79
+    .line 80
+    return-void
+.end method
+
+.method public constructor <init>(J)V
+    .locals 4
+
+    .line 1
+    invoke-direct {p0}, Lh66;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-wide p1, p0, Lq27;->c:J
+
+    .line 5
+    .line 6
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 7
+    .line 8
+    const/16 p2, 0xa
 
     .line 9
     .line 10
+    sget-object v0, Lq27;->f:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    invoke-static {v0, p2}, Lyu0;->e0(Ljava/lang/Iterable;I)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p2
+
+    .line 16
+    invoke-direct {p1, p2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p2
+
+    .line 23
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v0
+
+    .line 27
+    if-eqz v0, :cond_0
+
+    .line 28
+    .line 29
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v0
+
+    .line 33
+    check-cast v0, Ljava/lang/Number;
+
+    .line 34
+    .line 35
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v0
+
+    .line 39
+    iget-wide v1, p0, Lq27;->c:J
+
+    .line 40
+    .line 41
+    invoke-static {v1, v2}, Ldv0;->c(J)F
+
+    .line 42
+    .line 43
+    .line 44
+    move-result v3
+
+    .line 45
+    mul-float/2addr v3, v0
+
+    .line 46
+    invoke-static {v1, v2, v3}, Ldv0;->b(JF)J
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-wide v0
+
+    .line 50
+    new-instance v2, Ldv0;
+
+    .line 51
+    .line 52
+    invoke-direct {v2, v0, v1}, Ldv0;-><init>(J)V
+
+    .line 53
+    .line 54
+    .line 55
+    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 56
+    .line 57
+    .line 58
+    goto :goto_0
+
+    .line 59
+    :cond_0
+    iput-object p1, p0, Lq27;->d:Ljava/util/ArrayList;
+
+    .line 60
+    .line 61
     return-void
 .end method
 
 
 # virtual methods
-.method public final f(II[B)I
+.method public final c(J)Landroid/graphics/Shader;
     .locals 2
 
     .line 1
-    add-int/lit8 p0, p2, 0x1
+    const-wide v0, 0xffffffffL
 
     .line 2
     .line 3
-    const/high16 v0, -0x1000000
-
     .line 4
     .line 5
-    and-int/2addr v0, p1
-
     .line 6
-    ushr-int/lit8 v0, v0, 0x18
+    and-long/2addr p1, v0
 
     .line 7
+    long-to-int p1, p1
+
     .line 8
-    int-to-byte v0, v0
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 9
-    aput-byte v0, p3, p2
-
     .line 10
     .line 11
-    add-int/lit8 v0, p2, 0x2
+    move-result p1
 
     .line 12
-    .line 13
-    const/high16 v1, 0xff0000
+    invoke-virtual {p0, p1}, Lq27;->d(F)Landroid/graphics/LinearGradient;
 
+    .line 13
     .line 14
     .line 15
-    and-int/2addr v1, p1
+    move-result-object p0
 
     .line 16
-    ushr-int/lit8 v1, v1, 0x10
-
-    .line 17
-    .line 18
-    int-to-byte v1, v1
-
-    .line 19
-    aput-byte v1, p3, p0
-
-    .line 20
-    .line 21
-    add-int/lit8 p2, p2, 0x3
-
-    .line 22
-    .line 23
-    const p0, 0xff00
-
-    .line 24
-    .line 25
-    .line 26
-    and-int/2addr p0, p1
-
-    .line 27
-    ushr-int/lit8 p0, p0, 0x8
-
-    .line 28
-    .line 29
-    int-to-byte p0, p0
-
-    .line 30
-    aput-byte p0, p3, v0
-
-    .line 31
-    .line 32
-    and-int/lit16 p0, p1, 0xff
-
-    .line 33
-    .line 34
-    int-to-byte p0, p0
-
-    .line 35
-    aput-byte p0, p3, p2
-
-    .line 36
-    .line 37
-    const/4 p0, 0x4
-
-    .line 38
-    return p0
+    return-object p0
 .end method
 
-.method public final m(II[B)Z
-    .locals 0
+.method public final d(F)Landroid/graphics/LinearGradient;
+    .locals 10
 
     .line 1
-    add-int/lit8 p0, p1, 0x3
+    const/high16 v0, 0x3f800000    # 1.0f
 
     .line 2
     .line 3
-    if-ge p0, p2, :cond_0
+    cmpg-float v1, p1, v0
 
     .line 4
     .line 5
-    aget-byte p0, p3, p0
+    if-gez v1, :cond_0
 
     .line 6
     .line 7
-    const/16 p2, 0xa
+    move p1, v0
 
     .line 8
-    .line 9
-    if-ne p0, p2, :cond_0
-
-    .line 10
-    .line 11
-    add-int/lit8 p0, p1, 0x2
-
-    .line 12
-    .line 13
-    aget-byte p0, p3, p0
-
-    .line 14
-    .line 15
-    if-nez p0, :cond_0
-
-    .line 16
-    .line 17
-    add-int/lit8 p0, p1, 0x1
-
-    .line 18
-    .line 19
-    aget-byte p0, p3, p0
-
-    .line 20
-    .line 21
-    if-nez p0, :cond_0
-
-    .line 22
-    .line 23
-    aget-byte p0, p3, p1
-
-    .line 24
-    .line 25
-    if-nez p0, :cond_0
-
-    .line 26
-    .line 27
-    const/4 p0, 0x1
-
-    .line 28
-    return p0
-
-    .line 29
     :cond_0
-    const/4 p0, 0x0
+    const/4 v0, 0x0
 
-    .line 30
-    return p0
-.end method
-
-.method public final s(I[BLus1;I[B)I
-    .locals 6
-
-    .line 1
-    iget v0, p3, Lus1;->c:I
-
-    .line 2
-    .line 3
-    add-int/lit8 v1, v0, 0x3
-
-    .line 4
-    .line 5
-    aget-byte v2, p2, v1
-
-    .line 6
-    .line 7
-    and-int/lit16 v2, v2, 0xff
-
-    .line 8
     .line 9
-    invoke-static {v2}, Ly2;->i(I)Z
+    add-float/2addr v0, p1
 
     .line 10
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
     .line 11
     .line 12
-    move-result v2
-
     .line 13
-    if-eqz v2, :cond_0
+    move-result p1
 
     .line 14
+    int-to-long v0, p1
+
     .line 15
-    add-int/lit8 v2, v0, 0x2
+    const-wide v2, 0xffffffffL
 
     .line 16
     .line 17
-    aget-byte v2, p2, v2
-
     .line 18
     .line 19
-    if-nez v2, :cond_0
-
     .line 20
+    and-long v6, v0, v2
+
     .line 21
-    add-int/lit8 v2, v0, 0x1
-
     .line 22
+    iget-object v9, p0, Lq27;->d:Ljava/util/ArrayList;
+
     .line 23
-    aget-byte v2, p2, v2
-
     .line 24
+    sget-object v8, Lq27;->e:Ljava/util/ArrayList;
+
     .line 25
-    if-nez v2, :cond_0
-
     .line 26
+    const-wide/16 v4, 0x0
+
     .line 27
-    aget-byte v0, p2, v0
-
     .line 28
-    .line 29
-    if-nez v0, :cond_0
+    invoke-static/range {v4 .. v9}, Lab;->a(JJLjava/util/ArrayList;Ljava/util/List;)Landroid/graphics/LinearGradient;
 
+    .line 29
     .line 30
     .line 31
-    const/4 p0, 0x0
+    move-result-object p0
 
     .line 32
-    aput-byte p0, p5, p0
+    return-object p0
+.end method
 
-    .line 33
-    .line 34
-    const/4 p1, 0x1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    .line 35
-    aput-byte p0, p5, p1
+    .line 1
+    if-eq p0, p1, :cond_1
 
-    .line 36
-    .line 37
-    const/4 p1, 0x2
+    .line 2
+    .line 3
+    instance-of v0, p1, Lq27;
 
-    .line 38
-    aput-byte p0, p5, p1
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
 
-    .line 39
-    .line 40
-    sget-object p0, Lg17;->c:[B
+    .line 6
+    .line 7
+    check-cast p1, Lq27;
 
-    .line 41
-    .line 42
-    aget-byte p1, p2, v1
+    .line 8
+    .line 9
+    iget-wide v0, p1, Lq27;->c:J
 
-    .line 43
-    .line 44
-    and-int/lit16 p1, p1, 0xff
+    .line 10
+    .line 11
+    sget p1, Ldv0;->i:I
 
-    .line 45
-    .line 46
-    aget-byte p0, p0, p1
+    .line 12
+    .line 13
+    iget-wide p0, p0, Lq27;->c:J
 
-    .line 47
-    .line 48
-    const/4 p1, 0x3
+    .line 14
+    .line 15
+    invoke-static {p0, p1, v0, v1}, Ls77;->a(JJ)Z
 
-    .line 49
-    aput-byte p0, p5, p1
-
-    .line 50
-    .line 51
-    iget p0, p3, Lus1;->c:I
-
-    .line 52
-    .line 53
-    const/4 p1, 0x4
-
-    .line 54
-    add-int/2addr p0, p1
-
-    .line 55
-    iput p0, p3, Lus1;->c:I
-
-    .line 56
-    .line 57
-    return p1
-
-    .line 58
-    :cond_0
-    move-object v0, p0
-
-    .line 59
-    move v1, p1
-
-    .line 60
-    move-object v2, p2
-
-    .line 61
-    move-object v3, p3
-
-    .line 62
-    move v4, p4
-
-    .line 63
-    move-object v5, p5
-
-    .line 64
-    invoke-super/range {v0 .. v5}, Lv37;->s(I[BLus1;I[B)I
-
-    .line 65
-    .line 66
-    .line 67
+    .line 16
+    .line 17
+    .line 18
     move-result p0
 
-    .line 68
+    .line 19
+    if-nez p0, :cond_1
+
+    .line 20
+    .line 21
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 24
     return p0
 .end method
 
-.method public final t(II[B)I
-    .locals 0
+.method public final hashCode()I
+    .locals 2
 
     .line 1
-    aget-byte p0, p3, p1
+    sget v0, Ldv0;->i:I
 
     .line 2
     .line 3
-    and-int/lit16 p0, p0, 0xff
+    iget-wide v0, p0, Lq27;->c:J
 
     .line 4
     .line 5
-    mul-int/lit16 p0, p0, 0x100
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     .line 6
     .line 7
-    add-int/lit8 p2, p1, 0x1
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lq27;->c:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ldv0;->h(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    const-string v0, "TopAppBarBandBrush(color="
 
     .line 8
     .line 9
-    aget-byte p2, p3, p2
+    const-string v1, ")"
 
     .line 10
     .line 11
-    and-int/lit16 p2, p2, 0xff
+    invoke-static {v0, p0, v1}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 12
     .line 13
-    add-int/2addr p0, p2
-
     .line 14
-    mul-int/lit16 p0, p0, 0x100
+    move-result-object p0
 
     .line 15
-    .line 16
-    add-int/lit8 p2, p1, 0x2
-
-    .line 17
-    .line 18
-    aget-byte p2, p3, p2
-
-    .line 19
-    .line 20
-    and-int/lit16 p2, p2, 0xff
-
-    .line 21
-    .line 22
-    add-int/2addr p0, p2
-
-    .line 23
-    mul-int/lit16 p0, p0, 0x100
-
-    .line 24
-    .line 25
-    add-int/lit8 p1, p1, 0x3
-
-    .line 26
-    .line 27
-    aget-byte p1, p3, p1
-
-    .line 28
-    .line 29
-    and-int/lit16 p1, p1, 0xff
-
-    .line 30
-    .line 31
-    add-int/2addr p0, p1
-
-    .line 32
-    return p0
+    return-object p0
 .end method

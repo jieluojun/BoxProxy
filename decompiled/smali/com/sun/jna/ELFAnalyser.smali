@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/ELFAnalyser;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -334,7 +334,7 @@
     move-result v1
 
     .line 20
-    if-ge v0, v1, :cond_3
+    if-ge v0, v1, :cond_2
 
     .line 21
     .line 22
@@ -354,70 +354,65 @@
     move-result v1
 
     .line 30
-    if-gtz v1, :cond_1
+    if-lez v1, :cond_2
 
     .line 31
     .line 32
-    goto :goto_1
-
-    .line 33
-    :cond_1
     const/4 v2, 0x0
 
-    .line 34
+    .line 33
     invoke-static {p0, v2}, Lcom/sun/jna/ELFAnalyser;->readNTBS(Ljava/nio/ByteBuffer;Ljava/lang/Integer;)Ljava/lang/String;
 
+    .line 34
     .line 35
     .line 36
-    .line 37
     move-result-object v2
 
-    .line 38
+    .line 37
     const-string v3, "aeabi"
 
+    .line 38
     .line 39
-    .line 40
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    .line 40
     .line 41
     .line 42
-    .line 43
     move-result v2
 
-    .line 44
-    if-eqz v2, :cond_2
+    .line 43
+    if-eqz v2, :cond_1
 
+    .line 44
     .line 45
-    .line 46
     invoke-static {p0}, Lcom/sun/jna/ELFAnalyser;->parseAEABI(Ljava/nio/ByteBuffer;)Ljava/util/Map;
 
+    .line 46
     .line 47
     .line 48
-    .line 49
     move-result-object p0
 
-    .line 50
+    .line 49
     return-object p0
 
-    .line 51
-    :cond_2
+    .line 50
+    :cond_1
     add-int/2addr v0, v1
 
-    .line 52
+    .line 51
     invoke-virtual {p0, v0}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
+    .line 52
     .line 53
     .line 54
-    .line 55
     goto :goto_0
 
-    .line 56
-    :cond_3
-    :goto_1
+    .line 55
+    :cond_2
     sget-object p0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
 
+    .line 56
     .line 57
-    .line 58
     return-object p0
 .end method
 
@@ -479,7 +474,7 @@
     move-result v2
 
     .line 27
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
     .line 28
     .line 29
@@ -610,93 +605,89 @@
 
     .line 91
     .line 92
-    if-nez v2, :cond_2
+    if-eqz v2, :cond_0
 
     .line 93
     .line 94
-    goto :goto_0
-
-    .line 95
-    :cond_2
     sget-object v3, Lcom/sun/jna/ELFAnalyser$ArmAeabiAttributesTag;->ABI_VFP_args:Lcom/sun/jna/ELFAnalyser$ArmAeabiAttributesTag;
 
+    .line 95
     .line 96
-    .line 97
     invoke-interface {v2, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 97
     .line 98
     .line 99
-    .line 100
     move-result-object v2
 
-    .line 101
+    .line 100
     instance-of v3, v2, Ljava/lang/Integer;
 
+    .line 101
     .line 102
-    .line 103
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
+    .line 103
     .line 104
-    .line 105
     move-object v3, v2
 
-    .line 106
+    .line 105
     check-cast v3, Ljava/lang/Integer;
 
+    .line 106
     .line 107
-    .line 108
     invoke-virtual {v3, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
 
+    .line 108
     .line 109
     .line 110
-    .line 111
     move-result v3
 
-    .line 112
-    if-eqz v3, :cond_3
+    .line 111
+    if-eqz v3, :cond_2
 
+    .line 112
     .line 113
-    .line 114
     iput-boolean v0, p0, Lcom/sun/jna/ELFAnalyser;->armEabiAapcsVfp:Z
 
+    .line 114
     .line 115
-    .line 116
     goto :goto_0
 
-    .line 117
-    :cond_3
+    .line 116
+    :cond_2
     instance-of v3, v2, Ljava/math/BigInteger;
 
+    .line 117
     .line 118
-    .line 119
     if-eqz v3, :cond_0
 
+    .line 119
     .line 120
-    .line 121
     check-cast v2, Ljava/math/BigInteger;
 
+    .line 121
     .line 122
-    .line 123
     invoke-virtual {v2}, Ljava/math/BigInteger;->intValue()I
 
+    .line 123
     .line 124
     .line 125
-    .line 126
     move-result v2
 
-    .line 127
+    .line 126
     if-ne v2, v0, :cond_0
 
+    .line 127
     .line 128
-    .line 129
     iput-boolean v0, p0, Lcom/sun/jna/ELFAnalyser;->armEabiAapcsVfp:Z
 
+    .line 129
     .line 130
-    .line 131
     goto :goto_0
 
-    .line 132
-    :cond_4
+    .line 131
+    :cond_3
     return-void
 .end method
 
@@ -724,6 +715,7 @@
     .line 4
     .line 5
     .line 6
+    :cond_0
     :goto_0
     invoke-virtual {p0}, Ljava/nio/Buffer;->position()I
 
@@ -799,75 +791,71 @@
     const/4 v3, 0x2
 
     .line 42
-    if-eq v2, v3, :cond_0
+    if-ne v2, v3, :cond_0
 
     .line 43
     .line 44
-    goto :goto_0
-
-    .line 45
-    :cond_0
     invoke-static {p0}, Lcom/sun/jna/ELFAnalyser;->readULEB128(Ljava/nio/ByteBuffer;)Ljava/math/BigInteger;
 
+    .line 45
     .line 46
     .line 47
-    .line 48
     move-result-object v2
 
-    .line 49
+    .line 48
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 49
     .line 50
     .line 51
-    .line 52
     goto :goto_0
 
-    .line 53
+    .line 52
     :cond_1
     const/4 v2, 0x0
 
-    .line 54
+    .line 53
     invoke-static {p0, v2}, Lcom/sun/jna/ELFAnalyser;->readNTBS(Ljava/nio/ByteBuffer;Ljava/lang/Integer;)Ljava/lang/String;
 
+    .line 54
     .line 55
     .line 56
-    .line 57
     move-result-object v2
 
-    .line 58
+    .line 57
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 58
     .line 59
     .line 60
-    .line 61
     goto :goto_0
 
-    .line 62
+    .line 61
     :cond_2
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
+    .line 62
     .line 63
     .line 64
-    .line 65
     move-result v2
 
-    .line 66
+    .line 65
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    .line 66
     .line 67
     .line 68
-    .line 69
     move-result-object v2
 
-    .line 70
+    .line 69
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 70
     .line 71
     .line 72
-    .line 73
     goto :goto_0
 
-    .line 74
+    .line 73
     :cond_3
     return-object v0
 .end method
@@ -1173,319 +1161,316 @@
 
     .line 41
     .line 42
-    goto :goto_0
-
-    .line 43
-    :catchall_0
-    move-exception p0
-
-    .line 44
-    goto/16 :goto_a
-
-    .line 45
-    .line 46
     :cond_0
-    :goto_0
     iget-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->ELF:Z
-
-    .line 47
-    .line 48
-    if-nez v1, :cond_1
-
-    .line 49
-    .line 50
-    goto/16 :goto_9
-
-    .line 51
-    .line 52
-    :cond_1
-    invoke-virtual {v0, v3, v4}, Ljava/io/RandomAccessFile;->seek(J)V
-
-    .line 53
-    .line 54
-    .line 55
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->readByte()B
-
-    .line 56
-    .line 57
-    .line 58
-    move-result v1
-
-    .line 59
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->readByte()B
-
-    .line 60
-    .line 61
-    .line 62
-    move-result v3
-
-    .line 63
-    const/4 v4, 0x2
-
-    .line 64
-    const/4 v7, 0x0
-
-    .line 65
-    if-ne v1, v4, :cond_2
-
-    .line 66
-    .line 67
-    move v1, v2
-
-    .line 68
-    goto :goto_1
-
-    .line 69
-    :cond_2
-    move v1, v7
-
-    .line 70
-    :goto_1
-    iput-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->_64Bit:Z
-
-    .line 71
-    .line 72
-    if-ne v3, v4, :cond_3
-
-    .line 73
-    .line 74
-    move v1, v2
-
-    .line 75
-    goto :goto_2
-
-    .line 76
-    :cond_3
-    move v1, v7
-
-    .line 77
-    :goto_2
-    iput-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->bigEndian:Z
-
-    .line 78
-    .line 79
-    invoke-virtual {v0, v5, v6}, Ljava/io/RandomAccessFile;->seek(J)V
-
-    .line 80
-    .line 81
-    .line 82
-    iget-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->_64Bit:Z
-
-    .line 83
-    .line 84
-    if-eqz v1, :cond_4
-
-    .line 85
-    .line 86
-    const/16 v1, 0x40
-
-    .line 87
-    .line 88
-    goto :goto_3
-
-    .line 89
-    :cond_4
-    const/16 v1, 0x34
-
-    .line 90
-    .line 91
-    :goto_3
-    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    .line 92
-    .line 93
-    .line 94
-    move-result-object v1
-
-    .line 95
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v3
-
-    .line 99
-    invoke-virtual {v3, v1, v5, v6}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;J)I
-
-    .line 100
-    .line 101
-    .line 102
-    iget-boolean v3, p0, Lcom/sun/jna/ELFAnalyser;->bigEndian:Z
-
-    .line 103
-    .line 104
-    if-eqz v3, :cond_5
-
-    .line 105
-    .line 106
-    sget-object v3, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    .line 107
-    .line 108
-    goto :goto_4
-
-    .line 109
-    :cond_5
-    sget-object v3, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    .line 110
-    .line 111
-    :goto_4
-    invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    .line 112
-    .line 113
-    .line 114
-    const/16 v3, 0x12
-
-    .line 115
-    .line 116
-    invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->get(I)B
-
-    .line 117
-    .line 118
-    .line 119
-    move-result v3
-
-    .line 120
-    const/16 v4, 0x28
-
-    .line 121
-    .line 122
-    if-ne v3, v4, :cond_6
-
-    .line 123
-    .line 124
-    move v3, v2
-
-    .line 125
-    goto :goto_5
-
-    .line 126
-    :cond_6
-    move v3, v7
-
-    .line 127
-    :goto_5
-    iput-boolean v3, p0, Lcom/sun/jna/ELFAnalyser;->arm:Z
-
-    .line 128
-    .line 129
-    if-eqz v3, :cond_a
-
-    .line 130
-    .line 131
-    iget-boolean v3, p0, Lcom/sun/jna/ELFAnalyser;->_64Bit:Z
-
-    .line 132
-    .line 133
-    if-eqz v3, :cond_7
-
-    .line 134
-    .line 135
-    const/16 v3, 0x30
-
-    .line 136
-    .line 137
-    goto :goto_6
-
-    .line 138
-    :cond_7
-    const/16 v3, 0x24
-
-    .line 139
-    .line 140
-    :goto_6
-    invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->getInt(I)I
-
-    .line 141
-    .line 142
-    .line 143
-    move-result v3
-
-    .line 144
-    and-int/lit16 v4, v3, 0x400
-
-    .line 145
-    .line 146
-    const/16 v5, 0x400
-
-    .line 147
-    .line 148
-    if-ne v4, v5, :cond_8
-
-    .line 149
-    .line 150
-    move v4, v2
-
-    .line 151
-    goto :goto_7
-
-    .line 152
-    :cond_8
-    move v4, v7
-
-    .line 153
-    :goto_7
-    iput-boolean v4, p0, Lcom/sun/jna/ELFAnalyser;->armHardFloatFlag:Z
-
-    .line 154
-    .line 155
-    const/16 v4, 0x200
-
-    .line 156
-    .line 157
-    and-int/2addr v3, v4
-
-    .line 158
-    if-ne v3, v4, :cond_9
-
-    .line 159
-    .line 160
-    goto :goto_8
-
-    .line 161
-    :cond_9
-    move v2, v7
-
-    .line 162
-    :goto_8
-    iput-boolean v2, p0, Lcom/sun/jna/ELFAnalyser;->armSoftFloatFlag:Z
-
-    .line 163
-    .line 164
-    invoke-direct {p0, v1, v0}, Lcom/sun/jna/ELFAnalyser;->parseEabiAapcsVfp(Ljava/nio/ByteBuffer;Ljava/io/RandomAccessFile;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 165
-    .line 166
-    .line 167
-    :cond_a
-    :goto_9
+    .line 43
+    .line 44
+    if-nez v1, :cond_1
+
+    .line 45
+    .line 46
     :try_start_1
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 168
-    .line 169
-    .line 170
+    .line 47
+    .line 48
+    .line 49
     :catch_0
     return-void
 
-    .line 171
-    :goto_a
+    .line 50
+    :cond_1
     :try_start_2
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    invoke-virtual {v0, v3, v4}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 172
-    .line 173
-    .line 174
+    .line 51
+    .line 52
+    .line 53
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->readByte()B
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v1
+
+    .line 57
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->readByte()B
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v3
+
+    .line 61
+    const/4 v4, 0x2
+
+    .line 62
+    const/4 v7, 0x0
+
+    .line 63
+    if-ne v1, v4, :cond_2
+
+    .line 64
+    .line 65
+    move v1, v2
+
+    .line 66
+    goto :goto_0
+
+    .line 67
+    :cond_2
+    move v1, v7
+
+    .line 68
+    :goto_0
+    iput-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->_64Bit:Z
+
+    .line 69
+    .line 70
+    if-ne v3, v4, :cond_3
+
+    .line 71
+    .line 72
+    move v1, v2
+
+    .line 73
+    goto :goto_1
+
+    .line 74
+    :cond_3
+    move v1, v7
+
+    .line 75
+    :goto_1
+    iput-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->bigEndian:Z
+
+    .line 76
+    .line 77
+    invoke-virtual {v0, v5, v6}, Ljava/io/RandomAccessFile;->seek(J)V
+
+    .line 78
+    .line 79
+    .line 80
+    iget-boolean v1, p0, Lcom/sun/jna/ELFAnalyser;->_64Bit:Z
+
+    .line 81
+    .line 82
+    if-eqz v1, :cond_4
+
+    .line 83
+    .line 84
+    const/16 v1, 0x40
+
+    .line 85
+    .line 86
+    goto :goto_2
+
+    .line 87
+    :cond_4
+    const/16 v1, 0x34
+
+    .line 88
+    .line 89
+    :goto_2
+    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    .line 90
+    .line 91
+    .line 92
+    move-result-object v1
+
+    .line 93
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
+
+    .line 94
+    .line 95
+    .line 96
+    move-result-object v3
+
+    .line 97
+    invoke-virtual {v3, v1, v5, v6}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;J)I
+
+    .line 98
+    .line 99
+    .line 100
+    iget-boolean v3, p0, Lcom/sun/jna/ELFAnalyser;->bigEndian:Z
+
+    .line 101
+    .line 102
+    if-eqz v3, :cond_5
+
+    .line 103
+    .line 104
+    sget-object v3, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
+
+    .line 105
+    .line 106
+    goto :goto_3
+
+    .line 107
+    :cond_5
+    sget-object v3, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    .line 108
+    .line 109
+    :goto_3
+    invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    .line 110
+    .line 111
+    .line 112
+    const/16 v3, 0x12
+
+    .line 113
+    .line 114
+    invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->get(I)B
+
+    .line 115
+    .line 116
+    .line 117
+    move-result v3
+
+    .line 118
+    const/16 v4, 0x28
+
+    .line 119
+    .line 120
+    if-ne v3, v4, :cond_6
+
+    .line 121
+    .line 122
+    move v3, v2
+
+    .line 123
+    goto :goto_4
+
+    .line 124
+    :cond_6
+    move v3, v7
+
+    .line 125
+    :goto_4
+    iput-boolean v3, p0, Lcom/sun/jna/ELFAnalyser;->arm:Z
+
+    .line 126
+    .line 127
+    if-eqz v3, :cond_a
+
+    .line 128
+    .line 129
+    iget-boolean v3, p0, Lcom/sun/jna/ELFAnalyser;->_64Bit:Z
+
+    .line 130
+    .line 131
+    if-eqz v3, :cond_7
+
+    .line 132
+    .line 133
+    const/16 v3, 0x30
+
+    .line 134
+    .line 135
+    goto :goto_5
+
+    .line 136
+    :cond_7
+    const/16 v3, 0x24
+
+    .line 137
+    .line 138
+    :goto_5
+    invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->getInt(I)I
+
+    .line 139
+    .line 140
+    .line 141
+    move-result v3
+
+    .line 142
+    and-int/lit16 v4, v3, 0x400
+
+    .line 143
+    .line 144
+    const/16 v5, 0x400
+
+    .line 145
+    .line 146
+    if-ne v4, v5, :cond_8
+
+    .line 147
+    .line 148
+    move v4, v2
+
+    .line 149
+    goto :goto_6
+
+    .line 150
+    :cond_8
+    move v4, v7
+
+    .line 151
+    :goto_6
+    iput-boolean v4, p0, Lcom/sun/jna/ELFAnalyser;->armHardFloatFlag:Z
+
+    .line 152
+    .line 153
+    const/16 v4, 0x200
+
+    .line 154
+    .line 155
+    and-int/2addr v3, v4
+
+    .line 156
+    if-eq v3, v4, :cond_9
+
+    .line 157
+    .line 158
+    move v2, v7
+
+    .line 159
+    :cond_9
+    iput-boolean v2, p0, Lcom/sun/jna/ELFAnalyser;->armSoftFloatFlag:Z
+
+    .line 160
+    .line 161
+    invoke-direct {p0, v1, v0}, Lcom/sun/jna/ELFAnalyser;->parseEabiAapcsVfp(Ljava/nio/ByteBuffer;Ljava/io/RandomAccessFile;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 162
+    .line 163
+    .line 164
+    :cond_a
+    :try_start_3
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+
+    .line 165
+    .line 166
+    .line 167
     :catch_1
+    return-void
+
+    .line 168
+    :catchall_0
+    move-exception p0
+
+    .line 169
+    :try_start_4
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+
+    .line 170
+    .line 171
+    .line 172
+    :catch_2
     throw p0
 .end method
 
@@ -1547,7 +1532,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -1559,25 +1544,20 @@
     move-result p0
 
     .line 11
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_0
-
-    .line 14
-    :cond_0
     const/4 p0, 0x0
 
-    .line 15
+    .line 14
     return p0
 
-    .line 16
-    :cond_1
-    :goto_0
+    .line 15
+    :cond_0
     const/4 p0, 0x1
 
-    .line 17
+    .line 16
     return p0
 .end method
 

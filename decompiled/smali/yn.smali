@@ -1,72 +1,135 @@
-.class public final Lyn;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lyn;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lc12;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final synthetic a:B
 
-.field public final synthetic k:Lzn;
-
-.field public l:I
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lzn;Lz81;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lyn;->k:Lzn;
+    iput-byte p2, p0, Lyn;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    iput-object p1, p0, Lyn;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()F
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lyn;->j:Ljava/lang/Object;
+    iget-byte v0, p0, Lyn;->a:B
 
     .line 2
     .line 3
-    iget p1, p0, Lyn;->l:I
+    const/4 v1, 0x0
 
     .line 4
+    iget-object p0, p0, Lyn;->b:Ljava/lang/Object;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    packed-switch v0, :pswitch_data_0
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lyn;->l:I
-
     .line 9
+    check-cast p0, Lgh6;
+
     .line 10
-    iget-object p1, p0, Lyn;->k:Lzn;
-
     .line 11
+    invoke-interface {p0}, Lgh6;->getValue()Ljava/lang/Object;
+
     .line 12
-    const/4 v0, 0x0
-
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lzn;->s(Landroid/content/Context;Lgn;Lz81;)Ljava/lang/Object;
-
     .line 14
-    .line 15
-    .line 16
     move-result-object p0
 
+    .line 15
+    check-cast p0, Ltm1;
+
+    .line 16
     .line 17
-    return-object p0
+    iget p0, p0, Ltm1;->i:F
+
+    .line 18
+    .line 19
+    invoke-static {p0, v1}, Ltm1;->a(FF)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    if-lez p0, :cond_0
+
+    .line 24
+    .line 25
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    .line 26
+    .line 27
+    :cond_0
+    return v1
+
+    .line 28
+    :pswitch_0
+    check-cast p0, Lqy1;
+
+    .line 29
+    .line 30
+    if-eqz p0, :cond_1
+
+    .line 31
+    .line 32
+    iget-object p0, p0, Lqy1;->a:Li37;
+
+    .line 33
+    .line 34
+    if-eqz p0, :cond_1
+
+    .line 35
+    .line 36
+    iget-object p0, p0, Li37;->c:Lts4;
+
+    .line 37
+    .line 38
+    invoke-virtual {p0}, Lts4;->g()F
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v1
+
+    .line 42
+    :cond_1
+    return v1
+
+    .line 43
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

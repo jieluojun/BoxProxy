@@ -1,169 +1,117 @@
-.class public final Luf2;
+.class public final synthetic Luf2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lp72;
 
 
 # instance fields
-.field public final a:Lac1;
+.field public final synthetic i:B
 
-.field public final b:Li91;
+.field public final synthetic j:Lh04;
 
-.field public c:Z
-
-.field public d:Z
-
-.field public e:Lcb6;
+.field public final synthetic k:Lhz3;
 
 
 # direct methods
-.method public constructor <init>(Lac1;Li91;)V
+.method public synthetic constructor <init>(Lh04;Lhz3;B)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-byte p3, p0, Luf2;->i:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Luf2;->j:Lh04;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Luf2;->k:Lhz3;
+
     .line 6
     .line 7
-    iput-object p1, p0, Luf2;->a:Lac1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    iput-object p2, p0, Luf2;->b:Li91;
-
     .line 10
-    .line 11
-    const/4 p1, 0x1
-
-    .line 12
-    iput-boolean p1, p0, Luf2;->d:Z
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 4
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    monitor-enter p0
+    iget-byte v0, p0, Luf2;->i:B
 
     .line 2
-    :try_start_0
-    iget-object v0, p0, Luf2;->e:Lcb6;
-
     .line 3
-    .line 4
-    const/4 v1, 0x0
+    check-cast p1, Lsl1;
 
+    .line 4
     .line 5
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    invoke-virtual {v0, v1}, Lov2;->c(Ljava/util/concurrent/CancellationException;)V
-
     .line 8
+    new-instance p1, Lwf2;
+
     .line 9
     .line 10
-    goto :goto_0
+    const/4 v0, 0x1
 
     .line 11
-    :catchall_0
-    move-exception v0
+    iget-object v1, p0, Luf2;->j:Lh04;
 
     .line 12
-    goto :goto_2
-
     .line 13
-    :cond_0
-    :goto_0
-    iput-object v1, p0, Luf2;->e:Lcb6;
+    iget-object p0, p0, Luf2;->k:Lhz3;
 
     .line 14
     .line 15
-    iget-boolean v0, p0, Luf2;->c:Z
+    invoke-direct {p1, v1, p0, v0}, Lwf2;-><init>(Lh04;Lhz3;B)V
 
     .line 16
     .line 17
-    if-eqz v0, :cond_2
-
     .line 18
+    return-object p1
+
     .line 19
-    iget-boolean v0, p0, Luf2;->d:Z
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 20
     .line 21
-    if-nez v0, :cond_1
-
     .line 22
-    .line 23
-    goto :goto_1
+    new-instance p1, Lwf2;
 
+    .line 23
     .line 24
-    :cond_1
-    iget-object v0, p0, Luf2;->a:Lac1;
+    const/4 v0, 0x0
 
     .line 25
+    iget-object v1, p0, Luf2;->j:Lh04;
+
     .line 26
-    new-instance v2, Le9;
-
     .line 27
+    iget-object p0, p0, Luf2;->k:Lhz3;
+
     .line 28
-    const/16 v3, 0xc
-
     .line 29
-    .line 30
-    invoke-direct {v2, p0, v1, v3}, Le9;-><init>(Ljava/lang/Object;Ly81;B)V
+    invoke-direct {p1, v1, p0, v0}, Lwf2;-><init>(Lh04;Lhz3;B)V
 
+    .line 30
     .line 31
     .line 32
+    return-object p1
+
     .line 33
-    const/4 v3, 0x3
-
-    .line 34
-    invoke-static {v0, v1, v1, v2, v3}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v0
-
-    .line 38
-    iput-object v0, p0, Luf2;->e:Lcb6;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 39
-    .line 40
-    monitor-exit p0
-
-    .line 41
-    return-void
-
-    .line 42
-    :cond_2
-    :goto_1
-    monitor-exit p0
-
-    .line 43
-    return-void
-
-    .line 44
-    :goto_2
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 45
-    throw v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

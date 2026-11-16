@@ -1,69 +1,221 @@
-.class public abstract Lzp2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lzp2;
+.super Lex;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public final synthetic n:Laq2;
 
 
 # direct methods
-.method public static final a(Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Laq2;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iput-object p1, p0, Lzp2;->n:Laq2;
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Lex;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final k()V
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lzp2;->n:Laq2;
+
+    .line 2
+    .line 3
+    sget-object v1, Lyw1;->p:Lyw1;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, v1}, Laq2;->g(Lyw1;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lzp2;->n:Laq2;
+
+    .line 9
+    .line 10
+    iget-object p0, p0, Laq2;->j:Ltp2;
+
+    .line 11
+    .line 12
+    monitor-enter p0
+
+    .line 13
+    :try_start_0
+    iget-wide v0, p0, Ltp2;->w:J
+
+    .line 14
+    .line 15
+    iget-wide v2, p0, Ltp2;->v:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 16
+    .line 17
+    cmp-long v0, v0, v2
+
+    .line 18
+    .line 19
+    if-gez v0, :cond_0
+
+    .line 20
+    .line 21
+    monitor-exit p0
+
+    .line 22
+    return-void
+
+    .line 23
+    :cond_0
+    const-wide/16 v0, 0x1
+
+    .line 24
+    .line 25
+    add-long/2addr v2, v0
+
+    .line 26
+    :try_start_1
+    iput-wide v2, p0, Ltp2;->v:J
+
+    .line 27
+    .line 28
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-wide v0
+
+    .line 32
+    const-wide/32 v2, 0x3b9aca00
+
+    .line 33
+    .line 34
+    .line 35
+    add-long/2addr v0, v2
+
+    .line 36
+    iput-wide v0, p0, Ltp2;->x:J
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 37
+    .line 38
+    monitor-exit p0
+
+    .line 39
+    iget-object v2, p0, Ltp2;->p:Lup6;
+
+    .line 40
+    .line 41
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 42
+    .line 43
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 44
+    .line 45
+    .line 46
+    iget-object v1, p0, Ltp2;->k:Ljava/lang/String;
+
+    .line 47
+    .line 48
+    const-string v3, " ping"
+
+    .line 49
+    .line 50
+    invoke-static {v0, v1, v3}, Lrf6;->q(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object v3
+
+    .line 54
+    new-instance v6, Led;
+
+    .line 55
+    .line 56
+    const/16 v0, 0x1d
+
+    .line 57
+    .line 58
+    invoke-direct {v6, p0, v0}, Led;-><init>(Ljava/lang/Object;B)V
+
+    .line 59
+    .line 60
+    .line 61
+    const/4 v7, 0x6
+
+    .line 62
+    const-wide/16 v4, 0x0
+
+    .line 63
+    .line 64
+    invoke-static/range {v2 .. v7}, Lup6;->c(Lup6;Ljava/lang/String;JLe72;I)V
+
+    .line 65
+    .line 66
+    .line 67
+    return-void
+
+    .line 68
+    :catchall_0
+    move-exception v0
+
+    .line 69
+    monitor-exit p0
+
+    .line 70
     throw v0
 .end method
 
-.method public static final b(Ljava/lang/String;)V
+.method public final l()V
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    invoke-virtual {p0}, Lex;->j()Z
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
     .line 4
+    move-result p0
+
     .line 5
+    if-nez p0, :cond_0
+
     .line 6
-    throw v0
-.end method
+    .line 7
+    return-void
 
-.method public static final c(Ljava/lang/String;)Ljava/lang/Void;
-    .locals 1
+    .line 8
+    :cond_0
+    new-instance p0, Ljava/net/SocketTimeoutException;
 
-    .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 9
+    .line 10
+    const-string v0, "timeout"
 
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 11
+    .line 12
+    invoke-direct {p0, v0}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
 
-    .line 4
-    .line 5
-    .line 6
-    throw v0
-.end method
-
-.method public static final d(Ljava/lang/String;)V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    .line 4
-    .line 5
-    .line 6
-    throw v0
+    .line 13
+    .line 14
+    .line 15
+    throw p0
 .end method

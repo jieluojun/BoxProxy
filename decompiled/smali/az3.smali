@@ -1,84 +1,176 @@
 .class public final Laz3;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final b:Laz3;
 
 
 # instance fields
-.field public j:J
-
-.field public k:J
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Lcz3;
-
-.field public n:I
+.field public final a:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>(Lcz3;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Laz3;->m:Lcz3;
+    new-instance v0, Laz3;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {v0}, Laz3;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    sput-object v0, Laz3;->b:Laz3;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    .line 15
+    sget-object v0, Ljv1;->i:Ljv1;
+
+    invoke-direct {p0, v0}, Laz3;-><init>(Ljava/util/Map;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/Map;)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    .line 8
+    .line 9
+    invoke-direct {v0, p1}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
+
+    .line 10
+    .line 11
+    .line 12
+    iput-object v0, p0, Laz3;->a:Ljava/util/LinkedHashMap;
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final a(Lb91;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Laz3;->l:Ljava/lang/Object;
+    iget-object p0, p0, Laz3;->a:Ljava/util/LinkedHashMap;
 
     .line 2
     .line 3
-    iget p1, p0, Laz3;->n:I
+    invoke-virtual {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    .line 6
+    move-result-object p0
+
+    .line 7
+    if-nez p0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    :cond_0
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    if-eq p0, p1, :cond_1
+
+    .line 2
+    .line 3
+    instance-of v0, p1, Laz3;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    check-cast p1, Laz3;
 
     .line 8
-    iput p1, p0, Laz3;->n:I
-
     .line 9
+    iget-object p1, p1, Laz3;->a:Ljava/util/LinkedHashMap;
+
     .line 10
-    const-wide/16 v1, 0x0
-
     .line 11
+    iget-object p0, p0, Laz3;->a:Ljava/util/LinkedHashMap;
+
     .line 12
-    const-wide/16 v3, 0x0
-
     .line 13
-    .line 14
-    iget-object v0, p0, Laz3;->m:Lcz3;
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 14
     .line 15
     .line 16
-    move-object v5, p0
+    move-result p0
 
     .line 17
-    invoke-virtual/range {v0 .. v5}, Lcz3;->P0(JJLy81;)Ljava/lang/Object;
+    if-nez p0, :cond_1
 
     .line 18
     .line 19
+    :cond_0
+    const/4 p0, 0x0
+
     .line 20
-    move-result-object p0
+    return p0
 
     .line 21
-    return-object p0
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 22
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Laz3;->a:Ljava/util/LinkedHashMap;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

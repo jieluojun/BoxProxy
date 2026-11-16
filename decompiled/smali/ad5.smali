@@ -1,62 +1,56 @@
 .class public abstract Lad5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+.field public static final a:[I
 
-.field public static final b:Ljava/util/WeakHashMap;
-
-.field public static final c:Ljava/lang/Object;
+.field public static final b:[I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    const v0, 0x1010003
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
-
     .line 4
+    const v1, 0x10100d0
+
     .line 5
     .line 6
-    sput-object v0, Lad5;->a:Ljava/lang/ThreadLocal;
-
     .line 7
-    .line 8
-    new-instance v0, Ljava/util/WeakHashMap;
+    const v2, 0x10100d1
 
+    .line 8
     .line 9
     .line 10
-    const/4 v1, 0x0
+    filled-new-array {v0, v1, v2}, [I
 
     .line 11
-    invoke-direct {v0, v1}, Ljava/util/WeakHashMap;-><init>(I)V
-
     .line 12
     .line 13
+    move-result-object v1
+
     .line 14
-    sput-object v0, Lad5;->b:Ljava/util/WeakHashMap;
+    sput-object v1, Lad5;->a:[I
 
     .line 15
     .line 16
-    new-instance v0, Ljava/lang/Object;
+    filled-new-array {v0, v2}, [I
 
     .line 17
     .line 18
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 19
-    .line 20
-    .line 21
-    sput-object v0, Lad5;->c:Ljava/lang/Object;
+    move-result-object v0
 
+    .line 20
+    sput-object v0, Lad5;->b:[I
+
+    .line 21
     .line 22
-    .line 23
     return-void
 .end method

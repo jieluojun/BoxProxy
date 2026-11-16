@@ -1,61 +1,140 @@
-.class public final Lzc1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lzc1;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Z
+# static fields
+.field public static final enum i:Lzc1;
 
-.field public final b:Ljava/util/concurrent/atomic/AtomicReference;
+.field public static final enum j:Lzc1;
 
-.field public final c:Lqm4;
+.field public static final enum k:Lzc1;
+
+.field public static final synthetic l:[Lzc1;
 
 
 # direct methods
-.method public constructor <init>(Z)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzc1;
 
     .line 2
     .line 3
-    .line 4
-    iput-boolean p1, p0, Lzc1;->a:Z
+    const-string v1, "CROSSED"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    const/4 v0, 0x0
-
     .line 9
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    sput-object v0, Lzc1;->i:Lzc1;
 
     .line 10
     .line 11
+    new-instance v1, Lzc1;
+
     .line 12
-    iput-object p1, p0, Lzc1;->b:Ljava/util/concurrent/atomic/AtomicReference;
-
     .line 13
-    .line 14
-    new-instance p1, Lqm4;
+    const-string v2, "NOT_CROSSED"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    const/4 v0, 0x0
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    invoke-direct {p1, v0}, Lqm4;-><init>(F)V
-
     .line 18
     .line 19
-    .line 20
-    iput-object p1, p0, Lzc1;->c:Lqm4;
+    sput-object v1, Lzc1;->j:Lzc1;
 
+    .line 20
     .line 21
+    new-instance v2, Lzc1;
+
     .line 22
+    .line 23
+    const-string v3, "COLLAPSED"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lzc1;->k:Lzc1;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Lzc1;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Lzc1;->l:[Lzc1;
+
+    .line 36
+    .line 37
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lzc1;
+    .locals 1
+
+    .line 1
+    const-class v0, Lzc1;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lzc1;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lzc1;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lzc1;->l:[Lzc1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lzc1;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

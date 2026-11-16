@@ -1,52 +1,59 @@
 .class public final Lk26;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lb55;
+# instance fields
+.field public i:Lfn6;
 
-.field public static final b:Lb55;
+.field public j:Llr6;
+
+.field public k:Luf5;
+
+.field public l:J
+
+.field public synthetic m:Ljava/lang/Object;
+
+.field public n:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    new-instance v0, Lb55;
+    iput-object p1, p0, Lk26;->m:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const/16 v1, 0x14
+    iget p1, p0, Lk26;->n:I
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lb55;-><init>(B)V
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    sput-object v0, Lk26;->a:Lb55;
+    iput p1, p0, Lk26;->n:I
 
     .line 9
     .line 10
-    new-instance v0, Lb55;
+    const/4 p1, 0x0
 
     .line 11
+    const/4 v0, 0x0
+
     .line 12
-    const/16 v1, 0x15
+    invoke-static {p1, p1, p1, v0, p0}, Lga3;->R(Lfn6;Llr6;Lxw4;ILrz;)Ljava/lang/Object;
 
     .line 13
     .line 14
-    invoke-direct {v0, v1}, Lb55;-><init>(B)V
-
     .line 15
-    .line 16
-    .line 17
-    sput-object v0, Lk26;->b:Lb55;
+    move-result-object p0
 
-    .line 18
-    .line 19
-    return-void
+    .line 16
+    return-object p0
 .end method

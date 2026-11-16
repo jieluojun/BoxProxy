@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/NativeMappedConverter;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/sun/jna/TypeConverter;
@@ -132,7 +132,7 @@
 
     .line 28
     .line 29
-    invoke-static {p0, v0}, Loc1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lky1;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     .line 30
     .line 31
@@ -140,7 +140,7 @@
     move-result-object p0
 
     .line 33
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 34
     .line 35
@@ -202,59 +202,59 @@
     goto :goto_0
 
     .line 19
-    :catchall_0
-    move-exception p0
-
-    .line 20
-    goto :goto_1
-
-    .line 21
     :cond_0
     const/4 v1, 0x0
 
-    .line 22
+    .line 20
     :goto_0
     if-nez v1, :cond_1
 
+    .line 21
+    .line 22
+    new-instance v1, Lcom/sun/jna/NativeMappedConverter;
+
     .line 23
     .line 24
-    new-instance v1, Lcom/sun/jna/NativeMappedConverter;
+    invoke-direct {v1, p0}, Lcom/sun/jna/NativeMappedConverter;-><init>(Ljava/lang/Class;)V
 
     .line 25
     .line 26
-    invoke-direct {v1, p0}, Lcom/sun/jna/NativeMappedConverter;-><init>(Ljava/lang/Class;)V
-
     .line 27
+    new-instance v2, Ljava/lang/ref/SoftReference;
+
     .line 28
     .line 29
-    new-instance v2, Ljava/lang/ref/SoftReference;
+    invoke-direct {v2, v1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
 
     .line 30
     .line 31
-    invoke-direct {v2, v1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
-
     .line 32
-    .line 33
-    .line 34
     invoke-interface {v0, p0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 33
+    .line 34
     .line 35
-    .line 36
-    .line 37
     :cond_1
     monitor-exit v0
 
-    .line 38
+    .line 36
     return-object v1
 
-    .line 39
+    .line 37
     :goto_1
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 40
+    .line 38
     throw p0
+
+    .line 39
+    :catchall_0
+    move-exception p0
+
+    .line 40
+    goto :goto_1
 .end method
 
 

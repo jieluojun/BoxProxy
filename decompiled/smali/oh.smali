@@ -1,31 +1,83 @@
 .class public final Loh;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lc43;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# instance fields
-.field public final a:Ljava/lang/Float;
-
-.field public final b:Lsh;
+# static fields
+.field public static final j:Loh;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Float;Lsh;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Loh;
 
     .line 2
     .line 3
+    const/4 v1, 0x2
+
     .line 4
-    iput-object p1, p0, Loh;->a:Ljava/lang/Float;
+    invoke-direct {v0, v1}, Lc43;-><init>(I)V
 
     .line 5
     .line 6
-    iput-object p2, p0, Loh;->b:Lsh;
-
     .line 7
+    sput-object v0, Loh;->j:Loh;
+
     .line 8
+    .line 9
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Lcw1;
+
+    .line 2
+    .line 3
+    check-cast p2, Lcw1;
+
+    .line 4
+    .line 5
+    if-ne p1, p2, :cond_0
+
+    .line 6
+    .line 7
+    sget-object p0, Lcw1;->k:Lcw1;
+
+    .line 8
+    .line 9
+    if-ne p2, p0, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p0, 0x1
+
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 14
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    return-object p0
 .end method

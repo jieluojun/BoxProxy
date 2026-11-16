@@ -1,1567 +1,2340 @@
 .class public final Lpv0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final A:J
+# static fields
+.field public static final a:[F
 
-.field public final B:J
+.field public static final b:[F
 
-.field public final C:J
+.field public static final c:Lb47;
 
-.field public final D:J
+.field public static final d:Lb47;
 
-.field public final E:J
+.field public static final e:Lgj5;
 
-.field public final F:J
+.field public static final f:Lgj5;
 
-.field public final G:J
+.field public static final g:Lgj5;
 
-.field public final H:J
+.field public static final h:Lgj5;
 
-.field public final I:J
+.field public static final i:Lgj5;
 
-.field public final J:J
+.field public static final j:Lgj5;
 
-.field public final K:J
+.field public static final k:Lgj5;
 
-.field public final L:J
+.field public static final l:Lgj5;
 
-.field public final M:J
+.field public static final m:Lgj5;
 
-.field public final N:J
+.field public static final n:Lgj5;
 
-.field public final O:J
+.field public static final o:Lgj5;
 
-.field public final P:J
+.field public static final p:Lgj5;
 
-.field public final Q:J
+.field public static final q:Lgj5;
 
-.field public final R:J
+.field public static final r:Lgj5;
 
-.field public final S:J
+.field public static final s:La43;
 
-.field public final T:J
+.field public static final t:La43;
 
-.field public final U:J
+.field public static final u:Lgj5;
 
-.field public final V:J
+.field public static final v:Lgj5;
 
-.field public W:Ldf0;
+.field public static final w:Lgj5;
 
-.field public X:Ldf0;
+.field public static final x:Lxh4;
 
-.field public Y:Lej0;
-
-.field public Z:Lej0;
-
-.field public final a:J
-
-.field public a0:Lyw6;
-
-.field public final b:J
-
-.field public b0:Lio0;
-
-.field public final c:J
-
-.field public c0:Lqm2;
-
-.field public final d:J
-
-.field public d0:Lqm2;
-
-.field public final e:J
-
-.field public e0:Lca3;
-
-.field public final f:J
-
-.field public f0:Lok3;
-
-.field public final g:J
-
-.field public g0:Lrv5;
-
-.field public final h:J
-
-.field public h0:Lyw3;
-
-.field public final i:J
-
-.field public i0:Ljb7;
-
-.field public final j:J
-
-.field public j0:Lzx3;
-
-.field public final k:J
-
-.field public k0:Lv75;
-
-.field public final l:J
-
-.field public l0:Lfv5;
-
-.field public final m:J
-
-.field public m0:Li66;
-
-.field public final n:J
-
-.field public n0:Lpm6;
-
-.field public final o:J
-
-.field public final p:J
-
-.field public final q:J
-
-.field public final r:J
-
-.field public final s:J
-
-.field public final t:J
-
-.field public final u:J
-
-.field public final v:J
-
-.field public final w:J
-
-.field public final x:J
-
-.field public final y:J
-
-.field public final z:J
+.field public static final y:[Lnv0;
 
 
 # direct methods
-.method public constructor <init>(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 52
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x6
 
     .line 2
-    iput-wide p1, p0, Lpv0;->a:J
+    new-array v3, v0, [F
 
     .line 3
-    iput-wide p3, p0, Lpv0;->b:J
-
     .line 4
-    iput-wide p5, p0, Lpv0;->c:J
+    fill-array-data v3, :array_0
 
     .line 5
-    iput-wide p7, p0, Lpv0;->d:J
-
     .line 6
-    iput-wide p9, p0, Lpv0;->e:J
-
     .line 7
-    iput-wide p11, p0, Lpv0;->f:J
+    sput-object v3, Lpv0;->a:[F
 
     .line 8
-    iput-wide p13, p0, Lpv0;->g:J
-
-    move-wide p1, p15
-
     .line 9
-    iput-wide p1, p0, Lpv0;->h:J
-
-    move-wide/from16 p1, p17
+    new-array v12, v0, [F
 
     .line 10
-    iput-wide p1, p0, Lpv0;->i:J
-
-    move-wide/from16 p1, p19
-
     .line 11
-    iput-wide p1, p0, Lpv0;->j:J
-
-    move-wide/from16 p1, p21
+    fill-array-data v12, :array_1
 
     .line 12
-    iput-wide p1, p0, Lpv0;->k:J
-
-    move-wide/from16 p1, p23
-
     .line 13
-    iput-wide p1, p0, Lpv0;->l:J
-
-    move-wide/from16 p1, p25
-
     .line 14
-    iput-wide p1, p0, Lpv0;->m:J
-
-    move-wide/from16 p1, p27
+    sput-object v12, Lpv0;->b:[F
 
     .line 15
-    iput-wide p1, p0, Lpv0;->n:J
-
-    move-wide/from16 p1, p29
-
     .line 16
-    iput-wide p1, p0, Lpv0;->o:J
-
-    move-wide/from16 p1, p31
+    new-array v15, v0, [F
 
     .line 17
-    iput-wide p1, p0, Lpv0;->p:J
-
-    move-wide/from16 p1, p33
-
     .line 18
-    iput-wide p1, p0, Lpv0;->q:J
-
-    move-wide/from16 p1, p35
+    fill-array-data v15, :array_2
 
     .line 19
-    iput-wide p1, p0, Lpv0;->r:J
-
-    move-wide/from16 p1, p37
-
     .line 20
-    iput-wide p1, p0, Lpv0;->s:J
-
-    move-wide/from16 p1, p39
-
     .line 21
-    iput-wide p1, p0, Lpv0;->t:J
-
-    move-wide/from16 p1, p41
+    new-instance v16, Lb47;
 
     .line 22
-    iput-wide p1, p0, Lpv0;->u:J
-
-    move-wide/from16 p1, p43
-
     .line 23
-    iput-wide p1, p0, Lpv0;->v:J
-
-    move-wide/from16 p1, p45
+    const-wide v23, 0x3fb3d0722149b580L    # 0.07739938080495357
 
     .line 24
-    iput-wide p1, p0, Lpv0;->w:J
-
-    move-wide/from16 p1, p47
-
     .line 25
-    iput-wide p1, p0, Lpv0;->x:J
-
-    move-wide/from16 p1, p49
-
     .line 26
-    iput-wide p1, p0, Lpv0;->y:J
-
-    move-wide/from16 p1, p51
-
     .line 27
-    iput-wide p1, p0, Lpv0;->z:J
-
-    move-wide/from16 p1, p53
-
     .line 28
-    iput-wide p1, p0, Lpv0;->A:J
-
-    move-wide/from16 p1, p55
+    const-wide v25, 0x3fa4b5dcc63f1412L    # 0.04045
 
     .line 29
-    iput-wide p1, p0, Lpv0;->B:J
-
-    move-wide/from16 p1, p57
-
     .line 30
-    iput-wide p1, p0, Lpv0;->C:J
-
-    move-wide/from16 p1, p59
-
     .line 31
-    iput-wide p1, p0, Lpv0;->D:J
-
-    move-wide/from16 p1, p61
-
     .line 32
-    iput-wide p1, p0, Lpv0;->E:J
-
-    move-wide/from16 p1, p63
-
     .line 33
-    iput-wide p1, p0, Lpv0;->F:J
-
-    move-wide/from16 p1, p65
+    const-wide v17, 0x4003333333333333L    # 2.4
 
     .line 34
-    iput-wide p1, p0, Lpv0;->G:J
-
-    move-wide/from16 p1, p67
-
     .line 35
-    iput-wide p1, p0, Lpv0;->H:J
-
-    move-wide/from16 p1, p69
-
     .line 36
-    iput-wide p1, p0, Lpv0;->I:J
-
-    move-wide/from16 p1, p71
-
     .line 37
-    iput-wide p1, p0, Lpv0;->J:J
-
-    move-wide/from16 p1, p73
-
     .line 38
-    iput-wide p1, p0, Lpv0;->K:J
-
-    move-wide/from16 p1, p75
+    const-wide v19, 0x3fee54edcd0aeb60L    # 0.9478672985781991
 
     .line 39
-    iput-wide p1, p0, Lpv0;->L:J
-
-    move-wide/from16 p1, p77
-
     .line 40
-    iput-wide p1, p0, Lpv0;->M:J
-
-    move-wide/from16 p1, p79
-
     .line 41
-    iput-wide p1, p0, Lpv0;->N:J
-
-    move-wide/from16 p1, p81
-
     .line 42
-    iput-wide p1, p0, Lpv0;->O:J
-
-    move-wide/from16 p1, p83
-
     .line 43
-    iput-wide p1, p0, Lpv0;->P:J
-
-    move-wide/from16 p1, p85
+    const-wide v21, 0x3faab1232f514a03L    # 0.05213270142180095
 
     .line 44
-    iput-wide p1, p0, Lpv0;->Q:J
-
-    move-wide/from16 p1, p87
-
     .line 45
-    iput-wide p1, p0, Lpv0;->R:J
-
-    move-wide/from16 p1, p89
-
     .line 46
-    iput-wide p1, p0, Lpv0;->S:J
-
-    move-wide/from16 p1, p91
-
     .line 47
-    iput-wide p1, p0, Lpv0;->T:J
-
-    move-wide/from16 p1, p93
-
     .line 48
-    iput-wide p1, p0, Lpv0;->U:J
-
-    move-wide/from16 p1, p95
+    invoke-direct/range {v16 .. v26}, Lb47;-><init>(DDDDD)V
 
     .line 49
-    iput-wide p1, p0, Lpv0;->V:J
+    .line 50
+    .line 51
+    new-instance v17, Lb47;
 
+    .line 52
+    .line 53
+    const-wide v24, 0x3fb3d0722149b580L    # 0.07739938080495357
+
+    .line 54
+    .line 55
+    .line 56
+    .line 57
+    .line 58
+    const-wide v26, 0x3fa4b5dcc63f1412L    # 0.04045
+
+    .line 59
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    const-wide v18, 0x400199999999999aL    # 2.2
+
+    .line 64
+    .line 65
+    .line 66
+    .line 67
+    .line 68
+    const-wide v20, 0x3fee54edcd0aeb60L    # 0.9478672985781991
+
+    .line 69
+    .line 70
+    .line 71
+    .line 72
+    .line 73
+    const-wide v22, 0x3faab1232f514a03L    # 0.05213270142180095
+
+    .line 74
+    .line 75
+    .line 76
+    .line 77
+    .line 78
+    invoke-direct/range {v17 .. v27}, Lb47;-><init>(DDDDD)V
+
+    .line 79
+    .line 80
+    .line 81
+    new-instance v18, Lb47;
+
+    .line 82
+    .line 83
+    const-wide v29, 0x3fe1eac9e840f18dL    # 0.55991073
+
+    .line 84
+    .line 85
+    .line 86
+    .line 87
+    .line 88
+    const-wide v31, -0x401a1076f23e9022L    # -0.685490157
+
+    .line 89
+    .line 90
+    .line 91
+    .line 92
+    .line 93
+    const-wide/high16 v19, -0x3ff8000000000000L    # -3.0
+
+    .line 94
+    .line 95
+    const-wide/high16 v21, 0x4000000000000000L    # 2.0
+
+    .line 96
+    .line 97
+    const-wide/high16 v23, 0x4000000000000000L    # 2.0
+
+    .line 98
+    .line 99
+    const-wide v25, 0x40165e05183e19b4L    # 5.591816309728916
+
+    .line 100
+    .line 101
+    .line 102
+    .line 103
+    .line 104
+    const-wide v27, 0x3fd23803fd659be6L    # 0.28466892
+
+    .line 105
+    .line 106
+    .line 107
+    .line 108
+    .line 109
+    invoke-direct/range {v18 .. v32}, Lb47;-><init>(DDDDDDD)V
+
+    .line 110
+    .line 111
+    .line 112
+    sput-object v18, Lpv0;->c:Lb47;
+
+    .line 113
+    .line 114
+    new-instance v19, Lb47;
+
+    .line 115
+    .line 116
+    const-wide v30, -0x3fcd500000000000L    # -18.6875
+
+    .line 117
+    .line 118
+    .line 119
+    .line 120
+    .line 121
+    const-wide v32, 0x40191c0d56e7162bL    # 6.277394636015326
+
+    .line 122
+    .line 123
+    .line 124
+    .line 125
+    .line 126
+    const-wide/high16 v20, -0x4000000000000000L    # -2.0
+
+    .line 127
+    .line 128
+    const-wide v22, -0x40071dce7cd03537L    # -1.555223
+
+    .line 129
+    .line 130
+    .line 131
+    .line 132
+    .line 133
+    const-wide v24, 0x3ffdc46b69db65edL    # 1.860454
+
+    .line 134
+    .line 135
+    .line 136
+    .line 137
+    .line 138
+    const-wide v26, 0x3f89f9b5860989b1L    # 0.012683313515655966
+
+    .line 139
+    .line 140
+    .line 141
+    .line 142
+    .line 143
+    const-wide v28, 0x4032da0000000000L    # 18.8515625
+
+    .line 144
+    .line 145
+    .line 146
+    .line 147
+    .line 148
+    invoke-direct/range {v19 .. v33}, Lb47;-><init>(DDDDDDD)V
+
+    .line 149
+    .line 150
+    .line 151
+    move-object/from16 v24, v19
+
+    .line 152
+    .line 153
+    sput-object v24, Lpv0;->d:Lb47;
+
+    .line 154
+    .line 155
+    new-instance v1, Lgj5;
+
+    .line 156
+    .line 157
+    sget-object v4, Lga7;->o0:Lmg7;
+
+    .line 158
+    .line 159
+    const/4 v6, 0x0
+
+    .line 160
+    const-string v2, "sRGB IEC61966-2.1"
+
+    .line 161
+    .line 162
+    move-object/from16 v5, v16
+
+    .line 163
+    .line 164
+    invoke-direct/range {v1 .. v6}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 165
+    .line 166
+    .line 167
+    move-object/from16 v34, v1
+
+    .line 168
+    .line 169
+    sput-object v34, Lpv0;->e:Lgj5;
+
+    .line 170
+    .line 171
+    new-instance v1, Lgj5;
+
+    .line 172
+    .line 173
+    const/high16 v8, 0x3f800000    # 1.0f
+
+    .line 174
+    .line 175
+    const/4 v9, 0x1
+
+    .line 176
+    const-string v2, "sRGB IEC61966-2.1 (Linear)"
+
+    .line 177
+    .line 178
+    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
+
+    .line 179
+    .line 180
+    const/4 v7, 0x0
+
+    .line 181
+    invoke-direct/range {v1 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;DFFI)V
+
+    .line 182
+    .line 183
+    .line 184
+    move-object/from16 v35, v1
+
+    .line 185
+    .line 186
+    sput-object v35, Lpv0;->f:Lgj5;
+
+    .line 187
+    .line 188
+    new-instance v1, Lgj5;
+
+    .line 189
+    .line 190
+    new-instance v6, Lex1;
+
+    .line 191
+    .line 192
+    const/16 v13, 0xd
+
+    .line 193
+    .line 194
+    invoke-direct {v6, v13}, Lex1;-><init>(B)V
+
+    .line 195
+    .line 196
+    .line 197
+    new-instance v7, Lex1;
+
+    .line 198
+    .line 199
+    const/16 v14, 0xe
+
+    .line 200
+    .line 201
+    invoke-direct {v7, v14}, Lex1;-><init>(B)V
+
+    .line 202
+    .line 203
+    .line 204
+    const v9, 0x40198937    # 2.399f
+
+    .line 205
+    .line 206
+    .line 207
+    const/4 v11, 0x2
+
+    .line 208
+    const-string v2, "scRGB-nl IEC 61966-2-2:2003"
+
+    .line 209
+    .line 210
+    const/4 v5, 0x0
+
+    .line 211
+    const v8, -0x40b374bc    # -0.799f
+
+    .line 212
+    .line 213
+    .line 214
+    move-object/from16 v10, v16
+
+    .line 215
+    .line 216
+    invoke-direct/range {v1 .. v11}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;[FLnm1;Lnm1;FFLb47;I)V
+
+    .line 217
+    .line 218
+    .line 219
+    move-object v10, v1
+
+    .line 220
+    sput-object v10, Lpv0;->g:Lgj5;
+
+    .line 221
+    .line 222
+    new-instance v1, Lgj5;
+
+    .line 223
+    .line 224
+    const v8, 0x40eff7cf    # 7.499f
+
+    .line 225
+    .line 226
+    .line 227
+    const/4 v9, 0x3
+
+    .line 228
+    const-string v2, "scRGB IEC 61966-2-2:2003"
+
+    .line 229
+    .line 230
+    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
+
+    .line 231
+    .line 232
+    const/high16 v7, -0x41000000    # -0.5f
+
+    .line 233
+    .line 234
+    invoke-direct/range {v1 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;DFFI)V
+
+    .line 235
+    .line 236
+    .line 237
+    move-object v11, v1
+
+    .line 238
+    sput-object v11, Lpv0;->h:Lgj5;
+
+    .line 239
+    .line 240
+    move-object v7, v4
+
+    .line 241
+    new-instance v4, Lgj5;
+
+    .line 242
+    .line 243
+    new-array v6, v0, [F
+
+    .line 244
+    .line 245
+    fill-array-data v6, :array_3
+
+    .line 246
+    .line 247
+    .line 248
+    new-instance v36, Lb47;
+
+    .line 249
+    .line 250
+    const-wide v43, 0x3fcc71c71c71c71cL    # 0.2222222222222222
+
+    .line 251
+    .line 252
+    .line 253
+    .line 254
+    .line 255
+    const-wide v45, 0x3fb4bc6a7ef9db23L    # 0.081
+
+    .line 256
+    .line 257
+    .line 258
+    .line 259
+    .line 260
+    const-wide v37, 0x4001c71c71c71c72L    # 2.2222222222222223
+
+    .line 261
+    .line 262
+    .line 263
+    .line 264
+    .line 265
+    const-wide v39, 0x3fed1e0c942633b7L    # 0.9099181073703367
+
+    .line 266
+    .line 267
+    .line 268
+    .line 269
+    .line 270
+    const-wide v41, 0x3fb70f9b5ece624dL    # 0.09008189262966333
+
+    .line 271
+    .line 272
+    .line 273
+    .line 274
+    .line 275
+    invoke-direct/range {v36 .. v46}, Lb47;-><init>(DDDDD)V
+
+    .line 276
+    .line 277
+    .line 278
+    const/4 v9, 0x4
+
+    .line 279
+    const-string v5, "Rec. ITU-R BT.709-5"
+
+    .line 280
+    .line 281
+    move-object/from16 v8, v36
+
+    .line 282
+    .line 283
+    invoke-direct/range {v4 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 284
+    .line 285
+    .line 286
+    move-object/from16 v36, v4
+
+    .line 287
+    .line 288
+    sput-object v36, Lpv0;->i:Lgj5;
+
+    .line 289
+    .line 290
+    new-instance v4, Lgj5;
+
+    .line 291
+    .line 292
+    new-array v6, v0, [F
+
+    .line 293
+    .line 294
+    fill-array-data v6, :array_4
+
+    .line 295
+    .line 296
+    .line 297
+    new-instance v37, Lb47;
+
+    .line 298
+    .line 299
+    const-wide v44, 0x3fcc71c71c71c71cL    # 0.2222222222222222
+
+    .line 300
+    .line 301
+    .line 302
+    .line 303
+    .line 304
+    const-wide v46, 0x3fb4d9e83e425aeeL    # 0.08145
+
+    .line 305
+    .line 306
+    .line 307
+    .line 308
+    .line 309
+    const-wide v38, 0x4001c71c71c71c72L    # 2.2222222222222223
+
+    .line 310
+    .line 311
+    .line 312
+    .line 313
+    .line 314
+    const-wide v40, 0x3fed1c03d1b450c3L    # 0.9096697898662786
+
+    .line 315
+    .line 316
+    .line 317
+    .line 318
+    .line 319
+    const-wide v42, 0x3fb71fe1725d79e9L    # 0.09033021013372146
+
+    .line 320
+    .line 321
+    .line 322
+    .line 323
+    .line 324
+    invoke-direct/range {v37 .. v47}, Lb47;-><init>(DDDDD)V
+
+    .line 325
+    .line 326
+    .line 327
+    const/4 v9, 0x5
+
+    .line 328
+    const-string v5, "Rec. ITU-R BT.2020-1"
+
+    .line 329
+    .line 330
+    move-object/from16 v8, v37
+
+    .line 331
+    .line 332
+    invoke-direct/range {v4 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 333
+    .line 334
+    .line 335
+    move-object/from16 v37, v4
+
+    .line 336
+    .line 337
+    sput-object v37, Lpv0;->j:Lgj5;
+
+    .line 338
+    .line 339
+    new-instance v25, Lgj5;
+
+    .line 340
+    .line 341
+    new-array v1, v0, [F
+
+    .line 342
+    .line 343
+    fill-array-data v1, :array_5
+
+    .line 344
+    .line 345
+    .line 346
+    new-instance v2, Lmg7;
+
+    .line 347
+    .line 348
+    const v5, 0x3ea0c49c    # 0.314f
+
+    .line 349
+    .line 350
+    .line 351
+    const v6, 0x3eb3b646    # 0.351f
+
+    .line 352
+    .line 353
+    .line 354
+    invoke-direct {v2, v5, v6}, Lmg7;-><init>(FF)V
+
+    .line 355
+    .line 356
+    .line 357
+    const/high16 v32, 0x3f800000    # 1.0f
+
+    .line 358
+    .line 359
+    const/16 v33, 0x6
+
+    .line 360
+    .line 361
+    const-string v26, "SMPTE RP 431-2-2007 DCI (P3)"
+
+    .line 362
+    .line 363
+    const-wide v29, 0x4004cccccccccccdL    # 2.6
+
+    .line 364
+    .line 365
+    .line 366
+    .line 367
+    .line 368
+    const/16 v31, 0x0
+
+    .line 369
+    .line 370
+    move-object/from16 v27, v1
+
+    .line 371
+    .line 372
+    move-object/from16 v28, v2
+
+    .line 373
+    .line 374
+    invoke-direct/range {v25 .. v33}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;DFFI)V
+
+    .line 375
+    .line 376
+    .line 377
+    move-object/from16 v38, v25
+
+    .line 378
+    .line 379
+    sput-object v38, Lpv0;->k:Lgj5;
+
+    .line 380
+    .line 381
+    new-instance v4, Lgj5;
+
+    .line 382
+    .line 383
+    new-array v6, v0, [F
+
+    .line 384
+    .line 385
+    fill-array-data v6, :array_6
+
+    .line 386
+    .line 387
+    .line 388
+    const/4 v9, 0x7
+
+    .line 389
+    const-string v5, "Display P3"
+
+    .line 390
+    .line 391
+    move-object/from16 v8, v16
+
+    .line 392
+    .line 393
+    invoke-direct/range {v4 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 394
+    .line 395
+    .line 396
+    move-object/from16 v39, v4
+
+    .line 397
+    .line 398
+    move-object/from16 v16, v7
+
+    .line 399
+    .line 400
+    sput-object v39, Lpv0;->l:Lgj5;
+
+    .line 401
+    .line 402
+    new-instance v4, Lgj5;
+
+    .line 403
+    .line 404
+    sget-object v7, Lga7;->l0:Lmg7;
+
+    .line 405
+    .line 406
+    new-instance v40, Lb47;
+
+    .line 407
+    .line 408
+    const-wide v47, 0x3fcc71c71c71c71cL    # 0.2222222222222222
+
+    .line 409
+    .line 410
+    .line 411
+    .line 412
+    .line 413
+    const-wide v49, 0x3fb4bc6a7ef9db23L    # 0.081
+
+    .line 414
+    .line 415
+    .line 416
+    .line 417
+    .line 418
+    const-wide v41, 0x4001c71c71c71c72L    # 2.2222222222222223
+
+    .line 419
+    .line 420
+    .line 421
+    .line 422
+    .line 423
+    const-wide v43, 0x3fed1e0c942633b7L    # 0.9099181073703367
+
+    .line 424
+    .line 425
+    .line 426
+    .line 427
+    .line 428
+    const-wide v45, 0x3fb70f9b5ece624dL    # 0.09008189262966333
+
+    .line 429
+    .line 430
+    .line 431
+    .line 432
+    .line 433
+    invoke-direct/range {v40 .. v50}, Lb47;-><init>(DDDDD)V
+
+    .line 434
+    .line 435
+    .line 436
+    const/16 v9, 0x8
+
+    .line 437
+    .line 438
+    const-string v5, "NTSC (1953)"
+
+    .line 439
+    .line 440
+    move-object v6, v12
+
+    .line 441
+    move-object/from16 v8, v40
+
+    .line 442
+    .line 443
+    invoke-direct/range {v4 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 444
+    .line 445
+    .line 446
+    move-object v12, v4
+
+    .line 447
+    sput-object v12, Lpv0;->m:Lgj5;
+
+    .line 448
+    .line 449
+    new-instance v4, Lgj5;
+
+    .line 450
+    .line 451
+    new-array v6, v0, [F
+
+    .line 452
+    .line 453
+    fill-array-data v6, :array_7
+
+    .line 454
+    .line 455
+    .line 456
+    new-instance v40, Lb47;
+
+    .line 457
+    .line 458
+    invoke-direct/range {v40 .. v50}, Lb47;-><init>(DDDDD)V
+
+    .line 459
+    .line 460
+    .line 461
+    const/16 v9, 0x9
+
+    .line 462
+    .line 463
+    const-string v5, "SMPTE-C RGB"
+
+    .line 464
+    .line 465
+    move-object/from16 v7, v16
+
+    .line 466
+    .line 467
+    move-object/from16 v8, v40
+
+    .line 468
+    .line 469
+    invoke-direct/range {v4 .. v9}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 470
+    .line 471
+    .line 472
+    move-object/from16 v51, v7
+
+    .line 473
+    .line 474
+    move-object v7, v4
+
+    .line 475
+    move-object/from16 v4, v51
+
+    .line 476
+    .line 477
+    sput-object v7, Lpv0;->n:Lgj5;
+
+    .line 478
+    .line 479
+    new-instance v25, Lgj5;
+
+    .line 480
+    .line 481
+    new-array v1, v0, [F
+
+    .line 482
+    .line 483
+    fill-array-data v1, :array_8
+
+    .line 484
+    .line 485
+    .line 486
+    const/16 v33, 0xa
+
+    .line 487
+    .line 488
+    const-string v26, "Adobe RGB (1998)"
+
+    .line 489
+    .line 490
+    const-wide v29, 0x400199999999999aL    # 2.2
+
+    .line 491
+    .line 492
+    .line 493
+    .line 494
+    .line 495
+    move-object/from16 v27, v1
+
+    .line 496
+    .line 497
+    move-object/from16 v28, v4
+
+    .line 498
+    .line 499
+    invoke-direct/range {v25 .. v33}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;DFFI)V
+
+    .line 500
+    .line 501
+    .line 502
+    sput-object v25, Lpv0;->o:Lgj5;
+
+    .line 503
+    .line 504
+    new-instance v26, Lgj5;
+
+    .line 505
+    .line 506
+    new-array v1, v0, [F
+
+    .line 507
+    .line 508
+    fill-array-data v1, :array_9
+
+    .line 509
+    .line 510
+    .line 511
+    sget-object v29, Lga7;->m0:Lmg7;
+
+    .line 512
+    .line 513
+    new-instance v40, Lb47;
+
+    .line 514
+    .line 515
+    const-wide/high16 v47, 0x3fb0000000000000L    # 0.0625
+
+    .line 516
+    .line 517
+    const-wide v49, 0x3f9fff79c842fa51L    # 0.031248
+
+    .line 518
+    .line 519
+    .line 520
+    .line 521
+    .line 522
+    const-wide v41, 0x3ffccccccccccccdL    # 1.8
+
+    .line 523
+    .line 524
+    .line 525
+    .line 526
+    .line 527
+    const-wide/high16 v43, 0x3ff0000000000000L    # 1.0
+
+    .line 528
+    .line 529
+    const-wide/16 v45, 0x0
+
+    .line 530
+    .line 531
+    invoke-direct/range {v40 .. v50}, Lb47;-><init>(DDDDD)V
+
+    .line 532
+    .line 533
+    .line 534
+    const/16 v31, 0xb
+
+    .line 535
+    .line 536
+    const-string v27, "ROMM RGB ISO 22028-2:2013"
+
+    .line 537
+    .line 538
+    move-object/from16 v28, v1
+
+    .line 539
+    .line 540
+    move-object/from16 v30, v40
+
+    .line 541
+    .line 542
+    invoke-direct/range {v26 .. v31}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 543
+    .line 544
+    .line 545
+    sput-object v26, Lpv0;->p:Lgj5;
+
+    .line 546
+    .line 547
+    new-instance v40, Lgj5;
+
+    .line 548
+    .line 549
+    new-array v1, v0, [F
+
+    .line 550
+    .line 551
+    fill-array-data v1, :array_a
+
+    .line 552
+    .line 553
+    .line 554
+    sget-object v43, Lga7;->n0:Lmg7;
+
+    .line 555
+    .line 556
+    const v47, 0x477fe000    # 65504.0f
+
+    .line 557
+    .line 558
+    .line 559
+    const/16 v48, 0xc
+
+    .line 560
+    .line 561
+    const-string v41, "SMPTE ST 2065-1:2012 ACES"
+
+    .line 562
+    .line 563
+    const-wide/high16 v44, 0x3ff0000000000000L    # 1.0
+
+    .line 564
+    .line 565
+    const v46, -0x38802000    # -65504.0f
+
+    .line 566
+    .line 567
+    .line 568
+    move-object/from16 v42, v1
+
+    .line 569
+    .line 570
+    invoke-direct/range {v40 .. v48}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;DFFI)V
+
+    .line 571
+    .line 572
+    .line 573
+    sput-object v40, Lpv0;->q:Lgj5;
+
+    .line 574
+    .line 575
+    new-instance v41, Lgj5;
+
+    .line 576
+    .line 577
+    new-array v1, v0, [F
+
+    .line 578
+    .line 579
+    fill-array-data v1, :array_b
+
+    .line 580
+    .line 581
+    .line 582
+    const v48, 0x477fe000    # 65504.0f
+
+    .line 583
+    .line 584
+    .line 585
+    const/16 v49, 0xd
+
+    .line 586
+    .line 587
+    const-string v42, "Academy S-2014-004 ACEScg"
+
+    .line 588
+    .line 589
+    const-wide/high16 v45, 0x3ff0000000000000L    # 1.0
+
+    .line 590
+    .line 591
+    const v47, -0x38802000    # -65504.0f
+
+    .line 592
+    .line 593
+    .line 594
+    move-object/from16 v44, v43
+
+    .line 595
+    .line 596
+    move-object/from16 v43, v1
+
+    .line 597
+    .line 598
+    invoke-direct/range {v41 .. v49}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;DFFI)V
+
+    .line 599
+    .line 600
+    .line 601
+    sput-object v41, Lpv0;->r:Lgj5;
+
+    .line 602
+    .line 603
+    new-instance v27, La43;
+
+    .line 604
+    .line 605
+    const-wide v29, 0x300000001L
+
+    .line 606
+    .line 607
+    .line 608
+    .line 609
+    .line 610
+    const/16 v32, 0x1
+
+    .line 611
+    .line 612
+    const-string v28, "Generic XYZ"
+
+    .line 613
+    .line 614
+    const/16 v31, 0xe
+
+    .line 615
+    .line 616
+    invoke-direct/range {v27 .. v32}, La43;-><init>(Ljava/lang/String;JIB)V
+
+    .line 617
+    .line 618
+    .line 619
+    sput-object v27, Lpv0;->s:La43;
+
+    .line 620
+    .line 621
+    new-instance v28, La43;
+
+    .line 622
+    .line 623
+    const/16 v33, 0x0
+
+    .line 624
+    .line 625
+    const-string v29, "Generic L*a*b*"
+
+    .line 626
+    .line 627
+    const-wide v30, 0x300000002L
+
+    .line 628
+    .line 629
+    .line 630
+    .line 631
+    .line 632
+    const/16 v32, 0xf
+
+    .line 633
+    .line 634
+    invoke-direct/range {v28 .. v33}, La43;-><init>(Ljava/lang/String;JIB)V
+
+    .line 635
+    .line 636
+    .line 637
+    move-wide/from16 v8, v30
+
+    .line 638
+    .line 639
+    sput-object v28, Lpv0;->t:La43;
+
+    .line 640
+    .line 641
+    new-instance v1, Lgj5;
+
+    .line 642
+    .line 643
+    const-string v2, "None"
+
+    .line 644
+    .line 645
+    const/16 v6, 0x10
+
+    .line 646
+    .line 647
+    move-object/from16 v5, v17
+
+    .line 648
+    .line 649
+    invoke-direct/range {v1 .. v6}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;Lb47;I)V
+
+    .line 650
+    .line 651
+    .line 652
+    sput-object v1, Lpv0;->u:Lgj5;
+
+    .line 653
+    .line 654
+    move v2, v13
+
+    .line 655
+    new-instance v13, Lgj5;
+
+    .line 656
+    .line 657
+    new-instance v3, Lex1;
+
+    .line 658
+    .line 659
+    const/16 v5, 0xf
+
+    .line 660
+    .line 661
+    invoke-direct {v3, v5}, Lex1;-><init>(B)V
+
+    .line 662
+    .line 663
+    .line 664
+    new-instance v5, Lex1;
+
+    .line 665
+    .line 666
+    invoke-direct {v5, v6}, Lex1;-><init>(B)V
+
+    .line 667
+    .line 668
+    .line 669
+    const/high16 v21, 0x3f800000    # 1.0f
+
+    .line 670
+    .line 671
+    const/16 v23, 0x11
+
+    .line 672
+    .line 673
+    move v6, v14
+
+    .line 674
+    const-string v14, "Hybrid Log Gamma encoding"
+
+    .line 675
+    .line 676
+    const/16 v17, 0x0
+
+    .line 677
+    .line 678
+    const/16 v20, 0x0
+
+    .line 679
+    .line 680
+    move-object/from16 v16, v4
+
+    .line 681
+    .line 682
+    move-object/from16 v19, v5
+
+    .line 683
+    .line 684
+    move-object/from16 v22, v18
+
+    .line 685
+    .line 686
+    move-object/from16 v18, v3
+
+    .line 687
+    .line 688
+    invoke-direct/range {v13 .. v23}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;[FLnm1;Lnm1;FFLb47;I)V
+
+    .line 689
+    .line 690
+    .line 691
+    move-object v3, v13
+
+    .line 692
+    sput-object v3, Lpv0;->v:Lgj5;
+
+    .line 693
+    .line 694
+    new-instance v13, Lgj5;
+
+    .line 695
+    .line 696
+    new-instance v5, Lex1;
+
+    .line 697
+    .line 698
+    const/16 v14, 0x11
+
+    .line 699
+    .line 700
+    invoke-direct {v5, v14}, Lex1;-><init>(B)V
+
+    .line 701
+    .line 702
+    .line 703
+    new-instance v14, Lex1;
+
+    .line 704
+    .line 705
+    move/from16 v29, v0
+
+    .line 706
+    .line 707
+    const/16 v0, 0x12
+
+    .line 708
+    .line 709
+    invoke-direct {v14, v0}, Lex1;-><init>(B)V
+
+    .line 710
+    .line 711
+    .line 712
+    const/16 v23, 0x12
+
+    .line 713
+    .line 714
+    move-object/from16 v19, v14
+
+    .line 715
+    .line 716
+    const-string v14, "Perceptual Quantizer encoding"
+
+    .line 717
+    .line 718
+    move-object/from16 v18, v5
+
+    .line 719
+    .line 720
+    move-object/from16 v22, v24
+
+    .line 721
+    .line 722
+    invoke-direct/range {v13 .. v23}, Lgj5;-><init>(Ljava/lang/String;[FLmg7;[FLnm1;Lnm1;FFLb47;I)V
+
+    .line 723
+    .line 724
+    .line 725
+    sput-object v13, Lpv0;->w:Lgj5;
+
+    .line 726
+    .line 727
+    new-instance v0, Lxh4;
+
+    .line 728
+    .line 729
+    const-string v4, "Oklab"
+
+    .line 730
+    .line 731
+    const/16 v5, 0x13
+
+    .line 732
+    .line 733
+    invoke-direct {v0, v8, v9, v5, v4}, Lnv0;-><init>(JILjava/lang/String;)V
+
+    .line 734
+    .line 735
+    .line 736
+    sput-object v0, Lpv0;->x:Lxh4;
+
+    .line 737
+    .line 738
+    const/16 v4, 0x14
+
+    .line 739
+    .line 740
+    new-array v4, v4, [Lnv0;
+
+    .line 741
+    .line 742
+    const/4 v5, 0x0
+
+    .line 743
+    aput-object v34, v4, v5
+
+    .line 744
+    .line 745
+    const/4 v5, 0x1
+
+    .line 746
+    aput-object v35, v4, v5
+
+    .line 747
+    .line 748
+    const/4 v5, 0x2
+
+    .line 749
+    aput-object v10, v4, v5
+
+    .line 750
+    .line 751
+    const/4 v5, 0x3
+
+    .line 752
+    aput-object v11, v4, v5
+
+    .line 753
+    .line 754
+    const/4 v5, 0x4
+
+    .line 755
+    aput-object v36, v4, v5
+
+    .line 756
+    .line 757
+    const/4 v5, 0x5
+
+    .line 758
+    aput-object v37, v4, v5
+
+    .line 759
+    .line 760
+    aput-object v38, v4, v29
+
+    .line 761
+    .line 762
+    const/4 v5, 0x7
+
+    .line 763
+    aput-object v39, v4, v5
+
+    .line 764
+    .line 765
+    const/16 v5, 0x8
+
+    .line 766
+    .line 767
+    aput-object v12, v4, v5
+
+    .line 768
+    .line 769
+    const/16 v5, 0x9
+
+    .line 770
+    .line 771
+    aput-object v7, v4, v5
+
+    .line 772
+    .line 773
+    const/16 v5, 0xa
+
+    .line 774
+    .line 775
+    aput-object v25, v4, v5
+
+    .line 776
+    .line 777
+    const/16 v5, 0xb
+
+    .line 778
+    .line 779
+    aput-object v26, v4, v5
+
+    .line 780
+    .line 781
+    const/16 v5, 0xc
+
+    .line 782
+    .line 783
+    aput-object v40, v4, v5
+
+    .line 784
+    .line 785
+    aput-object v41, v4, v2
+
+    .line 786
+    .line 787
+    aput-object v27, v4, v6
+
+    .line 788
+    .line 789
+    const/16 v2, 0xf
+
+    .line 790
+    .line 791
+    aput-object v28, v4, v2
+
+    .line 792
+    .line 793
+    const/16 v2, 0x10
+
+    .line 794
+    .line 795
+    aput-object v1, v4, v2
+
+    .line 796
+    .line 797
+    const/16 v1, 0x11
+
+    .line 798
+    .line 799
+    aput-object v3, v4, v1
+
+    .line 800
+    .line 801
+    const/16 v1, 0x12
+
+    .line 802
+    .line 803
+    aput-object v13, v4, v1
+
+    .line 804
+    .line 805
+    const/16 v1, 0x13
+
+    .line 806
+    .line 807
+    aput-object v0, v4, v1
+
+    .line 808
+    .line 809
+    sput-object v4, Lpv0;->y:[Lnv0;
+
+    .line 810
+    .line 811
     return-void
+
+    .line 812
+    nop
+
+    .line 813
+    :array_0
+    .array-data 4
+        0x3f23d70a    # 0.64f
+        0x3ea8f5c3    # 0.33f
+        0x3e99999a    # 0.3f
+        0x3f19999a    # 0.6f
+        0x3e19999a    # 0.15f
+        0x3d75c28f    # 0.06f
+    .end array-data
+
+    .line 814
+    .line 815
+    .line 816
+    .line 817
+    .line 818
+    .line 819
+    .line 820
+    .line 821
+    .line 822
+    .line 823
+    .line 824
+    .line 825
+    .line 826
+    .line 827
+    .line 828
+    .line 829
+    :array_1
+    .array-data 4
+        0x3f2b851f    # 0.67f
+        0x3ea8f5c3    # 0.33f
+        0x3e570a3d    # 0.21f
+        0x3f35c28f    # 0.71f
+        0x3e0f5c29    # 0.14f
+        0x3da3d70a    # 0.08f
+    .end array-data
+
+    .line 830
+    .line 831
+    .line 832
+    .line 833
+    .line 834
+    .line 835
+    .line 836
+    .line 837
+    .line 838
+    .line 839
+    .line 840
+    .line 841
+    .line 842
+    .line 843
+    .line 844
+    .line 845
+    :array_2
+    .array-data 4
+        0x3f353f7d    # 0.708f
+        0x3e958106    # 0.292f
+        0x3e2e147b    # 0.17f
+        0x3f4c0831    # 0.797f
+        0x3e0624dd    # 0.131f
+        0x3d3c6a7f    # 0.046f
+    .end array-data
+
+    .line 846
+    .line 847
+    .line 848
+    .line 849
+    .line 850
+    .line 851
+    .line 852
+    .line 853
+    .line 854
+    .line 855
+    .line 856
+    .line 857
+    .line 858
+    .line 859
+    .line 860
+    .line 861
+    :array_3
+    .array-data 4
+        0x3f23d70a    # 0.64f
+        0x3ea8f5c3    # 0.33f
+        0x3e99999a    # 0.3f
+        0x3f19999a    # 0.6f
+        0x3e19999a    # 0.15f
+        0x3d75c28f    # 0.06f
+    .end array-data
+
+    .line 862
+    .line 863
+    .line 864
+    .line 865
+    .line 866
+    .line 867
+    .line 868
+    .line 869
+    .line 870
+    .line 871
+    .line 872
+    .line 873
+    .line 874
+    .line 875
+    .line 876
+    .line 877
+    :array_4
+    .array-data 4
+        0x3f353f7d    # 0.708f
+        0x3e958106    # 0.292f
+        0x3e2e147b    # 0.17f
+        0x3f4c0831    # 0.797f
+        0x3e0624dd    # 0.131f
+        0x3d3c6a7f    # 0.046f
+    .end array-data
+
+    .line 878
+    .line 879
+    .line 880
+    .line 881
+    .line 882
+    .line 883
+    .line 884
+    .line 885
+    .line 886
+    .line 887
+    .line 888
+    .line 889
+    .line 890
+    .line 891
+    .line 892
+    .line 893
+    :array_5
+    .array-data 4
+        0x3f2e147b    # 0.68f
+        0x3ea3d70a    # 0.32f
+        0x3e87ae14    # 0.265f
+        0x3f30a3d7    # 0.69f
+        0x3e19999a    # 0.15f
+        0x3d75c28f    # 0.06f
+    .end array-data
+
+    .line 894
+    .line 895
+    .line 896
+    .line 897
+    .line 898
+    .line 899
+    .line 900
+    .line 901
+    .line 902
+    .line 903
+    .line 904
+    .line 905
+    .line 906
+    .line 907
+    .line 908
+    .line 909
+    :array_6
+    .array-data 4
+        0x3f2e147b    # 0.68f
+        0x3ea3d70a    # 0.32f
+        0x3e87ae14    # 0.265f
+        0x3f30a3d7    # 0.69f
+        0x3e19999a    # 0.15f
+        0x3d75c28f    # 0.06f
+    .end array-data
+
+    .line 910
+    .line 911
+    .line 912
+    .line 913
+    .line 914
+    .line 915
+    .line 916
+    .line 917
+    .line 918
+    .line 919
+    .line 920
+    .line 921
+    .line 922
+    .line 923
+    .line 924
+    .line 925
+    :array_7
+    .array-data 4
+        0x3f2147ae    # 0.63f
+        0x3eae147b    # 0.34f
+        0x3e9eb852    # 0.31f
+        0x3f1851ec    # 0.595f
+        0x3e1eb852    # 0.155f
+        0x3d8f5c29    # 0.07f
+    .end array-data
+
+    .line 926
+    .line 927
+    .line 928
+    .line 929
+    .line 930
+    .line 931
+    .line 932
+    .line 933
+    .line 934
+    .line 935
+    .line 936
+    .line 937
+    .line 938
+    .line 939
+    .line 940
+    .line 941
+    :array_8
+    .array-data 4
+        0x3f23d70a    # 0.64f
+        0x3ea8f5c3    # 0.33f
+        0x3e570a3d    # 0.21f
+        0x3f35c28f    # 0.71f
+        0x3e19999a    # 0.15f
+        0x3d75c28f    # 0.06f
+    .end array-data
+
+    .line 942
+    .line 943
+    .line 944
+    .line 945
+    .line 946
+    .line 947
+    .line 948
+    .line 949
+    .line 950
+    .line 951
+    .line 952
+    .line 953
+    .line 954
+    .line 955
+    .line 956
+    .line 957
+    :array_9
+    .array-data 4
+        0x3f3c154d    # 0.7347f
+        0x3e87d567    # 0.2653f
+        0x3e236e2f    # 0.1596f
+        0x3f572474    # 0.8404f
+        0x3d15e9e2    # 0.0366f
+        0x38d1b717    # 1.0E-4f
+    .end array-data
+
+    .line 958
+    .line 959
+    .line 960
+    .line 961
+    .line 962
+    .line 963
+    .line 964
+    .line 965
+    .line 966
+    .line 967
+    .line 968
+    .line 969
+    .line 970
+    .line 971
+    .line 972
+    .line 973
+    :array_a
+    .array-data 4
+        0x3f3c154d    # 0.7347f
+        0x3e87d567    # 0.2653f
+        0x0
+        0x3f800000    # 1.0f
+        0x38d1b717    # 1.0E-4f
+        -0x42624dd3    # -0.077f
+    .end array-data
+
+    .line 974
+    .line 975
+    .line 976
+    .line 977
+    .line 978
+    .line 979
+    .line 980
+    .line 981
+    .line 982
+    .line 983
+    .line 984
+    .line 985
+    .line 986
+    .line 987
+    .line 988
+    .line 989
+    :array_b
+    .array-data 4
+        0x3f36872b    # 0.713f
+        0x3e960419    # 0.293f
+        0x3e28f5c3    # 0.165f
+        0x3f547ae1    # 0.83f
+        0x3e03126f    # 0.128f
+        0x3d343958    # 0.044f
+    .end array-data
 .end method
 
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 51
+.method public static a(Lb47;D)D
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
 
     .line 2
     .line 3
-    iget-wide v1, v0, Lpv0;->a:J
+    const-wide/16 v1, 0x0
 
     .line 4
     .line 5
-    invoke-static {v1, v2}, Ljv0;->i(J)Ljava/lang/String;
+    cmpg-double v1, p1, v1
 
     .line 6
     .line 7
-    .line 8
-    move-result-object v1
+    if-gez v1, :cond_0
 
+    .line 8
     .line 9
-    iget-wide v2, v0, Lpv0;->b:J
+    const-wide/high16 v4, -0x4010000000000000L    # -1.0
 
     .line 10
     .line 11
-    invoke-static {v2, v3}, Ljv0;->i(J)Ljava/lang/String;
+    goto :goto_0
 
     .line 12
+    :cond_0
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+
     .line 13
     .line 14
-    move-result-object v2
+    :goto_0
+    mul-double v6, p1, v4
 
     .line 15
-    iget-wide v3, v0, Lpv0;->c:J
-
     .line 16
-    .line 17
-    invoke-static {v3, v4}, Ljv0;->i(J)Ljava/lang/String;
+    iget-wide v8, v0, Lb47;->b:D
 
+    .line 17
     .line 18
+    iget-wide v10, v0, Lb47;->c:D
+
     .line 19
     .line 20
-    move-result-object v3
+    iget-wide v12, v0, Lb47;->d:D
 
     .line 21
-    iget-wide v4, v0, Lpv0;->d:J
-
     .line 22
-    .line 23
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+    iget-wide v14, v0, Lb47;->e:D
 
+    .line 23
     .line 24
+    const-wide/high16 v16, 0x3ff0000000000000L    # 1.0
+
     .line 25
     .line 26
-    move-result-object v6
+    iget-wide v2, v0, Lb47;->f:D
 
     .line 27
-    iget-wide v7, v0, Lpv0;->e:J
-
     .line 28
-    .line 29
-    invoke-static {v7, v8}, Ljv0;->i(J)Ljava/lang/String;
+    iget-wide v0, v0, Lb47;->g:D
 
+    .line 29
     .line 30
+    add-double v0, v0, v16
+
     .line 31
     .line 32
-    move-result-object v7
+    mul-double/2addr v8, v6
 
     .line 33
-    iget-wide v8, v0, Lpv0;->f:J
+    cmpg-double v16, v8, v16
 
     .line 34
     .line 35
-    invoke-static {v8, v9}, Ljv0;->i(J)Ljava/lang/String;
+    if-gtz v16, :cond_1
 
     .line 36
     .line 37
-    .line 38
-    move-result-object v8
+    invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
+    .line 38
     .line 39
-    iget-wide v9, v0, Lpv0;->g:J
+    .line 40
+    move-result-wide v2
+
+    .line 41
+    goto :goto_1
+
+    .line 42
+    :cond_1
+    sub-double/2addr v6, v2
+
+    .line 43
+    mul-double/2addr v6, v12
+
+    .line 44
+    invoke-static {v6, v7}, Ljava/lang/Math;->exp(D)D
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-wide v2
+
+    .line 48
+    add-double/2addr v2, v14
+
+    .line 49
+    :goto_1
+    mul-double/2addr v0, v4
+
+    .line 50
+    mul-double/2addr v0, v2
+
+    .line 51
+    return-wide v0
+.end method
+
+.method public static b(Lb47;D)D
+    .locals 18
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    const-wide/16 v1, 0x0
+
+    .line 4
+    .line 5
+    cmpg-double v1, p1, v1
+
+    .line 6
+    .line 7
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    .line 8
+    .line 9
+    if-gez v1, :cond_0
+
+    .line 10
+    .line 11
+    const-wide/high16 v4, -0x4010000000000000L    # -1.0
+
+    .line 12
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    move-wide v4, v2
+
+    .line 15
+    :goto_0
+    mul-double v6, p1, v4
+
+    .line 16
+    .line 17
+    iget-wide v8, v0, Lb47;->b:D
+
+    .line 18
+    .line 19
+    div-double v8, v2, v8
+
+    .line 20
+    .line 21
+    iget-wide v10, v0, Lb47;->c:D
+
+    .line 22
+    .line 23
+    div-double v10, v2, v10
+
+    .line 24
+    .line 25
+    iget-wide v12, v0, Lb47;->d:D
+
+    .line 26
+    .line 27
+    div-double v12, v2, v12
+
+    .line 28
+    .line 29
+    iget-wide v14, v0, Lb47;->e:D
+
+    .line 30
+    .line 31
+    move-wide/from16 v16, v2
+
+    .line 32
+    .line 33
+    iget-wide v2, v0, Lb47;->f:D
+
+    .line 34
+    .line 35
+    iget-wide v0, v0, Lb47;->g:D
+
+    .line 36
+    .line 37
+    add-double v0, v0, v16
+
+    .line 38
+    .line 39
+    div-double/2addr v6, v0
 
     .line 40
+    cmpg-double v0, v6, v16
+
     .line 41
-    invoke-static {v9, v10}, Ljv0;->i(J)Ljava/lang/String;
+    .line 42
+    if-gtz v0, :cond_1
+
+    .line 43
+    .line 44
+    invoke-static {v6, v7, v10, v11}, Ljava/lang/Math;->pow(DD)D
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-wide v0
+
+    .line 48
+    mul-double/2addr v0, v8
+
+    .line 49
+    goto :goto_1
+
+    .line 50
+    :cond_1
+    sub-double/2addr v6, v14
+
+    .line 51
+    invoke-static {v6, v7}, Ljava/lang/Math;->log(D)D
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-wide v0
+
+    .line 55
+    mul-double/2addr v0, v12
+
+    .line 56
+    add-double/2addr v0, v2
+
+    .line 57
+    :goto_1
+    mul-double/2addr v4, v0
+
+    .line 58
+    return-wide v4
+.end method
+
+.method public static c(Lb47;D)D
+    .locals 12
+
+    .line 1
+    const-wide/16 v0, 0x0
+
+    .line 2
+    .line 3
+    cmpg-double v2, p1, v0
+
+    .line 4
+    .line 5
+    if-gez v2, :cond_0
+
+    .line 6
+    .line 7
+    const-wide/high16 v2, -0x4010000000000000L    # -1.0
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    .line 11
+    .line 12
+    :goto_0
+    mul-double/2addr p1, v2
+
+    .line 13
+    iget-wide v4, p0, Lb47;->b:D
+
+    .line 14
+    .line 15
+    iget-wide v6, p0, Lb47;->d:D
+
+    .line 16
+    .line 17
+    iget-wide v8, p0, Lb47;->c:D
+
+    .line 18
+    .line 19
+    invoke-static {p1, p2, v6, v7}, Ljava/lang/Math;->pow(DD)D
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-wide v10
+
+    .line 23
+    mul-double/2addr v10, v8
+
+    .line 24
+    add-double/2addr v10, v4
+
+    .line 25
+    cmpg-double v4, v10, v0
+
+    .line 26
+    .line 27
+    if-ltz v4, :cond_1
+
+    .line 28
+    .line 29
+    move-wide v0, v10
+
+    .line 30
+    :cond_1
+    iget-wide v4, p0, Lb47;->e:D
+
+    .line 31
+    .line 32
+    iget-wide v8, p0, Lb47;->f:D
+
+    .line 33
+    .line 34
+    invoke-static {p1, p2, v6, v7}, Ljava/lang/Math;->pow(DD)D
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-wide p1
+
+    .line 38
+    mul-double/2addr p1, v8
+
+    .line 39
+    add-double/2addr p1, v4
+
+    .line 40
+    div-double/2addr v0, p1
+
+    .line 41
+    iget-wide p0, p0, Lb47;->g:D
 
     .line 42
     .line 43
+    invoke-static {v0, v1, p0, p1}, Ljava/lang/Math;->pow(DD)D
+
     .line 44
-    move-result-object v9
+    .line 45
+    .line 46
+    move-result-wide p0
+
+    .line 47
+    mul-double/2addr p0, v2
+
+    .line 48
+    return-wide p0
+.end method
+
+.method public static d(Lb47;D)D
+    .locals 18
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    const-wide/16 v1, 0x0
+
+    .line 4
+    .line 5
+    cmpg-double v3, p1, v1
+
+    .line 6
+    .line 7
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+
+    .line 8
+    .line 9
+    if-gez v3, :cond_0
+
+    .line 10
+    .line 11
+    const-wide/high16 v6, -0x4010000000000000L    # -1.0
+
+    .line 12
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    move-wide v6, v4
+
+    .line 15
+    :goto_0
+    mul-double v8, p1, v6
+
+    .line 16
+    .line 17
+    iget-wide v10, v0, Lb47;->b:D
+
+    .line 18
+    .line 19
+    neg-double v10, v10
+
+    .line 20
+    iget-wide v12, v0, Lb47;->e:D
+
+    .line 21
+    .line 22
+    iget-wide v14, v0, Lb47;->g:D
+
+    .line 23
+    .line 24
+    div-double v14, v4, v14
+
+    .line 25
+    .line 26
+    move-wide/from16 v16, v4
+
+    .line 27
+    .line 28
+    iget-wide v4, v0, Lb47;->c:D
+
+    .line 29
+    .line 30
+    iget-wide v1, v0, Lb47;->f:D
+
+    .line 31
+    .line 32
+    neg-double v1, v1
+
+    .line 33
+    move-wide/from16 p1, v1
+
+    .line 34
+    .line 35
+    iget-wide v0, v0, Lb47;->d:D
+
+    .line 36
+    .line 37
+    div-double v0, v16, v0
+
+    .line 38
+    .line 39
+    invoke-static {v8, v9, v14, v15}, Ljava/lang/Math;->pow(DD)D
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-wide v2
+
+    .line 43
+    mul-double/2addr v2, v12
+
+    .line 44
+    add-double/2addr v2, v10
 
     .line 45
-    iget-wide v10, v0, Lpv0;->h:J
+    const-wide/16 v10, 0x0
 
     .line 46
     .line 47
-    invoke-static {v10, v11}, Ljv0;->i(J)Ljava/lang/String;
+    invoke-static {v2, v3, v10, v11}, Ljava/lang/Math;->max(DD)D
 
     .line 48
     .line 49
     .line 50
-    move-result-object v10
+    move-result-wide v2
 
     .line 51
-    iget-wide v11, v0, Lpv0;->i:J
+    invoke-static {v8, v9, v14, v15}, Ljava/lang/Math;->pow(DD)D
 
     .line 52
     .line 53
-    invoke-static {v11, v12}, Ljv0;->i(J)Ljava/lang/String;
-
     .line 54
-    .line 55
-    .line 56
-    move-result-object v11
+    move-result-wide v8
 
+    .line 55
+    mul-double v8, v8, p1
+
+    .line 56
     .line 57
-    iget-wide v12, v0, Lpv0;->j:J
+    add-double/2addr v8, v4
 
     .line 58
+    div-double/2addr v2, v8
+
     .line 59
-    invoke-static {v12, v13}, Ljv0;->i(J)Ljava/lang/String;
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->pow(DD)D
 
     .line 60
     .line 61
     .line 62
-    move-result-object v12
+    move-result-wide v0
 
     .line 63
-    iget-wide v13, v0, Lpv0;->k:J
+    mul-double/2addr v0, v6
 
     .line 64
-    .line 65
-    invoke-static {v13, v14}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 66
-    .line 67
-    .line 68
-    move-result-object v13
-
-    .line 69
-    iget-wide v14, v0, Lpv0;->l:J
-
-    .line 70
-    .line 71
-    invoke-static {v14, v15}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 72
-    .line 73
-    .line 74
-    move-result-object v14
-
-    .line 75
-    move-wide v15, v4
-
-    .line 76
-    iget-wide v4, v0, Lpv0;->m:J
-
-    .line 77
-    .line 78
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 79
-    .line 80
-    .line 81
-    move-result-object v4
-
-    .line 82
-    move-object/from16 v17, v4
-
-    .line 83
-    .line 84
-    iget-wide v4, v0, Lpv0;->n:J
-
-    .line 85
-    .line 86
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object v4
-
-    .line 90
-    move-object/from16 v18, v4
-
-    .line 91
-    .line 92
-    iget-wide v4, v0, Lpv0;->o:J
-
-    .line 93
-    .line 94
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 95
-    .line 96
-    .line 97
-    move-result-object v4
-
-    .line 98
-    move-object/from16 v19, v4
-
-    .line 99
-    .line 100
-    iget-wide v4, v0, Lpv0;->p:J
-
-    .line 101
-    .line 102
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 103
-    .line 104
-    .line 105
-    move-result-object v4
-
-    .line 106
-    move-object/from16 v20, v4
-
-    .line 107
-    .line 108
-    iget-wide v4, v0, Lpv0;->q:J
-
-    .line 109
-    .line 110
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 111
-    .line 112
-    .line 113
-    move-result-object v4
-
-    .line 114
-    move-object/from16 v21, v4
-
-    .line 115
-    .line 116
-    iget-wide v4, v0, Lpv0;->r:J
-
-    .line 117
-    .line 118
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 119
-    .line 120
-    .line 121
-    move-result-object v4
-
-    .line 122
-    move-object/from16 v22, v4
-
-    .line 123
-    .line 124
-    iget-wide v4, v0, Lpv0;->s:J
-
-    .line 125
-    .line 126
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 127
-    .line 128
-    .line 129
-    move-result-object v4
-
-    .line 130
-    move-object/from16 v23, v4
-
-    .line 131
-    .line 132
-    iget-wide v4, v0, Lpv0;->t:J
-
-    .line 133
-    .line 134
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 135
-    .line 136
-    .line 137
-    move-result-object v4
-
-    .line 138
-    move-object/from16 v24, v4
-
-    .line 139
-    .line 140
-    iget-wide v4, v0, Lpv0;->u:J
-
-    .line 141
-    .line 142
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 143
-    .line 144
-    .line 145
-    move-result-object v4
-
-    .line 146
-    move-object/from16 v25, v4
-
-    .line 147
-    .line 148
-    iget-wide v4, v0, Lpv0;->v:J
-
-    .line 149
-    .line 150
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 151
-    .line 152
-    .line 153
-    move-result-object v4
-
-    .line 154
-    move-object/from16 v26, v4
-
-    .line 155
-    .line 156
-    iget-wide v4, v0, Lpv0;->w:J
-
-    .line 157
-    .line 158
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 159
-    .line 160
-    .line 161
-    move-result-object v4
-
-    .line 162
-    move-object/from16 v27, v4
-
-    .line 163
-    .line 164
-    iget-wide v4, v0, Lpv0;->x:J
-
-    .line 165
-    .line 166
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 167
-    .line 168
-    .line 169
-    move-result-object v4
-
-    .line 170
-    move-object/from16 v28, v4
-
-    .line 171
-    .line 172
-    iget-wide v4, v0, Lpv0;->y:J
-
-    .line 173
-    .line 174
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 175
-    .line 176
-    .line 177
-    move-result-object v4
-
-    .line 178
-    move-object/from16 v29, v4
-
-    .line 179
-    .line 180
-    iget-wide v4, v0, Lpv0;->z:J
-
-    .line 181
-    .line 182
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 183
-    .line 184
-    .line 185
-    move-result-object v4
-
-    .line 186
-    move-object/from16 v30, v4
-
-    .line 187
-    .line 188
-    iget-wide v4, v0, Lpv0;->A:J
-
-    .line 189
-    .line 190
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 191
-    .line 192
-    .line 193
-    move-result-object v4
-
-    .line 194
-    move-object/from16 v31, v4
-
-    .line 195
-    .line 196
-    iget-wide v4, v0, Lpv0;->B:J
-
-    .line 197
-    .line 198
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 199
-    .line 200
-    .line 201
-    move-result-object v4
-
-    .line 202
-    move-object/from16 v32, v4
-
-    .line 203
-    .line 204
-    iget-wide v4, v0, Lpv0;->C:J
-
-    .line 205
-    .line 206
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 207
-    .line 208
-    .line 209
-    move-result-object v4
-
-    .line 210
-    move-object/from16 v33, v4
-
-    .line 211
-    .line 212
-    iget-wide v4, v0, Lpv0;->D:J
-
-    .line 213
-    .line 214
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 215
-    .line 216
-    .line 217
-    move-result-object v4
-
-    .line 218
-    move-object/from16 v34, v4
-
-    .line 219
-    .line 220
-    iget-wide v4, v0, Lpv0;->E:J
-
-    .line 221
-    .line 222
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 223
-    .line 224
-    .line 225
-    move-result-object v4
-
-    .line 226
-    move-object/from16 v35, v4
-
-    .line 227
-    .line 228
-    iget-wide v4, v0, Lpv0;->F:J
-
-    .line 229
-    .line 230
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 231
-    .line 232
-    .line 233
-    move-result-object v4
-
-    .line 234
-    move-object/from16 v36, v4
-
-    .line 235
-    .line 236
-    iget-wide v4, v0, Lpv0;->G:J
-
-    .line 237
-    .line 238
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 239
-    .line 240
-    .line 241
-    move-result-object v4
-
-    .line 242
-    move-object/from16 v37, v4
-
-    .line 243
-    .line 244
-    iget-wide v4, v0, Lpv0;->H:J
-
-    .line 245
-    .line 246
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 247
-    .line 248
-    .line 249
-    move-result-object v4
-
-    .line 250
-    move-object/from16 v38, v4
-
-    .line 251
-    .line 252
-    iget-wide v4, v0, Lpv0;->I:J
-
-    .line 253
-    .line 254
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 255
-    .line 256
-    .line 257
-    move-result-object v4
-
-    .line 258
-    move-object/from16 v39, v4
-
-    .line 259
-    .line 260
-    iget-wide v4, v0, Lpv0;->J:J
-
-    .line 261
-    .line 262
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 263
-    .line 264
-    .line 265
-    move-result-object v4
-
-    .line 266
-    move-object/from16 v40, v4
-
-    .line 267
-    .line 268
-    iget-wide v4, v0, Lpv0;->K:J
-
-    .line 269
-    .line 270
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 271
-    .line 272
-    .line 273
-    move-result-object v4
-
-    .line 274
-    move-object/from16 v41, v4
-
-    .line 275
-    .line 276
-    iget-wide v4, v0, Lpv0;->L:J
-
-    .line 277
-    .line 278
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 279
-    .line 280
-    .line 281
-    move-result-object v4
-
-    .line 282
-    invoke-static/range {v15 .. v16}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 283
-    .line 284
-    .line 285
-    move-result-object v5
-
-    .line 286
-    move-object v15, v4
-
-    .line 287
-    move-object/from16 v16, v5
-
-    .line 288
-    .line 289
-    iget-wide v4, v0, Lpv0;->N:J
-
-    .line 290
-    .line 291
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 292
-    .line 293
-    .line 294
-    move-result-object v4
-
-    .line 295
-    move-object/from16 v42, v4
-
-    .line 296
-    .line 297
-    iget-wide v4, v0, Lpv0;->O:J
-
-    .line 298
-    .line 299
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 300
-    .line 301
-    .line 302
-    move-result-object v4
-
-    .line 303
-    move-object/from16 v43, v4
-
-    .line 304
-    .line 305
-    iget-wide v4, v0, Lpv0;->P:J
-
-    .line 306
-    .line 307
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 308
-    .line 309
-    .line 310
-    move-result-object v4
-
-    .line 311
-    move-object/from16 v44, v4
-
-    .line 312
-    .line 313
-    iget-wide v4, v0, Lpv0;->Q:J
-
-    .line 314
-    .line 315
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 316
-    .line 317
-    .line 318
-    move-result-object v4
-
-    .line 319
-    move-object/from16 v45, v4
-
-    .line 320
-    .line 321
-    iget-wide v4, v0, Lpv0;->R:J
-
-    .line 322
-    .line 323
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 324
-    .line 325
-    .line 326
-    move-result-object v4
-
-    .line 327
-    move-object/from16 v46, v4
-
-    .line 328
-    .line 329
-    iget-wide v4, v0, Lpv0;->S:J
-
-    .line 330
-    .line 331
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 332
-    .line 333
-    .line 334
-    move-result-object v4
-
-    .line 335
-    move-object/from16 v47, v4
-
-    .line 336
-    .line 337
-    iget-wide v4, v0, Lpv0;->T:J
-
-    .line 338
-    .line 339
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 340
-    .line 341
-    .line 342
-    move-result-object v4
-
-    .line 343
-    move-object/from16 v48, v4
-
-    .line 344
-    .line 345
-    iget-wide v4, v0, Lpv0;->U:J
-
-    .line 346
-    .line 347
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 348
-    .line 349
-    .line 350
-    move-result-object v4
-
-    .line 351
-    move-object/from16 v49, v4
-
-    .line 352
-    .line 353
-    iget-wide v4, v0, Lpv0;->V:J
-
-    .line 354
-    .line 355
-    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
-
-    .line 356
-    .line 357
-    .line 358
-    move-result-object v0
-
-    .line 359
-    const-string v4, "onPrimary="
-
-    .line 360
-    .line 361
-    const-string v5, "primaryContainer="
-
-    .line 362
-    .line 363
-    move-object/from16 v50, v15
-
-    .line 364
-    .line 365
-    const-string v15, "ColorScheme(primary="
-
-    .line 366
-    .line 367
-    invoke-static {v15, v1, v4, v2, v5}, Loc1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 368
-    .line 369
-    .line 370
-    move-result-object v1
-
-    .line 371
-    const-string v2, "onPrimaryContainer="
-
-    .line 372
-    .line 373
-    const-string v4, "inversePrimary="
-
-    .line 374
-    .line 375
-    invoke-static {v1, v3, v2, v6, v4}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 376
-    .line 377
-    .line 378
-    const-string v2, "secondary="
-
-    .line 379
-    .line 380
-    const-string v3, "onSecondary="
-
-    .line 381
-    .line 382
-    invoke-static {v1, v7, v2, v8, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 383
-    .line 384
-    .line 385
-    const-string v2, "secondaryContainer="
-
-    .line 386
-    .line 387
-    const-string v3, "onSecondaryContainer="
-
-    .line 388
-    .line 389
-    invoke-static {v1, v9, v2, v10, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 390
-    .line 391
-    .line 392
-    const-string v2, "tertiary="
-
-    .line 393
-    .line 394
-    const-string v3, "onTertiary="
-
-    .line 395
-    .line 396
-    invoke-static {v1, v11, v2, v12, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 397
-    .line 398
-    .line 399
-    const-string v2, "tertiaryContainer="
-
-    .line 400
-    .line 401
-    const-string v3, "onTertiaryContainer="
-
-    .line 402
-    .line 403
-    invoke-static {v1, v13, v2, v14, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 404
-    .line 405
-    .line 406
-    const-string v2, "background="
-
-    .line 407
-    .line 408
-    const-string v3, "onBackground="
-
-    .line 409
-    .line 410
-    move-object/from16 v4, v17
-
-    .line 411
-    .line 412
-    move-object/from16 v5, v18
-
-    .line 413
-    .line 414
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 415
-    .line 416
-    .line 417
-    const-string v2, "surface="
-
-    .line 418
-    .line 419
-    const-string v3, "onSurface="
-
-    .line 420
-    .line 421
-    move-object/from16 v4, v19
-
-    .line 422
-    .line 423
-    move-object/from16 v5, v20
-
-    .line 424
-    .line 425
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 426
-    .line 427
-    .line 428
-    const-string v2, "surfaceVariant="
-
-    .line 429
-    .line 430
-    const-string v3, "onSurfaceVariant="
-
-    .line 431
-    .line 432
-    move-object/from16 v4, v21
-
-    .line 433
-    .line 434
-    move-object/from16 v5, v22
-
-    .line 435
-    .line 436
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 437
-    .line 438
-    .line 439
-    const-string v2, "surfaceTint="
-
-    .line 440
-    .line 441
-    const-string v3, "inverseSurface="
-
-    .line 442
-    .line 443
-    move-object/from16 v4, v23
-
-    .line 444
-    .line 445
-    move-object/from16 v5, v24
-
-    .line 446
-    .line 447
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 448
-    .line 449
-    .line 450
-    const-string v2, "inverseOnSurface="
-
-    .line 451
-    .line 452
-    const-string v3, "error="
-
-    .line 453
-    .line 454
-    move-object/from16 v4, v25
-
-    .line 455
-    .line 456
-    move-object/from16 v5, v26
-
-    .line 457
-    .line 458
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 459
-    .line 460
-    .line 461
-    const-string v2, "onError="
-
-    .line 462
-    .line 463
-    const-string v3, "errorContainer="
-
-    .line 464
-    .line 465
-    move-object/from16 v4, v27
-
-    .line 466
-    .line 467
-    move-object/from16 v5, v28
-
-    .line 468
-    .line 469
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 470
-    .line 471
-    .line 472
-    const-string v2, "onErrorContainer="
-
-    .line 473
-    .line 474
-    const-string v3, "outline="
-
-    .line 475
-    .line 476
-    move-object/from16 v4, v29
-
-    .line 477
-    .line 478
-    move-object/from16 v5, v30
-
-    .line 479
-    .line 480
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 481
-    .line 482
-    .line 483
-    const-string v2, "outlineVariant="
-
-    .line 484
-    .line 485
-    const-string v3, "scrim="
-
-    .line 486
-    .line 487
-    move-object/from16 v4, v31
-
-    .line 488
-    .line 489
-    move-object/from16 v5, v32
-
-    .line 490
-    .line 491
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 492
-    .line 493
-    .line 494
-    const-string v2, "surfaceBright="
-
-    .line 495
-    .line 496
-    const-string v3, "surfaceDim="
-
-    .line 497
-    .line 498
-    move-object/from16 v4, v33
-
-    .line 499
-    .line 500
-    move-object/from16 v5, v34
-
-    .line 501
-    .line 502
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 503
-    .line 504
-    .line 505
-    const-string v2, "surfaceContainer="
-
-    .line 506
-    .line 507
-    const-string v3, "surfaceContainerHigh="
-
-    .line 508
-    .line 509
-    move-object/from16 v4, v35
-
-    .line 510
-    .line 511
-    move-object/from16 v5, v36
-
-    .line 512
-    .line 513
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 514
-    .line 515
-    .line 516
-    const-string v2, "surfaceContainerHighest="
-
-    .line 517
-    .line 518
-    const-string v3, "surfaceContainerLow="
-
-    .line 519
-    .line 520
-    move-object/from16 v4, v37
-
-    .line 521
-    .line 522
-    move-object/from16 v5, v38
-
-    .line 523
-    .line 524
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 525
-    .line 526
-    .line 527
-    const-string v2, "surfaceContainerLowest="
-
-    .line 528
-    .line 529
-    const-string v3, "primaryFixed="
-
-    .line 530
-    .line 531
-    move-object/from16 v4, v39
-
-    .line 532
-    .line 533
-    move-object/from16 v5, v40
-
-    .line 534
-    .line 535
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 536
-    .line 537
-    .line 538
-    const-string v2, "primaryFixedDim="
-
-    .line 539
-    .line 540
-    const-string v3, "onPrimaryFixed="
-
-    .line 541
-    .line 542
-    move-object/from16 v4, v41
-
-    .line 543
-    .line 544
-    move-object/from16 v15, v50
-
-    .line 545
-    .line 546
-    invoke-static {v1, v4, v2, v15, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 547
-    .line 548
-    .line 549
-    const-string v2, "onPrimaryFixedVariant="
-
-    .line 550
-    .line 551
-    const-string v3, "secondaryFixed="
-
-    .line 552
-    .line 553
-    move-object/from16 v4, v16
-
-    .line 554
-    .line 555
-    move-object/from16 v5, v42
-
-    .line 556
-    .line 557
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 558
-    .line 559
-    .line 560
-    const-string v2, "secondaryFixedDim="
-
-    .line 561
-    .line 562
-    const-string v3, "onSecondaryFixed="
-
-    .line 563
-    .line 564
-    move-object/from16 v4, v43
-
-    .line 565
-    .line 566
-    move-object/from16 v5, v44
-
-    .line 567
-    .line 568
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 569
-    .line 570
-    .line 571
-    const-string v2, "onSecondaryFixedVariant="
-
-    .line 572
-    .line 573
-    const-string v3, "tertiaryFixed="
-
-    .line 574
-    .line 575
-    move-object/from16 v4, v45
-
-    .line 576
-    .line 577
-    move-object/from16 v5, v46
-
-    .line 578
-    .line 579
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 580
-    .line 581
-    .line 582
-    const-string v2, "tertiaryFixedDim="
-
-    .line 583
-    .line 584
-    const-string v3, "onTertiaryFixed="
-
-    .line 585
-    .line 586
-    move-object/from16 v4, v47
-
-    .line 587
-    .line 588
-    move-object/from16 v5, v48
-
-    .line 589
-    .line 590
-    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 591
-    .line 592
-    .line 593
-    const-string v2, "onTertiaryFixedVariant="
-
-    .line 594
-    .line 595
-    const-string v3, ")"
-
-    .line 596
-    .line 597
-    move-object/from16 v4, v49
-
-    .line 598
-    .line 599
-    invoke-static {v1, v4, v2, v0, v3}, Loc1;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 600
-    .line 601
-    .line 602
-    move-result-object v0
-
-    .line 603
-    return-object v0
+    return-wide v0
 .end method

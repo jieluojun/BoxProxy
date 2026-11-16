@@ -1,10 +1,13 @@
-.class public interface abstract Ldy6;
+.class public abstract Ldy6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lxw5;
 
 
 # static fields
-.field public static final i:Ldi6;
+.field public static final a:Lav6;
 
 
 # direct methods
@@ -12,22 +15,21 @@
     .locals 2
 
     .line 1
-    new-instance v0, Ldi6;
+    new-instance v0, Lav6;
 
     .line 2
     .line 3
-    const/16 v1, 0xa
+    const/4 v1, 0x1
 
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ldi6;-><init>(B)V
+    invoke-direct {v0, v1}, Lav6;-><init>(B)V
 
+    .line 5
     .line 6
     .line 7
-    .line 8
-    sput-object v0, Ldy6;->i:Ldi6;
+    sput-object v0, Ldy6;->a:Lav6;
 
+    .line 8
     .line 9
-    .line 10
     return-void
 .end method

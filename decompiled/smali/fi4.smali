@@ -1,6 +1,6 @@
 .class public abstract synthetic Lfi4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
@@ -9,10 +9,10 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .line 1
-    invoke-static {}, Lgi4;->values()[Lgi4;
+    invoke-static {}, Lfb3;->values()[Lfb3;
 
     .line 2
     .line 3
@@ -27,68 +27,78 @@
 
     .line 7
     .line 8
-    const/4 v1, 0x0
+    :try_start_0
+    sget-object v1, Lfb3;->ON_START:Lfb3;
 
     .line 9
+    .line 10
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v1
+
+    .line 14
     const/4 v2, 0x1
 
-    .line 10
-    :try_start_0
+    .line 15
     aput v2, v0, v1
     :try_end_0
     .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 11
-    .line 12
-    :catch_0
-    const/4 v3, 0x2
-
-    .line 13
-    :try_start_1
-    aput v3, v0, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 14
-    .line 15
-    :catch_1
-    sput-object v0, Lfi4;->a:[I
-
     .line 16
     .line 17
-    invoke-static {}, Lpp0;->values()[Lpp0;
+    :catch_0
+    :try_start_1
+    sget-object v1, Lfb3;->ON_STOP:Lfb3;
 
     .line 18
     .line 19
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
     .line 20
-    move-result-object v0
-
     .line 21
-    array-length v0, v0
-
     .line 22
-    new-array v0, v0, [I
+    move-result v1
 
     .line 23
+    const/4 v2, 0x2
+
     .line 24
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 25
+    .line 26
+    :catch_1
     :try_start_2
+    sget-object v1, Lfb3;->ON_DESTROY:Lfb3;
+
+    .line 27
+    .line 28
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v1
+
+    .line 32
+    const/4 v2, 0x3
+
+    .line 33
     aput v2, v0, v1
     :try_end_2
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 25
-    .line 26
+    .line 34
+    .line 35
     :catch_2
-    const/4 v1, 0x4
+    sput-object v0, Lfi4;->a:[I
 
-    .line 27
-    :try_start_3
-    aput v3, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    .line 28
-    .line 29
-    :catch_3
+    .line 36
+    .line 37
     return-void
 .end method

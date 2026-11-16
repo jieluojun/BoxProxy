@@ -1,156 +1,115 @@
 .class public final Lk87;
-.super Ly47;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public b:Z
-
-.field public c:I
-
-.field public final synthetic d:Ll87;
+# static fields
+.field public static final a:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>(Ll87;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/os/Handler;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lk87;->d:Ll87;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
+    .line 4
     .line 5
     .line 6
-    const/4 p1, 0x0
+    move-result-object v1
 
     .line 7
-    iput-boolean p1, p0, Lk87;->b:Z
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     .line 8
     .line 9
-    iput p1, p0, Lk87;->c:I
-
     .line 10
+    sput-object v0, Lk87;->a:Landroid/os/Handler;
+
     .line 11
+    .line 12
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()V
-    .locals 3
+.method public static a(Landroid/content/Context;Ljava/lang/String;Lj87;)V
+    .locals 2
 
     .line 1
-    iget v0, p0, Lk87;->c:I
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    add-int/lit8 v0, v0, 0x1
-
     .line 4
-    .line 5
-    iput v0, p0, Lk87;->c:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 5
     .line 6
     .line 7
-    iget-object v1, p0, Lk87;->d:Ll87;
+    invoke-static {p1}, Lsi6;->N0(Ljava/lang/CharSequence;)Z
 
     .line 8
     .line 9
-    iget-object v2, v1, Ll87;->a:Ljava/util/ArrayList;
-
     .line 10
+    move-result v0
+
     .line 11
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
+    return-void
+
     .line 14
-    move-result v2
+    :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 15
-    if-ne v0, v2, :cond_1
-
     .line 16
     .line 17
-    iget-object v0, v1, Ll87;->d:Lm87;
+    move-result-object p0
 
     .line 18
-    .line 19
-    if-eqz v0, :cond_0
+    new-instance v0, Lte;
 
+    .line 19
     .line 20
+    const/4 v1, 0x3
+
     .line 21
-    invoke-interface {v0}, Lm87;->a()V
+    invoke-direct {v0, p0, p1, p2, v1}, Lte;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
 
     .line 22
     .line 23
     .line 24
-    :cond_0
-    const/4 v0, 0x0
+    sget-object p0, Lk87;->a:Landroid/os/Handler;
 
     .line 25
-    iput v0, p0, Lk87;->c:I
-
     .line 26
-    .line 27
-    iput-boolean v0, p0, Lk87;->b:Z
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 27
     .line 28
     .line 29
-    iput-boolean v0, v1, Ll87;->e:Z
-
-    .line 30
-    .line 31
-    :cond_1
     return-void
 .end method
 
-.method public final c()V
+.method public static synthetic b(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lk87;->b:Z
+    sget-object v0, Lj87;->i:Lj87;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    invoke-static {p0, p1, v0}, Lk87;->a(Landroid/content/Context;Ljava/lang/String;Lj87;)V
 
     .line 4
     .line 5
-    goto :goto_0
-
     .line 6
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 7
-    iput-boolean v0, p0, Lk87;->b:Z
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Lk87;->d:Ll87;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Ll87;->d:Lm87;
-
-    .line 12
-    .line 13
-    if-eqz p0, :cond_1
-
-    .line 14
-    .line 15
-    invoke-interface {p0}, Lm87;->c()V
-
-    .line 16
-    .line 17
-    .line 18
-    :cond_1
-    :goto_0
     return-void
 .end method

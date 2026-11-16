@@ -1,18 +1,18 @@
 .class final Lq32;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ldq3;"
+        "Lbx3;"
     }
 .end annotation
 
 
 # static fields
-.field public static final j:Lq32;
+.field public static final i:Lq32;
 
 
 # direct methods
@@ -29,7 +29,7 @@
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lq32;->j:Lq32;
+    sput-object v0, Lq32;->i:Lq32;
 
     .line 7
     .line 8
@@ -38,7 +38,7 @@
 
 
 # virtual methods
-.method public final a()Lvp3;
+.method public final a()Lrw3;
     .locals 0
 
     .line 1
@@ -54,7 +54,7 @@
     return-object p0
 .end method
 
-.method public final b(Lvp3;)V
+.method public final b(Lrw3;)V
     .locals 0
 
     .line 1
@@ -90,7 +90,7 @@
     .locals 0
 
     .line 1
-    const p0, 0x3cc196f4
+    const p0, -0x72ff26c6
 
     .line 2
     .line 3

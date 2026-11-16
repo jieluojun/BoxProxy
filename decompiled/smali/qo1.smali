@@ -1,151 +1,247 @@
-.class public abstract Lqo1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lqo1;
+.super Ldo1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lc23;
+# instance fields
+.field public R:Lro1;
+
+.field public S:Z
+
+.field public T:Lu72;
+
+.field public U:Lu72;
+
+.field public V:Z
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final K1(Lt3;Lju0;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    new-instance v0, Lgu0;
+    iget-object v3, p0, Ldo1;->y:Lkl4;
 
     .line 2
     .line 3
-    const/16 v1, 0x1a
+    if-eqz v3, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lgu0;-><init>(B)V
+    iget-object v6, p0, Lqo1;->R:Lro1;
 
     .line 6
     .line 7
-    .line 8
-    sget-object v1, Lr53;->k:Lr53;
-
-    .line 9
-    .line 10
-    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object v0
-
-    .line 14
-    sput-object v0, Lqo1;->a:Lc23;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-.method public static final a(Landroid/graphics/drawable/Drawable;)J
-    .locals 6
-
-    .line 1
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-ltz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    new-instance v0, Lt3;
 
     .line 8
     .line 9
+    const/4 v4, 0x0
+
     .line 10
-    move-result v0
+    const/16 v5, 0xa
 
     .line 11
-    if-ltz v0, :cond_0
-
     .line 12
+    move-object v2, p0
+
     .line 13
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    move-object v1, p1
 
     .line 14
+    invoke-direct/range {v0 .. v5}, Lt3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lp91;B)V
+
     .line 15
     .line 16
-    move-result v0
-
     .line 17
-    int-to-float v0, v0
+    invoke-interface {v6, v0, p2}, Lro1;->a(Lt3;Lju0;)Ljava/lang/Object;
 
     .line 18
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
     .line 19
     .line 20
+    move-result-object p0
+
     .line 21
-    move-result p0
+    sget-object p1, Lpc1;->i:Lpc1;
 
     .line 22
-    int-to-float p0, p0
-
     .line 23
-    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+    if-ne p0, p1, :cond_0
 
     .line 24
     .line 25
+    return-object p0
+
     .line 26
-    move-result v0
+    :cond_0
+    sget-object p0, Ll97;->a:Ll97;
 
     .line 27
-    int-to-long v0, v0
-
     .line 28
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+    return-object p0
+.end method
+
+.method public final P1(J)V
+    .locals 3
+
+    .line 1
+    iget-boolean v0, p0, Lrw3;->v:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lqo1;->T:Lu72;
+
+    .line 6
+    .line 7
+    sget-object v1, Loo1;->a:Lno1;
+
+    .line 8
+    .line 9
+    invoke-static {v0, v1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Lrw3;->u1()Loc1;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v0
+
+    .line 19
+    new-instance v1, Lpo1;
+
+    .line 20
+    .line 21
+    const/4 v2, 0x0
+
+    .line 22
+    invoke-direct {v1, p0, p1, p2, v2}, Lpo1;-><init>(Lqo1;JLp91;)V
+
+    .line 23
+    .line 24
+    .line 25
+    const/4 p0, 0x1
+
+    .line 26
+    sget-object p1, Lrc1;->l:Lrc1;
+
+    .line 27
+    .line 28
+    invoke-static {v0, v2, p1, v1, p0}, Lan0;->M(Loc1;Lx2;Lrc1;Lt72;I)Lwg6;
 
     .line 29
     .line 30
     .line 31
-    move-result p0
+    :cond_0
+    return-void
+.end method
 
+.method public final Q1(Lpn1;)V
+    .locals 7
+
+    .line 1
+    iget-boolean v0, p0, Lrw3;->v:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lqo1;->U:Lu72;
+
+    .line 6
+    .line 7
+    sget-object v1, Loo1;->b:Lno1;
+
+    .line 8
+    .line 9
+    invoke-static {v0, v1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    iget-object v4, p0, Ldo1;->y:Lkl4;
+
+    .line 16
+    .line 17
+    if-eqz v4, :cond_0
+
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Lrw3;->u1()Loc1;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v0
+
+    .line 23
+    new-instance v1, Lt3;
+
+    .line 24
+    .line 25
+    const/16 v6, 0xb
+
+    .line 26
+    .line 27
+    const/4 v5, 0x0
+
+    .line 28
+    move-object v2, p0
+
+    .line 29
+    move-object v3, p1
+
+    .line 30
+    invoke-direct/range {v1 .. v6}, Lt3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lp91;B)V
+
+    .line 31
     .line 32
-    int-to-long v2, p0
-
     .line 33
-    const/16 p0, 0x20
+    const/4 p0, 0x1
 
     .line 34
-    .line 35
-    shl-long/2addr v0, p0
+    sget-object p1, Lrc1;->l:Lrc1;
 
+    .line 35
     .line 36
-    const-wide v4, 0xffffffffL
+    invoke-static {v0, v5, p1, v1, p0}, Lan0;->M(Loc1;Lx2;Lrc1;Lt72;I)Lwg6;
 
     .line 37
     .line 38
     .line 39
-    .line 40
-    .line 41
-    and-long/2addr v2, v4
-
-    .line 42
-    or-long/2addr v0, v2
-
-    .line 43
-    return-wide v0
-
-    .line 44
     :cond_0
-    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
+    return-void
+.end method
 
-    .line 45
-    .line 46
-    .line 47
-    .line 48
-    .line 49
-    return-wide v0
+.method public final Y1()Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lqo1;->S:Z
+
+    .line 2
+    .line 3
+    return p0
 .end method

@@ -1,103 +1,123 @@
-.class public final synthetic Lfd1;
+.class public final Lfd1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Lo47;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lgr4;
+.field public final b:S
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgr4;B)V
+.method public constructor <init>(I)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lfd1;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lfd1;->k:Lgr4;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-short p1, p0, Lfd1;->b:S
 
+    .line 5
     .line 6
+    if-lez p1, :cond_0
+
     .line 7
     .line 8
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lfd1;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x1
-
-    .line 6
-    iget-object p0, p0, Lfd1;->k:Lgr4;
-
-    .line 7
-    .line 8
-    packed-switch v0, :pswitch_data_0
 
     .line 9
+    :cond_0
+    const-string p0, "durationMillis must be > 0."
+
     .line 10
     .line 11
-    invoke-virtual {p0, v2}, Lgr4;->e(Z)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 12
     .line 13
     .line 14
-    return-object v1
+    const/4 p0, 0x0
 
     .line 15
-    :pswitch_0
-    invoke-virtual {p0, v2}, Lgr4;->d(Z)V
+    throw p0
+.end method
 
+
+# virtual methods
+.method public final a(Lcs2;)Ls47;
+    .locals 2
+
+    .line 1
+    instance-of v0, p1, Lkm6;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    new-instance p0, Ldf4;
+
+    .line 6
+    .line 7
+    invoke-direct {p0, p1}, Ldf4;-><init>(Lcs2;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-object p0
+
+    .line 11
+    :cond_0
+    move-object v0, p1
+
+    .line 12
+    check-cast v0, Lkm6;
+
+    .line 13
+    .line 14
+    iget-object v0, v0, Lkm6;->c:Lff1;
+
+    .line 15
     .line 16
+    sget-object v1, Lff1;->i:Lff1;
+
     .line 17
     .line 18
-    return-object v1
+    if-ne v0, v1, :cond_1
 
     .line 19
-    :pswitch_1
-    invoke-virtual {p0, v2}, Lgr4;->e(Z)V
-
     .line 20
+    new-instance p0, Ldf4;
+
     .line 21
     .line 22
-    return-object v1
+    invoke-direct {p0, p1}, Ldf4;-><init>(Lcs2;)V
 
     .line 23
-    :pswitch_2
-    invoke-virtual {p0, v2}, Lgr4;->d(Z)V
-
     .line 24
     .line 25
+    return-object p0
+
     .line 26
-    return-object v1
+    :cond_1
+    new-instance v0, Lgd1;
 
     .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 28
+    iget-short p0, p0, Lfd1;->b:S
+
+    .line 29
+    .line 30
+    invoke-direct {v0, p1, p0}, Lgd1;-><init>(Lcs2;I)V
+
+    .line 31
+    .line 32
+    .line 33
+    return-object v0
 .end method

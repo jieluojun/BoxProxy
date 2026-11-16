@@ -1,70 +1,70 @@
-.class public final Lr67;
-.super Lvp3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lwm4;
+.class public Lr67;
+.super Ls57;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public x:Lp20;
-
-
-# virtual methods
-.method public final f(Lyh1;Ljava/lang/Object;)Ljava/lang/Object;
+# direct methods
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    instance-of p1, p2, Lxf5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
-
     .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Le23;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p1}, Le23;->L()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
     .line 5
-    check-cast p2, Lxf5;
+    const/16 v0, 0x9
 
     .line 6
     .line 7
-    goto :goto_0
+    if-ne p0, v0, :cond_0
 
     .line 8
-    :cond_0
-    const/4 p2, 0x0
-
     .line 9
-    :goto_0
-    if-nez p2, :cond_1
+    invoke-virtual {p1}, Le23;->H()V
 
     .line 10
     .line 11
-    new-instance p2, Lxf5;
-
     .line 12
+    const/4 p0, 0x0
+
     .line 13
-    invoke-direct {p2}, Lxf5;-><init>()V
+    return-object p0
 
     .line 14
+    :cond_0
+    invoke-virtual {p1}, Le23;->J()Ljava/lang/String;
+
     .line 15
     .line 16
-    :cond_1
-    iget-object p0, p0, Lr67;->x:Lp20;
-
     .line 17
+    move-result-object p0
+
     .line 18
-    new-instance p1, Lkc1;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
 
     .line 19
     .line 20
-    invoke-direct {p1, p0}, Lkc1;-><init>(Lp20;)V
-
     .line 21
-    .line 22
-    .line 23
-    iput-object p1, p2, Lxf5;->c:Lyr;
+    move-result-object p0
 
-    .line 24
-    .line 25
-    return-object p2
+    .line 22
+    return-object p0
 .end method

@@ -1,72 +1,60 @@
 .class public final Luk4;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lyk4;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Ll84;
-
-.field public l:I
+# static fields
+.field public static final c:Luk4;
 
 
 # direct methods
-.method public constructor <init>(Ll84;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Luk4;->k:Ll84;
+    new-instance v0, Luk4;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
+    invoke-direct {v0, v1, v2, v2}, Lyk4;-><init>(III)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Luk4;->c:Luk4;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lgv2;Lcv;Lhd6;Lah5;Lal4;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Luk4;->j:Ljava/lang/Object;
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    iget p1, p0, Luk4;->l:I
+    invoke-virtual {p1, p0}, Lgv2;->d(I)Ljava/lang/Object;
 
+    .line 3
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
-    .line 7
-    or-int/2addr p1, v0
-
-    .line 8
-    iput p1, p0, Luk4;->l:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Luk4;->k:Ll84;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, p0}, Ll84;->e(Lt62;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
     move-result-object p0
 
-    .line 17
-    return-object p0
+    .line 6
+    invoke-virtual {p3, p0}, Lhd6;->U(Ljava/lang/Object;)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
 .end method

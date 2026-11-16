@@ -1,13 +1,12 @@
-.class public final Lpp1;
+.class public abstract Lpp1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ll43;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final a:Lpp1;
+.field public static final a:[I
+
+.field public static final b:[I
 
 
 # direct methods
@@ -15,34 +14,226 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lpp1;
+    const v0, 0x10100a0
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    filled-new-array {v0}, [I
+
     .line 5
     .line 6
-    sput-object v0, Lpp1;->a:Lpp1;
+    .line 7
+    move-result-object v0
 
+    .line 8
+    sput-object v0, Lpp1;->a:[I
+
+    .line 9
+    .line 10
+    const/4 v0, 0x0
+
+    .line 11
+    new-array v0, v0, [I
+
+    .line 12
+    .line 13
+    sput-object v0, Lpp1;->b:[I
+
+    .line 14
+    .line 15
+    new-instance v0, Landroid/graphics/Rect;
+
+    .line 16
+    .line 17
+    return-void
+.end method
+
+.method public static a(Landroid/graphics/drawable/Drawable;)V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    .line 6
     .line 7
     .line 8
+    move-result-object v0
+
+    .line 9
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 10
+    .line 11
+    const/16 v2, 0x1f
+
+    .line 12
+    .line 13
+    if-ge v1, v2, :cond_1
+
+    .line 14
+    .line 15
+    const-string v1, "android.graphics.drawable.ColorStateListDrawable"
+
+    .line 16
+    .line 17
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v0
+
+    .line 21
+    if-eqz v0, :cond_1
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v0
+
+    .line 27
+    if-eqz v0, :cond_0
+
+    .line 28
+    .line 29
+    array-length v1, v0
+
+    .line 30
+    if-eqz v1, :cond_0
+
+    .line 31
+    .line 32
+    sget-object v1, Lpp1;->b:[I
+
+    .line 33
+    .line 34
+    invoke-virtual {p0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    .line 35
+    .line 36
+    .line 37
+    goto :goto_0
+
+    .line 38
+    :cond_0
+    sget-object v1, Lpp1;->a:[I
+
+    .line 39
+    .line 40
+    invoke-virtual {p0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    .line 41
+    .line 42
+    .line 43
+    :goto_0
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    .line 44
+    .line 45
+    .line 46
+    :cond_1
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()V
-    .locals 0
+.method public static b(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    .locals 1
 
     .line 1
-    return-void
-.end method
+    const/4 v0, 0x3
 
-.method public final cancel()V
-    .locals 0
+    .line 2
+    if-eq p0, v0, :cond_2
 
-    .line 1
-    return-void
+    .line 3
+    .line 4
+    const/4 v0, 0x5
+
+    .line 5
+    if-eq p0, v0, :cond_1
+
+    .line 6
+    .line 7
+    const/16 v0, 0x9
+
+    .line 8
+    .line 9
+    if-eq p0, v0, :cond_0
+
+    .line 10
+    .line 11
+    packed-switch p0, :pswitch_data_0
+
+    .line 12
+    .line 13
+    .line 14
+    return-object p1
+
+    .line 15
+    :pswitch_0
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->ADD:Landroid/graphics/PorterDuff$Mode;
+
+    .line 16
+    .line 17
+    return-object p0
+
+    .line 18
+    :pswitch_1
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SCREEN:Landroid/graphics/PorterDuff$Mode;
+
+    .line 19
+    .line 20
+    return-object p0
+
+    .line 21
+    :pswitch_2
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    .line 22
+    .line 23
+    return-object p0
+
+    .line 24
+    :cond_0
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    .line 25
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_1
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    .line 28
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_2
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
+
+    .line 31
+    .line 32
+    return-object p0
+
+    .line 33
+    :pswitch_data_0
+    .packed-switch 0xe
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

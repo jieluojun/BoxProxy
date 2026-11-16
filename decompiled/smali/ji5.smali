@@ -1,74 +1,153 @@
 .class public final Lji5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Ljava/io/File;
+.field public final a:Landroid/content/res/Resources;
 
-.field public synthetic k:Ljava/lang/Object;
-
-.field public final synthetic l:Lki5;
-
-.field public m:I
+.field public final b:Landroid/content/res/Resources$Theme;
 
 
 # direct methods
-.method public constructor <init>(Lki5;Lz81;)V
+.method public constructor <init>(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lji5;->l:Lki5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lji5;->a:Landroid/content/res/Resources;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lji5;->b:Landroid/content/res/Resources$Theme;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lji5;->k:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget p1, p0, Lji5;->m:I
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    :cond_0
+    const/4 v1, 0x0
 
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    if-eqz p1, :cond_1
 
+    .line 7
     .line 8
-    iput p1, p0, Lji5;->m:I
+    const-class v2, Lji5;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lji5;->l:Lki5;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 11
     .line 12
-    const/4 v0, 0x0
-
     .line 13
-    invoke-virtual {p1, v0, p0}, Lki5;->h(Ljava/io/File;Lz81;)Ljava/lang/Object;
+    move-result-object v3
 
     .line 14
+    if-ne v2, v3, :cond_1
+
     .line 15
     .line 16
-    move-result-object p0
+    check-cast p1, Lji5;
 
     .line 17
-    return-object p0
+    .line 18
+    iget-object v2, p0, Lji5;->a:Landroid/content/res/Resources;
+
+    .line 19
+    .line 20
+    iget-object v3, p1, Lji5;->a:Landroid/content/res/Resources;
+
+    .line 21
+    .line 22
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v2
+
+    .line 26
+    if-eqz v2, :cond_1
+
+    .line 27
+    .line 28
+    iget-object p0, p0, Lji5;->b:Landroid/content/res/Resources$Theme;
+
+    .line 29
+    .line 30
+    iget-object p1, p1, Lji5;->b:Landroid/content/res/Resources$Theme;
+
+    .line 31
+    .line 32
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p0
+
+    .line 36
+    if-eqz p0, :cond_1
+
+    .line 37
+    .line 38
+    return v0
+
+    .line 39
+    :cond_1
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lji5;->a:Landroid/content/res/Resources;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lji5;->b:Landroid/content/res/Resources$Theme;
+
+    .line 4
+    .line 5
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
 .end method

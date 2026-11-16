@@ -1,75 +1,58 @@
 .class public final Lbq4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lbq4;
+# instance fields
+.field public i:Lfh1;
 
+.field public j:I
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.field public synthetic k:Ljava/lang/Object;
 
-    .line 1
-    new-instance v0, Lbq4;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lbq4;->a:Lbq4;
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public l:I
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    const/4 v0, 0x1
+    iput-object p1, p0, Lbq4;->k:Ljava/lang/Object;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    iget p1, p0, Lbq4;->l:I
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of p0, p1, Lbq4;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    if-nez p0, :cond_1
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    const/4 p0, 0x0
+    iput p1, p0, Lbq4;->l:I
 
+    .line 9
     .line 10
-    return p0
+    const/4 p1, 0x0
 
     .line 11
-    :cond_1
-    return v0
-.end method
+    const/4 v0, 0x0
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 12
+    const/4 v1, 0x0
 
-    .line 1
-    const-string p0, "PlatformSpanStyle()"
+    .line 13
+    invoke-static {v1, v1, p1, v0, p0}, Lab;->k(Lfh1;Lrz5;IFLq91;)Ljava/lang/Object;
 
-    .line 2
-    .line 3
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
     return-object p0
 .end method

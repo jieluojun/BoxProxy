@@ -1,86 +1,46 @@
 .class public final Ldg5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lcg5;
+.super Lcg5;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Ldg5;
+# instance fields
+.field public final b:Ldh4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ldh4;Leg5;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ldg5;
+    invoke-direct {p0, p2}, Lcg5;-><init>(Leg5;)V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Ldg5;->b:Ldh4;
+
     .line 5
     .line 6
-    sput-object v0, Ldg5;->a:Ldg5;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lwp3;Z)Lwp3;
-    .locals 1
-
-    .line 1
-    new-instance p0, Lz13;
-
-    .line 2
-    .line 3
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0, p2}, Lz13;-><init>(FZ)V
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-interface {p1, p0}, Lwp3;->d0(Lwp3;)Lwp3;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    return-object p0
-.end method
-
-.method public final b(Lwp3;)Lwp3;
+.method public final c()Ljava/lang/Object;
     .locals 0
 
     .line 1
-    new-instance p0, Lq67;
+    iget-object p0, p0, Ldg5;->b:Ldh4;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p0}, Ldh4;->e()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    invoke-interface {p1, p0}, Lwp3;->d0(Lwp3;)Lwp3;
-
-    .line 7
-    .line 8
-    .line 9
     move-result-object p0
 
-    .line 10
+    .line 7
     return-object p0
 .end method

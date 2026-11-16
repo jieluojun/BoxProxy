@@ -1,89 +1,77 @@
 .class public final Lux3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Lum4;
+.field public i:Lvx3;
 
-.field public final b:Lum4;
+.field public j:Lvf5;
 
-.field public final c:Lum4;
+.field public k:Lsf5;
 
-.field public final d:Lum4;
+.field public l:Lk06;
 
-.field public e:Lc11;
+.field public m:Lvf5;
+
+.field public synthetic n:Ljava/lang/Object;
+
+.field public o:I
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 2
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lux3;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iget p1, p0, Lux3;->o:I
+
     .line 4
-    sget-object v0, Lvx3;->a:Lvx3;
-
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
     .line 7
-    .line 8
-    .line 9
-    move-result-object v0
+    or-int/2addr p1, v0
 
+    .line 8
+    iput p1, p0, Lux3;->o:I
+
+    .line 9
     .line 10
-    iput-object v0, p0, Lux3;->a:Lum4;
+    const/4 v4, 0x0
 
     .line 11
-    .line 12
-    sget-object v0, Lqu1;->j:Lqu1;
+    const-wide/16 v5, 0x0
 
+    .line 12
     .line 13
+    const/4 v0, 0x0
+
     .line 14
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    const/4 v1, 0x0
 
     .line 15
+    const/4 v2, 0x0
+
     .line 16
+    const/4 v3, 0x0
+
     .line 17
-    move-result-object v1
+    move-object v7, p0
 
     .line 18
-    iput-object v1, p0, Lux3;->b:Lum4;
+    invoke-static/range {v0 .. v7}, Lvx3;->f(Lvx3;Lvf5;Lsf5;Lk06;Lvf5;JLq91;)Ljava/lang/Object;
 
     .line 19
     .line 20
-    sget-object v1, Lqx3;->a:Lqx3;
-
     .line 21
+    move-result-object p0
+
     .line 22
-    invoke-static {v1}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v1
-
-    .line 26
-    iput-object v1, p0, Lux3;->c:Lum4;
-
-    .line 27
-    .line 28
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object v0
-
-    .line 32
-    iput-object v0, p0, Lux3;->d:Lum4;
-
-    .line 33
-    .line 34
-    return-void
+    return-object p0
 .end method

@@ -1,67 +1,84 @@
 .class public final Lix1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljx1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:C
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:B
-
-.field public final d:I
+.field public final k:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(IIILjava/lang/String;)V
-    .locals 0
-
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 15
-    iput-object p4, p0, Lix1;->b:Ljava/lang/String;
-
-    .line 16
-    iput-char p1, p0, Lix1;->a:C
-
-    .line 17
-    iput-byte p2, p0, Lix1;->c:B
-
-    .line 18
-    iput p3, p0, Lix1;->d:I
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;I)V
+.method public constructor <init>(JLjava/lang/Runnable;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljx1;-><init>(J)V
 
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Lix1;->b:Ljava/lang/String;
+    iput-object p3, p0, Lix1;->k:Ljava/lang/Runnable;
 
     .line 5
     .line 6
-    iput-char p1, p0, Lix1;->a:C
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lix1;->k:Ljava/lang/Runnable;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    invoke-super {p0}, Ljx1;->toString()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v1
 
     .line 7
-    .line 8
-    iput-byte p3, p0, Lix1;->c:B
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 8
     .line 9
     .line 10
-    const/4 p1, -0x1
+    iget-object p0, p0, Lix1;->k:Ljava/lang/Runnable;
 
     .line 11
-    iput p1, p0, Lix1;->d:I
-
     .line 12
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 13
-    return-void
+    .line 14
+    .line 15
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    return-object p0
 .end method

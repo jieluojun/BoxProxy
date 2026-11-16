@@ -1,179 +1,158 @@
-.class public abstract Lns5;
+.class public final synthetic Lns5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lmx1;
 
 
-# static fields
-.field public static final a:[J
+# instance fields
+.field public final synthetic i:B
 
-.field public static final b:Lgt3;
+.field public final synthetic j:Lcr5;
+
+.field public final synthetic k:Lou0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lcr5;Lou0;B)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x2
+    iput-byte p3, p0, Lns5;->i:B
 
     .line 2
-    new-array v0, v0, [J
-
     .line 3
-    .line 4
-    fill-array-data v0, :array_0
+    iput-object p1, p0, Lns5;->j:Lcr5;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lns5;->k:Lou0;
+
     .line 6
     .line 7
-    sput-object v0, Lns5;->a:[J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    new-instance v0, Lgt3;
-
     .line 10
-    .line 11
-    const/4 v1, 0x0
+    return-void
+.end method
 
+
+# virtual methods
+.method public final f(Lcx1;)V
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Lns5;->i:B
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lns5;->k:Lou0;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lns5;->j:Lcr5;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
+    .line 9
+    .line 10
+    check-cast p1, Ly16;
+
+    .line 11
     .line 12
-    invoke-direct {v0, v1}, Lgt3;-><init>(I)V
+    invoke-virtual {p0, v1}, Lcr5;->a(Lou0;)V
 
     .line 13
     .line 14
     .line 15
-    sput-object v0, Lns5;->b:Lgt3;
+    iget-byte p1, p1, Ly16;->e:B
 
     .line 16
     .line 17
-    return-void
+    const/4 v0, 0x6
 
     .line 18
-    nop
+    if-ne p1, v0, :cond_0
 
     .line 19
-    :array_0
-    .array-data 8
-        -0x7f7f7f7f7f7f7f01L    # -2.937446524423077E-306
-        -0x1
-    .end array-data
-.end method
+    .line 20
+    invoke-virtual {p0, v1}, Lcr5;->b(Lou0;)V
 
-.method public static final a(I)I
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x7
-
-    .line 2
-    if-ne p0, v0, :cond_0
-
-    .line 3
-    .line 4
-    const/4 p0, 0x6
-
-    .line 5
-    return p0
-
-    .line 6
+    .line 21
+    .line 22
+    .line 23
     :cond_0
-    div-int/lit8 v0, p0, 0x8
+    return-void
 
-    .line 7
-    .line 8
-    sub-int/2addr p0, v0
+    .line 24
+    :pswitch_0
+    check-cast p1, Lgb5;
 
-    .line 9
-    return p0
-.end method
+    .line 25
+    .line 26
+    invoke-virtual {p0, v1}, Lcr5;->b(Lou0;)V
 
-.method public static final b(I)I
-    .locals 0
+    .line 27
+    .line 28
+    .line 29
+    return-void
 
-    .line 1
-    if-nez p0, :cond_0
+    .line 30
+    :pswitch_1
+    check-cast p1, Lh81;
 
-    .line 2
-    .line 3
-    const/4 p0, 0x6
+    .line 31
+    .line 32
+    iget-object p1, p0, Lcr5;->c:Lp72;
 
-    .line 4
-    return p0
+    .line 33
+    .line 34
+    invoke-virtual {v1}, Lou0;->getText()Lc81;
 
-    .line 5
-    :cond_0
-    mul-int/lit8 p0, p0, 0x2
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v0
 
-    .line 6
-    .line 7
-    add-int/lit8 p0, p0, 0x1
+    .line 38
+    invoke-virtual {v0}, Lc81;->toString()Ljava/lang/String;
 
-    .line 8
-    .line 9
-    return p0
-.end method
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v0
 
-.method public static final c(I)I
-    .locals 1
+    .line 42
+    invoke-interface {p1, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1
-    if-lez p0, :cond_0
+    .line 43
+    .line 44
+    .line 45
+    invoke-virtual {p0, v1}, Lcr5;->b(Lou0;)V
 
-    .line 2
-    .line 3
-    const/4 v0, -0x1
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {p0, v1}, Lcr5;->a(Lou0;)V
 
-    .line 4
-    invoke-static {p0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
+    .line 49
+    .line 50
+    .line 51
+    return-void
 
-    .line 5
-    .line 6
-    .line 7
-    move-result p0
+    .line 52
+    nop
 
-    .line 8
-    ushr-int p0, v0, p0
-
-    .line 9
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
-.end method
-
-.method public static final d(I)I
-    .locals 2
-
-    .line 1
-    const/4 v0, 0x7
-
-    .line 2
-    if-ne p0, v0, :cond_0
-
-    .line 3
-    .line 4
-    const/16 p0, 0x8
-
-    .line 5
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    add-int/lit8 v1, p0, -0x1
-
-    .line 8
-    .line 9
-    div-int/2addr v1, v0
-
-    .line 10
-    add-int/2addr v1, p0
-
-    .line 11
-    return v1
+    .line 53
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

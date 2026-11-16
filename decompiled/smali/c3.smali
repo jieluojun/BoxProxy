@@ -1,15 +1,15 @@
 .class public abstract Lc3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final j:Le3;
+.field public final i:Le3;
 
-.field public final synthetic k:Lf3;
+.field public final synthetic j:Lf3;
 
 
 # direct methods
@@ -22,11 +22,11 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lc3;->k:Lf3;
+    iput-object p1, p0, Lc3;->j:Lf3;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lc3;->j:Le3;
+    iput-object p2, p0, Lc3;->i:Le3;
 
     .line 7
     .line 8
@@ -42,11 +42,11 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lc3;->k:Lf3;
+    iget-object p0, p0, Lc3;->j:Lf3;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lf3;->j:Lsu0;
+    iget-object p0, p0, Lf3;->i:Lou0;
 
     .line 4
     .line 5
@@ -91,7 +91,7 @@
     move-result-object v0
 
     .line 11
-    iget-object p0, p0, Lc3;->j:Le3;
+    iget-object p0, p0, Lc3;->i:Le3;
 
     .line 12
     .line 13
@@ -104,7 +104,7 @@
 
     .line 17
     :cond_0
-    iget-object p0, p0, Lc3;->j:Le3;
+    iget-object p0, p0, Lc3;->i:Le3;
 
     .line 18
     .line 19
@@ -140,15 +140,19 @@
     return-void
 
     .line 32
-    :catchall_0
-    move-exception v0
-
-    .line 33
+    :goto_0
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 34
+    .line 33
     throw v0
+
+    .line 34
+    :catchall_0
+    move-exception v0
+
+    .line 35
+    goto :goto_0
 .end method

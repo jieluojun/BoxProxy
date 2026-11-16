@@ -1,27 +1,27 @@
 .class public final synthetic Lqb;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Lp72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Llj1;
+.field public final synthetic j:Lik1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llj1;B)V
+.method public synthetic constructor <init>(Lik1;B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lqb;->j:B
+    iput-byte p2, p0, Lqb;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lqb;->k:Llj1;
+    iput-object p1, p0, Lqb;->j:Lik1;
 
     .line 4
     .line 5
@@ -39,11 +39,11 @@
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lqb;->j:B
+    iget-byte v0, p0, Lqb;->i:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lqb;->k:Llj1;
+    iget-object p0, p0, Lqb;->j:Lik1;
 
     .line 4
     .line 5
@@ -52,67 +52,60 @@
     .line 6
     .line 7
     .line 8
-    check-cast p1, Lzy;
+    check-cast p1, Liy;
 
     .line 9
     .line 10
-    iget-object p1, p0, Llj1;->o:Ljj1;
+    iget-object p1, p0, Lik1;->n:Lfk1;
 
     .line 11
     .line 12
-    iget-boolean p1, p1, Ljj1;->a:Z
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 13
     .line 14
-    if-eqz p1, :cond_0
-
     .line 15
+    iget-object p0, p0, Lik1;->m:Le72;
+
     .line 16
-    iget-object p0, p0, Llj1;->n:Le62;
-
     .line 17
-    .line 18
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
 
+    .line 18
     .line 19
     .line 20
-    .line 21
-    :cond_0
-    sget-object p0, La47;->a:La47;
+    sget-object p0, Ll97;->a:Ll97;
 
+    .line 21
     .line 22
-    .line 23
     return-object p0
 
-    .line 24
+    .line 23
     :pswitch_0
-    check-cast p1, Lvk1;
+    check-cast p1, Lsl1;
 
+    .line 24
     .line 25
-    .line 26
     invoke-virtual {p0}, Landroid/app/Dialog;->show()V
 
+    .line 26
     .line 27
     .line 28
-    .line 29
-    new-instance p1, La7;
+    new-instance p1, Lx6;
 
+    .line 29
     .line 30
-    .line 31
     const/4 v0, 0x1
 
-    .line 32
-    invoke-direct {p1, p0, v0}, La7;-><init>(Ljava/lang/Object;B)V
+    .line 31
+    invoke-direct {p1, p0, v0}, Lx6;-><init>(Ljava/lang/Object;B)V
 
+    .line 32
     .line 33
     .line 34
-    .line 35
     return-object p1
 
-    .line 36
-    nop
-
-    .line 37
+    .line 35
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

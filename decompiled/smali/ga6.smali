@@ -1,206 +1,181 @@
-.class public final enum Lga6;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final k:Lb55;
-
-.field public static final enum l:Lga6;
-
-.field public static final enum m:Lga6;
-
-.field public static final enum n:Lga6;
-
-.field public static final synthetic o:[Lga6;
-
-.field public static final synthetic p:Lzv1;
+.class public final Lga6;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final a:Lh04;
+
+.field public final b:Lh04;
+
+.field public final c:Lh04;
+
+.field public final d:Lh04;
+
+.field public final e:Lh04;
+
+.field public final f:Lh04;
+
+.field public final g:Lh04;
+
+.field public final h:Lh04;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    .line 1
-    new-instance v0, Lga6;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const-string v2, "apple"
-
-    .line 5
-    .line 6
-    const-string v3, "Apple"
-
-    .line 7
-    .line 8
-    invoke-direct {v0, v1, v3, v2}, Lga6;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 9
-    .line 10
-    .line 11
-    sput-object v0, Lga6;->l:Lga6;
-
-    .line 12
-    .line 13
-    new-instance v1, Lga6;
-
-    .line 14
-    .line 15
-    const/4 v2, 0x1
-
-    .line 16
-    const-string v3, "cloudflare"
-
-    .line 17
-    .line 18
-    const-string v4, "Cloudflare"
-
-    .line 19
-    .line 20
-    invoke-direct {v1, v2, v4, v3}, Lga6;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    sput-object v1, Lga6;->m:Lga6;
-
-    .line 24
-    .line 25
-    new-instance v2, Lga6;
-
-    .line 26
-    .line 27
-    const/4 v3, 0x2
-
-    .line 28
-    const-string v4, "ookla"
-
-    .line 29
-    .line 30
-    const-string v5, "Ookla"
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3, v5, v4}, Lga6;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 33
-    .line 34
-    .line 35
-    sput-object v2, Lga6;->n:Lga6;
-
-    .line 36
-    .line 37
-    filled-new-array {v0, v1, v2}, [Lga6;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    sput-object v0, Lga6;->o:[Lga6;
-
-    .line 42
-    .line 43
-    new-instance v1, Lzv1;
-
-    .line 44
-    .line 45
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
-
-    .line 46
-    .line 47
-    .line 48
-    sput-object v1, Lga6;->p:Lzv1;
-
-    .line 49
-    .line 50
-    new-instance v0, Lb55;
-
-    .line 51
-    .line 52
-    const/16 v1, 0x13
-
-    .line 53
-    .line 54
-    invoke-direct {v0, v1}, Lb55;-><init>(B)V
-
-    .line 55
-    .line 56
-    .line 57
-    sput-object v0, Lga6;->k:Lb55;
-
-    .line 58
-    .line 59
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lh04;Lh04;Lh04;Lh04;Lh04;Lh04;Lh04;Lh04;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput-object p3, p0, Lga6;->j:Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 5
+    .line 6
+    .line 7
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 26
+    .line 27
+    .line 28
+    iput-object p1, p0, Lga6;->a:Lh04;
+
+    .line 29
+    .line 30
+    iput-object p2, p0, Lga6;->b:Lh04;
+
+    .line 31
+    .line 32
+    iput-object p3, p0, Lga6;->c:Lh04;
+
+    .line 33
+    .line 34
+    iput-object p4, p0, Lga6;->d:Lh04;
+
+    .line 35
+    .line 36
+    iput-object p5, p0, Lga6;->e:Lh04;
+
+    .line 37
+    .line 38
+    iput-object p6, p0, Lga6;->f:Lh04;
+
+    .line 39
+    .line 40
+    iput-object p7, p0, Lga6;->g:Lh04;
+
+    .line 41
+    .line 42
+    iput-object p8, p0, Lga6;->h:Lh04;
+
+    .line 43
+    .line 44
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lda6;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lga6;->f:Lh04;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Lh04;->setValue(Ljava/lang/Object;)V
+
+    .line 4
     .line 5
     .line 6
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lga6;
-    .locals 1
+.method public final b(Laa6;)V
+    .locals 0
 
     .line 1
-    const-class v0, Lga6;
+    iget-object p0, p0, Lga6;->h:Lh04;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-interface {p0, p1}, Lh04;->setValue(Ljava/lang/Object;)V
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lga6;
-
-    .line 8
-    .line 9
-    return-object p0
+    return-void
 .end method
 
-.method public static values()[Lga6;
-    .locals 1
+.method public final c(Lda6;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lga6;->o:[Lga6;
+    iget-object p0, p0, Lga6;->e:Lh04;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lh04;->setValue(Ljava/lang/Object;)V
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    return-void
+.end method
+
+.method public final d(Z)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lga6;->b:Lh04;
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
 
     .line 7
-    check-cast v0, [Lga6;
+    invoke-interface {p0, p1}, Lh04;->setValue(Ljava/lang/Object;)V
 
     .line 8
     .line 9
-    return-object v0
+    .line 10
+    return-void
 .end method

@@ -20,7 +20,7 @@
 # instance fields
 .field private final mode:I
 
-.field private final ju:Ldv;
+.field private final ju:Lmu;
 
 # direct methods
 .method private constructor <init>(ILdv;)V
@@ -30,7 +30,7 @@
 
     iput p1, p0, Lcom/box/app/vpn/AppPerm;->mode:I
 
-    iput-object p2, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
+    iput-object p2, p0, Lcom/box/app/vpn/AppPerm;->ju:Lmu;
 
     return-void
 .end method
@@ -128,7 +128,7 @@
 .end method
 
 # Hooked at the start of Ldv;->b(ZZZ)V.
-.method public static check(Ldv;)V
+.method public static check(Lmu;)V
     .locals 3
 
     :try_start_0
@@ -192,13 +192,13 @@
     if-eq v0, v1, :cond_poll
 
     # mode 2: reload the list
-    iget-object v0, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
+    iget-object v0, p0, Lcom/box/app/vpn/AppPerm;->ju:Lmu;
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2, v2}, Ldv;->b(ZZZ)V
+    invoke-virtual {v0, v1, v2, v2}, Lmu;->b(ZZZ)V
 
     sput-boolean v2, Lcom/box/app/vpn/AppPerm;->asking:Z
 
@@ -234,7 +234,7 @@
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
+    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Lmu;
 
     invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/AppPerm;-><init>(ILdv;)V
 
@@ -278,7 +278,7 @@
 
     const/4 v1, 0x2
 
-    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
+    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Lmu;
 
     invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/AppPerm;-><init>(ILdv;)V
 

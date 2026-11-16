@@ -1,608 +1,648 @@
-.class public final synthetic Lsv1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lsv1;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Lp62;
+
+# static fields
+.field public static final j:Leh0;
+
+.field public static final synthetic k:[Lsv1;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Luv1;
-
-.field public final synthetic l:J
+.field public final i:S
 
 
 # direct methods
-.method public synthetic constructor <init>(Luv1;JB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 20
 
     .line 1
-    iput-byte p4, p0, Lsv1;->j:B
+    new-instance v0, Lsv1;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lsv1;->k:Luv1;
+    const-string v1, "undefined type (bug)"
 
     .line 4
     .line 5
-    iput-wide p2, p0, Lsv1;->l:J
+    const/4 v2, -0x6
 
     .line 6
+    const/4 v15, 0x0
+
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v3, "ERR_TYPE_BUG"
 
     .line 8
     .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
-
-    .line 1
-    iget-byte v0, p0, Lsv1;->j:B
-
-    .line 2
-    .line 3
-    const-wide/16 v1, 0x0
-
-    .line 4
-    .line 5
-    iget-wide v3, p0, Lsv1;->l:J
-
-    .line 6
-    .line 7
-    const/4 v5, 0x0
-
-    .line 8
-    const/4 v6, 0x2
-
-    .line 9
-    const/4 v7, 0x1
+    invoke-direct {v0, v15, v2, v3, v1}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 10
-    iget-object v8, p0, Lsv1;->k:Luv1;
-
     .line 11
     .line 12
-    check-cast p1, Llv1;
+    new-instance v1, Lsv1;
 
     .line 13
     .line 14
-    packed-switch v0, :pswitch_data_0
+    const-string v2, "too big wide-char value"
 
     .line 15
     .line 16
-    .line 17
-    iget-object p0, v8, Luv1;->C:Lvv1;
+    const/16 v3, -0x191
 
+    .line 17
     .line 18
+    const/4 v4, 0x1
+
     .line 19
-    iget-object p0, p0, Lvv1;->a:Lmv1;
+    const-string v5, "ERR_TOO_BIG_WIDE_CHAR_VALUE"
 
     .line 20
     .line 21
-    iget-object p0, p0, Lmv1;->b:Lg66;
+    invoke-direct {v1, v4, v3, v5, v2}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 22
     .line 23
-    if-eqz p0, :cond_0
-
     .line 24
+    new-instance v2, Lsv1;
+
     .line 25
-    iget-object p0, p0, Lg66;->a:Lp62;
-
     .line 26
+    const-string v3, "too long wide-char value"
+
     .line 27
-    if-eqz p0, :cond_0
-
     .line 28
-    .line 29
-    new-instance v0, Ljs2;
+    const/16 v5, -0xd4
 
+    .line 29
     .line 30
+    const/4 v6, 0x2
+
     .line 31
-    invoke-direct {v0, v3, v4}, Ljs2;-><init>(J)V
+    const-string v7, "ERR_TOO_LONG_WIDE_CHAR_VALUE"
 
     .line 32
     .line 33
-    .line 34
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v2, v6, v5, v7, v3}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 34
     .line 35
     .line 36
-    .line 37
-    move-result-object p0
+    new-instance v3, Lsv1;
 
+    .line 37
     .line 38
-    check-cast p0, Lbs2;
+    const-string v5, "invalid character property name <%n>"
 
     .line 39
     .line 40
-    iget-wide v9, p0, Lbs2;->a:J
+    const/16 v6, -0xdf
 
     .line 41
     .line 42
-    goto :goto_0
+    const/4 v7, 0x3
 
     .line 43
-    :cond_0
-    move-wide v9, v1
+    const-string v8, "ERR_INVALID_CHAR_PROPERTY_NAME"
 
     .line 44
-    :goto_0
-    iget-object p0, v8, Luv1;->D:Lpx1;
-
     .line 45
-    .line 46
-    iget-object p0, p0, Lpx1;->a:Lmv1;
+    invoke-direct {v3, v7, v6, v8, v5}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 46
     .line 47
     .line 48
-    iget-object p0, p0, Lmv1;->b:Lg66;
+    new-instance v4, Lsv1;
 
     .line 49
     .line 50
-    if-eqz p0, :cond_1
+    const-string v6, "invalid code point value"
 
     .line 51
     .line 52
-    iget-object p0, p0, Lg66;->a:Lp62;
+    const/16 v8, -0x190
 
     .line 53
     .line 54
-    if-eqz p0, :cond_1
+    const/4 v9, 0x4
 
     .line 55
+    const-string v10, "ERR_INVALID_CODE_POINT_VALUE"
+
     .line 56
-    new-instance v0, Ljs2;
-
     .line 57
-    .line 58
-    invoke-direct {v0, v3, v4}, Ljs2;-><init>(J)V
+    invoke-direct {v4, v9, v8, v10, v6}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 58
     .line 59
     .line 60
-    .line 61
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v5, Lsv1;
 
+    .line 61
     .line 62
+    const-string v8, "encoding class <%n> not found"
+
     .line 63
     .line 64
-    move-result-object p0
+    const/16 v9, -0x3e8
 
     .line 65
-    check-cast p0, Lbs2;
-
     .line 66
+    const/4 v10, 0x5
+
     .line 67
-    iget-wide v3, p0, Lbs2;->a:J
+    const-string v11, "ERR_ENCODING_CLASS_DEF_NOT_FOUND"
 
     .line 68
     .line 69
-    goto :goto_1
+    invoke-direct {v5, v10, v9, v11, v8}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 70
-    :cond_1
-    move-wide v3, v1
-
     .line 71
-    :goto_1
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
     .line 72
+    new-instance v6, Lsv1;
+
     .line 73
     .line 74
-    move-result p0
+    const-string v9, "problem loading encoding <%n>"
 
     .line 75
-    if-eqz p0, :cond_3
-
     .line 76
-    .line 77
-    if-eq p0, v7, :cond_4
+    const/16 v10, -0x3e9
 
+    .line 77
     .line 78
+    const/4 v11, 0x6
+
     .line 79
-    if-ne p0, v6, :cond_2
+    const-string v12, "ERR_ENCODING_LOAD_ERROR"
 
     .line 80
     .line 81
-    move-wide v1, v3
+    invoke-direct {v6, v11, v10, v12, v9}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 82
-    goto :goto_2
-
     .line 83
-    :cond_2
-    invoke-static {}, Lue1;->a()V
-
     .line 84
+    new-instance v7, Lsv1;
+
     .line 85
     .line 86
-    goto :goto_3
+    const-string v10, "encoding already registerd <%n>"
 
     .line 87
-    :cond_3
-    move-wide v1, v9
-
     .line 88
-    :cond_4
-    :goto_2
-    new-instance v5, Lbs2;
+    const/16 v11, -0x3ea
 
     .line 89
     .line 90
-    invoke-direct {v5, v1, v2}, Lbs2;-><init>(J)V
+    const/4 v12, 0x7
 
     .line 91
+    const-string v13, "ERR_ENCODING_ALREADY_REGISTERED"
+
     .line 92
     .line 93
-    :goto_3
-    return-object v5
+    invoke-direct {v7, v12, v11, v13, v10}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 94
-    :pswitch_0
-    iget-object v0, v8, Luv1;->J:Lf8;
-
     .line 95
     .line 96
-    if-nez v0, :cond_5
+    new-instance v8, Lsv1;
 
     .line 97
     .line 98
-    goto :goto_4
+    const-string v11, "encoding alias already registerd <%n>"
 
     .line 99
-    :cond_5
-    invoke-virtual {v8}, Luv1;->G1()Lf8;
-
     .line 100
+    const/16 v12, -0x3eb
+
     .line 101
     .line 102
-    move-result-object v0
+    const/16 v13, 0x8
 
     .line 103
-    if-nez v0, :cond_6
-
     .line 104
-    .line 105
-    goto :goto_4
+    const-string v14, "ERR_ENCODING_ALIAS_ALREADY_REGISTERED"
 
+    .line 105
     .line 106
-    :cond_6
-    iget-object v0, v8, Luv1;->J:Lf8;
+    invoke-direct {v8, v13, v12, v14, v11}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 107
     .line 108
-    invoke-virtual {v8}, Luv1;->G1()Lf8;
-
     .line 109
+    new-instance v9, Lsv1;
+
     .line 110
     .line 111
-    move-result-object v3
+    const-string v12, "encoding replica already registerd <%n>"
 
     .line 112
-    invoke-static {v0, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 113
+    const/16 v13, -0x3ec
+
     .line 114
     .line 115
-    move-result v0
+    const/16 v14, 0x9
 
     .line 116
-    if-eqz v0, :cond_7
-
     .line 117
-    .line 118
-    goto :goto_4
+    const-string v10, "ERR_ENCODING_REPLICA_ALREADY_REGISTERED"
 
+    .line 118
     .line 119
-    :cond_7
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    invoke-direct {v9, v14, v13, v10, v12}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 120
     .line 121
     .line 122
-    move-result p1
+    new-instance v10, Lsv1;
 
     .line 123
-    if-eqz p1, :cond_9
-
     .line 124
+    const-string v12, "no such encoding <%n>"
+
     .line 125
-    if-eq p1, v7, :cond_9
-
     .line 126
+    const/16 v13, -0x3ed
+
     .line 127
-    if-ne p1, v6, :cond_8
-
     .line 128
+    const/16 v14, 0xa
+
     .line 129
-    iget-object p1, v8, Luv1;->D:Lpx1;
-
     .line 130
+    const-string v11, "ERR_NO_SUCH_ENCODNG"
+
     .line 131
-    iget-object p1, p1, Lpx1;->a:Lmv1;
-
     .line 132
-    .line 133
-    iget-object p1, p1, Lmv1;->c:Lcn0;
+    invoke-direct {v10, v14, v13, v11, v12}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 133
     .line 134
     .line 135
-    if-eqz p1, :cond_9
+    new-instance v11, Lsv1;
 
     .line 136
     .line 137
-    iget-object p1, p1, Lcn0;->b:Lp62;
+    const-string v12, "could not replicate <%n> encoding"
 
     .line 138
     .line 139
-    new-instance v0, Ljs2;
+    const/16 v13, -0x3ee
 
     .line 140
     .line 141
-    iget-wide v2, p0, Lsv1;->l:J
+    const/16 v14, 0xb
 
     .line 142
     .line 143
-    invoke-direct {v0, v2, v3}, Ljs2;-><init>(J)V
+    const-string v15, "ERR_COULD_NOT_REPLICATE"
 
     .line 144
     .line 145
-    .line 146
-    invoke-interface {p1, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v11, v14, v13, v15, v12}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 146
     .line 147
     .line 148
-    .line 149
-    move-result-object p0
+    new-instance v12, Lsv1;
 
+    .line 149
     .line 150
-    check-cast p0, Ljs2;
+    const-string v13, "transcoder from <%n> has been already registered"
 
     .line 151
     .line 152
-    iget-wide v4, p0, Ljs2;->a:J
+    const/16 v14, -0x3ef
 
     .line 153
     .line 154
-    invoke-virtual {v8}, Luv1;->G1()Lf8;
+    const/16 v15, 0xc
 
     .line 155
     .line 156
-    .line 157
-    move-result-object v1
+    move-object/from16 v17, v0
 
+    .line 157
     .line 158
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v0, "ERR_TRANSCODER_ALREADY_REGISTERED"
 
     .line 159
     .line 160
-    .line 161
-    sget-object v6, Lt03;->j:Lt03;
+    invoke-direct {v12, v15, v14, v0, v13}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 161
     .line 162
     .line 163
-    invoke-interface/range {v1 .. v6}, Lf8;->a(JJLt03;)J
+    new-instance v13, Lsv1;
 
     .line 164
     .line 165
-    .line 166
-    move-result-wide p0
+    const-string v0, "transcoder class <%n> not found"
 
+    .line 166
     .line 167
-    iget-object v1, v8, Luv1;->J:Lf8;
+    const/16 v14, -0x3f0
 
     .line 168
     .line 169
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/16 v15, 0xd
 
     .line 170
     .line 171
-    .line 172
-    invoke-interface/range {v1 .. v6}, Lf8;->a(JJLt03;)J
+    move-object/from16 v18, v1
 
+    .line 172
     .line 173
+    const-string v1, "ERR_TRANSCODER_CLASS_DEF_NOT_FOUND"
+
     .line 174
     .line 175
-    move-result-wide v0
+    invoke-direct {v13, v15, v14, v1, v0}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 176
-    invoke-static {p0, p1, v0, v1}, Lbs2;->c(JJ)J
-
     .line 177
     .line 178
-    .line 179
-    move-result-wide v1
+    new-instance v14, Lsv1;
 
+    .line 179
     .line 180
-    goto :goto_4
+    const-string v0, "problem loading transcoder <%n>"
 
     .line 181
-    :cond_8
-    invoke-static {}, Lue1;->a()V
-
     .line 182
+    const/16 v1, -0x3f1
+
     .line 183
     .line 184
-    goto :goto_5
+    const/16 v15, 0xe
 
     .line 185
-    :cond_9
-    :goto_4
-    new-instance v5, Lbs2;
-
     .line 186
-    .line 187
-    invoke-direct {v5, v1, v2}, Lbs2;-><init>(J)V
+    move-object/from16 v19, v2
 
+    .line 187
     .line 188
+    const-string v2, "ERR_TRANSCODER_LOAD_ERROR"
+
     .line 189
     .line 190
-    :goto_5
-    return-object v5
+    invoke-direct {v14, v15, v1, v2, v0}, Lsv1;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
     .line 191
-    :pswitch_1
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
     .line 192
     .line 193
-    .line 194
-    move-result p0
+    move-object/from16 v0, v17
 
+    .line 194
     .line 195
-    if-eqz p0, :cond_b
+    move-object/from16 v1, v18
 
     .line 196
     .line 197
-    if-eq p0, v7, :cond_c
+    move-object/from16 v2, v19
 
     .line 198
     .line 199
-    if-ne p0, v6, :cond_a
+    const/4 v15, 0x3
 
     .line 200
+    const/16 v16, 0x1
+
     .line 201
-    iget-object p0, v8, Luv1;->D:Lpx1;
-
     .line 202
-    .line 203
-    iget-object p0, p0, Lpx1;->a:Lmv1;
+    filled-new-array/range {v0 .. v14}, [Lsv1;
 
+    .line 203
     .line 204
     .line 205
-    iget-object p0, p0, Lmv1;->c:Lcn0;
+    move-result-object v0
 
     .line 206
+    sput-object v0, Lsv1;->k:[Lsv1;
+
     .line 207
-    if-eqz p0, :cond_c
-
     .line 208
+    new-instance v0, Leh0;
+
     .line 209
-    iget-object p0, p0, Lcn0;->b:Lp62;
-
     .line 210
-    .line 211
-    if-eqz p0, :cond_c
+    invoke-direct {v0, v15}, Leh0;-><init>(B)V
 
+    .line 211
     .line 212
     .line 213
-    new-instance p1, Ljs2;
+    sput-object v0, Lsv1;->j:Leh0;
 
     .line 214
     .line 215
-    invoke-direct {p1, v3, v4}, Ljs2;-><init>(J)V
+    invoke-static {}, Lsv1;->values()[Lsv1;
 
     .line 216
     .line 217
     .line 218
-    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
     .line 219
+    array-length v1, v0
+
     .line 220
+    const/4 v15, 0x0
+
     .line 221
-    move-result-object p0
+    :goto_0
+    if-ge v15, v1, :cond_2
 
     .line 222
-    check-cast p0, Ljs2;
-
     .line 223
+    aget-object v2, v0, v15
+
     .line 224
-    iget-wide v3, p0, Ljs2;->a:J
-
     .line 225
-    .line 226
-    goto :goto_6
+    sget-object v3, Lsv1;->j:Leh0;
 
+    .line 226
     .line 227
-    :cond_a
-    invoke-static {}, Lue1;->a()V
+    iget-short v4, v2, Lsv1;->i:S
 
     .line 228
     .line 229
+    invoke-virtual {v3}, Leh0;->a()V
+
     .line 230
-    goto :goto_7
-
     .line 231
-    :cond_b
-    iget-object p0, v8, Luv1;->C:Lvv1;
-
     .line 232
-    .line 233
-    iget-object p0, p0, Lvv1;->a:Lmv1;
+    const v5, 0x7fffffff
 
+    .line 233
     .line 234
     .line 235
-    iget-object p0, p0, Lmv1;->c:Lcn0;
+    and-int/2addr v4, v5
 
     .line 236
-    .line 237
-    if-eqz p0, :cond_c
+    iget-object v5, v3, Leh0;->i:[Lcf2;
 
+    .line 237
     .line 238
+    array-length v6, v5
+
     .line 239
-    iget-object p0, p0, Lcn0;->b:Lp62;
+    rem-int v6, v4, v6
 
     .line 240
     .line 241
-    if-eqz p0, :cond_c
+    aget-object v5, v5, v6
 
     .line 242
     .line 243
-    new-instance p1, Ljs2;
+    :goto_1
+    check-cast v5, Lew2;
 
     .line 244
     .line 245
-    invoke-direct {p1, v3, v4}, Ljs2;-><init>(J)V
+    if-eqz v5, :cond_1
 
     .line 246
     .line 247
-    .line 248
-    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    iget v7, v5, Lcf2;->i:I
 
+    .line 248
     .line 249
+    if-ne v7, v4, :cond_0
+
     .line 250
     .line 251
-    move-result-object p0
+    iput-object v2, v5, Lcf2;->m:Ljava/lang/Object;
 
     .line 252
-    check-cast p0, Ljs2;
-
     .line 253
+    goto :goto_2
+
     .line 254
-    iget-wide v3, p0, Ljs2;->a:J
+    :cond_0
+    iget-object v5, v5, Lcf2;->j:Ljava/lang/Object;
 
     .line 255
     .line 256
-    :cond_c
-    :goto_6
-    new-instance v5, Ljs2;
+    check-cast v5, Lcf2;
 
     .line 257
     .line 258
-    invoke-direct {v5, v3, v4}, Ljs2;-><init>(J)V
+    goto :goto_1
 
     .line 259
+    :cond_1
+    iget-object v5, v3, Leh0;->i:[Lcf2;
+
     .line 260
     .line 261
-    :goto_7
-    return-object v5
+    new-instance v7, Lew2;
 
     .line 262
-    nop
-
     .line 263
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    aget-object v8, v5, v6
+
+    .line 264
+    .line 265
+    iget-object v9, v3, Leh0;->k:Lcf2;
+
+    .line 266
+    .line 267
+    invoke-direct {v7, v4, v8, v2, v9}, Lcf2;-><init>(ILcf2;Ljava/lang/Object;Lcf2;)V
+
+    .line 268
+    .line 269
+    .line 270
+    aput-object v7, v5, v6
+
+    .line 271
+    .line 272
+    iget v2, v3, Leh0;->j:I
+
+    .line 273
+    .line 274
+    add-int/lit8 v2, v2, 0x1
+
+    .line 275
+    .line 276
+    iput v2, v3, Leh0;->j:I
+
+    .line 277
+    .line 278
+    :goto_2
+    add-int/lit8 v15, v15, 0x1
+
+    .line 279
+    .line 280
+    goto :goto_0
+
+    .line 281
+    :cond_2
+    return-void
+.end method
+
+.method public constructor <init>(IILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p3, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-short p2, p0, Lsv1;->i:S
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lsv1;
+    .locals 1
+
+    .line 1
+    const-class v0, Lsv1;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lsv1;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lsv1;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lsv1;->k:[Lsv1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, [Lsv1;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lsv1;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

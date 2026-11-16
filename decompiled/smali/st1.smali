@@ -1,32 +1,33 @@
 .class public final Lst1;
-.super Landroid/text/Editable$Factory;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Ljava/lang/Object;
+# instance fields
+.field public final synthetic i:B
 
-.field public static volatile b:Lst1;
-
-.field public static c:Ljava/lang/Class;
+.field public final synthetic j:Lvt1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lvt1;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/Object;
+    iput-byte p2, p0, Lst1;->i:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lst1;->j:Lvt1;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lst1;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
     return-void
@@ -34,38 +35,109 @@
 
 
 # virtual methods
-.method public final newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
-    .locals 1
+.method public final run()V
+    .locals 4
 
     .line 1
-    sget-object v0, Lst1;->c:Ljava/lang/Class;
+    iget-byte v0, p0, Lst1;->i:B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Lst1;->j:Lvt1;
 
     .line 4
     .line 5
-    new-instance p0, Lu96;
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    invoke-direct {p0, v0, p1}, Lu96;-><init>(Ljava/lang/Class;Ljava/lang/CharSequence;)V
-
     .line 8
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
     .line 9
     .line 10
-    return-object p0
-
     .line 11
-    :cond_0
-    invoke-super {p0, p1}, Landroid/text/Editable$Factory;->newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
+    move-result-wide v0
 
     .line 12
+    iget-wide v2, p0, Lvt1;->o:J
+
     .line 13
     .line 14
-    move-result-object p0
+    sub-long/2addr v0, v2
 
     .line 15
-    return-object p0
+    const-wide/16 v2, 0xbb8
+
+    .line 16
+    .line 17
+    cmp-long v0, v0, v2
+
+    .line 18
+    .line 19
+    if-ltz v0, :cond_0
+
+    .line 20
+    .line 21
+    iget-object p0, p0, Lvt1;->a:Lou0;
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 24
+    .line 25
+    .line 26
+    :cond_0
+    return-void
+
+    .line 27
+    :pswitch_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-wide v0
+
+    .line 31
+    iget-wide v2, p0, Lvt1;->p:J
+
+    .line 32
+    .line 33
+    sub-long/2addr v0, v2
+
+    .line 34
+    const-wide/16 v2, 0xdac
+
+    .line 35
+    .line 36
+    cmp-long v0, v0, v2
+
+    .line 37
+    .line 38
+    if-ltz v0, :cond_1
+
+    .line 39
+    .line 40
+    iget-object p0, p0, Lvt1;->a:Lou0;
+
+    .line 41
+    .line 42
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 43
+    .line 44
+    .line 45
+    :cond_1
+    return-void
+
+    .line 46
+    nop
+
+    .line 47
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,18 +1,22 @@
 .class public final Lhp2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Landroid/view/GestureDetector$OnGestureListener;
+.implements Llb6;
 
 
 # instance fields
-.field public final synthetic a:Lip2;
+.field public final i:Lm62;
+
+.field public j:Z
+
+.field public final synthetic k:Llp2;
 
 
 # direct methods
-.method public constructor <init>(Lip2;)V
-    .locals 0
+.method public constructor <init>(Llp2;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,226 +24,382 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lhp2;->a:Lip2;
+    iput-object p1, p0, Lhp2;->k:Llp2;
 
     .line 5
     .line 6
+    new-instance v0, Lm62;
+
+    .line 7
+    .line 8
+    iget-object p1, p1, Llp2;->c:Lyy6;
+
+    .line 9
+    .line 10
+    iget-object p1, p1, Lyy6;->l:Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    check-cast p1, Lae5;
+
+    .line 13
+    .line 14
+    iget-object p1, p1, Lae5;->i:Llb6;
+
+    .line 15
+    .line 16
+    invoke-interface {p1}, Llb6;->a()Ln07;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p1
+
+    .line 20
+    invoke-direct {v0, p1}, Lm62;-><init>(Ln07;)V
+
+    .line 21
+    .line 22
+    .line 23
+    iput-object v0, p0, Lhp2;->i:Lm62;
+
+    .line 24
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDown(Landroid/view/MotionEvent;)Z
+.method public final a()Ln07;
     .locals 0
 
     .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 3
-
-    .line 1
-    iget-object p0, p0, Lhp2;->a:Lip2;
+    iget-object p0, p0, Lhp2;->i:Lm62;
 
     .line 2
     .line 3
-    iget-object p1, p0, Lip2;->a:Lz9;
+    return-object p0
+.end method
 
+.method public final declared-synchronized close()V
+    .locals 3
+
+    .line 1
+    monitor-enter p0
+
+    .line 2
+    :try_start_0
+    iget-boolean v0, p0, Lhp2;->j:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 3
     .line 4
-    .line 5
-    iget-boolean p2, p0, Lip2;->c:Z
+    if-eqz v0, :cond_0
 
+    .line 5
     .line 6
+    monitor-exit p0
+
     .line 7
-    const/4 v0, 0x1
+    return-void
 
     .line 8
-    if-eqz p2, :cond_0
+    :cond_0
+    const/4 v0, 0x1
 
     .line 9
-    .line 10
-    goto :goto_0
+    :try_start_1
+    iput-boolean v0, p0, Lhp2;->j:Z
 
+    .line 10
     .line 11
-    :cond_0
-    iget p0, p0, Lip2;->b:I
+    iget-object v0, p0, Lhp2;->k:Llp2;
 
     .line 12
     .line 13
-    const/4 p2, 0x0
+    iget-object v0, v0, Llp2;->c:Lyy6;
 
     .line 14
-    const/4 v1, 0x0
-
     .line 15
-    const/4 v2, 0x2
+    iget-object v0, v0, Lyy6;->l:Ljava/lang/Object;
 
     .line 16
-    if-ne p0, v0, :cond_2
-
     .line 17
-    .line 18
-    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+    check-cast v0, Lae5;
 
+    .line 18
     .line 19
+    const-string v1, "0\r\n\r\n"
+
     .line 20
     .line 21
-    move-result p0
+    invoke-virtual {v0, v1}, Lae5;->D(Ljava/lang/String;)Lre0;
 
     .line 22
-    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
-
     .line 23
     .line 24
-    .line 25
-    move-result p4
+    iget-object v0, p0, Lhp2;->k:Llp2;
 
+    .line 25
     .line 26
-    cmpl-float p0, p0, p4
+    iget-object v0, v0, Llp2;->c:Lyy6;
 
     .line 27
     .line 28
-    if-lez p0, :cond_4
+    iget-object v0, v0, Lyy6;->l:Ljava/lang/Object;
 
     .line 29
     .line 30
-    cmpl-float p0, p3, v1
+    check-cast v0, Lae5;
 
     .line 31
     .line 32
-    if-lez p0, :cond_1
+    invoke-virtual {v0}, Lae5;->flush()V
 
     .line 33
     .line 34
-    move v2, v0
-
     .line 35
-    :cond_1
-    iget-object p0, p1, Lz9;->k:Lqa;
+    iget-object v0, p0, Lhp2;->i:Lm62;
 
     .line 36
     .line 37
-    invoke-virtual {p0}, Lqa;->getFocusOwner()Le32;
+    iget-object v1, v0, Lm62;->e:Ln07;
 
     .line 38
     .line 39
-    .line 40
-    move-result-object p0
+    sget-object v2, Ln07;->d:Lm07;
 
+    .line 40
     .line 41
-    check-cast p0, Lh32;
+    iput-object v2, v0, Lm62;->e:Ln07;
 
     .line 42
     .line 43
-    invoke-virtual {p0, v2, p2}, Lh32;->i(IZ)Z
+    invoke-virtual {v1}, Ln07;->a()Ln07;
 
     .line 44
     .line 45
     .line 46
-    return v0
+    invoke-virtual {v1}, Ln07;->b()Ln07;
 
     .line 47
-    :cond_2
-    if-ne p0, v2, :cond_4
-
     .line 48
     .line 49
-    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
+    iget-object v0, p0, Lhp2;->k:Llp2;
 
     .line 50
     .line 51
+    const/4 v1, 0x3
+
     .line 52
-    move-result p0
+    iput-byte v1, v0, Llp2;->d:B
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 53
-    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
-
     .line 54
+    monitor-exit p0
+
     .line 55
+    return-void
+
     .line 56
-    move-result p3
+    :goto_0
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 57
-    cmpl-float p0, p0, p3
+    throw v0
 
     .line 58
+    :catchall_0
+    move-exception v0
+
     .line 59
-    if-lez p0, :cond_4
+    goto :goto_0
+.end method
 
-    .line 60
-    .line 61
-    cmpl-float p0, p4, v1
+.method public final e(Lge0;J)V
+    .locals 4
 
-    .line 62
-    .line 63
-    if-lez p0, :cond_3
+    .line 1
+    iget-boolean v0, p0, Lhp2;->j:Z
 
-    .line 64
-    .line 65
-    move v2, v0
+    .line 2
+    .line 3
+    const-string v1, "closed"
 
-    .line 66
-    :cond_3
-    iget-object p0, p1, Lz9;->k:Lqa;
+    .line 4
+    .line 5
+    if-nez v0, :cond_2
 
-    .line 67
-    .line 68
-    invoke-virtual {p0}, Lqa;->getFocusOwner()Le32;
+    .line 6
+    .line 7
+    const-wide/16 v2, 0x0
 
-    .line 69
-    .line 70
-    .line 71
-    move-result-object p0
+    .line 8
+    .line 9
+    cmp-long v0, p2, v2
 
-    .line 72
-    check-cast p0, Lh32;
+    .line 10
+    .line 11
+    if-nez v0, :cond_0
 
-    .line 73
-    .line 74
-    invoke-virtual {p0, v2, p2}, Lh32;->i(IZ)Z
+    .line 12
+    .line 13
+    return-void
 
-    .line 75
-    .line 76
-    .line 77
-    :cond_4
+    .line 14
+    :cond_0
+    iget-object p0, p0, Lhp2;->k:Llp2;
+
+    .line 15
+    .line 16
+    iget-object p0, p0, Llp2;->c:Lyy6;
+
+    .line 17
+    .line 18
+    iget-object p0, p0, Lyy6;->l:Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    check-cast p0, Lae5;
+
+    .line 21
+    .line 22
+    iget-boolean v0, p0, Lae5;->k:Z
+
+    .line 23
+    .line 24
+    if-nez v0, :cond_1
+
+    .line 25
+    .line 26
+    iget-object v0, p0, Lae5;->j:Lge0;
+
+    .line 27
+    .line 28
+    invoke-virtual {v0, p2, p3}, Lge0;->P(J)V
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-virtual {p0}, Lae5;->b()Lre0;
+
+    .line 32
+    .line 33
+    .line 34
+    const-string v0, "\r\n"
+
+    .line 35
+    .line 36
+    invoke-virtual {p0, v0}, Lae5;->D(Ljava/lang/String;)Lre0;
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual {p0, p1, p2, p3}, Lae5;->e(Lge0;J)V
+
+    .line 40
+    .line 41
+    .line 42
+    invoke-virtual {p0, v0}, Lae5;->D(Ljava/lang/String;)Lre0;
+
+    .line 43
+    .line 44
+    .line 45
+    return-void
+
+    .line 46
+    :cond_1
+    invoke-static {v1}, Lex1;->d(Ljava/lang/String;)V
+
+    .line 47
+    .line 48
+    .line 49
+    return-void
+
+    .line 50
+    :cond_2
+    invoke-static {v1}, Lex1;->d(Ljava/lang/String;)V
+
+    .line 51
+    .line 52
+    .line 53
+    return-void
+.end method
+
+.method public final declared-synchronized flush()V
+    .locals 1
+
+    .line 1
+    monitor-enter p0
+
+    .line 2
+    :try_start_0
+    iget-boolean v0, p0, Lhp2;->j:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 3
+    .line 4
+    if-eqz v0, :cond_0
+
+    .line 5
+    .line 6
+    monitor-exit p0
+
+    .line 7
+    return-void
+
+    .line 8
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lhp2;->k:Llp2;
+
+    .line 9
+    .line 10
+    iget-object v0, v0, Llp2;->c:Lyy6;
+
+    .line 11
+    .line 12
+    iget-object v0, v0, Lyy6;->l:Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    check-cast v0, Lae5;
+
+    .line 15
+    .line 16
+    invoke-virtual {v0}, Lae5;->flush()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit p0
+
+    .line 20
+    return-void
+
+    .line 21
     :goto_0
-    return v0
-.end method
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-.method public final onLongPress(Landroid/view/MotionEvent;)V
-    .locals 0
+    .line 22
+    throw v0
 
-    .line 1
-    return-void
-.end method
+    .line 23
+    :catchall_0
+    move-exception v0
 
-.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final onShowPress(Landroid/view/MotionEvent;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
+    .line 24
+    goto :goto_0
 .end method

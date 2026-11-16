@@ -1,28 +1,30 @@
 .class public final Ls82;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Ls82;
+# instance fields
+.field public final synthetic a:B
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ls82;
+    iput-byte p2, p0, Ls82;->a:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ls82;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Ls82;->a:Ls82;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
     return-void
@@ -30,224 +32,132 @@
 
 
 # virtual methods
-.method public final a(JJ[J[FI)Landroid/graphics/LinearGradient;
-    .locals 6
+.method public final a()V
+    .locals 1
 
     .line 1
-    new-instance p0, Landroid/graphics/LinearGradient;
+    iget-byte v0, p0, Ls82;->a:B
 
     .line 2
     .line 3
-    const/16 v0, 0x20
+    iget-object p0, p0, Ls82;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
-    shr-long v1, p1, v0
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    long-to-int v1, v1
-
     .line 8
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+    check-cast p0, Loe6;
 
     .line 9
     .line 10
-    .line 11
-    move-result v1
+    iget v0, p0, Loe6;->k:I
 
+    .line 11
     .line 12
-    const-wide v2, 0xffffffffL
+    add-int/lit8 v0, v0, -0x1
 
     .line 13
     .line 14
+    iput v0, p0, Loe6;->k:I
+
     .line 15
     .line 16
+    return-void
+
     .line 17
-    and-long/2addr p1, v2
+    :pswitch_0
+    check-cast p0, Lt82;
 
     .line 18
-    long-to-int p1, p1
-
     .line 19
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+    iget v0, p0, Lt82;->A:I
 
     .line 20
     .line 21
-    .line 22
-    move-result p2
+    add-int/lit8 v0, v0, -0x1
 
+    .line 22
     .line 23
-    shr-long v4, p3, v0
+    iput v0, p0, Lt82;->A:I
 
     .line 24
     .line 25
-    long-to-int p1, v4
+    return-void
 
     .line 26
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+    nop
 
     .line 27
-    .line 28
-    .line 29
-    move-result p1
-
-    .line 30
-    and-long/2addr p3, v2
-
-    .line 31
-    long-to-int p3, p3
-
-    .line 32
-    invoke-static {p3}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 33
-    .line 34
-    .line 35
-    move-result p4
-
-    .line 36
-    invoke-static {p7}, Lp60;->N(I)Landroid/graphics/Shader$TileMode;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object p7
-
-    .line 40
-    move p3, p1
-
-    .line 41
-    move p1, v1
-
-    .line 42
-    invoke-direct/range {p0 .. p7}, Landroid/graphics/LinearGradient;-><init>(FFFF[J[FLandroid/graphics/Shader$TileMode;)V
-
-    .line 43
-    .line 44
-    .line 45
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b(JF[J[FI)Landroid/graphics/RadialGradient;
-    .locals 3
+.method public final b()V
+    .locals 1
 
     .line 1
-    new-instance p0, Landroid/graphics/RadialGradient;
+    iget-byte v0, p0, Ls82;->a:B
 
     .line 2
     .line 3
-    const/16 v0, 0x20
+    iget-object p0, p0, Ls82;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
-    shr-long v0, p1, v0
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    long-to-int v0, v0
-
     .line 8
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+    check-cast p0, Loe6;
 
     .line 9
     .line 10
-    .line 11
-    move-result v0
+    iget v0, p0, Loe6;->k:I
 
+    .line 11
     .line 12
-    const-wide v1, 0xffffffffL
+    add-int/lit8 v0, v0, 0x1
 
     .line 13
     .line 14
+    iput v0, p0, Loe6;->k:I
+
     .line 15
     .line 16
+    return-void
+
     .line 17
-    and-long/2addr p1, v1
+    :pswitch_0
+    check-cast p0, Lt82;
 
     .line 18
-    long-to-int p1, p1
-
     .line 19
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+    iget v0, p0, Lt82;->A:I
 
     .line 20
     .line 21
-    .line 22
-    move-result p2
+    add-int/lit8 v0, v0, 0x1
 
+    .line 22
     .line 23
-    invoke-static {p6}, Lp60;->N(I)Landroid/graphics/Shader$TileMode;
+    iput v0, p0, Lt82;->A:I
 
     .line 24
     .line 25
+    return-void
+
     .line 26
-    move-result-object p6
+    nop
 
     .line 27
-    move p1, v0
-
-    .line 28
-    invoke-direct/range {p0 .. p6}, Landroid/graphics/RadialGradient;-><init>(FFF[J[FLandroid/graphics/Shader$TileMode;)V
-
-    .line 29
-    .line 30
-    .line 31
-    return-object p0
-.end method
-
-.method public final c(J[J[F)Landroid/graphics/SweepGradient;
-    .locals 3
-
-    .line 1
-    new-instance p0, Landroid/graphics/SweepGradient;
-
-    .line 2
-    .line 3
-    const/16 v0, 0x20
-
-    .line 4
-    .line 5
-    shr-long v0, p1, v0
-
-    .line 6
-    .line 7
-    long-to-int v0, v0
-
-    .line 8
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 9
-    .line 10
-    .line 11
-    move-result v0
-
-    .line 12
-    const-wide v1, 0xffffffffL
-
-    .line 13
-    .line 14
-    .line 15
-    .line 16
-    .line 17
-    and-long/2addr p1, v1
-
-    .line 18
-    long-to-int p1, p1
-
-    .line 19
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 20
-    .line 21
-    .line 22
-    move-result p1
-
-    .line 23
-    invoke-direct {p0, v0, p1, p3, p4}, Landroid/graphics/SweepGradient;-><init>(FF[J[F)V
-
-    .line 24
-    .line 25
-    .line 26
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,229 +1,257 @@
-.class public final synthetic Ljf4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Ljf4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Lt62;
+
+# static fields
+.field public static final j:Lgn3;
+
+.field public static final enum k:Ljf4;
+
+.field public static final enum l:Ljf4;
+
+.field public static final enum m:Ljf4;
+
+.field public static final enum n:Ljf4;
+
+.field public static final enum o:Ljf4;
+
+.field public static final synthetic p:[Ljf4;
+
+.field public static final synthetic q:Lvw1;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Z
-
-.field public final synthetic n:Lp62;
-
-.field public final synthetic o:Z
-
-.field public final synthetic p:Lqz0;
+.field public final i:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;ZLp62;ZLqz0;IB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    iput-byte p8, p0, Ljf4;->j:B
+    new-instance v0, Ljf4;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ljf4;->k:Ljava/lang/String;
+    const/4 v1, 0x0
 
     .line 4
+    const-string v2, "open_panel"
+
     .line 5
-    iput-object p2, p0, Ljf4;->l:Ljava/lang/String;
-
     .line 6
+    const-string v3, "OpenPanel"
+
     .line 7
-    iput-boolean p3, p0, Ljf4;->m:Z
-
     .line 8
-    .line 9
-    iput-object p4, p0, Ljf4;->n:Lp62;
+    invoke-direct {v0, v1, v3, v2}, Ljf4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 9
     .line 10
     .line 11
-    iput-boolean p5, p0, Ljf4;->o:Z
+    sput-object v0, Ljf4;->k:Ljf4;
 
     .line 12
     .line 13
-    iput-object p6, p0, Ljf4;->p:Lqz0;
+    new-instance v1, Ljf4;
 
     .line 14
     .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x1
 
     .line 16
+    const-string v3, "open_web_ui"
+
     .line 17
     .line 18
-    return-void
-.end method
+    const-string v4, "OpenWebUi"
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    iget-byte v1, v0, Ljf4;->j:B
-
-    .line 4
-    .line 5
-    sget-object v2, La47;->a:La47;
-
-    .line 6
-    .line 7
-    const v3, 0x30c01
-
-    .line 8
-    .line 9
-    .line 10
-    packed-switch v1, :pswitch_data_0
-
-    .line 11
-    .line 12
-    .line 13
-    move-object/from16 v10, p1
-
-    .line 14
-    .line 15
-    check-cast v10, Lz11;
-
-    .line 16
-    .line 17
-    move-object/from16 v1, p2
-
-    .line 18
     .line 19
-    check-cast v1, Ljava/lang/Integer;
-
     .line 20
-    .line 21
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v1, v2, v4, v3}, Ljf4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 21
     .line 22
     .line 23
-    .line 24
-    invoke-static {v3}, Lqu5;->f0(I)I
+    sput-object v1, Ljf4;->l:Ljf4;
 
+    .line 24
     .line 25
+    new-instance v2, Ljf4;
+
     .line 26
     .line 27
-    move-result v11
+    const/4 v3, 0x2
 
     .line 28
-    iget-object v4, v0, Ljf4;->k:Ljava/lang/String;
+    const-string v4, "reload"
 
     .line 29
     .line 30
-    iget-object v5, v0, Ljf4;->l:Ljava/lang/String;
+    const-string v5, "Reload"
 
     .line 31
     .line 32
-    iget-boolean v6, v0, Ljf4;->m:Z
+    invoke-direct {v2, v3, v5, v4}, Ljf4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 33
     .line 34
-    iget-object v7, v0, Ljf4;->n:Lp62;
-
     .line 35
+    sput-object v2, Ljf4;->m:Ljf4;
+
     .line 36
-    iget-boolean v8, v0, Ljf4;->o:Z
-
     .line 37
-    .line 38
-    iget-object v9, v0, Ljf4;->p:Lqz0;
+    new-instance v3, Ljf4;
 
+    .line 38
     .line 39
+    const/4 v4, 0x3
+
     .line 40
-    invoke-static/range {v4 .. v11}, Lfh3;->k(Ljava/lang/String;Ljava/lang/String;ZLp62;ZLqz0;Lz11;I)V
+    const-string v5, "stop"
 
     .line 41
     .line 42
-    .line 43
-    return-object v2
+    const-string v6, "Stop"
 
+    .line 43
     .line 44
-    :pswitch_0
-    move-object/from16 v18, p1
+    invoke-direct {v3, v4, v6, v5}, Ljf4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 45
     .line 46
-    check-cast v18, Lz11;
-
     .line 47
+    sput-object v3, Ljf4;->n:Ljf4;
+
     .line 48
-    move-object/from16 v1, p2
-
     .line 49
-    .line 50
-    check-cast v1, Ljava/lang/Integer;
+    new-instance v4, Ljf4;
 
+    .line 50
     .line 51
+    const/4 v5, 0x4
+
     .line 52
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v6, "restart"
 
     .line 53
     .line 54
-    .line 55
-    invoke-static {v3}, Lqu5;->f0(I)I
+    const-string v7, "Restart"
 
+    .line 55
     .line 56
+    invoke-direct {v4, v5, v7, v6}, Ljf4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 57
     .line 58
-    move-result v19
-
     .line 59
-    iget-object v12, v0, Ljf4;->k:Ljava/lang/String;
+    sput-object v4, Ljf4;->o:Ljf4;
 
     .line 60
     .line 61
-    iget-object v13, v0, Ljf4;->l:Ljava/lang/String;
+    filled-new-array {v0, v1, v2, v3, v4}, [Ljf4;
 
     .line 62
     .line 63
-    iget-boolean v14, v0, Ljf4;->m:Z
-
     .line 64
+    move-result-object v0
+
     .line 65
-    iget-object v15, v0, Ljf4;->n:Lp62;
+    sput-object v0, Ljf4;->p:[Ljf4;
 
     .line 66
     .line 67
-    iget-boolean v1, v0, Ljf4;->o:Z
+    new-instance v1, Lvw1;
 
     .line 68
     .line 69
-    iget-object v0, v0, Ljf4;->p:Lqz0;
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
 
     .line 70
     .line 71
-    move-object/from16 v17, v0
-
     .line 72
+    sput-object v1, Ljf4;->q:Lvw1;
+
     .line 73
-    move/from16 v16, v1
-
     .line 74
+    new-instance v0, Lgn3;
+
     .line 75
-    invoke-static/range {v12 .. v19}, Lyk6;->q(Ljava/lang/String;Ljava/lang/String;ZLp62;ZLqz0;Lz11;I)V
-
     .line 76
-    .line 77
-    .line 78
-    return-object v2
+    const/4 v1, 0x7
 
+    .line 77
+    invoke-direct {v0, v1}, Lgn3;-><init>(B)V
+
+    .line 78
     .line 79
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 80
+    sput-object v0, Ljf4;->j:Lgn3;
+
+    .line 81
+    .line 82
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p3, p0, Ljf4;->i:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ljf4;
+    .locals 1
+
+    .line 1
+    const-class v0, Ljf4;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Ljf4;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Ljf4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Ljf4;->p:[Ljf4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Ljf4;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

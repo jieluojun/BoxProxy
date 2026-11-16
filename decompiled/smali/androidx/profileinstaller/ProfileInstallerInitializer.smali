@@ -1,16 +1,16 @@
 .class public Landroidx/profileinstaller/ProfileInstallerInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lrp2;
+.implements Lbu2;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lrp2;"
+        "Lbu2;"
     }
 .end annotation
 
@@ -61,11 +61,11 @@
     move-result-object v0
 
     .line 9
-    new-instance v1, Lba2;
+    new-instance v1, Lue2;
 
     .line 10
     .line 11
-    invoke-direct {v1, p0, p1}, Lba2;-><init>(Landroidx/profileinstaller/ProfileInstallerInitializer;Landroid/content/Context;)V
+    invoke-direct {v1, p0, p1}, Lue2;-><init>(Landroidx/profileinstaller/ProfileInstallerInitializer;Landroid/content/Context;)V
 
     .line 12
     .line 13
@@ -75,21 +75,18 @@
     .line 15
     .line 16
     .line 17
-    new-instance p0, Ljc3;
+    new-instance p0, Lgn3;
 
     .line 18
     .line 19
-    const/16 p1, 0x17
+    const/16 p1, 0x14
 
     .line 20
     .line 21
-    const/4 v0, 0x0
+    invoke-direct {p0, p1}, Lgn3;-><init>(B)V
 
     .line 22
-    invoke-direct {p0, p1, v0}, Ljc3;-><init>(BZ)V
-
     .line 23
     .line 24
-    .line 25
     return-object p0
 .end method

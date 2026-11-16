@@ -1,46 +1,195 @@
-.class public final Lsf4;
-.super Lne3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lsf4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public final f:Lbd;
+.field public final synthetic i:B
+
+.field public final synthetic j:Ljava/lang/String;
+
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Lp72;
 
 
 # direct methods
-.method public constructor <init>(Lbd;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;ZLp72;IB)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p6, p0, Lsf4;->i:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lsf4;->f:Lbd;
+    iput-object p1, p0, Lsf4;->j:Ljava/lang/String;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lsf4;->k:Ljava/lang/String;
+
     .line 6
+    .line 7
+    iput-boolean p3, p0, Lsf4;->l:Z
+
+    .line 8
+    .line 9
+    iput-object p4, p0, Lsf4;->m:Lp72;
+
+    .line 10
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final x()Lga5;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
 
     .line 1
-    iget-object p0, p0, Lsf4;->f:Lbd;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lbd;->e()Lga5;
+    iget-byte v1, v0, Lsf4;->i:B
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    sget-object v2, Ll97;->a:Ll97;
 
+    .line 6
     .line 7
-    return-object p0
+    const/16 v3, 0x181
+
+    .line 8
+    .line 9
+    packed-switch v1, :pswitch_data_0
+
+    .line 10
+    .line 11
+    .line 12
+    move-object/from16 v8, p1
+
+    .line 13
+    .line 14
+    check-cast v8, Lt82;
+
+    .line 15
+    .line 16
+    move-object/from16 v1, p2
+
+    .line 17
+    .line 18
+    check-cast v1, Ljava/lang/Integer;
+
+    .line 19
+    .line 20
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-static {v3}, Lp06;->W(I)I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v9
+
+    .line 27
+    iget-object v4, v0, Lsf4;->j:Ljava/lang/String;
+
+    .line 28
+    .line 29
+    iget-object v5, v0, Lsf4;->k:Ljava/lang/String;
+
+    .line 30
+    .line 31
+    iget-boolean v6, v0, Lsf4;->l:Z
+
+    .line 32
+    .line 33
+    iget-object v7, v0, Lsf4;->m:Lp72;
+
+    .line 34
+    .line 35
+    invoke-static/range {v4 .. v9}, Lyk3;->q(Ljava/lang/String;Ljava/lang/String;ZLp72;Lt82;I)V
+
+    .line 36
+    .line 37
+    .line 38
+    return-object v2
+
+    .line 39
+    :pswitch_0
+    move-object/from16 v14, p1
+
+    .line 40
+    .line 41
+    check-cast v14, Lt82;
+
+    .line 42
+    .line 43
+    move-object/from16 v1, p2
+
+    .line 44
+    .line 45
+    check-cast v1, Ljava/lang/Integer;
+
+    .line 46
+    .line 47
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 48
+    .line 49
+    .line 50
+    invoke-static {v3}, Lp06;->W(I)I
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v15
+
+    .line 54
+    iget-object v10, v0, Lsf4;->j:Ljava/lang/String;
+
+    .line 55
+    .line 56
+    iget-object v11, v0, Lsf4;->k:Ljava/lang/String;
+
+    .line 57
+    .line 58
+    iget-boolean v12, v0, Lsf4;->l:Z
+
+    .line 59
+    .line 60
+    iget-object v13, v0, Lsf4;->m:Lp72;
+
+    .line 61
+    .line 62
+    invoke-static/range {v10 .. v15}, Lfg4;->f(Ljava/lang/String;Ljava/lang/String;ZLp72;Lt82;I)V
+
+    .line 63
+    .line 64
+    .line 65
+    return-object v2
+
+    .line 66
+    nop
+
+    .line 67
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

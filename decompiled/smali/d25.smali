@@ -1,332 +1,308 @@
-.class public final Ld25;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Ld25;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Lt62;
+
+# static fields
+.field public static final j:Lgn3;
+
+.field public static final enum k:Ld25;
+
+.field public static final enum l:Ld25;
+
+.field public static final enum m:Ld25;
+
+.field public static final enum n:Ld25;
+
+.field public static final enum o:Ld25;
+
+.field public static final enum p:Ld25;
+
+.field public static final enum q:Ld25;
+
+.field public static final synthetic r:[Ld25;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ln45;
-
-.field public final synthetic l:Ljava/util/List;
-
-.field public final synthetic m:I
-
-.field public final synthetic n:Z
+.field public final i:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln45;Ljava/util/List;IZLy81;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 10
 
     .line 1
-    iput-byte p6, p0, Ld25;->j:B
+    new-instance v0, Ld25;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ld25;->k:Ln45;
+    const/4 v1, 0x0
+
+    .line 4
+    const-string v2, "http/1.0"
+
+    .line 5
+    .line 6
+    const-string v3, "HTTP_1_0"
+
+    .line 7
+    .line 8
+    invoke-direct {v0, v1, v3, v2}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 9
+    .line 10
+    .line 11
+    sput-object v0, Ld25;->k:Ld25;
+
+    .line 12
+    .line 13
+    new-instance v1, Ld25;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x1
+
+    .line 16
+    const-string v3, "http/1.1"
+
+    .line 17
+    .line 18
+    const-string v4, "HTTP_1_1"
+
+    .line 19
+    .line 20
+    invoke-direct {v1, v2, v4, v3}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 21
+    .line 22
+    .line 23
+    sput-object v1, Ld25;->l:Ld25;
+
+    .line 24
+    .line 25
+    new-instance v2, Ld25;
+
+    .line 26
+    .line 27
+    const/4 v3, 0x2
+
+    .line 28
+    const-string v4, "spdy/3.1"
+
+    .line 29
+    .line 30
+    const-string v5, "SPDY_3"
+
+    .line 31
+    .line 32
+    invoke-direct {v2, v3, v5, v4}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 33
+    .line 34
+    .line 35
+    sput-object v2, Ld25;->m:Ld25;
+
+    .line 36
+    .line 37
+    new-instance v3, Ld25;
+
+    .line 38
+    .line 39
+    const/4 v4, 0x3
+
+    .line 40
+    const-string v5, "h2"
+
+    .line 41
+    .line 42
+    const-string v6, "HTTP_2"
+
+    .line 43
+    .line 44
+    invoke-direct {v3, v4, v6, v5}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 45
+    .line 46
+    .line 47
+    sput-object v3, Ld25;->n:Ld25;
+
+    .line 48
+    .line 49
+    new-instance v4, Ld25;
+
+    .line 50
+    .line 51
+    const/4 v5, 0x4
+
+    .line 52
+    const-string v6, "h2_prior_knowledge"
+
+    .line 53
+    .line 54
+    const-string v7, "H2_PRIOR_KNOWLEDGE"
+
+    .line 55
+    .line 56
+    invoke-direct {v4, v5, v7, v6}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 57
+    .line 58
+    .line 59
+    sput-object v4, Ld25;->o:Ld25;
+
+    .line 60
+    .line 61
+    new-instance v5, Ld25;
+
+    .line 62
+    .line 63
+    const/4 v6, 0x5
+
+    .line 64
+    const-string v7, "quic"
+
+    .line 65
+    .line 66
+    const-string v8, "QUIC"
+
+    .line 67
+    .line 68
+    invoke-direct {v5, v6, v8, v7}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 69
+    .line 70
+    .line 71
+    sput-object v5, Ld25;->p:Ld25;
+
+    .line 72
+    .line 73
+    new-instance v6, Ld25;
+
+    .line 74
+    .line 75
+    const/4 v7, 0x6
+
+    .line 76
+    const-string v8, "h3"
+
+    .line 77
+    .line 78
+    const-string v9, "HTTP_3"
+
+    .line 79
+    .line 80
+    invoke-direct {v6, v7, v9, v8}, Ld25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 81
+    .line 82
+    .line 83
+    sput-object v6, Ld25;->q:Ld25;
+
+    .line 84
+    .line 85
+    filled-new-array/range {v0 .. v6}, [Ld25;
+
+    .line 86
+    .line 87
+    .line 88
+    move-result-object v0
+
+    .line 89
+    sput-object v0, Ld25;->r:[Ld25;
+
+    .line 90
+    .line 91
+    new-instance v0, Lgn3;
+
+    .line 92
+    .line 93
+    const/16 v1, 0x16
+
+    .line 94
+    .line 95
+    invoke-direct {v0, v1}, Lgn3;-><init>(B)V
+
+    .line 96
+    .line 97
+    .line 98
+    sput-object v0, Ld25;->j:Lgn3;
+
+    .line 99
+    .line 100
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p3, p0, Ld25;->i:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ld25;
+    .locals 1
+
+    .line 1
+    const-class v0, Ld25;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    iput-object p2, p0, Ld25;->l:Ljava/util/List;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    iput p3, p0, Ld25;->m:I
+    check-cast p0, Ld25;
 
     .line 8
     .line 9
-    iput-boolean p4, p0, Ld25;->n:Z
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    const/4 p1, 0x2
+.method public static values()[Ld25;
+    .locals 1
 
-    .line 12
-    invoke-direct {p0, p1, p5}, Llh6;-><init>(ILy81;)V
+    .line 1
+    sget-object v0, Ld25;->r:[Ld25;
 
-    .line 13
-    .line 14
-    .line 15
-    return-void
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Ld25;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 8
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
     .line 1
-    iget-byte p1, p0, Ld25;->j:B
+    iget-object p0, p0, Ld25;->i:Ljava/lang/String;
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    new-instance v0, Ld25;
-
-    .line 7
-    .line 8
-    iget-boolean v4, p0, Ld25;->n:Z
-
-    .line 9
-    .line 10
-    const/4 v6, 0x1
-
-    .line 11
-    iget-object v1, p0, Ld25;->k:Ln45;
-
-    .line 12
-    .line 13
-    iget-object v2, p0, Ld25;->l:Ljava/util/List;
-
-    .line 14
-    .line 15
-    iget v3, p0, Ld25;->m:I
-
-    .line 16
-    .line 17
-    move-object v5, p2
-
-    .line 18
-    invoke-direct/range {v0 .. v6}, Ld25;-><init>(Ln45;Ljava/util/List;IZLy81;B)V
-
-    .line 19
-    .line 20
-    .line 21
-    return-object v0
-
-    .line 22
-    :pswitch_0
-    move-object v5, p2
-
-    .line 23
-    new-instance v1, Ld25;
-
-    .line 24
-    .line 25
-    move-object v6, v5
-
-    .line 26
-    iget-boolean v5, p0, Ld25;->n:Z
-
-    .line 27
-    .line 28
-    const/4 v7, 0x0
-
-    .line 29
-    iget-object v2, p0, Ld25;->k:Ln45;
-
-    .line 30
-    .line 31
-    iget-object v3, p0, Ld25;->l:Ljava/util/List;
-
-    .line 32
-    .line 33
-    iget v4, p0, Ld25;->m:I
-
-    .line 34
-    .line 35
-    invoke-direct/range {v1 .. v7}, Ld25;-><init>(Ln45;Ljava/util/List;IZLy81;B)V
-
-    .line 36
-    .line 37
-    .line 38
-    return-object v1
-
-    .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Ld25;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    check-cast p1, Lac1;
-
-    .line 6
-    .line 7
-    check-cast p2, Ly81;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Ld25;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
-    check-cast p0, Ld25;
-
-    .line 17
-    .line 18
-    invoke-virtual {p0, v1}, Ld25;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
-    return-object v1
-
-    .line 22
-    :pswitch_0
-    invoke-virtual {p0, p1, p2}, Ld25;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p0
-
-    .line 26
-    check-cast p0, Ld25;
-
-    .line 27
-    .line 28
-    invoke-virtual {p0, v1}, Ld25;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 29
-    .line 30
-    .line 31
-    return-object v1
-
-    .line 32
-    nop
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-byte v0, p0, Ld25;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-boolean v2, p0, Ld25;->n:Z
-
-    .line 6
-    .line 7
-    iget v3, p0, Ld25;->m:I
-
-    .line 8
-    .line 9
-    iget-object v4, p0, Ld25;->l:Ljava/util/List;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Ld25;->k:Ln45;
-
-    .line 12
-    .line 13
-    packed-switch v0, :pswitch_data_0
-
-    .line 14
-    .line 15
-    .line 16
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {p0}, Ln45;->e()Ljava/util/List;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object p1
-
-    .line 23
-    invoke-static {p1, v4, v3, v2}, Lrf3;->T(Ljava/util/List;Ljava/util/List;IZ)Ljava/util/List;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p1
-
-    .line 27
-    iget-object p0, p0, Ln45;->d:Lmt3;
-
-    .line 28
-    .line 29
-    invoke-interface {p0, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 30
-    .line 31
-    .line 32
-    return-object v1
-
-    .line 33
-    :pswitch_0
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 34
-    .line 35
-    .line 36
-    invoke-virtual {p0}, Ln45;->e()Ljava/util/List;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object p1
-
-    .line 40
-    invoke-static {p1, v4, v3, v2}, Lrf3;->T(Ljava/util/List;Ljava/util/List;IZ)Ljava/util/List;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object p1
-
-    .line 44
-    iget-object p0, p0, Ln45;->d:Lmt3;
-
-    .line 45
-    .line 46
-    invoke-interface {p0, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 47
-    .line 48
-    .line 49
-    return-object v1
-
-    .line 50
-    nop
-
-    .line 51
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

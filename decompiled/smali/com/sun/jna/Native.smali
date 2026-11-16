@@ -1,6 +1,6 @@
 .class public final Lcom/sun/jna/Native;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/sun/jna/Version;
@@ -289,7 +289,7 @@
 
     .line 35
     .line 36
-    invoke-static {v5, v0, v6}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v0, v6}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 37
     .line 38
@@ -596,7 +596,7 @@
 
     .line 193
     .line 194
-    invoke-static {v3, v4, v5}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4, v5}, Lrf6;->q(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 195
     .line 196
@@ -629,7 +629,7 @@
 
     .line 208
     .line 209
-    invoke-static {v2, v3, v4, v0, v5}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3, v4, v0, v5}, Lky1;->z(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 210
     .line 211
@@ -642,7 +642,7 @@
 
     .line 215
     .line 216
-    invoke-static {v2, v0, v3, v0, v4}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0, v3, v0, v4}, Lky1;->z(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 217
     .line 218
@@ -655,7 +655,7 @@
 
     .line 222
     .line 223
-    invoke-static {v2, v0, v3, v0, v4}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0, v3, v0, v4}, Lky1;->z(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 224
     .line 225
@@ -953,108 +953,105 @@
     move-result v0
 
     .line 368
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_a
 
     .line 369
     .line 370
-    goto :goto_3
-
-    .line 371
     :cond_9
     move v2, v1
 
-    .line 372
-    :goto_3
+    .line 371
+    :cond_a
     sput v2, Lcom/sun/jna/Native;->MAX_PADDING:I
 
+    .line 372
     .line 373
-    .line 374
     const-string v0, "jna.loaded"
 
+    .line 374
     .line 375
-    .line 376
     const-string v1, "true"
 
+    .line 376
     .line 377
-    .line 378
     invoke-static {v0, v1}, Ljava/lang/System;->setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 378
     .line 379
     .line 380
-    .line 381
     new-instance v0, Lcom/sun/jna/Native$2;
 
+    .line 381
     .line 382
-    .line 383
     invoke-direct {v0}, Lcom/sun/jna/Native$2;-><init>()V
 
+    .line 383
     .line 384
     .line 385
-    .line 386
     sput-object v0, Lcom/sun/jna/Native;->finalizer:Ljava/lang/Object;
 
+    .line 386
     .line 387
-    .line 388
     new-instance v0, Ljava/util/WeakHashMap;
 
+    .line 388
     .line 389
-    .line 390
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
+    .line 390
     .line 391
     .line 392
-    .line 393
     sput-object v0, Lcom/sun/jna/Native;->registeredClasses:Ljava/util/Map;
 
+    .line 393
     .line 394
-    .line 395
     new-instance v0, Ljava/util/WeakHashMap;
 
+    .line 395
     .line 396
-    .line 397
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
+    .line 397
     .line 398
     .line 399
-    .line 400
     sput-object v0, Lcom/sun/jna/Native;->registeredLibraries:Ljava/util/Map;
 
+    .line 400
     .line 401
-    .line 402
     new-instance v0, Lcom/sun/jna/Native$7;
 
+    .line 402
     .line 403
-    .line 404
     invoke-direct {v0}, Lcom/sun/jna/Native$7;-><init>()V
 
+    .line 404
     .line 405
     .line 406
-    .line 407
     sput-object v0, Lcom/sun/jna/Native;->nativeThreadTerminationFlag:Ljava/lang/ThreadLocal;
 
+    .line 407
     .line 408
-    .line 409
     new-instance v0, Ljava/util/WeakHashMap;
 
+    .line 409
     .line 410
-    .line 411
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
+    .line 411
     .line 412
     .line 413
-    .line 414
     invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
 
+    .line 414
     .line 415
     .line 416
-    .line 417
     move-result-object v0
 
-    .line 418
+    .line 417
     sput-object v0, Lcom/sun/jna/Native;->nativeThreads:Ljava/util/Map;
 
+    .line 418
     .line 419
-    .line 420
     return-void
 .end method
 
@@ -1307,7 +1304,7 @@
 .end method
 
 .method public static detach(Z)V
-    .locals 2
+    .locals 3
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -1318,15 +1315,15 @@
     move-result-object v0
 
     .line 5
-    if-eqz p0, :cond_0
+    sget-object v1, Lcom/sun/jna/Native;->nativeThreads:Ljava/util/Map;
 
     .line 6
     .line 7
-    sget-object p0, Lcom/sun/jna/Native;->nativeThreads:Ljava/util/Map;
+    if-eqz p0, :cond_0
 
     .line 8
     .line 9
-    invoke-interface {p0, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 10
     .line 11
@@ -1363,55 +1360,51 @@
 
     .line 27
     :cond_0
-    sget-object p0, Lcom/sun/jna/Native;->nativeThreads:Ljava/util/Map;
+    invoke-interface {v1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     .line 28
     .line 29
-    invoke-interface {p0, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
     .line 30
-    .line 31
-    .line 32
-    move-result v1
+    move-result p0
 
+    .line 31
+    if-nez p0, :cond_1
+
+    .line 32
     .line 33
-    if-nez v1, :cond_1
+    sget-object p0, Lcom/sun/jna/Native;->nativeThreadTerminationFlag:Ljava/lang/ThreadLocal;
 
     .line 34
     .line 35
-    sget-object v1, Lcom/sun/jna/Native;->nativeThreadTerminationFlag:Ljava/lang/ThreadLocal;
+    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     .line 36
     .line 37
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
     .line 38
-    .line 39
-    .line 40
-    move-result-object v1
+    move-result-object p0
 
+    .line 39
+    check-cast p0, Lcom/sun/jna/Pointer;
+
+    .line 40
     .line 41
-    check-cast v1, Lcom/sun/jna/Pointer;
+    invoke-interface {v1, v0, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 42
     .line 43
-    invoke-interface {p0, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 44
-    .line 45
-    .line 46
-    const/4 p0, 0x0
+    const/4 v0, 0x0
 
+    .line 45
+    iget-wide v1, p0, Lcom/sun/jna/Pointer;->peer:J
+
+    .line 46
     .line 47
-    iget-wide v0, v1, Lcom/sun/jna/Pointer;->peer:J
+    invoke-static {v0, v1, v2}, Lcom/sun/jna/Native;->setDetachState(ZJ)V
 
     .line 48
     .line 49
-    invoke-static {p0, v0, v1}, Lcom/sun/jna/Native;->setDetachState(ZJ)V
-
     .line 50
-    .line 51
-    .line 52
     :cond_1
     return-void
 .end method
@@ -1468,7 +1461,7 @@
 
     const/4 v0, 0x0
 
-    .line 496
+    .line 491
     invoke-static {p0, v0}, Lcom/sun/jna/Native;->extractFromResourcePath(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/io/File;
 
     move-result-object p0
@@ -1508,1029 +1501,1014 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
 
     .line 16
     .line 17
-    goto :goto_0
-
-    .line 18
     :cond_0
     sget-object v0, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
 
+    .line 18
     .line 19
-    .line 20
-    goto :goto_1
+    goto :goto_0
 
-    .line 21
+    .line 20
     :cond_1
-    :goto_0
     sget-object v0, Ljava/util/logging/Level;->INFO:Ljava/util/logging/Level;
 
+    .line 21
     .line 22
-    .line 23
-    :goto_1
+    :goto_0
     if-nez p1, :cond_2
 
+    .line 23
     .line 24
-    .line 25
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
+    .line 25
     .line 26
     .line 27
-    .line 28
     move-result-object p1
 
-    .line 29
+    .line 28
     invoke-virtual {p1}, Ljava/lang/Thread;->getContextClassLoader()Ljava/lang/ClassLoader;
 
+    .line 29
     .line 30
     .line 31
-    .line 32
     move-result-object p1
 
-    .line 33
+    .line 32
     if-nez p1, :cond_2
 
+    .line 33
     .line 34
-    .line 35
     const-class p1, Lcom/sun/jna/Native;
 
+    .line 35
     .line 36
-    .line 37
     invoke-virtual {p1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
+    .line 37
     .line 38
     .line 39
-    .line 40
     move-result-object p1
 
-    .line 41
+    .line 40
     :cond_2
     sget-object v1, Lcom/sun/jna/Native;->LOG:Ljava/util/logging/Logger;
 
+    .line 41
     .line 42
-    .line 43
     const-string v2, "Looking in classpath from {0} for {1}"
 
+    .line 43
     .line 44
-    .line 45
     filled-new-array {p1, p0}, [Ljava/lang/Object;
 
+    .line 45
     .line 46
     .line 47
-    .line 48
     move-result-object v3
 
-    .line 49
+    .line 48
     invoke-virtual {v1, v0, v2, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;[Ljava/lang/Object;)V
 
+    .line 49
     .line 50
     .line 51
-    .line 52
     const-string v2, "/"
 
+    .line 52
     .line 53
-    .line 54
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 54
     .line 55
     .line 56
-    .line 57
     move-result v3
 
-    .line 58
+    .line 57
     if-eqz v3, :cond_3
 
+    .line 58
     .line 59
-    .line 60
     move-object v3, p0
 
-    .line 61
-    goto :goto_2
+    .line 60
+    goto :goto_1
 
-    .line 62
+    .line 61
     :cond_3
     invoke-static {p0}, Lcom/sun/jna/NativeLibrary;->mapSharedLibraryName(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 62
     .line 63
     .line 64
-    .line 65
     move-result-object v3
 
-    .line 66
-    :goto_2
+    .line 65
+    :goto_1
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 66
     .line 67
     .line 68
-    .line 69
     move-result v4
 
-    .line 70
+    .line 69
     if-eqz v4, :cond_4
 
+    .line 70
     .line 71
-    .line 72
     move-object v4, p0
 
-    .line 73
-    goto :goto_3
+    .line 72
+    goto :goto_2
 
-    .line 74
+    .line 73
     :cond_4
     new-instance v4, Ljava/lang/StringBuilder;
 
+    .line 74
     .line 75
-    .line 76
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 76
     .line 77
     .line 78
-    .line 79
     sget-object v5, Lcom/sun/jna/Platform;->RESOURCE_PREFIX:Ljava/lang/String;
 
+    .line 79
     .line 80
-    .line 81
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 81
     .line 82
     .line 83
-    .line 84
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 84
     .line 85
     .line 86
-    .line 87
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 87
     .line 88
     .line 89
-    .line 90
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 90
     .line 91
     .line 92
-    .line 93
     move-result-object v4
 
-    .line 94
-    :goto_3
+    .line 93
+    :goto_2
     invoke-virtual {v4, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 94
     .line 95
     .line 96
-    .line 97
     move-result v5
 
-    .line 98
+    .line 97
     const/4 v6, 0x1
 
-    .line 99
+    .line 98
     if-eqz v5, :cond_5
 
+    .line 99
     .line 100
-    .line 101
     invoke-virtual {v4, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
+    .line 101
     .line 102
     .line 103
-    .line 104
     move-result-object v4
 
-    .line 105
+    .line 104
     :cond_5
     invoke-virtual {p1, v4}, Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;
 
+    .line 105
     .line 106
     .line 107
-    .line 108
     move-result-object v5
 
-    .line 109
+    .line 108
     if-nez v5, :cond_9
 
+    .line 109
     .line 110
-    .line 111
     sget-object v7, Lcom/sun/jna/Platform;->RESOURCE_PREFIX:Ljava/lang/String;
 
+    .line 111
     .line 112
-    .line 113
     invoke-virtual {v4, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 113
     .line 114
     .line 115
-    .line 116
     move-result v8
 
-    .line 117
+    .line 116
     if-eqz v8, :cond_7
 
+    .line 117
     .line 118
-    .line 119
     const-string v2, "darwin"
 
+    .line 119
     .line 120
-    .line 121
     invoke-virtual {v7, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 121
     .line 122
     .line 123
-    .line 124
     move-result v2
 
-    .line 125
+    .line 124
     if-eqz v2, :cond_6
 
+    .line 125
     .line 126
-    .line 127
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
+    .line 127
     .line 128
     .line 129
-    .line 130
     move-result v2
 
-    .line 131
+    .line 130
     add-int/2addr v2, v6
 
-    .line 132
+    .line 131
     invoke-virtual {v4, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
+    .line 132
     .line 133
     .line 134
-    .line 135
     move-result-object v2
 
-    .line 136
+    .line 135
     const-string v5, "darwin/"
 
+    .line 136
     .line 137
-    .line 138
     invoke-virtual {v5, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 138
     .line 139
     .line 140
-    .line 141
     move-result-object v2
 
-    .line 142
+    .line 141
     invoke-virtual {p1, v2}, Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;
 
+    .line 142
     .line 143
     .line 144
-    .line 145
     move-result-object v5
 
-    .line 146
+    .line 145
     :cond_6
     if-nez v5, :cond_9
 
+    .line 146
     .line 147
-    .line 148
     invoke-virtual {p1, v3}, Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;
 
+    .line 148
     .line 149
     .line 150
-    .line 151
     move-result-object v5
 
-    .line 152
-    goto :goto_4
+    .line 151
+    goto :goto_3
 
-    .line 153
+    .line 152
     :cond_7
     new-instance v8, Ljava/lang/StringBuilder;
 
+    .line 153
     .line 154
-    .line 155
     const-string v9, "com/sun/jna/"
 
+    .line 155
     .line 156
-    .line 157
     invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 157
     .line 158
     .line 159
-    .line 160
     invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 160
     .line 161
     .line 162
-    .line 163
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 163
     .line 164
     .line 165
-    .line 166
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 166
     .line 167
     .line 168
-    .line 169
     move-result-object v2
 
-    .line 170
+    .line 169
     invoke-virtual {v4, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 170
     .line 171
     .line 172
-    .line 173
     move-result v2
 
-    .line 174
+    .line 173
     if-eqz v2, :cond_9
 
+    .line 174
     .line 175
-    .line 176
     const-string v2, "com/sun/jna/darwin"
 
+    .line 176
     .line 177
-    .line 178
     invoke-virtual {v7, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    .line 178
     .line 179
     .line 180
-    .line 181
     move-result v8
 
-    .line 182
+    .line 181
     if-eqz v8, :cond_8
 
+    .line 182
     .line 183
-    .line 184
     new-instance v5, Ljava/lang/StringBuilder;
 
+    .line 184
     .line 185
-    .line 186
     invoke-direct {v5, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 186
     .line 187
     .line 188
-    .line 189
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 189
     .line 190
     .line 191
-    .line 192
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 192
     .line 193
     .line 194
-    .line 195
     move-result-object v5
 
-    .line 196
+    .line 195
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
+    .line 196
     .line 197
     .line 198
-    .line 199
     move-result v5
 
-    .line 200
+    .line 199
     add-int/2addr v5, v6
 
-    .line 201
+    .line 200
     invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
+    .line 201
     .line 202
     .line 203
-    .line 204
     move-result-object v5
 
-    .line 205
+    .line 204
     invoke-virtual {v2, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 205
     .line 206
     .line 207
-    .line 208
     move-result-object v2
 
-    .line 209
+    .line 208
     invoke-virtual {p1, v2}, Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;
 
+    .line 209
     .line 210
     .line 211
-    .line 212
     move-result-object v5
 
-    .line 213
+    .line 212
     :cond_8
     if-nez v5, :cond_9
 
+    .line 213
     .line 214
-    .line 215
     invoke-virtual {p1, v3}, Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;
 
+    .line 215
     .line 216
     .line 217
-    .line 218
     move-result-object v5
 
-    .line 219
+    .line 218
     :cond_9
-    :goto_4
+    :goto_3
     const/4 v2, 0x0
 
-    .line 220
+    .line 219
     if-nez v5, :cond_b
 
+    .line 220
     .line 221
-    .line 222
     const-string p0, "java.class.path"
 
+    .line 222
     .line 223
-    .line 224
     invoke-static {p0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 224
     .line 225
     .line 226
-    .line 227
     move-result-object p0
 
-    .line 228
+    .line 227
     instance-of v0, p1, Ljava/net/URLClassLoader;
 
+    .line 228
     .line 229
-    .line 230
     if-eqz v0, :cond_a
 
+    .line 230
     .line 231
-    .line 232
     check-cast p1, Ljava/net/URLClassLoader;
 
+    .line 232
     .line 233
-    .line 234
     invoke-virtual {p1}, Ljava/net/URLClassLoader;->getURLs()[Ljava/net/URL;
 
+    .line 234
     .line 235
     .line 236
-    .line 237
     move-result-object p0
 
-    .line 238
+    .line 237
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
+    .line 238
     .line 239
     .line 240
-    .line 241
     move-result-object p0
 
-    .line 242
+    .line 241
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
+    .line 242
     .line 243
     .line 244
-    .line 245
     move-result-object p0
 
-    .line 246
+    .line 245
     :cond_a
     const-string p1, ") not found in resource path ("
 
+    .line 246
     .line 247
-    .line 248
     const-string v0, ")"
 
+    .line 248
     .line 249
-    .line 250
     const-string v1, "Native library ("
 
+    .line 250
     .line 251
-    .line 252
-    invoke-static {v1, v4, p1, p0, v0}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v4, p1, p0, v0}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 252
     .line 253
     .line 254
-    .line 255
     move-result-object p0
 
-    .line 256
-    invoke-static {p0}, Lue1;->m(Ljava/lang/String;)V
+    .line 255
+    invoke-static {p0}, Lnf1;->g(Ljava/lang/String;)V
 
+    .line 256
     .line 257
     .line 258
-    .line 259
     return-object v2
 
-    .line 260
+    .line 259
     :cond_b
     const-string p1, "Found library resource at {0}"
 
+    .line 260
     .line 261
-    .line 262
     invoke-virtual {v1, v0, p1, v5}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 262
     .line 263
     .line 264
-    .line 265
     invoke-virtual {v5}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
+    .line 265
     .line 266
     .line 267
-    .line 268
     move-result-object p1
 
-    .line 269
+    .line 268
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
+    .line 269
     .line 270
     .line 271
-    .line 272
     move-result-object p1
 
-    .line 273
+    .line 272
     const-string v3, "file"
 
+    .line 273
     .line 274
-    .line 275
     invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    .line 275
     .line 276
     .line 277
-    .line 278
     move-result p1
 
-    .line 279
-    if-eqz p1, :cond_d
+    .line 278
+    if-eqz p1, :cond_c
 
+    .line 279
     .line 280
-    .line 281
     :try_start_0
     new-instance p0, Ljava/io/File;
 
+    .line 281
     .line 282
-    .line 283
     new-instance p1, Ljava/net/URI;
 
+    .line 283
     .line 284
-    .line 285
     invoke-virtual {v5}, Ljava/net/URL;->toString()Ljava/lang/String;
 
+    .line 285
     .line 286
     .line 287
-    .line 288
     move-result-object v1
 
-    .line 289
+    .line 288
     invoke-direct {p1, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
+    .line 289
     .line 290
     .line 291
-    .line 292
     invoke-direct {p0, p1}, Ljava/io/File;-><init>(Ljava/net/URI;)V
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 292
     .line 293
     .line 294
-    .line 295
-    goto :goto_5
+    goto :goto_4
 
-    .line 296
+    .line 295
     :catch_0
     new-instance p0, Ljava/io/File;
 
+    .line 296
     .line 297
-    .line 298
     invoke-virtual {v5}, Ljava/net/URL;->getPath()Ljava/lang/String;
 
+    .line 298
     .line 299
     .line 300
-    .line 301
     move-result-object p1
 
-    .line 302
+    .line 301
     invoke-direct {p0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 302
     .line 303
     .line 304
-    .line 305
-    :goto_5
+    :goto_4
     sget-object p1, Lcom/sun/jna/Native;->LOG:Ljava/util/logging/Logger;
 
+    .line 305
     .line 306
-    .line 307
     const-string v1, "Looking in {0}"
 
+    .line 307
     .line 308
-    .line 309
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
+    .line 309
     .line 310
     .line 311
-    .line 312
     move-result-object v2
 
-    .line 313
+    .line 312
     invoke-virtual {p1, v0, v1, v2}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 313
     .line 314
     .line 315
-    .line 316
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
+    .line 316
     .line 317
     .line 318
-    .line 319
     move-result p1
 
+    .line 319
+    if-nez p1, :cond_10
+
     .line 320
-    if-eqz p1, :cond_c
-
     .line 321
-    .line 322
-    goto/16 :goto_8
-
-    .line 323
-    .line 324
-    :cond_c
     new-instance p0, Ljava/io/IOException;
 
-    .line 325
-    .line 326
+    .line 322
+    .line 323
     new-instance p1, Ljava/lang/StringBuilder;
 
-    .line 327
-    .line 328
+    .line 324
+    .line 325
     const-string v0, "File URL "
 
+    .line 326
+    .line 327
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 328
     .line 329
     .line 330
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 331
     .line 332
     .line 333
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, " could not be properly decoded"
 
     .line 334
     .line 335
-    .line 336
-    const-string v0, " could not be properly decoded"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 336
     .line 337
     .line 338
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 339
     .line 340
     .line 341
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
     .line 342
-    .line 343
-    .line 344
-    move-result-object p1
-
-    .line 345
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 346
-    .line 347
-    .line 348
+    .line 343
+    .line 344
+    .line 345
     throw p0
 
-    .line 349
-    :cond_d
+    .line 346
+    :cond_c
     const-string p1, "jna.nounpack"
 
-    .line 350
-    .line 351
+    .line 347
+    .line 348
     invoke-static {p1}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
 
-    .line 352
-    .line 353
-    .line 354
+    .line 349
+    .line 350
+    .line 351
     move-result p1
 
-    .line 355
+    .line 352
     if-nez p1, :cond_13
 
-    .line 356
-    .line 357
+    .line 353
+    .line 354
     invoke-virtual {v5}, Ljava/net/URL;->openStream()Ljava/io/InputStream;
 
-    .line 358
-    .line 359
-    .line 360
+    .line 355
+    .line 356
+    .line 357
     move-result-object p1
 
-    .line 361
+    .line 358
     if-eqz p1, :cond_12
 
-    .line 362
-    .line 363
+    .line 359
+    .line 360
     :try_start_1
     invoke-static {}, Lcom/sun/jna/Native;->getTempDir()Ljava/io/File;
 
-    .line 364
-    .line 365
-    .line 366
+    .line 361
+    .line 362
+    .line 363
     move-result-object v3
 
-    .line 367
+    .line 364
     const-string v4, "jna"
 
-    .line 368
-    .line 369
+    .line 365
+    .line 366
     invoke-static {}, Lcom/sun/jna/Platform;->isWindows()Z
 
-    .line 370
-    .line 371
-    .line 372
+    .line 367
+    .line 368
+    .line 369
     move-result v5
 
-    .line 373
-    if-eqz v5, :cond_e
+    .line 370
+    if-eqz v5, :cond_d
 
-    .line 374
-    .line 375
+    .line 371
+    .line 372
     const-string v5, ".dll"
 
-    .line 376
-    .line 377
-    goto :goto_6
+    .line 373
+    .line 374
+    goto :goto_5
 
-    .line 378
-    :catchall_0
-    move-exception p0
-
-    .line 379
-    goto :goto_a
-
-    .line 380
-    :catch_1
-    move-exception v0
-
-    .line 381
-    goto :goto_9
-
-    .line 382
-    :cond_e
+    .line 375
+    :cond_d
     move-object v5, v2
 
-    .line 383
-    :goto_6
+    .line 376
+    :goto_5
     invoke-static {v4, v5, v3}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
 
-    .line 384
-    .line 385
-    .line 386
+    .line 377
+    .line 378
+    .line 379
     move-result-object v3
 
-    .line 387
+    .line 380
     const-string v4, "jnidispatch.preserve"
 
-    .line 388
-    .line 389
+    .line 381
+    .line 382
     invoke-static {v4}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
 
-    .line 390
-    .line 391
-    .line 392
+    .line 383
+    .line 384
+    .line 385
     move-result v4
 
+    .line 386
+    if-nez v4, :cond_e
+
+    .line 387
+    .line 388
+    invoke-virtual {v3}, Ljava/io/File;->deleteOnExit()V
+
+    .line 389
+    .line 390
+    .line 391
+    :cond_e
+    const-string v4, "Extracting library to {0}"
+
+    .line 392
     .line 393
-    if-nez v4, :cond_f
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     .line 394
     .line 395
-    invoke-virtual {v3}, Ljava/io/File;->deleteOnExit()V
-
     .line 396
-    .line 397
-    .line 398
-    :cond_f
-    const-string v4, "Extracting library to {0}"
+    move-result-object v5
 
+    .line 397
+    invoke-virtual {v1, v0, v4, v5}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 398
     .line 399
     .line 400
-    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    new-instance v0, Ljava/io/FileOutputStream;
 
     .line 401
     .line 402
-    .line 403
-    move-result-object v5
-
-    .line 404
-    invoke-virtual {v1, v0, v4, v5}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 405
-    .line 406
-    .line 407
-    new-instance v0, Ljava/io/FileOutputStream;
-
-    .line 408
-    .line 409
     invoke-direct {v0, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 410
-    .line 411
-    .line 412
+    .line 403
+    .line 404
+    .line 405
     const/16 v1, 0x400
 
-    .line 413
-    .line 414
+    .line 406
+    .line 407
     :try_start_2
     new-array v2, v1, [B
 
-    .line 415
-    .line 416
-    :goto_7
+    .line 408
+    .line 409
+    :goto_6
     const/4 v4, 0x0
 
-    .line 417
+    .line 410
     invoke-virtual {p1, v2, v4, v1}, Ljava/io/InputStream;->read([BII)I
 
-    .line 418
-    .line 419
-    .line 420
+    .line 411
+    .line 412
+    .line 413
     move-result v5
 
-    .line 421
-    if-lez v5, :cond_10
+    .line 414
+    if-lez v5, :cond_f
 
-    .line 422
-    .line 423
+    .line 415
+    .line 416
     invoke-virtual {v0, v2, v4, v5}, Ljava/io/FileOutputStream;->write([BII)V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 417
+    .line 418
+    .line 419
+    goto :goto_6
+
+    .line 420
+    :cond_f
+    :try_start_3
+    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+
+    .line 421
+    .line 422
+    .line 423
+    :catch_1
+    :try_start_4
+    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
     .line 424
     .line 425
     .line 426
-    goto :goto_7
-
-    .line 427
-    :catchall_1
-    move-exception p0
-
-    .line 428
-    move-object v2, v0
-
-    .line 429
-    goto :goto_a
-
-    .line 430
     :catch_2
-    move-exception v1
-
-    .line 431
-    move-object v2, v0
-
-    .line 432
-    move-object v0, v1
-
-    .line 433
-    goto :goto_9
-
-    .line 434
-    :cond_10
-    :try_start_3
-    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
-
-    .line 435
-    .line 436
-    .line 437
-    :catch_3
-    :try_start_4
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
-
-    .line 438
-    .line 439
-    .line 440
-    :catch_4
     move-object p0, v3
 
-    .line 441
-    :goto_8
+    .line 427
+    :cond_10
     return-object p0
 
-    .line 442
-    :goto_9
+    .line 428
+    :catchall_0
+    move-exception p0
+
+    .line 429
+    move-object v2, v0
+
+    .line 430
+    goto :goto_8
+
+    .line 431
+    :catch_3
+    move-exception v1
+
+    .line 432
+    move-object v2, v0
+
+    .line 433
+    move-object v0, v1
+
+    .line 434
+    goto :goto_7
+
+    .line 435
+    :catch_4
+    move-exception v0
+
+    .line 436
+    :goto_7
     :try_start_5
     new-instance v1, Ljava/io/IOException;
 
-    .line 443
-    .line 444
+    .line 437
+    .line 438
     new-instance v3, Ljava/lang/StringBuilder;
 
-    .line 445
-    .line 446
+    .line 439
+    .line 440
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 447
-    .line 448
-    .line 449
+    .line 441
+    .line 442
+    .line 443
     const-string v4, "Failed to create temporary file for "
 
+    .line 444
+    .line 445
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 446
+    .line 447
+    .line 448
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 449
     .line 450
     .line 451
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string p0, " library: "
 
     .line 452
     .line 453
-    .line 454
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 454
     .line 455
     .line 456
-    .line 457
-    const-string p0, " library: "
-
-    .line 458
-    .line 459
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 460
-    .line 461
-    .line 462
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    .line 463
-    .line 464
-    .line 465
+    .line 457
+    .line 458
+    .line 459
     move-result-object p0
 
-    .line 466
+    .line 460
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 467
-    .line 468
-    .line 469
+    .line 461
+    .line 462
+    .line 463
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 470
-    .line 471
-    .line 472
+    .line 464
+    .line 465
+    .line 466
     move-result-object p0
 
-    .line 473
+    .line 467
     invoke-direct {v1, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 474
-    .line 475
-    .line 476
+    .line 468
+    .line 469
+    .line 470
     throw v1
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 477
-    :goto_a
+    .line 471
+    :catchall_1
+    move-exception p0
+
+    .line 472
+    :goto_8
     :try_start_6
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_5
 
-    .line 478
-    .line 479
-    .line 480
+    .line 473
+    .line 474
+    .line 475
     :catch_5
     if-eqz v2, :cond_11
 
-    .line 481
-    .line 482
+    .line 476
+    .line 477
     :try_start_7
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
 
-    .line 483
-    .line 484
-    .line 485
+    .line 478
+    .line 479
+    .line 480
     :catch_6
     :cond_11
     throw p0
 
-    .line 486
+    .line 481
     :cond_12
     const-string p0, "Can\'t obtain InputStream for "
 
-    .line 487
-    .line 488
+    .line 482
+    .line 483
     invoke-virtual {p0, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 489
-    .line 490
-    .line 491
+    .line 484
+    .line 485
+    .line 486
     move-result-object p0
 
-    .line 492
-    invoke-static {p0}, Lue1;->m(Ljava/lang/String;)V
+    .line 487
+    invoke-static {p0}, Lnf1;->g(Ljava/lang/String;)V
 
-    .line 493
-    .line 494
-    .line 495
+    .line 488
+    .line 489
+    .line 490
     :cond_13
     return-object v2
 .end method
@@ -2700,7 +2678,7 @@
 
     .line 62
     .line 63
-    invoke-static {v0, p0, v1}, Lue1;->h(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p0, v1}, Lnf1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 64
     .line 65
@@ -3102,7 +3080,7 @@
 
     .line 22
     .line 23
-    invoke-static {v0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Lex1;->d(Ljava/lang/String;)V
 
     .line 24
     .line 25
@@ -3115,7 +3093,7 @@
 
     .line 28
     .line 29
-    invoke-static {v0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Lex1;->d(Ljava/lang/String;)V
 
     .line 30
     .line 31
@@ -4078,203 +4056,199 @@
 
     .line 51
     .line 52
-    if-eqz v2, :cond_3
+    if-nez v2, :cond_3
 
     .line 53
     .line 54
-    goto :goto_1
-
-    .line 55
-    :cond_3
     new-instance v2, Ljava/lang/IllegalStateException;
 
+    .line 55
     .line 56
-    .line 57
     const-string v3, "Null options field"
 
+    .line 57
     .line 58
-    .line 59
     invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
+    .line 59
     .line 60
     .line 61
-    .line 62
     throw v2
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 63
+    .line 62
     :catch_0
     move-exception p0
 
-    .line 64
+    .line 63
     const-string v2, "OPTIONS must be a public field of type java.util.Map ("
 
+    .line 64
     .line 65
-    .line 66
     const-string v3, "): "
 
+    .line 66
     .line 67
-    .line 68
-    invoke-static {v2, p0, v3, v1}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v2, p0, v3, v1}, Llt4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
+    .line 68
     .line 69
     .line 70
-    .line 71
     return-object v0
 
-    .line 72
+    .line 71
     :catch_1
     sget-object v2, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
 
+    .line 72
     .line 73
-    .line 74
-    :goto_1
+    :cond_3
     new-instance v3, Ljava/util/HashMap;
 
+    .line 74
     .line 75
-    .line 76
     invoke-direct {v3, v2}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
+    .line 76
     .line 77
     .line 78
-    .line 79
     const-string v2, "type-mapper"
 
+    .line 79
     .line 80
-    .line 81
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
+    .line 81
     .line 82
     .line 83
-    .line 84
     move-result v4
 
-    .line 85
+    .line 84
     if-nez v4, :cond_4
 
+    .line 85
     .line 86
-    .line 87
     const-string v4, "TYPE_MAPPER"
 
+    .line 87
     .line 88
-    .line 89
     const-class v5, Lcom/sun/jna/TypeMapper;
 
+    .line 89
     .line 90
-    .line 91
     invoke-static {v1, v4, v5}, Lcom/sun/jna/Native;->lookupField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
+    .line 91
     .line 92
     .line 93
-    .line 94
     move-result-object v4
 
-    .line 95
+    .line 94
     invoke-virtual {v3, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 95
     .line 96
     .line 97
-    .line 98
     :cond_4
     const-string v2, "structure-alignment"
 
+    .line 98
     .line 99
-    .line 100
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
+    .line 100
     .line 101
     .line 102
-    .line 103
     move-result v4
 
-    .line 104
+    .line 103
     if-nez v4, :cond_5
 
+    .line 104
     .line 105
-    .line 106
     const-string v4, "STRUCTURE_ALIGNMENT"
 
+    .line 106
     .line 107
-    .line 108
     const-class v5, Ljava/lang/Integer;
 
+    .line 108
     .line 109
-    .line 110
     invoke-static {v1, v4, v5}, Lcom/sun/jna/Native;->lookupField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
+    .line 110
     .line 111
     .line 112
-    .line 113
     move-result-object v4
 
-    .line 114
+    .line 113
     invoke-virtual {v3, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 114
     .line 115
     .line 116
-    .line 117
     :cond_5
     const-string v2, "string-encoding"
 
+    .line 117
     .line 118
-    .line 119
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
+    .line 119
     .line 120
     .line 121
-    .line 122
     move-result v4
 
-    .line 123
+    .line 122
     if-nez v4, :cond_6
 
+    .line 123
     .line 124
-    .line 125
     const-string v4, "STRING_ENCODING"
 
+    .line 125
     .line 126
-    .line 127
     const-class v5, Ljava/lang/String;
 
+    .line 127
     .line 128
-    .line 129
     invoke-static {v1, v4, v5}, Lcom/sun/jna/Native;->lookupField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
+    .line 129
     .line 130
     .line 131
-    .line 132
     move-result-object v4
 
-    .line 133
+    .line 132
     invoke-virtual {v3, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 133
     .line 134
     .line 135
-    .line 136
     :cond_6
     invoke-static {v1, v3, v0}, Lcom/sun/jna/Native;->cacheOptions(Ljava/lang/Class;Ljava/util/Map;Ljava/lang/Object;)Ljava/util/Map;
 
+    .line 136
     .line 137
     .line 138
-    .line 139
     move-result-object v0
 
-    .line 140
+    .line 139
     if-eq p0, v1, :cond_7
 
+    .line 140
     .line 141
-    .line 142
     sget-object v1, Lcom/sun/jna/Native;->typeOptions:Ljava/util/Map;
 
+    .line 142
     .line 143
-    .line 144
     invoke-interface {v1, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 144
     .line 145
     .line 146
-    .line 147
     :cond_7
     return-object v0
 .end method
@@ -4323,7 +4297,7 @@
     :cond_0
     const-string p0, "Object is not a properly initialized Library interface instance"
 
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     return-object v0
 
@@ -4331,7 +4305,7 @@
     :cond_1
     const-string p0, "library object passed to getNativeLibrary in not a proxy"
 
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     return-object v0
 
@@ -4339,7 +4313,7 @@
     :cond_2
     const-string p0, "null passed to getNativeLibrary"
 
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -4406,72 +4380,72 @@
     return-object v1
 
     .line 24
-    :catchall_0
-    move-exception p0
-
-    .line 25
-    goto :goto_0
-
-    .line 26
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
+    .line 25
+    .line 26
+    new-instance v3, Ljava/lang/StringBuilder;
+
     .line 27
     .line 28
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 29
     .line 30
-    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 31
-    .line 32
-    .line 33
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
+    .line 32
+    .line 33
     .line 34
-    .line 35
-    .line 36
     move-result-object p0
 
-    .line 37
+    .line 35
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 36
+    .line 37
     .line 38
+    const-string p0, " is not currently registered"
+
     .line 39
     .line 40
-    const-string p0, " is not currently registered"
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 41
     .line 42
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 43
-    .line 44
-    .line 45
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 44
+    .line 45
     .line 46
-    .line 47
-    .line 48
     move-result-object p0
 
-    .line 49
+    .line 47
     invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    .line 48
+    .line 49
     .line 50
-    .line 51
-    .line 52
     throw v1
 
-    .line 53
+    .line 51
     :goto_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 54
+    .line 52
     throw p0
+
+    .line 53
+    :catchall_0
+    move-exception p0
+
+    .line 54
+    goto :goto_0
 
     .line 55
     :cond_1
@@ -4479,7 +4453,7 @@
 
     .line 56
     .line 57
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 58
     .line 59
@@ -4541,7 +4515,7 @@
     const/4 v1, 0x4
 
     .line 20
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_c
 
     .line 21
     .line 22
@@ -4549,371 +4523,321 @@
 
     .line 23
     .line 24
-    if-ne p0, v0, :cond_1
+    if-eq p0, v0, :cond_c
 
     .line 25
     .line 26
-    goto/16 :goto_8
+    sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
     .line 27
     .line 28
-    :cond_1
-    sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    if-eq p0, v0, :cond_b
 
     .line 29
     .line 30
-    if-eq p0, v0, :cond_14
+    const-class v0, Ljava/lang/Byte;
 
     .line 31
     .line 32
-    const-class v0, Ljava/lang/Byte;
+    if-eq p0, v0, :cond_b
 
     .line 33
     .line 34
-    if-ne p0, v0, :cond_2
+    sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
     .line 35
     .line 36
-    goto/16 :goto_7
+    if-eq p0, v0, :cond_a
 
     .line 37
     .line 38
-    :cond_2
-    sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
+    const-class v0, Ljava/lang/Short;
 
     .line 39
     .line 40
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_a
 
     .line 41
     .line 42
-    const-class v0, Ljava/lang/Short;
+    sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
 
     .line 43
     .line 44
-    if-ne p0, v0, :cond_3
+    if-eq p0, v0, :cond_9
 
     .line 45
     .line 46
-    goto/16 :goto_6
+    const-class v0, Ljava/lang/Character;
 
     .line 47
     .line 48
-    :cond_3
-    sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
+    if-eq p0, v0, :cond_9
 
     .line 49
     .line 50
-    if-eq p0, v0, :cond_12
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     .line 51
     .line 52
-    const-class v0, Ljava/lang/Character;
+    if-eq p0, v0, :cond_8
 
     .line 53
     .line 54
-    if-ne p0, v0, :cond_4
+    const-class v0, Ljava/lang/Integer;
 
     .line 55
     .line 56
-    goto/16 :goto_5
+    if-eq p0, v0, :cond_8
 
     .line 57
     .line 58
-    :cond_4
-    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     .line 59
     .line 60
-    if-eq p0, v0, :cond_11
+    const/16 v2, 0x8
 
     .line 61
     .line 62
-    const-class v0, Ljava/lang/Integer;
+    if-eq p0, v0, :cond_7
 
     .line 63
     .line 64
-    if-ne p0, v0, :cond_5
+    const-class v0, Ljava/lang/Long;
 
     .line 65
     .line 66
-    goto/16 :goto_4
+    if-eq p0, v0, :cond_7
 
     .line 67
     .line 68
-    :cond_5
-    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
     .line 69
     .line 70
-    const/16 v2, 0x8
+    if-eq p0, v0, :cond_6
 
     .line 71
     .line 72
-    if-eq p0, v0, :cond_10
+    const-class v0, Ljava/lang/Float;
 
     .line 73
     .line 74
-    const-class v0, Ljava/lang/Long;
+    if-eq p0, v0, :cond_6
 
     .line 75
     .line 76
-    if-ne p0, v0, :cond_6
+    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
     .line 77
     .line 78
-    goto :goto_3
+    if-eq p0, v0, :cond_5
 
     .line 79
-    :cond_6
-    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
     .line 80
+    const-class v0, Ljava/lang/Double;
+
     .line 81
-    if-eq p0, v0, :cond_f
-
     .line 82
+    if-eq p0, v0, :cond_5
+
     .line 83
-    const-class v0, Ljava/lang/Float;
-
     .line 84
+    const-class v0, Lcom/sun/jna/Structure;
+
     .line 85
-    if-ne p0, v0, :cond_7
-
     .line 86
+    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
     .line 87
-    goto :goto_2
-
     .line 88
-    :cond_7
-    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
-
     .line 89
+    move-result v0
+
     .line 90
-    if-eq p0, v0, :cond_e
+    if-eqz v0, :cond_2
 
     .line 91
     .line 92
-    const-class v0, Ljava/lang/Double;
+    const-class v0, Lcom/sun/jna/Structure$ByValue;
 
     .line 93
     .line 94
-    if-ne p0, v0, :cond_8
+    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     .line 95
     .line 96
-    goto :goto_1
-
     .line 97
-    :cond_8
-    const-class v0, Lcom/sun/jna/Structure;
-
-    .line 98
-    .line 99
-    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    .line 100
-    .line 101
-    .line 102
     move-result v0
 
+    .line 98
+    if-eqz v0, :cond_1
+
+    .line 99
+    .line 100
+    invoke-static {p0}, Lcom/sun/jna/Structure;->size(Ljava/lang/Class;)I
+
+    .line 101
+    .line 102
     .line 103
-    if-eqz v0, :cond_a
+    move-result p0
 
     .line 104
+    return p0
+
     .line 105
-    const-class v0, Lcom/sun/jna/Structure$ByValue;
+    :cond_1
+    sget p0, Lcom/sun/jna/Native;->POINTER_SIZE:I
 
     .line 106
     .line 107
-    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    .line 108
-    .line 109
-    .line 110
-    move-result v0
-
-    .line 111
-    if-eqz v0, :cond_9
-
-    .line 112
-    .line 113
-    invoke-static {p0}, Lcom/sun/jna/Structure;->size(Ljava/lang/Class;)I
-
-    .line 114
-    .line 115
-    .line 116
-    move-result p0
-
-    .line 117
     return p0
 
+    .line 108
+    :cond_2
+    const-class v0, Lcom/sun/jna/Pointer;
+
+    .line 109
+    .line 110
+    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    .line 111
+    .line 112
+    .line 113
+    move-result v0
+
+    .line 114
+    if-nez v0, :cond_4
+
+    .line 115
+    .line 116
+    sget-boolean v0, Lcom/sun/jna/Platform;->HAS_BUFFERS:Z
+
+    .line 117
     .line 118
-    :cond_9
-    sget p0, Lcom/sun/jna/Native;->POINTER_SIZE:I
+    if-eqz v0, :cond_3
 
     .line 119
     .line 120
-    return p0
-
-    .line 121
-    :cond_a
-    const-class v0, Lcom/sun/jna/Pointer;
-
-    .line 122
-    .line 123
-    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    .line 124
-    .line 125
-    .line 126
-    move-result v0
-
-    .line 127
-    if-nez v0, :cond_d
-
-    .line 128
-    .line 129
-    sget-boolean v0, Lcom/sun/jna/Platform;->HAS_BUFFERS:Z
-
-    .line 130
-    .line 131
-    if-eqz v0, :cond_b
-
-    .line 132
-    .line 133
     invoke-static {p0}, Lcom/sun/jna/Native$Buffers;->isBuffer(Ljava/lang/Class;)Z
 
-    .line 134
-    .line 135
-    .line 136
+    .line 121
+    .line 122
+    .line 123
     move-result v0
 
-    .line 137
-    if-nez v0, :cond_d
+    .line 124
+    if-nez v0, :cond_4
 
-    .line 138
-    .line 139
-    :cond_b
+    .line 125
+    .line 126
+    :cond_3
     const-class v0, Lcom/sun/jna/Callback;
 
-    .line 140
-    .line 141
+    .line 127
+    .line 128
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    .line 142
-    .line 143
-    .line 144
+    .line 129
+    .line 130
+    .line 131
     move-result v0
 
-    .line 145
-    if-nez v0, :cond_d
+    .line 132
+    if-nez v0, :cond_4
 
-    .line 146
-    .line 147
+    .line 133
+    .line 134
     const-class v0, Ljava/lang/String;
 
-    .line 148
-    .line 149
-    if-eq v0, p0, :cond_d
+    .line 135
+    .line 136
+    if-eq v0, p0, :cond_4
 
-    .line 150
-    .line 151
+    .line 137
+    .line 138
     const-class v0, Lcom/sun/jna/WString;
 
-    .line 152
-    .line 153
-    if-ne v0, p0, :cond_c
+    .line 139
+    .line 140
+    if-eq v0, p0, :cond_4
 
-    .line 154
-    .line 155
-    goto :goto_0
-
-    .line 156
-    :cond_c
+    .line 141
+    .line 142
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .line 157
-    .line 158
-    .line 159
+    .line 143
+    .line 144
+    .line 145
     move-result-object p0
 
-    .line 160
+    .line 146
     const-string v0, "\" is unknown"
 
-    .line 161
-    .line 162
+    .line 147
+    .line 148
     const-string v1, "Native size for type \""
+
+    .line 149
+    .line 150
+    invoke-static {v1, p0, v0}, Lnf1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 151
+    .line 152
+    .line 153
+    const/4 p0, 0x0
+
+    .line 154
+    return p0
+
+    .line 155
+    :cond_4
+    sget p0, Lcom/sun/jna/Native;->POINTER_SIZE:I
+
+    .line 156
+    .line 157
+    return p0
+
+    .line 158
+    :cond_5
+    return v2
+
+    .line 159
+    :cond_6
+    return v1
+
+    .line 160
+    :cond_7
+    return v2
+
+    .line 161
+    :cond_8
+    return v1
+
+    .line 162
+    :cond_9
+    sget p0, Lcom/sun/jna/Native;->WCHAR_SIZE:I
 
     .line 163
     .line 164
-    invoke-static {v1, p0, v0}, Lue1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    return p0
 
     .line 165
+    :cond_a
+    const/4 p0, 0x2
+
     .line 166
+    return p0
+
     .line 167
-    const/4 p0, 0x0
+    :cond_b
+    const/4 p0, 0x1
 
     .line 168
     return p0
 
     .line 169
-    :cond_d
-    :goto_0
-    sget p0, Lcom/sun/jna/Native;->POINTER_SIZE:I
-
-    .line 170
-    .line 171
-    return p0
-
-    .line 172
-    :cond_e
-    :goto_1
-    return v2
-
-    .line 173
-    :cond_f
-    :goto_2
-    return v1
-
-    .line 174
-    :cond_10
-    :goto_3
-    return v2
-
-    .line 175
-    :cond_11
-    :goto_4
-    return v1
-
-    .line 176
-    :cond_12
-    :goto_5
-    sget p0, Lcom/sun/jna/Native;->WCHAR_SIZE:I
-
-    .line 177
-    .line 178
-    return p0
-
-    .line 179
-    :cond_13
-    :goto_6
-    const/4 p0, 0x2
-
-    .line 180
-    return p0
-
-    .line 181
-    :cond_14
-    :goto_7
-    const/4 p0, 0x1
-
-    .line 182
-    return p0
-
-    .line 183
-    :cond_15
-    :goto_8
+    :cond_c
     return v1
 .end method
 
@@ -4929,14 +4853,14 @@
         }
     .end annotation
 
-    .line 184
+    .line 170
     invoke-virtual {p0}, Ljava/lang/Class;->isArray()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 185
+    .line 171
     invoke-static {p1}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v0
@@ -4945,12 +4869,12 @@
 
     if-lez v0, :cond_0
 
-    .line 186
+    .line 172
     invoke-static {p1, v1}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 187
+    .line 173
     invoke-virtual {p0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
     move-result-object p0
@@ -4963,21 +4887,21 @@
 
     return p0
 
-    .line 188
+    .line 174
     :cond_0
     const-string p1, "Arrays of length zero not allowed: "
 
-    .line 189
-    invoke-static {p1, p0}, Loc1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    .line 175
+    invoke-static {p1, p0}, Lky1;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 190
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    .line 176
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     return v1
 
-    .line 191
+    .line 177
     :cond_1
     const-class v0, Lcom/sun/jna/Structure;
 
@@ -4989,14 +4913,14 @@
 
     const-class v0, Lcom/sun/jna/Structure$ByReference;
 
-    .line 192
+    .line 178
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 193
+    .line 179
     check-cast p1, Lcom/sun/jna/Structure;
 
     invoke-static {p0, p1}, Lcom/sun/jna/Structure;->size(Ljava/lang/Class;Lcom/sun/jna/Structure;)I
@@ -5005,7 +4929,7 @@
 
     return p0
 
-    .line 194
+    .line 180
     :cond_2
     :try_start_0
     invoke-static {p0}, Lcom/sun/jna/Native;->getNativeSize(Ljava/lang/Class;)I
@@ -5019,19 +4943,19 @@
     :catch_0
     move-exception p1
 
-    .line 195
+    .line 181
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 196
+    .line 182
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 197
+    .line 183
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "The type \""
@@ -5044,7 +4968,7 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 198
+    .line 184
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -5606,7 +5530,7 @@
     .line 15
     .line 16
     .line 17
-    goto/16 :goto_4
+    goto/16 :goto_2
 
     .line 18
     .line 19
@@ -5669,7 +5593,7 @@
     .line 47
     .line 48
     .line 49
-    goto/16 :goto_3
+    goto/16 :goto_1
 
     .line 50
     .line 51
@@ -5682,7 +5606,7 @@
     move-result v0
 
     .line 55
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 56
     .line 57
@@ -5694,7 +5618,7 @@
     move-result v0
 
     .line 61
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 62
     .line 63
@@ -5706,7 +5630,7 @@
     move-result v0
 
     .line 67
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 68
     .line 69
@@ -5718,7 +5642,7 @@
     move-result v0
 
     .line 73
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 74
     .line 75
@@ -5730,7 +5654,7 @@
     move-result v0
 
     .line 79
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 80
     .line 81
@@ -5742,7 +5666,7 @@
     move-result v0
 
     .line 85
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 86
     .line 87
@@ -5754,7 +5678,7 @@
     move-result v0
 
     .line 91
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 92
     .line 93
@@ -5766,321 +5690,307 @@
     move-result v0
 
     .line 97
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_2
 
     .line 98
     .line 99
-    goto :goto_0
-
-    .line 100
-    :cond_2
     new-instance v0, Ljava/io/File;
 
+    .line 100
     .line 101
-    .line 102
     new-instance v2, Ljava/lang/StringBuilder;
 
+    .line 102
     .line 103
-    .line 104
     const-string v3, "jna-"
 
+    .line 104
     .line 105
-    .line 106
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 106
     .line 107
     .line 108
-    .line 109
     const-string v3, "user.name"
 
+    .line 109
     .line 110
-    .line 111
     invoke-static {v3}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 111
     .line 112
     .line 113
-    .line 114
     move-result-object v3
 
-    .line 115
+    .line 114
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
+    .line 115
     .line 116
     .line 117
-    .line 118
     move-result v3
 
-    .line 119
+    .line 118
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 119
     .line 120
     .line 121
-    .line 122
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 122
     .line 123
     .line 124
-    .line 125
     move-result-object v2
 
-    .line 126
+    .line 125
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
+    .line 126
     .line 127
     .line 128
-    .line 129
-    goto :goto_3
-
-    .line 130
-    :cond_3
-    :goto_0
-    const-string v0, "XDG_CACHE_HOME"
-
-    .line 131
-    .line 132
-    invoke-static {v0}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 133
-    .line 134
-    .line 135
-    move-result-object v0
-
-    .line 136
-    if-eqz v0, :cond_5
-
-    .line 137
-    .line 138
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    .line 139
-    .line 140
-    .line 141
-    move-result-object v3
-
-    .line 142
-    invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
-
-    .line 143
-    .line 144
-    .line 145
-    move-result v3
-
-    .line 146
-    if-eqz v3, :cond_4
-
-    .line 147
-    .line 148
     goto :goto_1
 
-    .line 149
-    :cond_4
+    .line 129
+    :cond_2
+    const-string v0, "XDG_CACHE_HOME"
+
+    .line 130
+    .line 131
+    invoke-static {v0}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 132
+    .line 133
+    .line 134
+    move-result-object v0
+
+    .line 135
+    if-eqz v0, :cond_3
+
+    .line 136
+    .line 137
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    .line 138
+    .line 139
+    .line 140
+    move-result-object v3
+
+    .line 141
+    invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
+
+    .line 142
+    .line 143
+    .line 144
+    move-result v3
+
+    .line 145
+    if-nez v3, :cond_3
+
+    .line 146
+    .line 147
     new-instance v2, Ljava/io/File;
+
+    .line 148
+    .line 149
+    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 150
     .line 151
-    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
     .line 152
-    .line 153
-    .line 154
-    goto :goto_2
+    goto :goto_0
 
-    .line 155
-    :cond_5
-    :goto_1
+    .line 153
+    :cond_3
     new-instance v0, Ljava/io/File;
+
+    .line 154
+    .line 155
+    invoke-static {v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     .line 156
     .line 157
-    invoke-static {v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
     .line 158
-    .line 159
-    .line 160
     move-result-object v2
 
-    .line 161
+    .line 159
     const-string v3, ".cache"
+
+    .line 160
+    .line 161
+    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 162
     .line 163
-    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
     .line 164
-    .line 165
-    .line 166
     move-object v2, v0
 
-    .line 167
-    :goto_2
+    .line 165
+    :goto_0
     new-instance v0, Ljava/io/File;
+
+    .line 166
+    .line 167
+    const-string v3, "JNA/temp"
 
     .line 168
     .line 169
-    const-string v3, "JNA/temp"
+    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 170
     .line 171
-    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
     .line 172
-    .line 173
-    .line 174
-    :goto_3
+    :goto_1
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
+    .line 173
+    .line 174
     .line 175
-    .line 176
-    .line 177
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
+    .line 176
+    .line 177
     .line 178
-    .line 179
-    .line 180
     move-result v2
 
+    .line 179
+    if-eqz v2, :cond_4
+
+    .line 180
     .line 181
-    if-eqz v2, :cond_7
+    invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
 
     .line 182
     .line 183
-    invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
-
     .line 184
-    .line 185
-    .line 186
     move-result v2
 
+    .line 185
+    if-eqz v2, :cond_4
+
+    .line 186
     .line 187
-    if-nez v2, :cond_6
-
-    .line 188
-    .line 189
-    goto :goto_4
-
-    .line 190
-    :cond_6
     move-object v1, v0
 
-    .line 191
-    :cond_7
-    :goto_4
+    .line 188
+    :cond_4
+    :goto_2
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    .line 192
-    .line 193
-    .line 194
+    .line 189
+    .line 190
+    .line 191
     move-result v0
 
-    .line 195
+    .line 192
     const-string v2, "JNA temporary directory \'"
 
-    .line 196
-    .line 197
-    if-eqz v0, :cond_9
+    .line 193
+    .line 194
+    if-eqz v0, :cond_6
 
-    .line 198
-    .line 199
+    .line 195
+    .line 196
     invoke-virtual {v1}, Ljava/io/File;->canWrite()Z
 
-    .line 200
-    .line 201
-    .line 202
+    .line 197
+    .line 198
+    .line 199
     move-result v0
 
+    .line 200
+    if-eqz v0, :cond_5
+
+    .line 201
+    .line 202
+    return-object v1
+
     .line 203
-    if-eqz v0, :cond_8
+    :cond_5
+    new-instance v0, Ljava/io/IOException;
 
     .line 204
     .line 205
-    return-object v1
-
-    .line 206
-    :cond_8
-    new-instance v0, Ljava/io/IOException;
-
-    .line 207
-    .line 208
     new-instance v3, Ljava/lang/StringBuilder;
 
+    .line 206
+    .line 207
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 208
     .line 209
     .line 210
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 211
     .line 212
     .line 213
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v1, "\' is not writable"
 
     .line 214
     .line 215
-    .line 216
-    const-string v1, "\' is not writable"
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 216
     .line 217
     .line 218
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 219
     .line 220
     .line 221
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 222
-    .line 223
-    .line 224
     move-result-object v1
 
-    .line 225
+    .line 222
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 226
-    .line 227
-    .line 228
+    .line 223
+    .line 224
+    .line 225
     throw v0
 
-    .line 229
-    :cond_9
+    .line 226
+    :cond_6
     new-instance v0, Ljava/io/IOException;
 
-    .line 230
-    .line 231
+    .line 227
+    .line 228
     new-instance v3, Ljava/lang/StringBuilder;
 
+    .line 229
+    .line 230
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 231
     .line 232
     .line 233
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 234
     .line 235
     .line 236
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v1, "\' does not exist"
 
     .line 237
     .line 238
-    .line 239
-    const-string v1, "\' does not exist"
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 239
     .line 240
     .line 241
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 242
     .line 243
     .line 244
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 245
-    .line 246
-    .line 247
     move-result-object v1
 
-    .line 248
+    .line 245
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 249
-    .line 250
-    .line 251
+    .line 246
+    .line 247
+    .line 248
     throw v0
 .end method
 
@@ -6417,93 +6327,88 @@
     const/4 v2, 0x3
 
     .line 14
-    if-lt v0, v2, :cond_3
+    if-lt v0, v2, :cond_2
 
     .line 15
     .line 16
     array-length v0, p1
 
     .line 17
-    if-ge v0, v2, :cond_0
+    if-lt v0, v2, :cond_2
 
     .line 18
     .line 19
-    goto :goto_0
-
-    .line 20
-    :cond_0
     aget-object v0, p0, v1
 
+    .line 20
     .line 21
-    .line 22
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
+    .line 22
     .line 23
     .line 24
-    .line 25
     move-result v0
 
-    .line 26
+    .line 25
     aget-object v2, p1, v1
 
+    .line 26
     .line 27
-    .line 28
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
+    .line 28
     .line 29
     .line 30
-    .line 31
     move-result v2
 
-    .line 32
+    .line 31
     const/4 v3, 0x1
 
-    .line 33
+    .line 32
     aget-object p0, p0, v3
 
+    .line 33
     .line 34
-    .line 35
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
+    .line 35
     .line 36
     .line 37
-    .line 38
     move-result p0
 
-    .line 39
+    .line 38
     aget-object p1, p1, v3
 
+    .line 39
     .line 40
-    .line 41
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
+    .line 41
     .line 42
     .line 43
-    .line 44
     move-result p1
 
-    .line 45
-    if-eq v0, v2, :cond_1
+    .line 44
+    if-eq v0, v2, :cond_0
 
+    .line 45
     .line 46
-    .line 47
     return v1
+
+    .line 47
+    :cond_0
+    if-le p0, p1, :cond_1
 
     .line 48
-    :cond_1
-    if-le p0, p1, :cond_2
-
     .line 49
-    .line 50
     return v1
+
+    .line 50
+    :cond_1
+    return v3
 
     .line 51
     :cond_2
-    return v3
-
-    .line 52
-    :cond_3
-    :goto_0
     return v1
 .end method
 
@@ -6774,7 +6679,7 @@
 
     .line 45
     .line 46
-    invoke-static {v1, p1, p2, p0, v0}, Lue1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, p1, p2, p0, v0}, Lnf1;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 47
     .line 48
@@ -6970,7 +6875,7 @@
 
     .line 43
     .line 44
-    invoke-static {v1, p1, p2, p0, v0}, Lue1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, p1, p2, p0, v0}, Lnf1;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 45
     .line 46
@@ -7110,83 +7015,79 @@
     return-void
 
     .line 57
-    :catch_0
-    move-exception v0
-
-    .line 58
-    goto :goto_1
-
-    .line 59
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    .line 60
-    .line 61
+    .line 58
+    .line 59
     goto :goto_0
 
-    .line 62
-    :goto_1
+    .line 60
+    :catch_0
+    move-exception v0
+
+    .line 61
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
+    .line 62
     .line 63
-    .line 64
     new-instance v2, Ljava/lang/StringBuilder;
 
+    .line 64
     .line 65
-    .line 66
     const-string v3, "Could not access instance of "
 
+    .line 66
     .line 67
-    .line 68
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 68
     .line 69
     .line 70
-    .line 71
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 71
     .line 72
     .line 73
-    .line 74
     const-string p0, " ("
 
+    .line 74
     .line 75
-    .line 76
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 76
     .line 77
     .line 78
-    .line 79
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 79
     .line 80
     .line 81
-    .line 82
     const-string p0, ")"
 
+    .line 82
     .line 83
-    .line 84
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 84
     .line 85
     .line 86
-    .line 87
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 87
     .line 88
     .line 89
-    .line 90
     move-result-object p0
 
-    .line 91
+    .line 90
     invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    .line 91
     .line 92
     .line 93
-    .line 94
     throw v1
 
-    .line 95
+    .line 94
     :cond_1
     return-void
 .end method
@@ -7430,7 +7331,7 @@
     .line 115
     .line 116
     .line 117
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     .line 118
     .line 119
@@ -7464,293 +7365,289 @@
 
     .line 132
     .line 133
-    if-eqz v4, :cond_3
+    if-nez v4, :cond_3
 
     .line 134
     .line 135
-    goto :goto_2
-
-    .line 136
-    :cond_3
     move-object v10, v5
 
-    .line 137
+    .line 136
     move-object v5, v3
 
-    .line 138
+    .line 137
     move-object v3, v10
 
-    .line 139
-    :goto_2
+    .line 138
+    :cond_3
     const/4 v4, 0x0
 
-    .line 140
+    .line 139
     invoke-virtual {v1, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
+    .line 140
     .line 141
     .line 142
-    .line 143
     move-result v3
 
-    .line 144
+    .line 143
     invoke-virtual {v1, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
+    .line 144
     .line 145
     .line 146
-    .line 147
     move-result-object v1
 
-    .line 148
+    .line 147
     invoke-virtual {v1, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 148
     .line 149
     .line 150
-    .line 151
     move-result-object v1
 
-    .line 152
+    .line 151
     sget-object v3, Lcom/sun/jna/Native;->LOG:Ljava/util/logging/Logger;
 
+    .line 152
     .line 153
-    .line 154
     sget-object v4, Lcom/sun/jna/Native;->DEBUG_JNA_LOAD_LEVEL:Ljava/util/logging/Level;
 
+    .line 154
     .line 155
-    .line 156
     invoke-virtual {v3, v4, v6, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 156
     .line 157
     .line 158
-    .line 159
     new-instance v5, Ljava/io/File;
 
+    .line 159
     .line 160
-    .line 161
     invoke-direct {v5, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 161
     .line 162
     .line 163
-    .line 164
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
+    .line 164
     .line 165
     .line 166
-    .line 167
     move-result v5
 
-    .line 168
+    .line 167
     if-eqz v5, :cond_1
 
+    .line 168
     .line 169
-    .line 170
     :try_start_2
     invoke-virtual {v3, v4, v9, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 170
     .line 171
     .line 172
-    .line 173
     invoke-static {v8, v1}, Ljava/lang/System;->setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 173
     .line 174
     .line 175
-    .line 176
     invoke-static {v1}, Ljava/lang/System;->load(Ljava/lang/String;)V
 
+    .line 176
     .line 177
     .line 178
-    .line 179
     sput-object v1, Lcom/sun/jna/Native;->jnidispatchPath:Ljava/lang/String;
 
+    .line 179
     .line 180
-    .line 181
     invoke-virtual {v3, v4, v7, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_2
     .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_2 .. :try_end_2} :catch_2
 
+    .line 181
     .line 182
     .line 183
-    .line 184
-    goto :goto_3
+    goto :goto_2
 
-    .line 185
+    .line 184
     :catch_2
     move-exception v3
 
-    .line 186
+    .line 185
     sget-object v4, Lcom/sun/jna/Native;->LOG:Ljava/util/logging/Logger;
 
+    .line 186
     .line 187
-    .line 188
     sget-object v5, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
+    .line 188
     .line 189
-    .line 190
     const-string v6, "File found at "
 
+    .line 190
     .line 191
-    .line 192
     const-string v7, " but not loadable: "
 
+    .line 192
     .line 193
-    .line 194
-    invoke-static {v6, v1, v7}, Ly96;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6, v1, v7}, Lrf6;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 194
     .line 195
     .line 196
-    .line 197
     move-result-object v1
 
-    .line 198
+    .line 197
     invoke-virtual {v3}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
+    .line 198
     .line 199
     .line 200
-    .line 201
     move-result-object v6
 
-    .line 202
+    .line 201
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 202
     .line 203
     .line 204
-    .line 205
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 205
     .line 206
     .line 207
-    .line 208
     move-result-object v1
 
-    .line 209
+    .line 208
     invoke-virtual {v4, v5, v1, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    .line 209
     .line 210
     .line 211
-    .line 212
     goto/16 :goto_1
 
+    .line 212
     .line 213
-    .line 214
     :cond_4
     const-string v1, "jna.nosys"
 
+    .line 214
     .line 215
-    .line 216
     const-string v2, "true"
 
+    .line 216
     .line 217
-    .line 218
     invoke-static {v1, v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 218
     .line 219
     .line 220
-    .line 221
     move-result-object v1
 
-    .line 222
+    .line 221
     invoke-static {v1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
+    .line 222
     .line 223
     .line 224
-    .line 225
     move-result v1
 
-    .line 226
+    .line 225
     if-eqz v1, :cond_5
 
+    .line 226
     .line 227
-    .line 228
     invoke-static {}, Lcom/sun/jna/Platform;->isAndroid()Z
 
+    .line 228
     .line 229
     .line 230
-    .line 231
     move-result v1
 
-    .line 232
+    .line 231
     if-eqz v1, :cond_6
 
+    .line 232
     .line 233
-    .line 234
     :cond_5
     :try_start_3
     sget-object v1, Lcom/sun/jna/Native;->LOG:Ljava/util/logging/Logger;
 
+    .line 234
     .line 235
-    .line 236
     sget-object v2, Lcom/sun/jna/Native;->DEBUG_JNA_LOAD_LEVEL:Ljava/util/logging/Level;
 
+    .line 236
     .line 237
-    .line 238
     const-string v3, "Trying (via loadLibrary) {0}"
 
+    .line 238
     .line 239
-    .line 240
     invoke-virtual {v1, v2, v3, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 240
     .line 241
     .line 242
-    .line 243
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 243
     .line 244
     .line 245
-    .line 246
     const-string v0, "Found jnidispatch on system path"
 
+    .line 246
     .line 247
-    .line 248
     invoke-virtual {v1, v2, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_3 .. :try_end_3} :catch_3
 
+    .line 248
     .line 249
     .line 250
-    .line 251
-    :goto_3
+    :goto_2
     return-void
 
-    .line 252
+    .line 251
     :catch_3
     :cond_6
     const-string v0, "jna.noclasspath"
 
+    .line 252
     .line 253
-    .line 254
     invoke-static {v0}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
 
+    .line 254
     .line 255
     .line 256
-    .line 257
     move-result v0
 
-    .line 258
+    .line 257
     if-nez v0, :cond_7
 
+    .line 258
     .line 259
-    .line 260
     invoke-static {}, Lcom/sun/jna/Native;->loadNativeDispatchLibraryFromClasspath()V
 
+    .line 260
     .line 261
     .line 262
-    .line 263
     return-void
 
-    .line 264
+    .line 263
     :cond_7
     new-instance v0, Ljava/lang/UnsatisfiedLinkError;
 
+    .line 264
     .line 265
-    .line 266
     const-string v1, "Unable to locate JNA native support library"
 
+    .line 266
     .line 267
-    .line 268
     invoke-direct {v0, v1}, Ljava/lang/UnsatisfiedLinkError;-><init>(Ljava/lang/String;)V
 
+    .line 268
     .line 269
     .line 270
-    .line 271
     throw v0
 .end method
 
@@ -7868,172 +7765,167 @@
     move-result-object v0
 
     .line 57
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     .line 58
     .line 59
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
     .line 60
     .line 61
-    goto :goto_0
-
-    .line 62
-    :cond_1
     new-instance v0, Ljava/lang/UnsatisfiedLinkError;
 
+    .line 62
     .line 63
-    .line 64
     const-string v1, "Could not find JNA native support"
 
+    .line 64
     .line 65
-    .line 66
     invoke-direct {v0, v1}, Ljava/lang/UnsatisfiedLinkError;-><init>(Ljava/lang/String;)V
 
+    .line 66
     .line 67
     .line 68
-    .line 69
     throw v0
 
-    .line 70
-    :cond_2
-    :goto_0
+    .line 69
+    :cond_1
     sget-object v1, Lcom/sun/jna/Native;->LOG:Ljava/util/logging/Logger;
 
+    .line 70
     .line 71
-    .line 72
     sget-object v2, Lcom/sun/jna/Native;->DEBUG_JNA_LOAD_LEVEL:Ljava/util/logging/Level;
 
+    .line 72
     .line 73
-    .line 74
     const-string v3, "Trying {0}"
 
+    .line 74
     .line 75
-    .line 76
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
+    .line 76
     .line 77
     .line 78
-    .line 79
     move-result-object v4
 
-    .line 80
+    .line 79
     invoke-virtual {v1, v2, v3, v4}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 80
     .line 81
     .line 82
-    .line 83
     const-string v3, "jnidispatch.path"
 
+    .line 83
     .line 84
-    .line 85
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
+    .line 85
     .line 86
     .line 87
-    .line 88
     move-result-object v4
 
-    .line 89
+    .line 88
     invoke-static {v3, v4}, Ljava/lang/System;->setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 89
     .line 90
     .line 91
-    .line 92
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
+    .line 92
     .line 93
     .line 94
-    .line 95
     move-result-object v3
 
-    .line 96
+    .line 95
     invoke-static {v3}, Ljava/lang/System;->load(Ljava/lang/String;)V
 
+    .line 96
     .line 97
     .line 98
-    .line 99
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
+    .line 99
     .line 100
     .line 101
-    .line 102
     move-result-object v3
 
-    .line 103
+    .line 102
     sput-object v3, Lcom/sun/jna/Native;->jnidispatchPath:Ljava/lang/String;
 
+    .line 103
     .line 104
-    .line 105
     const-string v4, "Found jnidispatch at {0}"
 
+    .line 105
     .line 106
-    .line 107
     invoke-virtual {v1, v2, v4, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 107
     .line 108
     .line 109
-    .line 110
     invoke-static {v0}, Lcom/sun/jna/Native;->isUnpacked(Ljava/io/File;)Z
 
+    .line 110
     .line 111
     .line 112
-    .line 113
     move-result v1
+
+    .line 113
+    if-eqz v1, :cond_2
 
     .line 114
-    if-eqz v1, :cond_3
-
     .line 115
-    .line 116
     const-string v1, "jnidispatch.preserve"
 
+    .line 116
     .line 117
-    .line 118
     invoke-static {v1}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
 
+    .line 118
     .line 119
     .line 120
-    .line 121
     move-result v1
 
-    .line 122
-    if-nez v1, :cond_3
+    .line 121
+    if-nez v1, :cond_2
 
+    .line 122
     .line 123
-    .line 124
     invoke-static {v0}, Lcom/sun/jna/Native;->deleteLibrary(Ljava/io/File;)Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 124
     .line 125
     .line 126
-    .line 127
-    :cond_3
+    :cond_2
     return-void
 
-    .line 128
+    .line 127
     :catch_0
     move-exception v0
 
-    .line 129
+    .line 128
     new-instance v1, Ljava/lang/UnsatisfiedLinkError;
 
+    .line 129
     .line 130
-    .line 131
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
+    .line 131
     .line 132
     .line 133
-    .line 134
     move-result-object v0
 
-    .line 135
+    .line 134
     invoke-direct {v1, v0}, Ljava/lang/UnsatisfiedLinkError;-><init>(Ljava/lang/String;)V
 
+    .line 135
     .line 136
     .line 137
-    .line 138
     throw v1
 .end method
 
@@ -8218,245 +8110,233 @@
 
     .line 17
     :goto_0
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_1
 
     .line 18
     .line 19
-    goto :goto_1
+    move-object v0, v1
 
     .line 20
     :cond_1
-    move-object v0, v1
-
-    .line 21
-    :goto_1
     const-string v1, "5.18.1"
 
+    .line 21
     .line 22
-    .line 23
     if-eqz p0, :cond_2
 
+    .line 23
     .line 24
-    .line 25
     invoke-virtual {p0}, Ljava/lang/Package;->getSpecificationVersion()Ljava/lang/String;
 
+    .line 25
     .line 26
     .line 27
-    .line 28
     move-result-object v2
 
-    .line 29
-    goto :goto_2
+    .line 28
+    goto :goto_1
 
-    .line 30
+    .line 29
     :cond_2
     move-object v2, v1
 
+    .line 30
+    :goto_1
+    if-eqz v2, :cond_3
+
     .line 31
-    :goto_2
-    if-nez v2, :cond_3
-
     .line 32
-    .line 33
-    goto :goto_3
-
-    .line 34
-    :cond_3
     move-object v1, v2
 
-    .line 35
-    :goto_3
+    .line 33
+    :cond_3
     const-string v2, " API Version "
+
+    .line 34
+    .line 35
+    invoke-static {v0, v2, v1}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 36
     .line 37
-    invoke-static {v0, v2, v1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
     .line 38
-    .line 39
-    .line 40
     move-result-object v0
 
-    .line 41
+    .line 39
     sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    .line 40
+    .line 41
+    invoke-virtual {v1, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     .line 42
     .line 43
-    invoke-virtual {v1, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
     .line 44
+    const-string v0, "5.18.1 (package information missing)"
+
     .line 45
     .line 46
-    const-string v0, "5.18.1 (package information missing)"
+    if-eqz p0, :cond_4
 
     .line 47
     .line 48
-    if-eqz p0, :cond_4
+    invoke-virtual {p0}, Ljava/lang/Package;->getImplementationVersion()Ljava/lang/String;
 
     .line 49
     .line 50
-    invoke-virtual {p0}, Ljava/lang/Package;->getImplementationVersion()Ljava/lang/String;
-
     .line 51
-    .line 52
-    .line 53
     move-result-object p0
 
-    .line 54
-    goto :goto_4
+    .line 52
+    goto :goto_2
 
-    .line 55
+    .line 53
     :cond_4
     move-object p0, v0
 
+    .line 54
+    :goto_2
+    if-eqz p0, :cond_5
+
+    .line 55
     .line 56
-    :goto_4
-    if-nez p0, :cond_5
-
-    .line 57
-    .line 58
-    goto :goto_5
-
-    .line 59
-    :cond_5
     move-object v0, p0
 
-    .line 60
-    :goto_5
+    .line 57
+    :cond_5
     sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    .line 61
-    .line 62
+    .line 58
+    .line 59
     const-string v1, "Version: "
 
-    .line 63
-    .line 64
+    .line 60
+    .line 61
     invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 65
-    .line 66
-    .line 67
+    .line 62
+    .line 63
+    .line 64
     move-result-object v0
 
-    .line 68
+    .line 65
     invoke-virtual {p0, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 66
+    .line 67
+    .line 68
+    sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     .line 69
     .line 70
-    .line 71
-    sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    .line 72
-    .line 73
     new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 74
-    .line 75
+    .line 71
+    .line 72
     const-string v1, " Native: "
 
+    .line 73
+    .line 74
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 75
     .line 76
     .line 77
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {}, Lcom/sun/jna/Native;->getNativeVersion()Ljava/lang/String;
 
     .line 78
     .line 79
     .line 80
-    invoke-static {}, Lcom/sun/jna/Native;->getNativeVersion()Ljava/lang/String;
-
-    .line 81
-    .line 82
-    .line 83
     move-result-object v1
 
-    .line 84
+    .line 81
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 82
+    .line 83
+    .line 84
+    const-string v1, " ("
 
     .line 85
     .line 86
-    .line 87
-    const-string v1, " ("
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 87
     .line 88
     .line 89
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {}, Lcom/sun/jna/Native;->getAPIChecksum()Ljava/lang/String;
 
     .line 90
     .line 91
     .line 92
-    invoke-static {}, Lcom/sun/jna/Native;->getAPIChecksum()Ljava/lang/String;
-
-    .line 93
-    .line 94
-    .line 95
     move-result-object v1
 
-    .line 96
+    .line 93
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 94
+    .line 95
+    .line 96
+    const-string v1, ")"
 
     .line 97
     .line 98
-    .line 99
-    const-string v1, ")"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 99
     .line 100
     .line 101
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 102
     .line 103
     .line 104
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 105
-    .line 106
-    .line 107
     move-result-object v0
 
-    .line 108
+    .line 105
     invoke-virtual {p0, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 106
+    .line 107
+    .line 108
+    sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     .line 109
     .line 110
-    .line 111
-    sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    .line 112
-    .line 113
     new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 114
-    .line 115
+    .line 111
+    .line 112
     const-string v1, " Prefix: "
 
+    .line 113
+    .line 114
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 115
     .line 116
     .line 117
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sget-object v1, Lcom/sun/jna/Platform;->RESOURCE_PREFIX:Ljava/lang/String;
 
     .line 118
     .line 119
-    .line 120
-    sget-object v1, Lcom/sun/jna/Platform;->RESOURCE_PREFIX:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 120
     .line 121
     .line 122
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 123
     .line 124
     .line 125
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 126
-    .line 127
-    .line 128
     move-result-object v0
 
-    .line 129
+    .line 126
     invoke-virtual {p0, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 130
-    .line 131
-    .line 132
+    .line 127
+    .line 128
+    .line 129
     return-void
 .end method
 
@@ -8623,7 +8503,7 @@
 .method public static register(Lcom/sun/jna/NativeLibrary;)V
     .locals 1
 
-    .line 735
+    .line 729
     invoke-static {}, Lcom/sun/jna/Native;->getCallingClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -8798,7 +8678,7 @@
     .line 72
     .line 73
     :goto_1
-    if-ge v8, v1, :cond_11
+    if-ge v8, v1, :cond_10
 
     .line 74
     .line 75
@@ -8884,7 +8764,7 @@
     const/4 v1, -0x1
 
     .line 113
-    if-eq v9, v1, :cond_10
+    if-eq v9, v1, :cond_f
 
     .line 114
     .line 115
@@ -9223,7 +9103,7 @@
     array-length v3, v11
 
     .line 272
-    if-ge v2, v3, :cond_d
+    if-ge v2, v3, :cond_c
 
     .line 273
     .line 274
@@ -9284,7 +9164,7 @@
     const/4 v1, -0x1
 
     .line 303
-    if-eq v2, v1, :cond_c
+    if-eq v2, v1, :cond_b
 
     .line 304
     .line 305
@@ -9292,7 +9172,7 @@
 
     .line 306
     .line 307
-    if-eq v2, v1, :cond_7
+    if-eq v2, v1, :cond_6
 
     .line 308
     .line 309
@@ -9300,7 +9180,7 @@
 
     .line 310
     .line 311
-    if-eq v2, v1, :cond_7
+    if-eq v2, v1, :cond_6
 
     .line 312
     .line 313
@@ -9308,7 +9188,7 @@
 
     .line 314
     .line 315
-    if-eq v2, v1, :cond_7
+    if-eq v2, v1, :cond_6
 
     .line 316
     .line 317
@@ -9316,873 +9196,857 @@
 
     .line 318
     .line 319
-    if-ne v2, v1, :cond_5
+    if-eq v2, v1, :cond_6
 
     .line 320
     .line 321
-    goto :goto_8
-
-    .line 322
-    :cond_5
     const/16 v1, 0x17
 
+    .line 322
     .line 323
-    .line 324
-    if-eq v2, v1, :cond_6
+    if-eq v2, v1, :cond_5
 
+    .line 324
     .line 325
-    .line 326
     const/16 v1, 0x18
 
+    .line 326
     .line 327
-    .line 328
-    if-eq v2, v1, :cond_6
+    if-eq v2, v1, :cond_5
 
+    .line 328
     .line 329
-    .line 330
     const/16 v1, 0x19
 
+    .line 330
     .line 331
-    .line 332
-    if-ne v2, v1, :cond_8
+    if-ne v2, v1, :cond_7
 
+    .line 332
     .line 333
-    .line 334
-    :cond_6
+    :cond_5
     invoke-interface {v5, v3}, Lcom/sun/jna/TypeMapper;->getToNativeConverter(Ljava/lang/Class;)Lcom/sun/jna/ToNativeConverter;
 
+    .line 334
     .line 335
     .line 336
-    .line 337
     move-result-object v1
 
-    .line 338
+    .line 337
     aput-object v1, v7, v17
 
+    .line 338
     .line 339
-    .line 340
-    goto :goto_9
+    goto :goto_8
 
-    .line 341
-    :cond_7
-    :goto_8
+    .line 340
+    :cond_6
     invoke-static {v3}, Lcom/sun/jna/NativeMappedConverter;->getInstance(Ljava/lang/Class;)Lcom/sun/jna/NativeMappedConverter;
 
+    .line 341
     .line 342
     .line 343
-    .line 344
     move-result-object v1
 
-    .line 345
+    .line 344
     invoke-virtual {v1}, Lcom/sun/jna/NativeMappedConverter;->nativeType()Ljava/lang/Class;
 
+    .line 345
     .line 346
     .line 347
-    .line 348
     move-result-object v3
 
-    .line 349
-    :cond_8
-    :goto_9
-    if-eqz v2, :cond_b
+    .line 348
+    :cond_7
+    :goto_8
+    if-eqz v2, :cond_a
 
+    .line 349
     .line 350
-    .line 351
     const/4 v1, 0x4
 
-    .line 352
-    if-eq v2, v1, :cond_a
+    .line 351
+    if-eq v2, v1, :cond_9
 
+    .line 352
     .line 353
-    .line 354
     packed-switch v2, :pswitch_data_2
 
+    .line 354
     .line 355
     .line 356
-    .line 357
     packed-switch v2, :pswitch_data_3
 
+    .line 357
     .line 358
     .line 359
-    .line 360
     const-class v2, Lcom/sun/jna/Pointer;
 
+    .line 360
     .line 361
-    .line 362
     invoke-static {v2}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
 
+    .line 362
     .line 363
     .line 364
-    .line 365
     move-result-object v2
 
-    .line 366
+    .line 365
     invoke-virtual {v2}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 366
     .line 367
     .line 368
-    .line 369
     move-result-object v2
 
-    .line 370
+    .line 369
     iget-wide v2, v2, Lcom/sun/jna/Pointer;->peer:J
 
+    .line 370
     .line 371
-    .line 372
     aput-wide v2, v12, v17
 
+    .line 372
     .line 373
-    .line 374
     aput-wide v2, v13, v17
 
+    .line 374
     .line 375
-    .line 376
-    goto :goto_b
+    goto :goto_9
 
-    .line 377
+    .line 376
     :pswitch_3
     invoke-virtual {v3}, Ljava/lang/Class;->isPrimitive()Z
 
+    .line 377
     .line 378
     .line 379
-    .line 380
     move-result v2
 
+    .line 380
+    if-nez v2, :cond_8
+
     .line 381
-    if-eqz v2, :cond_9
-
     .line 382
-    .line 383
-    goto :goto_a
-
-    .line 384
-    :cond_9
     const-class v3, Lcom/sun/jna/Pointer;
+
+    .line 383
+    .line 384
+    :cond_8
+    invoke-static {v3}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
 
     .line 385
     .line 386
-    :goto_a
-    invoke-static {v3}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
-
     .line 387
-    .line 388
-    .line 389
     move-result-object v2
 
-    .line 390
+    .line 388
     invoke-virtual {v2}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 389
+    .line 390
     .line 391
-    .line 392
-    .line 393
     move-result-object v2
 
-    .line 394
+    .line 392
     iget-wide v2, v2, Lcom/sun/jna/Pointer;->peer:J
+
+    .line 393
+    .line 394
+    aput-wide v2, v13, v17
 
     .line 395
     .line 396
-    aput-wide v2, v13, v17
+    aget-object v2, v7, v17
 
     .line 397
     .line 398
-    aget-object v2, v7, v17
+    invoke-interface {v2}, Lcom/sun/jna/ToNativeConverter;->nativeType()Ljava/lang/Class;
 
     .line 399
     .line 400
-    invoke-interface {v2}, Lcom/sun/jna/ToNativeConverter;->nativeType()Ljava/lang/Class;
-
     .line 401
-    .line 402
-    .line 403
     move-result-object v2
 
-    .line 404
+    .line 402
     invoke-static {v2}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
 
+    .line 403
+    .line 404
     .line 405
-    .line 406
-    .line 407
     move-result-object v2
 
-    .line 408
+    .line 406
     invoke-virtual {v2}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 407
+    .line 408
     .line 409
-    .line 410
-    .line 411
     move-result-object v2
 
-    .line 412
+    .line 410
     iget-wide v2, v2, Lcom/sun/jna/Pointer;->peer:J
+
+    .line 411
+    .line 412
+    aput-wide v2, v12, v17
 
     .line 413
     .line 414
-    aput-wide v2, v12, v17
+    goto :goto_9
 
     .line 415
-    .line 416
-    goto :goto_b
-
-    .line 417
-    :cond_a
+    :cond_9
     :pswitch_4
     invoke-static {v3}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
 
+    .line 416
+    .line 417
     .line 418
-    .line 419
-    .line 420
     move-result-object v2
 
-    .line 421
+    .line 419
     invoke-virtual {v2}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 420
+    .line 421
     .line 422
-    .line 423
-    .line 424
     move-result-object v2
 
-    .line 425
+    .line 423
     iget-wide v2, v2, Lcom/sun/jna/Pointer;->peer:J
+
+    .line 424
+    .line 425
+    aput-wide v2, v12, v17
 
     .line 426
     .line 427
-    aput-wide v2, v12, v17
+    const-class v2, Lcom/sun/jna/Pointer;
 
     .line 428
     .line 429
-    const-class v2, Lcom/sun/jna/Pointer;
+    invoke-static {v2}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
 
     .line 430
     .line 431
-    invoke-static {v2}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
-
     .line 432
-    .line 433
-    .line 434
     move-result-object v2
 
-    .line 435
+    .line 433
     invoke-virtual {v2}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 434
+    .line 435
     .line 436
-    .line 437
-    .line 438
     move-result-object v2
 
-    .line 439
+    .line 437
     iget-wide v2, v2, Lcom/sun/jna/Pointer;->peer:J
+
+    .line 438
+    .line 439
+    aput-wide v2, v13, v17
 
     .line 440
     .line 441
-    aput-wide v2, v13, v17
+    goto :goto_9
 
     .line 442
-    .line 443
-    goto :goto_b
-
-    .line 444
-    :cond_b
-    const/4 v1, 0x4
-
-    .line 445
+    :cond_a
     invoke-static {v3}, Lcom/sun/jna/Structure$FFIType;->get(Ljava/lang/Object;)Lcom/sun/jna/Structure$FFIType;
 
-    .line 446
-    .line 447
-    .line 448
+    .line 443
+    .line 444
+    .line 445
     move-result-object v2
 
-    .line 449
+    .line 446
     invoke-virtual {v2}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
-    .line 450
-    .line 451
-    .line 452
+    .line 447
+    .line 448
+    .line 449
     move-result-object v2
 
-    .line 453
+    .line 450
     iget-wide v2, v2, Lcom/sun/jna/Pointer;->peer:J
 
-    .line 454
-    .line 455
+    .line 451
+    .line 452
     aput-wide v2, v12, v17
 
-    .line 456
-    .line 457
+    .line 453
+    .line 454
     aput-wide v2, v13, v17
 
-    .line 458
-    .line 459
-    :goto_b
+    .line 455
+    .line 456
+    :goto_9
     add-int/lit8 v2, v17, 0x1
 
-    .line 460
-    .line 461
+    .line 457
+    .line 458
     move-object/from16 v1, v21
 
-    .line 462
-    .line 463
+    .line 459
+    .line 460
     goto/16 :goto_7
 
-    .line 464
-    .line 465
-    :cond_c
+    .line 461
+    .line 462
+    :cond_b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 466
-    .line 467
+    .line 463
+    .line 464
     new-instance v1, Ljava/lang/StringBuilder;
 
+    .line 465
+    .line 466
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 467
     .line 468
     .line 469
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 470
     .line 471
     .line 472
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v2, " is not a supported argument type (in method "
 
     .line 473
     .line 474
-    .line 475
-    const-string v2, " is not a supported argument type (in method "
-
-    .line 476
-    .line 477
     invoke-virtual {v14}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    .line 478
-    .line 479
-    .line 480
+    .line 475
+    .line 476
+    .line 477
     move-result-object v3
 
-    .line 481
+    .line 478
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 479
+    .line 480
+    .line 481
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 482
     .line 483
     .line 484
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, " in "
 
     .line 485
     .line 486
-    .line 487
-    const-string v2, " in "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 487
     .line 488
     .line 489
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v3, p0
 
     .line 490
     .line 491
-    .line 492
-    move-object/from16 v3, p0
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 492
     .line 493
     .line 494
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v2, ")"
 
     .line 495
     .line 496
-    .line 497
-    const-string v2, ")"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 497
     .line 498
     .line 499
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 500
     .line 501
     .line 502
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
     .line 503
-    .line 504
-    .line 505
-    move-result-object v1
-
-    .line 506
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    .line 507
-    .line 508
-    .line 509
+    .line 504
+    .line 505
+    .line 506
     throw v0
 
-    .line 510
-    :cond_d
+    .line 507
+    :cond_c
     move-object/from16 v3, p0
 
-    .line 511
-    .line 512
+    .line 508
+    .line 509
     const-string v2, ")"
 
-    .line 513
-    .line 514
+    .line 510
+    .line 511
     invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 515
-    .line 516
-    .line 517
+    .line 512
+    .line 513
+    .line 514
     move-result-object v1
 
-    .line 518
+    .line 515
     new-instance v2, Ljava/lang/StringBuilder;
 
+    .line 516
+    .line 517
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 518
     .line 519
     .line 520
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v10}, Lcom/sun/jna/Native;->getSignature(Ljava/lang/Class;)Ljava/lang/String;
 
     .line 521
     .line 522
     .line 523
-    invoke-static {v10}, Lcom/sun/jna/Native;->getSignature(Ljava/lang/Class;)Ljava/lang/String;
-
-    .line 524
-    .line 525
-    .line 526
     move-result-object v1
 
-    .line 527
+    .line 524
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 525
+    .line 526
+    .line 527
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 528
     .line 529
     .line 530
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 531
-    .line 532
-    .line 533
     move-result-object v1
 
-    .line 534
+    .line 531
     invoke-virtual {v14}, Ljava/lang/reflect/Method;->getExceptionTypes()[Ljava/lang/Class;
 
-    .line 535
-    .line 536
-    .line 537
+    .line 532
+    .line 533
+    .line 534
     move-result-object v2
 
-    .line 538
+    .line 535
     move/from16 v10, v22
+
+    .line 536
+    .line 537
+    :goto_a
+    array-length v11, v2
+
+    .line 538
+    if-ge v10, v11, :cond_e
 
     .line 539
     .line 540
-    :goto_c
-    array-length v11, v2
-
-    .line 541
-    if-ge v10, v11, :cond_f
-
-    .line 542
-    .line 543
     const-class v11, Lcom/sun/jna/LastErrorException;
 
-    .line 544
-    .line 545
+    .line 541
+    .line 542
     move-object/from16 v17, v1
 
-    .line 546
-    .line 547
+    .line 543
+    .line 544
     aget-object v1, v2, v10
 
-    .line 548
-    .line 549
+    .line 545
+    .line 546
     invoke-virtual {v11, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    .line 550
-    .line 551
-    .line 552
+    .line 547
+    .line 548
+    .line 549
     move-result v1
 
+    .line 550
+    if-eqz v1, :cond_d
+
+    .line 551
+    .line 552
+    const/4 v1, 0x1
+
     .line 553
-    if-eqz v1, :cond_e
+    move/from16 v18, v1
 
     .line 554
     .line 555
-    const/4 v1, 0x1
+    goto :goto_b
 
     .line 556
-    move/from16 v18, v1
+    :cond_d
+    add-int/lit8 v10, v10, 0x1
 
     .line 557
     .line 558
-    goto :goto_d
+    move-object/from16 v1, v17
 
     .line 559
-    :cond_e
-    add-int/lit8 v10, v10, 0x1
-
     .line 560
+    goto :goto_a
+
     .line 561
-    move-object/from16 v1, v17
+    :cond_e
+    move-object/from16 v17, v1
 
     .line 562
     .line 563
-    goto :goto_c
-
-    .line 564
-    :cond_f
-    move-object/from16 v17, v1
-
-    .line 565
-    .line 566
     move/from16 v18, v22
 
-    .line 567
-    .line 568
-    :goto_d
+    .line 564
+    .line 565
+    :goto_b
     invoke-virtual {v14}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    .line 569
-    .line 570
-    .line 571
+    .line 566
+    .line 567
+    .line 568
     move-result-object v1
 
-    .line 572
+    .line 569
     invoke-virtual {v0, v1, v14}, Lcom/sun/jna/NativeLibrary;->getFunction(Ljava/lang/String;Ljava/lang/reflect/Method;)Lcom/sun/jna/Function;
 
-    .line 573
-    .line 574
-    .line 575
+    .line 570
+    .line 571
+    .line 572
     move-result-object v1
 
-    .line 576
+    .line 573
     move-object v2, v4
 
-    .line 577
+    .line 574
     :try_start_0
     invoke-virtual {v14}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    .line 578
-    .line 579
-    .line 580
+    .line 575
+    .line 576
+    .line 577
     move-result-object v4
 
-    .line 581
+    .line 578
     iget-wide v10, v1, Lcom/sun/jna/Pointer;->peer:J
     :try_end_0
     .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 582
-    .line 583
+    .line 579
+    .line 580
     move-object/from16 v19, v5
 
-    .line 584
-    .line 585
+    .line 581
+    .line 582
     move-object/from16 v5, v17
 
-    .line 586
-    .line 587
+    .line 583
+    .line 584
     :try_start_1
     invoke-virtual {v1}, Lcom/sun/jna/Function;->getCallingConvention()I
 
-    .line 588
-    .line 589
-    .line 590
+    .line 585
+    .line 586
+    .line 587
     move-result v17
 
-    .line 591
+    .line 588
     iget-object v1, v1, Lcom/sun/jna/Function;->encoding:Ljava/lang/String;
 
-    .line 592
-    .line 593
+    .line 589
+    .line 590
     move-object/from16 v21, v1
 
-    .line 594
-    .line 595
+    .line 591
+    .line 592
     move-object v1, v2
 
-    .line 596
+    .line 593
     move v2, v6
 
-    .line 597
+    .line 594
     move-object v6, v15
 
-    .line 598
+    .line 595
     move-wide v15, v10
 
-    .line 599
+    .line 596
     move-wide/from16 v10, v25
 
-    .line 600
-    .line 601
+    .line 597
+    .line 598
     move/from16 v26, v8
+
+    .line 599
+    .line 600
+    move-object v8, v12
+
+    .line 601
+    move-object/from16 v25, v19
 
     .line 602
     .line 603
-    move-object v8, v12
+    move-object/from16 v19, v7
 
     .line 604
-    move-object/from16 v25, v19
-
     .line 605
+    move-object v7, v13
+
     .line 606
-    move-object/from16 v19, v7
+    move-wide/from16 v12, v27
 
     .line 607
     .line 608
-    move-object v7, v13
-
-    .line 609
-    move-wide/from16 v12, v27
-
-    .line 610
-    .line 611
-    const/16 v27, 0x0
-
-    .line 612
-    .line 613
     invoke-static/range {v3 .. v21}, Lcom/sun/jna/Native;->registerMethod(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;[I[J[JIJJLjava/lang/reflect/Method;JIZ[Lcom/sun/jna/ToNativeConverter;Lcom/sun/jna/FromNativeConverter;Ljava/lang/String;)J
 
-    .line 614
-    .line 615
-    .line 616
+    .line 609
+    .line 610
+    .line 611
     move-result-wide v6
 
-    .line 617
+    .line 612
     aput-wide v6, v1, v26
     :try_end_1
     .catch Ljava/lang/NoSuchMethodError; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 618
-    .line 619
+    .line 613
+    .line 614
     add-int/lit8 v8, v26, 0x1
 
-    .line 620
-    .line 621
+    .line 615
+    .line 616
     move-object v4, v1
 
-    .line 622
+    .line 617
     move v6, v2
 
-    .line 623
+    .line 618
     move/from16 v1, v23
 
-    .line 624
-    .line 625
+    .line 619
+    .line 620
     move-object/from16 v2, v24
 
-    .line 626
-    .line 627
+    .line 621
+    .line 622
     move-object/from16 v5, v25
 
-    .line 628
-    .line 629
-    move-object/from16 v7, v27
-
-    .line 630
-    .line 631
+    .line 623
+    .line 624
     goto/16 :goto_1
 
-    .line 632
-    .line 633
+    .line 625
+    .line 626
     :catch_0
     move-object/from16 v5, v17
 
-    .line 634
-    .line 635
+    .line 627
+    .line 628
     :catch_1
     new-instance v0, Ljava/lang/UnsatisfiedLinkError;
 
-    .line 636
-    .line 637
+    .line 629
+    .line 630
     const-string v1, "No method "
 
-    .line 638
-    .line 639
+    .line 631
+    .line 632
     invoke-virtual {v14}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    .line 640
-    .line 641
-    .line 642
+    .line 633
+    .line 634
+    .line 635
     move-result-object v2
 
-    .line 643
+    .line 636
     new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 644
-    .line 645
+    .line 637
+    .line 638
     invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 646
-    .line 647
-    .line 648
+    .line 639
+    .line 640
+    .line 641
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 649
-    .line 650
-    .line 651
+    .line 642
+    .line 643
+    .line 644
     const-string v1, " with signature "
 
-    .line 652
-    .line 653
+    .line 645
+    .line 646
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 654
-    .line 655
-    .line 656
+    .line 647
+    .line 648
+    .line 649
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 657
-    .line 658
-    .line 659
+    .line 650
+    .line 651
+    .line 652
     const-string v1, " in "
 
-    .line 660
-    .line 661
+    .line 653
+    .line 654
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 655
+    .line 656
+    .line 657
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 658
+    .line 659
+    .line 660
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 661
     .line 662
     .line 663
+    move-result-object v1
+
     .line 664
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/UnsatisfiedLinkError;-><init>(Ljava/lang/String;)V
 
     .line 665
     .line 666
     .line 667
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 668
-    .line 669
-    .line 670
-    move-result-object v1
-
-    .line 671
-    invoke-direct {v0, v1}, Ljava/lang/UnsatisfiedLinkError;-><init>(Ljava/lang/String;)V
-
-    .line 672
-    .line 673
-    .line 674
     throw v0
 
-    .line 675
-    :cond_10
+    .line 668
+    :cond_f
     new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    .line 669
+    .line 670
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    .line 671
+    .line 672
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 673
+    .line 674
+    .line 675
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 676
     .line 677
-    new-instance v1, Ljava/lang/StringBuilder;
-
     .line 678
-    .line 679
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 680
-    .line 681
-    .line 682
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 683
-    .line 684
-    .line 685
     const-string v2, " is not a supported return type (in method "
 
+    .line 679
+    .line 680
+    invoke-virtual {v14}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    .line 681
+    .line 682
+    .line 683
+    move-result-object v4
+
+    .line 684
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 685
     .line 686
     .line 687
-    invoke-virtual {v14}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 688
     .line 689
     .line 690
-    move-result-object v4
-
-    .line 691
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 692
-    .line 693
-    .line 694
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 695
-    .line 696
-    .line 697
     const-string v2, " in "
 
-    .line 698
-    .line 699
+    .line 691
+    .line 692
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 700
-    .line 701
-    .line 702
+    .line 693
+    .line 694
+    .line 695
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 703
-    .line 704
-    .line 705
+    .line 696
+    .line 697
+    .line 698
     const-string v2, ")"
 
-    .line 706
-    .line 707
+    .line 699
+    .line 700
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 701
+    .line 702
+    .line 703
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 704
+    .line 705
+    .line 706
+    move-result-object v1
+
+    .line 707
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     .line 708
     .line 709
     .line 710
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 711
-    .line 712
-    .line 713
-    move-result-object v1
-
-    .line 714
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    .line 715
-    .line 716
-    .line 717
     throw v0
 
-    .line 718
-    :cond_11
+    .line 711
+    :cond_10
     move-object v1, v4
 
-    .line 719
+    .line 712
     sget-object v2, Lcom/sun/jna/Native;->registeredClasses:Ljava/util/Map;
 
-    .line 720
-    .line 721
+    .line 713
+    .line 714
     monitor-enter v2
 
-    .line 722
+    .line 715
     :try_start_2
     invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 723
-    .line 724
-    .line 725
+    .line 716
+    .line 717
+    .line 718
     sget-object v1, Lcom/sun/jna/Native;->registeredLibraries:Ljava/util/Map;
 
-    .line 726
-    .line 727
+    .line 719
+    .line 720
     invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 728
-    .line 729
-    .line 730
+    .line 721
+    .line 722
+    .line 723
     monitor-exit v2
 
-    .line 731
+    .line 724
     return-void
 
-    .line 732
-    :catchall_0
-    move-exception v0
-
-    .line 733
+    .line 725
+    :goto_c
     monitor-exit v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 734
+    .line 726
     throw v0
 
-    .line 735
+    .line 727
+    :catchall_0
+    move-exception v0
+
+    .line 728
+    goto :goto_c
+
+    .line 729
     :pswitch_data_0
     .packed-switch 0x11
         :pswitch_1
@@ -10190,16 +10054,16 @@
         :pswitch_1
     .end packed-switch
 
+    .line 730
+    .line 731
+    .line 732
+    .line 733
+    .line 734
+    .line 735
     .line 736
     .line 737
     .line 738
     .line 739
-    .line 740
-    .line 741
-    .line 742
-    .line 743
-    .line 744
-    .line 745
     :pswitch_data_1
     .packed-switch 0x15
         :pswitch_1
@@ -10210,6 +10074,12 @@
         :pswitch_2
     .end packed-switch
 
+    .line 740
+    .line 741
+    .line 742
+    .line 743
+    .line 744
+    .line 745
     .line 746
     .line 747
     .line 748
@@ -10220,12 +10090,6 @@
     .line 753
     .line 754
     .line 755
-    .line 756
-    .line 757
-    .line 758
-    .line 759
-    .line 760
-    .line 761
     :pswitch_data_2
     .packed-switch 0x11
         :pswitch_4
@@ -10233,16 +10097,16 @@
         :pswitch_4
     .end packed-switch
 
+    .line 756
+    .line 757
+    .line 758
+    .line 759
+    .line 760
+    .line 761
     .line 762
     .line 763
     .line 764
     .line 765
-    .line 766
-    .line 767
-    .line 768
-    .line 769
-    .line 770
-    .line 771
     :pswitch_data_3
     .packed-switch 0x15
         :pswitch_4
@@ -10265,10 +10129,10 @@
         }
     .end annotation
 
-    .line 736
+    .line 730
     const-string v0, "classloader"
 
-    .line 737
+    .line 731
     invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
@@ -10281,7 +10145,7 @@
 
     move-result-object p1
 
-    .line 738
+    .line 732
     invoke-static {p0, p1}, Lcom/sun/jna/Native;->register(Ljava/lang/Class;Lcom/sun/jna/NativeLibrary;)V
 
     return-void
@@ -10290,7 +10154,7 @@
 .method public static register(Ljava/lang/String;)V
     .locals 1
 
-    .line 739
+    .line 733
     invoke-static {}, Lcom/sun/jna/Native;->getCallingClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -10356,16 +10220,20 @@
     return p0
 
     .line 10
-    :catchall_0
-    move-exception p0
-
-    .line 11
+    :goto_0
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 12
+    .line 11
     throw p0
+
+    .line 12
+    :catchall_0
+    move-exception p0
+
+    .line 13
+    goto :goto_0
 .end method
 
 .method public static removeTemporaryFiles()V
@@ -10761,7 +10629,7 @@
 
     .line 43
     .line 44
-    invoke-static {p0, v1}, Lue1;->w(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-static {p0, v1}, Lnf1;->v(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 45
     .line 46
@@ -10774,7 +10642,7 @@
 
     .line 49
     .line 50
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 51
     .line 52
@@ -11064,7 +10932,7 @@
 
     const/4 v0, 0x0
 
-    .line 45
+    .line 43
     array-length v1, p0
 
     invoke-static {p0, v0, v1}, Lcom/sun/jna/Native;->toStringList([CII)Ljava/util/List;
@@ -11102,7 +10970,7 @@
 
     .line 8
     :goto_0
-    if-ge p1, p2, :cond_2
+    if-ge p1, p2, :cond_1
 
     .line 9
     .line 10
@@ -11110,83 +10978,74 @@
 
     .line 11
     .line 12
-    if-eqz v2, :cond_0
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
-    goto :goto_1
+    if-eq v1, p1, :cond_2
 
     .line 15
-    :cond_0
-    if-ne v1, p1, :cond_1
-
     .line 16
-    .line 17
-    goto :goto_2
-
-    .line 18
-    :cond_1
     new-instance v2, Ljava/lang/String;
+
+    .line 17
+    .line 18
+    sub-int v3, p1, v1
 
     .line 19
     .line 20
-    sub-int v3, p1, v1
+    invoke-direct {v2, p0, v1, v3}, Ljava/lang/String;-><init>([CII)V
 
     .line 21
     .line 22
-    invoke-direct {v2, p0, v1, v3}, Ljava/lang/String;-><init>([CII)V
-
     .line 23
-    .line 24
-    .line 25
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 24
+    .line 25
     .line 26
+    add-int/lit8 v1, p1, 0x1
+
     .line 27
     .line 28
-    add-int/lit8 v1, p1, 0x1
+    :cond_0
+    add-int/lit8 p1, p1, 0x1
 
     .line 29
     .line 30
-    :goto_1
-    add-int/lit8 p1, p1, 0x1
-
-    .line 31
-    .line 32
     goto :goto_0
 
+    .line 31
+    :cond_1
+    if-ge v1, p2, :cond_2
+
+    .line 32
     .line 33
-    :cond_2
-    if-ge v1, p2, :cond_3
+    new-instance p1, Ljava/lang/String;
 
     .line 34
     .line 35
-    new-instance p1, Ljava/lang/String;
-
-    .line 36
-    .line 37
     sub-int/2addr p2, v1
 
-    .line 38
+    .line 36
     invoke-direct {p1, p0, v1, p2}, Ljava/lang/String;-><init>([CII)V
 
+    .line 37
+    .line 38
     .line 39
-    .line 40
-    .line 41
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 40
+    .line 41
     .line 42
-    .line 43
-    .line 44
-    :cond_3
-    :goto_2
+    :cond_2
     return-object v0
 .end method
 
 .method public static unregister()V
     .locals 1
 
-    .line 30
+    .line 29
     invoke-static {}, Lcom/sun/jna/Native;->getCallingClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -11254,31 +11113,27 @@
     .line 21
     .line 22
     .line 23
-    goto :goto_0
-
-    .line 24
-    :catchall_0
-    move-exception p0
-
-    .line 25
-    goto :goto_1
-
-    .line 26
     :cond_0
-    :goto_0
     monitor-exit v0
 
-    .line 27
+    .line 24
     return-void
 
-    .line 28
-    :goto_1
+    .line 25
+    :goto_0
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 29
+    .line 26
     throw p0
+
+    .line 27
+    :catchall_0
+    move-exception p0
+
+    .line 28
+    goto :goto_0
 .end method
 
 .method private static native unregister(Ljava/lang/Class;[J)V
@@ -11376,36 +11231,36 @@
     goto :goto_0
 
     .line 40
-    :catchall_0
-    move-exception v1
-
-    .line 41
-    goto :goto_1
-
-    .line 42
     :cond_0
     sget-object v1, Lcom/sun/jna/Native;->registeredClasses:Ljava/util/Map;
 
-    .line 43
-    .line 44
+    .line 41
+    .line 42
     invoke-interface {v1}, Ljava/util/Map;->clear()V
 
+    .line 43
+    .line 44
     .line 45
-    .line 46
-    .line 47
     monitor-exit v0
 
-    .line 48
+    .line 46
     return-void
 
-    .line 49
+    .line 47
     :goto_1
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 50
+    .line 48
     throw v1
+
+    .line 49
+    :catchall_0
+    move-exception v1
+
+    .line 50
+    goto :goto_1
 .end method
 
 .method public static native write(Lcom/sun/jna/Pointer;JJ[BII)V

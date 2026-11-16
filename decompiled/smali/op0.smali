@@ -1,6 +1,6 @@
 .class public final Lop0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -57,75 +57,63 @@
 
     .line 6
     .line 7
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
-    goto :goto_0
-
-    .line 10
-    :cond_1
     check-cast p1, Lop0;
 
+    .line 10
     .line 11
-    .line 12
     iget v1, p0, Lop0;->a:I
 
+    .line 12
     .line 13
-    .line 14
     iget v2, p1, Lop0;->a:I
 
+    .line 14
     .line 15
+    if-ne v1, v2, :cond_1
+
     .line 16
-    if-eq v1, v2, :cond_2
-
     .line 17
-    .line 18
-    goto :goto_0
-
-    .line 19
-    :cond_2
     iget v1, p0, Lop0;->b:I
+
+    .line 18
+    .line 19
+    iget v2, p1, Lop0;->b:I
 
     .line 20
     .line 21
-    iget v2, p1, Lop0;->b:I
+    if-ne v1, v2, :cond_1
 
     .line 22
     .line 23
-    if-eq v1, v2, :cond_3
+    iget p0, p0, Lop0;->c:I
 
     .line 24
     .line 25
-    goto :goto_0
-
-    .line 26
-    :cond_3
-    iget p0, p0, Lop0;->c:I
-
-    .line 27
-    .line 28
     iget p1, p1, Lop0;->c:I
 
-    .line 29
-    .line 30
-    if-eq p0, p1, :cond_4
+    .line 26
+    .line 27
+    if-eq p0, p1, :cond_2
 
-    .line 31
-    .line 32
-    :goto_0
+    .line 28
+    .line 29
+    :cond_1
     const/4 p0, 0x0
 
-    .line 33
+    .line 30
     return p0
 
-    .line 34
-    :cond_4
+    .line 31
+    :cond_2
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 4
+    .locals 3
 
     .line 1
     iget v0, p0, Lop0;->a:I
@@ -140,80 +128,57 @@
     move-result v0
 
     .line 7
-    const/16 v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
     .line 9
-    mul-int/2addr v0, v1
+    iget v1, p0, Lop0;->b:I
 
     .line 10
-    iget v2, p0, Lop0;->b:I
-
     .line 11
-    .line 12
-    invoke-static {v2, v0, v1}, Loc1;->e(III)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    const-wide/16 v2, 0x0
-
-    .line 17
-    .line 18
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
-
-    .line 22
-    iget p0, p0, Lop0;->c:I
-
-    .line 23
-    .line 24
     const/16 v2, 0x3c1
 
-    .line 25
-    .line 26
-    invoke-static {p0, v0, v2}, Loc1;->e(III)I
+    .line 12
+    .line 13
+    invoke-static {v1, v0, v2}, Lky1;->d(III)I
 
-    .line 27
-    .line 28
-    .line 29
-    move-result p0
-
-    .line 30
-    const/16 v0, 0x64
-
-    .line 31
-    .line 32
-    invoke-static {v0, p0, v1}, Loc1;->e(III)I
-
-    .line 33
-    .line 34
-    .line 35
-    move-result p0
-
-    .line 36
-    const/4 v0, 0x1
-
-    .line 37
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 38
-    .line 39
-    .line 40
+    .line 14
+    .line 15
+    .line 16
     move-result v0
 
-    .line 41
-    add-int/2addr v0, p0
+    .line 17
+    iget p0, p0, Lop0;->c:I
 
-    .line 42
-    return v0
+    .line 18
+    .line 19
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    add-int/2addr p0, v0
+
+    .line 24
+    mul-int/2addr p0, v2
+
+    .line 25
+    add-int/lit8 p0, p0, 0x64
+
+    .line 26
+    .line 27
+    mul-int/lit8 p0, p0, 0x1f
+
+    .line 28
+    .line 29
+    add-int/lit16 p0, p0, 0x4cf
+
+    .line 30
+    .line 31
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
@@ -240,7 +205,7 @@
 
     .line 10
     .line 11
-    invoke-static {v2, v3, v4, v0, v1}, Loc1;->s(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3, v4, v0, v1}, Lky1;->p(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 12
     .line 13
@@ -256,7 +221,7 @@
 
     .line 18
     .line 19
-    invoke-static {v1, v0, p0}, Lhs5;->n(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
+    invoke-static {v1, v0, p0}, Llj6;->m(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
 
     .line 20
     .line 21

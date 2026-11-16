@@ -1,598 +1,642 @@
-.class public abstract Lcu6;
+.class public final Lcu6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lpx3;
 
 
-# static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+# instance fields
+.field public a:Z
 
-.field public static final b:[I
+.field public b:Lxw6;
 
-.field public static final c:[I
-
-.field public static final d:[I
-
-.field public static final e:[I
-
-.field public static final f:[I
-
-.field public static final g:[I
+.field public final synthetic c:Lfu6;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lfu6;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lcu6;->c:Lfu6;
+
+    .line 5
+    .line 6
+    const/4 p1, 0x1
+
+    .line 7
+    iput-boolean p1, p0, Lcu6;->a:Z
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    iget-boolean v0, p0, Lcu6;->a:Z
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lcu6;->a:Ljava/lang/ThreadLocal;
-
-    .line 7
-    .line 8
-    const v0, -0x101009e
-
-    .line 9
-    .line 10
-    .line 11
-    filled-new-array {v0}, [I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v0
-
-    .line 15
-    sput-object v0, Lcu6;->b:[I
-
-    .line 16
-    .line 17
-    const v0, 0x101009c
-
-    .line 18
-    .line 19
-    .line 20
-    filled-new-array {v0}, [I
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-object v0
-
-    .line 24
-    sput-object v0, Lcu6;->c:[I
-
-    .line 25
-    .line 26
-    const v0, 0x10100a7
-
-    .line 27
-    .line 28
-    .line 29
-    filled-new-array {v0}, [I
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object v0
-
-    .line 33
-    sput-object v0, Lcu6;->d:[I
-
-    .line 34
-    .line 35
-    const v0, 0x10100a0
-
-    .line 36
-    .line 37
-    .line 38
-    filled-new-array {v0}, [I
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object v0
-
-    .line 42
-    sput-object v0, Lcu6;->e:[I
-
-    .line 43
-    .line 44
-    const/4 v0, 0x0
-
-    .line 45
-    new-array v0, v0, [I
-
-    .line 46
-    .line 47
-    sput-object v0, Lcu6;->f:[I
-
-    .line 48
-    .line 49
-    const/4 v0, 0x1
-
-    .line 50
-    new-array v0, v0, [I
-
-    .line 51
-    .line 52
-    sput-object v0, Lcu6;->g:[I
-
-    .line 53
-    .line 54
-    return-void
-.end method
-
-.method public static a(Landroid/view/View;Landroid/content/Context;)V
-    .locals 3
-
-    .line 1
-    const-string v0, "View "
-
-    .line 2
-    .line 3
-    sget-object v1, Ll75;->j:[I
-
-    .line 4
-    .line 5
-    invoke-virtual {p1, v1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p1
-
-    .line 9
-    const/16 v1, 0x75
-
-    .line 10
-    .line 11
-    :try_start_0
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    .line 12
-    .line 13
-    .line 14
-    move-result v1
-
-    .line 15
-    if-nez v1, :cond_0
-
-    .line 16
-    .line 17
-    const-string v1, "ThemeUtils"
-
-    .line 18
-    .line 19
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 20
-    .line 21
-    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object p0
-
-    .line 28
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 29
-    .line 30
-    .line 31
-    const-string p0, " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant)."
-
-    .line 32
-    .line 33
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 34
-    .line 35
-    .line 36
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object p0
-
-    .line 40
-    invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 41
-    .line 42
-    .line 43
-    goto :goto_0
-
-    .line 44
-    :catchall_0
-    move-exception p0
-
-    .line 45
-    goto :goto_1
-
-    .line 46
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 47
-    .line 48
-    .line 49
-    return-void
-
-    .line 50
-    :goto_1
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 51
-    .line 52
-    .line 53
-    throw p0
-.end method
-
-.method public static b(Landroid/content/Context;I)I
-    .locals 4
-
-    .line 1
-    invoke-static {p0, p1}, Lcu6;->d(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
     if-eqz v0, :cond_0
 
+    .line 4
+    .line 5
+    iget-object v0, p0, Lcu6;->c:Lfu6;
+
     .line 6
     .line 7
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
+    iget-object p0, p0, Lcu6;->b:Lxw6;
 
     .line 8
     .line 9
+    invoke-virtual {v0, p0}, Lfu6;->n(Lxw6;)V
+
     .line 10
+    .line 11
+    .line 12
+    :cond_0
+    return-void
+.end method
+
+.method public final b(J)Z
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lcu6;->c:Lfu6;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lfu6;->i()Z
+
+    .line 4
+    .line 5
+    .line 6
     move-result v1
 
-    .line 11
+    .line 7
     if-eqz v1, :cond_0
 
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
+
+    .line 10
+    .line 11
     .line 12
+    move-result-object v1
+
     .line 13
-    sget-object p0, Lcu6;->b:[I
+    iget-object v1, v1, Lfv6;->a:Lii;
 
     .line 14
     .line 15
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+    iget-object v1, v1, Lii;->j:Ljava/lang/String;
 
     .line 16
     .line 17
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
     .line 18
-    move-result p1
-
     .line 19
-    invoke-virtual {v0, p0, p1}, Landroid/content/res/ColorStateList;->getColorForState([II)I
-
     .line 20
-    .line 21
-    .line 22
-    move-result p0
+    move-result v1
 
+    .line 21
+    if-eqz v1, :cond_0
+
+    .line 22
     .line 23
-    return p0
+    iget-object v1, v0, Lfu6;->d:Lma3;
 
     .line 24
-    :cond_0
-    sget-object v0, Lcu6;->a:Ljava/lang/ThreadLocal;
-
     .line 25
-    .line 26
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
+    .line 26
     .line 27
+    invoke-virtual {v1}, Lma3;->d()Law6;
+
     .line 28
     .line 29
+    .line 30
     move-result-object v1
 
-    .line 30
-    check-cast v1, Landroid/util/TypedValue;
-
     .line 31
+    if-eqz v1, :cond_0
+
     .line 32
-    if-nez v1, :cond_1
-
     .line 33
-    .line 34
-    new-instance v1, Landroid/util/TypedValue;
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
 
+    .line 34
     .line 35
     .line 36
-    invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
+    move-result-object v3
 
     .line 37
-    .line 38
-    .line 39
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    const/4 v6, 0x0
 
+    .line 38
+    sget-object v7, Lxj5;->t:Lw16;
+
+    .line 39
     .line 40
+    move-object v2, p0
+
     .line 41
+    move-wide v4, p1
+
     .line 42
-    :cond_1
-    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual/range {v2 .. v7}, Lcu6;->f(Lfv6;JZLw16;)J
 
     .line 43
     .line 44
     .line 45
-    move-result-object v0
+    const/4 p0, 0x1
 
     .line 46
-    const v2, 0x1010033
+    return p0
+
+    .line 47
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 48
+    return p0
+.end method
+
+.method public final c(JLw16;I)Z
+    .locals 7
+
+    .line 1
+    iget-object v0, p0, Lcu6;->c:Lfu6;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lfu6;->i()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    if-eqz v1, :cond_2
+
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    iget-object v1, v1, Lfv6;->a:Lii;
+
+    .line 14
+    .line 15
+    iget-object v1, v1, Lii;->j:Ljava/lang/String;
+
+    .line 16
+    .line 17
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-eqz v1, :cond_2
+
+    .line 22
+    .line 23
+    iget-object v1, v0, Lfu6;->d:Lma3;
+
+    .line 24
+    .line 25
+    if-eqz v1, :cond_2
+
+    .line 26
+    .line 27
+    invoke-virtual {v1}, Lma3;->d()Law6;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object v1
+
+    .line 31
+    if-eqz v1, :cond_2
+
+    .line 32
+    .line 33
+    iget-object v1, v0, Lfu6;->k:Lk42;
+
+    .line 34
+    .line 35
+    if-eqz v1, :cond_0
+
+    .line 36
+    .line 37
+    invoke-static {v1}, Lk42;->a(Lk42;)V
+
+    .line 38
+    .line 39
+    .line 40
+    :cond_0
+    iput-wide p1, v0, Lfu6;->n:J
+
+    .line 41
+    .line 42
+    const/4 p1, -0x1
+
+    .line 43
+    iput p1, v0, Lfu6;->s:I
+
+    .line 44
+    .line 45
+    const/4 p1, 0x1
+
+    .line 46
+    invoke-virtual {v0, p1}, Lfu6;->e(Z)V
 
     .line 47
     .line 48
     .line 49
-    const/4 v3, 0x1
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
 
     .line 50
-    invoke-virtual {v0, v2, v1, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
-
     .line 51
     .line 52
+    move-result-object v2
+
     .line 53
-    invoke-virtual {v1}, Landroid/util/TypedValue;->getFloat()F
+    iget-wide v3, v0, Lfu6;->n:J
 
     .line 54
     .line 55
+    const/4 v5, 0x1
+
     .line 56
-    move-result v0
+    move-object v1, p0
 
     .line 57
-    invoke-static {p0, p1}, Lcu6;->c(Landroid/content/Context;I)I
+    move-object v6, p3
 
     .line 58
+    invoke-virtual/range {v1 .. v6}, Lcu6;->f(Lfv6;JZLw16;)J
+
     .line 59
     .line 60
-    move-result p0
-
     .line 61
-    invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
+    move-result-wide p2
 
     .line 62
-    .line 63
-    .line 64
-    move-result p1
+    const/4 p0, 0x2
 
+    .line 63
+    if-lt p4, p0, :cond_1
+
+    .line 64
     .line 65
-    int-to-float p1, p1
+    iput-boolean p1, v1, Lcu6;->a:Z
 
     .line 66
-    mul-float/2addr p1, v0
-
     .line 67
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+    new-instance p0, Lxw6;
 
     .line 68
     .line 69
+    invoke-direct {p0, p2, p3}, Lxw6;-><init>(J)V
+
     .line 70
-    move-result p1
-
     .line 71
-    sget v0, Ltw0;->a:I
-
     .line 72
+    iput-object p0, v1, Lcu6;->b:Lxw6;
+
     .line 73
-    if-ltz p1, :cond_2
-
     .line 74
-    .line 75
-    const/16 v0, 0xff
-
-    .line 76
-    .line 77
-    if-gt p1, v0, :cond_2
-
-    .line 78
-    .line 79
-    const v0, 0xffffff
-
-    .line 80
-    .line 81
-    .line 82
-    and-int/2addr p0, v0
-
-    .line 83
-    shl-int/lit8 p1, p1, 0x18
-
-    .line 84
-    .line 85
-    or-int/2addr p0, p1
-
-    .line 86
-    return p0
-
-    .line 87
-    :cond_2
-    const-string p0, "alpha must be between 0 and 255."
-
-    .line 88
-    .line 89
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
-    .line 90
-    .line 91
-    .line 92
-    const/4 p0, 0x0
-
-    .line 93
-    return p0
-.end method
-
-.method public static c(Landroid/content/Context;I)I
-    .locals 2
-
-    .line 1
-    sget-object v0, Lcu6;->g:[I
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    aput p1, v0, v1
-
-    .line 5
-    .line 6
-    const/4 p1, 0x0
-
-    .line 7
-    invoke-virtual {p0, p1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    :try_start_0
-    invoke-virtual {p0, v1, v1}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 15
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 16
-    .line 17
-    .line 18
+    :cond_1
     return p1
 
-    .line 19
-    :catchall_0
-    move-exception p1
+    .line 75
+    :cond_2
+    const/4 p0, 0x0
 
-    .line 20
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 21
-    .line 22
-    .line 23
-    throw p1
+    .line 76
+    return p0
 .end method
 
-.method public static d(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .locals 2
+.method public final d(JLw16;)Z
+    .locals 8
 
     .line 1
-    sget-object v0, Lcu6;->g:[I
+    iget-object v0, p0, Lcu6;->c:Lfu6;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lfu6;->i()Z
 
     .line 4
-    aput p1, v0, v1
-
     .line 5
     .line 6
-    const/4 p1, 0x0
+    move-result v1
 
     .line 7
-    invoke-virtual {p0, p1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
+
     .line 10
-    move-result-object p1
-
     .line 11
-    :try_start_0
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
     .line 12
-    .line 13
-    .line 14
-    move-result v0
+    move-result-object v1
 
+    .line 13
+    iget-object v1, v1, Lfv6;->a:Lii;
+
+    .line 14
     .line 15
-    if-eqz v0, :cond_0
+    iget-object v1, v1, Lii;->j:Ljava/lang/String;
 
     .line 16
     .line 17
-    invoke-virtual {p1, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     .line 18
     .line 19
     .line 20
-    move-result v0
+    move-result v1
 
     .line 21
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
-    invoke-static {p0, v0}, Lza;->A(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+    iget-object v1, v0, Lfu6;->d:Lma3;
 
     .line 24
     .line 25
-    .line 26
-    move-result-object p0
+    if-eqz v1, :cond_0
 
+    .line 26
     .line 27
-    if-eqz p0, :cond_0
+    invoke-virtual {v1}, Lma3;->d()Law6;
 
     .line 28
     .line 29
-    goto :goto_0
-
     .line 30
-    :cond_0
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    move-result-object v1
 
     .line 31
+    if-eqz v1, :cond_0
+
     .line 32
     .line 33
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
 
     .line 34
-    :goto_0
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    .line 35
+    .line 36
+    move-result-object v3
+
+    .line 37
+    const/4 v6, 0x0
+
+    .line 38
+    move-object v2, p0
+
+    .line 39
+    move-wide v4, p1
+
+    .line 40
+    move-object v7, p3
+
+    .line 41
+    invoke-virtual/range {v2 .. v7}, Lcu6;->f(Lfv6;JZLw16;)J
+
+    .line 42
+    .line 43
+    .line 44
+    const/4 p0, 0x1
+
+    .line 45
+    return p0
+
+    .line 46
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 47
+    return p0
+.end method
+
+.method public final e(J)Z
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lcu6;->c:Lfu6;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lfu6;->d:Lma3;
+
+    .line 4
+    .line 5
+    if-eqz v1, :cond_1
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Lma3;->d()Law6;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    if-eqz v1, :cond_1
+
+    .line 12
+    .line 13
+    invoke-virtual {v0}, Lfu6;->i()Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v1
+
+    .line 17
+    if-eqz v1, :cond_1
+
+    .line 18
+    .line 19
+    const/4 v1, -0x1
+
+    .line 20
+    iput v1, v0, Lfu6;->s:I
+
+    .line 21
+    .line 22
+    iget-object v1, v0, Lfu6;->k:Lk42;
+
+    .line 23
+    .line 24
+    if-eqz v1, :cond_0
+
+    .line 25
+    .line 26
+    invoke-static {v1}, Lk42;->a(Lk42;)V
+
+    .line 27
+    .line 28
+    .line 29
+    :cond_0
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v3
+
+    .line 33
+    const/4 v6, 0x0
+
+    .line 34
+    sget-object v7, Lxj5;->t:Lw16;
 
     .line 35
     .line 36
+    move-object v2, p0
+
     .line 37
-    return-object p0
+    move-wide v4, p1
 
     .line 38
-    :catchall_0
-    move-exception p0
+    invoke-virtual/range {v2 .. v7}, Lcu6;->f(Lfv6;JZLw16;)J
 
     .line 39
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
     .line 40
     .line 41
+    const/4 p0, 0x1
+
     .line 42
-    throw p0
+    return p0
+
+    .line 43
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 44
+    return p0
+.end method
+
+.method public final f(Lfv6;JZLw16;)J
+    .locals 9
+
+    .line 1
+    const/4 v7, 0x0
+
+    .line 2
+    const/4 v8, 0x0
+
+    .line 3
+    iget-object v0, p0, Lcu6;->c:Lfu6;
+
+    .line 4
+    .line 5
+    const/4 v5, 0x0
+
+    .line 6
+    move-object v1, p1
+
+    .line 7
+    move-wide v2, p2
+
+    .line 8
+    move v4, p4
+
+    .line 9
+    move-object v6, p5
+
+    .line 10
+    invoke-virtual/range {v0 .. v8}, Lfu6;->v(Lfv6;JZZLw16;ZLaf2;)J
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-wide p1
+
+    .line 14
+    iget-object p3, p0, Lcu6;->b:Lxw6;
+
+    .line 15
+    .line 16
+    invoke-static {p1, p2, p3}, Lxw6;->b(JLjava/lang/Object;)Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p3
+
+    .line 20
+    if-nez p3, :cond_0
+
+    .line 21
+    .line 22
+    const/4 p3, 0x0
+
+    .line 23
+    iput-boolean p3, p0, Lcu6;->a:Z
+
+    .line 24
+    .line 25
+    :cond_0
+    invoke-static {p1, p2}, Lxw6;->d(J)Z
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    if-eqz p0, :cond_1
+
+    .line 30
+    .line 31
+    sget-object p0, Lpe2;->k:Lpe2;
+
+    .line 32
+    .line 33
+    goto :goto_0
+
+    .line 34
+    :cond_1
+    sget-object p0, Lpe2;->j:Lpe2;
+
+    .line 35
+    .line 36
+    :goto_0
+    invoke-virtual {v0, p0}, Lfu6;->r(Lpe2;)V
+
+    .line 37
+    .line 38
+    .line 39
+    return-wide p1
 .end method

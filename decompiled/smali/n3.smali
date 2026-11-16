@@ -1,15 +1,15 @@
 .class public final synthetic Ln3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Lp72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Ljava/util/Collection;
+.field public final synthetic j:Ljava/util/Collection;
 
 
 # direct methods
@@ -17,11 +17,11 @@
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Ln3;->j:B
+    iput-byte p2, p0, Ln3;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Ln3;->k:Ljava/util/Collection;
+    iput-object p1, p0, Ln3;->j:Ljava/util/Collection;
 
     .line 4
     .line 5
@@ -39,11 +39,11 @@
     .locals 5
 
     .line 1
-    iget-byte v0, p0, Ln3;->j:B
+    iget-byte v0, p0, Ln3;->i:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Ln3;->k:Ljava/util/Collection;
+    iget-object p0, p0, Ln3;->j:Ljava/util/Collection;
 
     .line 4
     .line 5
@@ -109,11 +109,11 @@
     .line 33
     .line 34
     .line 35
-    sget-object v1, Lza0;->a:Lza0;
+    sget-object v1, Lva0;->a:Lva0;
 
     .line 36
     .line 37
-    invoke-static {p1}, Lza0;->e(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-static {p1}, Lva0;->e(Landroid/database/sqlite/SQLiteDatabase;)V
 
     .line 38
     .line 39
@@ -132,7 +132,7 @@
     .line 45
     .line 46
     .line 47
-    invoke-static {p0}, Lts;->X(Ljava/util/Collection;)Ljava/util/List;
+    invoke-static {p0}, Lnr;->M(Ljava/util/Collection;)Ljava/util/List;
 
     .line 48
     .line 49
@@ -199,60 +199,59 @@
     goto :goto_0
 
     .line 81
-    :catchall_0
-    move-exception p0
-
-    .line 82
-    goto :goto_1
-
-    .line 83
     :cond_0
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 82
+    .line 83
     .line 84
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
     .line 85
     .line 86
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-
     .line 87
+    sget-object p0, Ll97;->a:Ll97;
+
     .line 88
     .line 89
-    sget-object p0, La47;->a:La47;
-
-    .line 90
-    .line 91
     return-object p0
 
-    .line 92
-    :goto_1
+    .line 90
+    :catchall_0
+    move-exception p0
+
+    .line 91
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 92
     .line 93
     .line 94
-    .line 95
     throw p0
 
-    .line 96
+    .line 95
     :pswitch_2
     invoke-interface {p0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
+    .line 96
     .line 97
     .line 98
-    .line 99
     move-result p0
 
-    .line 100
+    .line 99
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    .line 100
     .line 101
     .line 102
-    .line 103
     move-result-object p0
 
-    .line 104
+    .line 103
     return-object p0
+
+    .line 104
+    nop
 
     .line 105
     :pswitch_data_0

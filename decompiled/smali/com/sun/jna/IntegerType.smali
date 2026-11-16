@@ -1,6 +1,6 @@
 .class public abstract Lcom/sun/jna/IntegerType;
 .super Ljava/lang/Number;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/sun/jna/NativeMapped;
@@ -659,62 +659,60 @@
 
     .line 110
     .line 111
-    mul-int/2addr v0, v2
+    shl-int/lit8 v0, v0, 0x3
 
     .line 112
+    .line 113
     const-wide/16 v1, 0x1
 
-    .line 113
     .line 114
+    .line 115
     shl-long v5, v1, v0
 
-    .line 115
     .line 116
+    .line 117
     sub-long/2addr v5, v1
 
-    .line 117
+    .line 118
     not-long v0, v5
 
-    .line 118
+    .line 119
     const-wide/16 v5, 0x0
 
-    .line 119
     .line 120
+    .line 121
     cmp-long v2, p1, v5
 
-    .line 121
     .line 122
+    .line 123
     if-gez v2, :cond_7
 
-    .line 123
     .line 124
+    .line 125
     cmp-long v3, v3, p1
 
-    .line 125
     .line 126
+    .line 127
     if-nez v3, :cond_8
 
-    .line 127
     .line 128
+    .line 129
     :cond_7
     if-ltz v2, :cond_9
 
-    .line 129
     .line 130
+    .line 131
     and-long v2, v0, p1
 
-    .line 131
     .line 132
+    .line 133
     cmp-long v2, v2, v5
 
-    .line 133
     .line 134
-    if-nez v2, :cond_8
-
     .line 135
-    .line 136
-    goto :goto_1
+    if-eqz v2, :cond_9
 
+    .line 136
     .line 137
     :cond_8
     new-instance v2, Ljava/lang/IllegalArgumentException;
@@ -804,7 +802,6 @@
 
     .line 183
     :cond_9
-    :goto_1
     return-void
 .end method
 

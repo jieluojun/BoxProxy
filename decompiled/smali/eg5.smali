@@ -1,96 +1,57 @@
 .class public final Leg5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final b:Leg5;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:Z
-
-.field public h:Z
+.field public final a:Ljava/util/Map;
 
 
-# virtual methods
-.method public final a(II)V
-    .locals 2
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput p1, p0, Leg5;->c:I
+    new-instance v0, Leg5;
 
     .line 2
     .line 3
-    iput p2, p0, Leg5;->d:I
+    sget-object v1, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
 
     .line 4
     .line 5
-    const/4 v0, 0x1
+    sget-object v2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 6
-    iput-boolean v0, p0, Leg5;->h:Z
-
     .line 7
-    .line 8
-    iget-boolean v0, p0, Leg5;->g:Z
+    invoke-direct {v0, v1, v2}, Leg5;-><init>(Ljava/util/Map;Ljava/util/List;)V
 
+    .line 8
     .line 9
     .line 10
-    const/high16 v1, -0x80000000
+    sput-object v0, Leg5;->b:Leg5;
 
     .line 11
     .line 12
-    if-eqz v0, :cond_1
-
-    .line 13
-    .line 14
-    if-eq p2, v1, :cond_0
-
-    .line 15
-    .line 16
-    iput p2, p0, Leg5;->a:I
-
-    .line 17
-    .line 18
-    :cond_0
-    if-eq p1, v1, :cond_3
-
-    .line 19
-    .line 20
-    iput p1, p0, Leg5;->b:I
-
-    .line 21
-    .line 22
     return-void
+.end method
 
-    .line 23
-    :cond_1
-    if-eq p1, v1, :cond_2
+.method public constructor <init>(Ljava/util/Map;Ljava/util/List;)V
+    .locals 0
 
-    .line 24
-    .line 25
-    iput p1, p0, Leg5;->a:I
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
-    .line 27
-    :cond_2
-    if-eq p2, v1, :cond_3
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Leg5;->a:Ljava/util/Map;
 
-    .line 28
-    .line 29
-    iput p2, p0, Leg5;->b:I
-
-    .line 30
-    .line 31
-    :cond_3
+    .line 5
+    .line 6
     return-void
 .end method

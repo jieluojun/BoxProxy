@@ -1,18 +1,18 @@
 .class public Lg3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/Iterator;
-.implements Lfy2;
+.implements Lt23;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public k:I
+.field public j:I
 
-.field public final l:Ljava/lang/Object;
+.field public final k:Ljava/lang/Object;
 
 
 # direct methods
@@ -20,9 +20,9 @@
     .locals 0
 
     .line 13
-    iput-byte p2, p0, Lg3;->j:B
+    iput-byte p2, p0, Lg3;->i:B
 
-    iput-object p1, p0, Lg3;->l:Ljava/lang/Object;
+    iput-object p1, p0, Lg3;->k:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
     const/4 v0, 0x1
 
     .line 2
-    iput-byte v0, p0, Lg3;->j:B
+    iput-byte v0, p0, Lg3;->i:B
 
     .line 3
     .line 4
@@ -50,7 +50,7 @@
     .line 8
     .line 9
     .line 10
-    iput-object p1, p0, Lg3;->l:Ljava/lang/Object;
+    iput-object p1, p0, Lg3;->k:Ljava/lang/Object;
 
     .line 11
     .line 12
@@ -63,7 +63,7 @@
     .locals 4
 
     .line 1
-    iget-byte v0, p0, Lg3;->j:B
+    iget-byte v0, p0, Lg3;->i:B
 
     .line 2
     .line 3
@@ -73,7 +73,7 @@
     const/4 v2, 0x1
 
     .line 5
-    iget-object v3, p0, Lg3;->l:Ljava/lang/Object;
+    iget-object v3, p0, Lg3;->k:Ljava/lang/Object;
 
     .line 6
     .line 7
@@ -82,7 +82,7 @@
     .line 8
     .line 9
     .line 10
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 11
     .line 12
@@ -105,7 +105,7 @@
 
     .line 19
     :pswitch_0
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 20
     .line 21
@@ -128,7 +128,7 @@
 
     .line 28
     :pswitch_1
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 29
     .line 30
@@ -151,7 +151,7 @@
 
     .line 37
     :pswitch_2
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 38
     .line 39
@@ -174,7 +174,7 @@
 
     .line 46
     :pswitch_3
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 47
     .line 48
@@ -197,7 +197,7 @@
 
     .line 55
     :pswitch_4
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 56
     .line 57
@@ -238,14 +238,14 @@
     .locals 4
 
     .line 1
-    iget-byte v0, p0, Lg3;->j:B
+    iget-byte v0, p0, Lg3;->i:B
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    iget-object v2, p0, Lg3;->l:Ljava/lang/Object;
+    iget-object v2, p0, Lg3;->k:Ljava/lang/Object;
 
     .line 5
     .line 6
@@ -254,7 +254,7 @@
     .line 7
     .line 8
     .line 9
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 10
     .line 11
@@ -273,7 +273,7 @@
 
     .line 17
     .line 18
-    iput v1, p0, Lg3;->k:I
+    iput v1, p0, Lg3;->j:I
 
     .line 19
     .line 20
@@ -281,11 +281,11 @@
 
     .line 21
     .line 22
-    new-instance v1, Li27;
+    new-instance v1, Ly77;
 
     .line 23
     .line 24
-    invoke-direct {v1, p0}, Li27;-><init>(S)V
+    invoke-direct {v1, p0}, Ly77;-><init>(S)V
 
     .line 25
     .line 26
@@ -302,7 +302,7 @@
     move-result-object p0
 
     .line 32
-    invoke-static {p0}, Lgb4;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Llt4;->h(Ljava/lang/String;)V
 
     .line 33
     .line 34
@@ -312,7 +312,7 @@
 
     .line 36
     :pswitch_0
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 37
     .line 38
@@ -331,7 +331,7 @@
 
     .line 44
     .line 45
-    iput v1, p0, Lg3;->k:I
+    iput v1, p0, Lg3;->j:I
 
     .line 46
     .line 47
@@ -339,11 +339,11 @@
 
     .line 48
     .line 49
-    new-instance p0, Lc27;
+    new-instance p0, Ls77;
 
     .line 50
     .line 51
-    invoke-direct {p0, v0, v1}, Lc27;-><init>(J)V
+    invoke-direct {p0, v0, v1}, Ls77;-><init>(J)V
 
     .line 52
     .line 53
@@ -363,7 +363,7 @@
     move-result-object p0
 
     .line 60
-    invoke-static {p0}, Lgb4;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Llt4;->h(Ljava/lang/String;)V
 
     .line 61
     .line 62
@@ -373,7 +373,7 @@
 
     .line 64
     :pswitch_1
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 65
     .line 66
@@ -392,7 +392,7 @@
 
     .line 72
     .line 73
-    iput v1, p0, Lg3;->k:I
+    iput v1, p0, Lg3;->j:I
 
     .line 74
     .line 75
@@ -400,11 +400,11 @@
 
     .line 76
     .line 77
-    new-instance v1, Lx17;
+    new-instance v1, Ln77;
 
     .line 78
     .line 79
-    invoke-direct {v1, p0}, Lx17;-><init>(I)V
+    invoke-direct {v1, p0}, Ln77;-><init>(I)V
 
     .line 80
     .line 81
@@ -421,7 +421,7 @@
     move-result-object p0
 
     .line 87
-    invoke-static {p0}, Lgb4;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Llt4;->h(Ljava/lang/String;)V
 
     .line 88
     .line 89
@@ -431,7 +431,7 @@
 
     .line 91
     :pswitch_2
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 92
     .line 93
@@ -450,7 +450,7 @@
 
     .line 99
     .line 100
-    iput v1, p0, Lg3;->k:I
+    iput v1, p0, Lg3;->j:I
 
     .line 101
     .line 102
@@ -458,11 +458,11 @@
 
     .line 103
     .line 104
-    new-instance v1, Ls17;
+    new-instance v1, Li77;
 
     .line 105
     .line 106
-    invoke-direct {v1, p0}, Ls17;-><init>(B)V
+    invoke-direct {v1, p0}, Li77;-><init>(B)V
 
     .line 107
     .line 108
@@ -479,7 +479,7 @@
     move-result-object p0
 
     .line 114
-    invoke-static {p0}, Lgb4;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Llt4;->h(Ljava/lang/String;)V
 
     .line 115
     .line 116
@@ -494,7 +494,7 @@
 
     .line 119
     .line 120
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 121
     .line 122
@@ -502,7 +502,7 @@
 
     .line 123
     .line 124
-    iput v3, p0, Lg3;->k:I
+    iput v3, p0, Lg3;->j:I
 
     .line 125
     .line 126
@@ -519,7 +519,7 @@
     move-exception v0
 
     .line 130
-    iget v2, p0, Lg3;->k:I
+    iget v2, p0, Lg3;->j:I
 
     .line 131
     .line 132
@@ -527,7 +527,7 @@
 
     .line 133
     .line 134
-    iput v2, p0, Lg3;->k:I
+    iput v2, p0, Lg3;->j:I
 
     .line 135
     .line 136
@@ -539,7 +539,7 @@
     move-result-object p0
 
     .line 140
-    invoke-static {p0}, Lgb4;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Llt4;->h(Ljava/lang/String;)V
 
     .line 141
     .line 142
@@ -565,7 +565,7 @@
 
     .line 151
     .line 152
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 153
     .line 154
@@ -573,7 +573,7 @@
 
     .line 155
     .line 156
-    iput v1, p0, Lg3;->k:I
+    iput v1, p0, Lg3;->j:I
 
     .line 157
     .line 158
@@ -589,7 +589,7 @@
 
     .line 163
     :cond_4
-    invoke-static {}, Lue1;->p()V
+    invoke-static {}, Lnf1;->p()V
 
     .line 164
     .line 165
@@ -612,7 +612,7 @@
     .locals 1
 
     .line 1
-    iget-byte p0, p0, Lg3;->j:B
+    iget-byte p0, p0, Lg3;->i:B
 
     .line 2
     .line 3

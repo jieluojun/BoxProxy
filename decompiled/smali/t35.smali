@@ -1,118 +1,93 @@
-.class public final enum Lt35;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lt35;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
-# static fields
-.field public static final enum j:Lt35;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final enum k:Lt35;
+.field public final synthetic j:Lua5;
 
-.field public static final synthetic l:[Lt35;
+.field public final synthetic k:Lh04;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lua5;Lh04;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lt35;
+    iput-byte p3, p0, Lt35;->i:B
 
     .line 2
     .line 3
-    const-string v1, "Full"
+    iput-object p1, p0, Lt35;->j:Lua5;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iput-object p2, p0, Lt35;->k:Lh04;
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
     .line 9
-    sput-object v0, Lt35;->j:Lt35;
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lt35;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lt35;->k:Lh04;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lt35;->j:Lua5;
+
+    .line 8
+    .line 9
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
-    new-instance v1, Lt35;
-
     .line 12
-    .line 13
-    const-string v2, "SearchOnly"
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
 
+    .line 13
     .line 14
     .line 15
-    const/4 v3, 0x1
+    return-object v1
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    :pswitch_0
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
 
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lt35;->k:Lt35;
+    return-object v1
 
     .line 20
+    nop
+
     .line 21
-    filled-new-array {v0, v1}, [Lt35;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lt35;->l:[Lt35;
-
-    .line 26
-    .line 27
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lt35;
-    .locals 1
-
-    .line 1
-    const-class v0, Lt35;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lt35;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Lt35;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lt35;->l:[Lt35;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lt35;
-
-    .line 8
-    .line 9
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

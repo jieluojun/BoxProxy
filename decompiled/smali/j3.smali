@@ -1,6 +1,6 @@
 .class public abstract Lj3;
 .super Lr2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/List;
@@ -111,75 +111,71 @@
     move-result v3
 
     .line 21
-    if-eq v1, v3, :cond_2
+    if-ne v1, v3, :cond_3
 
     .line 22
     .line 23
-    goto :goto_0
-
-    .line 24
-    :cond_2
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
+    .line 24
     .line 25
     .line 26
-    .line 27
     move-result-object p1
 
-    .line 28
+    .line 27
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
+    .line 28
     .line 29
     .line 30
-    .line 31
     move-result-object p0
 
-    .line 32
-    :cond_3
+    .line 31
+    :cond_2
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
+    .line 32
     .line 33
     .line 34
-    .line 35
     move-result v1
 
-    .line 36
+    .line 35
     if-eqz v1, :cond_4
 
+    .line 36
     .line 37
-    .line 38
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 38
     .line 39
     .line 40
-    .line 41
     move-result-object v1
 
-    .line 42
+    .line 41
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 42
     .line 43
     .line 44
-    .line 45
     move-result-object v3
 
-    .line 46
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 45
+    invoke-static {v1, v3}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 46
     .line 47
     .line 48
-    .line 49
     move-result v1
 
-    .line 50
-    if-nez v1, :cond_3
+    .line 49
+    if-nez v1, :cond_2
 
+    .line 50
     .line 51
-    .line 52
-    :goto_0
+    :cond_3
     return v2
 
-    .line 53
+    .line 52
     :cond_4
     return v0
 .end method
@@ -290,7 +286,7 @@
     move-result-object v1
 
     .line 16
-    invoke-static {v1, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 17
     .line 18
@@ -380,7 +376,7 @@
     move-result-object v0
 
     .line 19
-    invoke-static {v0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 20
     .line 21

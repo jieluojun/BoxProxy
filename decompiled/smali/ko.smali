@@ -1,188 +1,197 @@
-.class public final synthetic Lko;
+.class public final Lko;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lrw5;
 
 
 # instance fields
-.field public final synthetic j:Lt62;
+.field public final synthetic a:B
 
-.field public final synthetic k:Lwp3;
-
-.field public final synthetic l:Lt62;
-
-.field public final synthetic m:Lu62;
-
-.field public final synthetic n:Le8;
-
-.field public final synthetic o:F
-
-.field public final synthetic p:F
-
-.field public final synthetic q:Lo73;
-
-.field public final synthetic r:Lyw6;
-
-.field public final synthetic s:Lux1;
-
-.field public final synthetic t:S
-
-.field public final synthetic u:S
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt62;Lwp3;Lt62;Lu62;Le8;FFLo73;Lyw6;Lux1;II)V
-    .locals 0
+.method public constructor <init>(Lkd2;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
     .line 2
+    iput-byte v0, p0, Lko;->a:B
+
     .line 3
     .line 4
-    iput-object p1, p0, Lko;->j:Lt62;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    iput-object p2, p0, Lko;->k:Lwp3;
-
     .line 7
+    new-instance v0, Ljava/util/LinkedHashSet;
+
     .line 8
-    iput-object p3, p0, Lko;->l:Lt62;
-
     .line 9
-    .line 10
-    iput-object p4, p0, Lko;->m:Lu62;
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
+    .line 10
     .line 11
     .line 12
-    iput-object p5, p0, Lko;->n:Le8;
+    iput-object v0, p0, Lko;->b:Ljava/lang/Object;
 
     .line 13
     .line 14
-    iput p6, p0, Lko;->o:F
+    const-string v0, "androidx.savedstate.Restarter"
 
     .line 15
     .line 16
-    iput p7, p0, Lko;->p:F
+    invoke-virtual {p1, v0, p0}, Lkd2;->K(Ljava/lang/String;Lrw5;)V
 
     .line 17
     .line 18
-    iput-object p8, p0, Lko;->q:Lo73;
-
     .line 19
+    return-void
+.end method
+
+.method public constructor <init>(Lmo;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Lko;->a:B
+
     .line 20
-    iput-object p9, p0, Lko;->r:Lyw6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
-    .line 22
-    iput-object p10, p0, Lko;->s:Lux1;
+    iput-object p1, p0, Lko;->b:Ljava/lang/Object;
 
-    .line 23
-    .line 24
-    iput-short p11, p0, Lko;->t:S
-
-    .line 25
-    .line 26
-    iput-short p12, p0, Lko;->u:S
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+.method public final a()Landroid/os/Bundle;
+    .locals 2
 
     .line 1
-    move-object v10, p1
+    iget-byte v0, p0, Lko;->a:B
 
     .line 2
-    check-cast v10, Lz11;
-
     .line 3
+    iget-object p0, p0, Lko;->b:Ljava/lang/Object;
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
+    .line 6
     .line 7
     .line 8
+    const/4 v0, 0x0
+
     .line 9
-    iget-short p1, p0, Lko;->t:S
+    new-array v1, v0, [Lfs4;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
-
     .line 14
-    .line 15
-    .line 16
-    move-result v11
+    move-result-object v0
 
+    .line 15
+    check-cast v0, [Lfs4;
+
+    .line 16
     .line 17
-    iget-object v0, p0, Lko;->j:Lt62;
+    invoke-static {v0}, Lqm;->p([Lfs4;)Landroid/os/Bundle;
 
     .line 18
     .line 19
-    iget-object v1, p0, Lko;->k:Lwp3;
-
     .line 20
+    move-result-object v0
+
     .line 21
-    iget-object v2, p0, Lko;->l:Lt62;
+    check-cast p0, Ljava/util/LinkedHashSet;
 
     .line 22
     .line 23
-    iget-object v3, p0, Lko;->m:Lu62;
+    invoke-static {p0}, Lxu0;->S0(Ljava/lang/Iterable;)Ljava/util/List;
 
     .line 24
     .line 25
-    iget-object v4, p0, Lko;->n:Le8;
-
     .line 26
+    move-result-object p0
+
     .line 27
-    iget v5, p0, Lko;->o:F
+    instance-of v1, p0, Ljava/util/ArrayList;
 
     .line 28
     .line 29
-    iget v6, p0, Lko;->p:F
+    if-eqz v1, :cond_0
 
     .line 30
     .line 31
-    iget-object v7, p0, Lko;->q:Lo73;
+    check-cast p0, Ljava/util/ArrayList;
 
     .line 32
     .line 33
-    iget-object v8, p0, Lko;->r:Lyw6;
+    goto :goto_0
 
     .line 34
+    :cond_0
+    new-instance v1, Ljava/util/ArrayList;
+
     .line 35
-    iget-object v9, p0, Lko;->s:Lux1;
-
     .line 36
-    .line 37
-    iget-short v12, p0, Lko;->u:S
+    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
+    .line 37
     .line 38
     .line 39
-    invoke-static/range {v0 .. v12}, Lso;->a(Lt62;Lwp3;Lt62;Lu62;Le8;FFLo73;Lyw6;Lux1;Lz11;II)V
+    move-object p0, v1
 
     .line 40
+    :goto_0
+    const-string v1, "classes_to_restore"
+
     .line 41
     .line 42
-    sget-object p0, La47;->a:La47;
+    invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     .line 43
     .line 44
-    return-object p0
+    .line 45
+    return-object v0
+
+    .line 46
+    :pswitch_0
+    new-instance v0, Landroid/os/Bundle;
+
+    .line 47
+    .line 48
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 49
+    .line 50
+    .line 51
+    check-cast p0, Lmo;
+
+    .line 52
+    .line 53
+    invoke-virtual {p0}, Lmo;->l()Lyo;
+
+    .line 54
+    .line 55
+    .line 56
+    return-object v0
+
+    .line 57
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

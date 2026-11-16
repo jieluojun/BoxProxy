@@ -1,181 +1,46 @@
 .class public final Lei1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final c:Lei1;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:J
+.field public synthetic i:Ljava/lang/Object;
 
-.field public final b:J
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lei1;
-
-    .line 2
-    .line 3
-    const-wide/16 v1, 0x0
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1, v2, v1, v2}, Lei1;-><init>(JJ)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lei1;->c:Lei1;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public constructor <init>(JJ)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-wide p1, p0, Lei1;->a:J
-
-    .line 5
-    .line 6
-    iput-wide p3, p0, Lei1;->b:J
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public j:I
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lei1;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    goto :goto_0
-
-    .line 11
-    :cond_1
-    check-cast p1, Lei1;
-
-    .line 12
-    .line 13
-    iget-wide v3, p1, Lei1;->a:J
-
-    .line 14
-    .line 15
-    iget-wide v5, p0, Lei1;->a:J
-
-    .line 16
-    .line 17
-    invoke-static {v5, v6, v3, v4}, Ljs2;->a(JJ)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
-
-    .line 21
-    if-nez v1, :cond_2
-
-    .line 22
-    .line 23
-    :goto_0
-    return v2
-
-    .line 24
-    :cond_2
-    iget-wide v3, p0, Lei1;->b:J
-
-    .line 25
-    .line 26
-    iget-wide p0, p1, Lei1;->b:J
-
-    .line 27
-    .line 28
-    cmp-long p0, v3, p0
-
-    .line 29
-    .line 30
-    if-nez p0, :cond_3
-
-    .line 31
-    .line 32
-    return v0
-
-    .line 33
-    :cond_3
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    .line 1
-    iget-wide v0, p0, Lei1;->a:J
+    iput-object p1, p0, Lei1;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    iget p1, p0, Lei1;->j:I
 
     .line 4
     .line 5
-    .line 6
-    move-result v0
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lei1;->j:I
+
     .line 9
-    iget-wide v1, p0, Lei1;->b:J
-
     .line 10
-    .line 11
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {p0}, Lsm;->k(Lq91;)V
 
+    .line 11
     .line 12
     .line 13
+    sget-object p0, Lpc1;->i:Lpc1;
+
     .line 14
-    move-result p0
-
     .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    return-object p0
 .end method

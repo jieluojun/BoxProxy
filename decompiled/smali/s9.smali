@@ -1,43 +1,16 @@
-.class public final synthetic Ls9;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final Ls9;
+.super Lwp;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Le62;
+.field public final n:Ljavax/net/ssl/X509TrustManager;
 
-.field public final synthetic k:Lqz0;
-
-.field public final synthetic l:Lwp3;
-
-.field public final synthetic m:Lt62;
-
-.field public final synthetic n:Lt62;
-
-.field public final synthetic o:Lt62;
-
-.field public final synthetic p:Ln06;
-
-.field public final synthetic q:J
-
-.field public final synthetic r:J
-
-.field public final synthetic s:J
-
-.field public final synthetic t:J
-
-.field public final synthetic u:Ljj1;
-
-.field public final synthetic v:I
-
-.field public final synthetic w:S
+.field public final o:Landroid/net/http/X509TrustManagerExtensions;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;Lqz0;Lwp3;Lt62;Lt62;Lt62;Ln06;JJJJLjj1;II)V
+.method public constructor <init>(Ljavax/net/ssl/X509TrustManager;Landroid/net/http/X509TrustManagerExtensions;)V
     .locals 0
 
     .line 1
@@ -46,230 +19,164 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ls9;->j:Le62;
+    iput-object p1, p0, Ls9;->n:Ljavax/net/ssl/X509TrustManager;
 
     .line 5
     .line 6
-    iput-object p2, p0, Ls9;->k:Lqz0;
+    iput-object p2, p0, Ls9;->o:Landroid/net/http/X509TrustManagerExtensions;
 
     .line 7
     .line 8
-    iput-object p3, p0, Ls9;->l:Lwp3;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Ls9;->m:Lt62;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Ls9;->n:Lt62;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Ls9;->o:Lt62;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Ls9;->p:Ln06;
-
-    .line 17
-    .line 18
-    iput-wide p8, p0, Ls9;->q:J
-
-    .line 19
-    .line 20
-    iput-wide p10, p0, Ls9;->r:J
-
-    .line 21
-    .line 22
-    iput-wide p12, p0, Ls9;->s:J
-
-    .line 23
-    .line 24
-    iput-wide p14, p0, Ls9;->t:J
-
-    .line 25
-    .line 26
-    move-object/from16 p1, p16
-
-    .line 27
-    .line 28
-    iput-object p1, p0, Ls9;->u:Ljj1;
-
-    .line 29
-    .line 30
-    move/from16 p1, p17
-
-    .line 31
-    .line 32
-    iput p1, p0, Ls9;->v:I
-
-    .line 33
-    .line 34
-    move/from16 p1, p18
-
-    .line 35
-    .line 36
-    iput-short p1, p0, Ls9;->w:S
-
-    .line 37
-    .line 38
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    move-object/from16 v0, p0
+    instance-of v0, p1, Ls9;
 
     .line 2
     .line 3
-    move-object/from16 v16, p1
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    check-cast v16, Lz11;
+    check-cast p1, Ls9;
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    iget-object p1, p1, Ls9;->n:Ljavax/net/ssl/X509TrustManager;
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    iget-object p0, p0, Ls9;->n:Ljavax/net/ssl/X509TrustManager;
 
     .line 10
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne p1, p0, :cond_0
 
     .line 12
     .line 13
+    const/4 p0, 0x1
+
     .line 14
-    iget v1, v0, Ls9;->v:I
+    return p0
+
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls9;->n:Ljavax/net/ssl/X509TrustManager;
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final q(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 5
+    .line 6
+    .line 7
+    const/4 v0, 0x0
+
+    .line 8
+    new-array v0, v0, [Ljava/security/cert/X509Certificate;
+
+    .line 9
+    .line 10
+    invoke-interface {p2, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p2
+
+    .line 14
+    check-cast p2, [Ljava/security/cert/X509Certificate;
 
     .line 15
     .line 16
-    or-int/lit8 v1, v1, 0x1
+    :try_start_0
+    iget-object p0, p0, Ls9;->o:Landroid/net/http/X509TrustManagerExtensions;
 
     .line 17
     .line 18
-    invoke-static {v1}, Lqu5;->f0(I)I
+    const-string v0, "RSA"
 
     .line 19
     .line 20
+    invoke-virtual {p0, p2, v0, p1}, Landroid/net/http/X509TrustManagerExtensions;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+
     .line 21
-    move-result v17
-
     .line 22
-    iget-object v1, v0, Ls9;->j:Le62;
-
     .line 23
+    move-result-object p0
+
     .line 24
-    move-object v2, v1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 25
-    iget-object v1, v0, Ls9;->k:Lqz0;
-
     .line 26
     .line 27
-    move-object v3, v2
+    return-object p0
 
     .line 28
-    iget-object v2, v0, Ls9;->l:Lwp3;
+    :catch_0
+    move-exception p0
 
     .line 29
-    .line 30
-    move-object v4, v3
+    new-instance p1, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
+    .line 30
     .line 31
-    iget-object v3, v0, Ls9;->m:Lt62;
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 32
     .line 33
-    move-object v5, v4
-
     .line 34
-    iget-object v4, v0, Ls9;->n:Lt62;
+    move-result-object p2
 
     .line 35
+    invoke-direct {p1, p2}, Ljavax/net/ssl/SSLPeerUnverifiedException;-><init>(Ljava/lang/String;)V
+
     .line 36
-    move-object v6, v5
-
     .line 37
-    iget-object v5, v0, Ls9;->o:Lt62;
-
     .line 38
+    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
     .line 39
-    move-object v7, v6
-
     .line 40
-    iget-object v6, v0, Ls9;->p:Ln06;
-
     .line 41
-    .line 42
-    move-object v9, v7
-
-    .line 43
-    iget-wide v7, v0, Ls9;->q:J
-
-    .line 44
-    .line 45
-    move-object v11, v9
-
-    .line 46
-    iget-wide v9, v0, Ls9;->r:J
-
-    .line 47
-    .line 48
-    move-object v13, v11
-
-    .line 49
-    iget-wide v11, v0, Ls9;->s:J
-
-    .line 50
-    .line 51
-    move-object v15, v13
-
-    .line 52
-    iget-wide v13, v0, Ls9;->t:J
-
-    .line 53
-    .line 54
-    move-object/from16 v18, v15
-
-    .line 55
-    .line 56
-    iget-object v15, v0, Ls9;->u:Ljj1;
-
-    .line 57
-    .line 58
-    iget-short v0, v0, Ls9;->w:S
-
-    .line 59
-    .line 60
-    move-object/from16 v19, v18
-
-    .line 61
-    .line 62
-    move/from16 v18, v0
-
-    .line 63
-    .line 64
-    move-object/from16 v0, v19
-
-    .line 65
-    .line 66
-    invoke-static/range {v0 .. v18}, Lyk6;->a(Le62;Lqz0;Lwp3;Lt62;Lt62;Lt62;Ln06;JJJJLjj1;Lz11;II)V
-
-    .line 67
-    .line 68
-    .line 69
-    sget-object v0, La47;->a:La47;
-
-    .line 70
-    .line 71
-    return-object v0
+    throw p1
 .end method

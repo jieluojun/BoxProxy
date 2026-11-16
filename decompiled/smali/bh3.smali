@@ -1,78 +1,102 @@
-.class public final Lbh3;
+.class public abstract Lbh3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lvs2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Le62;
-
-.field public final b:Ljava/util/LinkedHashMap;
-
-.field public final c:Lr12;
+# static fields
+.field public static final a:Lwq1;
 
 
 # direct methods
-.method public constructor <init>(Lms3;Le62;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lja6;
 
     .line 2
     .line 3
+    const/16 v1, 0x17
+
     .line 4
-    iput-object p2, p0, Lbh3;->a:Le62;
-
     .line 5
-    .line 6
-    new-instance p2, Ljava/util/LinkedHashMap;
+    invoke-direct {v0, v1}, Lja6;-><init>(B)V
 
+    .line 6
     .line 7
     .line 8
-    invoke-direct {p2}, Ljava/util/LinkedHashMap;-><init>()V
+    new-instance v1, Lwq1;
 
     .line 9
     .line 10
+    const/4 v2, 0x1
+
     .line 11
-    iput-object p2, p0, Lbh3;->b:Ljava/util/LinkedHashMap;
+    invoke-direct {v1, v0, v2}, Lwq1;-><init>(Le72;B)V
 
     .line 12
     .line 13
-    iget-object p1, p1, Lms3;->a:Ly06;
-
     .line 14
+    sput-object v1, Lbh3;->a:Lwq1;
+
     .line 15
-    new-instance p2, Lr12;
-
     .line 16
-    .line 17
-    const/4 v0, 0x3
-
-    .line 18
-    invoke-direct {p2, p1, p0, v0}, Lr12;-><init>(Lg12;Ljava/lang/Object;B)V
-
-    .line 19
-    .line 20
-    .line 21
-    iput-object p2, p0, Lbh3;->c:Lr12;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Lg12;
-    .locals 0
+.method public static final a(Lt82;)Z
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lbh3;->c:Lr12;
+    sget-object v0, Lbh3;->a:Lwq1;
 
     .line 2
     .line 3
-    return-object p0
+    invoke-virtual {p0, v0}, Lt82;->k(Le25;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    if-eqz p0, :cond_0
+
+    .line 14
+    .line 15
+    invoke-static {}, La5;->f()Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    return p0
 .end method

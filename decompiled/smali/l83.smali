@@ -1,20 +1,24 @@
 .class public final Ll83;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lel0;
+.implements Lgh6;
 
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public final i:B
 
-.field public final b:Ljava/util/ArrayList;
+.field public final j:S
+
+.field public final k:Lxs4;
+
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 0
+.method public constructor <init>(III)V
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,160 +26,167 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ll83;->a:Ljava/util/ArrayList;
+    iput-byte p2, p0, Ll83;->i:B
 
     .line 5
     .line 6
-    iput-object p2, p0, Ll83;->b:Ljava/util/ArrayList;
+    iput-short p3, p0, Ll83;->j:S
 
     .line 7
     .line 8
+    div-int v0, p1, p2
+
+    .line 9
+    .line 10
+    mul-int/2addr v0, p2
+
+    .line 11
+    sub-int v1, v0, p3
+
+    .line 12
+    .line 13
+    const/4 v2, 0x0
+
+    .line 14
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v1
+
+    .line 18
+    add-int/2addr v0, p2
+
+    .line 19
+    add-int/2addr v0, p3
+
+    .line 20
+    invoke-static {v1, v0}, Ly93;->j0(II)Lqw2;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p2
+
+    .line 24
+    sget-object p3, Lxj5;->A:Lxj5;
+
+    .line 25
+    .line 26
+    new-instance v0, Lxs4;
+
+    .line 27
+    .line 28
+    invoke-direct {v0, p2, p3}, Lxs4;-><init>(Ljava/lang/Object;Lhe6;)V
+
+    .line 29
+    .line 30
+    .line 31
+    iput-object v0, p0, Ll83;->k:Lxs4;
+
+    .line 32
+    .line 33
+    iput p1, p0, Ll83;->l:I
+
+    .line 34
+    .line 35
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfs3;)Lfl0;
-    .locals 2
+.method public final a(I)V
+    .locals 4
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Ll83;->l:I
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Lm83;
-
-    .line 5
-    .line 6
-    iget-object v1, p0, Ll83;->a:Ljava/util/ArrayList;
-
-    .line 7
-    .line 8
-    iget-object p0, p0, Ll83;->b:Ljava/util/ArrayList;
-
-    .line 9
-    .line 10
-    invoke-direct {v0, v1, p0, p1}, Lm83;-><init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Lfs3;)V
-
-    .line 11
-    .line 12
-    .line 13
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    if-eq p0, p1, :cond_1
-
-    .line 2
-    .line 3
-    instance-of v0, p1, Ll83;
+    if-eq p1, v0, :cond_0
 
     .line 4
     .line 5
-    if-eqz v0, :cond_0
+    iput p1, p0, Ll83;->l:I
 
     .line 6
     .line 7
-    check-cast p1, Ll83;
+    iget-byte v0, p0, Ll83;->i:B
 
     .line 8
     .line 9
-    iget-object v0, p1, Ll83;->a:Ljava/util/ArrayList;
+    div-int/2addr p1, v0
 
     .line 10
+    mul-int/2addr p1, v0
+
     .line 11
-    iget-object v1, p0, Ll83;->a:Ljava/util/ArrayList;
+    iget-short v1, p0, Ll83;->j:S
 
     .line 12
     .line 13
-    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    sub-int v2, p1, v1
 
     .line 14
     .line 15
+    const/4 v3, 0x0
+
     .line 16
-    move-result v0
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     .line 17
-    if-eqz v0, :cond_0
-
     .line 18
     .line 19
-    iget-object p0, p0, Ll83;->b:Ljava/util/ArrayList;
+    move-result v2
 
     .line 20
+    add-int/2addr p1, v0
+
     .line 21
-    iget-object p1, p1, Ll83;->b:Ljava/util/ArrayList;
+    add-int/2addr p1, v1
 
     .line 22
-    .line 23
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-static {v2, p1}, Ly93;->j0(II)Lqw2;
 
+    .line 23
     .line 24
     .line 25
+    move-result-object p1
+
     .line 26
-    move-result p0
+    iget-object p0, p0, Ll83;->k:Lxs4;
 
     .line 27
-    if-eqz p0, :cond_0
-
     .line 28
+    invoke-virtual {p0, p1}, Lxs4;->setValue(Ljava/lang/Object;)V
+
     .line 29
-    goto :goto_0
-
     .line 30
-    :cond_0
-    const/4 p0, 0x0
-
     .line 31
-    return p0
-
-    .line 32
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 33
-    return p0
+    :cond_0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final getValue()Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Ll83;->a:Ljava/util/ArrayList;
+    iget-object p0, p0, Ll83;->k:Lxs4;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    move-result-object p0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    check-cast p0, Lqw2;
 
     .line 8
     .line 9
-    iget-object p0, p0, Ll83;->b:Ljava/util/ArrayList;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    return-object p0
 .end method

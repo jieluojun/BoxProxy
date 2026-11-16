@@ -1,17 +1,17 @@
 .class public final Lo20;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le8;
+.implements Lnr2;
 
 
 # instance fields
-.field public final a:F
+.field public final a:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
 
     .line 1
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lo20;->a:F
+    iput-object p1, p0, Lo20;->a:Landroid/graphics/Bitmap;
 
     .line 5
     .line 6
@@ -29,70 +29,78 @@
 
 
 # virtual methods
-.method public final a(IILt03;)I
+.method public final a()I
     .locals 0
 
     .line 1
-    sub-int/2addr p2, p1
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
 
     .line 2
-    int-to-float p1, p2
-
     .line 3
-    const/high16 p2, 0x40000000    # 2.0f
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     .line 4
     .line 5
-    div-float/2addr p1, p2
-
     .line 6
-    sget-object p2, Lt03;->j:Lt03;
-
-    .line 7
-    .line 8
-    iget p0, p0, Lo20;->a:F
-
-    .line 9
-    .line 10
-    if-ne p3, p2, :cond_0
-
-    .line 11
-    .line 12
-    goto :goto_0
-
-    .line 13
-    :cond_0
-    const/high16 p2, -0x40800000    # -1.0f
-
-    .line 14
-    .line 15
-    mul-float/2addr p0, p2
-
-    .line 16
-    :goto_0
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    .line 17
-    .line 18
-    add-float/2addr p2, p0
-
-    .line 19
-    mul-float/2addr p2, p1
-
-    .line 20
-    invoke-static {p2}, Ljava/lang/Math;->round(F)I
-
-    .line 21
-    .line 22
-    .line 23
     move-result p0
 
-    .line 24
+    .line 7
     return p0
 .end method
 
+.method public final b()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final c()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final d(Landroid/graphics/Canvas;)V
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    const/4 v1, 0x0
+
+    .line 3
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
+
+    .line 4
+    .line 5
+    invoke-virtual {p1, p0, v0, v0, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -110,57 +118,301 @@
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    if-eqz v1, :cond_1
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
     check-cast p1, Lo20;
+
+    .line 10
+    .line 11
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
 
     .line 12
     .line 13
-    iget p0, p0, Lo20;->a:F
+    iget-object p1, p1, Lo20;->a:Landroid/graphics/Bitmap;
 
     .line 14
     .line 15
-    iget p1, p1, Lo20;->a:F
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 16
     .line 17
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
-
     .line 18
-    .line 19
-    .line 20
     move-result p0
 
+    .line 19
+    if-nez p0, :cond_2
+
+    .line 20
     .line 21
-    if-eqz p0, :cond_2
+    :cond_1
+    const/4 p0, 0x0
 
     .line 22
-    .line 23
-    return v2
+    return p0
 
-    .line 24
+    .line 23
     :cond_2
     return v0
+.end method
+
+.method public final getSize()J
+    .locals 5
+
+    .line 1
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-nez v0, :cond_4
+
+    .line 8
+    .line 9
+    :try_start_0
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 13
+    goto :goto_1
+
+    .line 14
+    :catch_0
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v1
+
+    .line 22
+    mul-int/2addr v1, v0
+
+    .line 23
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
+
+    .line 28
+    .line 29
+    if-ne p0, v0, :cond_0
+
+    .line 30
+    .line 31
+    const/4 p0, 0x1
+
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_0
+    sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+
+    .line 34
+    .line 35
+    const/4 v2, 0x2
+
+    .line 36
+    if-eq p0, v0, :cond_1
+
+    .line 37
+    .line 38
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
+
+    .line 39
+    .line 40
+    if-ne p0, v0, :cond_2
+
+    .line 41
+    .line 42
+    :cond_1
+    move p0, v2
+
+    .line 43
+    goto :goto_0
+
+    .line 44
+    :cond_2
+    sget-object v0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
+
+    .line 45
+    .line 46
+    if-ne p0, v0, :cond_3
+
+    .line 47
+    .line 48
+    const/16 p0, 0x8
+
+    .line 49
+    .line 50
+    goto :goto_0
+
+    .line 51
+    :cond_3
+    const/4 p0, 0x4
+
+    .line 52
+    :goto_0
+    mul-int/2addr p0, v1
+
+    .line 53
+    :goto_1
+    int-to-long v0, p0
+
+    .line 54
+    return-wide v0
+
+    .line 55
+    :cond_4
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    .line 56
+    .line 57
+    .line 58
+    move-result v0
+
+    .line 59
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    .line 60
+    .line 61
+    .line 62
+    move-result v1
+
+    .line 63
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v2
+
+    .line 67
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    .line 68
+    .line 69
+    const-string v4, "Cannot obtain size for recycled bitmap: "
+
+    .line 70
+    .line 71
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 72
+    .line 73
+    .line 74
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 75
+    .line 76
+    .line 77
+    const-string p0, " ["
+
+    .line 78
+    .line 79
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 80
+    .line 81
+    .line 82
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 83
+    .line 84
+    .line 85
+    const-string p0, " x "
+
+    .line 86
+    .line 87
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 88
+    .line 89
+    .line 90
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 91
+    .line 92
+    .line 93
+    const-string p0, "] + "
+
+    .line 94
+    .line 95
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 96
+    .line 97
+    .line 98
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 99
+    .line 100
+    .line 101
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 102
+    .line 103
+    .line 104
+    move-result-object p0
+
+    .line 105
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 106
+    .line 107
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 108
+    .line 109
+    .line 110
+    move-result-object p0
+
+    .line 111
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 112
+    .line 113
+    .line 114
+    throw v0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
     .line 1
-    iget p0, p0, Lo20;->a:F
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
 
     .line 2
     .line 3
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
     .line 5
@@ -168,6 +420,14 @@
     move-result p0
 
     .line 7
+    mul-int/lit8 p0, p0, 0x1f
+
+    .line 8
+    .line 9
+    add-int/lit16 p0, p0, 0x4cf
+
+    .line 10
+    .line 11
     return p0
 .end method
 
@@ -179,7 +439,7 @@
 
     .line 2
     .line 3
-    const-string v1, "Horizontal(bias="
+    const-string v1, "BitmapImage(bitmap="
 
     .line 4
     .line 5
@@ -188,16 +448,16 @@
     .line 6
     .line 7
     .line 8
-    iget p0, p0, Lo20;->a:F
+    iget-object p0, p0, Lo20;->a:Landroid/graphics/Bitmap;
 
     .line 9
     .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
     .line 13
-    const-string p0, ")"
+    const-string p0, ", shareable=true)"
 
     .line 14
     .line 15

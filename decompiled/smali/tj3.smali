@@ -1,192 +1,115 @@
 .class public final Ltj3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lsj3;
+.implements Le33;
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final a:Ltj3;
 
-.field public final b:I
-
-.field public final c:Ljava/util/Map;
-
-.field public final d:Lp62;
-
-.field public final synthetic e:I
-
-.field public final synthetic f:Luj3;
-
-.field public final synthetic g:Lp62;
+.field public static final b:Lu05;
 
 
 # direct methods
-.method public constructor <init>(IILjava/util/Map;Lp62;Luj3;Lp62;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ltj3;
 
     .line 2
     .line 3
-    .line 4
-    iput p1, p0, Ltj3;->e:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p5, p0, Ltj3;->f:Luj3;
+    sput-object v0, Ltj3;->a:Ltj3;
 
     .line 7
     .line 8
-    iput-object p6, p0, Ltj3;->g:Lp62;
+    new-instance v0, Lu05;
 
     .line 9
     .line 10
-    iput p1, p0, Ltj3;->a:I
+    const-string v1, "kotlin.Long"
 
     .line 11
     .line 12
-    iput p2, p0, Ltj3;->b:I
+    sget-object v2, Lt05;->l:Lt05;
 
     .line 13
     .line 14
-    iput-object p3, p0, Ltj3;->c:Ljava/util/Map;
+    invoke-direct {v0, v1, v2}, Lu05;-><init>(Ljava/lang/String;Lt05;)V
 
     .line 15
     .line 16
-    iput-object p4, p0, Ltj3;->d:Lp62;
-
     .line 17
+    sput-object v0, Ltj3;->b:Lu05;
+
     .line 18
+    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final b(Lpf1;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    iget p0, p0, Ltj3;->b:I
+    invoke-interface {p1}, Lpf1;->b()J
 
     .line 2
     .line 3
-    return p0
-.end method
-
-.method public final b()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Ltj3;->a:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final c()Ljava/util/Map;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltj3;->c:Ljava/util/Map;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d()V
-    .locals 5
-
-    .line 1
-    iget-object v0, p0, Ltj3;->f:Luj3;
-
-    .line 2
-    .line 3
-    instance-of v1, v0, Lnf3;
-
     .line 4
+    move-result-wide p0
+
     .line 5
-    iget-object v2, p0, Ltj3;->g:Lp62;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_0
-
     .line 8
+    move-result-object p0
+
     .line 9
-    check-cast v0, Lnf3;
-
-    .line 10
-    .line 11
-    iget-object p0, v0, Lnf3;->y:Lof3;
-
-    .line 12
-    .line 13
-    invoke-interface {v2, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    return-void
-
-    .line 17
-    :cond_0
-    new-instance v1, Lc56;
-
-    .line 18
-    .line 19
-    invoke-interface {v0}, Lqt2;->getLayoutDirection()Lt03;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v3
-
-    .line 23
-    invoke-interface {v0}, Lyh1;->a()F
-
-    .line 24
-    .line 25
-    .line 26
-    move-result v4
-
-    .line 27
-    invoke-interface {v0}, Lyh1;->v()F
-
-    .line 28
-    .line 29
-    .line 30
-    move-result v0
-
-    .line 31
-    iget p0, p0, Ltj3;->e:I
-
-    .line 32
-    .line 33
-    invoke-direct {v1, p0, v3, v4, v0}, Lc56;-><init>(ILt03;FF)V
-
-    .line 34
-    .line 35
-    .line 36
-    invoke-interface {v2, v1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 37
-    .line 38
-    .line 39
-    return-void
+    return-object p0
 .end method
 
-.method public final f()Lp62;
+.method public final c()Lt46;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ltj3;->d:Lp62;
+    sget-object p0, Ltj3;->b:Lu05;
 
     .line 2
     .line 3
     return-object p0
+.end method
+
+.method public final d(Lji6;Ljava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    check-cast p2, Ljava/lang/Number;
+
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide v0
+
+    .line 7
+    invoke-virtual {p1, v0, v1}, Lji6;->k(J)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
 .end method

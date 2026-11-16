@@ -1,140 +1,288 @@
 .class public final Lho2;
-.super Lj3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Lo3;
+.field public final a:Ljava/lang/String;
 
-.field public final k:I
+.field public final b:Ljava/lang/String;
 
-.field public final l:I
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lo3;II)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lho2;->j:Lo3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    iput p2, p0, Lho2;->k:I
-
     .line 7
-    .line 8
-    invoke-virtual {p1}, Lr2;->a()I
+    iput-object p1, p0, Lho2;->a:Ljava/lang/String;
 
+    .line 8
     .line 9
+    iput-object p2, p0, Lho2;->b:Ljava/lang/String;
+
     .line 10
     .line 11
-    move-result p1
+    iput-object p3, p0, Lho2;->c:Ljava/lang/String;
 
     .line 12
-    invoke-static {p2, p3, p1}, Ldn;->D(III)V
-
     .line 13
+    iput-object p4, p0, Lho2;->d:Ljava/lang/String;
+
     .line 14
     .line 15
-    sub-int/2addr p3, p2
-
-    .line 16
-    iput p3, p0, Lho2;->l:I
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lho2;->l:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lho2;->l:I
-
-    .line 2
-    .line 3
-    invoke-static {p1, v0}, Ldn;->B(II)V
-
-    .line 4
-    .line 5
-    .line 6
-    iget v0, p0, Lho2;->k:I
-
-    .line 7
-    .line 8
-    add-int/2addr v0, p1
-
-    .line 9
-    iget-object p0, p0, Lho2;->j:Lo3;
-
-    .line 10
-    .line 11
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
-.end method
-
-.method public final subList(II)Ljava/util/List;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    iget v0, p0, Lho2;->l:I
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    invoke-static {p1, p2, v0}, Ldn;->D(III)V
+    instance-of v0, p1, Lho2;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    check-cast p1, Lho2;
+
+    .line 8
+    .line 9
+    iget-object v0, p0, Lho2;->a:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    iget-object v1, p1, Lho2;->a:Ljava/lang/String;
+
+    .line 12
+    .line 13
+    invoke-static {v0, v1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v0
+
+    .line 17
+    if-eqz v0, :cond_0
+
+    .line 18
+    .line 19
+    iget-object v0, p0, Lho2;->b:Ljava/lang/String;
+
+    .line 20
+    .line 21
+    iget-object v1, p1, Lho2;->b:Ljava/lang/String;
+
+    .line 22
+    .line 23
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v0
+
+    .line 27
+    if-eqz v0, :cond_0
+
+    .line 28
+    .line 29
+    iget-object v0, p0, Lho2;->c:Ljava/lang/String;
+
+    .line 30
+    .line 31
+    iget-object v1, p1, Lho2;->c:Ljava/lang/String;
+
+    .line 32
+    .line 33
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v0
+
+    .line 37
+    if-eqz v0, :cond_0
+
+    .line 38
+    .line 39
+    iget-object p0, p0, Lho2;->d:Ljava/lang/String;
+
+    .line 40
+    .line 41
+    iget-object p1, p1, Lho2;->d:Ljava/lang/String;
+
+    .line 42
+    .line 43
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 44
+    .line 45
+    .line 46
+    move-result p0
+
+    .line 47
+    if-nez p0, :cond_1
+
+    .line 48
+    .line 49
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 50
+    return p0
+
+    .line 51
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 52
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lho2;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    new-instance v0, Lho2;
+    move-result v0
 
     .line 7
-    .line 8
-    iget v1, p0, Lho2;->k:I
+    const/16 v1, 0x1f
 
+    .line 8
     .line 9
+    mul-int/2addr v0, v1
+
     .line 10
-    add-int/2addr p1, v1
+    iget-object v2, p0, Lho2;->b:Ljava/lang/String;
 
     .line 11
-    add-int/2addr v1, p2
-
     .line 12
-    iget-object p0, p0, Lho2;->j:Lo3;
+    invoke-static {v0, v2, v1}, Llj6;->f(ILjava/lang/String;I)I
 
     .line 13
     .line 14
-    invoke-direct {v0, p0, p1, v1}, Lho2;-><init>(Lo3;II)V
+    .line 15
+    move-result v0
+
+    .line 16
+    iget-object v2, p0, Lho2;->c:Ljava/lang/String;
+
+    .line 17
+    .line 18
+    invoke-static {v0, v2, v1}, Llj6;->f(ILjava/lang/String;I)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    iget-object p0, p0, Lho2;->d:Ljava/lang/String;
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
+
+    .line 28
+    add-int/2addr p0, v0
+
+    .line 29
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    .line 1
+    const-string v0, ", coreVersionText="
+
+    .line 2
+    .line 3
+    const-string v1, ", cpuAffinityText="
+
+    .line 4
+    .line 5
+    const-string v2, "SystemDetails(pidText="
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Lho2;->a:Ljava/lang/String;
+
+    .line 8
+    .line 9
+    iget-object v4, p0, Lho2;->b:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, v4, v1}, Lrf6;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v0
 
     .line 15
+    const-string v1, ", currentCpuThreadText="
+
     .line 16
     .line 17
-    return-object v0
+    const-string v2, ")"
+
+    .line 18
+    .line 19
+    iget-object v3, p0, Lho2;->c:Ljava/lang/String;
+
+    .line 20
+    .line 21
+    iget-object p0, p0, Lho2;->d:Ljava/lang/String;
+
+    .line 22
+    .line 23
+    invoke-static {v0, v3, v1, p0, v2}, Lrf6;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    return-object p0
 .end method

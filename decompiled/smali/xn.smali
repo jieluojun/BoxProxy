@@ -1,32 +1,25 @@
-.class public final Lxn;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lxn;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lc12;
 
 
 # instance fields
-.field public j:Ljava/io/File;
-
-.field public k:Ljava/io/File;
-
-.field public l:Ljava/util/Collection;
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lzn;
-
-.field public o:I
+.field public final synthetic a:B
 
 
 # direct methods
-.method public constructor <init>(Lzn;Lz81;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lxn;->n:Lzn;
+    iput-byte p1, p0, Lxn;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
@@ -36,43 +29,16 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()F
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lxn;->m:Ljava/lang/Object;
+    iget-byte p0, p0, Lxn;->a:B
 
     .line 2
     .line 3
-    iget p1, p0, Lxn;->o:I
+    const/4 p0, 0x0
 
     .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
-    .line 7
-    or-int/2addr p1, v0
-
-    .line 8
-    iput p1, p0, Lxn;->o:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Lxn;->n:Lzn;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, v0, p0}, Lzn;->r(Ljava/io/File;Ljava/io/File;Ljava/util/Collection;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    return p0
 .end method

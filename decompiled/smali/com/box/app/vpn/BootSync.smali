@@ -56,11 +56,11 @@
 
     if-ge v0, v1, :cond_go
 
-    invoke-static {}, Ljc0;->g()Lwb0;
+    invoke-static {}, Lgc0;->g()Ltb0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lwb0;->b:Ljava/lang/String;
+    iget-object v1, v1, Ltb0;->b:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -80,11 +80,11 @@
 
     :cond_go
     # the mode may still not be the wanted one after the wait: then do nothing
-    invoke-static {}, Ljc0;->g()Lwb0;
+    invoke-static {}, Lgc0;->g()Ltb0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lwb0;->b:Ljava/lang/String;
+    iget-object v1, v1, Ltb0;->b:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -94,11 +94,11 @@
 
     if-ne v1, v2, :cond_end
 
-    invoke-static {}, Ljc0;->g()Lwb0;
+    invoke-static {}, Lgc0;->g()Ltb0;
 
     move-result-object v1
 
-    iget-boolean v1, v1, Lwb0;->w:Z
+    iget-boolean v1, v1, Ltb0;->w:Z
 
     if-eqz v1, :cond_end
 
@@ -114,7 +114,7 @@
 
     invoke-direct {v3, v2}, Lcom/box/app/vpn/BootCont;-><init>(Ljava/util/concurrent/CountDownLatch;)V
 
-    sget-object v4, Ljc0;->a:Ljc0;
+    sget-object v4, Lgc0;->a:Lgc0;
 
     if-eqz v1, :cond_install
 
@@ -122,7 +122,7 @@
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v3}, Ljc0;->o(Lz81;)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Lgc0;->o(Lq91;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -135,12 +135,12 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v4, v1, v3}, Ljc0;->r(ZLz81;)Ljava/lang/Object;
+    invoke-virtual {v4, v1, v3}, Lgc0;->r(ZLq91;)Ljava/lang/Object;
 
     move-result-object v5
 
     :cond_wait
-    sget-object v6, Lbc1;->j:Lbc1;
+    sget-object v6, Lpc1;->j:Lpc1;
 
     if-ne v5, v6, :cond_end
 

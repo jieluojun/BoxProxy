@@ -1,25 +1,15 @@
 .class public final Lbu1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lqm;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public a:B
-
-.field public final b:Lul3;
-
-.field public c:Lul3;
-
-.field public d:Lul3;
-
-.field public e:I
-
-.field public f:I
+.field public final synthetic e:Lcu1;
 
 
 # direct methods
-.method public constructor <init>(Lul3;)V
-    .locals 1
+.method public constructor <init>(Lcu1;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,143 +17,232 @@
     .line 2
     .line 3
     .line 4
-    const/4 v0, 0x1
+    iput-object p1, p0, Lbu1;->e:Lcu1;
 
     .line 5
-    iput-byte v0, p0, Lbu1;->a:B
-
     .line 6
-    .line 7
-    iput-object p1, p0, Lbu1;->b:Lul3;
-
-    .line 8
-    .line 9
-    iput-object p1, p0, Lbu1;->c:Lul3;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final N(Ljava/lang/Throwable;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    iget-object p0, p0, Lbu1;->e:Lcu1;
 
     .line 2
-    iput-byte v0, p0, Lbu1;->a:B
-
     .line 3
+    iget-object p0, p0, Lcu1;->a:Lgu1;
+
     .line 4
-    iget-object v0, p0, Lbu1;->b:Lul3;
-
     .line 5
-    .line 6
-    iput-object v0, p0, Lbu1;->c:Lul3;
+    invoke-virtual {p0, p1}, Lgu1;->f(Ljava/lang/Throwable;)V
 
+    .line 6
     .line 7
     .line 8
-    const/4 v0, 0x0
-
-    .line 9
-    iput v0, p0, Lbu1;->f:I
-
-    .line 10
-    .line 11
     return-void
 .end method
 
-.method public final b()Z
-    .locals 4
+.method public final O(Lcg1;)V
+    .locals 5
 
     .line 1
-    iget-object v0, p0, Lbu1;->c:Lul3;
+    iget-object p0, p0, Lbu1;->e:Lcu1;
 
     .line 2
     .line 3
-    iget-object v0, v0, Lul3;->b:Lm17;
+    iput-object p1, p0, Lcu1;->c:Lcg1;
 
     .line 4
     .line 5
-    invoke-virtual {v0}, Lm17;->b()Lsl3;
+    new-instance p1, Lyy6;
 
     .line 6
     .line 7
-    .line 8
-    move-result-object v0
+    iget-object v0, p0, Lcu1;->c:Lcg1;
 
+    .line 8
     .line 9
-    const/4 v1, 0x6
+    iget-object v1, p0, Lcu1;->a:Lgu1;
 
     .line 10
-    invoke-virtual {v0, v1}, Lsg3;->a(I)I
-
     .line 11
+    iget-object v2, v1, Lgu1;->g:Lb91;
+
     .line 12
     .line 13
-    move-result v1
+    iget-object v1, v1, Lgu1;->i:Lvg1;
 
     .line 14
-    const/4 v2, 0x1
-
     .line 15
-    if-eqz v1, :cond_0
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 16
     .line 17
-    iget-object v3, v0, Lsg3;->m:Ljava/lang/Object;
+    const/16 v4, 0x22
 
     .line 18
     .line 19
-    check-cast v3, Ljava/nio/ByteBuffer;
+    if-lt v3, v4, :cond_0
 
     .line 20
     .line 21
-    iget v0, v0, Lsg3;->j:I
+    invoke-static {}, Llu1;->a()Ljava/util/Set;
 
     .line 22
     .line 23
-    add-int/2addr v1, v0
-
     .line 24
-    invoke-virtual {v3, v1}, Ljava/nio/ByteBuffer;->get(I)B
+    move-result-object v3
 
     .line 25
+    goto :goto_0
+
     .line 26
+    :cond_0
+    invoke-static {}, Lsm;->w()Ljava/util/Set;
+
     .line 27
-    move-result v0
-
     .line 28
-    if-eqz v0, :cond_0
-
     .line 29
+    move-result-object v3
+
     .line 30
-    return v2
+    :goto_0
+    invoke-direct {p1, v0, v2, v1, v3}, Lyy6;-><init>(Lcg1;Lb91;Lvg1;Ljava/util/Set;)V
 
     .line 31
-    :cond_0
-    iget p0, p0, Lbu1;->e:I
-
     .line 32
     .line 33
-    const v0, 0xfe0f
+    iput-object p1, p0, Lcu1;->b:Lyy6;
 
     .line 34
     .line 35
+    iget-object p0, p0, Lcu1;->a:Lgu1;
+
     .line 36
-    if-ne p0, v0, :cond_1
-
     .line 37
-    .line 38
-    return v2
+    new-instance p1, Ljava/util/ArrayList;
 
+    .line 38
     .line 39
-    :cond_1
-    const/4 p0, 0x0
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     .line 40
-    return p0
+    .line 41
+    .line 42
+    iget-object v0, p0, Lgu1;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+
+    .line 43
+    .line 44
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v0
+
+    .line 48
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    .line 49
+    .line 50
+    .line 51
+    const/4 v0, 0x1
+
+    .line 52
+    :try_start_0
+    iput-byte v0, p0, Lgu1;->c:B
+
+    .line 53
+    .line 54
+    iget-object v0, p0, Lgu1;->b:Lyv;
+
+    .line 55
+    .line 56
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    .line 57
+    .line 58
+    .line 59
+    iget-object v0, p0, Lgu1;->b:Lyv;
+
+    .line 60
+    .line 61
+    invoke-virtual {v0}, Lyv;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 62
+    .line 63
+    .line 64
+    iget-object v0, p0, Lgu1;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+
+    .line 65
+    .line 66
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object v0
+
+    .line 70
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    .line 71
+    .line 72
+    .line 73
+    iget-object v0, p0, Lgu1;->d:Landroid/os/Handler;
+
+    .line 74
+    .line 75
+    new-instance v1, Leu1;
+
+    .line 76
+    .line 77
+    iget-byte p0, p0, Lgu1;->c:B
+
+    .line 78
+    .line 79
+    const/4 v2, 0x0
+
+    .line 80
+    invoke-direct {v1, p1, p0, v2}, Leu1;-><init>(Ljava/util/List;ILjava/lang/Throwable;)V
+
+    .line 81
+    .line 82
+    .line 83
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 84
+    .line 85
+    .line 86
+    return-void
+
+    .line 87
+    :catchall_0
+    move-exception p1
+
+    .line 88
+    iget-object p0, p0, Lgu1;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+
+    .line 89
+    .line 90
+    invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    .line 91
+    .line 92
+    .line 93
+    move-result-object p0
+
+    .line 94
+    invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    .line 95
+    .line 96
+    .line 97
+    throw p1
 .end method

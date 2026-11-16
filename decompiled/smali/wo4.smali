@@ -1,262 +1,417 @@
-.class public final Lwo4;
-.super Lm3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lwo4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
-
-.field public final k:Luo4;
+# static fields
+.field public static final a:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Luo4;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    iput-byte p2, p0, Lwo4;->j:B
+    const/4 v0, 0x5
 
     .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    .line 3
     .line 4
     .line 5
+    move-result-object v0
+
     .line 6
-    iput-object p1, p0, Lwo4;->k:Luo4;
+    const/16 v1, 0xa
 
     .line 7
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()I
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lwo4;->j:B
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lwo4;->k:Luo4;
-
-    .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
-
-    .line 6
-    .line 7
-    .line 8
-    iget p0, p0, Luo4;->o:I
-
-    .line 9
-    .line 10
-    return p0
-
-    .line 11
-    :pswitch_0
-    iget p0, p0, Luo4;->o:I
-
-    .line 12
-    .line 13
-    return p0
-
-    .line 14
-    nop
-
-    .line 15
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final add(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Lwo4;->j:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 7
-    .line 8
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 9
     .line 10
     .line 11
-    throw p0
+    move-result-object v1
 
     .line 12
-    :pswitch_0
-    check-cast p1, Ljava/util/Map$Entry;
+    const/16 v2, 0xf
 
     .line 13
     .line 14
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 15
     .line 16
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
     .line 17
-    .line 18
-    .line 19
-    throw p0
-
-    .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lwo4;->j:B
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lwo4;->k:Luo4;
-
-    .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Luo4;->clear()V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-
-    .line 12
-    :pswitch_0
-    invoke-virtual {p0}, Luo4;->clear()V
-
-    .line 13
-    .line 14
-    .line 15
-    return-void
-
-    .line 16
-    nop
-
-    .line 17
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lwo4;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lwo4;->k:Luo4;
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, p1}, Luo4;->containsKey(Ljava/lang/Object;)Z
-
-    .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
-
-    .line 13
-    :pswitch_0
-    instance-of v0, p1, Ljava/util/Map$Entry;
-
-    .line 14
-    .line 15
-    if-nez v0, :cond_0
-
-    .line 16
-    .line 17
-    goto :goto_0
+    move-result-object v2
 
     .line 18
-    :cond_0
-    check-cast p1, Ljava/util/Map$Entry;
+    const/16 v3, 0x14
 
     .line 19
     .line 20
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 21
     .line 22
     .line 23
-    move-result-object v0
+    move-result-object v3
 
     .line 24
-    iget-object p0, p0, Lwo4;->k:Luo4;
+    const/16 v4, 0x1e
 
     .line 25
     .line 26
-    invoke-virtual {p0, v0}, Luo4;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 27
     .line 28
     .line 29
-    move-result-object v0
+    move-result-object v4
 
     .line 30
-    if-eqz v0, :cond_1
+    filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/Integer;
 
     .line 31
     .line 32
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    .line 33
+    move-result-object v0
+
+    .line 34
+    invoke-static {v0}, Lul;->L([Ljava/lang/Object;)Ljava/util/List;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v0
+
+    .line 38
+    sput-object v0, Lwo4;->a:Ljava/util/List;
+
+    .line 39
+    .line 40
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)Lpp0;
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    const-string v0, "realtime_rank_dimension"
+
+    .line 16
+    .line 17
+    const/4 v2, 0x0
+
+    .line 18
+    invoke-interface {p0, v0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    sget-object v0, Lpp0;->p:Lvw1;
+
+    .line 23
+    .line 24
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 25
+    .line 26
+    .line 27
+    new-instance v3, Lg3;
+
+    .line 28
+    .line 29
+    invoke-direct {v3, v0, v1}, Lg3;-><init>(Ljava/lang/Object;B)V
+
+    .line 30
+    .line 31
+    .line 32
+    :cond_0
+    invoke-virtual {v3}, Lg3;->hasNext()Z
 
     .line 33
     .line 34
     .line 35
-    move-result-object p0
+    move-result v0
 
     .line 36
-    invoke-virtual {v0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_1
 
     .line 37
     .line 38
+    invoke-virtual {v3}, Lg3;->next()Ljava/lang/Object;
+
     .line 39
+    .line 40
+    .line 41
+    move-result-object v0
+
+    .line 42
+    move-object v1, v0
+
+    .line 43
+    check-cast v1, Lpp0;
+
+    .line 44
+    .line 45
+    iget-object v1, v1, Lpp0;->i:Ljava/lang/String;
+
+    .line 46
+    .line 47
+    invoke-virtual {v1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 48
+    .line 49
+    .line 50
+    move-result v1
+
+    .line 51
+    if-eqz v1, :cond_0
+
+    .line 52
+    .line 53
+    move-object v2, v0
+
+    .line 54
+    :cond_1
+    check-cast v2, Lpp0;
+
+    .line 55
+    .line 56
+    if-nez v2, :cond_2
+
+    .line 57
+    .line 58
+    sget-object p0, Lpp0;->j:Lpp0;
+
+    .line 59
+    .line 60
+    return-object p0
+
+    .line 61
+    :cond_2
+    return-object v2
+.end method
+
+.method public static b(Landroid/content/Context;)I
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    const-string v0, "realtime_rank_limit"
+
+    .line 16
+    .line 17
+    const/4 v1, 0x5
+
+    .line 18
+    invoke-interface {p0, v0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    .line 19
+    .line 20
+    .line 21
     move-result p0
 
-    .line 40
-    goto :goto_1
+    .line 22
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v0
+
+    .line 26
+    sget-object v2, Lwo4;->a:Ljava/util/List;
+
+    .line 27
+    .line 28
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    invoke-interface {v2, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p0
+
+    .line 36
+    if-nez p0, :cond_0
+
+    .line 37
+    .line 38
+    const/4 v0, 0x0
+
+    .line 39
+    :cond_0
+    if-eqz v0, :cond_1
+
+    .line 40
     .line 41
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    .line 42
+    .line 43
+    .line 44
+    move-result p0
+
+    .line 45
+    return p0
+
+    .line 46
     :cond_1
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    return v1
+.end method
+
+.method public static c(Landroid/content/Context;)Lvo4;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    const-string v0, "realtime_rank_sort"
+
+    .line 16
+    .line 17
+    const-string v2, "connections"
+
+    .line 18
+    .line 19
+    invoke-interface {p0, v0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    if-eqz p0, :cond_2
+
+    .line 24
+    .line 25
+    sget-object v0, Lvo4;->m:Lvw1;
+
+    .line 26
+    .line 27
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 28
+    .line 29
+    .line 30
+    new-instance v2, Lg3;
+
+    .line 31
+    .line 32
+    invoke-direct {v2, v0, v1}, Lg3;-><init>(Ljava/lang/Object;B)V
+
+    .line 33
+    .line 34
+    .line 35
+    :cond_0
+    invoke-virtual {v2}, Lg3;->hasNext()Z
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v0
+
+    .line 39
+    if-eqz v0, :cond_1
+
+    .line 40
+    .line 41
+    invoke-virtual {v2}, Lg3;->next()Ljava/lang/Object;
 
     .line 42
     .line 43
@@ -264,240 +419,703 @@
     move-result-object v0
 
     .line 45
-    if-nez v0, :cond_2
+    move-object v1, v0
 
     .line 46
-    .line 47
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    check-cast v1, Lvo4;
 
+    .line 47
     .line 48
+    iget-object v1, v1, Lvo4;->i:Ljava/lang/String;
+
     .line 49
     .line 50
-    move-result-object p1
+    invoke-virtual {v1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 51
-    invoke-virtual {p0, p1}, Luo4;->containsKey(Ljava/lang/Object;)Z
-
     .line 52
     .line 53
+    move-result v1
+
     .line 54
-    move-result p0
+    if-eqz v1, :cond_0
 
     .line 55
-    if-eqz p0, :cond_2
-
     .line 56
+    goto :goto_0
+
     .line 57
-    const/4 p0, 0x1
+    :cond_1
+    const/4 v0, 0x0
 
     .line 58
-    goto :goto_1
+    :goto_0
+    check-cast v0, Lvo4;
 
     .line 59
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
-
     .line 60
-    :goto_1
-    return p0
+    if-eqz v0, :cond_2
 
     .line 61
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 62
+    return-object v0
+
+    .line 63
+    :cond_2
+    sget-object p0, Lvo4;->j:Lvo4;
+
+    .line 64
+    .line 65
+    return-object p0
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 6
+.method public static d(Landroid/content/Context;)I
+    .locals 3
 
     .line 1
-    iget-byte v0, p0, Lwo4;->j:B
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lwo4;->k:Luo4;
-
     .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
+    .line 5
     .line 6
     .line 7
+    move-result-object p0
+
     .line 8
-    new-instance v0, Lyo4;
+    const-string v0, "overview_preferences"
 
     .line 9
     .line 10
-    const/16 v1, 0x8
+    const/4 v1, 0x0
 
     .line 11
-    .line 12
-    new-array v2, v1, [Llz6;
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
+    .line 12
     .line 13
     .line 14
-    const/4 v3, 0x0
+    move-result-object p0
 
     .line 15
-    :goto_0
-    if-ge v3, v1, :cond_0
+    const-string v0, "top_traffic_limit"
 
     .line 16
     .line 17
-    new-instance v4, Lmz6;
+    const/16 v1, 0xa
 
     .line 18
     .line 19
-    const/4 v5, 0x1
+    invoke-interface {p0, v0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     .line 20
-    invoke-direct {v4, v5}, Lmz6;-><init>(B)V
-
     .line 21
     .line 22
+    move-result p0
+
     .line 23
-    aput-object v4, v2, v3
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 24
     .line 25
-    add-int/lit8 v3, v3, 0x1
+    .line 26
+    move-result-object v0
+
+    .line 27
+    sget-object v2, Lwo4;->a:Ljava/util/List;
+
+    .line 28
+    .line 29
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p0
+
+    .line 33
+    invoke-interface {v2, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    if-nez p0, :cond_0
+
+    .line 38
+    .line 39
+    const/4 v0, 0x0
+
+    .line 40
+    :cond_0
+    if-eqz v0, :cond_1
+
+    .line 41
+    .line 42
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result p0
+
+    .line 46
+    return p0
+
+    .line 47
+    :cond_1
+    return v1
+.end method
+
+.method public static e(Landroid/content/Context;)Lvo4;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    const-string v0, "top_traffic_sort"
+
+    .line 16
+    .line 17
+    const-string v2, "download"
+
+    .line 18
+    .line 19
+    invoke-interface {p0, v0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    if-eqz p0, :cond_2
+
+    .line 24
+    .line 25
+    sget-object v0, Lvo4;->m:Lvw1;
 
     .line 26
     .line 27
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 28
-    :cond_0
-    invoke-direct {v0, p0, v2}, Lvo4;-><init>(Luo4;[Llz6;)V
-
     .line 29
     .line 30
-    .line 31
-    return-object v0
+    new-instance v2, Lg3;
 
+    .line 31
     .line 32
-    :pswitch_0
-    new-instance v0, Lxo4;
+    invoke-direct {v2, v0, v1}, Lg3;-><init>(Ljava/lang/Object;B)V
 
     .line 33
     .line 34
-    invoke-direct {v0, p0}, Lxo4;-><init>(Luo4;)V
-
     .line 35
+    :cond_0
+    invoke-virtual {v2}, Lg3;->hasNext()Z
+
     .line 36
     .line 37
-    return-object v0
-
     .line 38
-    nop
+    move-result v0
 
     .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v0, :cond_1
+
+    .line 40
+    .line 41
+    invoke-virtual {v2}, Lg3;->next()Ljava/lang/Object;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object v0
+
+    .line 45
+    move-object v1, v0
+
+    .line 46
+    check-cast v1, Lvo4;
+
+    .line 47
+    .line 48
+    iget-object v1, v1, Lvo4;->i:Ljava/lang/String;
+
+    .line 49
+    .line 50
+    invoke-virtual {v1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v1
+
+    .line 54
+    if-eqz v1, :cond_0
+
+    .line 55
+    .line 56
+    goto :goto_0
+
+    .line 57
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 58
+    :goto_0
+    check-cast v0, Lvo4;
+
+    .line 59
+    .line 60
+    if-eqz v0, :cond_2
+
+    .line 61
+    .line 62
+    return-object v0
+
+    .line 63
+    :cond_2
+    sget-object p0, Lvo4;->k:Lvo4;
+
+    .line 64
+    .line 65
+    return-object p0
 .end method
 
-.method public final remove(Ljava/lang/Object;)Z
+.method public static f(Landroid/content/Context;Lpp0;)V
     .locals 2
 
     .line 1
-    iget-byte v0, p0, Lwo4;->j:B
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 5
     .line 6
     .line 7
-    iget-object p0, p0, Lwo4;->k:Luo4;
+    move-result-object p0
 
     .line 8
+    const-string v0, "overview_preferences"
+
     .line 9
-    invoke-virtual {p0, p1}, Luo4;->containsKey(Ljava/lang/Object;)Z
-
     .line 10
+    const/4 v1, 0x0
+
     .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
     .line 12
-    move-result v0
-
     .line 13
-    if-eqz v0, :cond_0
-
     .line 14
+    move-result-object p0
+
     .line 15
-    invoke-virtual {p0, p1}, Luo4;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     .line 16
     .line 17
     .line 18
-    const/4 v1, 0x1
+    move-result-object p0
 
     .line 19
-    :cond_0
-    return v1
+    const-string v0, "realtime_rank_dimension"
 
     .line 20
-    :pswitch_0
-    instance-of v0, p1, Ljava/util/Map$Entry;
-
     .line 21
+    iget-object p1, p1, Lpp0;->i:Ljava/lang/String;
+
     .line 22
-    if-nez v0, :cond_1
-
     .line 23
+    invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
     .line 24
-    goto :goto_0
-
     .line 25
-    :cond_1
-    check-cast p1, Ljava/util/Map$Entry;
-
     .line 26
+    move-result-object p0
+
     .line 27
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     .line 28
     .line 29
     .line 30
-    move-result-object v0
+    return-void
+.end method
 
+.method public static g(Landroid/content/Context;I)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    const/4 v0, 0x1
+
+    .line 20
+    const/16 v1, 0x64
+
+    .line 21
+    .line 22
+    invoke-static {p1, v0, v1}, Ly93;->H(III)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result p1
+
+    .line 26
+    const-string v0, "realtime_rank_limit"
+
+    .line 27
+    .line 28
+    invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    .line 29
+    .line 30
     .line 31
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result-object p0
 
     .line 32
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
     .line 33
     .line 34
-    move-result-object p1
-
     .line 35
-    iget-object p0, p0, Lwo4;->k:Luo4;
+    return-void
+.end method
 
-    .line 36
-    .line 37
-    invoke-virtual {p0, v0, p1}, Luo4;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public static h(Landroid/content/Context;Lvo4;)V
+    .locals 2
 
-    .line 38
-    .line 39
-    .line 40
-    move-result v1
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 41
-    :goto_0
-    return v1
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    .line 42
-    nop
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
 
-    .line 43
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    const-string v0, "realtime_rank_sort"
+
+    .line 20
+    .line 21
+    iget-object p1, p1, Lvo4;->i:Ljava/lang/String;
+
+    .line 22
+    .line 23
+    invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 28
+    .line 29
+    .line 30
+    return-void
+.end method
+
+.method public static i(Landroid/content/Context;I)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    const/4 v0, 0x1
+
+    .line 20
+    const/16 v1, 0x64
+
+    .line 21
+    .line 22
+    invoke-static {p1, v0, v1}, Ly93;->H(III)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result p1
+
+    .line 26
+    const-string v0, "top_traffic_limit"
+
+    .line 27
+    .line 28
+    invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 33
+    .line 34
+    .line 35
+    return-void
+.end method
+
+.method public static j(Landroid/content/Context;Lvo4;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    const-string v0, "overview_preferences"
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    const-string v0, "top_traffic_sort"
+
+    .line 20
+    .line 21
+    iget-object p1, p1, Lvo4;->i:Ljava/lang/String;
+
+    .line 22
+    .line 23
+    invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 28
+    .line 29
+    .line 30
+    return-void
+.end method
+
+.method public static k(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 5
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    const-string v0, "overview_preferences"
+
+    .line 12
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    const-string v0, "top_traffic_window"
+
+    .line 23
+    .line 24
+    invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 29
+    .line 30
+    .line 31
+    return-void
 .end method

@@ -1,33 +1,33 @@
 .class public final synthetic Lpe;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Landroid/view/MenuItem$OnMenuItemClickListener;
+.implements Le72;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic i:B
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic j:Lue;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final synthetic k:Lsq6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+.method public synthetic constructor <init>(Lue;Lsq6;B)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lpe;->a:B
+    iput-byte p3, p0, Lpe;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lpe;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lpe;->j:Lue;
 
     .line 4
     .line 5
-    iput-object p2, p0, Lpe;->c:Ljava/lang/Object;
+    iput-object p2, p0, Lpe;->k:Lsq6;
 
     .line 6
     .line 7
@@ -41,121 +41,264 @@
 
 
 # virtual methods
-.method public final onMenuItemClick(Landroid/view/MenuItem;)Z
-    .locals 3
+.method public final invoke()Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    iget-byte p1, p0, Lpe;->a:B
+    iget-byte v0, p0, Lpe;->i:B
 
     .line 2
     .line 3
-    const/4 v0, 0x1
+    const-string v1, "result"
 
     .line 4
-    iget-object v1, p0, Lpe;->c:Ljava/lang/Object;
-
     .line 5
+    const/4 v2, 0x7
+
     .line 6
-    iget-object p0, p0, Lpe;->b:Ljava/lang/Object;
+    const/4 v3, 0x2
 
     .line 7
+    const/4 v4, 0x0
+
     .line 8
-    packed-switch p1, :pswitch_data_0
+    iget-object v5, p0, Lpe;->k:Lsq6;
 
     .line 9
     .line 10
+    iget-object p0, p0, Lpe;->j:Lue;
+
     .line 11
-    check-cast p0, Landroid/content/Context;
-
     .line 12
-    .line 13
-    check-cast v1, Landroid/view/textclassifier/TextClassification;
+    packed-switch v0, :pswitch_data_0
 
+    .line 13
     .line 14
     .line 15
-    invoke-virtual {v1}, Landroid/view/textclassifier/TextClassification;->getText()Ljava/lang/String;
+    iget-object p0, p0, Lue;->c:Le72;
 
     .line 16
     .line 17
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
+
     .line 18
-    move-result-object p1
-
     .line 19
-    if-eqz p1, :cond_0
-
     .line 20
+    move-result-object p0
+
     .line 21
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+    move-object v0, p0
 
     .line 22
+    check-cast v0, Ld53;
+
     .line 23
     .line 24
-    move-result p1
+    invoke-interface {v0}, Ld53;->z()Z
 
     .line 25
-    goto :goto_0
-
     .line 26
-    :cond_0
-    const/4 p1, 0x0
-
     .line 27
-    :goto_0
-    invoke-virtual {v1}, Landroid/view/textclassifier/TextClassification;->getIntent()Landroid/content/Intent;
+    move-result v0
 
     .line 28
+    if-eqz v0, :cond_0
+
     .line 29
     .line 30
-    move-result-object v1
+    move-object v4, p0
 
     .line 31
-    const/high16 v2, 0xc000000
+    :cond_0
+    check-cast v4, Ld53;
 
     .line 32
     .line 33
-    invoke-static {p0, p1, v1, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    if-nez v4, :cond_1
 
     .line 34
     .line 35
-    .line 36
-    move-result-object p0
+    sget-object p0, Lpf5;->e:Lpf5;
 
+    .line 36
     .line 37
-    invoke-static {p0}, Lru5;->c0(Landroid/app/PendingIntent;)V
+    goto :goto_0
 
     .line 38
+    :cond_1
+    invoke-interface {v5, v4}, Lsq6;->y(Ld53;)Lpf5;
+
     .line 39
     .line 40
-    return v0
-
     .line 41
-    :pswitch_0
-    check-cast p0, Lwl6;
+    move-result-object p0
 
     .line 42
+    const-wide/16 v0, 0x0
+
     .line 43
-    check-cast v1, Lqe;
-
     .line 44
-    .line 45
-    iget-object p0, p0, Lwl6;->d:Lp62;
+    invoke-interface {v4, v0, v1}, Ld53;->Q(J)J
 
+    .line 45
     .line 46
     .line 47
-    iget-object p1, v1, Lqe;->a:Lre;
+    move-result-wide v0
 
     .line 48
-    .line 49
-    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v1}, Lpf5;->k(J)Lpf5;
 
+    .line 49
     .line 50
     .line 51
+    move-result-object p0
+
     .line 52
-    return v0
+    :goto_0
+    return-object p0
 
     .line 53
+    :pswitch_0
+    iget-object v0, p0, Lue;->g:Loe;
+
+    .line 54
+    .line 55
+    new-instance v6, Lpe;
+
+    .line 56
+    .line 57
+    invoke-direct {v6, p0, v5, v3}, Lpe;-><init>(Lue;Lsq6;B)V
+
+    .line 58
+    .line 59
+    .line 60
+    new-instance v3, Lvf5;
+
+    .line 61
+    .line 62
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+
+    .line 63
+    .line 64
+    .line 65
+    iget-object p0, p0, Lue;->e:Lpe6;
+
+    .line 66
+    .line 67
+    new-instance v5, Lt;
+
+    .line 68
+    .line 69
+    invoke-direct {v5, v3, v6, v2}, Lt;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+
+    .line 70
+    .line 71
+    .line 72
+    const-string v2, "positioner"
+
+    .line 73
+    .line 74
+    invoke-virtual {p0, v2, v0, v5}, Lpe6;->c(Ljava/lang/Object;Lp72;Le72;)V
+
+    .line 75
+    .line 76
+    .line 77
+    iget-object p0, v3, Lvf5;->i:Ljava/lang/Object;
+
+    .line 78
+    .line 79
+    if-eqz p0, :cond_2
+
+    .line 80
+    .line 81
+    check-cast p0, Lpf5;
+
+    .line 82
+    .line 83
+    return-object p0
+
+    .line 84
+    :cond_2
+    invoke-static {v1}, Lky2;->W(Ljava/lang/String;)V
+
+    .line 85
+    .line 86
+    .line 87
+    throw v4
+
+    .line 88
+    :pswitch_1
+    iget-object v0, p0, Lue;->f:Loe;
+
+    .line 89
+    .line 90
+    new-instance v6, Led;
+
+    .line 91
+    .line 92
+    invoke-direct {v6, v5, v3}, Led;-><init>(Ljava/lang/Object;B)V
+
+    .line 93
+    .line 94
+    .line 95
+    new-instance v3, Lvf5;
+
+    .line 96
+    .line 97
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+
+    .line 98
+    .line 99
+    .line 100
+    iget-object p0, p0, Lue;->e:Lpe6;
+
+    .line 101
+    .line 102
+    new-instance v5, Lt;
+
+    .line 103
+    .line 104
+    invoke-direct {v5, v3, v6, v2}, Lt;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+
+    .line 105
+    .line 106
+    .line 107
+    const-string v2, "dataBuilder"
+
+    .line 108
+    .line 109
+    invoke-virtual {p0, v2, v0, v5}, Lpe6;->c(Ljava/lang/Object;Lp72;Le72;)V
+
+    .line 110
+    .line 111
+    .line 112
+    iget-object p0, v3, Lvf5;->i:Ljava/lang/Object;
+
+    .line 113
+    .line 114
+    if-eqz p0, :cond_3
+
+    .line 115
+    .line 116
+    check-cast p0, Lrq6;
+
+    .line 117
+    .line 118
+    return-object p0
+
+    .line 119
+    :cond_3
+    invoke-static {v1}, Lky2;->W(Ljava/lang/String;)V
+
+    .line 120
+    .line 121
+    .line 122
+    throw v4
+
+    .line 123
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

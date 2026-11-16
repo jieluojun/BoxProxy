@@ -1,17 +1,17 @@
 .class public abstract Ls2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lqy2;
+.implements Le33;
 
 
 # virtual methods
-.method public b(Lwe1;)Ljava/lang/Object;
+.method public b(Lpf1;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Ls2;->i(Lwe1;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ls2;->i(Lpf1;)Ljava/lang/Object;
 
     .line 2
     .line 3
@@ -42,7 +42,7 @@
     .locals 0
 
     .line 1
-    check-cast p1, Lcu4;
+    check-cast p1, Lq05;
 
     .line 2
     .line 3
@@ -51,7 +51,7 @@
     .line 4
     .line 5
     .line 6
-    invoke-virtual {p1}, Lcu4;->d()I
+    invoke-virtual {p1}, Lq05;->d()I
 
     .line 7
     .line 8
@@ -110,11 +110,11 @@
     return p0
 .end method
 
-.method public final i(Lwe1;)Ljava/lang/Object;
+.method public final i(Lpf1;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    invoke-virtual {p0}, Ls2;->e()Ljava/lang/Object;
+    invoke-interface {p0}, Le33;->c()Lt46;
 
     .line 2
     .line 3
@@ -122,98 +122,111 @@
     move-result-object v0
 
     .line 5
-    invoke-virtual {p0, v0}, Ls2;->f(Ljava/lang/Object;)I
+    invoke-interface {p1, v0}, Lpf1;->C(Lt46;)La21;
 
     .line 6
     .line 7
     .line 8
-    move-result v1
+    move-result-object p1
 
     .line 9
-    invoke-interface {p0}, Lqy2;->c()Luy5;
+    invoke-interface {p0}, Le33;->c()Lt46;
 
     .line 10
     .line 11
     .line 12
-    move-result-object v2
+    move-result-object v0
 
     .line 13
-    invoke-interface {p1, v2}, Lwe1;->C(Luy5;)Lg21;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 14
     .line 15
     .line 16
-    move-result-object p1
+    invoke-virtual {p0}, Ls2;->e()Ljava/lang/Object;
 
     .line 17
-    :goto_0
-    invoke-interface {p0}, Lqy2;->c()Luy5;
-
     .line 18
     .line 19
+    move-result-object v0
+
     .line 20
-    move-result-object v2
+    invoke-virtual {p0, v0}, Ls2;->f(Ljava/lang/Object;)I
 
     .line 21
-    invoke-interface {p1, v2}, Lg21;->h(Luy5;)I
-
     .line 22
     .line 23
+    move-result v1
+
     .line 24
-    move-result v2
+    :goto_0
+    invoke-interface {p0}, Le33;->c()Lt46;
 
     .line 25
-    const/4 v3, -0x1
-
     .line 26
-    if-eq v2, v3, :cond_0
-
     .line 27
+    move-result-object v2
+
     .line 28
-    add-int/2addr v2, v1
+    invoke-interface {p1, v2}, La21;->h(Lt46;)I
 
     .line 29
-    invoke-virtual {p0, p1, v2, v0}, Ls2;->j(Lg21;ILjava/lang/Object;)V
-
     .line 30
     .line 31
+    move-result v2
+
     .line 32
-    goto :goto_0
+    const/4 v3, -0x1
 
     .line 33
-    :cond_0
-    invoke-interface {p0}, Lqy2;->c()Luy5;
+    if-eq v2, v3, :cond_0
 
     .line 34
     .line 35
+    add-int/2addr v2, v1
+
     .line 36
-    move-result-object v1
+    invoke-virtual {p0, p1, v2, v0}, Ls2;->j(La21;ILjava/lang/Object;)V
 
     .line 37
-    invoke-interface {p1, v1}, Lg21;->s(Luy5;)V
-
     .line 38
     .line 39
+    goto :goto_0
+
     .line 40
-    invoke-virtual {p0, v0}, Ls2;->l(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_0
+    invoke-interface {p0}, Le33;->c()Lt46;
 
     .line 41
     .line 42
     .line 43
-    move-result-object p0
+    move-result-object v1
 
     .line 44
+    invoke-interface {p1, v1}, La21;->s(Lt46;)V
+
+    .line 45
+    .line 46
+    .line 47
+    invoke-virtual {p0, v0}, Ls2;->k(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object p0
+
+    .line 51
     return-object p0
 .end method
 
-.method public abstract j(Lg21;ILjava/lang/Object;)V
+.method public abstract j(La21;ILjava/lang/Object;)V
 .end method
 
 .method public k(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    check-cast p1, [Z
+    check-cast p1, Lq05;
 
     .line 2
     .line 3
@@ -222,52 +235,7 @@
     .line 4
     .line 5
     .line 6
-    new-instance p0, Lt30;
-
-    .line 7
-    .line 8
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object p1, p0, Lt30;->a:[Z
-
-    .line 12
-    .line 13
-    array-length p1, p1
-
-    .line 14
-    iput p1, p0, Lt30;->b:I
-
-    .line 15
-    .line 16
-    const/16 p1, 0xa
-
-    .line 17
-    .line 18
-    invoke-virtual {p0, p1}, Lt30;->b(I)V
-
-    .line 19
-    .line 20
-    .line 21
-    return-object p0
-.end method
-
-.method public l(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lcu4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p1}, Lcu4;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Lq05;->a()Ljava/lang/Object;
 
     .line 7
     .line 8

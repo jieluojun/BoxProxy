@@ -1,99 +1,155 @@
-.class public final Lk95;
-.super Led5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lk95;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final k:Ljava/lang/String;
+# static fields
+.field public static final enum i:Lk95;
 
-.field public final l:J
+.field public static final enum j:Lk95;
 
-.field public final m:Ls85;
+.field public static final enum k:Lk95;
+
+.field public static final synthetic l:[Lk95;
+
+.field public static final synthetic m:Lvw1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;JLs85;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lk95;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lk95;->k:Ljava/lang/String;
+    const-string v1, "Config"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-wide p2, p0, Lk95;->l:J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iput-object p4, p0, Lk95;->m:Ls85;
-
     .line 9
+    sput-object v0, Lk95;->i:Lk95;
+
     .line 10
+    .line 11
+    new-instance v1, Lk95;
+
+    .line 12
+    .line 13
+    const-string v2, "Name"
+
+    .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Lk95;->j:Lk95;
+
+    .line 20
+    .line 21
+    new-instance v2, Lk95;
+
+    .line 22
+    .line 23
+    const-string v3, "Latency"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lk95;->k:Lk95;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Lk95;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Lk95;->l:[Lk95;
+
+    .line 36
+    .line 37
+    new-instance v1, Lvw1;
+
+    .line 38
+    .line 39
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
+
+    .line 40
+    .line 41
+    .line 42
+    sput-object v1, Lk95;->m:Lvw1;
+
+    .line 43
+    .line 44
     return-void
 .end method
 
-
-# virtual methods
-.method public final B()Lve0;
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lk95;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lk95;->m:Ls85;
+    const-class v0, Lk95;
 
     .line 2
     .line 3
-    return-object p0
-.end method
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-.method public final c()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lk95;->l:J
-
-    .line 2
-    .line 3
-    return-wide v0
-.end method
-
-.method public final f()Lck3;
-    .locals 2
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    iget-object p0, p0, Lk95;->k:Ljava/lang/String;
-
-    .line 3
     .line 4
-    if-eqz p0, :cond_0
-
     .line 5
     .line 6
-    sget-object v1, Lck3;->c:Lqp2;
+    move-result-object p0
 
     .line 7
+    check-cast p0, Lk95;
+
     .line 8
-    :try_start_0
-    invoke-static {p0}, Lyh3;->A(Ljava/lang/String;)Lck3;
-
     .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 12
     return-object p0
+.end method
 
-    .line 13
-    :catch_0
-    :cond_0
+.method public static values()[Lk95;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lk95;->l:[Lk95;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lk95;
+
+    .line 8
+    .line 9
     return-object v0
 .end method

@@ -1,21 +1,17 @@
-.class public final Lp13;
+.class public interface abstract annotation Lp13;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
 
 
-# instance fields
-.field public a:Ljava/lang/Object;
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-.field public b:Lt62;
 
-.field public c:Lp21;
-
-.field public d:Z
-
-.field public e:Z
-
-.field public f:Lho4;
-
-.field public g:Lum4;
-
-.field public h:Z
+# virtual methods
+.method public abstract names()[Ljava/lang/String;
+.end method

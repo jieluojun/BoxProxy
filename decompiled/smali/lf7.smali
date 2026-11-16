@@ -1,144 +1,72 @@
 .class public final Llf7;
-.super Lf85;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/io/Serializable;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
+.field public synthetic i:Ljava/lang/Object;
+
+.field public final synthetic j:Lxj5;
+
 .field public k:I
 
-.field public l:I
 
-.field public m:I
+# direct methods
+.method public constructor <init>(Lxj5;Lq91;)V
+    .locals 0
 
-.field public n:I
+    .line 1
+    iput-object p1, p0, Llf7;->j:Lxj5;
 
-.field public o:I
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
-.field public p:I
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(I)I
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Llf7;->b()I
+    iput-object p1, p0, Llf7;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    rsub-int/lit8 v0, p1, 0x20
-
-    .line 6
-    .line 7
-    ushr-int/2addr p0, v0
-
-    .line 8
-    neg-int p1, p1
-
-    .line 9
-    shr-int/lit8 p1, p1, 0x1f
-
-    .line 10
-    .line 11
-    and-int/2addr p0, p1
-
-    .line 12
-    return p0
-.end method
-
-.method public final b()I
-    .locals 3
-
-    .line 1
-    iget v0, p0, Llf7;->k:I
-
-    .line 2
-    .line 3
-    ushr-int/lit8 v1, v0, 0x2
+    iget p1, p0, Llf7;->k:I
 
     .line 4
     .line 5
-    xor-int/2addr v0, v1
+    const/high16 v0, -0x80000000
 
     .line 6
-    iget v1, p0, Llf7;->l:I
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    iput v1, p0, Llf7;->k:I
+    iput p1, p0, Llf7;->k:I
 
     .line 9
     .line 10
-    iget v1, p0, Llf7;->m:I
+    iget-object p1, p0, Llf7;->j:Lxj5;
 
     .line 11
     .line 12
-    iput v1, p0, Llf7;->l:I
+    const/4 v0, 0x0
 
     .line 13
-    .line 14
-    iget v1, p0, Llf7;->n:I
+    invoke-virtual {p1, v0, p0}, Lxj5;->r(Ljava/lang/String;Lq91;)Ljava/lang/Object;
 
+    .line 14
     .line 15
     .line 16
-    iput v1, p0, Llf7;->m:I
+    move-result-object p0
 
     .line 17
-    .line 18
-    iget v1, p0, Llf7;->o:I
-
-    .line 19
-    .line 20
-    iput v1, p0, Llf7;->n:I
-
-    .line 21
-    .line 22
-    shl-int/lit8 v2, v0, 0x1
-
-    .line 23
-    .line 24
-    xor-int/2addr v0, v2
-
-    .line 25
-    xor-int/2addr v0, v1
-
-    .line 26
-    shl-int/lit8 v1, v1, 0x4
-
-    .line 27
-    .line 28
-    xor-int/2addr v0, v1
-
-    .line 29
-    iput v0, p0, Llf7;->o:I
-
-    .line 30
-    .line 31
-    iget v1, p0, Llf7;->p:I
-
-    .line 32
-    .line 33
-    const v2, 0x587c5
-
-    .line 34
-    .line 35
-    .line 36
-    add-int/2addr v1, v2
-
-    .line 37
-    iput v1, p0, Llf7;->p:I
-
-    .line 38
-    .line 39
-    add-int/2addr v0, v1
-
-    .line 40
-    return v0
+    return-object p0
 .end method

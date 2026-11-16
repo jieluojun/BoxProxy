@@ -1,135 +1,118 @@
-.class public final synthetic Lj64;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final enum Lj64;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum i:Lj64;
 
-.field public final synthetic k:Ljava/lang/String;
+.field public static final enum j:Lj64;
 
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Ljava/lang/String;
+.field public static final synthetic k:[Lj64;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-byte p5, p0, Lj64;->j:B
+    new-instance v0, Lj64;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lj64;->k:Ljava/lang/String;
+    const-string v1, "Download"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lj64;->l:Ljava/lang/String;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iput-object p3, p0, Lj64;->m:Ljava/lang/String;
-
-    .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-byte v0, p0, Lj64;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x1
-
-    .line 6
-    iget-object v3, p0, Lj64;->m:Ljava/lang/String;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iget-object v4, p0, Lj64;->l:Ljava/lang/String;
-
     .line 9
+    sput-object v0, Lj64;->i:Lj64;
+
     .line 10
-    iget-object p0, p0, Lj64;->k:Ljava/lang/String;
-
     .line 11
-    .line 12
-    check-cast p1, Lz11;
+    new-instance v1, Lj64;
 
+    .line 12
     .line 13
-    .line 14
-    check-cast p2, Ljava/lang/Integer;
+    const-string v2, "Upload"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    packed-switch v0, :pswitch_data_0
+    sput-object v1, Lj64;->j:Lj64;
 
     .line 20
     .line 21
-    .line 22
-    invoke-static {v2}, Lqu5;->f0(I)I
+    filled-new-array {v0, v1}, [Lj64;
 
+    .line 22
     .line 23
     .line 24
+    move-result-object v0
+
     .line 25
-    move-result p2
+    sput-object v0, Lj64;->k:[Lj64;
 
     .line 26
-    invoke-static {p0, v4, v3, p1, p2}, La57;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lz11;I)V
-
     .line 27
-    .line 28
-    .line 29
-    return-object v1
+    return-void
+.end method
 
-    .line 30
-    :pswitch_0
-    invoke-static {v2}, Lqu5;->f0(I)I
+.method public static valueOf(Ljava/lang/String;)Lj64;
+    .locals 1
 
-    .line 31
-    .line 32
-    .line 33
-    move-result p2
+    .line 1
+    const-class v0, Lj64;
 
-    .line 34
-    invoke-static {p0, v4, v3, p1, p2}, Lg17;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lz11;I)V
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 35
-    .line 36
-    .line 37
-    return-object v1
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 38
-    nop
+    .line 7
+    check-cast p0, Lj64;
 
-    .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lj64;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lj64;->k:[Lj64;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lj64;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

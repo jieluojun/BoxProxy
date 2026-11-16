@@ -1,148 +1,279 @@
-.class public final synthetic Lfv4;
+.class public final Lfv4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Ljava/util/Iterator;
+.implements Lt23;
 
 
 # instance fields
-.field public final synthetic j:Le62;
+.field public final synthetic i:B
 
-.field public final synthetic k:Lwp3;
-
-.field public final synthetic l:J
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:F
-
-.field public final synthetic p:Lp62;
-
-.field public final synthetic q:B
+.field public final j:Ljava/util/Iterator;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;Lwp3;JJIFLp62;I)V
-    .locals 0
+.method public constructor <init>(Lcv4;)V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
     .line 2
+    iput-byte v0, p0, Lfv4;->i:B
+
     .line 3
     .line 4
-    iput-object p1, p0, Lfv4;->j:Le62;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    iput-object p2, p0, Lfv4;->k:Lwp3;
-
     .line 7
+    const/16 v1, 0x8
+
     .line 8
-    iput-wide p3, p0, Lfv4;->l:J
-
     .line 9
+    new-array v2, v1, [Lj57;
+
     .line 10
-    iput-wide p5, p0, Lfv4;->m:J
-
     .line 11
+    :goto_0
+    if-ge v0, v1, :cond_0
+
     .line 12
-    iput-boolean p7, p0, Lfv4;->n:Z
-
     .line 13
+    new-instance v3, Ll57;
+
     .line 14
-    iput p8, p0, Lfv4;->o:F
-
     .line 15
-    .line 16
-    iput-object p9, p0, Lfv4;->p:Lp62;
+    invoke-direct {v3, p0}, Ll57;-><init>(Lfv4;)V
 
+    .line 16
     .line 17
     .line 18
-    iput-byte p10, p0, Lfv4;->q:B
+    aput-object v3, v2, v0
 
     .line 19
     .line 20
+    add-int/lit8 v0, v0, 0x1
+
+    .line 21
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    new-instance v0, Ldv4;
+
+    .line 24
+    .line 25
+    invoke-direct {v0, p1, v2}, Ldv4;-><init>(Lcv4;[Lj57;)V
+
+    .line 26
+    .line 27
+    .line 28
+    iput-object v0, p0, Lfv4;->j:Ljava/util/Iterator;
+
+    .line 29
+    .line 30
+    return-void
+.end method
+
+.method public constructor <init>(Lza7;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-byte v0, p0, Lfv4;->i:B
+
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 32
+    iget-object p1, p1, Lza7;->r:Ljava/util/ArrayList;
+
+    .line 33
+    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfv4;->j:Ljava/util/Iterator;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public final hasNext()Z
+    .locals 1
 
     .line 1
-    move-object v9, p1
+    iget-byte v0, p0, Lfv4;->i:B
 
     .line 2
-    check-cast v9, Lz11;
-
     .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
+    packed-switch v0, :pswitch_data_0
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lfv4;->j:Ljava/util/Iterator;
 
     .line 7
     .line 8
-    .line 9
-    iget-byte p1, p0, Lfv4;->q:B
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
+    .line 9
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    move-result p0
 
     .line 12
+    return p0
+
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    :pswitch_0
+    iget-object p0, p0, Lfv4;->j:Ljava/util/Iterator;
 
     .line 14
     .line 15
-    .line 16
-    move-result v10
+    check-cast p0, Ldv4;
 
+    .line 16
     .line 17
-    iget-object v0, p0, Lfv4;->j:Le62;
+    iget-boolean p0, p0, Lbv4;->k:Z
 
     .line 18
     .line 19
-    iget-object v1, p0, Lfv4;->k:Lwp3;
+    return p0
+
+    .line 20
+    nop
+
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lfv4;->i:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Lfv4;->j:Ljava/util/Iterator;
+
+    .line 7
+    .line 8
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    check-cast p0, Lbb7;
+
+    .line 13
+    .line 14
+    return-object p0
+
+    .line 15
+    :pswitch_0
+    iget-object p0, p0, Lfv4;->j:Ljava/util/Iterator;
+
+    .line 16
+    .line 17
+    check-cast p0, Ldv4;
+
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Ldv4;->next()Ljava/lang/Object;
 
     .line 20
     .line 21
-    iget-wide v2, p0, Lfv4;->l:J
-
     .line 22
+    move-result-object p0
+
     .line 23
-    iget-wide v4, p0, Lfv4;->m:J
+    check-cast p0, Ljava/util/Map$Entry;
 
     .line 24
     .line 25
-    iget-boolean v6, p0, Lfv4;->n:Z
+    return-object p0
 
     .line 26
+    nop
+
     .line 27
-    iget v7, p0, Lfv4;->o:F
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    .line 28
-    .line 29
-    iget-object v8, p0, Lfv4;->p:Lp62;
+.method public final remove()V
+    .locals 1
 
-    .line 30
-    .line 31
-    invoke-static/range {v0 .. v10}, Lgv4;->b(Le62;Lwp3;JJIFLp62;Lz11;I)V
+    .line 1
+    iget-byte v0, p0, Lfv4;->i:B
 
-    .line 32
-    .line 33
-    .line 34
-    sget-object p0, La47;->a:La47;
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
 
-    .line 35
-    .line 36
-    return-object p0
+    .line 4
+    .line 5
+    .line 6
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 7
+    .line 8
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 9
+    .line 10
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 11
+    .line 12
+    .line 13
+    throw p0
+
+    .line 14
+    :pswitch_0
+    iget-object p0, p0, Lfv4;->j:Ljava/util/Iterator;
+
+    .line 15
+    .line 16
+    check-cast p0, Ldv4;
+
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Ldv4;->remove()V
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
+
+    .line 22
+    nop
+
+    .line 23
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

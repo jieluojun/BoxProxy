@@ -1,228 +1,115 @@
-.class public final enum Ljo4;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ljo4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final enum j:Ljo4;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final enum k:Ljo4;
-
-.field public static final enum l:Ljo4;
-
-.field public static final enum m:Ljo4;
-
-.field public static final enum n:Ljo4;
-
-.field public static final enum o:Ljo4;
-
-.field public static final enum p:Ljo4;
-
-.field public static final synthetic q:[Ljo4;
+.field public final synthetic j:Lnp0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public synthetic constructor <init>(Lnp0;IB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljo4;
+    iput-byte p3, p0, Ljo4;->i:B
 
     .line 2
     .line 3
-    const-string v1, "Invalid"
+    iput-object p1, p0, Ljo4;->j:Lnp0;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Ljo4;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    iget-object p0, p0, Ljo4;->j:Lnp0;
 
     .line 7
     .line 8
+    check-cast p1, Lt82;
+
     .line 9
-    sput-object v0, Ljo4;->j:Ljo4;
-
     .line 10
+    check-cast p2, Ljava/lang/Integer;
+
     .line 11
-    new-instance v1, Ljo4;
-
     .line 12
-    .line 13
-    const-string v2, "Cancelled"
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 13
     .line 14
     .line 15
-    const/4 v3, 0x1
+    packed-switch v0, :pswitch_data_0
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
     .line 18
-    .line 19
-    sput-object v1, Ljo4;->k:Ljo4;
+    invoke-static {v2}, Lp06;->W(I)I
 
+    .line 19
     .line 20
     .line 21
-    new-instance v2, Ljo4;
+    move-result p2
 
     .line 22
-    .line 23
-    const-string v3, "InitialPending"
+    invoke-static {p0, p1, p2}, Lzb3;->h(Lnp0;Lt82;I)V
 
+    .line 23
     .line 24
     .line 25
-    const/4 v4, 0x2
+    return-object v1
 
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    :pswitch_0
+    invoke-static {v2}, Lp06;->W(I)I
 
     .line 27
     .line 28
     .line 29
-    sput-object v2, Ljo4;->l:Ljo4;
+    move-result p2
 
     .line 30
-    .line 31
-    new-instance v3, Ljo4;
+    invoke-static {p0, p1, p2}, Llb3;->m(Lnp0;Lt82;I)V
 
+    .line 31
     .line 32
     .line 33
-    const-string v4, "RecomposePending"
+    return-object v1
 
     .line 34
+    nop
+
     .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Ljo4;->m:Ljo4;
-
-    .line 40
-    .line 41
-    new-instance v4, Ljo4;
-
-    .line 42
-    .line 43
-    const-string v5, "Recomposing"
-
-    .line 44
-    .line 45
-    const/4 v6, 0x4
-
-    .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 47
-    .line 48
-    .line 49
-    sput-object v4, Ljo4;->n:Ljo4;
-
-    .line 50
-    .line 51
-    new-instance v5, Ljo4;
-
-    .line 52
-    .line 53
-    const-string v6, "ApplyPending"
-
-    .line 54
-    .line 55
-    const/4 v7, 0x5
-
-    .line 56
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 57
-    .line 58
-    .line 59
-    sput-object v5, Ljo4;->o:Ljo4;
-
-    .line 60
-    .line 61
-    new-instance v6, Ljo4;
-
-    .line 62
-    .line 63
-    const-string v7, "Applied"
-
-    .line 64
-    .line 65
-    const/4 v8, 0x6
-
-    .line 66
-    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 67
-    .line 68
-    .line 69
-    sput-object v6, Ljo4;->p:Ljo4;
-
-    .line 70
-    .line 71
-    filled-new-array/range {v0 .. v6}, [Ljo4;
-
-    .line 72
-    .line 73
-    .line 74
-    move-result-object v0
-
-    .line 75
-    sput-object v0, Ljo4;->q:[Ljo4;
-
-    .line 76
-    .line 77
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Ljo4;
-    .locals 1
-
-    .line 1
-    const-class v0, Ljo4;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljo4;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Ljo4;
-    .locals 1
-
-    .line 1
-    sget-object v0, Ljo4;->q:[Ljo4;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Ljo4;
-
-    .line 8
-    .line 9
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

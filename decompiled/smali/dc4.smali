@@ -1,136 +1,206 @@
-.class public final synthetic Ldc4;
-.super Le72;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lu62;
+.class public final enum Ldc4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final k:Ldc4;
+.field public static final enum i:Ldc4;
+
+.field public static final enum j:Ldc4;
+
+.field public static final enum k:Ldc4;
+
+.field public static final enum l:Ldc4;
+
+.field public static final enum m:Ldc4;
+
+.field public static final enum n:Ldc4;
+
+.field public static final synthetic o:[Ldc4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 8
 
     .line 1
     new-instance v0, Ldc4;
 
     .line 2
     .line 3
-    const-string v4, "register(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V"
+    const-string v1, "Idle"
 
     .line 4
     .line 5
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
     .line 6
-    const/4 v1, 0x3
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
-    const-class v2, Lec4;
-
     .line 8
     .line 9
-    const-string v3, "register"
+    sput-object v0, Ldc4;->i:Ldc4;
 
     .line 10
     .line 11
-    invoke-direct/range {v0 .. v5}, Le72;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    new-instance v1, Ldc4;
 
     .line 12
     .line 13
-    .line 14
-    sput-object v0, Ldc4;->k:Ldc4;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    check-cast p1, Lec4;
-
-    .line 2
-    .line 3
-    check-cast p2, Lnv5;
-
-    .line 4
-    .line 5
-    iget-wide v0, p1, Lec4;->a:J
-
-    .line 6
-    .line 7
-    const-wide/16 v2, 0x0
-
-    .line 8
-    .line 9
-    cmp-long p0, v0, v2
-
-    .line 10
-    .line 11
-    sget-object p3, La47;->a:La47;
-
-    .line 12
-    .line 13
-    if-gtz p0, :cond_0
+    const-string v2, "Latency"
 
     .line 14
     .line 15
-    iput-object p3, p2, Lnv5;->n:Ljava/lang/Object;
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
-    return-object p3
-
     .line 18
-    :cond_0
-    new-instance p0, Leb;
-
     .line 19
-    .line 20
-    const/4 v2, 0x7
+    sput-object v1, Ldc4;->j:Ldc4;
 
+    .line 20
     .line 21
-    invoke-direct {p0, p2, p1, v2}, Leb;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    new-instance v2, Ldc4;
 
     .line 22
     .line 23
+    const-string v3, "Download"
+
     .line 24
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 25
-    .line 26
-    .line 27
-    iget-object p1, p2, Lnv5;->j:Lrb1;
+    const/4 v4, 0x2
 
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
     .line 28
     .line 29
-    invoke-static {p1}, Laq;->M(Lrb1;)Lkh1;
+    sput-object v2, Ldc4;->k:Ldc4;
 
     .line 30
     .line 31
-    .line 32
-    move-result-object v2
+    new-instance v3, Ldc4;
 
+    .line 32
     .line 33
-    invoke-interface {v2, v0, v1, p0, p1}, Lkh1;->w(JLjava/lang/Runnable;Lrb1;)Lwk1;
+    const-string v4, "Upload"
 
     .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    move-result-object p0
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
-    iput-object p0, p2, Lnv5;->l:Ljava/lang/Object;
-
     .line 38
     .line 39
-    return-object p3
+    sput-object v3, Ldc4;->l:Ldc4;
+
+    .line 40
+    .line 41
+    new-instance v4, Ldc4;
+
+    .line 42
+    .line 43
+    const-string v5, "Done"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Ldc4;->m:Ldc4;
+
+    .line 50
+    .line 51
+    new-instance v5, Ldc4;
+
+    .line 52
+    .line 53
+    const-string v6, "Failed"
+
+    .line 54
+    .line 55
+    const/4 v7, 0x5
+
+    .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 57
+    .line 58
+    .line 59
+    sput-object v5, Ldc4;->n:Ldc4;
+
+    .line 60
+    .line 61
+    filled-new-array/range {v0 .. v5}, [Ldc4;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v0
+
+    .line 65
+    sput-object v0, Ldc4;->o:[Ldc4;
+
+    .line 66
+    .line 67
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ldc4;
+    .locals 1
+
+    .line 1
+    const-class v0, Ldc4;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Ldc4;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Ldc4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Ldc4;->o:[Ldc4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Ldc4;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

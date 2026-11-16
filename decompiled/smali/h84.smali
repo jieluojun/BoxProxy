@@ -1,38 +1,64 @@
-.class public final Lh84;
+.class public final synthetic Lh84;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public final a:Ls74;
+.field public final synthetic i:B
 
-.field public final b:Ls74;
+.field public final synthetic j:I
+
+.field public final synthetic k:Le72;
+
+.field public final synthetic l:Lsw3;
 
 
 # direct methods
-.method public constructor <init>(Ls74;Ls74;)V
+.method public synthetic constructor <init>(ILe72;Lsw3;IB)V
+    .locals 0
+
+    .line 14
+    iput-byte p5, p0, Lh84;->i:B
+
+    iput p1, p0, Lh84;->j:I
+
+    iput-object p2, p0, Lh84;->k:Le72;
+
+    iput-object p3, p0, Lh84;->l:Lsw3;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Le72;Lsw3;I)V
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
 
     .line 2
+    iput-byte v0, p0, Lh84;->i:B
+
     .line 3
     .line 4
-    const-string v0, "value Node must be provided"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     .line 7
+    iput-object p1, p0, Lh84;->k:Le72;
+
     .line 8
     .line 9
-    iput-object p1, p0, Lh84;->a:Ls74;
+    iput-object p2, p0, Lh84;->l:Lsw3;
 
     .line 10
     .line 11
-    iput-object p2, p0, Lh84;->b:Ls74;
+    iput p3, p0, Lh84;->j:I
 
     .line 12
     .line 13
@@ -41,66 +67,109 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-byte v0, p0, Lh84;->i:B
 
     .line 2
     .line 3
-    const-string v1, "<NodeTuple keyNode="
+    const/16 v1, 0x181
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sget-object v2, Ll97;->a:Ll97;
 
     .line 6
     .line 7
+    iget v3, p0, Lh84;->j:I
+
     .line 8
-    iget-object v1, p0, Lh84;->a:Ls74;
-
     .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lh84;->l:Lsw3;
 
+    .line 10
     .line 11
+    iget-object p0, p0, Lh84;->k:Le72;
+
     .line 12
     .line 13
-    const-string v1, "; valueNode="
+    check-cast p1, Lt82;
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p2, Ljava/lang/Integer;
 
     .line 16
     .line 17
-    .line 18
-    iget-object p0, p0, Lh84;->b:Ls74;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 18
     .line 19
     .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    packed-switch v0, :pswitch_data_0
 
     .line 21
     .line 22
     .line 23
-    const-string p0, ">"
+    or-int/lit8 v3, v3, 0x1
 
     .line 24
     .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lp06;->W(I)I
 
     .line 26
     .line 27
     .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result p2
 
     .line 29
+    invoke-static {p0, v4, p1, p2}, Ljy2;->n(Le72;Lsw3;Lt82;I)V
+
     .line 30
     .line 31
-    move-result-object p0
-
     .line 32
-    return-object p0
+    return-object v2
+
+    .line 33
+    :pswitch_0
+    invoke-static {v1}, Lp06;->W(I)I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p2
+
+    .line 37
+    invoke-static {v3, p0, v4, p1, p2}, Lky2;->t(ILe72;Lsw3;Lt82;I)V
+
+    .line 38
+    .line 39
+    .line 40
+    return-object v2
+
+    .line 41
+    :pswitch_1
+    invoke-static {v1}, Lp06;->W(I)I
+
+    .line 42
+    .line 43
+    .line 44
+    move-result p2
+
+    .line 45
+    invoke-static {v3, p0, v4, p1, p2}, Ljy2;->m(ILe72;Lsw3;Lt82;I)V
+
+    .line 46
+    .line 47
+    .line 48
+    return-object v2
+
+    .line 49
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

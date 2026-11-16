@@ -1,17 +1,32 @@
-.class public final Lzt3;
+.class public final synthetic Lzt3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final synthetic i:Luy;
 
-.field public final b:Lbu3;
+.field public final synthetic j:Z
+
+.field public final synthetic k:Z
+
+.field public final synthetic l:Le72;
+
+.field public final synthetic m:J
+
+.field public final synthetic n:Lsw3;
+
+.field public final synthetic o:Le72;
+
+.field public final synthetic p:Lnz0;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Luy;ZZLe72;JLsw3;Le72;Lnz0;I)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,66 +34,116 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p1, p0, Lzt3;->i:Luy;
 
     .line 5
     .line 6
-    const/4 v1, 0x0
+    iput-boolean p2, p0, Lzt3;->j:Z
 
     .line 7
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
     .line 8
+    iput-boolean p3, p0, Lzt3;->k:Z
+
     .line 9
     .line 10
-    iput-object v0, p0, Lzt3;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p4, p0, Lzt3;->l:Le72;
 
     .line 11
     .line 12
-    new-instance v0, Lbu3;
+    iput-wide p5, p0, Lzt3;->m:J
 
     .line 13
     .line 14
-    invoke-direct {v0}, Lbu3;-><init>()V
+    iput-object p7, p0, Lzt3;->n:Lsw3;
 
     .line 15
     .line 16
-    .line 17
-    iput-object v0, p0, Lzt3;->b:Lbu3;
+    iput-object p8, p0, Lzt3;->o:Le72;
 
+    .line 17
     .line 18
+    iput-object p9, p0, Lzt3;->p:Lnz0;
+
     .line 19
+    .line 20
     return-void
 .end method
 
-.method public static a(Lzt3;Lp62;Ly81;)Ljava/lang/Object;
-    .locals 2
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object v9, p1
 
     .line 2
+    check-cast v9, Lt82;
+
     .line 3
     .line 4
-    new-instance v0, Lu60;
+    check-cast p2, Ljava/lang/Integer;
 
     .line 5
     .line 6
-    const/4 v1, 0x0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
-    invoke-direct {v0, p0, p1, v1}, Lu60;-><init>(Lzt3;Lp62;Ly81;)V
-
     .line 8
     .line 9
-    .line 10
-    invoke-static {v0, p2}, Lhq;->H(Lt62;Ly81;)Ljava/lang/Object;
+    const p1, 0xc00001
 
+    .line 10
     .line 11
     .line 12
-    .line 13
-    move-result-object p0
+    invoke-static {p1}, Lp06;->W(I)I
 
+    .line 13
     .line 14
+    .line 15
+    move-result v10
+
+    .line 16
+    iget-object v0, p0, Lzt3;->i:Luy;
+
+    .line 17
+    .line 18
+    iget-boolean v1, p0, Lzt3;->j:Z
+
+    .line 19
+    .line 20
+    iget-boolean v2, p0, Lzt3;->k:Z
+
+    .line 21
+    .line 22
+    iget-object v3, p0, Lzt3;->l:Le72;
+
+    .line 23
+    .line 24
+    iget-wide v4, p0, Lzt3;->m:J
+
+    .line 25
+    .line 26
+    iget-object v6, p0, Lzt3;->n:Lsw3;
+
+    .line 27
+    .line 28
+    iget-object v7, p0, Lzt3;->o:Le72;
+
+    .line 29
+    .line 30
+    iget-object v8, p0, Lzt3;->p:Lnz0;
+
+    .line 31
+    .line 32
+    invoke-static/range {v0 .. v10}, Lzb3;->b(Luy;ZZLe72;JLsw3;Le72;Lnz0;Lt82;I)V
+
+    .line 33
+    .line 34
+    .line 35
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 36
+    .line 37
     return-object p0
 .end method

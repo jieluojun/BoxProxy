@@ -1,20 +1,19 @@
 .class public final Lgu6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lqh4;
 
 
 # instance fields
-.field public final a:Lrb1;
+.field public final synthetic a:Lfu6;
 
-.field public final b:[Ljava/lang/Object;
-
-.field public final c:[Lzx6;
-
-.field public d:I
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public constructor <init>(ILrb1;)V
+.method public constructor <init>(Lfu6;Z)V
     .locals 0
 
     .line 1
@@ -23,25 +22,38 @@
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Lgu6;->a:Lrb1;
+    iput-object p1, p0, Lgu6;->a:Lfu6;
 
     .line 5
     .line 6
-    new-array p2, p1, [Ljava/lang/Object;
+    iput-boolean p2, p0, Lgu6;->b:Z
 
     .line 7
     .line 8
-    iput-object p2, p0, Lgu6;->b:[Ljava/lang/Object;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b()J
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lgu6;->a:Lfu6;
+
+    .line 2
+    .line 3
+    iget-boolean p0, p0, Lgu6;->b:Z
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p0}, Lfu6;->j(Z)J
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-wide v0
 
     .line 9
-    .line 10
-    new-array p1, p1, [Lzx6;
-
-    .line 11
-    .line 12
-    iput-object p1, p0, Lgu6;->c:[Lzx6;
-
-    .line 13
-    .line 14
-    return-void
+    return-wide v0
 .end method

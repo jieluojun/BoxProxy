@@ -1,138 +1,118 @@
-.class public final synthetic Lgo3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final enum Lgo3;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:Lwp3;
+# static fields
+.field public static final enum i:Lgo3;
 
-.field public final synthetic k:F
+.field public static final enum j:Lgo3;
 
-.field public final synthetic l:Lxv;
-
-.field public final synthetic m:Lwt5;
-
-.field public final synthetic n:Lqz0;
-
-.field public final synthetic o:I
-
-.field public final synthetic p:B
+.field public static final synthetic k:[Lgo3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwp3;FLxv;Lwt5;Lqz0;II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgo3;
 
     .line 2
     .line 3
+    const-string v1, "Min"
+
     .line 4
-    iput-object p1, p0, Lgo3;->j:Lwp3;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput p2, p0, Lgo3;->k:F
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lgo3;->l:Lxv;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lgo3;->m:Lwt5;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lgo3;->n:Lqz0;
-
-    .line 13
-    .line 14
-    iput p6, p0, Lgo3;->o:I
-
-    .line 15
-    .line 16
-    iput-byte p7, p0, Lgo3;->p:B
-
-    .line 17
-    .line 18
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
-
-    .line 1
-    move-object v5, p1
-
-    .line 2
-    check-cast v5, Lz11;
-
-    .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
-
-    .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
     .line 9
-    iget p1, p0, Lgo3;->o:I
+    sput-object v0, Lgo3;->i:Lgo3;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    new-instance v1, Lgo3;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    const-string v2, "Max"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    move-result v6
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    iget-object v0, p0, Lgo3;->j:Lwp3;
-
     .line 18
     .line 19
-    iget v1, p0, Lgo3;->k:F
+    sput-object v1, Lgo3;->j:Lgo3;
 
     .line 20
     .line 21
-    iget-object v2, p0, Lgo3;->l:Lxv;
+    filled-new-array {v0, v1}, [Lgo3;
 
     .line 22
     .line 23
-    iget-object v3, p0, Lgo3;->m:Lwt5;
-
     .line 24
+    move-result-object v0
+
     .line 25
-    iget-object v4, p0, Lgo3;->n:Lqz0;
+    sput-object v0, Lgo3;->k:[Lgo3;
 
     .line 26
     .line 27
-    iget-byte v7, p0, Lgo3;->p:B
+    return-void
+.end method
 
-    .line 28
-    .line 29
-    invoke-static/range {v0 .. v7}, Lgj3;->d(Lwp3;FLxv;Lwt5;Lqz0;Lz11;II)V
+.method public static valueOf(Ljava/lang/String;)Lgo3;
+    .locals 1
 
-    .line 30
-    .line 31
-    .line 32
-    sget-object p0, La47;->a:La47;
+    .line 1
+    const-class v0, Lgo3;
 
-    .line 33
-    .line 34
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lgo3;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lgo3;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lgo3;->k:[Lgo3;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lgo3;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,241 +1,358 @@
-.class public final synthetic Lj36;
+.class public final Lj36;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Le62;
+
+# static fields
+.field public static final l:Lyw5;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Z
 
-.field public final synthetic k:Lo46;
+.field public final b:Ljava/util/ArrayList;
 
-.field public final synthetic l:Li46;
+.field public final c:Lmz3;
 
-.field public final synthetic m:Lm46;
+.field public final d:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field public final synthetic n:Ljava/lang/String;
+.field public e:Lc26;
 
-.field public final synthetic o:Landroid/content/Context;
+.field public f:Lyc;
+
+.field public g:Lw26;
+
+.field public h:Lz16;
+
+.field public i:Lc26;
+
+.field public j:Lc26;
+
+.field public final k:Lxs4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo46;Li46;Lm46;Ljava/lang/String;Landroid/content/Context;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-byte p6, p0, Lj36;->j:B
+    new-instance v0, Lf36;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lj36;->k:Lo46;
+    const/4 v1, 0x1
 
     .line 4
-    .line 5
-    iput-object p2, p0, Lj36;->l:Li46;
+    invoke-direct {v0, v1}, Lf36;-><init>(B)V
 
+    .line 5
     .line 6
     .line 7
-    iput-object p3, p0, Lj36;->m:Lm46;
+    new-instance v1, Lzw5;
 
     .line 8
     .line 9
-    iput-object p4, p0, Lj36;->n:Ljava/lang/String;
+    const/16 v2, 0x1b
 
     .line 10
     .line 11
-    iput-object p5, p0, Lj36;->o:Landroid/content/Context;
+    invoke-direct {v1, v2}, Lzw5;-><init>(B)V
 
     .line 12
     .line 13
+    .line 14
+    new-instance v2, Lyw5;
+
+    .line 15
+    .line 16
+    invoke-direct {v2, v0, v1}, Lyw5;-><init>(Lt72;Lp72;)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v2, Lj36;->l:Lyw5;
+
+    .line 20
+    .line 21
+    return-void
+.end method
+
+.method public constructor <init>(J)V
+    .locals 1
+
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    new-instance v0, Ljava/util/ArrayList;
+
+    .line 5
+    .line 6
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lj36;->b:Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    sget-object v0, Lkj3;->a:Lmz3;
+
+    .line 12
+    .line 13
+    new-instance v0, Lmz3;
 
     .line 14
     .line 15
+    invoke-direct {v0}, Lmz3;-><init>()V
+
     .line 16
+    .line 17
+    .line 18
+    iput-object v0, p0, Lj36;->c:Lmz3;
+
+    .line 19
+    .line 20
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+
+    .line 21
+    .line 22
+    invoke-direct {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+
+    .line 23
+    .line 24
+    .line 25
+    iput-object v0, p0, Lj36;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    .line 26
+    .line 27
+    sget-object p1, Lkj3;->a:Lmz3;
+
+    .line 28
+    .line 29
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 30
+    .line 31
+    .line 32
+    invoke-static {p1}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object p1
+
+    .line 36
+    iput-object p1, p0, Lj36;->k:Lxs4;
+
+    .line 37
+    .line 38
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 9
+.method public final a()Lmz3;
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lj36;->j:B
+    iget-object p0, p0, Lj36;->k:Lxs4;
 
     .line 2
     .line 3
-    const-string v1, "run"
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
-    sget-object v2, La47;->a:La47;
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lmz3;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public final b(Ld53;JJLw16;Z)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lj36;->g:Lw26;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lw26;->i:Ly26;
 
     .line 6
     .line 7
-    const/4 v3, 0x0
+    invoke-virtual {p0, p1, p2, p3}, Ly26;->b(Ld53;J)J
 
     .line 8
-    iget-object v4, p0, Lj36;->o:Landroid/content/Context;
-
     .line 9
     .line 10
-    iget-object v5, p0, Lj36;->n:Ljava/lang/String;
+    move-result-wide p2
 
     .line 11
-    .line 12
-    iget-object v6, p0, Lj36;->m:Lm46;
+    invoke-virtual {p0, p1, p4, p5}, Ly26;->b(Ld53;J)J
 
+    .line 12
     .line 13
     .line 14
-    iget-object v7, p0, Lj36;->l:Li46;
+    move-result-wide p4
 
     .line 15
-    .line 16
-    iget-object p0, p0, Lj36;->k:Lo46;
+    invoke-virtual {p0, p7}, Ly26;->n(Z)V
 
+    .line 16
     .line 17
     .line 18
-    packed-switch v0, :pswitch_data_0
+    move-object p7, p6
 
     .line 19
+    const/4 p6, 0x0
+
     .line 20
+    move-object p1, p0
+
     .line 21
-    new-instance v0, Lh36;
+    invoke-virtual/range {p1 .. p7}, Ly26;->s(JJZLw16;)Z
 
     .line 22
     .line 23
-    const/4 v8, 0x5
-
     .line 24
-    invoke-direct {v0, v6, v5, v4, v8}, Lh36;-><init>(Lm46;Ljava/lang/String;Landroid/content/Context;B)V
+    move-result p0
 
     .line 25
+    return p0
+
     .line 26
+    :cond_0
+    const/4 p0, 0x1
+
     .line 27
-    iget-object v4, p0, Lo46;->a:Lj26;
+    return p0
+.end method
 
-    .line 28
-    .line 29
-    new-instance v5, Ln46;
+.method public final c()V
+    .locals 0
 
-    .line 30
-    .line 31
-    invoke-direct {v5, p0, v7, v0, v3}, Ln46;-><init>(Lo46;Li46;Lp62;Ly81;)V
+    .line 1
+    iget-object p0, p0, Lj36;->h:Lz16;
 
-    .line 32
-    .line 33
-    .line 34
-    invoke-virtual {v4, v5, v1}, Lj26;->d(Lp62;Ljava/lang/String;)V
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
 
-    .line 35
-    .line 36
-    .line 37
-    return-object v2
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lz16;->invoke()Ljava/lang/Object;
 
-    .line 38
-    :pswitch_0
-    new-instance v0, Lgd3;
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    return-void
+.end method
 
-    .line 39
-    .line 40
-    const/16 v1, 0x17
+.method public final d(Ld53;JLw16;Z)V
+    .locals 1
 
-    .line 41
-    .line 42
-    invoke-direct {v0, v5, v4, v1}, Lgd3;-><init>(Ljava/lang/String;Landroid/content/Context;B)V
+    .line 1
+    iget-object p0, p0, Lj36;->f:Lyc;
 
-    .line 43
-    .line 44
-    .line 45
-    invoke-virtual {p0, v7, v0}, Lo46;->a(Li46;Lp62;)V
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
 
-    .line 46
-    .line 47
-    .line 48
-    invoke-virtual {v6, v3}, Lm46;->a(Li46;)V
+    .line 4
+    .line 5
+    invoke-static {p5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    .line 49
-    .line 50
-    .line 51
-    return-object v2
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p5
 
-    .line 52
-    :pswitch_1
-    new-instance v0, Lh36;
+    .line 9
+    new-instance v0, Llh4;
 
-    .line 53
-    .line 54
-    const/4 v8, 0x2
+    .line 10
+    .line 11
+    invoke-direct {v0, p2, p3}, Llh4;-><init>(J)V
 
-    .line 55
-    invoke-direct {v0, v6, v5, v4, v8}, Lh36;-><init>(Lm46;Ljava/lang/String;Landroid/content/Context;B)V
+    .line 12
+    .line 13
+    .line 14
+    invoke-virtual {p0, p5, p1, v0, p4}, Lyc;->k(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
-    .line 57
-    .line 58
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 15
+    .line 16
+    .line 17
+    :cond_0
+    return-void
+.end method
 
-    .line 59
-    .line 60
-    .line 61
-    iget-object v4, p0, Lo46;->a:Lj26;
+.method public final e(Ld53;)Ljava/util/ArrayList;
+    .locals 3
 
-    .line 62
-    .line 63
-    new-instance v5, Ln46;
+    .line 1
+    iget-boolean v0, p0, Lj36;->a:Z
 
-    .line 64
-    .line 65
-    invoke-direct {v5, p0, v7, v0, v3}, Ln46;-><init>(Lo46;Li46;Lp62;Ly81;)V
+    .line 2
+    .line 3
+    iget-object v1, p0, Lj36;->b:Ljava/util/ArrayList;
 
-    .line 66
-    .line 67
-    .line 68
-    invoke-virtual {v4, v5, v1}, Lj26;->d(Lp62;Ljava/lang/String;)V
+    .line 4
+    .line 5
+    if-nez v0, :cond_0
 
-    .line 69
-    .line 70
-    .line 71
-    return-object v2
+    .line 6
+    .line 7
+    new-instance v0, Ldt5;
 
-    .line 72
-    :pswitch_2
-    new-instance v0, Lgd3;
+    .line 8
+    .line 9
+    const/4 v2, 0x6
 
-    .line 73
-    .line 74
-    const/16 v1, 0x16
+    .line 10
+    invoke-direct {v0, p1, v2}, Ldt5;-><init>(Ljava/lang/Object;B)V
 
-    .line 75
-    .line 76
-    invoke-direct {v0, v5, v4, v1}, Lgd3;-><init>(Ljava/lang/String;Landroid/content/Context;B)V
+    .line 11
+    .line 12
+    .line 13
+    new-instance p1, Lcy0;
 
-    .line 77
-    .line 78
-    .line 79
-    invoke-virtual {p0, v7, v0}, Lo46;->a(Li46;Lp62;)V
+    .line 14
+    .line 15
+    const/4 v2, 0x2
 
-    .line 80
-    .line 81
-    .line 82
-    invoke-virtual {v6, v3}, Lm46;->a(Li46;)V
+    .line 16
+    invoke-direct {p1, v0, v2}, Lcy0;-><init>(Ljava/lang/Object;B)V
 
-    .line 83
-    .line 84
-    .line 85
-    return-object v2
+    .line 17
+    .line 18
+    .line 19
+    invoke-static {v1, p1}, Lbv0;->g0(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 86
-    nop
+    .line 20
+    .line 21
+    .line 22
+    const/4 p1, 0x1
 
-    .line 87
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 23
+    iput-boolean p1, p0, Lj36;->a:Z
+
+    .line 24
+    .line 25
+    :cond_0
+    return-object v1
 .end method

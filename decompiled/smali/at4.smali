@@ -1,37 +1,61 @@
-.class public abstract Lat4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lat4;
+.super Lrw3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements La57;
+.implements Lr36;
 
 
-# direct methods
-.method public static final a(Ljava/lang/String;)V
+# instance fields
+.field public w:Lqf;
+
+.field public x:Z
+
+
+# virtual methods
+.method public final R0(La46;)V
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iget-boolean v0, p0, Lat4;->x:Z
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
+    iget-object p0, p0, Lat4;->w:Lqf;
+
     .line 6
-    throw v0
+    .line 7
+    invoke-virtual {p0, p1}, Lqf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    return-void
 .end method
 
-.method public static final b(Ljava/lang/String;)V
-    .locals 1
+.method public final Y0()Z
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final d()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    sget-object p0, Ld42;->C:Ld42;
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 4
-    .line 5
-    .line 6
-    throw v0
+    return-object p0
 .end method

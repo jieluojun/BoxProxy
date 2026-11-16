@@ -1,50 +1,76 @@
 .class public final Lxd5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lw66;
+.implements Ld22;
+.implements Li82;
 
 
 # instance fields
-.field public j:Lrh6;
+.field public final synthetic i:Lz66;
 
-.field public synthetic k:Ljava/lang/Object;
-
-.field public l:I
+.field private final job:Ltz2;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method public constructor <init>(Lz66;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lxd5;->k:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lxd5;->l:I
+    .line 4
+    iput-object p1, p0, Lxd5;->i:Lz66;
+
+    .line 5
+    .line 6
+    const/4 p1, 0x0
+
+    .line 7
+    iput-object p1, p0, Lxd5;->job:Ltz2;
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Le22;Lp91;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lxd5;->i:Lz66;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Lz66;->a(Le22;Lp91;)Ljava/lang/Object;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    sget-object p0, Lpc1;->i:Lpc1;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lxd5;->l:I
+    return-object p0
+.end method
 
-    .line 9
-    .line 10
-    const/4 p1, 0x0
+.method public final b(Lfc1;ILie0;)Ld22;
+    .locals 0
 
-    .line 11
-    invoke-static {p1, p0}, Lgj3;->A(Lrh6;Lc00;)Ljava/lang/Object;
+    .line 1
+    invoke-static {p0, p1, p2, p3}, Lye0;->H(Lw66;Lfc1;ILie0;)Ld22;
 
-    .line 12
-    .line 13
-    .line 14
+    .line 2
+    .line 3
+    .line 4
     move-result-object p0
 
-    .line 15
+    .line 5
     return-object p0
 .end method

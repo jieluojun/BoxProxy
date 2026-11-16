@@ -1,31 +1,100 @@
-.class public abstract Lu77;
-.super Landroid/view/View;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lfj4;
+.class public final Lu77;
+.super Lq05;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final synthetic j:I
+# instance fields
+.field public a:[J
+
+.field public b:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    new-instance v0, Lif1;
+    iget-object v0, p0, Lu77;->a:[J
 
     .line 2
     .line 3
-    const/4 v1, 0x4
+    iget p0, p0, Lu77;->b:I
 
     .line 4
-    invoke-direct {v0, v1}, Lif1;-><init>(B)V
+    .line 5
+    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([JI)[J
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    new-instance v0, Lt77;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p0}, Lt77;-><init>([J)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-object v0
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lu77;->a:[J
+
+    .line 2
+    .line 3
+    array-length v1, v0
+
+    .line 4
+    if-ge v1, p1, :cond_1
 
     .line 5
     .line 6
+    array-length v1, v0
+
     .line 7
+    shl-int/lit8 v1, v1, 0x1
+
+    .line 8
+    .line 9
+    if-ge p1, v1, :cond_0
+
+    .line 10
+    .line 11
+    move p1, v1
+
+    .line 12
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([JI)[J
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    iput-object p1, p0, Lu77;->a:[J
+
+    .line 17
+    .line 18
+    :cond_1
     return-void
+.end method
+
+.method public final d()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lu77;->b:I
+
+    .line 2
+    .line 3
+    return p0
 .end method

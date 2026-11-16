@@ -1,105 +1,52 @@
-.class public Ly07;
-.super La07;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ly07;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# instance fields
+.field public a:I
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public b:Z
 
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
+.field public c:B
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:Z
+
+.field public i:I
+
+.field public j:[I
 
 
 # virtual methods
-.method public final b(Lrx2;)Ljava/lang/Object;
-    .locals 1
+.method public final a()Z
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Lrx2;->L()I
+    iget p0, p0, Ly07;->f:I
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
+    if-eqz p0, :cond_0
 
+    .line 4
     .line 5
-    const/16 v0, 0x9
+    const/4 p0, 0x1
 
     .line 6
+    return p0
+
     .line 7
-    if-ne p0, v0, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p1}, Lrx2;->H()V
-
-    .line 10
-    .line 11
-    .line 12
+    :cond_0
     const/4 p0, 0x0
 
-    .line 13
-    return-object p0
-
-    .line 14
-    :cond_0
-    const/4 v0, 0x6
-
-    .line 15
-    if-ne p0, v0, :cond_1
-
-    .line 16
-    .line 17
-    invoke-virtual {p1}, Lrx2;->J()Ljava/lang/String;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object p0
-
-    .line 21
-    invoke-static {p0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
-
-    .line 22
-    .line 23
-    .line 24
-    move-result p0
-
-    .line 25
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object p0
-
-    .line 29
-    return-object p0
-
-    .line 30
-    :cond_1
-    invoke-virtual {p1}, Lrx2;->w()Z
-
-    .line 31
-    .line 32
-    .line 33
-    move-result p0
-
-    .line 34
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-
-    .line 38
-    return-object p0
+    .line 8
+    return p0
 .end method

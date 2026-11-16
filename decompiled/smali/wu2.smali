@@ -1,115 +1,106 @@
-.class public final synthetic Lwu2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final Lwu2;
+.super Landroid/view/inputmethod/InputConnectionWrapper;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lzu2;
+.field public final synthetic a:Lxu2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzu2;IB)V
+.method public constructor <init>(Landroid/view/inputmethod/InputConnection;Lxu2;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lwu2;->j:B
+    iput-object p2, p0, Lwu2;->a:Lxu2;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lwu2;->k:Lzu2;
+    const/4 p2, 0x0
 
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
 
+    .line 5
     .line 6
     .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
     .locals 3
 
     .line 1
-    iget-byte v0, p0, Lwu2;->j:B
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    const/4 v0, 0x0
 
     .line 4
+    goto :goto_0
+
     .line 5
-    const/4 v2, 0x1
+    :cond_0
+    new-instance v0, Lje7;
 
     .line 6
-    iget-object p0, p0, Lwu2;->k:Lzu2;
-
     .line 7
+    new-instance v1, Lf5;
+
     .line 8
-    check-cast p1, Lz11;
-
     .line 9
+    const/16 v2, 0x11
+
     .line 10
-    check-cast p2, Ljava/lang/Integer;
-
     .line 11
-    .line 12
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v1, p1, v2}, Lf5;-><init>(Ljava/lang/Object;B)V
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    packed-switch v0, :pswitch_data_0
+    const/16 v2, 0x12
 
+    .line 15
     .line 16
+    invoke-direct {v0, v1, v2}, Lje7;-><init>(Ljava/lang/Object;B)V
+
     .line 17
     .line 18
-    invoke-static {v2}, Lqu5;->f0(I)I
-
     .line 19
+    :goto_0
+    iget-object v1, p0, Lwu2;->a:Lxu2;
+
     .line 20
     .line 21
-    move-result p2
+    invoke-interface {v1, v0, p2, p3}, Lxu2;->a(Lje7;ILandroid/os/Bundle;)Z
 
     .line 22
-    invoke-static {p0, p1, p2}, Lbf0;->h(Lzu2;Lz11;I)V
-
     .line 23
     .line 24
+    move-result v0
+
     .line 25
-    return-object v1
+    if-eqz v0, :cond_1
 
     .line 26
-    :pswitch_0
-    invoke-static {v2}, Lqu5;->f0(I)I
-
     .line 27
+    const/4 p0, 0x1
+
     .line 28
+    return p0
+
     .line 29
-    move-result p2
+    :cond_1
+    invoke-super {p0, p1, p2, p3}, Landroid/view/inputmethod/InputConnectionWrapper;->commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
 
     .line 30
-    invoke-static {p0, p1, p2}, Ls60;->j(Lzu2;Lz11;I)V
-
     .line 31
     .line 32
+    move-result p0
+
     .line 33
-    return-object v1
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

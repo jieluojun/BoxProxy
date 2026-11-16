@@ -1,57 +1,51 @@
-.class public abstract Lts2;
+.class public final Lts2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lws2;
 
 
-# static fields
-.field public static final a:Lir5;
+# instance fields
+.field public final i:Lse4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lse4;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lnp1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x7
-
     .line 4
-    invoke-direct {v0, v1}, Lnp1;-><init>(B)V
+    iput-object p1, p0, Lts2;->i:Lse4;
 
     .line 5
     .line 6
-    .line 7
-    new-instance v1, Lvr2;
-
-    .line 8
-    .line 9
-    const/4 v2, 0x1
-
-    .line 10
-    invoke-direct {v1, v2}, Lvr2;-><init>(B)V
-
-    .line 11
-    .line 12
-    .line 13
-    invoke-static {v0, v1}, Lyr;->x(Lt62;Lp62;)Lir5;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v0
-
-    .line 17
-    sput-object v0, Lts2;->a:Lir5;
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()J
+.method public final b()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final d()Lse4;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lts2;->i:Lse4;
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

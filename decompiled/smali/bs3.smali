@@ -1,55 +1,92 @@
 .class public final Lbs3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljc3;
+.field public i:Lya5;
 
-.field public final b:Ljc3;
+.field public j:Landroid/content/Context;
+
+.field public k:Ljava/lang/String;
+
+.field public l:Ljava/lang/String;
+
+.field public synthetic m:Ljava/lang/Object;
+
+.field public final synthetic n:Lfs3;
+
+.field public o:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Lfs3;Lq91;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbs3;->n:Lfs3;
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Ljc3;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
-    const/4 v1, 0x6
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    .line 1
+    iput-object p1, p0, Lbs3;->m:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lbs3;->o:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
-    const/4 v2, 0x0
+    or-int/2addr p1, v0
 
     .line 8
-    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
+    iput p1, p0, Lbs3;->o:I
 
     .line 9
     .line 10
+    const/4 v3, 0x0
+
     .line 11
-    iput-object v0, p0, Lbs3;->a:Ljc3;
+    const/4 v4, 0x0
 
     .line 12
-    .line 13
-    new-instance v0, Ljc3;
+    iget-object v0, p0, Lbs3;->n:Lfs3;
 
+    .line 13
     .line 14
+    const/4 v1, 0x0
+
     .line 15
-    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
+    const/4 v2, 0x0
 
     .line 16
-    .line 17
-    .line 18
-    iput-object v0, p0, Lbs3;->b:Ljc3;
+    move-object v5, p0
 
+    .line 17
+    invoke-virtual/range {v0 .. v5}, Lfs3;->j(Lya5;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lq91;)Ljava/lang/Object;
+
+    .line 18
     .line 19
     .line 20
-    return-void
+    move-result-object p0
+
+    .line 21
+    return-object p0
 .end method

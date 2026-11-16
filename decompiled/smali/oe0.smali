@@ -1,13 +1,13 @@
 .class public final synthetic Loe0;
-.super Le72;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Le82;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lu62;
+.implements Lt72;
 
 
 # static fields
-.field public static final k:Loe0;
+.field public static final j:Loe0;
 
 
 # direct methods
@@ -19,30 +19,30 @@
 
     .line 2
     .line 3
-    const-string v4, "registerSelectForReceive(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V"
+    const-string v4, "createSegment(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;"
 
     .line 4
     .line 5
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
     .line 6
-    const/4 v1, 0x3
+    const/4 v1, 0x2
 
     .line 7
-    const-class v2, Lqe0;
+    const-class v2, Lpe0;
 
     .line 8
     .line 9
-    const-string v3, "registerSelectForReceive"
+    const-string v3, "createSegment"
 
     .line 10
     .line 11
-    invoke-direct/range {v0 .. v5}, Le72;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct/range {v0 .. v5}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 12
     .line 13
     .line 14
-    sput-object v0, Loe0;->k:Loe0;
+    sput-object v0, Loe0;->j:Loe0;
 
     .line 15
     .line 16
@@ -51,276 +51,53 @@
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 6
 
     .line 1
-    move-object v0, p1
+    check-cast p1, Ljava/lang/Number;
 
     .line 2
-    check-cast v0, Lqe0;
-
     .line 3
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
     .line 4
-    move-object v5, p2
-
     .line 5
-    check-cast v5, Lnv5;
-
     .line 6
+    move-result-wide v1
+
     .line 7
-    sget-object p0, Lqe0;->k:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    move-object v3, p2
 
     .line 8
-    .line 9
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v3, Lrn0;
 
+    .line 9
     .line 10
+    sget-object p0, Lpe0;->a:Lrn0;
+
     .line 11
     .line 12
-    sget-object p0, Luw;->a:Lsun/misc/Unsafe;
+    new-instance v0, Lrn0;
 
     .line 13
     .line 14
-    sget-wide p1, Lqe0;->v:J
+    iget-object v4, v3, Lrn0;->o:Lne0;
 
     .line 15
     .line 16
-    invoke-virtual {p0, v0, p1, p2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
     .line 18
     .line 19
-    move-result-object p0
+    const/4 v5, 0x0
 
     .line 20
-    check-cast p0, Lsn0;
+    invoke-direct/range {v0 .. v5}, Lrn0;-><init>(JLrn0;Lne0;I)V
 
     .line 21
     .line 22
-    :goto_0
-    invoke-virtual {v0}, Lqe0;->w()Z
-
     .line 23
-    .line 24
-    .line 25
-    move-result p1
-
-    .line 26
-    if-eqz p1, :cond_0
-
-    .line 27
-    .line 28
-    sget-object p0, Lse0;->l:Lau1;
-
-    .line 29
-    .line 30
-    iput-object p0, v5, Lnv5;->n:Ljava/lang/Object;
-
-    .line 31
-    .line 32
-    goto :goto_4
-
-    .line 33
-    :cond_0
-    sget-object p1, Lqe0;->l:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-
-    .line 34
-    .line 35
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->getAndIncrement(Ljava/lang/Object;)J
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-wide v3
-
-    .line 39
-    sget p1, Lse0;->b:I
-
-    .line 40
-    .line 41
-    int-to-long p1, p1
-
-    .line 42
-    div-long v1, v3, p1
-
-    .line 43
-    .line 44
-    rem-long p1, v3, p1
-
-    .line 45
-    .line 46
-    long-to-int p1, p1
-
-    .line 47
-    iget-wide p2, p0, Lcv5;->m:J
-
-    .line 48
-    .line 49
-    cmp-long p2, p2, v1
-
-    .line 50
-    .line 51
-    if-eqz p2, :cond_2
-
-    .line 52
-    .line 53
-    invoke-virtual {v0, v1, v2, p0}, Lqe0;->i(JLsn0;)Lsn0;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p2
-
-    .line 57
-    if-nez p2, :cond_1
-
-    .line 58
-    .line 59
-    goto :goto_0
-
-    .line 60
-    :cond_1
-    move-object v1, p2
-
-    .line 61
-    :goto_1
-    move v2, p1
-
-    .line 62
-    goto :goto_2
-
-    .line 63
-    :cond_2
-    move-object v1, p0
-
-    .line 64
-    goto :goto_1
-
-    .line 65
-    :goto_2
-    invoke-virtual/range {v0 .. v5}, Lqe0;->H(Lsn0;IJLjava/lang/Object;)Ljava/lang/Object;
-
-    .line 66
-    .line 67
-    .line 68
-    move-result-object p0
-
-    .line 69
-    move-object p2, v1
-
-    .line 70
-    sget-object p1, Lse0;->m:Lau1;
-
-    .line 71
-    .line 72
-    const/4 p3, 0x0
-
-    .line 73
-    if-ne p0, p1, :cond_4
-
-    .line 74
-    .line 75
-    if-eqz v5, :cond_3
-
-    .line 76
-    .line 77
-    goto :goto_3
-
-    .line 78
-    :cond_3
-    move-object v5, p3
-
-    .line 79
-    :goto_3
-    if-eqz v5, :cond_7
-
-    .line 80
-    .line 81
-    iput-object p2, v5, Lnv5;->l:Ljava/lang/Object;
-
-    .line 82
-    .line 83
-    iput v2, v5, Lnv5;->m:I
-
-    .line 84
-    .line 85
-    goto :goto_4
-
-    .line 86
-    :cond_4
-    sget-object p1, Lse0;->o:Lau1;
-
-    .line 87
-    .line 88
-    if-ne p0, p1, :cond_6
-
-    .line 89
-    .line 90
-    invoke-virtual {v0}, Lqe0;->s()J
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-wide p0
-
-    .line 94
-    cmp-long p0, v3, p0
-
-    .line 95
-    .line 96
-    if-gez p0, :cond_5
-
-    .line 97
-    .line 98
-    invoke-virtual {p2}, Ly21;->a()V
-
-    .line 99
-    .line 100
-    .line 101
-    :cond_5
-    move-object p0, p2
-
-    .line 102
-    goto :goto_0
-
-    .line 103
-    :cond_6
-    sget-object p1, Lse0;->n:Lau1;
-
-    .line 104
-    .line 105
-    if-eq p0, p1, :cond_8
-
-    .line 106
-    .line 107
-    invoke-virtual {p2}, Ly21;->a()V
-
-    .line 108
-    .line 109
-    .line 110
-    iput-object p0, v5, Lnv5;->n:Ljava/lang/Object;
-
-    .line 111
-    .line 112
-    :cond_7
-    :goto_4
-    sget-object p0, La47;->a:La47;
-
-    .line 113
-    .line 114
-    return-object p0
-
-    .line 115
-    :cond_8
-    const-string p0, "unexpected"
-
-    .line 116
-    .line 117
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 118
-    .line 119
-    .line 120
-    return-object p3
+    return-object v0
 .end method

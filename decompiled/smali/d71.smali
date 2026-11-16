@@ -1,63 +1,106 @@
-.class public final Ld71;
-.super Ly61;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Ld71;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final a(Ls74;)Ljava/lang/Object;
-    .locals 0
+# direct methods
+.method public static a()Z
+    .locals 4
 
     .line 1
-    check-cast p1, Lds5;
+    invoke-static {}, Lorg/conscrypt/Conscrypt;->version()Lorg/conscrypt/Conscrypt$Version;
 
     .line 2
     .line 3
-    iget-object p0, p1, Lds5;->e:Ljava/lang/String;
-
     .line 4
+    move-result-object v0
+
     .line 5
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    if-eqz v0, :cond_2
 
     .line 6
     .line 7
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->major()I
+
     .line 8
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 9
-    return-object p0
-
     .line 10
-    :catch_0
-    :try_start_1
-    invoke-static {p0}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
+    move-result v1
 
     .line 11
+    const/4 v2, 0x2
+
     .line 12
+    const/4 v3, 0x1
+
     .line 13
-    move-result-object p0
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+    if-eq v1, v2, :cond_0
 
     .line 14
-    goto :goto_0
-
     .line 15
-    :catch_1
-    new-instance p1, Ljava/math/BigInteger;
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->major()I
 
     .line 16
     .line 17
-    invoke-direct {p1, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
-
     .line 18
-    .line 19
-    .line 20
-    move-object p0, p1
+    move-result v0
 
+    .line 19
+    if-le v0, v2, :cond_2
+
+    .line 20
     .line 21
+    goto :goto_0
+
+    .line 22
+    :cond_0
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->minor()I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v1
+
+    .line 26
+    if-eq v1, v3, :cond_1
+
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->minor()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v0
+
+    .line 32
+    if-le v0, v3, :cond_2
+
+    .line 33
+    .line 34
+    goto :goto_0
+
+    .line 35
+    :cond_1
+    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->patch()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v0
+
+    .line 39
+    if-ltz v0, :cond_2
+
+    .line 40
+    .line 41
     :goto_0
-    return-object p0
+    return v3
+
+    .line 42
+    :cond_2
+    const/4 v0, 0x0
+
+    .line 43
+    return v0
 .end method

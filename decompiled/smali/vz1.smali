@@ -1,225 +1,192 @@
 .class public final Lvz1;
-.super Llp4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Luz1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic o:B
+.field public b:Z
+
+.field public c:[Ljava/io/File;
+
+.field public d:I
+
+.field public e:Z
+
+.field public final synthetic f:Lyz1;
 
 
 # direct methods
-.method public constructor <init>(IIB)V
-    .locals 4
+.method public constructor <init>(Lyz1;Ljava/io/File;)V
+    .locals 0
 
     .line 1
-    iput-byte p3, p0, Lvz1;->o:B
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    packed-switch p3, :pswitch_data_0
-
     .line 4
+    iput-object p1, p0, Lvz1;->f:Lyz1;
+
     .line 5
     .line 6
-    invoke-direct {p0}, Llp4;-><init>()V
+    invoke-direct {p0, p2}, Lzz1;-><init>(Ljava/io/File;)V
 
     .line 7
     .line 8
     .line 9
-    int-to-long v0, p1
-
-    .line 10
-    const/16 p1, 0x20
-
-    .line 11
-    .line 12
-    shl-long/2addr v0, p1
-
-    .line 13
-    int-to-long p1, p2
-
-    .line 14
-    const-wide v2, 0xffffffffL
-
-    .line 15
-    .line 16
-    .line 17
-    .line 18
-    .line 19
-    and-long/2addr p1, v2
-
-    .line 20
-    or-long/2addr p1, v0
-
-    .line 21
-    invoke-virtual {p0, p1, p2}, Llp4;->C0(J)V
-
-    .line 22
-    .line 23
-    .line 24
-    return-void
-
-    .line 25
-    :pswitch_0
-    invoke-direct {p0}, Llp4;-><init>()V
-
-    .line 26
-    .line 27
-    .line 28
-    int-to-long v0, p1
-
-    .line 29
-    const/16 p1, 0x20
-
-    .line 30
-    .line 31
-    shl-long/2addr v0, p1
-
-    .line 32
-    int-to-long p1, p2
-
-    .line 33
-    const-wide v2, 0xffffffffL
-
-    .line 34
-    .line 35
-    .line 36
-    .line 37
-    .line 38
-    and-long/2addr p1, v2
-
-    .line 39
-    or-long/2addr p1, v0
-
-    .line 40
-    invoke-virtual {p0, p1, p2}, Llp4;->C0(J)V
-
-    .line 41
-    .line 42
-    .line 43
-    return-void
-
-    .line 44
-    :pswitch_1
-    invoke-direct {p0}, Llp4;-><init>()V
-
-    .line 45
-    .line 46
-    .line 47
-    int-to-long v0, p1
-
-    .line 48
-    const/16 p1, 0x20
-
-    .line 49
-    .line 50
-    shl-long/2addr v0, p1
-
-    .line 51
-    int-to-long p1, p2
-
-    .line 52
-    const-wide v2, 0xffffffffL
-
-    .line 53
-    .line 54
-    .line 55
-    .line 56
-    .line 57
-    and-long/2addr p1, v2
-
-    .line 58
-    or-long/2addr p1, v0
-
-    .line 59
-    invoke-virtual {p0, p1, p2}, Llp4;->C0(J)V
-
-    .line 60
-    .line 61
-    .line 62
-    return-void
-
-    .line 63
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method private final F0(JFLp62;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method private final K0(JFLp62;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method private final L0(JFLp62;)V
-    .locals 0
-
-    .line 1
     return-void
 .end method
 
 
 # virtual methods
-.method public final n0(Lg8;)I
-    .locals 0
+.method public final a()Ljava/io/File;
+    .locals 6
 
     .line 1
-    iget-byte p0, p0, Lvz1;->o:B
+    iget-boolean v0, p0, Lvz1;->e:Z
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
+    iget-object v3, p0, Lzz1;->a:Ljava/io/File;
+
     .line 6
-    const/high16 p0, -0x80000000
-
     .line 7
-    .line 8
-    return p0
+    if-nez v0, :cond_1
 
+    .line 8
     .line 9
-    :pswitch_0
-    const/high16 p0, -0x80000000
+    iget-object v0, p0, Lvz1;->c:[Ljava/io/File;
 
     .line 10
     .line 11
-    return p0
+    if-nez v0, :cond_1
 
     .line 12
-    :pswitch_1
-    const/high16 p0, -0x80000000
-
     .line 13
+    invoke-virtual {v3}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
     .line 14
-    return p0
-
     .line 15
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    .line 16
+    move-result-object v0
 
-.method public final y0(JFLp62;)V
-    .locals 0
+    .line 17
+    iput-object v0, p0, Lvz1;->c:[Ljava/io/File;
 
-    .line 1
-    iget-byte p0, p0, Lvz1;->o:B
+    .line 18
+    .line 19
+    if-nez v0, :cond_1
 
-    .line 2
-    .line 3
-    return-void
+    .line 20
+    .line 21
+    iget-object v0, p0, Lvz1;->f:Lyz1;
+
+    .line 22
+    .line 23
+    iget-object v0, v0, Lyz1;->l:La02;
+
+    .line 24
+    .line 25
+    iget-object v0, v0, La02;->c:Lbg;
+
+    .line 26
+    .line 27
+    if-nez v0, :cond_0
+
+    .line 28
+    .line 29
+    iput-boolean v2, p0, Lvz1;->e:Z
+
+    .line 30
+    .line 31
+    goto :goto_0
+
+    .line 32
+    :cond_0
+    new-instance p0, Lk4;
+
+    .line 33
+    .line 34
+    invoke-direct {p0, v3}, Lk4;-><init>(Ljava/io/File;)V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v0, v3, p0}, Lbg;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 38
+    .line 39
+    .line 40
+    throw v1
+
+    .line 41
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lvz1;->c:[Ljava/io/File;
+
+    .line 42
+    .line 43
+    if-eqz v0, :cond_2
+
+    .line 44
+    .line 45
+    iget v4, p0, Lvz1;->d:I
+
+    .line 46
+    .line 47
+    array-length v5, v0
+
+    .line 48
+    if-ge v4, v5, :cond_2
+
+    .line 49
+    .line 50
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 51
+    .line 52
+    .line 53
+    iget v1, p0, Lvz1;->d:I
+
+    .line 54
+    .line 55
+    add-int/lit8 v2, v1, 0x1
+
+    .line 56
+    .line 57
+    iput v2, p0, Lvz1;->d:I
+
+    .line 58
+    .line 59
+    aget-object p0, v0, v1
+
+    .line 60
+    .line 61
+    return-object p0
+
+    .line 62
+    :cond_2
+    iget-boolean v0, p0, Lvz1;->b:Z
+
+    .line 63
+    .line 64
+    if-nez v0, :cond_3
+
+    .line 65
+    .line 66
+    iput-boolean v2, p0, Lvz1;->b:Z
+
+    .line 67
+    .line 68
+    return-object v3
+
+    .line 69
+    :cond_3
+    return-object v1
 .end method

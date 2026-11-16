@@ -1,190 +1,144 @@
-.class public final synthetic Lai4;
+.class public final Lai4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Landroid/window/OnBackAnimationCallback;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lmt3;
-
-.field public final synthetic l:Z
+.field public final synthetic a:Lzh4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmt3;Z)V
-    .locals 1
+.method public constructor <init>(Lzh4;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-byte v0, p0, Lai4;->j:B
-
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lai4;->a:Lzh4;
 
     .line 5
     .line 6
-    .line 7
-    iput-boolean p2, p0, Lai4;->l:Z
-
-    .line 8
-    .line 9
-    iput-object p1, p0, Lai4;->k:Lmt3;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lmt3;ZB)V
-    .locals 0
-
-    .line 12
-    iput-byte p3, p0, Lai4;->j:B
-
-    iput-object p1, p0, Lai4;->k:Lmt3;
-
-    iput-boolean p2, p0, Lai4;->l:Z
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final onBackCancelled()V
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lai4;->j:B
+    iget-object p0, p0, Lai4;->a:Lzh4;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    invoke-virtual {p0}, Ll44;->a()V
 
     .line 4
     .line 5
-    iget-object v2, p0, Lai4;->k:Lmt3;
-
     .line 6
-    .line 7
-    iget-boolean p0, p0, Lai4;->l:Z
+    return-void
+.end method
 
+.method public final onBackInvoked()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lai4;->a:Lzh4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ll44;->b()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final onBackProgressed(Landroid/window/BackEvent;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p0, p0, Lai4;->a:Lzh4;
+
+    .line 5
+    .line 6
+    invoke-static {p1}, Lm93;->S(Landroid/window/BackEvent;)La44;
+
+    .line 7
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    move-result-object p1
 
     .line 10
+    invoke-virtual {p0, p1}, Ll44;->c(La44;)V
+
     .line 11
     .line 12
-    if-eqz p0, :cond_0
+    .line 13
+    return-void
+.end method
+
+.method public final onBackStarted(Landroid/window/BackEvent;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {p1}, Lm93;->S(Landroid/window/BackEvent;)La44;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p1
+
+    .line 8
+    iget-object p0, p0, Lai4;->a:Lzh4;
+
+    .line 9
+    .line 10
+    iget-object v0, p0, Ll44;->a:Lb44;
+
+    .line 11
+    .line 12
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
+    iget-boolean v1, p0, Ll44;->b:Z
 
     .line 15
     .line 16
-    .line 17
-    move-result-object p0
+    if-nez v1, :cond_0
 
+    .line 17
     .line 18
-    check-cast p0, Le62;
+    invoke-virtual {v0, p0, p1}, Lb44;->e(Ll44;La44;)V
 
     .line 19
     .line 20
-    if-eqz p0, :cond_0
-
     .line 21
+    const/4 p1, 0x1
+
     .line 22
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    iput-boolean p1, p0, Ll44;->b:Z
 
     .line 23
     .line 24
-    .line 25
     :cond_0
-    return-object v1
-
-    .line 26
-    :pswitch_0
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object v0
-
-    .line 30
-    check-cast v0, Lp62;
-
-    .line 31
-    .line 32
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 33
-    .line 34
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-
-    .line 38
-    invoke-interface {v0, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    .line 41
-    return-object v1
-
-    .line 42
-    :pswitch_1
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-object v0
-
-    .line 46
-    check-cast v0, Lp62;
-
-    .line 47
-    .line 48
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 49
-    .line 50
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object p0
-
-    .line 54
-    invoke-interface {v0, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 55
-    .line 56
-    .line 57
-    return-object v1
-
-    .line 58
-    nop
-
-    .line 59
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

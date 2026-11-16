@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/Memory;
 .super Lcom/sun/jna/Pointer;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/io/Closeable;
@@ -245,7 +245,7 @@
 
     .line 80
     .line 81
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 82
     .line 83
@@ -478,153 +478,153 @@
 
 # virtual methods
 .method public align(I)Lcom/sun/jna/Memory;
-    .locals 10
+    .locals 11
 
     .line 1
-    if-lez p1, :cond_4
-
-    .line 2
-    .line 3
     const/4 v0, 0x0
 
+    .line 2
+    if-lez p1, :cond_4
+
+    .line 3
     .line 4
-    :goto_0
-    const/16 v1, 0x20
+    const/4 v1, 0x0
 
     .line 5
+    :goto_0
+    const/16 v2, 0x20
+
     .line 6
-    if-ge v0, v1, :cond_3
-
     .line 7
-    .line 8
-    const/4 v1, 0x1
+    if-ge v1, v2, :cond_3
 
+    .line 8
     .line 9
-    shl-int/2addr v1, v0
+    const/4 v2, 0x1
 
     .line 10
-    if-ne p1, v1, :cond_2
+    shl-int/2addr v2, v1
 
     .line 11
-    .line 12
-    int-to-long v0, p1
+    if-ne p1, v2, :cond_2
 
+    .line 12
     .line 13
-    const-wide/16 v2, 0x1
+    int-to-long v1, p1
 
     .line 14
+    const-wide/16 v3, 0x1
+
     .line 15
-    sub-long v4, v0, v2
-
     .line 16
-    .line 17
-    not-long v4, v4
+    sub-long v5, v1, v3
 
+    .line 17
     .line 18
-    iget-wide v6, p0, Lcom/sun/jna/Pointer;->peer:J
+    not-long v5, v5
 
     .line 19
+    iget-wide v7, p0, Lcom/sun/jna/Pointer;->peer:J
+
     .line 20
-    and-long v8, v6, v4
-
     .line 21
-    .line 22
-    cmp-long p1, v8, v6
+    and-long v9, v7, v5
 
+    .line 22
     .line 23
+    cmp-long p1, v9, v7
+
     .line 24
+    .line 25
     if-eqz p1, :cond_1
 
-    .line 25
     .line 26
-    add-long/2addr v0, v6
-
     .line 27
-    sub-long/2addr v0, v2
+    add-long/2addr v1, v7
 
     .line 28
-    and-long/2addr v0, v4
+    sub-long/2addr v1, v3
 
     .line 29
-    iget-wide v2, p0, Lcom/sun/jna/Memory;->size:J
+    and-long/2addr v1, v5
 
     .line 30
-    .line 31
-    add-long/2addr v2, v6
+    iget-wide v3, p0, Lcom/sun/jna/Memory;->size:J
 
+    .line 31
     .line 32
-    sub-long/2addr v2, v0
+    add-long/2addr v3, v7
 
     .line 33
-    const-wide/16 v4, 0x0
+    sub-long/2addr v3, v1
 
     .line 34
-    .line 35
-    cmp-long p1, v2, v4
+    const-wide/16 v5, 0x0
 
+    .line 35
     .line 36
+    cmp-long p1, v3, v5
+
     .line 37
+    .line 38
     if-lez p1, :cond_0
 
-    .line 38
     .line 39
-    sub-long/2addr v0, v6
-
     .line 40
-    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/sun/jna/Memory;->share(JJ)Lcom/sun/jna/Pointer;
+    sub-long/2addr v1, v7
 
     .line 41
+    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/sun/jna/Memory;->share(JJ)Lcom/sun/jna/Pointer;
+
     .line 42
     .line 43
+    .line 44
     move-result-object p0
 
-    .line 44
+    .line 45
     check-cast p0, Lcom/sun/jna/Memory;
 
-    .line 45
     .line 46
+    .line 47
     return-object p0
 
-    .line 47
+    .line 48
     :cond_0
     const-string p0, "Insufficient memory to align to the requested boundary"
 
-    .line 48
     .line 49
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
     .line 50
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
+
     .line 51
     .line 52
-    const/4 p0, 0x0
-
     .line 53
+    return-object v0
+
+    .line 54
     :cond_1
     return-object p0
 
-    .line 54
-    :cond_2
-    add-int/lit8 v0, v0, 0x1
-
     .line 55
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
     .line 56
+    .line 57
     goto :goto_0
 
-    .line 57
+    .line 58
     :cond_3
     const-string p0, "Byte boundary must be a power of two"
 
-    .line 58
     .line 59
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
     .line 60
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
+
     .line 61
     .line 62
-    const/4 p0, 0x0
-
     .line 63
-    return-object p0
+    return-object v0
 
     .line 64
     :cond_4
@@ -632,7 +632,7 @@
 
     .line 65
     .line 66
-    invoke-static {p1, p0}, Lhs5;->k(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0}, Llj6;->j(ILjava/lang/String;)Ljava/lang/String;
 
     .line 67
     .line 68
@@ -640,15 +640,12 @@
     move-result-object p0
 
     .line 70
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 71
     .line 72
     .line 73
-    const/4 p0, 0x0
-
-    .line 74
-    return-object p0
+    return-object v0
 .end method
 
 .method public boundsCheck(JJ)V
@@ -747,7 +744,7 @@
 
     .line 46
     .line 47
-    invoke-static {p1, p2, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2, p0}, Lky1;->k(JLjava/lang/String;)Ljava/lang/String;
 
     .line 48
     .line 49
@@ -755,7 +752,7 @@
     move-result-object p0
 
     .line 51
-    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
+    invoke-static {p0}, Lnf1;->m(Ljava/lang/String;)V
 
     .line 52
     .line 53
@@ -1140,10 +1137,10 @@
 
     int-to-long v0, p5
 
-    .line 12
+    .line 14
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
 
-    .line 13
+    .line 15
     invoke-super/range {p0 .. p5}, Lcom/sun/jna/Pointer;->read(J[BII)V
 
     return-void
@@ -1152,29 +1149,38 @@
 .method public read(J[CII)V
     .locals 2
 
-    .line 14
+    .line 1
     sget v0, Lcom/sun/jna/Native;->WCHAR_SIZE:I
 
+    .line 2
+    .line 3
     mul-int/2addr v0, p5
 
+    .line 4
     int-to-long v0, v0
 
+    .line 5
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
 
-    .line 15
+    .line 6
+    .line 7
+    .line 8
     invoke-super/range {p0 .. p5}, Lcom/sun/jna/Pointer;->read(J[CII)V
 
+    .line 9
+    .line 10
+    .line 11
     return-void
 .end method
 
 .method public read(J[DII)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x8
+    const/4 v2, 0x3
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 22
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1186,13 +1192,13 @@
 .end method
 
 .method public read(J[FII)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x4
+    const/4 v2, 0x2
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 20
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1204,13 +1210,13 @@
 .end method
 
 .method public read(J[III)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x4
+    const/4 v2, 0x2
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 16
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1222,13 +1228,13 @@
 .end method
 
 .method public read(J[JII)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x8
+    const/4 v2, 0x3
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 18
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1258,29 +1264,20 @@
 .end method
 
 .method public read(J[SII)V
-    .locals 4
+    .locals 3
 
-    .line 1
     int-to-long v0, p5
 
-    .line 2
-    const-wide/16 v2, 0x2
+    const/4 v2, 0x1
 
-    .line 3
-    .line 4
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
-    .line 5
+    .line 12
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
 
-    .line 6
-    .line 7
-    .line 8
+    .line 13
     invoke-super/range {p0 .. p5}, Lcom/sun/jna/Pointer;->read(J[SII)V
 
-    .line 9
-    .line 10
-    .line 11
     return-void
 .end method
 
@@ -1646,28 +1643,18 @@
 
     .line 23
     .line 24
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string p0, " bytes)"
 
     .line 25
     .line 26
-    .line 27
-    const-string p0, " bytes)"
+    invoke-static {v1, v2, p0, v0}, Lky1;->l(JLjava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
+    .line 27
     .line 28
     .line 29
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 30
-    .line 31
-    .line 32
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 33
-    .line 34
-    .line 35
     move-result-object p0
 
-    .line 36
+    .line 30
     return-object p0
 .end method
 
@@ -1709,10 +1696,10 @@
 
     int-to-long v0, p5
 
-    .line 12
+    .line 14
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
 
-    .line 13
+    .line 15
     invoke-super/range {p0 .. p5}, Lcom/sun/jna/Pointer;->write(J[BII)V
 
     return-void
@@ -1721,29 +1708,38 @@
 .method public write(J[CII)V
     .locals 2
 
-    .line 14
+    .line 1
     sget v0, Lcom/sun/jna/Native;->WCHAR_SIZE:I
 
+    .line 2
+    .line 3
     mul-int/2addr v0, p5
 
+    .line 4
     int-to-long v0, v0
 
+    .line 5
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
 
-    .line 15
+    .line 6
+    .line 7
+    .line 8
     invoke-super/range {p0 .. p5}, Lcom/sun/jna/Pointer;->write(J[CII)V
 
+    .line 9
+    .line 10
+    .line 11
     return-void
 .end method
 
 .method public write(J[DII)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x8
+    const/4 v2, 0x3
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 22
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1755,13 +1751,13 @@
 .end method
 
 .method public write(J[FII)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x4
+    const/4 v2, 0x2
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 20
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1773,13 +1769,13 @@
 .end method
 
 .method public write(J[III)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x4
+    const/4 v2, 0x2
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 16
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1791,13 +1787,13 @@
 .end method
 
 .method public write(J[JII)V
-    .locals 4
+    .locals 3
 
     int-to-long v0, p5
 
-    const-wide/16 v2, 0x8
+    const/4 v2, 0x3
 
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
     .line 18
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
@@ -1827,28 +1823,19 @@
 .end method
 
 .method public write(J[SII)V
-    .locals 4
+    .locals 3
 
-    .line 1
     int-to-long v0, p5
 
-    .line 2
-    const-wide/16 v2, 0x2
+    const/4 v2, 0x1
 
-    .line 3
-    .line 4
-    mul-long/2addr v0, v2
+    shl-long/2addr v0, v2
 
-    .line 5
+    .line 12
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/sun/jna/Memory;->boundsCheck(JJ)V
 
-    .line 6
-    .line 7
-    .line 8
+    .line 13
     invoke-super/range {p0 .. p5}, Lcom/sun/jna/Pointer;->write(J[SII)V
 
-    .line 9
-    .line 10
-    .line 11
     return-void
 .end method

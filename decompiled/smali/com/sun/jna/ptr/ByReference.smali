@@ -1,6 +1,6 @@
 .class public abstract Lcom/sun/jna/ptr/ByReference;
 .super Lcom/sun/jna/PointerType;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
@@ -122,119 +122,115 @@
     return-object p0
 
     .line 41
-    :catch_0
-    move-exception v0
-
-    .line 42
-    goto :goto_0
-
-    .line 43
     :cond_0
     const-string v1, "%s@0x%x=%s"
 
-    .line 44
-    .line 45
+    .line 42
+    .line 43
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 44
+    .line 45
     .line 46
-    .line 47
-    .line 48
     move-result-object v2
 
-    .line 49
+    .line 47
     invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
+    .line 48
+    .line 49
     .line 50
-    .line 51
-    .line 52
     move-result-object v2
 
-    .line 53
+    .line 51
     invoke-virtual {p0}, Lcom/sun/jna/PointerType;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 52
+    .line 53
     .line 54
-    .line 55
-    .line 56
     move-result-object v3
 
-    .line 57
+    .line 55
     invoke-static {v3}, Lcom/sun/jna/Pointer;->nativeValue(Lcom/sun/jna/Pointer;)J
 
+    .line 56
+    .line 57
     .line 58
-    .line 59
-    .line 60
     move-result-wide v3
 
-    .line 61
+    .line 59
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
+    .line 60
+    .line 61
     .line 62
-    .line 63
-    .line 64
     move-result-object v3
 
-    .line 65
+    .line 63
     filled-new-array {v2, v3, v0}, [Ljava/lang/Object;
 
+    .line 64
+    .line 65
     .line 66
-    .line 67
-    .line 68
     move-result-object v0
 
-    .line 69
+    .line 67
     invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
+    .line 68
+    .line 69
     .line 70
-    .line 71
-    .line 72
     move-result-object p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 73
+    .line 71
     return-object p0
 
-    .line 74
-    :goto_0
+    .line 72
+    :catch_0
+    move-exception v0
+
+    .line 73
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 74
     .line 75
     .line 76
-    .line 77
     move-result-object p0
 
-    .line 78
+    .line 77
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
+    .line 78
     .line 79
     .line 80
-    .line 81
     move-result-object p0
 
-    .line 82
+    .line 81
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
+    .line 82
     .line 83
     .line 84
-    .line 85
     move-result-object v0
 
-    .line 86
+    .line 85
     const-string v1, "ByReference Contract violated - "
 
+    .line 86
     .line 87
-    .line 88
     const-string v2, "#getValue raised exception: "
 
+    .line 88
     .line 89
-    .line 90
-    invoke-static {v1, p0, v2, v0}, Lhs5;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2, v0}, Llj6;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 90
     .line 91
     .line 92
-    .line 93
     move-result-object p0
 
-    .line 94
+    .line 93
     return-object p0
 .end method

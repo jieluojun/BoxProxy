@@ -1,72 +1,59 @@
-.class public final synthetic Lx53;
-.super Le72;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public abstract Lx53;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final k:Lx53;
+.field public static final a:Lvi1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 1
 
     .line 1
-    new-instance v0, Lx53;
+    invoke-static {}, Lqr;->e()Lvi1;
 
     .line 2
     .line 3
-    const-string v4, "<init>(Landroid/view/View;)V"
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/4 v5, 0x0
+    sput-object v0, Lx53;->a:Lvi1;
 
     .line 6
-    const/4 v1, 0x1
-
     .line 7
-    const-class v2, Loq2;
-
-    .line 8
-    .line 9
-    const-string v3, "<init>"
-
-    .line 10
-    .line 11
-    invoke-direct/range {v0 .. v5}, Le72;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v0, Lx53;->k:Lx53;
-
-    .line 15
-    .line 16
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static final a(Lu53;)Lla;
     .locals 0
 
     .line 1
-    check-cast p1, Landroid/view/View;
+    iget-object p0, p0, Lu53;->v:Lla;
 
     .line 2
     .line 3
-    new-instance p0, Loq2;
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Loq2;-><init>(Landroid/view/View;)V
+    return-object p0
 
     .line 6
+    :cond_0
+    const-string p0, "LayoutNode should be attached to an owner"
+
     .line 7
     .line 8
-    return-object p0
+    invoke-static {p0}, Lrf6;->f(Ljava/lang/String;)Lky0;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    throw p0
 .end method

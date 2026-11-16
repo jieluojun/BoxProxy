@@ -1,11 +1,80 @@
-.class public interface abstract Lpd0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lpd0;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Lmh1;
+
+# instance fields
+.field public i:Lpf5;
+
+.field public j:[Ljava/lang/Object;
+
+.field public k:I
+
+.field public l:I
+
+.field public synthetic m:Ljava/lang/Object;
+
+.field public final synthetic n:Lqd0;
+
+.field public o:I
+
+
+# direct methods
+.method public constructor <init>(Lqd0;Lq91;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lpd0;->n:Lqd0;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract d1(La84;Lw;Lz81;)Ljava/lang/Object;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lpd0;->m:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lpd0;->o:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lpd0;->o:I
+
+    .line 9
+    .line 10
+    iget-object p1, p0, Lpd0;->n:Lqd0;
+
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lqd0;->a(Lpf5;Lq91;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

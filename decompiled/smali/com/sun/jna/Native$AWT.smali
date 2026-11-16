@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/Native$AWT;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0xa
     name = "AWT"
 .end annotation
 
@@ -39,7 +39,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     .line 6
     .line 7
@@ -59,7 +59,7 @@
 
     .line 14
     .line 15
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 16
     .line 17
@@ -71,7 +71,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -83,7 +83,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 28
     .line 29
@@ -111,7 +111,7 @@
     move-result v0
 
     .line 41
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 42
     .line 43
@@ -123,79 +123,74 @@
     move-result v0
 
     .line 47
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
     .line 48
     .line 49
-    goto :goto_0
-
-    .line 50
-    :cond_0
     const-string p0, "Component must be visible"
 
+    .line 50
     .line 51
-    .line 52
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
 
+    .line 52
     .line 53
     .line 54
-    .line 55
     return-wide v1
 
-    .line 56
-    :cond_1
-    :goto_0
+    .line 55
+    :cond_0
     invoke-static {p0}, Lcom/sun/jna/Native;->getWindowHandle0(Ljava/awt/Component;)J
 
+    .line 56
     .line 57
     .line 58
-    .line 59
     move-result-wide v0
 
-    .line 60
+    .line 59
     return-wide v0
 
-    .line 61
-    :cond_2
+    .line 60
+    :cond_1
     const-string p0, "Component must be displayable"
 
+    .line 61
     .line 62
-    .line 63
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
 
+    .line 63
     .line 64
     .line 65
-    .line 66
     return-wide v1
 
-    .line 67
-    :cond_3
+    .line 66
+    :cond_2
     const-string p0, "Component must be heavyweight"
 
+    .line 67
     .line 68
-    .line 69
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
+    .line 69
     .line 70
     .line 71
-    .line 72
     return-wide v1
 
-    .line 73
-    :cond_4
+    .line 72
+    :cond_3
     new-instance p0, Ljava/awt/HeadlessException;
 
+    .line 73
     .line 74
-    .line 75
     const-string v0, "No native windows when headless"
 
+    .line 75
     .line 76
-    .line 77
     invoke-direct {p0, v0}, Ljava/awt/HeadlessException;-><init>(Ljava/lang/String;)V
 
+    .line 77
     .line 78
     .line 79
-    .line 80
     throw p0
 .end method
 

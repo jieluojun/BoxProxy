@@ -1,23 +1,24 @@
 .class public final Lhr;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Landroid/view/View;
+.field public final a:Ljava/lang/String;
 
-.field public final k:Ljava/lang/String;
+.field public final b:Ljava/lang/String;
 
-.field public l:Ljava/lang/reflect/Method;
+.field public final c:I
 
-.field public m:Landroid/content/Context;
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IIII)V
     .locals 0
 
     .line 1
@@ -26,345 +27,357 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lhr;->j:Landroid/view/View;
+    iput-object p1, p0, Lhr;->a:Ljava/lang/String;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lhr;->k:Ljava/lang/String;
+    iput-object p2, p0, Lhr;->b:Ljava/lang/String;
 
     .line 7
     .line 8
+    iput p3, p0, Lhr;->c:I
+
+    .line 9
+    .line 10
+    iput p4, p0, Lhr;->d:I
+
+    .line 11
+    .line 12
+    iput p5, p0, Lhr;->e:I
+
+    .line 13
+    .line 14
+    iput p6, p0, Lhr;->f:I
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lhr;->l:Ljava/lang/reflect/Method;
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    if-nez v0, :cond_4
+    instance-of v0, p1, Lhr;
 
     .line 4
     .line 5
-    iget-object v0, p0, Lhr;->j:Landroid/view/View;
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    check-cast p1, Lhr;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object v1
+    iget-object v0, p0, Lhr;->a:Ljava/lang/String;
 
+    .line 10
     .line 11
-    :goto_0
-    iget-object v2, p0, Lhr;->k:Ljava/lang/String;
+    iget-object v1, p1, Lhr;->a:Ljava/lang/String;
 
     .line 12
     .line 13
-    if-eqz v1, :cond_2
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 14
     .line 15
-    :try_start_0
-    invoke-virtual {v1}, Landroid/content/Context;->isRestricted()Z
-
     .line 16
-    .line 17
-    .line 18
-    move-result v3
+    move-result v0
 
+    .line 17
+    if-eqz v0, :cond_0
+
+    .line 18
     .line 19
-    if-nez v3, :cond_0
+    iget-object v0, p0, Lhr;->b:Ljava/lang/String;
 
     .line 20
     .line 21
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p1, Lhr;->b:Ljava/lang/String;
 
     .line 22
     .line 23
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 24
-    move-result-object v3
+    .line 25
+    .line 26
+    move-result v0
+
+    .line 27
+    if-eqz v0, :cond_0
+
+    .line 28
+    .line 29
+    iget v0, p0, Lhr;->c:I
+
+    .line 30
+    .line 31
+    iget v1, p1, Lhr;->c:I
+
+    .line 32
+    .line 33
+    if-ne v0, v1, :cond_0
+
+    .line 34
+    .line 35
+    iget v0, p0, Lhr;->d:I
+
+    .line 36
+    .line 37
+    iget v1, p1, Lhr;->d:I
+
+    .line 38
+    .line 39
+    if-ne v0, v1, :cond_0
+
+    .line 40
+    .line 41
+    iget v0, p0, Lhr;->e:I
+
+    .line 42
+    .line 43
+    iget v1, p1, Lhr;->e:I
+
+    .line 44
+    .line 45
+    if-ne v0, v1, :cond_0
+
+    .line 46
+    .line 47
+    iget p0, p0, Lhr;->f:I
+
+    .line 48
+    .line 49
+    iget p1, p1, Lhr;->f:I
+
+    .line 50
+    .line 51
+    if-eq p0, p1, :cond_1
+
+    .line 52
+    .line 53
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 54
+    return p0
+
+    .line 55
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 56
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lhr;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    iget-object v2, p0, Lhr;->b:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    invoke-static {v0, v2, v1}, Llj6;->f(ILjava/lang/String;I)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget v2, p0, Lhr;->c:I
+
+    .line 17
+    .line 18
+    invoke-static {v2, v0, v1}, Lky1;->d(III)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    iget v2, p0, Lhr;->d:I
+
+    .line 23
+    .line 24
+    invoke-static {v2, v0, v1}, Lky1;->d(III)I
 
     .line 25
-    const-class v4, Landroid/view/View;
+    .line 26
+    .line 27
+    move-result v0
+
+    .line 28
+    iget v2, p0, Lhr;->e:I
+
+    .line 29
+    .line 30
+    invoke-static {v2, v0, v1}, Lky1;->d(III)I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v0
+
+    .line 34
+    iget p0, p0, Lhr;->f:I
+
+    .line 35
+    .line 36
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 37
+    .line 38
+    .line 39
+    move-result p0
+
+    .line 40
+    add-int/2addr p0, v0
+
+    .line 41
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    .line 1
+    const-string v0, ", tilePreferencesAliasName="
+
+    .line 2
+    .line 3
+    const-string v1, ", launcherIconRes="
+
+    .line 4
+    .line 5
+    const-string v2, "AppIconSpec(launcherAliasName="
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Lhr;->a:Ljava/lang/String;
+
+    .line 8
+    .line 9
+    iget-object v4, p0, Lhr;->b:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, v4, v1}, Lrf6;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v0
+
+    .line 15
+    iget v1, p0, Lhr;->c:I
+
+    .line 16
+    .line 17
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 18
+    .line 19
+    .line 20
+    const-string v1, ", launcherRoundIconRes="
+
+    .line 21
+    .line 22
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 23
+    .line 24
+    .line 25
+    iget v1, p0, Lhr;->d:I
 
     .line 26
     .line 27
-    filled-new-array {v4}, [Ljava/lang/Class;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 28
     .line 29
     .line 30
-    move-result-object v4
+    const-string v1, ", previewForegroundRes="
 
     .line 31
-    invoke-virtual {v3, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
     .line 32
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 33
     .line 34
-    move-result-object v2
-
     .line 35
-    if-eqz v2, :cond_0
+    iget v1, p0, Lhr;->e:I
 
     .line 36
     .line 37
-    iput-object v2, p0, Lhr;->l:Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 38
     .line 39
-    iput-object v1, p0, Lhr;->m:Landroid/content/Context;
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 40
-    .line 41
-    move-object v0, v2
+    const-string v1, ", previewBackgroundRes="
 
+    .line 41
     .line 42
-    goto :goto_2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 43
-    :catch_0
-    :cond_0
-    instance-of v2, v1, Landroid/content/ContextWrapper;
-
     .line 44
     .line 45
-    if-eqz v2, :cond_1
+    iget p0, p0, Lhr;->f:I
 
     .line 46
     .line 47
-    check-cast v1, Landroid/content/ContextWrapper;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 48
     .line 49
-    invoke-virtual {v1}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
-
     .line 50
+    const-string p0, ")"
+
     .line 51
     .line 52
-    move-result-object v1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 53
-    goto :goto_0
-
     .line 54
-    :cond_1
-    const/4 v1, 0x0
-
     .line 55
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 56
-    :cond_2
-    invoke-virtual {v0}, Landroid/view/View;->getId()I
-
     .line 57
     .line 58
+    move-result-object p0
+
     .line 59
-    move-result p0
-
-    .line 60
-    const/4 p1, -0x1
-
-    .line 61
-    if-ne p0, p1, :cond_3
-
-    .line 62
-    .line 63
-    const-string p0, ""
-
-    .line 64
-    .line 65
-    goto :goto_1
-
-    .line 66
-    :cond_3
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    .line 67
-    .line 68
-    const-string v1, " with id \'"
-
-    .line 69
-    .line 70
-    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 71
-    .line 72
-    .line 73
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    .line 74
-    .line 75
-    .line 76
-    move-result-object v1
-
-    .line 77
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    .line 78
-    .line 79
-    .line 80
-    move-result-object v1
-
-    .line 81
-    invoke-virtual {v1, p0}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
-
-    .line 82
-    .line 83
-    .line 84
-    move-result-object p0
-
-    .line 85
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 86
-    .line 87
-    .line 88
-    const-string p0, "\'"
-
-    .line 89
-    .line 90
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 91
-    .line 92
-    .line 93
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 94
-    .line 95
-    .line 96
-    move-result-object p0
-
-    .line 97
-    :goto_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 98
-    .line 99
-    const-string v1, "Could not find method "
-
-    .line 100
-    .line 101
-    const-string v3, "(View) in a parent or ancestor Context for android:onClick attribute defined on view "
-
-    .line 102
-    .line 103
-    invoke-static {v1, v2, v3}, Ly96;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object v1
-
-    .line 107
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object v0
-
-    .line 111
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 112
-    .line 113
-    .line 114
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 115
-    .line 116
-    .line 117
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 118
-    .line 119
-    .line 120
-    move-result-object p0
-
-    .line 121
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 122
-    .line 123
-    .line 124
-    throw p1
-
-    .line 125
-    :cond_4
-    :goto_2
-    :try_start_1
-    iget-object p0, p0, Lhr;->m:Landroid/content/Context;
-
-    .line 126
-    .line 127
-    filled-new-array {p1}, [Ljava/lang/Object;
-
-    .line 128
-    .line 129
-    .line 130
-    move-result-object p1
-
-    .line 131
-    invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 132
-    .line 133
-    .line 134
-    return-void
-
-    .line 135
-    :catch_1
-    move-exception p0
-
-    .line 136
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 137
-    .line 138
-    const-string v0, "Could not execute method for android:onClick"
-
-    .line 139
-    .line 140
-    invoke-direct {p1, v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 141
-    .line 142
-    .line 143
-    throw p1
-
-    .line 144
-    :catch_2
-    move-exception p0
-
-    .line 145
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 146
-    .line 147
-    const-string v0, "Could not execute non-public method for android:onClick"
-
-    .line 148
-    .line 149
-    invoke-direct {p1, v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 150
-    .line 151
-    .line 152
-    throw p1
+    return-object p0
 .end method

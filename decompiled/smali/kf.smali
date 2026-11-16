@@ -1,19 +1,19 @@
 .class public final Lkf;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Landroid/view/Choreographer$FrameCallback;
 
 
 # instance fields
-.field public final synthetic j:Lti0;
+.field public final synthetic i:Lri0;
 
-.field public final synthetic k:Lp62;
+.field public final synthetic j:Lp72;
 
 
 # direct methods
-.method public constructor <init>(Lti0;Llf;Lp62;)V
+.method public constructor <init>(Lri0;Llf;Lp72;)V
     .locals 0
 
     .line 1
@@ -22,11 +22,11 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lkf;->j:Lti0;
+    iput-object p1, p0, Lkf;->i:Lri0;
 
     .line 5
     .line 6
-    iput-object p3, p0, Lkf;->k:Lp62;
+    iput-object p3, p0, Lkf;->j:Lp72;
 
     .line 7
     .line 8
@@ -39,7 +39,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lkf;->k:Lp62;
+    iget-object v0, p0, Lkf;->j:Lp72;
 
     .line 2
     .line 3
@@ -52,7 +52,7 @@
     move-result-object p1
 
     .line 7
-    invoke-interface {v0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
     .line 9
@@ -69,11 +69,11 @@
     move-exception p1
 
     .line 13
-    new-instance p2, Lhd5;
+    new-instance p2, Lri5;
 
     .line 14
     .line 15
-    invoke-direct {p2, p1}, Lhd5;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {p2, p1}, Lri5;-><init>(Ljava/lang/Throwable;)V
 
     .line 16
     .line 17
@@ -82,11 +82,11 @@
 
     .line 19
     :goto_0
-    iget-object p0, p0, Lkf;->j:Lti0;
+    iget-object p0, p0, Lkf;->i:Lri0;
 
     .line 20
     .line 21
-    invoke-virtual {p0, p1}, Lti0;->resumeWith(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1}, Lri0;->resumeWith(Ljava/lang/Object;)V
 
     .line 22
     .line 23

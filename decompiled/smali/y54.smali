@@ -1,69 +1,134 @@
 .class public final Ly54;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Landroid/view/View$BaseSavedState;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ly54;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lc64;
-
-.field public l:I
+.field public i:I
 
 
 # direct methods
-.method public constructor <init>(Lc64;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Ly54;->k:Lc64;
+    new-instance v0, Lj6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const/16 v1, 0x9
 
     .line 4
     .line 5
+    invoke-direct {v0, v1}, Lj6;-><init>(B)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Ly54;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Ly54;->j:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    iget p1, p0, Ly54;->l:I
+    const-string v1, "HorizontalScrollView.SavedState{"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Ly54;->l:I
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     .line 9
     .line 10
-    iget-object p1, p0, Ly54;->k:Lc64;
-
     .line 11
+    move-result v1
+
     .line 12
-    invoke-virtual {p1, p0}, Lc64;->i(Lz81;)Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     .line 13
     .line 14
     .line 15
-    move-result-object p0
+    move-result-object v1
 
     .line 16
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 17
+    .line 18
+    .line 19
+    const-string v1, " scrollPosition="
+
+    .line 20
+    .line 21
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 22
+    .line 23
+    .line 24
+    iget p0, p0, Ly54;->i:I
+
+    .line 25
+    .line 26
+    const-string v1, "}"
+
+    .line 27
+    .line 28
+    invoke-static {v1, v0, p0}, Llj6;->m(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget p0, p0, Ly54;->i:I
+
+    .line 5
+    .line 6
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
 .end method

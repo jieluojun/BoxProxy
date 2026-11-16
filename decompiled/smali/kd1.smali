@@ -1,113 +1,142 @@
-.class public final synthetic Lkd1;
+.class public final Lkd1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Lc81;
 
-.field public final synthetic k:Lfr4;
+.field public final b:Luh0;
 
-.field public final synthetic l:Ljava/lang/String;
+.field public c:Lyn0;
 
-.field public final synthetic m:Lgr4;
+.field public d:Lyn0;
+
+.field public e:Lyn0;
+
+.field public f:Lyn0;
+
+.field public g:Lyn0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfr4;Ljava/lang/String;Lgr4;B)V
-    .locals 0
+.method public constructor <init>(Lc81;)V
+    .locals 1
 
     .line 1
-    iput-byte p4, p0, Lkd1;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lkd1;->k:Lfr4;
-
     .line 4
+    iput-object p1, p0, Lkd1;->a:Lc81;
+
     .line 5
-    iput-object p2, p0, Lkd1;->l:Ljava/lang/String;
-
     .line 6
+    new-instance v0, Luh0;
+
     .line 7
-    iput-object p3, p0, Lkd1;->m:Lgr4;
-
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, p1}, Luh0;-><init>(Lc81;)V
 
+    .line 9
     .line 10
     .line 11
+    iput-object v0, p0, Lkd1;->b:Luh0;
+
     .line 12
+    .line 13
+    new-instance p1, Lyn0;
+
+    .line 14
+    .line 15
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    .line 16
+    .line 17
+    .line 18
+    const/4 v0, 0x0
+
+    .line 19
+    iput v0, p1, Lyn0;->c:I
+
+    .line 20
+    .line 21
+    iput v0, p1, Lyn0;->b:I
+
+    .line 22
+    .line 23
+    iput v0, p1, Lyn0;->a:I
+
+    .line 24
+    .line 25
+    iput-object p1, p0, Lkd1;->c:Lyn0;
+
+    .line 26
+    .line 27
+    new-instance p1, Lyn0;
+
+    .line 28
+    .line 29
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    .line 30
+    .line 31
+    .line 32
+    iput v0, p1, Lyn0;->c:I
+
+    .line 33
+    .line 34
+    iput v0, p1, Lyn0;->b:I
+
+    .line 35
+    .line 36
+    iput v0, p1, Lyn0;->a:I
+
+    .line 37
+    .line 38
+    iput-object p1, p0, Lkd1;->d:Lyn0;
+
+    .line 39
+    .line 40
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 5
+.method public final a()Z
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lkd1;->j:B
+    iget-object v0, p0, Lkd1;->c:Lyn0;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget v0, v0, Lyn0;->a:I
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iget-object p0, p0, Lkd1;->d:Lyn0;
 
     .line 6
-    iget-object v3, p0, Lkd1;->m:Lgr4;
-
     .line 7
+    iget p0, p0, Lyn0;->a:I
+
     .line 8
-    iget-object v4, p0, Lkd1;->l:Ljava/lang/String;
-
     .line 9
-    .line 10
-    iget-object p0, p0, Lkd1;->k:Lfr4;
+    if-eq v0, p0, :cond_0
 
+    .line 10
     .line 11
+    const/4 p0, 0x1
+
     .line 12
-    packed-switch v0, :pswitch_data_0
+    return p0
 
     .line 13
+    :cond_0
+    const/4 p0, 0x0
+
     .line 14
-    .line 15
-    invoke-virtual {p0, v4}, Lfr4;->d(Ljava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v3, v2}, Lgr4;->c(Ljava/lang/String;)V
-
-    .line 19
-    .line 20
-    .line 21
-    return-object v1
-
-    .line 22
-    :pswitch_0
-    invoke-virtual {p0, v4}, Lfr4;->d(Ljava/lang/String;)V
-
-    .line 23
-    .line 24
-    .line 25
-    invoke-virtual {v3, v2}, Lgr4;->c(Ljava/lang/String;)V
-
-    .line 26
-    .line 27
-    .line 28
-    return-object v1
-
-    .line 29
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

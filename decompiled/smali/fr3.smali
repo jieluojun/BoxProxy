@@ -1,291 +1,93 @@
-.class public final Lfr3;
+.class public final synthetic Lfr3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lrj3;
+.implements Le72;
 
 
 # instance fields
-.field public final a:Ler3;
+.field public final synthetic i:B
+
+.field public final synthetic j:Ltr3;
+
+.field public final synthetic k:Lh04;
 
 
 # direct methods
-.method public constructor <init>(Ler3;)V
+.method public synthetic constructor <init>(Ltr3;Lh04;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lfr3;->i:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lfr3;->a:Ler3;
+    iput-object p1, p0, Lfr3;->j:Ltr3;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lfr3;->k:Lh04;
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lqt2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Lqu5;->J(Lqt2;)Ljava/util/ArrayList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p2
-
-    .line 7
-    invoke-interface {p0, p1, p2, p3}, Ler3;->a(Lqt2;Ljava/util/List;I)I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    return p0
-.end method
-
-.method public final b(Lqt2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Lqu5;->J(Lqt2;)Ljava/util/ArrayList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p2
-
-    .line 7
-    invoke-interface {p0, p1, p2, p3}, Ler3;->b(Lqt2;Ljava/util/List;I)I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    return p0
-.end method
-
-.method public final c(Luj3;Ljava/util/List;J)Lsj3;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Lqu5;->J(Lqt2;)Ljava/util/ArrayList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p2
-
-    .line 7
-    invoke-interface {p0, p1, p2, p3, p4}, Ler3;->c(Luj3;Ljava/util/List;J)Lsj3;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    return-object p0
-.end method
-
-.method public final d(Lqt2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Lqu5;->J(Lqt2;)Ljava/util/ArrayList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p2
-
-    .line 7
-    invoke-interface {p0, p1, p2, p3}, Ler3;->d(Lqt2;Ljava/util/List;I)I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    return p0
-.end method
-
-.method public final e(Lqt2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Lqu5;->J(Lqt2;)Ljava/util/ArrayList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p2
-
-    .line 7
-    invoke-interface {p0, p1, p2, p3}, Ler3;->e(Lqt2;Ljava/util/List;I)I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke()Ljava/lang/Object;
     .locals 3
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Lfr3;->i:B
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    sget-object v1, Ll97;->a:Ll97;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lfr3;
+    iget-object v2, p0, Lfr3;->k:Lh04;
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    iget-object p0, p0, Lfr3;->j:Ltr3;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
+    packed-switch v0, :pswitch_data_0
+
     .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lfr3;
-
-    .line 12
-    .line 13
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 14
-    .line 15
-    iget-object p1, p1, Lfr3;->a:Ler3;
-
-    .line 16
-    .line 17
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    if-nez p0, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "MultiContentMeasurePolicyImpl(measurePolicy="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lfr3;->a:Ler3;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 11
     .line 12
-    .line 13
-    const-string p0, ")"
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
 
+    .line 13
     .line 14
     .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v1
 
     .line 16
+    :pswitch_0
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
+
     .line 17
     .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     .line 19
-    .line 20
-    .line 21
-    move-result-object p0
+    return-object v1
 
-    .line 22
-    return-object p0
+    .line 20
+    nop
+
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

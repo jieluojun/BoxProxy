@@ -1,88 +1,57 @@
-.class public final Lsh1;
+.class public abstract Lsh1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lhr1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final a(Ljr1;)V
-    .locals 2
+# static fields
+.field public static final a:Lmx6;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    iget-object p0, p1, Ljr1;->a:Luq;
+    const-wide v0, 0xff4286f4L
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Luq;->c()I
-
     .line 4
     .line 5
     .line 6
-    move-result p0
+    invoke-static {v0, v1}, Lxl;->g(J)J
 
     .line 7
-    const-string v0, ""
-
     .line 8
     .line 9
-    const/4 v1, 0x0
+    move-result-wide v0
 
     .line 10
-    invoke-virtual {p1, v1, v0, p0}, Ljr1;->d(ILjava/lang/String;I)V
+    new-instance v2, Lmx6;
 
     .line 11
     .line 12
+    const v3, 0x3ecccccd    # 0.4f
+
     .line 13
+    .line 14
+    .line 15
+    invoke-static {v0, v1, v3}, Ldv0;->b(JF)J
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-wide v3
+
+    .line 19
+    invoke-direct {v2, v0, v1, v3, v4}, Lmx6;-><init>(JJ)V
+
+    .line 20
+    .line 21
+    .line 22
+    sput-object v2, Lsh1;->a:Lmx6;
+
+    .line 23
+    .line 24
     return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    instance-of p0, p1, Lsh1;
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const-class p0, Lsh1;
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Loa5;->a(Ljava/lang/Class;)Lsr0;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {p0}, Lsr0;->hashCode()I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "DeleteAllCommand()"
-
-    .line 2
-    .line 3
-    return-object p0
 .end method

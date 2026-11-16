@@ -1,544 +1,544 @@
-.class public final synthetic Lg51;
+.class public final Lg51;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Landroid/content/Context;
-
-.field public final synthetic l:Lmt3;
+.field public final synthetic i:B
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Lmt3;B)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lg51;->j:B
+    iput-byte p1, p0, Lg51;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lg51;->k:Landroid/content/Context;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    iput-object p2, p0, Lg51;->l:Lmt3;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lg51;->j:B
+    iget-byte p0, p0, Lg51;->i:B
 
     .line 2
     .line 3
-    const-string v1, "sort_mode"
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
-    const-string v2, "reverse_sort"
-
     .line 6
+    check-cast p1, Lhk7;
+
     .line 7
-    sget-object v3, Lpp0;->l:Lpp0;
-
     .line 8
+    iget-object p0, p1, Lhk7;->a:Lpt4;
+
     .line 9
-    sget-object v4, Lpp0;->m:Lpp0;
-
     .line 10
+    check-cast p2, Lhk7;
+
     .line 11
-    const-string v5, "auto_expand_top_traffic"
-
     .line 12
-    .line 13
-    const/4 v6, 0x0
+    iget-object p1, p2, Lhk7;->a:Lpt4;
 
+    .line 13
     .line 14
-    const-string v7, "overview_preferences"
+    invoke-static {p0, p1}, Ler;->D(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     .line 15
     .line 16
-    sget-object v8, La47;->a:La47;
-
     .line 17
+    move-result p0
+
     .line 18
-    iget-object v9, p0, Lg51;->l:Lmt3;
+    return p0
 
     .line 19
+    :pswitch_0
+    check-cast p1, Lda6;
+
     .line 20
-    iget-object p0, p0, Lg51;->k:Landroid/content/Context;
-
     .line 21
-    .line 22
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p1, Lda6;->a:Ljava/lang/String;
 
+    .line 22
     .line 23
+    sget-object p1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
     .line 24
     .line 25
-    check-cast p1, Ljava/lang/Boolean;
+    invoke-virtual {p0, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 26
     .line 27
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
     .line 28
+    move-result-object p0
+
     .line 29
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 30
-    move-result v0
-
     .line 31
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
     .line 32
+    check-cast p2, Lda6;
+
     .line 33
     .line 34
-    sget-object p1, Lri4;->a:Ljava/util/List;
+    iget-object p2, p2, Lda6;->a:Ljava/lang/String;
 
     .line 35
     .line 36
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p2, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 37
     .line 38
     .line 39
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    move-result-object p1
 
     .line 40
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 41
     .line 42
-    move-result-object p0
-
     .line 43
-    invoke-virtual {p0, v7, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/Object;)I
 
     .line 44
     .line 45
     .line 46
-    move-result-object p0
+    move-result p0
 
     .line 47
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    return p0
 
     .line 48
+    :pswitch_1
+    check-cast p1, Lxl5;
+
     .line 49
     .line 50
-    move-result-object p0
+    iget-object p0, p1, Lxl5;->c:Lzm5;
 
     .line 51
-    invoke-interface {p0, v5, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
     .line 52
+    iget p0, p0, Lzm5;->a:I
+
     .line 53
     .line 54
-    move-result-object p0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 55
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
     .line 56
     .line 57
+    move-result-object p0
+
     .line 58
-    return-object v8
+    check-cast p2, Lxl5;
 
     .line 59
-    :pswitch_0
-    check-cast p1, Lpp0;
-
     .line 60
-    .line 61
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p1, p2, Lxl5;->c:Lzm5;
 
+    .line 61
     .line 62
+    iget p1, p1, Lzm5;->a:I
+
     .line 63
     .line 64
-    sget-object v0, Lej4;->a:Ljava/util/ArrayList;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 65
     .line 66
-    if-ne p1, v4, :cond_0
-
     .line 67
+    move-result-object p1
+
     .line 68
-    goto :goto_0
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     .line 69
-    :cond_0
-    move-object v3, p1
-
     .line 70
-    :goto_0
-    invoke-interface {v9, v3}, Lmt3;->setValue(Ljava/lang/Object;)V
-
     .line 71
+    move-result p0
+
     .line 72
+    return p0
+
     .line 73
-    invoke-static {p0, v3}, Lri4;->f(Landroid/content/Context;Lpp0;)V
+    :pswitch_2
+    check-cast p1, Lvm5;
 
     .line 74
     .line 75
-    .line 76
-    return-object v8
+    iget-object p0, p1, Lvm5;->a:Lzm5;
 
+    .line 76
     .line 77
-    :pswitch_1
-    check-cast p1, Ljava/lang/Boolean;
+    iget p0, p0, Lzm5;->a:I
 
     .line 78
     .line 79
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 80
     .line 81
     .line 82
-    move-result v0
+    move-result-object p0
 
     .line 83
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
+    check-cast p2, Lvm5;
 
     .line 84
     .line 85
+    iget-object p1, p2, Lvm5;->a:Lzm5;
+
     .line 86
-    sget-object p1, Lri4;->a:Ljava/util/List;
-
     .line 87
-    .line 88
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p1, Lzm5;->a:I
 
+    .line 88
     .line 89
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
     .line 90
     .line 91
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
     .line 92
+    move-result-object p1
+
     .line 93
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
     .line 94
-    move-result-object p0
-
     .line 95
-    invoke-virtual {p0, v7, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
     .line 96
+    move-result p0
+
     .line 97
+    return p0
+
     .line 98
-    move-result-object p0
+    :pswitch_3
+    invoke-static {p2}, Llj6;->h(Ljava/lang/Object;)Ljava/lang/ClassCastException;
 
     .line 99
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
     .line 100
     .line 101
-    .line 102
     move-result-object p0
 
+    .line 102
+    throw p0
+
     .line 103
-    invoke-interface {p0, v5, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    :pswitch_4
+    check-cast p2, Lwh4;
 
     .line 104
     .line 105
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 106
+    .line 107
+    .line 108
+    const/4 p0, 0x2
+
+    .line 109
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 110
+    .line 111
+    .line 112
     move-result-object p0
 
-    .line 107
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 108
-    .line 109
-    .line 110
-    return-object v8
-
-    .line 111
-    :pswitch_2
-    check-cast p1, Lpp0;
-
-    .line 112
     .line 113
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lwh4;
 
     .line 114
     .line 115
-    .line 116
-    sget-object v0, Lej4;->a:Ljava/util/ArrayList;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 116
     .line 117
     .line 118
-    if-ne p1, v4, :cond_1
+    invoke-interface {p0, p0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     .line 119
     .line 120
-    goto :goto_1
-
     .line 121
-    :cond_1
-    move-object v3, p1
+    move-result p0
 
     .line 122
-    :goto_1
-    invoke-interface {v9, v3}, Lmt3;->setValue(Ljava/lang/Object;)V
+    return p0
 
     .line 123
+    :pswitch_5
+    check-cast p1, Ljava/lang/String;
+
     .line 124
     .line 125
-    invoke-static {p0, v3}, Lri4;->f(Landroid/content/Context;Lpp0;)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 126
     .line 127
     .line 128
-    return-object v8
+    sget-object p0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 129
-    :pswitch_3
-    check-cast p1, Ljava/lang/String;
-
     .line 130
-    .line 131
-    if-nez p1, :cond_2
+    invoke-static {p0, p1, p0}, Lrf6;->t(Ljava/util/Locale;Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
 
+    .line 131
     .line 132
     .line 133
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result-object p1
 
     .line 134
-    .line 135
-    invoke-interface {v9, p0}, Lmt3;->setValue(Ljava/lang/Object;)V
+    check-cast p2, Ljava/lang/String;
 
+    .line 135
     .line 136
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 137
     .line 138
-    goto :goto_2
-
     .line 139
-    :cond_2
-    invoke-static {p0, p1}, Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 140
     .line 141
     .line 142
-    :goto_2
-    return-object v8
+    invoke-virtual {p2, p0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 143
-    :pswitch_4
-    check-cast p1, Ljava/lang/String;
-
     .line 144
     .line 145
-    if-nez p1, :cond_3
+    move-result-object p0
 
     .line 146
-    .line 147
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 147
     .line 148
     .line 149
-    invoke-interface {v9, p0}, Lmt3;->setValue(Ljava/lang/Object;)V
+    invoke-interface {p1, p0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     .line 150
     .line 151
     .line 152
-    goto :goto_3
+    move-result p0
 
     .line 153
-    :cond_3
-    invoke-static {p0, p1}, Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V
+    return p0
 
     .line 154
+    :pswitch_6
+    check-cast p1, Lly4;
+
     .line 155
     .line 156
-    :goto_3
-    return-object v8
+    iget-object p0, p1, Lly4;->a:Ljava/lang/String;
 
     .line 157
-    :pswitch_5
-    check-cast p1, Ljava/lang/String;
-
     .line 158
-    .line 159
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
+    check-cast p2, Lly4;
 
+    .line 159
     .line 160
+    iget-object p1, p2, Lly4;->a:Ljava/lang/String;
+
     .line 161
     .line 162
-    invoke-static {p0, p1}, Lhq;->l0(Landroid/content/Context;Ljava/lang/String;)V
+    sget-object p2, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
 
     .line 163
     .line 164
+    invoke-interface {p2, p0, p1}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
     .line 165
-    return-object v8
-
     .line 166
-    :pswitch_6
-    check-cast p1, Ljava/lang/Boolean;
-
     .line 167
+    move-result p0
+
     .line 168
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    return p0
 
     .line 169
+    :pswitch_7
+    const/high16 p0, -0x80000000
+
     .line 170
     .line 171
-    move-result v0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 172
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
     .line 173
     .line 174
+    move-result-object p0
+
     .line 175
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p2, Lz84;
 
     .line 176
     .line 177
-    .line 178
-    invoke-static {p0}, Lhq;->X(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object p2, p2, Lz84;->c:Ljava/lang/Integer;
 
+    .line 178
     .line 179
+    if-nez p2, :cond_0
+
     .line 180
     .line 181
-    move-result-object p0
+    move-object p2, p0
 
     .line 182
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    :cond_0
+    check-cast p1, Lz84;
 
     .line 183
     .line 184
-    .line 185
-    move-result-object p0
+    iget-object p1, p1, Lz84;->c:Ljava/lang/Integer;
 
+    .line 185
     .line 186
-    invoke-interface {p0, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    if-eqz p1, :cond_1
 
     .line 187
     .line 188
+    move-object p0, p1
+
     .line 189
-    move-result-object p0
+    :cond_1
+    invoke-interface {p2, p0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     .line 190
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
     .line 191
     .line 192
+    move-result p0
+
     .line 193
-    return-object v8
+    return p0
 
     .line 194
-    :pswitch_7
-    check-cast p1, Lx41;
+    :pswitch_8
+    check-cast p2, Lz84;
 
     .line 195
     .line 196
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean p0, p2, Lz84;->g:Z
 
     .line 197
     .line 198
-    .line 199
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    .line 199
     .line 200
     .line 201
+    move-result-object p0
+
     .line 202
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lz84;
 
     .line 203
     .line 204
-    .line 205
-    invoke-static {p0}, Lhq;->X(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-boolean p1, p1, Lz84;->g:Z
 
+    .line 205
     .line 206
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 207
     .line 208
-    move-result-object p0
-
     .line 209
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    .line 210
-    .line 211
-    .line 212
-    move-result-object p0
-
-    .line 213
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    .line 214
-    .line 215
-    .line 216
     move-result-object p1
 
+    .line 210
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 211
+    .line 212
+    .line 213
+    move-result p0
+
+    .line 214
+    return p0
+
+    .line 215
+    :pswitch_9
+    check-cast p1, Lz64;
+
+    .line 216
     .line 217
-    invoke-interface {p0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    iget-object p0, p1, Lz64;->a:Ljava/lang/String;
 
     .line 218
     .line 219
-    .line 220
-    move-result-object p0
+    sget-object p1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
+    .line 220
     .line 221
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-static {p1, p0, p1}, Lrf6;->t(Ljava/util/Locale;Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
 
     .line 222
     .line 223
     .line 224
-    return-object v8
+    move-result-object p0
 
     .line 225
-    :pswitch_8
-    check-cast p1, Ljava/lang/Boolean;
+    check-cast p2, Lz64;
 
     .line 226
     .line 227
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object p2, p2, Lz64;->a:Ljava/lang/String;
 
     .line 228
     .line 229
+    invoke-virtual {p2, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
     .line 230
-    move-result v0
-
     .line 231
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
     .line 232
-    .line 233
-    .line 234
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p1
 
+    .line 233
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 234
     .line 235
     .line 236
-    .line 237
-    invoke-static {p0}, Lhq;->X(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/Object;)I
 
+    .line 237
     .line 238
     .line 239
+    move-result p0
+
     .line 240
-    move-result-object p0
+    return p0
 
     .line 241
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    :pswitch_a
+    check-cast p1, Lt64;
 
     .line 242
     .line 243
-    .line 244
-    move-result-object p0
+    iget-byte p0, p1, Lt64;->i:B
 
+    .line 244
     .line 245
-    invoke-interface {p0, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 246
     .line 247
@@ -546,94 +546,565 @@
     move-result-object p0
 
     .line 249
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    check-cast p2, Lt64;
 
     .line 250
     .line 251
-    .line 252
-    return-object v8
+    iget-byte p1, p2, Lt64;->i:B
 
+    .line 252
     .line 253
-    :pswitch_9
-    check-cast p1, Lx41;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 254
     .line 255
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 256
-    .line 257
-    .line 258
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
+    move-result-object p1
 
+    .line 257
+    invoke-virtual {p0, p1}, Ljava/lang/Integer;->compareTo(Ljava/lang/Object;)I
+
+    .line 258
     .line 259
     .line 260
+    move-result p0
+
     .line 261
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return p0
 
     .line 262
+    :pswitch_b
+    check-cast p1, Ljava/lang/String;
+
     .line 263
     .line 264
-    invoke-static {p0}, Lhq;->X(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    sget-object p0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 265
     .line 266
+    invoke-static {p0, p1, p0}, Lrf6;->t(Ljava/util/Locale;Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
+
     .line 267
-    move-result-object p0
-
     .line 268
-    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
     .line 269
-    .line 270
-    .line 271
-    move-result-object p0
+    move-result-object p1
 
+    .line 270
+    check-cast p2, Ljava/lang/String;
+
+    .line 271
     .line 272
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 273
     .line 274
     .line 275
-    move-result-object p1
+    invoke-virtual {p2, p0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 276
-    invoke-interface {p0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
     .line 277
     .line 278
-    .line 279
     move-result-object p0
 
-    .line 280
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    .line 279
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 280
     .line 281
     .line 282
+    invoke-interface {p1, p0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
     .line 283
-    return-object v8
-
     .line 284
-    :pswitch_a
-    check-cast p1, Ljava/lang/String;
-
     .line 285
+    move-result p0
+
     .line 286
-    invoke-interface {v9, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
+    return p0
 
     .line 287
+    :pswitch_c
+    check-cast p1, Ltr3;
+
     .line 288
     .line 289
-    invoke-static {p0, p1}, Lhq;->l0(Landroid/content/Context;Ljava/lang/String;)V
+    iget-object p0, p1, Ltr3;->a:Ljava/lang/String;
 
     .line 290
     .line 291
-    .line 292
-    return-object v8
+    sget-object p1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
+    .line 292
     .line 293
+    invoke-static {p1, p0, p1}, Lrf6;->t(Ljava/util/Locale;Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
+
+    .line 294
+    .line 295
+    .line 296
+    move-result-object p0
+
+    .line 297
+    check-cast p2, Ltr3;
+
+    .line 298
+    .line 299
+    iget-object p2, p2, Ltr3;->a:Ljava/lang/String;
+
+    .line 300
+    .line 301
+    invoke-virtual {p2, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    .line 302
+    .line 303
+    .line 304
+    move-result-object p1
+
+    .line 305
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 306
+    .line 307
+    .line 308
+    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/Object;)I
+
+    .line 309
+    .line 310
+    .line 311
+    move-result p0
+
+    .line 312
+    return p0
+
+    .line 313
+    :pswitch_d
+    check-cast p1, Ljava/lang/Comparable;
+
+    .line 314
+    .line 315
+    check-cast p2, Ljava/lang/Comparable;
+
+    .line 316
+    .line 317
+    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 318
+    .line 319
+    .line 320
+    move-result p0
+
+    .line 321
+    return p0
+
+    .line 322
+    :pswitch_e
+    check-cast p1, Ljava/lang/Comparable;
+
+    .line 323
+    .line 324
+    check-cast p2, Ljava/lang/Comparable;
+
+    .line 325
+    .line 326
+    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 327
+    .line 328
+    .line 329
+    move-result p0
+
+    .line 330
+    return p0
+
+    .line 331
+    :pswitch_f
+    check-cast p1, Lzc3;
+
+    .line 332
+    .line 333
+    iget-wide p0, p1, Lzc3;->a:D
+
+    .line 334
+    .line 335
+    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 336
+    .line 337
+    .line 338
+    move-result-object p0
+
+    .line 339
+    check-cast p2, Lzc3;
+
+    .line 340
+    .line 341
+    iget-wide p1, p2, Lzc3;->a:D
+
+    .line 342
+    .line 343
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 344
+    .line 345
+    .line 346
+    move-result-object p1
+
+    .line 347
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 348
+    .line 349
+    .line 350
+    move-result p0
+
+    .line 351
+    return p0
+
+    .line 352
+    :pswitch_10
+    check-cast p1, Lva3;
+
+    .line 353
+    .line 354
+    iget-object p0, p1, Lva3;->c:Ljava/lang/String;
+
+    .line 355
+    .line 356
+    sget-object p1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    .line 357
+    .line 358
+    invoke-virtual {p0, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    .line 359
+    .line 360
+    .line 361
+    move-result-object p0
+
+    .line 362
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 363
+    .line 364
+    .line 365
+    check-cast p2, Lva3;
+
+    .line 366
+    .line 367
+    iget-object p2, p2, Lva3;->c:Ljava/lang/String;
+
+    .line 368
+    .line 369
+    invoke-virtual {p2, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    .line 370
+    .line 371
+    .line 372
+    move-result-object p1
+
+    .line 373
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 374
+    .line 375
+    .line 376
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 377
+    .line 378
+    .line 379
+    move-result p0
+
+    .line 380
+    return p0
+
+    .line 381
+    :pswitch_11
+    check-cast p2, Lhk2;
+
+    .line 382
+    .line 383
+    iget-wide v0, p2, Lhk2;->g:J
+
+    .line 384
+    .line 385
+    iget-wide v2, p2, Lhk2;->f:J
+
+    .line 386
+    .line 387
+    add-long/2addr v0, v2
+
+    .line 388
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    .line 389
+    .line 390
+    .line 391
+    move-result-object p0
+
+    .line 392
+    check-cast p1, Lhk2;
+
+    .line 393
+    .line 394
+    iget-wide v0, p1, Lhk2;->g:J
+
+    .line 395
+    .line 396
+    iget-wide p1, p1, Lhk2;->f:J
+
+    .line 397
+    .line 398
+    add-long/2addr v0, p1
+
+    .line 399
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    .line 400
+    .line 401
+    .line 402
+    move-result-object p1
+
+    .line 403
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 404
+    .line 405
+    .line 406
+    move-result p0
+
+    .line 407
+    return p0
+
+    .line 408
+    :pswitch_12
+    check-cast p1, Lxl1;
+
+    .line 409
+    .line 410
+    iget p0, p1, Lxl1;->a:F
+
+    .line 411
+    .line 412
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 413
+    .line 414
+    .line 415
+    move-result-object p0
+
+    .line 416
+    check-cast p2, Lxl1;
+
+    .line 417
+    .line 418
+    iget p1, p2, Lxl1;->a:F
+
+    .line 419
+    .line 420
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 421
+    .line 422
+    .line 423
+    move-result-object p1
+
+    .line 424
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 425
+    .line 426
+    .line 427
+    move-result p0
+
+    .line 428
+    return p0
+
+    .line 429
+    :pswitch_13
+    check-cast p1, Lu53;
+
+    .line 430
+    .line 431
+    check-cast p2, Lu53;
+
+    .line 432
+    .line 433
+    iget p0, p1, Lu53;->x:I
+
+    .line 434
+    .line 435
+    iget v0, p2, Lu53;->x:I
+
+    .line 436
+    .line 437
+    invoke-static {p0, v0}, Lky2;->I(II)I
+
+    .line 438
+    .line 439
+    .line 440
+    move-result p0
+
+    .line 441
+    if-nez p0, :cond_2
+
+    .line 442
+    .line 443
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    .line 444
+    .line 445
+    .line 446
+    move-result p0
+
+    .line 447
+    invoke-virtual {p2}, Ljava/lang/Object;->hashCode()I
+
+    .line 448
+    .line 449
+    .line 450
+    move-result p1
+
+    .line 451
+    invoke-static {p0, p1}, Lky2;->I(II)I
+
+    .line 452
+    .line 453
+    .line 454
+    move-result p0
+
+    .line 455
+    :cond_2
+    return p0
+
+    .line 456
+    :pswitch_14
+    check-cast p1, Ljava/lang/String;
+
+    .line 457
+    .line 458
+    invoke-static {p1}, Lqm;->u(Ljava/lang/String;)I
+
+    .line 459
+    .line 460
+    .line 461
+    move-result p0
+
+    .line 462
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 463
+    .line 464
+    .line 465
+    move-result-object p0
+
+    .line 466
+    check-cast p2, Ljava/lang/String;
+
+    .line 467
+    .line 468
+    invoke-static {p2}, Lqm;->u(Ljava/lang/String;)I
+
+    .line 469
+    .line 470
+    .line 471
+    move-result p1
+
+    .line 472
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 473
+    .line 474
+    .line 475
+    move-result-object p1
+
+    .line 476
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 477
+    .line 478
+    .line 479
+    move-result p0
+
+    .line 480
+    return p0
+
+    .line 481
+    :pswitch_15
+    check-cast p1, Lhk2;
+
+    .line 482
+    .line 483
+    iget-object p0, p1, Lhk2;->y:Ljava/lang/String;
+
+    .line 484
+    .line 485
+    invoke-static {p0}, Lqm;->u(Ljava/lang/String;)I
+
+    .line 486
+    .line 487
+    .line 488
+    move-result p0
+
+    .line 489
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 490
+    .line 491
+    .line 492
+    move-result-object p0
+
+    .line 493
+    check-cast p2, Lhk2;
+
+    .line 494
+    .line 495
+    iget-object p1, p2, Lhk2;->y:Ljava/lang/String;
+
+    .line 496
+    .line 497
+    invoke-static {p1}, Lqm;->u(Ljava/lang/String;)I
+
+    .line 498
+    .line 499
+    .line 500
+    move-result p1
+
+    .line 501
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 502
+    .line 503
+    .line 504
+    move-result-object p1
+
+    .line 505
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    .line 506
+    .line 507
+    .line 508
+    move-result p0
+
+    .line 509
+    return p0
+
+    .line 510
+    nop
+
+    .line 511
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
         :pswitch_a
         :pswitch_9
         :pswitch_8

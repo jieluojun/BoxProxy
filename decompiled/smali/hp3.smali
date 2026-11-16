@@ -1,169 +1,479 @@
-.class public abstract Lhp3;
+.class public final Lhp3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
-# static fields
-.field public static final a:Liw1;
+# instance fields
+.field public final synthetic i:B
 
-.field public static b:F = 1.0f
-
-.field public static final c:Lvv1;
-
-.field public static final d:Lpx1;
-
-.field public static final e:Lvv1;
-
-.field public static final f:Lpx1;
+.field public final synthetic j:Lu47;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public synthetic constructor <init>(Lu47;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Liw1;
+    iput-byte p2, p0, Lhp3;->i:B
 
     .line 2
     .line 3
-    const/16 v1, 0xb
+    iput-object p1, p0, Lhp3;->j:Lu47;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Liw1;-><init>(B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
     .line 8
-    sput-object v0, Lhp3;->a:Liw1;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lhp3;->i:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lhp3;->j:Lu47;
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Lu47;->f()Lp47;
 
     .line 9
     .line 10
-    new-instance v0, Lm21;
-
     .line 11
+    move-result-object p0
+
     .line 12
-    const/4 v1, 0x5
+    return-object p0
 
     .line 13
-    invoke-direct {v0, v1}, Lm21;-><init>(B)V
+    :pswitch_0
+    iget-object p0, p0, Lu47;->d:Lxs4;
 
     .line 14
     .line 15
-    .line 16
-    const/16 v2, 0x12c
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
 
+    .line 16
     .line 17
     .line 18
-    const/4 v3, 0x0
+    move-result-object p0
 
     .line 19
-    const/4 v4, 0x2
+    return-object p0
 
     .line 20
-    invoke-static {v2, v3, v0, v4}, Lbf0;->W(IILrq1;I)Luz6;
+    :pswitch_1
+    invoke-virtual {p0}, Lu47;->f()Lp47;
 
     .line 21
     .line 22
     .line 23
-    move-result-object v0
+    move-result-object p0
 
     .line 24
-    const/4 v5, 0x0
+    return-object p0
 
     .line 25
-    invoke-static {v0, v5, v4}, Lqv1;->d(Lrz1;FI)Lvv1;
+    :pswitch_2
+    iget-object p0, p0, Lu47;->d:Lxs4;
 
     .line 26
     .line 27
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
     .line 28
-    move-result-object v0
-
     .line 29
-    sput-object v0, Lhp3;->c:Lvv1;
-
     .line 30
+    move-result-object p0
+
     .line 31
-    new-instance v0, Lm21;
+    return-object p0
 
     .line 32
-    .line 33
-    invoke-direct {v0, v1}, Lm21;-><init>(B)V
+    :pswitch_3
+    invoke-virtual {p0}, Lu47;->f()Lp47;
 
+    .line 33
     .line 34
     .line 35
+    move-result-object p0
+
     .line 36
-    const/16 v1, 0xfa
+    return-object p0
 
     .line 37
-    .line 38
-    invoke-static {v1, v3, v0, v4}, Lbf0;->W(IILrq1;I)Luz6;
+    :pswitch_4
+    iget-object p0, p0, Lu47;->d:Lxs4;
 
+    .line 38
     .line 39
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
     .line 40
     .line 41
-    move-result-object v0
-
     .line 42
-    invoke-static {v0, v5, v4}, Lqv1;->e(Lrz1;FI)Lpx1;
+    move-result-object p0
 
     .line 43
+    return-object p0
+
     .line 44
+    :pswitch_5
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
     .line 45
-    move-result-object v0
-
     .line 46
-    sput-object v0, Lhp3;->d:Lpx1;
-
     .line 47
+    move-result-object p0
+
     .line 48
-    sget-object v0, Lg17;->z0:Lgb4;
+    return-object p0
 
     .line 49
-    .line 50
-    invoke-static {v2, v3, v0, v4}, Lbf0;->W(IILrq1;I)Luz6;
+    :pswitch_6
+    iget-object p0, p0, Lu47;->d:Lxs4;
 
+    .line 50
     .line 51
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
     .line 52
     .line 53
-    move-result-object v1
-
     .line 54
-    invoke-static {v1, v5, v4}, Lqv1;->d(Lrz1;FI)Lvv1;
+    move-result-object p0
 
     .line 55
+    return-object p0
+
     .line 56
+    :pswitch_7
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
     .line 57
-    move-result-object v1
-
     .line 58
-    sput-object v1, Lhp3;->e:Lvv1;
-
     .line 59
+    move-result-object p0
+
     .line 60
-    const/16 v1, 0x96
+    return-object p0
 
     .line 61
-    .line 62
-    invoke-static {v1, v3, v0, v4}, Lbf0;->W(IILrq1;I)Luz6;
+    :pswitch_8
+    iget-object p0, p0, Lu47;->d:Lxs4;
 
+    .line 62
     .line 63
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
     .line 64
     .line 65
-    move-result-object v0
-
     .line 66
-    invoke-static {v0, v5, v4}, Lqv1;->e(Lrz1;FI)Lpx1;
+    move-result-object p0
 
     .line 67
+    return-object p0
+
     .line 68
+    :pswitch_9
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
     .line 69
-    move-result-object v0
-
     .line 70
-    sput-object v0, Lhp3;->f:Lpx1;
-
     .line 71
+    move-result-object p0
+
     .line 72
-    return-void
+    return-object p0
+
+    .line 73
+    :pswitch_a
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 74
+    .line 75
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 76
+    .line 77
+    .line 78
+    move-result-object p0
+
+    .line 79
+    return-object p0
+
+    .line 80
+    :pswitch_b
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 81
+    .line 82
+    .line 83
+    move-result-object p0
+
+    .line 84
+    return-object p0
+
+    .line 85
+    :pswitch_c
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 86
+    .line 87
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 88
+    .line 89
+    .line 90
+    move-result-object p0
+
+    .line 91
+    return-object p0
+
+    .line 92
+    :pswitch_d
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 93
+    .line 94
+    .line 95
+    move-result-object p0
+
+    .line 96
+    return-object p0
+
+    .line 97
+    :pswitch_e
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 98
+    .line 99
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 100
+    .line 101
+    .line 102
+    move-result-object p0
+
+    .line 103
+    return-object p0
+
+    .line 104
+    :pswitch_f
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 105
+    .line 106
+    .line 107
+    move-result-object p0
+
+    .line 108
+    return-object p0
+
+    .line 109
+    :pswitch_10
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 110
+    .line 111
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 112
+    .line 113
+    .line 114
+    move-result-object p0
+
+    .line 115
+    return-object p0
+
+    .line 116
+    :pswitch_11
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 117
+    .line 118
+    .line 119
+    move-result-object p0
+
+    .line 120
+    return-object p0
+
+    .line 121
+    :pswitch_12
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 122
+    .line 123
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 124
+    .line 125
+    .line 126
+    move-result-object p0
+
+    .line 127
+    return-object p0
+
+    .line 128
+    :pswitch_13
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 129
+    .line 130
+    .line 131
+    move-result-object p0
+
+    .line 132
+    return-object p0
+
+    .line 133
+    :pswitch_14
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 134
+    .line 135
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 136
+    .line 137
+    .line 138
+    move-result-object p0
+
+    .line 139
+    return-object p0
+
+    .line 140
+    :pswitch_15
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 141
+    .line 142
+    .line 143
+    move-result-object p0
+
+    .line 144
+    return-object p0
+
+    .line 145
+    :pswitch_16
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 146
+    .line 147
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 148
+    .line 149
+    .line 150
+    move-result-object p0
+
+    .line 151
+    return-object p0
+
+    .line 152
+    :pswitch_17
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 153
+    .line 154
+    .line 155
+    move-result-object p0
+
+    .line 156
+    return-object p0
+
+    .line 157
+    :pswitch_18
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 158
+    .line 159
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 160
+    .line 161
+    .line 162
+    move-result-object p0
+
+    .line 163
+    return-object p0
+
+    .line 164
+    :pswitch_19
+    invoke-virtual {p0}, Lu47;->f()Lp47;
+
+    .line 165
+    .line 166
+    .line 167
+    move-result-object p0
+
+    .line 168
+    return-object p0
+
+    .line 169
+    :pswitch_1a
+    iget-object p0, p0, Lu47;->d:Lxs4;
+
+    .line 170
+    .line 171
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 172
+    .line 173
+    .line 174
+    move-result-object p0
+
+    .line 175
+    return-object p0
+
+    .line 176
+    nop
+
+    .line 177
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

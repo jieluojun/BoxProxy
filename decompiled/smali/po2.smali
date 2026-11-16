@@ -1,118 +1,220 @@
 .class public final Lpo2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/text/style/LeadingMarginSpan;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final drawLeadingMargin(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;IIZLandroid/text/Layout;)V
+# instance fields
+.field public final a:Lt72;
+
+.field public final synthetic b:B
+
+
+# direct methods
+.method public constructor <init>(Lt72;B)V
     .locals 0
 
     .line 1
-    if-eqz p12, :cond_1
+    iput-byte p2, p0, Lpo2;->b:B
 
     .line 2
     .line 3
-    if-eqz p2, :cond_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    invoke-virtual {p12, p9}, Landroid/text/Layout;->getLineForOffset(I)I
-
     .line 6
+    iput-object p1, p0, Lpo2;->a:Lt72;
+
     .line 7
     .line 8
-    move-result p0
-
-    .line 9
-    invoke-virtual {p12}, Landroid/text/Layout;->getLineCount()I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p3
-
-    .line 13
-    add-int/lit8 p3, p3, -0x1
-
-    .line 14
-    .line 15
-    if-ne p0, p3, :cond_1
-
-    .line 16
-    .line 17
-    sget-object p3, Lar6;->a:Ljava/lang/ThreadLocal;
-
-    .line 18
-    .line 19
-    invoke-virtual {p12, p0}, Landroid/text/Layout;->getEllipsisCount(I)I
-
-    .line 20
-    .line 21
-    .line 22
-    move-result p3
-
-    .line 23
-    if-lez p3, :cond_1
-
-    .line 24
-    .line 25
-    invoke-static {p12, p0, p2}, Lbn;->Q(Landroid/text/Layout;ILandroid/graphics/Paint;)F
-
-    .line 26
-    .line 27
-    .line 28
-    move-result p3
-
-    .line 29
-    invoke-static {p12, p0, p2}, Lbn;->R(Landroid/text/Layout;ILandroid/graphics/Paint;)F
-
-    .line 30
-    .line 31
-    .line 32
-    move-result p0
-
-    .line 33
-    add-float/2addr p0, p3
-
-    .line 34
-    const/4 p2, 0x0
-
-    .line 35
-    cmpg-float p3, p0, p2
-
-    .line 36
-    .line 37
-    if-nez p3, :cond_0
-
-    .line 38
-    .line 39
-    return-void
-
-    .line 40
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 41
-    .line 42
-    .line 43
-    invoke-virtual {p1, p0, p2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 44
-    .line 45
-    .line 46
-    :cond_1
     return-void
 .end method
 
-.method public final getLeadingMargin(Z)I
-    .locals 0
+
+# virtual methods
+.method public final a(FLd53;Ld53;)F
+    .locals 6
 
     .line 1
-    const/4 p0, 0x0
+    iget-byte p0, p0, Lpo2;->b:B
 
     .line 2
+    .line 3
+    const/16 v0, 0x20
+
+    .line 4
+    .line 5
+    const/high16 v1, 0x40000000    # 2.0f
+
+    .line 6
+    .line 7
+    const-wide v2, 0xffffffffL
+
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    packed-switch p0, :pswitch_data_0
+
+    .line 13
+    .line 14
+    .line 15
+    invoke-interface {p2}, Ld53;->M()J
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-wide v4
+
+    .line 19
+    and-long/2addr v4, v2
+
+    .line 20
+    long-to-int p0, v4
+
+    .line 21
+    int-to-float p0, p0
+
+    .line 22
+    div-float/2addr p0, v1
+
+    .line 23
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p1
+
+    .line 27
+    int-to-long v4, p1
+
+    .line 28
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+
+    .line 32
+    int-to-long p0, p0
+
+    .line 33
+    shl-long/2addr v4, v0
+
+    .line 34
+    and-long/2addr p0, v2
+
+    .line 35
+    or-long/2addr v4, p0
+
+    .line 36
+    invoke-interface {p3, p2, v4, v5}, Ld53;->u(Ld53;J)J
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-wide p0
+
+    .line 40
+    shr-long/2addr p0, v0
+
+    .line 41
+    long-to-int p0, p0
+
+    .line 42
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 43
+    .line 44
+    .line 45
+    move-result p0
+
+    .line 46
     return p0
+
+    .line 47
+    :pswitch_0
+    invoke-interface {p2}, Ld53;->M()J
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-wide v4
+
+    .line 51
+    shr-long/2addr v4, v0
+
+    .line 52
+    long-to-int p0, v4
+
+    .line 53
+    int-to-float p0, p0
+
+    .line 54
+    div-float/2addr p0, v1
+
+    .line 55
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 56
+    .line 57
+    .line 58
+    move-result p0
+
+    .line 59
+    int-to-long v4, p0
+
+    .line 60
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 61
+    .line 62
+    .line 63
+    move-result p0
+
+    .line 64
+    int-to-long p0, p0
+
+    .line 65
+    shl-long/2addr v4, v0
+
+    .line 66
+    and-long/2addr p0, v2
+
+    .line 67
+    or-long/2addr v4, p0
+
+    .line 68
+    invoke-interface {p3, p2, v4, v5}, Ld53;->u(Ld53;J)J
+
+    .line 69
+    .line 70
+    .line 71
+    move-result-wide p0
+
+    .line 72
+    and-long/2addr p0, v2
+
+    .line 73
+    long-to-int p0, p0
+
+    .line 74
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 75
+    .line 76
+    .line 77
+    move-result p0
+
+    .line 78
+    return p0
+
+    .line 79
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

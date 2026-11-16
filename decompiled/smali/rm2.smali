@@ -1,178 +1,74 @@
-.class public final synthetic Lrm2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final Lrm2;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Le62;
+.field public i:Ljava/lang/String;
 
-.field public final synthetic k:Lwp3;
+.field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic l:Z
+.field public final synthetic k:Lkd2;
 
-.field public final synthetic m:Z
-
-.field public final synthetic n:J
-
-.field public final synthetic o:F
-
-.field public final synthetic p:F
-
-.field public final synthetic q:F
-
-.field public final synthetic r:Lt62;
-
-.field public final synthetic s:I
-
-.field public final synthetic t:S
+.field public l:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;Lwp3;ZZJFFFLt62;II)V
+.method public constructor <init>(Lkd2;Lq91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lrm2;->k:Lkd2;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lrm2;->j:Le62;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lrm2;->k:Lwp3;
-
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lrm2;->l:Z
-
-    .line 9
-    .line 10
-    iput-boolean p4, p0, Lrm2;->m:Z
-
-    .line 11
-    .line 12
-    iput-wide p5, p0, Lrm2;->n:J
-
-    .line 13
-    .line 14
-    iput p7, p0, Lrm2;->o:F
-
-    .line 15
-    .line 16
-    iput p8, p0, Lrm2;->p:F
-
-    .line 17
-    .line 18
-    iput p9, p0, Lrm2;->q:F
-
-    .line 19
-    .line 20
-    iput-object p10, p0, Lrm2;->r:Lt62;
-
-    .line 21
-    .line 22
-    iput p11, p0, Lrm2;->s:I
-
-    .line 23
-    .line 24
-    iput-short p12, p0, Lrm2;->t:S
-
-    .line 25
-    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    move-object v10, p1
+    iput-object p1, p0, Lrm2;->j:Ljava/lang/Object;
 
     .line 2
-    check-cast v10, Lz11;
-
     .line 3
+    iget p1, p0, Lrm2;->l:I
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
+    iput p1, p0, Lrm2;->l:I
+
     .line 9
-    iget p1, p0, Lrm2;->s:I
-
     .line 10
-    .line 11
-    or-int/lit8 p1, p1, 0x1
+    iget-object p1, p0, Lrm2;->k:Lkd2;
 
+    .line 11
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    invoke-virtual {p1, v0, p0}, Lkd2;->u(Ljava/lang/String;Lq91;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    move-result v11
+    move-result-object p0
 
     .line 17
-    iget-object v0, p0, Lrm2;->j:Le62;
-
-    .line 18
-    .line 19
-    iget-object v1, p0, Lrm2;->k:Lwp3;
-
-    .line 20
-    .line 21
-    iget-boolean v2, p0, Lrm2;->l:Z
-
-    .line 22
-    .line 23
-    iget-boolean v3, p0, Lrm2;->m:Z
-
-    .line 24
-    .line 25
-    iget-wide v4, p0, Lrm2;->n:J
-
-    .line 26
-    .line 27
-    iget v6, p0, Lrm2;->o:F
-
-    .line 28
-    .line 29
-    iget v7, p0, Lrm2;->p:F
-
-    .line 30
-    .line 31
-    iget v8, p0, Lrm2;->q:F
-
-    .line 32
-    .line 33
-    iget-object v9, p0, Lrm2;->r:Lt62;
-
-    .line 34
-    .line 35
-    iget-short v12, p0, Lrm2;->t:S
-
-    .line 36
-    .line 37
-    invoke-static/range {v0 .. v12}, Lpr;->h(Le62;Lwp3;ZZJFFFLt62;Lz11;II)V
-
-    .line 38
-    .line 39
-    .line 40
-    sget-object p0, La47;->a:La47;
-
-    .line 41
-    .line 42
     return-object p0
 .end method

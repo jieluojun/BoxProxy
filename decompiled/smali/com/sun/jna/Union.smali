@@ -1,6 +1,6 @@
 .class public abstract Lcom/sun/jna/Union;
 .super Lcom/sun/jna/Structure;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -378,7 +378,7 @@
 
     .line 49
     .line 50
-    invoke-static {v0, p1, v1, p0}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p1, v1, p0}, Llt4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 51
     .line 52
@@ -457,43 +457,39 @@
     move-result v0
 
     .line 33
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
-    goto :goto_0
-
-    .line 36
     :cond_0
     const/4 p0, 0x0
 
-    .line 37
+    .line 36
     return-object p0
 
-    .line 38
+    .line 37
     :cond_1
-    :goto_0
     invoke-super {p0, p1}, Lcom/sun/jna/Structure;->readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object;
 
+    .line 38
     .line 39
     .line 40
-    .line 41
     move-result-object p0
 
-    .line 42
+    .line 41
     return-object p0
 .end method
 
 .method public readField(Ljava/lang/String;)Ljava/lang/Object;
     .locals 0
 
-    .line 43
+    .line 42
     invoke-virtual {p0}, Lcom/sun/jna/Structure;->ensureAllocated()V
 
-    .line 44
+    .line 43
     invoke-virtual {p0, p1}, Lcom/sun/jna/Union;->setType(Ljava/lang/String;)V
 
-    .line 45
+    .line 44
     invoke-super {p0, p1}, Lcom/sun/jna/Structure;->readField(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
@@ -590,7 +586,7 @@
 
     .line 38
     .line 39
-    invoke-static {v0, p1, v1, p0}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p1, v1, p0}, Llt4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 40
     .line 41
@@ -628,7 +624,7 @@
 
     const-string v1, " in "
 
-    invoke-static {v0, p1, v1, p0}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p1, v1, p0}, Llt4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

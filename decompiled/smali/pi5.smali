@@ -1,263 +1,66 @@
-.class public final Lpi5;
-.super Ljava/util/LinkedHashMap;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lpi5;
+.super Lrz;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final bridge containsKey(Ljava/lang/Object;)Z
-    .locals 1
+# direct methods
+.method public constructor <init>(Lp91;)V
+    .locals 0
 
     .line 1
-    instance-of v0, p1, Ljava/lang/String;
+    invoke-direct {p0, p1}, Lrz;-><init>(Lp91;)V
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
-
     .line 4
-    .line 5
-    const/4 p0, 0x0
+    if-eqz p1, :cond_0
 
+    .line 5
     .line 6
-    return p0
+    invoke-interface {p1}, Lp91;->getContext()Lfc1;
 
     .line 7
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
     .line 8
     .line 9
-    invoke-super {p0, p1}, Ljava/util/AbstractMap;->containsKey(Ljava/lang/Object;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final bridge containsValue(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Lli5;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p0, 0x0
-
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    check-cast p1, Lli5;
-
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->containsValue(Ljava/lang/Object;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final bridge get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ljava/lang/String;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p0, 0x0
-
-    .line 6
-    return-object p0
-
-    .line 7
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
     move-result-object p0
 
-    .line 13
-    check-cast p0, Lli5;
-
-    .line 14
-    .line 15
-    return-object p0
-.end method
-
-.method public final bridge getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ljava/lang/String;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    return-object p2
-
-    .line 6
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
-    .line 7
-    .line 8
-    check-cast p2, Lli5;
-
-    .line 9
     .line 10
-    invoke-super {p0, p1, p2}, Ljava/util/LinkedHashMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object p1, Lev1;->i:Lev1;
 
     .line 11
     .line 12
-    .line 13
-    move-result-object p0
+    if-eq p0, p1, :cond_0
 
+    .line 13
     .line 14
-    check-cast p0, Lli5;
+    const-string p0, "Coroutines with restricted suspension must have EmptyCoroutineContext"
 
     .line 15
     .line 16
-    return-object p0
-.end method
-
-.method public final bridge remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 21
-    instance-of v0, p1, Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
-    .line 22
-    invoke-super {p0, p1}, Ljava/util/AbstractMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lli5;
-
-    return-object p0
-.end method
-
-.method public final bridge remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    instance-of v0, p1, Ljava/lang/String;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    if-nez v0, :cond_0
-
-    .line 5
-    .line 6
-    return v1
-
-    .line 7
-    :cond_0
-    instance-of v0, p2, Lli5;
-
-    .line 8
-    .line 9
-    if-nez v0, :cond_1
-
-    .line 10
-    .line 11
-    return v1
-
-    .line 12
-    :cond_1
-    check-cast p1, Ljava/lang/String;
-
-    .line 13
-    .line 14
-    check-cast p2, Lli5;
-
-    .line 15
-    .line 16
-    invoke-super {p0, p1, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 17
     .line 18
     .line 19
-    move-result p0
+    const/4 p0, 0x0
 
     .line 20
-    return p0
+    throw p0
+
+    .line 21
+    :cond_0
+    return-void
 .end method
 
-.method public final removeEldestEntry(Ljava/util/Map$Entry;)Z
+
+# virtual methods
+.method public final getContext()Lfc1;
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object p0, Lev1;->i:Lev1;
 
     .line 2
     .line 3
-    .line 4
-    invoke-super {p0}, Ljava/util/AbstractMap;->size()I
-
-    .line 5
-    .line 6
-    .line 7
-    move-result p0
-
-    .line 8
-    const/16 p1, 0x8
-
-    .line 9
-    .line 10
-    if-le p0, p1, :cond_0
-
-    .line 11
-    .line 12
-    const/4 p0, 0x1
-
-    .line 13
-    return p0
-
-    .line 14
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 15
-    return p0
+    return-object p0
 .end method

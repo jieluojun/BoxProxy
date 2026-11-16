@@ -1,41 +1,68 @@
 .class public final Lqk4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ltt5;
+.super Lyk4;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic a:B
+# static fields
+.field public static final c:Lqk4;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-byte p1, p0, Lqk4;->a:B
+    new-instance v0, Lqk4;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
+    invoke-direct {v0, v1, v2, v2}, Lyk4;-><init>(III)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lqk4;->c:Lqk4;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)F
+.method public final a(Lgv2;Lcv;Lhd6;Lah5;Lal4;)V
     .locals 0
 
     .line 1
-    iget-byte p0, p0, Lqk4;->a:B
+    const/4 p0, 0x0
 
     .line 2
+    invoke-virtual {p1, p0}, Lgv2;->d(I)Ljava/lang/Object;
+
     .line 3
-    return p1
+    .line 4
+    .line 5
+    move-result-object p0
+
+    .line 6
+    check-cast p0, Le72;
+
+    .line 7
+    .line 8
+    iget-object p1, p4, Lah5;->g:Lj04;
+
+    .line 9
+    .line 10
+    invoke-virtual {p1, p0}, Lj04;->b(Ljava/lang/Object;)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-void
 .end method

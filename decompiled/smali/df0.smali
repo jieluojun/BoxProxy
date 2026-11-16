@@ -1,373 +1,629 @@
 .class public final Ldf0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le22;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic i:B
 
-.field public final b:J
-
-.field public final c:J
-
-.field public final d:J
+.field public final synthetic j:Lle6;
 
 
 # direct methods
-.method public constructor <init>(JJJJ)V
+.method public synthetic constructor <init>(Lle6;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Ldf0;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Ldf0;->j:Lle6;
+
     .line 4
-    iput-wide p1, p0, Ldf0;->a:J
-
     .line 5
-    .line 6
-    iput-wide p3, p0, Ldf0;->b:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    iput-wide p5, p0, Ldf0;->c:J
-
-    .line 9
-    .line 10
-    iput-wide p7, p0, Ldf0;->d:J
-
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JJJJ)Ldf0;
-    .locals 9
+.method public final d(Ljava/lang/Object;Lp91;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const-wide/16 v1, 0x10
+    iget-byte p2, p0, Ldf0;->i:B
 
     .line 2
     .line 3
-    cmp-long v3, p1, v1
+    sget-object v0, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    if-eqz v3, :cond_0
+    iget-object p0, p0, Ldf0;->j:Lle6;
 
     .line 6
     .line 7
-    move-wide v3, p1
+    packed-switch p2, :pswitch_data_0
 
     .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_0
-    iget-wide v3, p0, Ldf0;->a:J
-
-    .line 10
-    .line 11
-    :goto_0
-    cmp-long v5, p3, v1
-
-    .line 12
-    .line 13
-    if-eqz v5, :cond_1
-
-    .line 14
-    .line 15
-    move-wide v5, p3
-
-    .line 16
-    goto :goto_1
-
-    .line 17
-    :cond_1
-    iget-wide v5, p0, Ldf0;->b:J
-
-    .line 18
-    .line 19
-    :goto_1
-    cmp-long v7, p5, v1
-
-    .line 20
-    .line 21
-    if-eqz v7, :cond_2
-
-    .line 22
-    .line 23
-    move-wide v7, p5
-
-    .line 24
-    goto :goto_2
-
-    .line 25
-    :cond_2
-    iget-wide v7, p0, Ldf0;->c:J
-
-    .line 26
-    .line 27
-    :goto_2
-    cmp-long v1, p7, v1
-
-    .line 28
-    .line 29
-    if-eqz v1, :cond_3
-
-    .line 30
-    .line 31
-    move-wide/from16 v0, p7
-
-    .line 32
-    .line 33
-    goto :goto_3
-
-    .line 34
-    :cond_3
-    iget-wide v0, p0, Ldf0;->d:J
-
-    .line 35
-    .line 36
-    :goto_3
-    new-instance v2, Ldf0;
-
-    .line 37
-    .line 38
-    move-wide/from16 p7, v0
-
-    .line 39
-    .line 40
-    move-object p0, v2
-
-    .line 41
-    move-wide p1, v3
-
-    .line 42
-    move-wide p3, v5
-
-    .line 43
-    move-wide p5, v7
-
-    .line 44
-    invoke-direct/range {p0 .. p8}, Ldf0;-><init>(JJJJ)V
-
-    .line 45
-    .line 46
-    .line 47
-    move-object v0, p0
-
-    .line 48
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    if-eqz p1, :cond_6
-
-    .line 5
-    .line 6
-    instance-of v0, p1, Ldf0;
-
-    .line 7
-    .line 8
-    if-nez v0, :cond_1
-
     .line 9
     .line 10
-    goto :goto_1
+    check-cast p1, Lgx2;
 
     .line 11
-    :cond_1
-    check-cast p1, Ldf0;
-
     .line 12
+    instance-of p2, p1, Lt32;
+
     .line 13
-    iget-wide v0, p1, Ldf0;->a:J
-
     .line 14
+    if-eqz p2, :cond_0
+
     .line 15
-    iget-wide v2, p0, Ldf0;->a:J
-
     .line 16
-    .line 17
-    invoke-static {v2, v3, v0, v1}, Lc27;->a(JJ)Z
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
 
+    .line 17
     .line 18
     .line 19
+    goto :goto_0
+
     .line 20
-    move-result v0
+    :cond_0
+    instance-of p2, p1, Lu32;
 
     .line 21
-    if-nez v0, :cond_2
-
     .line 22
-    .line 23
-    goto :goto_1
+    if-eqz p2, :cond_1
 
+    .line 23
     .line 24
-    :cond_2
-    iget-wide v0, p0, Ldf0;->b:J
+    check-cast p1, Lu32;
 
     .line 25
     .line 26
-    iget-wide v2, p1, Ldf0;->b:J
+    iget-object p1, p1, Lu32;->a:Lt32;
 
     .line 27
     .line 28
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
 
     .line 29
     .line 30
     .line 31
-    move-result v0
+    goto :goto_0
 
     .line 32
-    if-nez v0, :cond_3
+    :cond_1
+    instance-of p2, p1, Lh05;
 
     .line 33
     .line 34
-    goto :goto_1
+    if-eqz p2, :cond_2
 
     .line 35
-    :cond_3
-    iget-wide v0, p0, Ldf0;->c:J
-
     .line 36
-    .line 37
-    iget-wide v2, p1, Ldf0;->c:J
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
 
+    .line 37
     .line 38
     .line 39
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
+    goto :goto_0
 
     .line 40
+    :cond_2
+    instance-of p2, p1, Li05;
+
     .line 41
     .line 42
-    move-result v0
+    if-eqz p2, :cond_3
 
     .line 43
-    if-nez v0, :cond_4
-
     .line 44
-    .line 45
-    goto :goto_1
+    check-cast p1, Li05;
 
+    .line 45
     .line 46
-    :cond_4
-    iget-wide v0, p0, Ldf0;->d:J
+    iget-object p1, p1, Li05;->a:Lh05;
 
     .line 47
     .line 48
-    iget-wide p0, p1, Ldf0;->d:J
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
 
     .line 49
     .line 50
-    invoke-static {v0, v1, p0, p1}, Lc27;->a(JJ)Z
-
     .line 51
-    .line 52
-    .line 53
-    move-result p0
+    goto :goto_0
 
+    .line 52
+    :cond_3
+    instance-of p2, p1, Lg05;
+
+    .line 53
     .line 54
-    if-nez p0, :cond_5
+    if-eqz p2, :cond_4
 
     .line 55
     .line 56
-    goto :goto_1
+    check-cast p1, Lg05;
 
     .line 57
-    :cond_5
-    :goto_0
-    const/4 p0, 0x1
-
     .line 58
-    return p0
+    iget-object p1, p1, Lg05;->a:Lh05;
 
     .line 59
-    :cond_6
-    :goto_1
-    const/4 p0, 0x0
-
     .line 60
-    return p0
-.end method
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
 
-.method public final hashCode()I
-    .locals 4
+    .line 61
+    .line 62
+    .line 63
+    goto :goto_0
 
-    .line 1
-    iget-wide v0, p0, Ldf0;->a:J
+    .line 64
+    :cond_4
+    instance-of p2, p1, Lfo1;
 
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    .line 65
+    .line 66
+    if-eqz p2, :cond_5
 
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    .line 67
+    .line 68
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
 
-    .line 7
-    const/16 v1, 0x1f
+    .line 69
+    .line 70
+    .line 71
+    goto :goto_0
 
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
+    .line 72
+    :cond_5
+    instance-of p2, p1, Lgo1;
 
-    .line 10
-    iget-wide v2, p0, Ldf0;->b:J
+    .line 73
+    .line 74
+    if-eqz p2, :cond_6
 
-    .line 11
-    .line 12
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    .line 75
+    .line 76
+    check-cast p1, Lgo1;
 
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
+    .line 77
+    .line 78
+    iget-object p1, p1, Lgo1;->a:Lfo1;
 
-    .line 16
-    iget-wide v2, p0, Ldf0;->c:J
+    .line 79
+    .line 80
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
 
-    .line 17
-    .line 18
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    .line 81
+    .line 82
+    .line 83
+    goto :goto_0
 
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
+    .line 84
+    :cond_6
+    instance-of p2, p1, Leo1;
 
-    .line 22
-    iget-wide v1, p0, Ldf0;->d:J
+    .line 85
+    .line 86
+    if-eqz p2, :cond_7
 
-    .line 23
-    .line 24
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    .line 87
+    .line 88
+    check-cast p1, Leo1;
 
-    .line 25
-    .line 26
-    .line 27
-    move-result p0
+    .line 89
+    .line 90
+    iget-object p1, p1, Leo1;->a:Lfo1;
 
-    .line 28
-    add-int/2addr p0, v0
+    .line 91
+    .line 92
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
 
-    .line 29
-    return p0
+    .line 93
+    .line 94
+    .line 95
+    :cond_7
+    :goto_0
+    return-object v0
+
+    .line 96
+    :pswitch_0
+    check-cast p1, Lgx2;
+
+    .line 97
+    .line 98
+    instance-of p2, p1, Lwo2;
+
+    .line 99
+    .line 100
+    if-eqz p2, :cond_8
+
+    .line 101
+    .line 102
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 103
+    .line 104
+    .line 105
+    goto :goto_1
+
+    .line 106
+    :cond_8
+    instance-of p2, p1, Lxo2;
+
+    .line 107
+    .line 108
+    if-eqz p2, :cond_9
+
+    .line 109
+    .line 110
+    check-cast p1, Lxo2;
+
+    .line 111
+    .line 112
+    iget-object p1, p1, Lxo2;->a:Lwo2;
+
+    .line 113
+    .line 114
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 115
+    .line 116
+    .line 117
+    goto :goto_1
+
+    .line 118
+    :cond_9
+    instance-of p2, p1, Lt32;
+
+    .line 119
+    .line 120
+    if-eqz p2, :cond_a
+
+    .line 121
+    .line 122
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 123
+    .line 124
+    .line 125
+    goto :goto_1
+
+    .line 126
+    :cond_a
+    instance-of p2, p1, Lu32;
+
+    .line 127
+    .line 128
+    if-eqz p2, :cond_b
+
+    .line 129
+    .line 130
+    check-cast p1, Lu32;
+
+    .line 131
+    .line 132
+    iget-object p1, p1, Lu32;->a:Lt32;
+
+    .line 133
+    .line 134
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 135
+    .line 136
+    .line 137
+    goto :goto_1
+
+    .line 138
+    :cond_b
+    instance-of p2, p1, Lh05;
+
+    .line 139
+    .line 140
+    if-eqz p2, :cond_c
+
+    .line 141
+    .line 142
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 143
+    .line 144
+    .line 145
+    goto :goto_1
+
+    .line 146
+    :cond_c
+    instance-of p2, p1, Li05;
+
+    .line 147
+    .line 148
+    if-eqz p2, :cond_d
+
+    .line 149
+    .line 150
+    check-cast p1, Li05;
+
+    .line 151
+    .line 152
+    iget-object p1, p1, Li05;->a:Lh05;
+
+    .line 153
+    .line 154
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 155
+    .line 156
+    .line 157
+    goto :goto_1
+
+    .line 158
+    :cond_d
+    instance-of p2, p1, Lg05;
+
+    .line 159
+    .line 160
+    if-eqz p2, :cond_e
+
+    .line 161
+    .line 162
+    check-cast p1, Lg05;
+
+    .line 163
+    .line 164
+    iget-object p1, p1, Lg05;->a:Lh05;
+
+    .line 165
+    .line 166
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 167
+    .line 168
+    .line 169
+    goto :goto_1
+
+    .line 170
+    :cond_e
+    instance-of p2, p1, Lfo1;
+
+    .line 171
+    .line 172
+    if-eqz p2, :cond_f
+
+    .line 173
+    .line 174
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 175
+    .line 176
+    .line 177
+    goto :goto_1
+
+    .line 178
+    :cond_f
+    instance-of p2, p1, Lgo1;
+
+    .line 179
+    .line 180
+    if-eqz p2, :cond_10
+
+    .line 181
+    .line 182
+    check-cast p1, Lgo1;
+
+    .line 183
+    .line 184
+    iget-object p1, p1, Lgo1;->a:Lfo1;
+
+    .line 185
+    .line 186
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 187
+    .line 188
+    .line 189
+    goto :goto_1
+
+    .line 190
+    :cond_10
+    instance-of p2, p1, Leo1;
+
+    .line 191
+    .line 192
+    if-eqz p2, :cond_11
+
+    .line 193
+    .line 194
+    check-cast p1, Leo1;
+
+    .line 195
+    .line 196
+    iget-object p1, p1, Leo1;->a:Lfo1;
+
+    .line 197
+    .line 198
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 199
+    .line 200
+    .line 201
+    :cond_11
+    :goto_1
+    return-object v0
+
+    .line 202
+    :pswitch_1
+    check-cast p1, Lgx2;
+
+    .line 203
+    .line 204
+    instance-of p2, p1, Lwo2;
+
+    .line 205
+    .line 206
+    if-eqz p2, :cond_12
+
+    .line 207
+    .line 208
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 209
+    .line 210
+    .line 211
+    goto :goto_2
+
+    .line 212
+    :cond_12
+    instance-of p2, p1, Lxo2;
+
+    .line 213
+    .line 214
+    if-eqz p2, :cond_13
+
+    .line 215
+    .line 216
+    check-cast p1, Lxo2;
+
+    .line 217
+    .line 218
+    iget-object p1, p1, Lxo2;->a:Lwo2;
+
+    .line 219
+    .line 220
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 221
+    .line 222
+    .line 223
+    goto :goto_2
+
+    .line 224
+    :cond_13
+    instance-of p2, p1, Lt32;
+
+    .line 225
+    .line 226
+    if-eqz p2, :cond_14
+
+    .line 227
+    .line 228
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 229
+    .line 230
+    .line 231
+    goto :goto_2
+
+    .line 232
+    :cond_14
+    instance-of p2, p1, Lu32;
+
+    .line 233
+    .line 234
+    if-eqz p2, :cond_15
+
+    .line 235
+    .line 236
+    check-cast p1, Lu32;
+
+    .line 237
+    .line 238
+    iget-object p1, p1, Lu32;->a:Lt32;
+
+    .line 239
+    .line 240
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 241
+    .line 242
+    .line 243
+    goto :goto_2
+
+    .line 244
+    :cond_15
+    instance-of p2, p1, Lh05;
+
+    .line 245
+    .line 246
+    if-eqz p2, :cond_16
+
+    .line 247
+    .line 248
+    invoke-virtual {p0, p1}, Lle6;->add(Ljava/lang/Object;)Z
+
+    .line 249
+    .line 250
+    .line 251
+    goto :goto_2
+
+    .line 252
+    :cond_16
+    instance-of p2, p1, Li05;
+
+    .line 253
+    .line 254
+    if-eqz p2, :cond_17
+
+    .line 255
+    .line 256
+    check-cast p1, Li05;
+
+    .line 257
+    .line 258
+    iget-object p1, p1, Li05;->a:Lh05;
+
+    .line 259
+    .line 260
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 261
+    .line 262
+    .line 263
+    goto :goto_2
+
+    .line 264
+    :cond_17
+    instance-of p2, p1, Lg05;
+
+    .line 265
+    .line 266
+    if-eqz p2, :cond_18
+
+    .line 267
+    .line 268
+    check-cast p1, Lg05;
+
+    .line 269
+    .line 270
+    iget-object p1, p1, Lg05;->a:Lh05;
+
+    .line 271
+    .line 272
+    invoke-virtual {p0, p1}, Lle6;->remove(Ljava/lang/Object;)Z
+
+    .line 273
+    .line 274
+    .line 275
+    :cond_18
+    :goto_2
+    return-object v0
+
+    .line 276
+    nop
+
+    .line 277
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

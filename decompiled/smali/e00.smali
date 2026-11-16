@@ -1,27 +1,27 @@
-.class public final Le00;
+.class public final synthetic Le00;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lkc5;
+.implements Ljava/util/function/IntFunction;
 
 
 # instance fields
-.field public final j:Lhv2;
+.field public final synthetic a:B
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhv2;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p1, p0, Le00;->a:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Le00;->j:Lhv2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -29,121 +29,147 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Le00;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    check-cast p1, Le00;
-
-    .line 7
-    .line 8
-    iget-object p1, p1, Le00;->j:Lhv2;
-
-    .line 9
-    .line 10
-    iget-object p0, p0, Le00;->j:Lhv2;
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    if-nez p0, :cond_1
-
-    .line 17
-    .line 18
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 19
-    return p0
-
-    .line 20
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 21
-    return p0
-.end method
-
-.method public final hashCode()I
+.method public final apply(I)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Le00;->j:Lhv2;
+    iget-byte p0, p0, Le00;->a:B
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    move-result p0
+    new-instance p0, Ljava/util/HashSet;
 
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "BaseRequestDelegate(job="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
     .line 7
     .line 8
-    iget-object p0, p0, Le00;->j:Lhv2;
+    invoke-direct {p0, p1}, Ljava/util/HashSet;-><init>(I)V
 
     .line 9
     .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 11
+    return-object p0
+
     .line 12
+    :pswitch_0
+    new-instance p0, Ljava/util/HashMap;
+
     .line 13
-    const-string p0, ")"
-
     .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1}, Ljava/util/HashMap;-><init>(I)V
 
+    .line 15
     .line 16
     .line 17
+    return-object p0
+
     .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :pswitch_1
+    new-instance p0, Ljava/util/ArrayList;
 
     .line 19
     .line 20
+    invoke-direct {p0, p1}, Ljava/util/ArrayList;-><init>(I)V
+
     .line 21
+    .line 22
+    .line 23
+    return-object p0
+
+    .line 24
+    :pswitch_2
+    invoke-static {p1}, Ljava/lang/Character;->toChars(I)[C
+
+    .line 25
+    .line 26
+    .line 27
     move-result-object p0
 
-    .line 22
+    .line 28
+    invoke-static {p0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    invoke-static {p0}, Lvn0;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object p0
+
+    .line 36
     return-object p0
+
+    .line 37
+    :pswitch_3
+    new-array p0, p1, [Lwl5;
+
+    .line 38
+    .line 39
+    return-object p0
+
+    .line 40
+    :pswitch_4
+    new-array p0, p1, [Lwl5;
+
+    .line 41
+    .line 42
+    return-object p0
+
+    .line 43
+    :pswitch_5
+    new-instance p0, Ljava/util/LinkedHashMap;
+
+    .line 44
+    .line 45
+    invoke-direct {p0, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
+
+    .line 46
+    .line 47
+    .line 48
+    return-object p0
+
+    .line 49
+    :pswitch_6
+    new-instance p0, Ljava/util/LinkedHashSet;
+
+    .line 50
+    .line 51
+    invoke-direct {p0, p1}, Ljava/util/LinkedHashSet;-><init>(I)V
+
+    .line 52
+    .line 53
+    .line 54
+    return-object p0
+
+    .line 55
+    :pswitch_7
+    new-array p0, p1, [Ljava/lang/String;
+
+    .line 56
+    .line 57
+    return-object p0
+
+    .line 58
+    nop
+
+    .line 59
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

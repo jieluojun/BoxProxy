@@ -1,6 +1,6 @@
 .class public final Le3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -101,37 +101,33 @@
 
     .line 19
     .line 20
-    invoke-interface {p1, v1, v0}, Ld3;->b(I[Ljava/lang/Object;)V
+    invoke-interface {p1, v1, v0}, Ld3;->d(I[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     .line 22
     .line 23
-    goto :goto_0
-
-    .line 24
-    :catchall_0
-    move-exception p1
-
-    .line 25
-    goto :goto_1
-
-    .line 26
     :cond_0
-    :goto_0
     monitor-exit p0
 
-    .line 27
+    .line 24
     return-void
 
-    .line 28
-    :goto_1
+    .line 25
+    :goto_0
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 29
+    .line 26
     throw p1
+
+    .line 27
+    :catchall_0
+    move-exception p1
+
+    .line 28
+    goto :goto_0
 .end method

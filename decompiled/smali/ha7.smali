@@ -1,201 +1,219 @@
-.class public final Lha7;
+.class public abstract Lha7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# static fields
+.field public static final a:J
 
-.field public final b:Ljava/lang/String;
+.field public static final b:F
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x0
 
     .line 2
+    invoke-static {v0, v0}, Lb12;->a(FF)J
+
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 5
-    .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-wide v0
 
+    .line 6
+    sput-wide v0, Lha7;->a:J
+
+    .line 7
     .line 8
+    const v0, 0x40490fdb    # (float)Math.PI
+
     .line 9
     .line 10
-    iput-object p1, p0, Lha7;->a:Ljava/lang/String;
-
     .line 11
-    .line 12
-    iput-object p2, p0, Lha7;->b:Ljava/lang/String;
+    sput v0, Lha7;->b:F
 
+    .line 12
     .line 13
-    .line 14
     return-void
 .end method
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public static final a(FF)J
+    .locals 2
 
     .line 1
-    const/4 v0, 0x1
+    mul-float v0, p0, p0
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    mul-float v1, p1, p1
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lha7;
+    add-float/2addr v1, v0
 
     .line 6
+    float-to-double v0, v1
+
     .line 7
-    const/4 v2, 0x0
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
     .line 10
-    return v2
+    move-result-wide v0
 
     .line 11
-    :cond_1
-    check-cast p1, Lha7;
+    double-to-float v0, v0
 
     .line 12
+    const/4 v1, 0x0
+
     .line 13
-    iget-object v1, p0, Lha7;->a:Ljava/lang/String;
+    cmpl-float v1, v0, v1
 
     .line 14
     .line 15
-    iget-object v3, p1, Lha7;->a:Ljava/lang/String;
+    if-lez v1, :cond_0
 
     .line 16
     .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    div-float/2addr p0, v0
 
     .line 18
+    div-float/2addr p1, v0
+
     .line 19
+    invoke-static {p0, p1}, Lb12;->a(FF)J
+
     .line 20
-    move-result v1
-
     .line 21
-    if-nez v1, :cond_2
-
     .line 22
+    move-result-wide p0
+
     .line 23
-    return v2
+    return-wide p0
 
     .line 24
-    :cond_2
-    iget-object p0, p0, Lha7;->b:Ljava/lang/String;
+    :cond_0
+    const-string p0, "Required distance greater than zero"
 
     .line 25
     .line 26
-    iget-object p1, p1, Lha7;->b:Ljava/lang/String;
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 27
     .line 28
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 29
+    const-wide/16 p0, 0x0
+
     .line 30
     .line 31
-    move-result p0
-
-    .line 32
-    if-nez p0, :cond_3
-
-    .line 33
-    .line 34
-    return v2
-
-    .line 35
-    :cond_3
-    return v0
+    return-wide p0
 .end method
 
-.method public final hashCode()I
+.method public static final b(FFF)F
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lha7;->a:Ljava/lang/String;
+    const/high16 v0, 0x3f800000    # 1.0f
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    sub-float/2addr v0, p2
 
     .line 4
+    mul-float/2addr v0, p0
+
     .line 5
+    mul-float/2addr p2, p1
+
     .line 6
-    move-result v0
+    add-float/2addr p2, v0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    return p2
+.end method
 
-    .line 8
-    .line 9
-    iget-object p0, p0, Lha7;->b:Ljava/lang/String;
+.method public static final c(F)F
+    .locals 1
 
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    .line 1
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
+    .line 2
+    .line 3
+    rem-float/2addr p0, v0
 
-    .line 15
-    add-int/2addr p0, v0
+    .line 4
+    add-float/2addr p0, v0
 
-    .line 16
+    .line 5
+    rem-float/2addr p0, v0
+
+    .line 6
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public static d(FF)J
     .locals 4
 
     .line 1
-    const-string v0, ", downloadUrl="
+    float-to-double v0, p1
 
     .line 2
-    .line 3
-    const-string v1, ")"
+    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
+    .line 3
     .line 4
     .line 5
-    const-string v2, "UpdateRequest(targetPath="
+    move-result-wide v2
 
     .line 6
+    double-to-float p1, v2
+
     .line 7
-    iget-object v3, p0, Lha7;->a:Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     .line 8
     .line 9
-    iget-object p0, p0, Lha7;->b:Ljava/lang/String;
-
     .line 10
+    move-result-wide v0
+
     .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    double-to-float v0, v0
 
     .line 12
+    invoke-static {p1, v0}, Lb12;->a(FF)J
+
     .line 13
     .line 14
-    move-result-object p0
-
     .line 15
-    return-object p0
+    move-result-wide v0
+
+    .line 16
+    invoke-static {v0, v1, p0}, Lla3;->h0(JF)J
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-wide p0
+
+    .line 20
+    sget-wide v0, Lha7;->a:J
+
+    .line 21
+    .line 22
+    invoke-static {p0, p1, v0, v1}, Lla3;->V(JJ)J
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-wide p0
+
+    .line 26
+    return-wide p0
 .end method

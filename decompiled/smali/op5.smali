@@ -1,118 +1,113 @@
-.class public final enum Lop5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lop5;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
-# static fields
-.field public static final enum j:Lop5;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final enum k:Lop5;
+.field public final synthetic j:Lnq5;
 
-.field public static final synthetic l:[Lop5;
+.field public final synthetic k:Lu95;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lnq5;Lu95;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lop5;
+    iput-byte p3, p0, Lop5;->i:B
 
     .line 2
     .line 3
-    const-string v1, "TypeNotSupported"
+    iput-object p1, p0, Lop5;->j:Lnq5;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iput-object p2, p0, Lop5;->k:Lu95;
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
     .line 9
-    sput-object v0, Lop5;->j:Lop5;
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lop5;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lop5;->k:Lu95;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lop5;->j:Lnq5;
+
+    .line 8
+    .line 9
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
-    new-instance v1, Lop5;
-
     .line 12
-    .line 13
-    const-string v2, "BinaryContent"
+    invoke-virtual {p0, v2}, Lnq5;->j(Lu95;)V
 
+    .line 13
     .line 14
     .line 15
-    const/4 v3, 0x1
+    return-object v1
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    :pswitch_0
+    invoke-virtual {p0, v2}, Lnq5;->j(Lu95;)V
 
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lop5;->k:Lop5;
+    return-object v1
 
     .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lop5;
+    :pswitch_1
+    invoke-virtual {p0, v2}, Lnq5;->j(Lu95;)V
 
+    .line 21
     .line 22
     .line 23
+    return-object v1
+
     .line 24
-    move-result-object v0
+    :pswitch_2
+    invoke-virtual {p0, v2}, Lnq5;->j(Lu95;)V
 
     .line 25
-    sput-object v0, Lop5;->l:[Lop5;
-
     .line 26
     .line 27
-    return-void
-.end method
+    return-object v1
 
-.method public static valueOf(Ljava/lang/String;)Lop5;
-    .locals 1
+    .line 28
+    nop
 
-    .line 1
-    const-class v0, Lop5;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lop5;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Lop5;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lop5;->l:[Lop5;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lop5;
-
-    .line 8
-    .line 9
-    return-object v0
+    .line 29
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

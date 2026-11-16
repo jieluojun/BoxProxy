@@ -1,67 +1,157 @@
-.class public abstract Lcd0;
+.class public final synthetic Lcd0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final a:Lpj4;
+# instance fields
+.field public final synthetic i:Ljava/util/ArrayList;
 
-.field public static final b:F
+.field public final synthetic j:Lp72;
 
-.field public static final c:F
+.field public final synthetic k:Lsw3;
 
-.field public static final d:F
+.field public final synthetic l:I
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:Lzc0;
+
+.field public final synthetic o:Lsp4;
+
+.field public final synthetic p:F
+
+.field public final synthetic q:Lgt2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Ljava/util/ArrayList;Lp72;Lsw3;IZLzc0;Lsp4;FLgt2;I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lpj4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/high16 v1, 0x41400000    # 12.0f
-
     .line 4
+    iput-object p1, p0, Lcd0;->i:Ljava/util/ArrayList;
+
     .line 5
-    const/high16 v2, 0x41000000    # 8.0f
-
     .line 6
-    .line 7
-    invoke-direct {v0, v1, v2, v1, v2}, Lpj4;-><init>(FFFF)V
+    iput-object p2, p0, Lcd0;->j:Lp72;
 
+    .line 7
     .line 8
+    iput-object p3, p0, Lcd0;->k:Lsw3;
+
     .line 9
     .line 10
-    sput-object v0, Lcd0;->a:Lpj4;
+    iput p4, p0, Lcd0;->l:I
 
     .line 11
     .line 12
-    const/high16 v0, 0x42000000    # 32.0f
+    iput-boolean p5, p0, Lcd0;->m:Z
 
     .line 13
     .line 14
-    sput v0, Lcd0;->b:F
+    iput-object p6, p0, Lcd0;->n:Lzc0;
 
     .line 15
     .line 16
-    const/high16 v0, 0x41200000    # 10.0f
+    iput-object p7, p0, Lcd0;->o:Lsp4;
 
     .line 17
     .line 18
-    sput v0, Lcd0;->c:F
+    iput p8, p0, Lcd0;->p:F
 
     .line 19
     .line 20
-    const/high16 v0, 0x43200000    # 160.0f
+    iput-object p9, p0, Lcd0;->q:Lgt2;
 
     .line 21
     .line 22
-    sput v0, Lcd0;->d:F
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
+
+    .line 1
+    move-object v9, p1
+
+    .line 2
+    check-cast v9, Lt82;
+
+    .line 3
+    .line 4
+    check-cast p2, Ljava/lang/Integer;
+
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    const/4 p1, 0x1
+
+    .line 10
+    invoke-static {p1}, Lp06;->W(I)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v10
+
+    .line 14
+    iget-object v0, p0, Lcd0;->i:Ljava/util/ArrayList;
+
+    .line 15
+    .line 16
+    iget-object v1, p0, Lcd0;->j:Lp72;
+
+    .line 17
+    .line 18
+    iget-object v2, p0, Lcd0;->k:Lsw3;
+
+    .line 19
+    .line 20
+    iget v3, p0, Lcd0;->l:I
+
+    .line 21
+    .line 22
+    iget-boolean v4, p0, Lcd0;->m:Z
 
     .line 23
     .line 24
-    return-void
+    iget-object v5, p0, Lcd0;->n:Lzc0;
+
+    .line 25
+    .line 26
+    iget-object v6, p0, Lcd0;->o:Lsp4;
+
+    .line 27
+    .line 28
+    iget v7, p0, Lcd0;->p:F
+
+    .line 29
+    .line 30
+    iget-object v8, p0, Lcd0;->q:Lgt2;
+
+    .line 31
+    .line 32
+    invoke-static/range {v0 .. v10}, Lzt;->c(Ljava/util/ArrayList;Lp72;Lsw3;IZLzc0;Lsp4;FLgt2;Lt82;I)V
+
+    .line 33
+    .line 34
+    .line 35
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 36
+    .line 37
+    return-object p0
 .end method

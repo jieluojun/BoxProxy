@@ -1,6 +1,6 @@
 .class final Lcom/hashsequence/coilresvg/SvgRenderer$UniffiPointerDestroyer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/Disposable;
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x1a
     name = "UniffiPointerDestroyer"
 .end annotation
 
@@ -81,7 +81,7 @@
     .line 12
     .line 13
     .line 14
-    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp72;)Ljava/lang/Object;
 
     .line 15
     .line 16

@@ -1,140 +1,552 @@
-.class public final enum Ljp6;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ljp6;
+.super Lzm6;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final enum j:Ljp6;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final enum k:Ljp6;
-
-.field public static final enum l:Ljp6;
-
-.field public static final synthetic m:[Ljp6;
+.field public final synthetic j:Lf05;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lf05;Lp91;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljp6;
+    iput-byte p3, p0, Ljp6;->i:B
 
     .line 2
     .line 3
-    const-string v1, "None"
+    iput-object p1, p0, Ljp6;->j:Lf05;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    const/4 p1, 0x2
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0, p1, p2}, Lzm6;-><init>(ILp91;)V
 
     .line 7
     .line 8
     .line 9
-    sput-object v0, Ljp6;->j:Ljp6;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final create(Ljava/lang/Object;Lp91;)Lp91;
+    .locals 1
+
+    .line 1
+    iget-byte p1, p0, Ljp6;->i:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Ljp6;->j:Lf05;
+
+    .line 4
+    .line 5
+    packed-switch p1, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    new-instance p1, Ljp6;
+
+    .line 9
     .line 10
+    const/4 v0, 0x7
+
     .line 11
-    new-instance v1, Ljp6;
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
 
     .line 12
     .line 13
-    const-string v2, "Touch"
-
     .line 14
+    return-object p1
+
     .line 15
-    const/4 v3, 0x1
+    :pswitch_0
+    new-instance p1, Ljp6;
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
-    .line 18
-    .line 19
-    sput-object v1, Ljp6;->k:Ljp6;
+    const/4 v0, 0x6
 
+    .line 18
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
+
+    .line 19
     .line 20
     .line 21
-    new-instance v2, Ljp6;
+    return-object p1
 
     .line 22
-    .line 23
-    const-string v3, "Mouse"
+    :pswitch_1
+    new-instance p1, Ljp6;
 
+    .line 23
     .line 24
+    const/4 v0, 0x5
+
     .line 25
-    const/4 v4, 0x2
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
 
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 27
     .line 28
+    return-object p1
+
     .line 29
-    sput-object v2, Ljp6;->l:Ljp6;
+    :pswitch_2
+    new-instance p1, Ljp6;
 
     .line 30
     .line 31
-    filled-new-array {v0, v1, v2}, [Ljp6;
+    const/4 v0, 0x4
+
+    .line 32
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
+
+    .line 33
+    .line 34
+    .line 35
+    return-object p1
+
+    .line 36
+    :pswitch_3
+    new-instance p1, Ljp6;
+
+    .line 37
+    .line 38
+    const/4 v0, 0x3
+
+    .line 39
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
+
+    .line 40
+    .line 41
+    .line 42
+    return-object p1
+
+    .line 43
+    :pswitch_4
+    new-instance p1, Ljp6;
+
+    .line 44
+    .line 45
+    const/4 v0, 0x2
+
+    .line 46
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
+
+    .line 47
+    .line 48
+    .line 49
+    return-object p1
+
+    .line 50
+    :pswitch_5
+    new-instance p1, Ljp6;
+
+    .line 51
+    .line 52
+    const/4 v0, 0x1
+
+    .line 53
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
+
+    .line 54
+    .line 55
+    .line 56
+    return-object p1
+
+    .line 57
+    :pswitch_6
+    new-instance p1, Ljp6;
+
+    .line 58
+    .line 59
+    const/4 v0, 0x0
+
+    .line 60
+    invoke-direct {p1, p0, p2, v0}, Ljp6;-><init>(Lf05;Lp91;B)V
+
+    .line 61
+    .line 62
+    .line 63
+    return-object p1
+
+    .line 64
+    nop
+
+    .line 65
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Ljp6;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    check-cast p1, Loc1;
+
+    .line 6
+    .line 7
+    check-cast p2, Lp91;
+
+    .line 8
+    .line 9
+    packed-switch v0, :pswitch_data_0
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    check-cast p0, Ljp6;
+
+    .line 17
+    .line 18
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    .line 21
+    return-object v1
+
+    .line 22
+    :pswitch_0
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
+
+    .line 26
+    check-cast p0, Ljp6;
+
+    .line 27
+    .line 28
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 29
+    .line 30
+    .line 31
+    return-object v1
+
+    .line 32
+    :pswitch_1
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object p0
+
+    .line 36
+    check-cast p0, Ljp6;
+
+    .line 37
+    .line 38
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 39
+    .line 40
+    .line 41
+    return-object v1
+
+    .line 42
+    :pswitch_2
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p0
+
+    .line 46
+    check-cast p0, Ljp6;
+
+    .line 47
+    .line 48
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
+    .line 50
+    .line 51
+    return-object v1
+
+    .line 52
+    :pswitch_3
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object p0
+
+    .line 56
+    check-cast p0, Ljp6;
+
+    .line 57
+    .line 58
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 59
+    .line 60
+    .line 61
+    return-object v1
+
+    .line 62
+    :pswitch_4
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 63
+    .line 64
+    .line 65
+    move-result-object p0
+
+    .line 66
+    check-cast p0, Ljp6;
+
+    .line 67
+    .line 68
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 69
+    .line 70
+    .line 71
+    return-object v1
+
+    .line 72
+    :pswitch_5
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object p0
+
+    .line 76
+    check-cast p0, Ljp6;
+
+    .line 77
+    .line 78
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 79
+    .line 80
+    .line 81
+    return-object v1
+
+    .line 82
+    :pswitch_6
+    invoke-virtual {p0, p1, p2}, Ljp6;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 83
+    .line 84
+    .line 85
+    move-result-object p0
+
+    .line 86
+    check-cast p0, Ljp6;
+
+    .line 87
+    .line 88
+    invoke-virtual {p0, v1}, Ljp6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 89
+    .line 90
+    .line 91
+    return-object v1
+
+    .line 92
+    nop
+
+    .line 93
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Ljp6;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Ljp6;->j:Lf05;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Lf05;->d()V
+
+    .line 14
+    .line 15
+    .line 16
+    return-object v1
+
+    .line 17
+    :pswitch_0
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 18
+    .line 19
+    .line 20
+    invoke-virtual {p0}, Lf05;->c()V
+
+    .line 21
+    .line 22
+    .line 23
+    return-object v1
+
+    .line 24
+    :pswitch_1
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 25
+    .line 26
+    .line 27
+    invoke-virtual {p0}, Lf05;->d()V
+
+    .line 28
+    .line 29
+    .line 30
+    return-object v1
+
+    .line 31
+    :pswitch_2
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 32
     .line 33
     .line 34
-    move-result-object v0
+    invoke-virtual {p0}, Lf05;->d()V
 
     .line 35
-    sput-object v0, Ljp6;->m:[Ljp6;
-
     .line 36
     .line 37
-    return-void
-.end method
+    return-object v1
 
-.method public static valueOf(Ljava/lang/String;)Ljp6;
-    .locals 1
+    .line 38
+    :pswitch_3
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
-    .line 1
-    const-class v0, Ljp6;
+    .line 39
+    .line 40
+    .line 41
+    invoke-virtual {p0}, Lf05;->c()V
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 42
+    .line 43
+    .line 44
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 45
+    :pswitch_4
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
-    .line 7
-    check-cast p0, Ljp6;
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {p0}, Lf05;->d()V
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 49
+    .line 50
+    .line 51
+    return-object v1
 
-.method public static values()[Ljp6;
-    .locals 1
+    .line 52
+    :pswitch_5
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
-    .line 1
-    sget-object v0, Ljp6;->m:[Ljp6;
+    .line 53
+    .line 54
+    .line 55
+    invoke-virtual {p0}, Lf05;->d()V
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 56
+    .line 57
+    .line 58
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 59
+    :pswitch_6
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
-    .line 7
-    check-cast v0, [Ljp6;
+    .line 60
+    .line 61
+    .line 62
+    invoke-virtual {p0}, Lf05;->c()V
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 63
+    .line 64
+    .line 65
+    return-object v1
+
+    .line 66
+    nop
+
+    .line 67
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

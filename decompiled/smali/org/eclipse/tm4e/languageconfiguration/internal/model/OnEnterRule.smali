@@ -1,6 +1,6 @@
 .class public final Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -62,50 +62,46 @@
 
     .line 20
     .line 21
-    if-nez p3, :cond_1
+    if-eqz p3, :cond_1
 
     .line 22
     .line 23
-    goto :goto_1
-
-    .line 24
-    :cond_1
     invoke-static {p3}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->of(Ljava/lang/String;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
+    .line 24
     .line 25
     .line 26
-    .line 27
     move-result-object p1
 
-    .line 28
-    :goto_1
+    .line 27
+    :cond_1
     iput-object p1, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->previousLineText:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
+    .line 28
     .line 29
-    .line 30
     iput-object p4, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->action:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;
 
+    .line 30
     .line 31
-    .line 32
     return-void
 .end method
 
 .method public constructor <init>(Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;)V
     .locals 0
 
-    .line 33
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 33
     iput-object p1, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->beforeText:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
-    .line 35
+    .line 34
     iput-object p2, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->afterText:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
-    .line 36
+    .line 35
     iput-object p3, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->previousLineText:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
-    .line 37
+    .line 36
     iput-object p4, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->action:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;
 
     return-void
@@ -227,7 +223,7 @@
     .locals 2
 
     .line 1
-    new-instance v0, Lyx;
+    new-instance v0, Ljx;
 
     .line 2
     .line 3
@@ -235,12 +231,12 @@
 
     .line 4
     .line 5
-    invoke-direct {v0, p0, v1}, Lyx;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, v1}, Ljx;-><init>(Ljava/lang/Object;B)V
 
     .line 6
     .line 7
     .line 8
-    invoke-static {p0, v0}, Lyc6;->e(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lqi6;->e(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/String;
 
     .line 9
     .line 10

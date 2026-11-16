@@ -1,105 +1,230 @@
 .class public final synthetic Lks4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Le82;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Le72;
 
 
 # instance fields
-.field public final synthetic j:Lma5;
+.field public final synthetic j:B
 
-.field public final synthetic k:Lls4;
+.field public final synthetic k:Loc1;
 
-.field public final synthetic l:Lfs2;
+.field public final synthetic l:Lp86;
 
-.field public final synthetic m:J
+.field public final synthetic m:Lh04;
 
-.field public final synthetic n:J
+.field public final synthetic n:Lh04;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lma5;Lls4;Lfs2;JJ)V
-    .locals 0
+.method public constructor <init>(Loc1;Lp86;Lh04;Lh04;B)V
+    .locals 6
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p5, p0, Lks4;->j:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lks4;->j:Lma5;
+    packed-switch p5, :pswitch_data_0
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lks4;->k:Lls4;
+    iput-object p1, p0, Lks4;->k:Loc1;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lks4;->l:Lfs2;
+    iput-object p2, p0, Lks4;->l:Lp86;
 
     .line 9
     .line 10
-    iput-wide p4, p0, Lks4;->m:J
+    iput-object p3, p0, Lks4;->m:Lh04;
 
     .line 11
     .line 12
-    iput-wide p6, p0, Lks4;->n:J
+    iput-object p4, p0, Lks4;->n:Lh04;
 
     .line 13
     .line 14
+    const-string p4, "PanelNotificationMaterialSheet$dismissSheet(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/material3/SheetState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V"
+
+    .line 15
+    .line 16
+    const/4 p5, 0x0
+
+    .line 17
+    const/4 p1, 0x0
+
+    .line 18
+    const-class p2, Ljy2;
+
+    .line 19
+    .line 20
+    const-string p3, "dismissSheet"
+
+    .line 21
+    .line 22
+    invoke-direct/range {p0 .. p5}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 23
+    .line 24
+    .line 25
     return-void
+
+    .line 26
+    :pswitch_0
+    iput-object p1, p0, Lks4;->k:Loc1;
+
+    .line 27
+    .line 28
+    iput-object p2, p0, Lks4;->l:Lp86;
+
+    .line 29
+    .line 30
+    iput-object p3, p0, Lks4;->m:Lh04;
+
+    .line 31
+    .line 32
+    iput-object p4, p0, Lks4;->n:Lh04;
+
+    .line 33
+    .line 34
+    const-string v4, "PanelNotificationMaterialSheet$dismissSheet(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/material3/SheetState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V"
+
+    .line 35
+    .line 36
+    const/4 v5, 0x0
+
+    .line 37
+    const/4 v1, 0x0
+
+    .line 38
+    const-class v2, Ljy2;
+
+    .line 39
+    .line 40
+    const-string v3, "dismissSheet"
+
+    .line 41
+    .line 42
+    move-object v0, p0
+
+    .line 43
+    invoke-direct/range {v0 .. v5}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 44
+    .line 45
+    .line 46
+    return-void
+
+    .line 47
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 8
+    .locals 15
 
     .line 1
-    iget-object v0, p0, Lks4;->k:Lls4;
+    iget-byte v0, p0, Lks4;->j:B
 
     .line 2
     .line 3
-    iget-object v1, v0, Lls4;->A:Lqs4;
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    iget-object v7, v0, Lls4;->B:Lt03;
+    const/4 v2, 0x3
 
     .line 6
+    iget-object v3, p0, Lks4;->k:Loc1;
+
     .line 7
-    iget-wide v2, p0, Lks4;->m:J
-
     .line 8
-    .line 9
-    iget-wide v4, p0, Lks4;->n:J
+    packed-switch v0, :pswitch_data_0
 
+    .line 9
     .line 10
     .line 11
-    iget-object v6, p0, Lks4;->l:Lfs2;
+    new-instance v4, Lrh2;
 
     .line 12
     .line 13
-    invoke-interface/range {v1 .. v7}, Lqs4;->b(JJLfs2;Lt03;)J
+    const/4 v9, 0x5
 
     .line 14
+    iget-object v5, p0, Lks4;->l:Lp86;
+
     .line 15
     .line 16
-    move-result-wide v0
+    iget-object v6, p0, Lks4;->m:Lh04;
 
     .line 17
-    iget-object p0, p0, Lks4;->j:Lma5;
-
     .line 18
-    .line 19
-    iput-wide v0, p0, Lma5;->j:J
+    iget-object v7, p0, Lks4;->n:Lh04;
 
+    .line 19
     .line 20
+    const/4 v8, 0x0
+
     .line 21
-    sget-object p0, La47;->a:La47;
+    invoke-direct/range {v4 .. v9}, Lrh2;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lp91;B)V
 
     .line 22
     .line 23
-    return-object p0
+    .line 24
+    invoke-static {v3, v8, v8, v4, v2}, Lan0;->M(Loc1;Lx2;Lrc1;Lt72;I)Lwg6;
+
+    .line 25
+    .line 26
+    .line 27
+    return-object v1
+
+    .line 28
+    :pswitch_0
+    new-instance v9, Lrh2;
+
+    .line 29
+    .line 30
+    const/4 v14, 0x5
+
+    .line 31
+    iget-object v10, p0, Lks4;->l:Lp86;
+
+    .line 32
+    .line 33
+    iget-object v11, p0, Lks4;->m:Lh04;
+
+    .line 34
+    .line 35
+    iget-object v12, p0, Lks4;->n:Lh04;
+
+    .line 36
+    .line 37
+    const/4 v13, 0x0
+
+    .line 38
+    invoke-direct/range {v9 .. v14}, Lrh2;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lp91;B)V
+
+    .line 39
+    .line 40
+    .line 41
+    invoke-static {v3, v13, v13, v9, v2}, Lan0;->M(Loc1;Lx2;Lrc1;Lt72;I)Lwg6;
+
+    .line 42
+    .line 43
+    .line 44
+    return-object v1
+
+    .line 45
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

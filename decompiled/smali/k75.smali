@@ -1,62 +1,119 @@
-.class public abstract Lk75;
+.class public final synthetic Lk75;
 .super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
-# static fields
-.field public static final a:[I
+# instance fields
+.field public final synthetic i:B
+
+.field public final synthetic j:Lz32;
+
+.field public final synthetic k:Lp72;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lz32;Lp72;B)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x19
+    iput-byte p3, p0, Lk75;->i:B
 
     .line 2
     .line 3
-    new-array v0, v0, [I
+    iput-object p1, p0, Lk75;->j:Lz32;
 
     .line 4
     .line 5
-    fill-array-data v0, :array_0
+    iput-object p2, p0, Lk75;->k:Lp72;
 
     .line 6
     .line 7
-    .line 8
-    sput-object v0, Lk75;->a:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lk75;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    iget-object v3, p0, Lk75;->k:Lp72;
+
+    .line 7
+    .line 8
+    iget-object p0, p0, Lk75;->j:Lz32;
+
+    .line 9
+    .line 10
+    packed-switch v0, :pswitch_data_0
 
     .line 11
-    :array_0
-    .array-data 4
-        0x7f040031
-        0x7f04006b
-        0x7f040074
-        0x7f040077
-        0x7f0400a4
-        0x7f0400a5
-        0x7f0400a6
-        0x7f0400a9
-        0x7f0400b7
-        0x7f0400b9
-        0x7f0400c9
-        0x7f0400ca
-        0x7f04014a
-        0x7f04015a
-        0x7f04015b
-        0x7f04015c
-        0x7f04015d
-        0x7f04015e
-        0x7f04015f
-        0x7f04018a
-        0x7f04018b
-        0x7f04018d
-        0x7f04019a
-        0x7f0401b8
-        0x7f0401c5
-    .end array-data
+    .line 12
+    .line 13
+    check-cast p0, Lc42;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, v2}, Lc42;->b(Z)V
+
+    .line 16
+    .line 17
+    .line 18
+    sget-object p0, Lg80;->INSTANCE:Lg80;
+
+    .line 19
+    .line 20
+    invoke-interface {v3, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    return-object v1
+
+    .line 24
+    :pswitch_0
+    check-cast p0, Lc42;
+
+    .line 25
+    .line 26
+    invoke-virtual {p0, v2}, Lc42;->b(Z)V
+
+    .line 27
+    .line 28
+    .line 29
+    sget-object p0, Lg80;->INSTANCE:Lg80;
+
+    .line 30
+    .line 31
+    invoke-interface {v3, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 32
+    .line 33
+    .line 34
+    return-object v1
+
+    .line 35
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

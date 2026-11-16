@@ -1,97 +1,68 @@
-.class public abstract Lju1;
+.class public final Lju1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/app/Application$ActivityLifecycleCallbacks;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
+# static fields
+.field public static final a:Lje7;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lje7;
 
     .line 2
     .line 3
+    const/16 v1, 0xb
+
     .line 4
-    return-void
-.end method
-
-.method public onActivityDestroyed(Landroid/app/Activity;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public onActivityPaused(Landroid/app/Activity;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public onActivityResumed(Landroid/app/Activity;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
+    invoke-direct {v0, v1, v2}, Lje7;-><init>(BZ)V
+
     .line 7
-    return-void
-.end method
+    .line 8
+    .line 9
+    invoke-static {}, Lgu1;->d()Z
 
-.method public onActivityStarted(Landroid/app/Activity;)V
-    .locals 0
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
 
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 13
+    if-eqz v1, :cond_0
 
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
+    .line 14
+    .line 15
+    invoke-virtual {v0}, Lje7;->u()Lgh6;
 
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 0
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v1
 
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 19
+    goto :goto_0
 
-    .line 2
-    .line 3
-    .line 4
+    .line 20
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 21
+    :goto_0
+    iput-object v1, v0, Lje7;->j:Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    sput-object v0, Lju1;->a:Lje7;
+
+    .line 24
+    .line 25
     return-void
 .end method

@@ -1,23 +1,31 @@
-.class public interface abstract Luf5;
+.class public final Luf5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# instance fields
+.field public i:J
 
 
 # virtual methods
-.method public abstract a()Luf5;
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-.method public abstract c()Ltf5;
-.end method
+    .line 1
+    iget-wide v0, p0, Luf5;->i:J
 
-.method public abstract cancel()V
-.end method
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-.method public abstract d()Lx85;
-.end method
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-.method public abstract e()Z
-.end method
-
-.method public abstract g()Ltf5;
+    .line 7
+    return-object p0
 .end method

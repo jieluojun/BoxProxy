@@ -1,151 +1,299 @@
-.class public final enum Las5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Las5;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final enum j:Las5;
+# instance fields
+.field public final a:Landroid/content/Context;
 
-.field public static final enum k:Las5;
+.field public final b:Les5;
 
-.field public static final enum l:Las5;
+.field public final c:Lhs5;
 
-.field public static final enum m:Las5;
+.field public final d:Lk42;
 
-.field public static final enum n:Las5;
+.field public final e:Z
 
-.field public static final synthetic o:[Las5;
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Le72;
+
+.field public final i:Le72;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Landroid/content/Context;Les5;Lhs5;Lk42;ZZZLe72;Le72;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Las5;
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const-string v1, "TopBar"
-
     .line 4
+    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    invoke-virtual {p9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 8
     .line 9
-    sput-object v0, Las5;->j:Las5;
-
     .line 10
-    .line 11
-    new-instance v1, Las5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 11
     .line 12
     .line 13
-    const-string v2, "MainContent"
+    iput-object p1, p0, Las5;->a:Landroid/content/Context;
 
     .line 14
     .line 15
-    const/4 v3, 0x1
+    iput-object p2, p0, Las5;->b:Les5;
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
+    iput-object p3, p0, Las5;->c:Lhs5;
+
     .line 18
     .line 19
-    sput-object v1, Las5;->k:Las5;
+    iput-object p4, p0, Las5;->d:Lk42;
 
     .line 20
     .line 21
-    new-instance v2, Las5;
+    iput-boolean p5, p0, Las5;->e:Z
 
     .line 22
     .line 23
-    const-string v3, "Snackbar"
+    iput-boolean p6, p0, Las5;->f:Z
 
     .line 24
     .line 25
-    const/4 v4, 0x2
+    iput-boolean p7, p0, Las5;->g:Z
 
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 27
+    iput-object p8, p0, Las5;->h:Le72;
+
     .line 28
     .line 29
-    sput-object v2, Las5;->l:Las5;
+    iput-object p9, p0, Las5;->i:Le72;
 
     .line 30
     .line 31
-    new-instance v3, Las5;
-
-    .line 32
-    .line 33
-    const-string v4, "Fab"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Las5;->m:Las5;
-
-    .line 40
-    .line 41
-    new-instance v4, Las5;
-
-    .line 42
-    .line 43
-    const-string v5, "BottomBar"
-
-    .line 44
-    .line 45
-    const/4 v6, 0x4
-
-    .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 47
-    .line 48
-    .line 49
-    sput-object v4, Las5;->n:Las5;
-
-    .line 50
-    .line 51
-    filled-new-array {v0, v1, v2, v3, v4}, [Las5;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v0
-
-    .line 55
-    sput-object v0, Las5;->o:[Las5;
-
-    .line 56
-    .line 57
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Las5;
-    .locals 1
+
+# virtual methods
+.method public final a()Z
+    .locals 2
 
     .line 1
-    const-class v0, Las5;
+    iget-object v0, p0, Las5;->b:Les5;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {v0}, Les5;->b()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, v0, Les5;->q:Lxs4;
+    invoke-virtual {v1}, Lxs4;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Las5;->c:Lhs5;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Lhs5;->a()Lbr5;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    if-eqz p0, :lbl_0
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lbr5;->a:Lou0;
+
+    .line 15
+    .line 16
+    :try_start_0
+    iget-object p0, p0, Lou0;->A0:Lc81;
+
+    .line 17
+    .line 18
+    iget-object p0, p0, Lc81;->q:Lw87;
+
+    .line 19
+    .line 20
+    iget-boolean v0, p0, Lw87;->j:Z
+
+    .line 21
+    .line 22
+    if-eqz v0, :lbl_0
+
+    .line 23
+    .line 24
+    iget v0, p0, Lw87;->n:I
+
+    .line 25
+    .line 26
+    iget-object p0, p0, Lw87;->i:Ljava/util/ArrayList;
+
+    .line 27
+    .line 28
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 32
+    if-ge v0, p0, :lbl_0
+
+    .line 33
+    .line 34
+    const/4 p0, 0x1
+
+    .line 35
+    return p0
+
+    .line 36
+    :catch_0
+    move-exception p0
+
+    .line 37
+    const-string v0, "RuntimeFileTextMate"
+
+    .line 38
+    .line 39
+    const-string v1, "Editor value read failed: canRedo"
+
+    .line 40
+    .line 41
+    invoke-static {v0, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 42
+    .line 43
+    .line 44
+    :lbl_0
+    const/4 p0, 0x0
+
+    .line 45
+    return p0
+.end method
+
+.method public final b()Z
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Las5;->b:Les5;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Les5;->b()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, v0, Les5;->q:Lxs4;
+    invoke-virtual {v1}, Lxs4;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Las5;->c:Lhs5;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Lhs5;->a()Lbr5;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    if-eqz p0, :lbl_0
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lbr5;->a:Lou0;
+
+    .line 15
+    .line 16
+    :try_start_0
+    iget-object p0, p0, Lou0;->A0:Lc81;
+
+    .line 17
+    .line 18
+    iget-object p0, p0, Lc81;->q:Lw87;
+
+    .line 19
+    .line 20
+    iget-boolean v0, p0, Lw87;->j:Z
+
+    .line 21
+    .line 22
+    if-eqz v0, :lbl_0
+
+    .line 23
+    .line 24
+    iget p0, p0, Lw87;->n:I
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 25
+    .line 26
+    if-lez p0, :lbl_0
+
+    .line 27
+    .line 28
+    const/4 p0, 0x1
+
+    .line 29
+    return p0
+
+    .line 30
+    :catch_0
+    move-exception p0
+
+    .line 31
+    const-string v0, "RuntimeFileTextMate"
+
+    .line 32
+    .line 33
+    const-string v1, "Editor value read failed: canUndo"
+
+    .line 34
+    .line 35
+    invoke-static {v0, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 36
+    .line 37
+    .line 38
+    :lbl_0
+    const/4 p0, 0x0
+
+    .line 39
+    return p0
+.end method
+
+.method public final c()I
+    .locals 4
+
+    .line 1
+    iget-object p0, p0, Las5;->b:Les5;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Les5;->b()Ljava/lang/String;
 
     .line 4
     .line 5
@@ -153,32 +301,57 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Las5;
+    const/4 v0, 0x0
 
     .line 8
+    move v1, v0
+
     .line 9
-    return-object p0
-.end method
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-.method public static values()[Las5;
-    .locals 1
+    .line 10
+    .line 11
+    .line 12
+    move-result v2
 
-    .line 1
-    sget-object v0, Las5;->o:[Las5;
+    .line 13
+    if-ge v0, v2, :cond_1
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 14
+    .line 15
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 16
+    .line 17
+    .line 18
+    move-result v2
 
-    .line 7
-    check-cast v0, [Las5;
+    .line 19
+    const/16 v3, 0xa
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 20
+    .line 21
+    if-ne v2, v3, :cond_0
+
+    .line 22
+    .line 23
+    add-int/lit8 v1, v1, 0x1
+
+    .line 24
+    .line 25
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    .line 26
+    .line 27
+    goto :goto_0
+
+    .line 28
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    .line 29
+    .line 30
+    return v1
 .end method

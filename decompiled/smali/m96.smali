@@ -1,290 +1,101 @@
-.class public final Lm96;
+.class public final synthetic Lm96;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lsn2;
+.implements Le72;
 
 
 # instance fields
-.field public final j:Lxy1;
+.field public final synthetic i:B
 
-.field public final k:Lwu;
+.field public final synthetic j:Lp72;
 
-.field public final l:Ljava/lang/Object;
-
-.field public m:Z
-
-.field public final n:Lve0;
+.field public final synthetic k:Lda6;
 
 
 # direct methods
-.method public constructor <init>(Lve0;Lxy1;Lwu;)V
+.method public synthetic constructor <init>(Lp72;Lda6;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lm96;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lm96;->j:Lp72;
+
     .line 4
-    iput-object p2, p0, Lm96;->j:Lxy1;
-
     .line 5
+    iput-object p2, p0, Lm96;->k:Lda6;
+
     .line 6
-    iput-object p3, p0, Lm96;->k:Lwu;
-
     .line 7
-    .line 8
-    new-instance p2, Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
-    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
-
-    .line 11
-    .line 12
-    .line 13
-    iput-object p2, p0, Lm96;->l:Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    iput-object p1, p0, Lm96;->n:Lve0;
-
-    .line 16
-    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final B()Lve0;
-    .locals 2
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lm96;->l:Ljava/lang/Object;
+    iget-byte v0, p0, Lm96;->i:B
 
     .line 2
     .line 3
-    monitor-enter v0
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
-    :try_start_0
-    iget-boolean v1, p0, Lm96;->m:Z
-
     .line 5
+    iget-object v2, p0, Lm96;->k:Lda6;
+
     .line 6
-    if-nez v1, :cond_1
-
     .line 7
+    iget-object p0, p0, Lm96;->j:Lp72;
+
     .line 8
-    iget-object p0, p0, Lm96;->n:Lve0;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     .line 9
-    .line 10
-    if-eqz p0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
+    .line 10
     .line 11
     .line 12
-    monitor-exit v0
+    iget-object v0, v2, Lda6;->b:Ljava/lang/String;
 
     .line 13
-    return-object p0
-
     .line 14
-    :cond_0
-    const/4 p0, 0x0
+    invoke-interface {p0, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 15
-    :try_start_1
-    throw p0
-
     .line 16
-    :catchall_0
-    move-exception p0
-
     .line 17
-    goto :goto_0
+    return-object v1
 
     .line 18
-    :cond_1
-    const-string p0, "closed"
+    :pswitch_0
+    iget-object v0, v2, Lda6;->b:Ljava/lang/String;
 
     .line 19
     .line 20
-    new-instance v1, Ljava/lang/IllegalStateException;
+    invoke-interface {p0, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 21
     .line 22
-    invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
     .line 23
+    return-object v1
+
     .line 24
+    nop
+
     .line 25
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 26
-    :goto_0
-    monitor-exit v0
-
-    .line 27
-    throw p0
-.end method
-
-.method public final close()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lm96;->l:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    monitor-enter v0
-
-    .line 4
-    const/4 v1, 0x1
-
-    .line 5
-    :try_start_0
-    iput-boolean v1, p0, Lm96;->m:Z
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lm96;->n:Lve0;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 8
-    .line 9
-    if-eqz p0, :cond_0
-
-    .line 10
-    .line 11
-    :try_start_1
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 12
-    .line 13
-    .line 14
-    goto :goto_0
-
-    .line 15
-    :catch_0
-    move-exception p0
-
-    .line 16
-    :try_start_2
-    throw p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 17
-    :catch_1
-    :cond_0
-    :goto_0
-    monitor-exit v0
-
-    .line 18
-    return-void
-
-    .line 19
-    :catchall_0
-    move-exception p0
-
-    .line 20
-    monitor-exit v0
-
-    .line 21
-    throw p0
-.end method
-
-.method public final getFileSystem()Lxy1;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lm96;->j:Lxy1;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final o()Lkn4;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lm96;->l:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    monitor-enter v0
-
-    .line 4
-    :try_start_0
-    iget-boolean p0, p0, Lm96;->m:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5
-    .line 6
-    if-nez p0, :cond_0
-
-    .line 7
-    .line 8
-    monitor-exit v0
-
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return-object p0
-
-    .line 11
-    :cond_0
-    :try_start_1
-    const-string p0, "closed"
-
-    .line 12
-    .line 13
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    .line 14
-    .line 15
-    invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 19
-    :catchall_0
-    move-exception p0
-
-    .line 20
-    monitor-exit v0
-
-    .line 21
-    throw p0
-.end method
-
-.method public final s()Lwu;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lm96;->k:Lwu;
-
-    .line 2
-    .line 3
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,100 +1,129 @@
-.class public final Lz17;
-.super Lcu4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lz17;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lp72;
 
 
 # instance fields
-.field public a:[I
+.field public final synthetic i:B
 
-.field public b:I
+.field public final synthetic j:Lh27;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lh27;B)V
+    .locals 0
+
+    .line 1
+    iput-byte p2, p0, Lz17;->i:B
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lz17;->j:Lh27;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lz17;->a:[I
-
-    .line 2
-    .line 3
-    iget p0, p0, Lz17;->b:I
-
-    .line 4
-    .line 5
-    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([II)[I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    new-instance v0, Ly17;
-
-    .line 10
-    .line 11
-    invoke-direct {v0, p0}, Ly17;-><init>([I)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-object v0
-.end method
-
-.method public final b(I)V
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lz17;->a:[I
+    iget-byte v0, p0, Lz17;->i:B
 
     .line 2
     .line 3
-    array-length v1, v0
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
-    if-ge v1, p1, :cond_1
-
     .line 5
-    .line 6
-    array-length v1, v0
+    iget-object p0, p0, Lz17;->j:Lh27;
 
+    .line 6
     .line 7
-    mul-int/lit8 v1, v1, 0x2
+    check-cast p1, Ljava/lang/String;
 
     .line 8
     .line 9
-    if-ge p1, v1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
-    move p1, v1
-
     .line 12
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([II)[I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 13
     .line 14
     .line 15
-    move-result-object p1
+    iget-object v0, p0, Lh27;->l:Lxs4;
 
     .line 16
-    iput-object p1, p0, Lz17;->a:[I
-
     .line 17
+    invoke-virtual {v0}, Lxs4;->getValue()Ljava/lang/Object;
+
     .line 18
-    :cond_1
-    return-void
-.end method
+    .line 19
+    .line 20
+    move-result-object v0
 
-.method public final d()I
-    .locals 0
+    .line 21
+    check-cast v0, Ljava/lang/String;
 
-    .line 1
-    iget p0, p0, Lz17;->b:I
+    .line 22
+    .line 23
+    invoke-virtual {p0, v0, p1}, Lh27;->g(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2
-    .line 3
-    return p0
+    .line 24
+    .line 25
+    .line 26
+    return-object v1
+
+    .line 27
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 28
+    .line 29
+    .line 30
+    iget-object v0, p0, Lh27;->m:Lxs4;
+
+    .line 31
+    .line 32
+    invoke-virtual {v0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object v0
+
+    .line 36
+    check-cast v0, Ljava/lang/String;
+
+    .line 37
+    .line 38
+    invoke-virtual {p0, p1, v0}, Lh27;->g(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 39
+    .line 40
+    .line 41
+    return-object v1
+
+    .line 42
+    nop
+
+    .line 43
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,105 +1,373 @@
 .class public final Ljd7;
-.super Lid7;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lld7;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static c:Ljd7;
+
+.field public static final d:Lny6;
+
+
+# instance fields
+.field public final b:Landroid/app/Application;
 
 
 # direct methods
-.method public constructor <init>(Lnd7;Landroid/view/WindowInsets;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lny6;
+
+    .line 2
+    .line 3
+    const/16 v1, 0xc
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lny6;-><init>(B)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Ljd7;->d:Lny6;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/app/Application;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Lid7;-><init>(Lnd7;Landroid/view/WindowInsets;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    return-void
-.end method
-
-.method public constructor <init>(Lnd7;Ljd7;)V
-    .locals 0
+    iput-object p1, p0, Ljd7;->b:Landroid/app/Application;
 
     .line 5
-    invoke-direct {p0, p1, p2}, Lid7;-><init>(Lnd7;Lid7;)V
-
+    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public f(I)Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/List<",
-            "Landroid/graphics/Rect;",
-            ">;"
-        }
-    .end annotation
+.method public final a(Ljava/lang/Class;)Lgd7;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lcd7;->c:Landroid/view/WindowInsets;
+    iget-object v0, p0, Ljd7;->b:Landroid/app/Application;
 
     .line 2
     .line 3
-    invoke-static {p1}, Lmd7;->a(I)I
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
+    invoke-virtual {p0, p1, v0}, Ljd7;->d(Ljava/lang/Class;Landroid/app/Application;)Lgd7;
+
     .line 6
-    move-result p1
-
     .line 7
-    invoke-static {p0, p1}, Lip4;->a(Landroid/view/WindowInsets;I)Ljava/util/List;
-
     .line 8
-    .line 9
-    .line 10
     move-result-object p0
 
-    .line 11
+    .line 9
     return-object p0
+
+    .line 10
+    :cond_0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 11
+    .line 12
+    const-string p1, "AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras)."
+
+    .line 13
+    .line 14
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    throw p0
 .end method
 
-.method public g(I)Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/List<",
-            "Landroid/graphics/Rect;",
-            ">;"
-        }
-    .end annotation
+.method public final b(Ljava/lang/Class;Lxy3;)Lgd7;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lcd7;->c:Landroid/view/WindowInsets;
+    iget-object v0, p0, Ljd7;->b:Landroid/app/Application;
 
     .line 2
     .line 3
-    invoke-static {p1}, Lmd7;->a(I)I
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
+    invoke-virtual {p0, p1}, Ljd7;->a(Ljava/lang/Class;)Lgd7;
+
     .line 6
-    move-result p1
-
     .line 7
-    invoke-static {p0, p1}, Lip4;->d(Landroid/view/WindowInsets;I)Ljava/util/List;
-
     .line 8
-    .line 9
-    .line 10
     move-result-object p0
 
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    sget-object v0, Ljd7;->d:Lny6;
+
     .line 11
+    .line 12
+    iget-object p2, p2, Lwc1;->a:Ljava/util/LinkedHashMap;
+
+    .line 13
+    .line 14
+    invoke-virtual {p2, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p2
+
+    .line 18
+    check-cast p2, Landroid/app/Application;
+
+    .line 19
+    .line 20
+    if-eqz p2, :cond_1
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, p1, p2}, Ljd7;->d(Ljava/lang/Class;Landroid/app/Application;)Lgd7;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_1
+    const-class p0, Lag;
+
+    .line 28
+    .line 29
+    invoke-virtual {p0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    if-nez p0, :cond_2
+
+    .line 34
+    .line 35
+    invoke-static {p1}, Lqr;->D(Ljava/lang/Class;)Lgd7;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object p0
+
+    .line 39
+    return-object p0
+
+    .line 40
+    :cond_2
+    const-string p0, "CreationExtras must have an application by `APPLICATION_KEY`"
+
+    .line 41
+    .line 42
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
+
+    .line 43
+    .line 44
+    .line 45
+    const/4 p0, 0x0
+
+    .line 46
     return-object p0
 .end method
 
-.method public q()V
-    .locals 0
+.method public final d(Ljava/lang/Class;Landroid/app/Application;)Lgd7;
+    .locals 2
 
     .line 1
-    return-void
+    const-string p0, "Cannot create an instance of "
+
+    .line 2
+    .line 3
+    const-class v0, Lag;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    if-eqz v0, :cond_0
+
+    .line 10
+    .line 11
+    const/4 v0, 0x0
+
+    .line 12
+    :try_start_0
+    const-class v1, Landroid/app/Application;
+
+    .line 13
+    .line 14
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object v1
+
+    .line 18
+    invoke-virtual {p1, v1}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v1
+
+    .line 22
+    filled-new-array {p2}, [Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p2
+
+    .line 26
+    invoke-virtual {v1, p2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p2
+
+    .line 30
+    check-cast p2, Lgd7;
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 31
+    .line 32
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 33
+    .line 34
+    .line 35
+    return-object p2
+
+    .line 36
+    :catch_0
+    move-exception p2
+
+    .line 37
+    invoke-static {p0, p1}, Lky1;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p0
+
+    .line 41
+    invoke-static {p0, p2}, Lnf1;->k(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 42
+    .line 43
+    .line 44
+    return-object v0
+
+    .line 45
+    :catch_1
+    move-exception p2
+
+    .line 46
+    invoke-static {p0, p1}, Lky1;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p0
+
+    .line 50
+    invoke-static {p0, p2}, Lnf1;->k(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 51
+    .line 52
+    .line 53
+    return-object v0
+
+    .line 54
+    :catch_2
+    move-exception p2
+
+    .line 55
+    invoke-static {p0, p1}, Lky1;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p0
+
+    .line 59
+    invoke-static {p0, p2}, Lnf1;->k(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 60
+    .line 61
+    .line 62
+    return-object v0
+
+    .line 63
+    :catch_3
+    move-exception p2
+
+    .line 64
+    invoke-static {p0, p1}, Lky1;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+
+    .line 65
+    .line 66
+    .line 67
+    move-result-object p0
+
+    .line 68
+    invoke-static {p0, p2}, Lnf1;->k(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 69
+    .line 70
+    .line 71
+    return-object v0
+
+    .line 72
+    :cond_0
+    invoke-static {p1}, Lqr;->D(Ljava/lang/Class;)Lgd7;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object p0
+
+    .line 76
+    return-object p0
 .end method

@@ -1,317 +1,162 @@
-.class public final Lg93;
+.class public final synthetic Lg93;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lfy2;
+.implements Lp72;
 
 
 # instance fields
-.field public final j:Ljava/lang/CharSequence;
+.field public final synthetic i:B
 
-.field public k:B
-
-.field public l:I
-
-.field public m:I
-
-.field public n:I
+.field public final synthetic j:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-byte p2, p0, Lg93;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lg93;->j:Ljava/lang/Object;
+
     .line 4
+    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5
     .line 6
     .line 7
-    iput-object p1, p0, Lg93;->j:Ljava/lang/CharSequence;
-
     .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 9
-
-    .line 1
-    iget-byte v0, p0, Lg93;->k:B
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x1
-
-    .line 5
-    if-eqz v0, :cond_1
-
-    .line 6
-    .line 7
-    if-ne v0, v2, :cond_0
-
-    .line 8
-    .line 9
-    return v2
-
-    .line 10
-    :cond_0
-    return v1
-
-    .line 11
-    :cond_1
-    iget v0, p0, Lg93;->n:I
-
-    .line 12
-    .line 13
-    const/4 v3, 0x2
-
-    .line 14
-    if-gez v0, :cond_2
-
-    .line 15
-    .line 16
-    iput-byte v3, p0, Lg93;->k:B
-
-    .line 17
-    .line 18
-    return v1
-
-    .line 19
-    :cond_2
-    iget-object v0, p0, Lg93;->j:Ljava/lang/CharSequence;
-
-    .line 20
-    .line 21
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    .line 22
-    .line 23
-    .line 24
-    move-result v1
-
-    .line 25
-    iget v4, p0, Lg93;->l:I
-
-    .line 26
-    .line 27
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    .line 28
-    .line 29
-    .line 30
-    move-result v5
-
-    .line 31
-    :goto_0
-    if-ge v4, v5, :cond_5
-
-    .line 32
-    .line 33
-    invoke-interface {v0, v4}, Ljava/lang/CharSequence;->charAt(I)C
-
-    .line 34
-    .line 35
-    .line 36
-    move-result v6
-
-    .line 37
-    const/16 v7, 0xd
-
-    .line 38
-    .line 39
-    const/16 v8, 0xa
-
-    .line 40
-    .line 41
-    if-eq v6, v8, :cond_3
-
-    .line 42
-    .line 43
-    if-eq v6, v7, :cond_3
-
-    .line 44
-    .line 45
-    add-int/lit8 v4, v4, 0x1
-
-    .line 46
-    .line 47
-    goto :goto_0
-
-    .line 48
-    :cond_3
-    if-ne v6, v7, :cond_4
-
-    .line 49
-    .line 50
-    add-int/lit8 v1, v4, 0x1
-
-    .line 51
-    .line 52
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    .line 53
-    .line 54
-    .line 55
-    move-result v5
-
-    .line 56
-    if-ge v1, v5, :cond_4
-
-    .line 57
-    .line 58
-    invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    .line 59
-    .line 60
-    .line 61
-    move-result v0
-
-    .line 62
-    if-ne v0, v8, :cond_4
-
-    .line 63
-    .line 64
-    goto :goto_1
-
-    .line 65
-    :cond_4
-    move v3, v2
-
-    .line 66
-    :goto_1
-    move v1, v4
-
-    .line 67
-    goto :goto_2
-
-    .line 68
-    :cond_5
-    const/4 v3, -0x1
-
-    .line 69
-    :goto_2
-    iput-byte v2, p0, Lg93;->k:B
-
-    .line 70
-    .line 71
-    iput v3, p0, Lg93;->n:I
-
-    .line 72
-    .line 73
-    iput v1, p0, Lg93;->m:I
-
-    .line 74
-    .line 75
-    return v2
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    invoke-virtual {p0}, Lg93;->hasNext()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 v0, 0x0
-
-    .line 8
-    iput-byte v0, p0, Lg93;->k:B
-
-    .line 9
-    .line 10
-    iget v0, p0, Lg93;->m:I
-
-    .line 11
-    .line 12
-    iget v1, p0, Lg93;->l:I
-
-    .line 13
-    .line 14
-    iget v2, p0, Lg93;->n:I
-
-    .line 15
-    .line 16
-    add-int/2addr v2, v0
-
-    .line 17
-    iput v2, p0, Lg93;->l:I
-
-    .line 18
-    .line 19
-    iget-object p0, p0, Lg93;->j:Ljava/lang/CharSequence;
-
-    .line 20
-    .line 21
-    invoke-interface {p0, v1, v0}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p0
-
-    .line 25
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object p0
-
-    .line 29
-    return-object p0
-
-    .line 30
-    :cond_0
-    invoke-static {}, Lue1;->p()V
-
-    .line 31
-    .line 32
-    .line 33
-    const/4 p0, 0x0
-
-    .line 34
-    return-object p0
-.end method
-
-.method public final remove()V
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-byte v0, p0, Lg93;->i:B
 
     .line 2
     .line 3
-    const-string v0, "Operation is not supported for read-only collection"
+    iget-object p0, p0, Lg93;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
+    check-cast p1, Lsl1;
+
+    .line 9
+    .line 10
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 11
+    .line 12
+    .line 13
+    sget-object v0, Laq0;->a:Laq0;
+
+    .line 14
+    .line 15
+    monitor-enter v0
+
+    .line 16
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 17
+    .line 18
+    .line 19
+    sget-object p1, Laq0;->g:Ljava/util/LinkedHashSet;
+
+    .line 20
+    .line 21
+    invoke-interface {p1, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p1
+
+    .line 25
+    if-eqz p1, :cond_0
+
+    .line 26
+    .line 27
+    invoke-virtual {v0}, Laq0;->j()V
+
+    .line 28
+    .line 29
+    .line 30
+    :cond_0
+    invoke-virtual {v0}, Laq0;->g()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    .line 32
+    .line 33
+    monitor-exit v0
+
+    .line 34
+    new-instance p1, Lx6;
+
+    .line 35
+    .line 36
+    const/16 v0, 0x11
+
+    .line 37
+    .line 38
+    invoke-direct {p1, p0, v0}, Lx6;-><init>(Ljava/lang/Object;B)V
+
+    .line 39
+    .line 40
+    .line 41
+    return-object p1
+
+    .line 42
+    :goto_0
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 43
     throw p0
+
+    .line 44
+    :catchall_0
+    move-exception p0
+
+    .line 45
+    goto :goto_0
+
+    .line 46
+    :pswitch_0
+    check-cast p1, Ljava/lang/Integer;
+
+    .line 47
+    .line 48
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 49
+    .line 50
+    .line 51
+    return-object p0
+
+    .line 52
+    nop
+
+    .line 53
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

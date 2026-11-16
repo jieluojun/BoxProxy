@@ -1,30 +1,33 @@
 .class public final Lqt1;
-.super Lzm;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic e:Lzm;
+.field public final synthetic i:B
 
-.field public final synthetic f:Ljava/util/concurrent/ThreadPoolExecutor;
+.field public final synthetic j:Lrt1;
 
 
 # direct methods
-.method public constructor <init>(Lzm;Ljava/util/concurrent/ThreadPoolExecutor;)V
+.method public synthetic constructor <init>(Lrt1;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lqt1;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lqt1;->j:Lrt1;
+
     .line 4
-    iput-object p1, p0, Lqt1;->e:Lzm;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lqt1;->f:Ljava/util/concurrent/ThreadPoolExecutor;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
     return-void
@@ -32,82 +35,218 @@
 
 
 # virtual methods
-.method public final U(Ljava/lang/Throwable;)V
-    .locals 1
+.method public final run()V
+    .locals 9
 
     .line 1
-    iget-object v0, p0, Lqt1;->f:Ljava/util/concurrent/ThreadPoolExecutor;
+    iget-byte v0, p0, Lqt1;->i:B
 
     .line 2
     .line 3
-    :try_start_0
-    iget-object p0, p0, Lqt1;->e:Lzm;
+    iget-object v1, p0, Lqt1;->j:Lrt1;
 
     .line 4
     .line 5
-    invoke-virtual {p0, p1}, Lzm;->U(Ljava/lang/Throwable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+    iget-object v0, v1, Lrt1;->w:Lou0;
 
     .line 9
     .line 10
-    .line 11
-    return-void
+    iget-object v2, v1, Lrt1;->D:Lvt1;
 
+    .line 11
     .line 12
-    :catchall_0
-    move-exception p0
+    invoke-virtual {v2}, Lvt1;->f()Z
 
     .line 13
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
     .line 14
     .line 15
+    move-result v2
+
     .line 16
-    throw p0
-.end method
+    const-wide/16 v3, 0xc8
 
-.method public final V(Ljf1;)V
-    .locals 1
+    .line 17
+    .line 18
+    if-nez v2, :cond_0
 
-    .line 1
-    iget-object v0, p0, Lqt1;->f:Ljava/util/concurrent/ThreadPoolExecutor;
+    .line 19
+    .line 20
+    invoke-virtual {v0}, Lou0;->getSnippetController()Lre6;
 
-    .line 2
-    .line 3
-    :try_start_0
-    iget-object p0, p0, Lqt1;->e:Lzm;
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v2
 
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lzm;->V(Ljf1;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 24
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+    .line 25
+    .line 26
+    .line 27
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 9
-    .line 10
-    .line 11
+    .line 28
+    .line 29
+    .line 30
+    move-result-wide v5
+
+    .line 31
+    iget-wide v7, v1, Lrt1;->F:J
+
+    .line 32
+    .line 33
+    sub-long/2addr v5, v7
+
+    .line 34
+    cmp-long v2, v5, v3
+
+    .line 35
+    .line 36
+    if-lez v2, :cond_0
+
+    .line 37
+    .line 38
+    invoke-virtual {v0}, Lou0;->getScroller()Llt1;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v2
+
+    .line 42
+    iget-object v2, v2, Llt1;->b:Landroid/widget/OverScroller;
+
+    .line 43
+    .line 44
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->isFinished()Z
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v2
+
+    .line 48
+    if-eqz v2, :cond_0
+
+    .line 49
+    .line 50
+    invoke-virtual {v1}, Lrt1;->f()V
+
+    .line 51
+    .line 52
+    .line 53
+    goto :goto_0
+
+    .line 54
+    :cond_0
+    invoke-virtual {v0, v3, v4, p0}, Lou0;->c0(JLjava/lang/Runnable;)V
+
+    .line 55
+    .line 56
+    .line 57
+    :goto_0
     return-void
 
-    .line 12
-    :catchall_0
-    move-exception p0
+    .line 58
+    :pswitch_0
+    iget-object v0, v1, Lrt1;->w:Lou0;
 
-    .line 13
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+    .line 59
+    .line 60
+    invoke-virtual {v0}, Lou0;->getEventHandler()Lvt1;
 
-    .line 14
-    .line 15
-    .line 16
-    throw p0
+    .line 61
+    .line 62
+    .line 63
+    move-result-object v2
+
+    .line 64
+    invoke-virtual {v2}, Lvt1;->m()Z
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v2
+
+    .line 68
+    if-nez v2, :cond_1
+
+    .line 69
+    .line 70
+    invoke-virtual {v0}, Lou0;->getCursor()Lkd1;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object v2
+
+    .line 74
+    invoke-virtual {v2}, Lkd1;->a()Z
+
+    .line 75
+    .line 76
+    .line 77
+    move-result v2
+
+    .line 78
+    if-nez v2, :cond_1
+
+    .line 79
+    .line 80
+    invoke-virtual {v1}, Lat1;->b()V
+
+    .line 81
+    .line 82
+    .line 83
+    goto :goto_1
+
+    .line 84
+    :cond_1
+    invoke-virtual {v0}, Lou0;->getCursor()Lkd1;
+
+    .line 85
+    .line 86
+    .line 87
+    move-result-object v1
+
+    .line 88
+    invoke-virtual {v1}, Lkd1;->a()Z
+
+    .line 89
+    .line 90
+    .line 91
+    move-result v1
+
+    .line 92
+    if-nez v1, :cond_2
+
+    .line 93
+    .line 94
+    const-wide/16 v1, 0x64
+
+    .line 95
+    .line 96
+    invoke-virtual {v0, v1, v2, p0}, Lou0;->c0(JLjava/lang/Runnable;)V
+
+    .line 97
+    .line 98
+    .line 99
+    :cond_2
+    :goto_1
+    return-void
+
+    .line 100
+    nop
+
+    .line 101
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

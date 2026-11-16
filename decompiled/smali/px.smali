@@ -1,16 +1,14 @@
 .class public final Lpx;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/locks/ReentrantLock;
-
-.field public b:Ljava/util/List;
+.field public final a:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>()V
     .locals 1
 
     .line 1
@@ -19,22 +17,18 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
+    new-instance v0, Ljava/util/LinkedHashMap;
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     .line 7
     .line 8
     .line 9
-    iput-object v0, p0, Lpx;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    iput-object v0, p0, Lpx;->a:Ljava/util/LinkedHashMap;
 
     .line 10
     .line 11
-    iput-object p1, p0, Lpx;->b:Ljava/util/List;
-
-    .line 12
-    .line 13
     return-void
 .end method

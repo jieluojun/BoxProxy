@@ -1,56 +1,64 @@
-.class public interface abstract Lpv;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lpv;
+.super Lgf3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public abstract g()Ljava/lang/Object;
-.end method
+# instance fields
+.field public final synthetic b:B
 
-.method public abstract h(ILjava/lang/Object;)V
-.end method
 
-.method public abstract i(Ljava/lang/Object;)V
-.end method
-
-.method public abstract j()V
-.end method
-
-.method public abstract k(ILjava/lang/Object;)V
-.end method
-
-.method public l()V
+# direct methods
+.method public synthetic constructor <init>(Lt46;B)V
     .locals 0
 
     .line 1
-    return-void
-.end method
-
-.method public abstract m(III)V
-.end method
-
-.method public abstract n(II)V
-.end method
-
-.method public q(Lt62;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0}, Lpv;->g()Ljava/lang/Object;
+    iput-byte p2, p0, Lpv;->b:B
 
     .line 2
     .line 3
+    invoke-direct {p0, p1}, Lgf3;-><init>(Lt46;)V
+
     .line 4
-    move-result-object p0
-
     .line 5
-    invoke-interface {p1, p0, p2}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
-.method public abstract u()V
+
+# virtual methods
+.method public final b()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lpv;->b:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    const-string p0, "kotlin.collections.LinkedHashSet"
+
+    .line 7
+    .line 8
+    return-object p0
+
+    .line 9
+    :pswitch_0
+    const-string p0, "kotlin.collections.ArrayList"
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    nop
+
+    .line 13
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,393 +1,250 @@
-.class public final synthetic Lgu0;
+.class public final Lgu0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Ljava/lang/String;
+
+.field public final b:Z
+
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lgu0;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lgu0;->a:Ljava/lang/String;
+
     .line 5
     .line 6
+    iput-boolean p3, p0, Lgu0;->b:Z
+
+    .line 7
+    .line 8
+    iput-object p2, p0, Lgu0;->c:Ljava/lang/String;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    iget-byte p0, p0, Lgu0;->j:B
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    const-string v0, ""
+    instance-of v0, p1, Lgu0;
 
     .line 4
     .line 5
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
     .line 6
-    const/4 v2, 0x0
-
     .line 7
-    sget-object v3, La47;->a:La47;
+    check-cast p1, Lgu0;
 
     .line 8
     .line 9
-    packed-switch p0, :pswitch_data_0
+    iget-object v0, p0, Lgu0;->a:Ljava/lang/String;
 
     .line 10
     .line 11
-    .line 12
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, p1, Lgu0;->a:Ljava/lang/String;
 
+    .line 12
     .line 13
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 14
     .line 15
-    move-result-object p0
-
     .line 16
-    return-object p0
+    move-result v0
 
     .line 17
-    :pswitch_0
-    new-instance p0, Lz02;
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    const/4 v0, 0x1
+    iget-boolean v0, p0, Lgu0;->b:Z
 
     .line 20
-    invoke-direct {p0, v0}, Lz02;-><init>(B)V
-
     .line 21
+    iget-boolean v1, p1, Lgu0;->b:Z
+
     .line 22
     .line 23
-    return-object p0
+    if-ne v0, v1, :cond_0
 
     .line 24
-    :pswitch_1
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
     .line 25
-    .line 26
-    return-object p0
+    iget-object p0, p0, Lgu0;->c:Ljava/lang/String;
 
+    .line 26
     .line 27
-    :pswitch_2
-    new-instance p0, Landroid/os/Handler;
+    iget-object p1, p1, Lgu0;->c:Ljava/lang/String;
 
     .line 28
     .line 29
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 30
     .line 31
     .line 32
-    move-result-object v0
+    move-result p0
 
     .line 33
-    invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    if-nez p0, :cond_1
 
     .line 34
     .line 35
+    :cond_0
+    const/4 p0, 0x0
+
     .line 36
-    return-object p0
+    return p0
 
     .line 37
-    :pswitch_3
-    return-object v2
+    :cond_1
+    const/4 p0, 0x1
 
     .line 38
-    :pswitch_4
-    return-object v3
+    return p0
+.end method
 
-    .line 39
-    :pswitch_5
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+.method public final hashCode()I
+    .locals 3
 
-    .line 40
-    .line 41
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    .line 1
+    iget-object v0, p0, Lgu0;->a:Ljava/lang/String;
 
-    .line 42
-    .line 43
-    .line 44
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    iget-boolean v2, p0, Lgu0;->b:Z
+
+    .line 11
+    .line 12
+    invoke-static {v0, v1, v2}, Llj6;->e(IIZ)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget-object p0, p0, Lgu0;->c:Ljava/lang/String;
+
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    add-int/2addr p0, v0
+
+    .line 23
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "TaskResult(name="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Lgu0;->a:Ljava/lang/String;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", success="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-boolean v1, p0, Lgu0;->b:Z
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string v1, ", message="
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    const-string v1, ")"
+
+    .line 29
+    .line 30
+    iget-object p0, p0, Lgu0;->c:Ljava/lang/String;
+
+    .line 31
+    .line 32
+    invoke-static {v0, p0, v1}, Lrf6;->q(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 33
+    .line 34
+    .line 35
     move-result-object p0
 
-    .line 45
+    .line 36
     return-object p0
-
-    .line 46
-    :pswitch_6
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object p0
-
-    .line 50
-    return-object p0
-
-    .line 51
-    :pswitch_7
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 52
-    .line 53
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p0
-
-    .line 57
-    return-object p0
-
-    .line 58
-    :pswitch_8
-    return-object v3
-
-    .line 59
-    :pswitch_9
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 60
-    .line 61
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 62
-    .line 63
-    .line 64
-    move-result-object p0
-
-    .line 65
-    return-object p0
-
-    .line 66
-    :pswitch_a
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 67
-    .line 68
-    .line 69
-    move-result-object p0
-
-    .line 70
-    return-object p0
-
-    .line 71
-    :pswitch_b
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 72
-    .line 73
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 74
-    .line 75
-    .line 76
-    move-result-object p0
-
-    .line 77
-    return-object p0
-
-    .line 78
-    :pswitch_c
-    return-object v3
-
-    .line 79
-    :pswitch_d
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-object p0
-
-    .line 83
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 84
-    .line 85
-    .line 86
-    move-result-object p0
-
-    .line 87
-    return-object p0
-
-    .line 88
-    :pswitch_e
-    const-string p0, "Unexpected call to default provider"
-
-    .line 89
-    .line 90
-    invoke-static {p0}, Le21;->b(Ljava/lang/String;)Ljava/lang/Void;
-
-    .line 91
-    .line 92
-    .line 93
-    new-instance p0, Loy0;
-
-    .line 94
-    .line 95
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
-
-    .line 96
-    .line 97
-    .line 98
-    throw p0
-
-    .line 99
-    :pswitch_f
-    sget-object p0, Lt21;->a:Lkq1;
-
-    .line 100
-    .line 101
-    sget-object p0, Lp74;->a:Lp74;
-
-    .line 102
-    .line 103
-    return-object p0
-
-    .line 104
-    :pswitch_10
-    const-string p0, "LocalOwner"
-
-    .line 105
-    .line 106
-    invoke-static {p0}, Lt21;->b(Ljava/lang/String;)V
-
-    .line 107
-    .line 108
-    .line 109
-    throw v2
-
-    .line 110
-    :pswitch_11
-    return-object v2
-
-    .line 111
-    :pswitch_12
-    new-instance p0, Lj13;
-
-    .line 112
-    .line 113
-    const/4 v0, 0x2
-
-    .line 114
-    invoke-direct {p0, v0}, Lj13;-><init>(I)V
-
-    .line 115
-    .line 116
-    .line 117
-    return-object p0
-
-    .line 118
-    :pswitch_13
-    return-object v3
-
-    .line 119
-    :pswitch_14
-    invoke-static {}, Lvw0;->a()Luw0;
-
-    .line 120
-    .line 121
-    .line 122
-    move-result-object p0
-
-    .line 123
-    return-object p0
-
-    .line 124
-    :pswitch_15
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 125
-    .line 126
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 127
-    .line 128
-    .line 129
-    move-result-object p0
-
-    .line 130
-    return-object p0
-
-    .line 131
-    :pswitch_16
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 132
-    .line 133
-    .line 134
-    move-result-object p0
-
-    .line 135
-    invoke-static {p0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 136
-    .line 137
-    .line 138
-    move-result-object p0
-
-    .line 139
-    return-object p0
-
-    .line 140
-    nop
-
-    .line 141
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_16
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,17 +1,22 @@
 .class public final Lz20;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lqy1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Landroid/graphics/Bitmap;
+.field public final a:[I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:Lz20;
+
+.field public final synthetic e:Lb30;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;)V
+.method public constructor <init>(Lb30;)V
     .locals 0
 
     .line 1
@@ -20,47 +25,84 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lz20;->a:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lz20;->e:Lb30;
 
     .line 5
     .line 6
+    iget-short p1, p1, Lb30;->b:S
+
+    .line 7
+    .line 8
+    add-int/lit8 p1, p1, 0x5
+
+    .line 9
+    .line 10
+    new-array p1, p1, [I
+
+    .line 11
+    .line 12
+    iput-object p1, p0, Lz20;->a:[I
+
+    .line 13
+    .line 14
+    const/4 p1, 0x0
+
+    .line 15
+    iput p1, p0, Lz20;->b:I
+
+    .line 16
+    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhv1;)Ljava/lang/Object;
-    .locals 2
+.method public final a()V
+    .locals 3
 
     .line 1
-    new-instance p1, Len2;
+    const/4 v0, 0x0
 
     .line 2
+    move v1, v0
+
     .line 3
-    new-instance v0, La30;
+    :goto_0
+    iget v2, p0, Lz20;->b:I
 
     .line 4
     .line 5
-    iget-object p0, p0, Lz20;->a:Landroid/graphics/Bitmap;
+    if-ge v0, v2, :cond_0
 
     .line 6
     .line 7
-    invoke-direct {v0, p0}, La30;-><init>(Landroid/graphics/Bitmap;)V
+    iget-object v2, p0, Lz20;->a:[I
 
     .line 8
     .line 9
+    aget v2, v2, v0
+
     .line 10
-    sget-object p0, Lme1;->k:Lme1;
-
     .line 11
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
     .line 12
-    const/4 v1, 0x0
-
     .line 13
-    invoke-direct {p1, v0, v1, p0}, Len2;-><init>(Lzm2;ZLme1;)V
-
     .line 14
+    move-result v1
+
     .line 15
+    add-int/lit8 v0, v0, 0x1
+
     .line 16
-    return-object p1
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_0
+    iput v1, p0, Lz20;->c:I
+
+    .line 19
+    .line 20
+    return-void
 .end method

@@ -1,175 +1,962 @@
-.class public final Lv21;
+.class public interface abstract Lv21;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ll57;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Lp62;
+# static fields
+.field public static final A:I
+
+.field public static final B:Z
+
+.field public static final C:Z
+
+.field public static final D:I
+
+.field public static final E:I
+
+.field public static final F:I
+
+.field public static final G:Ljava/io/PrintStream;
+
+.field public static final H:Z
+
+.field public static final I:Z
+
+.field public static final J:Z
+
+.field public static final K:Z
+
+.field public static final L:Z
+
+.field public static final M:Z
+
+.field public static final N:Z
+
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:Z
+
+.field public static final d:I
+
+.field public static final e:Z
+
+.field public static final f:Z
+
+.field public static final g:Z
+
+.field public static final h:Z
+
+.field public static final i:Z
+
+.field public static final j:Z
+
+.field public static final k:Z
+
+.field public static final l:Z
+
+.field public static final m:Z
+
+.field public static final n:Z
+
+.field public static final o:Z
+
+.field public static final p:Z
+
+.field public static final q:Z
+
+.field public static final r:Z
+
+.field public static final s:Z
+
+.field public static final t:Z
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:Z
+
+.field public static final z:Z
 
 
 # direct methods
-.method public constructor <init>(Lp62;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "joni.regex_max_length"
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lv21;->a:Lp62;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lro4;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lv21;->a:Lp62;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, -0x1
 
     .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lv21;
-
     .line 6
     .line 7
-    const/4 v2, 0x0
+    move-result v0
 
     .line 8
-    if-nez v1, :cond_1
+    sput v0, Lv21;->a:I
 
     .line 9
     .line 10
-    return v2
+    const-string v0, "joni.char_table_size"
 
     .line 11
-    :cond_1
-    check-cast p1, Lv21;
-
     .line 12
+    const/16 v1, 0x100
+
     .line 13
-    iget-object p0, p0, Lv21;->a:Lp62;
-
     .line 14
-    .line 15
-    iget-object p1, p1, Lv21;->a:Lp62;
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
 
+    .line 15
     .line 16
     .line 17
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v0
 
     .line 18
+    sput v0, Lv21;->b:I
+
     .line 19
     .line 20
-    move-result p0
+    const-string v1, "joni.use_no_invalid_quantifier"
 
     .line 21
-    if-nez p0, :cond_2
-
     .line 22
+    const/4 v2, 0x1
+
     .line 23
-    return v2
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
 
     .line 24
+    .line 25
+    .line 26
+    move-result v1
+
+    .line 27
+    sput-boolean v1, Lv21;->c:Z
+
+    .line 28
+    .line 29
+    const-string v1, "joni.scanenv_memnodes_size"
+
+    .line 30
+    .line 31
+    const/16 v3, 0x8
+
+    .line 32
+    .line 33
+    invoke-static {v3, v1}, Lum;->L(ILjava/lang/String;)I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v1
+
+    .line 37
+    sput v1, Lv21;->d:I
+
+    .line 38
+    .line 39
+    const-string v1, "joni.use_named_group"
+
+    .line 40
+    .line 41
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 42
+    .line 43
+    .line 44
+    move-result v1
+
+    .line 45
+    sput-boolean v1, Lv21;->e:Z
+
+    .line 46
+    .line 47
+    const-string v1, "joni.use_subexp_call"
+
+    .line 48
+    .line 49
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 50
+    .line 51
+    .line 52
+    move-result v1
+
+    .line 53
+    sput-boolean v1, Lv21;->f:Z
+
+    .line 54
+    .line 55
+    const-string v1, "joni.use_perl_subexp_call"
+
+    .line 56
+    .line 57
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v1
+
+    .line 61
+    sput-boolean v1, Lv21;->g:Z
+
+    .line 62
+    .line 63
+    const-string v1, "joni.use_backref_with_level"
+
+    .line 64
+    .line 65
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v1
+
+    .line 69
+    sput-boolean v1, Lv21;->h:Z
+
+    .line 70
+    .line 71
+    const-string v1, "joni.use_monomaniac_check_captures_in_endless_repeat"
+
+    .line 72
+    .line 73
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 74
+    .line 75
+    .line 76
+    move-result v1
+
+    .line 77
+    sput-boolean v1, Lv21;->i:Z
+
+    .line 78
+    .line 79
+    const-string v1, "joni.use_newline_at_end_of_string_has_empty_line"
+
+    .line 80
+    .line 81
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 82
+    .line 83
+    .line 84
+    move-result v1
+
+    .line 85
+    sput-boolean v1, Lv21;->j:Z
+
+    .line 86
+    .line 87
+    const-string v1, "joni.use_warning_redundant_nested_repeat_operator"
+
+    .line 88
+    .line 89
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 90
+    .line 91
+    .line 92
+    move-result v1
+
+    .line 93
+    sput-boolean v1, Lv21;->k:Z
+
+    .line 94
+    .line 95
+    const-string v1, "joni.case_fold_is_applied_inside_negative_cclass"
+
+    .line 96
+    .line 97
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 98
+    .line 99
+    .line 100
+    move-result v1
+
+    .line 101
+    sput-boolean v1, Lv21;->l:Z
+
+    .line 102
+    .line 103
+    const-string v1, "joni.use_match_range_must_be_inside_of_specified_range"
+
+    .line 104
+    .line 105
+    const/4 v3, 0x0
+
+    .line 106
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 107
+    .line 108
+    .line 109
+    move-result v1
+
+    .line 110
+    sput-boolean v1, Lv21;->m:Z
+
+    .line 111
+    .line 112
+    const-string v1, "joni.use_capture_history"
+
+    .line 113
+    .line 114
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 115
+    .line 116
+    .line 117
+    move-result v1
+
+    .line 118
+    sput-boolean v1, Lv21;->n:Z
+
+    .line 119
+    .line 120
+    const-string v1, "joni.use_variable_meta_chars"
+
+    .line 121
+    .line 122
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 123
+    .line 124
+    .line 125
+    move-result v1
+
+    .line 126
+    sput-boolean v1, Lv21;->o:Z
+
+    .line 127
+    .line 128
+    const-string v1, "joni.use_word_begin_end"
+
+    .line 129
+    .line 130
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 131
+    .line 132
+    .line 133
+    move-result v1
+
+    .line 134
+    sput-boolean v1, Lv21;->p:Z
+
+    .line 135
+    .line 136
+    const-string v1, "joni.use_find_longest_search_all_of_range"
+
+    .line 137
+    .line 138
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 139
+    .line 140
+    .line 141
+    move-result v1
+
+    .line 142
+    sput-boolean v1, Lv21;->q:Z
+
+    .line 143
+    .line 144
+    const-string v1, "joni.use_sunday_quick_search"
+
+    .line 145
+    .line 146
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 147
+    .line 148
+    .line 149
+    move-result v1
+
+    .line 150
+    sput-boolean v1, Lv21;->r:Z
+
+    .line 151
+    .line 152
+    const-string v1, "joni.use_cec"
+
+    .line 153
+    .line 154
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 155
+    .line 156
+    .line 157
+    move-result v1
+
+    .line 158
+    sput-boolean v1, Lv21;->s:Z
+
+    .line 159
+    .line 160
+    const-string v1, "joni.use_dynamic_option"
+
+    .line 161
+    .line 162
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 163
+    .line 164
+    .line 165
+    const/16 v1, 0x18
+
+    .line 166
+    .line 167
+    if-gt v1, v0, :cond_0
+
+    .line 168
+    .line 169
+    move v0, v2
+
+    .line 170
+    goto :goto_0
+
+    .line 171
+    :cond_0
+    move v0, v3
+
+    .line 172
+    :goto_0
+    const-string v1, "joni.use_byte_map"
+
+    .line 173
+    .line 174
+    invoke-static {v1, v0}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 175
+    .line 176
+    .line 177
+    move-result v0
+
+    .line 178
+    sput-boolean v0, Lv21;->t:Z
+
+    .line 179
+    .line 180
+    const-string v0, "joni.use_int_map_backward"
+
+    .line 181
+    .line 182
+    invoke-static {v0, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 183
+    .line 184
+    .line 185
+    const-string v0, "joni.nregion"
+
+    .line 186
+    .line 187
+    const/16 v1, 0xa
+
+    .line 188
+    .line 189
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 190
+    .line 191
+    .line 192
+    const-string v0, "joni.max_backref_num"
+
+    .line 193
+    .line 194
+    const/16 v1, 0x3e8
+
+    .line 195
+    .line 196
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 197
+    .line 198
+    .line 199
+    move-result v0
+
+    .line 200
+    sput v0, Lv21;->u:I
+
+    .line 201
+    .line 202
+    const-string v0, "joni.max_capture_group_num"
+
+    .line 203
+    .line 204
+    const/16 v1, 0x7fff
+
+    .line 205
+    .line 206
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 207
+    .line 208
+    .line 209
+    move-result v0
+
+    .line 210
+    sput v0, Lv21;->v:I
+
+    .line 211
+    .line 212
+    const v0, 0x186a0
+
+    .line 213
+    .line 214
+    .line 215
+    const-string v1, "joni.max_multi_byte_ranges_num"
+
+    .line 216
+    .line 217
+    invoke-static {v0, v1}, Lum;->L(ILjava/lang/String;)I
+
+    .line 218
+    .line 219
+    .line 220
+    move-result v0
+
+    .line 221
+    sput v0, Lv21;->w:I
+
+    .line 222
+    .line 223
+    const/16 v0, 0x2710
+
+    .line 224
+    .line 225
+    invoke-static {v0, v1}, Lum;->L(ILjava/lang/String;)I
+
+    .line 226
+    .line 227
+    .line 228
+    move-result v0
+
+    .line 229
+    sput v0, Lv21;->x:I
+
+    .line 230
+    .line 231
+    const-string v0, "joni.use_op_push_or_jump_exact"
+
+    .line 232
+    .line 233
+    invoke-static {v0, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 234
+    .line 235
+    .line 236
+    move-result v0
+
+    .line 237
+    sput-boolean v0, Lv21;->y:Z
+
+    .line 238
+    .line 239
+    const-string v0, "joni.use_qtfr_peek_next"
+
+    .line 240
+    .line 241
+    invoke-static {v0, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 242
+    .line 243
+    .line 244
+    move-result v0
+
+    .line 245
+    sput-boolean v0, Lv21;->z:Z
+
+    .line 246
+    .line 247
+    const-string v0, "joni.init_match_stack_size"
+
+    .line 248
+    .line 249
+    const/16 v1, 0x40
+
+    .line 250
+    .line 251
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 252
+    .line 253
+    .line 254
+    move-result v0
+
+    .line 255
+    sput v0, Lv21;->A:I
+
+    .line 256
+    .line 257
+    const-string v0, "joni.optimize"
+
+    .line 258
+    .line 259
+    invoke-static {v0, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 260
+    .line 261
+    .line 262
+    move-result v0
+
+    .line 263
+    xor-int/2addr v0, v2
+
+    .line 264
+    sput-boolean v0, Lv21;->B:Z
+
+    .line 265
+    .line 266
+    const-string v0, "joni.use_string_templates"
+
+    .line 267
+    .line 268
+    invoke-static {v0, v2}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 269
+    .line 270
+    .line 271
+    move-result v0
+
+    .line 272
+    sput-boolean v0, Lv21;->C:Z
+
+    .line 273
+    .line 274
+    const-string v0, "joni.max_capture_history_group"
+
+    .line 275
+    .line 276
+    const/16 v1, 0x1f
+
+    .line 277
+    .line 278
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 279
+    .line 280
+    .line 281
+    move-result v0
+
+    .line 282
+    sput v0, Lv21;->D:I
+
+    .line 283
+    .line 284
+    const-string v0, "joni.check_string_threshold_len"
+
+    .line 285
+    .line 286
+    const/4 v1, 0x7
+
+    .line 287
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 288
+    .line 289
+    .line 290
+    move-result v0
+
+    .line 291
+    sput v0, Lv21;->E:I
+
+    .line 292
+    .line 293
+    const-string v0, "joni.check_buff_max_size"
+
+    .line 294
+    .line 295
+    const/16 v1, 0x4000
+
+    .line 296
+    .line 297
+    invoke-static {v1, v0}, Lum;->L(ILjava/lang/String;)I
+
+    .line 298
+    .line 299
+    .line 300
+    move-result v0
+
+    .line 301
+    sput v0, Lv21;->F:I
+
+    .line 302
+    .line 303
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    .line 304
+    .line 305
+    sput-object v0, Lv21;->G:Ljava/io/PrintStream;
+
+    .line 306
+    .line 307
+    const-string v0, "joni.debug.all"
+
+    .line 308
+    .line 309
+    invoke-static {v0, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 310
+    .line 311
+    .line 312
+    move-result v0
+
+    .line 313
+    const-string v1, "joni.debug"
+
+    .line 314
+    .line 315
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 316
+    .line 317
+    .line 318
+    move-result v1
+
+    .line 319
+    if-nez v1, :cond_1
+
+    .line 320
+    .line 321
+    if-nez v0, :cond_1
+
+    .line 322
+    .line 323
+    move v1, v3
+
+    .line 324
+    goto :goto_1
+
+    .line 325
+    :cond_1
+    move v1, v2
+
+    .line 326
+    :goto_1
+    sput-boolean v1, Lv21;->H:Z
+
+    .line 327
+    .line 328
+    const-string v1, "joni.debug.parse.tree"
+
+    .line 329
+    .line 330
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 331
+    .line 332
+    .line 333
+    move-result v1
+
+    .line 334
+    if-nez v1, :cond_2
+
+    .line 335
+    .line 336
+    if-nez v0, :cond_2
+
+    .line 337
+    .line 338
+    move v1, v3
+
+    .line 339
+    goto :goto_2
+
+    .line 340
     :cond_2
-    return v0
-.end method
+    move v1, v2
 
-.method public final hashCode()I
-    .locals 0
+    .line 341
+    :goto_2
+    sput-boolean v1, Lv21;->I:Z
 
-    .line 1
-    iget-object p0, p0, Lv21;->a:Lp62;
+    .line 342
+    .line 343
+    const-string v1, "joni.debug.parse.tree.raw"
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 344
+    .line 345
+    invoke-static {v1, v2}, Lum;->I(Ljava/lang/String;Z)Z
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 346
+    .line 347
+    .line 348
+    move-result v1
 
-    .line 7
-    return p0
-.end method
+    .line 349
+    if-nez v1, :cond_3
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 350
+    .line 351
+    if-nez v0, :cond_3
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 352
+    .line 353
+    move v1, v3
 
-    .line 2
-    .line 3
-    const-string v1, "ComputedValueHolder(compute="
+    .line 354
+    goto :goto_3
 
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 355
+    :cond_3
+    move v1, v2
 
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lv21;->a:Lp62;
+    .line 356
+    :goto_3
+    sput-boolean v1, Lv21;->J:Z
 
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 357
+    .line 358
+    const-string v1, "joni.debug.compile"
 
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
+    .line 359
+    .line 360
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
 
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 361
+    .line 362
+    .line 363
+    move-result v1
 
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 364
+    if-nez v1, :cond_4
 
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
+    .line 365
+    .line 366
+    if-nez v0, :cond_4
 
-    .line 22
-    return-object p0
+    .line 367
+    .line 368
+    move v1, v3
+
+    .line 369
+    goto :goto_4
+
+    .line 370
+    :cond_4
+    move v1, v2
+
+    .line 371
+    :goto_4
+    sput-boolean v1, Lv21;->K:Z
+
+    .line 372
+    .line 373
+    const-string v1, "joni.debug.compile.bytecode.info"
+
+    .line 374
+    .line 375
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 376
+    .line 377
+    .line 378
+    move-result v1
+
+    .line 379
+    if-nez v1, :cond_5
+
+    .line 380
+    .line 381
+    if-nez v0, :cond_5
+
+    .line 382
+    .line 383
+    move v1, v3
+
+    .line 384
+    goto :goto_5
+
+    .line 385
+    :cond_5
+    move v1, v2
+
+    .line 386
+    :goto_5
+    sput-boolean v1, Lv21;->L:Z
+
+    .line 387
+    .line 388
+    const-string v1, "joni.debug.search"
+
+    .line 389
+    .line 390
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 391
+    .line 392
+    .line 393
+    move-result v1
+
+    .line 394
+    if-nez v1, :cond_6
+
+    .line 395
+    .line 396
+    if-nez v0, :cond_6
+
+    .line 397
+    .line 398
+    move v1, v3
+
+    .line 399
+    goto :goto_6
+
+    .line 400
+    :cond_6
+    move v1, v2
+
+    .line 401
+    :goto_6
+    sput-boolean v1, Lv21;->M:Z
+
+    .line 402
+    .line 403
+    const-string v1, "joni.debug.match"
+
+    .line 404
+    .line 405
+    invoke-static {v1, v3}, Lum;->I(Ljava/lang/String;Z)Z
+
+    .line 406
+    .line 407
+    .line 408
+    move-result v1
+
+    .line 409
+    if-nez v1, :cond_7
+
+    .line 410
+    .line 411
+    if-nez v0, :cond_7
+
+    .line 412
+    .line 413
+    move v2, v3
+
+    .line 414
+    :cond_7
+    sput-boolean v2, Lv21;->N:Z
+
+    .line 415
+    .line 416
+    return-void
 .end method

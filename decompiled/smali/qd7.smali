@@ -1,69 +1,70 @@
-.class public final Lqd7;
-.super Lpd7;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lqd7;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
-# virtual methods
-.method public final e(Z)V
+# instance fields
+.field public final synthetic a:Lhx4;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lhx4;Landroid/view/View;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lpd7;->b:Landroid/view/WindowInsetsController;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
-
     .line 4
+    iput-object p1, p0, Lqd7;->a:Lhx4;
+
     .line 5
-    const/16 p1, 0x10
-
     .line 6
-    .line 7
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    const/4 p1, 0x0
-
-    .line 9
-    :goto_0
-    invoke-static {p0, p1}, Lqc7;->n(Landroid/view/WindowInsetsController;I)V
-
-    .line 10
-    .line 11
-    .line 12
     return-void
 .end method
 
-.method public final f(Z)V
+
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lpd7;->b:Landroid/view/WindowInsetsController;
+    iget-object p0, p0, Lqd7;->a:Lhx4;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
+    iget-object p0, p0, Lhx4;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
-    const/16 p1, 0x8
+    check-cast p0, Leh7;
 
     .line 6
     .line 7
-    goto :goto_0
+    iget-object p0, p0, Leh7;->d:Landroidx/appcompat/widget/ActionBarContainer;
 
     .line 8
-    :cond_0
-    const/4 p1, 0x0
-
     .line 9
-    :goto_0
-    invoke-static {p0, p1}, Lqc7;->p(Landroid/view/WindowInsetsController;I)V
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     .line 10
     .line 11
     .line 12
+    move-result-object p0
+
+    .line 13
+    check-cast p0, Landroid/view/View;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 16
+    .line 17
+    .line 18
     return-void
 .end method

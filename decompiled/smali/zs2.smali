@@ -1,171 +1,118 @@
-.class public abstract synthetic Lzs2;
+.class public final Lzs2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/text/style/LeadingMarginSpan;
 
 
-# direct methods
-.method public static bridge synthetic a(Landroid/graphics/RuntimeShader;)Landroid/graphics/RenderEffect;
-    .locals 1
-
-    .line 1
-    const-string v0, "child"
-
-    .line 2
-    .line 3
-    invoke-static {p0, v0}, Landroid/graphics/RenderEffect;->createRuntimeShaderEffect(Landroid/graphics/RuntimeShader;Ljava/lang/String;)Landroid/graphics/RenderEffect;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public static bridge synthetic b(Landroid/graphics/RuntimeShader;Ljava/lang/String;)Landroid/graphics/RenderEffect;
+# virtual methods
+.method public final drawLeadingMargin(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;IIZLandroid/text/Layout;)V
     .locals 0
 
     .line 1
-    invoke-static {p0, p1}, Landroid/graphics/RenderEffect;->createRuntimeShaderEffect(Landroid/graphics/RuntimeShader;Ljava/lang/String;)Landroid/graphics/RenderEffect;
+    if-eqz p12, :cond_1
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static synthetic c()Landroid/graphics/RuntimeShader;
-    .locals 2
-
-    .line 1
-    new-instance v0, Landroid/graphics/RuntimeShader;
-
-    .line 2
-    .line 3
-    const-string v1, "\n        uniform float2 size;\n        layout(color) uniform half4 color;\n        uniform float radius;\n        uniform float2 position;\n\n        half4 main(float2 coord) {\n            float dist = distance(coord, position);\n            float intensity = smoothstep(radius, radius * 0.5, dist);\n            return color * intensity;\n        }\n        "
+    if-eqz p2, :cond_1
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Landroid/graphics/RuntimeShader;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p12, p9}, Landroid/text/Layout;->getLineForOffset(I)I
 
     .line 6
     .line 7
     .line 8
-    return-object v0
-.end method
-
-.method public static bridge synthetic d(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/WifiSsid;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/net/wifi/ScanResult;->getWifiSsid()Landroid/net/wifi/WifiSsid;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic e(Landroid/net/wifi/WifiSsid;)Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/net/wifi/WifiSsid;->toString()Ljava/lang/String;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static synthetic f()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/graphics/RuntimeShader;
-
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public static bridge synthetic g(Landroid/graphics/RuntimeShader;F)V
-    .locals 1
-
-    .line 1
-    const-string v0, "radius"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0, p1}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;F)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static bridge synthetic h(Landroid/graphics/RuntimeShader;FF)V
-    .locals 1
-
-    .line 1
-    const-string v0, "position"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0, p1, p2}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;FF)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static bridge synthetic i(Landroid/window/OnBackInvokedDispatcher;ILandroid/window/OnBackInvokedCallback;)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1, p2}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic j(Landroid/window/OnBackInvokedDispatcher;Landroid/window/OnBackInvokedCallback;)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic k(Landroid/text/StaticLayout;)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/text/StaticLayout;->isFallbackLineSpacingEnabled()Z
-
-    .line 2
-    .line 3
-    .line 4
     move-result p0
 
-    .line 5
+    .line 9
+    invoke-virtual {p12}, Landroid/text/Layout;->getLineCount()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p3
+
+    .line 13
+    add-int/lit8 p3, p3, -0x1
+
+    .line 14
+    .line 15
+    if-ne p0, p3, :cond_1
+
+    .line 16
+    .line 17
+    sget-object p3, Ldw6;->a:Ljava/lang/ThreadLocal;
+
+    .line 18
+    .line 19
+    invoke-virtual {p12, p0}, Landroid/text/Layout;->getEllipsisCount(I)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p3
+
+    .line 23
+    if-lez p3, :cond_1
+
+    .line 24
+    .line 25
+    invoke-static {p12, p0, p2}, Lht;->d0(Landroid/text/Layout;ILandroid/graphics/Paint;)F
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p3
+
+    .line 29
+    invoke-static {p12, p0, p2}, Lht;->e0(Landroid/text/Layout;ILandroid/graphics/Paint;)F
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    add-float/2addr p0, p3
+
+    .line 34
+    const/4 p2, 0x0
+
+    .line 35
+    cmpg-float p3, p0, p2
+
+    .line 36
+    .line 37
+    if-nez p3, :cond_0
+
+    .line 38
+    .line 39
+    return-void
+
+    .line 40
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 41
+    .line 42
+    .line 43
+    invoke-virtual {p1, p0, p2}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 44
+    .line 45
+    .line 46
+    :cond_1
+    return-void
+.end method
+
+.method public final getLeadingMargin(Z)I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
     return p0
 .end method

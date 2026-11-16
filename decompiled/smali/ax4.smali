@@ -1,239 +1,238 @@
-.class public final synthetic Lax4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lax4;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Le62;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lgw4;
-
-.field public final synthetic l:Landroid/content/Context;
-
-.field public final synthetic m:Le55;
-
-.field public final synthetic n:Lz45;
-
-.field public final synthetic o:Lmt3;
-
-.field public final synthetic p:Ljava/lang/String;
+.field public final i:Lhd;
 
 
 # direct methods
-.method public synthetic constructor <init>(BLmt3;Lgw4;Lz45;Le55;Landroid/content/Context;Ljava/lang/String;)V
+.method public constructor <init>(Lhd;)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lax4;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p3, p0, Lax4;->k:Lgw4;
-
     .line 4
+    iput-object p1, p0, Lax4;->i:Lhd;
+
     .line 5
-    iput-object p6, p0, Lax4;->l:Landroid/content/Context;
-
     .line 6
-    .line 7
-    iput-object p5, p0, Lax4;->m:Le55;
-
-    .line 8
-    .line 9
-    iput-object p4, p0, Lax4;->n:Lz45;
-
-    .line 10
-    .line 11
-    iput-object p2, p0, Lax4;->o:Lmt3;
-
-    .line 12
-    .line 13
-    iput-object p7, p0, Lax4;->p:Ljava/lang/String;
-
-    .line 14
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 8
+.method public final a()Lrw3;
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Lax4;->j:B
+    new-instance v0, Lbx4;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget-object p0, p0, Lax4;->i:Lhd;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 6
-    iget-object v3, p0, Lax4;->p:Ljava/lang/String;
+    invoke-direct {v0, p0, v1}, Lvo2;-><init>(Lhd;Lxm1;)V
 
     .line 7
     .line 8
-    iget-object v4, p0, Lax4;->o:Lmt3;
+    .line 9
+    return-object v0
+.end method
+
+.method public final b(Lrw3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lbx4;
+
+    .line 2
+    .line 3
+    iget-object v0, p1, Lvo2;->x:Lhd;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lax4;->i:Lhd;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v0
+
+    .line 11
+    if-nez v0, :cond_0
+
+    .line 12
+    .line 13
+    iput-object p0, p1, Lvo2;->x:Lhd;
+
+    .line 14
+    .line 15
+    iget-boolean p0, p1, Lvo2;->y:Z
+
+    .line 16
+    .line 17
+    if-eqz p0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-virtual {p1}, Lvo2;->I1()V
+
+    .line 20
+    .line 21
+    .line 22
+    :cond_0
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lax4;
+
+    .line 6
+    .line 7
+    if-eqz v1, :cond_1
+
+    .line 8
+    .line 9
+    check-cast p1, Lax4;
+
+    .line 10
+    .line 11
+    iget-object p0, p0, Lax4;->i:Lhd;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Lax4;->i:Lhd;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, p1}, Lhd;->equals(Ljava/lang/Object;)Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-nez p0, :cond_2
+
+    .line 20
+    .line 21
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lax4;->i:Lhd;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lhd;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    mul-int/lit8 p0, p0, 0x1f
+
+    .line 8
+    .line 9
+    add-int/lit16 p0, p0, 0x4d5
+
+    .line 10
+    .line 11
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "PointerHoverIconModifierElement(icon="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lax4;->i:Lhd;
 
     .line 9
     .line 10
-    iget-object v5, p0, Lax4;->n:Lz45;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
-    iget-object v6, p0, Lax4;->m:Le55;
-
     .line 13
+    const-string p0, ", overrideDescendants=false)"
+
     .line 14
-    iget-object v7, p0, Lax4;->l:Landroid/content/Context;
-
     .line 15
-    .line 16
-    iget-object p0, p0, Lax4;->k:Lgw4;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 16
     .line 17
     .line 18
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 19
     .line 20
     .line 21
-    invoke-interface {v4, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
+    move-result-object p0
 
     .line 22
-    .line 23
-    .line 24
-    iget-object v0, v5, Lz45;->a:Ljava/lang/String;
-
-    .line 25
-    .line 26
-    new-instance v2, Lgd3;
-
-    .line 27
-    .line 28
-    const/16 v4, 0x11
-
-    .line 29
-    .line 30
-    invoke-direct {v2, v3, v7, v4}, Lgd3;-><init>(Ljava/lang/String;Landroid/content/Context;B)V
-
-    .line 31
-    .line 32
-    .line 33
-    invoke-virtual {p0, v7, v6, v0, v2}, Lgw4;->s(Landroid/content/Context;Le55;Ljava/lang/String;Lp62;)V
-
-    .line 34
-    .line 35
-    .line 36
-    return-object v1
-
-    .line 37
-    :pswitch_0
-    invoke-interface {v4, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 38
-    .line 39
-    .line 40
-    iget-object v0, v5, Lz45;->a:Ljava/lang/String;
-
-    .line 41
-    .line 42
-    new-instance v2, Lgd3;
-
-    .line 43
-    .line 44
-    const/16 v4, 0xc
-
-    .line 45
-    .line 46
-    invoke-direct {v2, v3, v7, v4}, Lgd3;-><init>(Ljava/lang/String;Landroid/content/Context;B)V
-
-    .line 47
-    .line 48
-    .line 49
-    invoke-virtual {p0, v7, v6, v0, v2}, Lgw4;->e(Landroid/content/Context;Le55;Ljava/lang/String;Lp62;)V
-
-    .line 50
-    .line 51
-    .line 52
-    return-object v1
-
-    .line 53
-    :pswitch_1
-    invoke-interface {v4, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 54
-    .line 55
-    .line 56
-    iget-object v0, v5, Lz45;->a:Ljava/lang/String;
-
-    .line 57
-    .line 58
-    new-instance v2, Lgd3;
-
-    .line 59
-    .line 60
-    const/4 v4, 0x7
-
-    .line 61
-    invoke-direct {v2, v3, v7, v4}, Lgd3;-><init>(Ljava/lang/String;Landroid/content/Context;B)V
-
-    .line 62
-    .line 63
-    .line 64
-    invoke-virtual {p0, v7, v6, v0, v2}, Lgw4;->s(Landroid/content/Context;Le55;Ljava/lang/String;Lp62;)V
-
-    .line 65
-    .line 66
-    .line 67
-    return-object v1
-
-    .line 68
-    :pswitch_2
-    invoke-interface {v4, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 69
-    .line 70
-    .line 71
-    iget-object v0, v5, Lz45;->a:Ljava/lang/String;
-
-    .line 72
-    .line 73
-    new-instance v2, Lgd3;
-
-    .line 74
-    .line 75
-    const/4 v4, 0x3
-
-    .line 76
-    invoke-direct {v2, v3, v7, v4}, Lgd3;-><init>(Ljava/lang/String;Landroid/content/Context;B)V
-
-    .line 77
-    .line 78
-    .line 79
-    invoke-virtual {p0, v7, v6, v0, v2}, Lgw4;->e(Landroid/content/Context;Le55;Ljava/lang/String;Lp62;)V
-
-    .line 80
-    .line 81
-    .line 82
-    return-object v1
-
-    .line 83
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

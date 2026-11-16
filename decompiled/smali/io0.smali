@@ -1,6 +1,6 @@
 .class public final Lio0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -24,9 +24,15 @@
 
 .field public final j:J
 
+.field public final k:J
+
+.field public final l:J
+
+.field public final m:J
+
 
 # direct methods
-.method public constructor <init>(JJJJJJJJJJ)V
+.method public constructor <init>(JJJJJJJJJJJJJ)V
     .locals 0
 
     .line 1
@@ -86,333 +92,331 @@
 
     .line 28
     .line 29
+    move-wide/from16 p1, p21
+
+    .line 30
+    .line 31
+    iput-wide p1, p0, Lio0;->k:J
+
+    .line 32
+    .line 33
+    move-wide/from16 p1, p23
+
+    .line 34
+    .line 35
+    iput-wide p1, p0, Lio0;->l:J
+
+    .line 36
+    .line 37
+    move-wide/from16 p1, p25
+
+    .line 38
+    .line 39
+    iput-wide p1, p0, Lio0;->m:J
+
+    .line 40
+    .line 41
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 4
 
     .line 1
-    const-wide/16 v0, 0x0
+    if-eq p0, p1, :cond_0
 
     .line 2
     .line 3
-    invoke-static {v0, v1, v0, v1}, Lc27;->a(JJ)Z
+    if-eqz p1, :cond_1
 
     .line 4
     .line 5
-    .line 6
-    move-result v0
+    instance-of v0, p1, Lio0;
 
+    .line 6
     .line 7
-    if-ne p0, p1, :cond_0
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
-    goto/16 :goto_0
+    check-cast p1, Lio0;
 
     .line 10
     .line 11
-    :cond_0
-    if-eqz p1, :cond_f
+    iget-wide v0, p1, Lio0;->a:J
 
     .line 12
     .line 13
-    instance-of v1, p1, Lio0;
+    sget v2, Ldv0;->i:I
 
     .line 14
     .line 15
-    if-nez v1, :cond_1
+    iget-wide v2, p0, Lio0;->a:J
 
     .line 16
     .line 17
-    goto/16 :goto_1
+    invoke-static {v2, v3, v0, v1}, Ls77;->a(JJ)Z
 
     .line 18
     .line 19
-    :cond_1
-    check-cast p1, Lio0;
-
     .line 20
+    move-result v0
+
     .line 21
-    iget-wide v1, p1, Lio0;->a:J
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
-    iget-wide v3, p0, Lio0;->a:J
+    iget-wide v0, p0, Lio0;->b:J
 
     .line 24
     .line 25
-    invoke-static {v3, v4, v1, v2}, Lc27;->a(JJ)Z
+    iget-wide v2, p1, Lio0;->b:J
 
     .line 26
     .line 27
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
+
     .line 28
-    move-result v1
-
     .line 29
-    if-nez v1, :cond_2
-
     .line 30
+    move-result v0
+
     .line 31
-    goto/16 :goto_1
+    if-eqz v0, :cond_1
 
     .line 32
     .line 33
-    :cond_2
-    if-nez v0, :cond_3
+    iget-wide v0, p0, Lio0;->m:J
 
     .line 34
     .line 35
-    goto/16 :goto_1
+    iget-wide v2, p1, Lio0;->m:J
 
     .line 36
     .line 37
-    :cond_3
-    iget-wide v1, p0, Lio0;->j:J
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 38
     .line 39
-    iget-wide v3, p1, Lio0;->j:J
-
     .line 40
+    move-result v0
+
     .line 41
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
+    if-eqz v0, :cond_1
 
     .line 42
     .line 43
-    .line 44
-    move-result v1
+    iget-wide v0, p0, Lio0;->c:J
 
+    .line 44
     .line 45
-    if-nez v1, :cond_4
+    iget-wide v2, p1, Lio0;->c:J
 
     .line 46
     .line 47
-    goto/16 :goto_1
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 48
     .line 49
-    :cond_4
-    iget-wide v1, p0, Lio0;->b:J
-
     .line 50
+    move-result v0
+
     .line 51
-    iget-wide v3, p1, Lio0;->b:J
+    if-eqz v0, :cond_1
 
     .line 52
     .line 53
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
+    iget-wide v0, p0, Lio0;->d:J
 
     .line 54
     .line 55
-    .line 56
-    move-result v1
+    iget-wide v2, p1, Lio0;->d:J
 
+    .line 56
     .line 57
-    if-nez v1, :cond_5
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 58
     .line 59
-    goto :goto_1
-
     .line 60
-    :cond_5
-    if-nez v0, :cond_6
+    move-result v0
 
     .line 61
-    .line 62
-    goto :goto_1
+    if-eqz v0, :cond_1
 
+    .line 62
     .line 63
-    :cond_6
-    iget-wide v1, p0, Lio0;->c:J
+    iget-wide v0, p0, Lio0;->e:J
 
     .line 64
     .line 65
-    iget-wide v3, p1, Lio0;->c:J
+    iget-wide v2, p1, Lio0;->e:J
 
     .line 66
     .line 67
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 68
     .line 69
     .line 70
-    move-result v1
+    move-result v0
 
     .line 71
-    if-nez v1, :cond_7
+    if-eqz v0, :cond_1
 
     .line 72
     .line 73
-    goto :goto_1
+    iget-wide v0, p0, Lio0;->f:J
 
     .line 74
-    :cond_7
-    if-nez v0, :cond_8
-
     .line 75
-    .line 76
-    goto :goto_1
+    iget-wide v2, p1, Lio0;->f:J
 
+    .line 76
     .line 77
-    :cond_8
-    iget-wide v0, p0, Lio0;->d:J
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 78
     .line 79
-    iget-wide v2, p1, Lio0;->d:J
-
     .line 80
+    move-result v0
+
     .line 81
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
+    if-eqz v0, :cond_1
 
     .line 82
     .line 83
-    .line 84
-    move-result v0
+    iget-wide v0, p0, Lio0;->g:J
 
+    .line 84
     .line 85
-    if-nez v0, :cond_9
+    iget-wide v2, p1, Lio0;->g:J
 
     .line 86
     .line 87
-    goto :goto_1
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 88
-    :cond_9
-    iget-wide v0, p0, Lio0;->e:J
-
     .line 89
     .line 90
-    iget-wide v2, p1, Lio0;->e:J
-
-    .line 91
-    .line 92
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
-
-    .line 93
-    .line 94
-    .line 95
     move-result v0
 
+    .line 91
+    if-eqz v0, :cond_1
+
+    .line 92
+    .line 93
+    iget-wide v0, p0, Lio0;->h:J
+
+    .line 94
+    .line 95
+    iget-wide v2, p1, Lio0;->h:J
+
     .line 96
-    if-nez v0, :cond_a
-
     .line 97
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
+
     .line 98
-    goto :goto_1
-
     .line 99
-    :cond_a
-    iget-wide v0, p0, Lio0;->f:J
-
     .line 100
+    move-result v0
+
     .line 101
-    iget-wide v2, p1, Lio0;->f:J
+    if-eqz v0, :cond_1
 
     .line 102
     .line 103
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
+    iget-wide v0, p0, Lio0;->i:J
 
     .line 104
     .line 105
-    .line 106
-    move-result v0
+    iget-wide v2, p1, Lio0;->i:J
 
+    .line 106
     .line 107
-    if-nez v0, :cond_b
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
 
     .line 108
     .line 109
-    goto :goto_1
-
     .line 110
-    :cond_b
-    iget-wide v0, p0, Lio0;->g:J
-
-    .line 111
-    .line 112
-    iget-wide v2, p1, Lio0;->g:J
-
-    .line 113
-    .line 114
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
-
-    .line 115
-    .line 116
-    .line 117
     move-result v0
 
-    .line 118
-    if-nez v0, :cond_c
+    .line 111
+    if-eqz v0, :cond_1
 
+    .line 112
+    .line 113
+    iget-wide v0, p0, Lio0;->j:J
+
+    .line 114
+    .line 115
+    iget-wide v2, p1, Lio0;->j:J
+
+    .line 116
+    .line 117
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
+
+    .line 118
     .line 119
     .line 120
-    goto :goto_1
+    move-result v0
 
     .line 121
-    :cond_c
-    iget-wide v0, p0, Lio0;->h:J
+    if-eqz v0, :cond_1
 
     .line 122
     .line 123
-    iget-wide v2, p1, Lio0;->h:J
+    iget-wide v0, p0, Lio0;->k:J
 
     .line 124
     .line 125
-    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
+    iget-wide v2, p1, Lio0;->k:J
 
     .line 126
     .line 127
+    invoke-static {v0, v1, v2, v3}, Ls77;->a(JJ)Z
+
     .line 128
+    .line 129
+    .line 130
     move-result v0
 
-    .line 129
-    if-nez v0, :cond_d
-
-    .line 130
     .line 131
-    goto :goto_1
+    if-eqz v0, :cond_1
 
     .line 132
-    :cond_d
-    iget-wide v0, p0, Lio0;->i:J
-
     .line 133
+    iget-wide v0, p0, Lio0;->l:J
+
     .line 134
-    iget-wide p0, p1, Lio0;->i:J
-
     .line 135
-    .line 136
-    invoke-static {v0, v1, p0, p1}, Lc27;->a(JJ)Z
+    iget-wide p0, p1, Lio0;->l:J
 
+    .line 136
     .line 137
+    invoke-static {v0, v1, p0, p1}, Ls77;->a(JJ)Z
+
     .line 138
     .line 139
+    .line 140
     move-result p0
 
-    .line 140
-    if-nez p0, :cond_e
-
     .line 141
-    .line 142
-    goto :goto_1
+    if-eqz p0, :cond_1
 
+    .line 142
     .line 143
-    :cond_e
-    :goto_0
+    :cond_0
     const/4 p0, 0x1
 
     .line 144
     return p0
 
     .line 145
-    :cond_f
-    :goto_1
+    :cond_1
     const/4 p0, 0x0
 
     .line 146
@@ -420,85 +424,85 @@
 .end method
 
 .method public final hashCode()I
-    .locals 6
+    .locals 4
 
     .line 1
-    iget-wide v0, p0, Lio0;->a:J
+    sget v0, Ldv0;->i:I
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    iget-wide v0, p0, Lio0;->a:J
 
     .line 4
     .line 5
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
     .line 6
+    .line 7
+    .line 8
     move-result v0
 
-    .line 7
+    .line 9
     const/16 v1, 0x1f
 
-    .line 8
-    .line 9
+    .line 10
+    .line 11
     mul-int/2addr v0, v1
 
-    .line 10
-    const-wide/16 v2, 0x0
-
-    .line 11
     .line 12
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    iget-wide v2, p0, Lio0;->b:J
 
     .line 13
     .line 14
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
+
     .line 15
+    .line 16
+    .line 17
     move-result v0
 
-    .line 16
-    iget-wide v4, p0, Lio0;->j:J
-
-    .line 17
     .line 18
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
+    iget-wide v2, p0, Lio0;->m:J
 
     .line 19
     .line 20
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
+
     .line 21
+    .line 22
+    .line 23
     move-result v0
 
-    .line 22
-    iget-wide v4, p0, Lio0;->b:J
-
-    .line 23
     .line 24
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
+    iget-wide v2, p0, Lio0;->c:J
 
     .line 25
     .line 26
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
+
     .line 27
-    move-result v0
-
     .line 28
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
-
     .line 29
-    .line 30
-    .line 31
     move-result v0
 
+    .line 30
+    iget-wide v2, p0, Lio0;->d:J
+
+    .line 31
     .line 32
-    iget-wide v4, p0, Lio0;->c:J
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 33
     .line 34
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
-
     .line 35
-    .line 36
-    .line 37
     move-result v0
 
+    .line 36
+    iget-wide v2, p0, Lio0;->e:J
+
+    .line 37
     .line 38
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 39
     .line 40
@@ -506,11 +510,11 @@
     move-result v0
 
     .line 42
-    iget-wide v2, p0, Lio0;->d:J
+    iget-wide v2, p0, Lio0;->f:J
 
     .line 43
     .line 44
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 45
     .line 46
@@ -518,11 +522,11 @@
     move-result v0
 
     .line 48
-    iget-wide v2, p0, Lio0;->e:J
+    iget-wide v2, p0, Lio0;->g:J
 
     .line 49
     .line 50
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 51
     .line 52
@@ -530,11 +534,11 @@
     move-result v0
 
     .line 54
-    iget-wide v2, p0, Lio0;->f:J
+    iget-wide v2, p0, Lio0;->h:J
 
     .line 55
     .line 56
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 57
     .line 58
@@ -542,11 +546,11 @@
     move-result v0
 
     .line 60
-    iget-wide v2, p0, Lio0;->g:J
+    iget-wide v2, p0, Lio0;->i:J
 
     .line 61
     .line 62
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 63
     .line 64
@@ -554,11 +558,11 @@
     move-result v0
 
     .line 66
-    iget-wide v2, p0, Lio0;->h:J
+    iget-wide v2, p0, Lio0;->j:J
 
     .line 67
     .line 68
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 69
     .line 70
@@ -566,20 +570,32 @@
     move-result v0
 
     .line 72
-    iget-wide v1, p0, Lio0;->i:J
+    iget-wide v2, p0, Lio0;->k:J
 
     .line 73
     .line 74
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 75
     .line 76
     .line 77
-    move-result p0
+    move-result v0
 
     .line 78
-    add-int/2addr p0, v0
+    iget-wide v1, p0, Lio0;->l:J
 
     .line 79
+    .line 80
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 81
+    .line 82
+    .line 83
+    move-result p0
+
+    .line 84
+    add-int/2addr p0, v0
+
+    .line 85
     return p0
 .end method

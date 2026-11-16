@@ -1,39 +1,45 @@
 .class public final synthetic Lhm;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic j:Lcj;
+.field public final synthetic i:Laj;
 
-.field public final synthetic k:Lnv;
+.field public final synthetic j:Lav;
 
-.field public final synthetic l:Lz27;
+.field public final synthetic k:Ll87;
 
-.field public final synthetic m:Le62;
+.field public final synthetic l:Le72;
 
-.field public final synthetic n:Le62;
+.field public final synthetic m:Le72;
 
-.field public final synthetic o:Z
+.field public final synthetic n:F
 
-.field public final synthetic p:Lp62;
+.field public final synthetic o:Ldv0;
 
-.field public final synthetic q:Lwp3;
+.field public final synthetic p:Z
+
+.field public final synthetic q:Z
 
 .field public final synthetic r:Z
 
-.field public final synthetic s:F
+.field public final synthetic s:Lp72;
 
-.field public final synthetic t:I
+.field public final synthetic t:Lnz0;
 
-.field public final synthetic u:S
+.field public final synthetic u:I
+
+.field public final synthetic v:I
+
+.field public final synthetic w:S
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcj;Lnv;Lz27;Le62;Le62;ZLp62;Lwp3;ZFII)V
+.method public synthetic constructor <init>(Laj;Lav;Ll87;Le72;Le72;FLdv0;ZZZLp72;Lnz0;III)V
     .locals 0
 
     .line 1
@@ -42,147 +48,232 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lhm;->j:Lcj;
+    iput-object p1, p0, Lhm;->i:Laj;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lhm;->k:Lnv;
+    iput-object p2, p0, Lhm;->j:Lav;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lhm;->l:Lz27;
+    iput-object p3, p0, Lhm;->k:Ll87;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lhm;->m:Le62;
+    iput-object p4, p0, Lhm;->l:Le72;
 
     .line 11
     .line 12
-    iput-object p5, p0, Lhm;->n:Le62;
+    iput-object p5, p0, Lhm;->m:Le72;
 
     .line 13
     .line 14
-    iput-boolean p6, p0, Lhm;->o:Z
+    iput p6, p0, Lhm;->n:F
 
     .line 15
     .line 16
-    iput-object p7, p0, Lhm;->p:Lp62;
+    iput-object p7, p0, Lhm;->o:Ldv0;
 
     .line 17
     .line 18
-    iput-object p8, p0, Lhm;->q:Lwp3;
+    iput-boolean p8, p0, Lhm;->p:Z
 
     .line 19
     .line 20
-    iput-boolean p9, p0, Lhm;->r:Z
+    iput-boolean p9, p0, Lhm;->q:Z
 
     .line 21
     .line 22
-    iput p10, p0, Lhm;->s:F
+    iput-boolean p10, p0, Lhm;->r:Z
 
     .line 23
     .line 24
-    iput p11, p0, Lhm;->t:I
+    iput-object p11, p0, Lhm;->s:Lp72;
 
     .line 25
     .line 26
-    iput-short p12, p0, Lhm;->u:S
+    iput-object p12, p0, Lhm;->t:Lnz0;
 
     .line 27
     .line 28
+    iput p13, p0, Lhm;->u:I
+
+    .line 29
+    .line 30
+    iput p14, p0, Lhm;->v:I
+
+    .line 31
+    .line 32
+    iput-short p15, p0, Lhm;->w:S
+
+    .line 33
+    .line 34
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 17
 
     .line 1
-    move-object v10, p1
+    move-object/from16 v0, p0
 
     .line 2
-    check-cast v10, Lz11;
-
     .line 3
+    move-object/from16 v12, p1
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v12, Lt82;
 
+    .line 6
     .line 7
+    move-object/from16 v1, p2
+
     .line 8
     .line 9
-    iget p1, p0, Lhm;->t:I
+    check-cast v1, Ljava/lang/Integer;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
-
     .line 14
+    iget v1, v0, Lhm;->u:I
+
     .line 15
     .line 16
-    move-result v11
+    or-int/lit8 v1, v1, 0x1
 
     .line 17
-    iget-object v0, p0, Lhm;->j:Lcj;
-
     .line 18
-    .line 19
-    iget-object v1, p0, Lhm;->k:Lnv;
+    invoke-static {v1}, Lp06;->W(I)I
 
+    .line 19
     .line 20
     .line 21
-    iget-object v2, p0, Lhm;->l:Lz27;
+    move-result v13
 
     .line 22
+    iget v1, v0, Lhm;->v:I
+
     .line 23
-    iget-object v3, p0, Lhm;->m:Le62;
-
     .line 24
-    .line 25
-    iget-object v4, p0, Lhm;->n:Le62;
+    invoke-static {v1}, Lp06;->W(I)I
 
+    .line 25
     .line 26
     .line 27
-    iget-boolean v5, p0, Lhm;->o:Z
+    move-result v14
 
     .line 28
-    .line 29
-    iget-object v6, p0, Lhm;->p:Lp62;
+    iget-object v1, v0, Lhm;->i:Laj;
 
+    .line 29
     .line 30
+    move-object v2, v1
+
     .line 31
-    iget-object v7, p0, Lhm;->q:Lwp3;
+    iget-object v1, v0, Lhm;->j:Lav;
 
     .line 32
     .line 33
-    iget-boolean v8, p0, Lhm;->r:Z
+    move-object v3, v2
 
     .line 34
-    .line 35
-    iget v9, p0, Lhm;->s:F
+    iget-object v2, v0, Lhm;->k:Ll87;
 
+    .line 35
     .line 36
+    move-object v4, v3
+
     .line 37
-    iget-short v12, p0, Lhm;->u:S
+    iget-object v3, v0, Lhm;->l:Le72;
 
     .line 38
     .line 39
-    invoke-static/range {v0 .. v12}, Lim;->a(Lcj;Lnv;Lz27;Le62;Le62;ZLp62;Lwp3;ZFLz11;II)V
+    move-object v5, v4
 
     .line 40
+    iget-object v4, v0, Lhm;->m:Le72;
+
     .line 41
     .line 42
-    sget-object p0, La47;->a:La47;
+    move-object v6, v5
 
     .line 43
+    iget v5, v0, Lhm;->n:F
+
     .line 44
-    return-object p0
+    .line 45
+    move-object v7, v6
+
+    .line 46
+    iget-object v6, v0, Lhm;->o:Ldv0;
+
+    .line 47
+    .line 48
+    move-object v8, v7
+
+    .line 49
+    iget-boolean v7, v0, Lhm;->p:Z
+
+    .line 50
+    .line 51
+    move-object v9, v8
+
+    .line 52
+    iget-boolean v8, v0, Lhm;->q:Z
+
+    .line 53
+    .line 54
+    move-object v10, v9
+
+    .line 55
+    iget-boolean v9, v0, Lhm;->r:Z
+
+    .line 56
+    .line 57
+    move-object v11, v10
+
+    .line 58
+    iget-object v10, v0, Lhm;->s:Lp72;
+
+    .line 59
+    .line 60
+    move-object v15, v11
+
+    .line 61
+    iget-object v11, v0, Lhm;->t:Lnz0;
+
+    .line 62
+    .line 63
+    iget-short v0, v0, Lhm;->w:S
+
+    .line 64
+    .line 65
+    move-object/from16 v16, v15
+
+    .line 66
+    .line 67
+    move v15, v0
+
+    .line 68
+    move-object/from16 v0, v16
+
+    .line 69
+    .line 70
+    invoke-static/range {v0 .. v15}, Lnm;->a(Laj;Lav;Ll87;Le72;Le72;FLdv0;ZZZLp72;Lnz0;Lt82;III)V
+
+    .line 71
+    .line 72
+    .line 73
+    sget-object v0, Ll97;->a:Ll97;
+
+    .line 74
+    .line 75
+    return-object v0
 .end method

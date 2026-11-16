@@ -1,81 +1,53 @@
 .class public final Lmj0;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Lfs3;
+.field public final a:Lak0;
 
-.field public k:Ljava/util/Iterator;
+.field public final b:Lak0;
 
-.field public l:F
+.field public final c:Lwk0;
 
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lnj0;
-
-.field public o:I
+.field public final d:Laz3;
 
 
 # direct methods
-.method public constructor <init>(Lnj0;Lz81;)V
+.method public constructor <init>(Lak0;Lak0;Lwk0;Laz3;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lmj0;->n:Lnj0;
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iput-object p1, p0, Lmj0;->m:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lmj0;->o:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
-    iput p1, p0, Lmj0;->o:I
-
     .line 9
     .line 10
-    const/4 p1, 0x0
+    iput-object p1, p0, Lmj0;->a:Lak0;
 
     .line 11
-    const/4 v0, 0x0
-
     .line 12
-    iget-object v1, p0, Lmj0;->n:Lnj0;
+    iput-object p2, p0, Lmj0;->b:Lak0;
 
     .line 13
     .line 14
-    invoke-virtual {v1, p1, v0, p0}, Lnj0;->g(Lfs3;FLz81;)Ljava/lang/Object;
+    iput-object p3, p0, Lmj0;->c:Lwk0;
 
     .line 15
     .line 16
-    .line 17
-    move-result-object p0
+    iput-object p4, p0, Lmj0;->d:Laz3;
 
+    .line 17
     .line 18
-    return-object p0
+    return-void
 .end method

@@ -1,262 +1,172 @@
-.class public final Ld21;
-.super Lis0;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# instance fields
-.field public final l:Z
-
-
-# direct methods
-.method public constructor <init>(Lq7;Z)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Lis0;-><init>(Lq7;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-boolean p2, p0, Ld21;->l:Z
-
-    .line 5
-    .line 6
-    return-void
-.end method
+.class public abstract Ld21;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # virtual methods
-.method public final d(B)V
-    .locals 1
+.method public abstract a(Li21;Lt72;)V
+.end method
+
+.method public abstract b(Li21;Lna6;Lt72;)Lc04;
+.end method
+
+.method public abstract c(Lyx3;)V
+.end method
+
+.method public d()V
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Ld21;->l:Z
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    and-int/lit16 p1, p1, 0xff
-
-    .line 6
-    .line 7
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p1
-
-    .line 11
-    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-void
-
-    .line 15
-    :cond_0
-    and-int/lit16 p1, p1, 0xff
-
-    .line 16
-    .line 17
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object p1
-
-    .line 21
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 22
-    .line 23
-    .line 24
-    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    check-cast p0, Lq7;
-
-    .line 27
-    .line 28
-    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
     return-void
 .end method
 
-.method public final f(I)V
-    .locals 1
+.method public e()Z
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Ld21;->l:Z
+    sget-object p0, Lkf5;->A:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 2
     .line 3
-    invoke-static {p1}, Ljava/lang/Integer;->toUnsignedString(I)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result-object p1
+    move-result-object p0
 
     .line 7
-    if-eqz v0, :cond_0
+    check-cast p0, Ljava/lang/Boolean;
 
     .line 8
     .line 9
-    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 10
     .line 11
     .line 12
-    return-void
+    move-result p0
 
     .line 13
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 14
-    .line 15
-    .line 16
-    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    check-cast p0, Lq7;
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-void
+    return p0
 .end method
 
-.method public final g(J)V
-    .locals 1
+.method public f()Z
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Ld21;->l:Z
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    invoke-static {p1, p2}, Ljava/lang/Long;->toUnsignedString(J)Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    if-eqz v0, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-
-    .line 13
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 14
-    .line 15
-    .line 16
-    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    check-cast p0, Lq7;
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-void
+    return p0
 .end method
 
-.method public final h(S)V
+.method public g()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public h()J
     .locals 2
 
     .line 1
-    iget-boolean v0, p0, Ld21;->l:Z
+    const-wide/16 v0, 0x3e8
 
     .line 2
     .line 3
-    const v1, 0xffff
+    return-wide v0
+.end method
 
-    .line 4
-    .line 5
-    .line 6
-    if-eqz v0, :cond_0
+.method public i()Lc21;
+    .locals 0
 
-    .line 7
-    .line 8
-    and-int/2addr p1, v1
+    .line 1
+    const/4 p0, 0x0
 
-    .line 9
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    .line 2
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p1
+.method public j()Lzu4;
+    .locals 0
 
-    .line 13
-    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
+    .line 1
+    sget-object p0, Le21;->a:Lzu4;
 
-    .line 14
-    .line 15
-    .line 16
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public abstract k()Lfc1;
+.end method
+
+.method public l()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public abstract m(Lyx3;)V
+.end method
+
+.method public abstract n(Li21;)V
+.end method
+
+.method public abstract o(Lyx3;Lxx3;Lcv;)V
+.end method
+
+.method public abstract p(Lyx3;)Lxx3;
+.end method
+
+.method public abstract q(Li21;Lna6;Lc04;)Lc04;
+.end method
+
+.method public r(Ljava/util/Set;)V
+    .locals 0
+
+    .line 1
     return-void
+.end method
 
-    .line 17
-    :cond_0
-    and-int/2addr p1, v1
+.method public s(Lt82;)V
+    .locals 0
 
-    .line 18
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p1
-
-    .line 22
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 23
-    .line 24
-    .line 25
-    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    check-cast p0, Lq7;
-
-    .line 28
-    .line 29
-    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
-
-    .line 30
-    .line 31
-    .line 32
+    .line 1
     return-void
+.end method
+
+.method public abstract t(Ldf5;)V
+.end method
+
+.method public abstract u(Li21;)V
+.end method
+
+.method public abstract v(Lrr2;)Lsi0;
+.end method
+
+.method public w()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public x(Lt82;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public abstract y(Li21;)V
 .end method

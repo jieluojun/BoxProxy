@@ -1,9 +1,9 @@
 .class public final Lhd;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ltq4;
+.implements Lcx4;
 
 
 # instance fields
@@ -33,87 +33,78 @@
     .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_0
+    if-eq p0, p1, :cond_2
 
     .line 2
     .line 3
-    goto :goto_2
+    if-eqz p1, :cond_0
 
     .line 4
-    :cond_0
-    if-eqz p1, :cond_1
-
     .line 5
-    .line 6
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 6
     .line 7
     .line 8
-    .line 9
     move-result-object v0
 
-    .line 10
+    .line 9
     goto :goto_0
 
-    .line 11
-    :cond_1
+    .line 10
+    :cond_0
     const/4 v0, 0x0
 
-    .line 12
+    .line 11
     :goto_0
     const-class v1, Lhd;
 
+    .line 12
     .line 13
-    .line 14
     invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
+    .line 14
     .line 15
     .line 16
-    .line 17
     move-result v0
 
+    .line 17
+    if-eqz v0, :cond_1
+
     .line 18
-    if-nez v0, :cond_2
-
     .line 19
-    .line 20
-    goto :goto_1
-
-    .line 21
-    :cond_2
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 20
+    .line 21
     .line 22
+    check-cast p1, Lhd;
+
     .line 23
     .line 24
-    check-cast p1, Lhd;
+    iget-short p0, p0, Lhd;->b:S
 
     .line 25
     .line 26
-    iget-short p0, p0, Lhd;->b:S
+    iget-short p1, p1, Lhd;->b:S
 
     .line 27
     .line 28
-    iget-short p1, p1, Lhd;->b:S
+    if-eq p0, p1, :cond_2
 
     .line 29
     .line 30
-    if-eq p0, p1, :cond_3
-
-    .line 31
-    .line 32
-    :goto_1
+    :cond_1
     const/4 p0, 0x0
 
-    .line 33
+    .line 31
     return p0
 
-    .line 34
-    :cond_3
-    :goto_2
+    .line 32
+    :cond_2
     const/4 p0, 0x1
 
-    .line 35
+    .line 33
     return p0
 .end method
 
@@ -144,7 +135,7 @@
 
     .line 6
     .line 7
-    invoke-static {p0, v0, v1}, Loc1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0, v1}, Lky1;->j(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 8
     .line 9

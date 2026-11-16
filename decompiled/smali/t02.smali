@@ -1,35 +1,24 @@
-.class public final synthetic Lt02;
+.class public final Lt02;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Ljava/util/Iterator;
+.implements Lt23;
 
 
 # instance fields
-.field public final synthetic j:Le62;
+.field public final i:Ljava/util/Iterator;
 
-.field public final synthetic k:Lls6;
+.field public j:Ljava/util/Iterator;
 
-.field public final synthetic l:Lwp3;
+.field public k:B
 
-.field public final synthetic m:Ln06;
-
-.field public final synthetic n:J
-
-.field public final synthetic o:J
-
-.field public final synthetic p:Lo02;
-
-.field public final synthetic q:Lqz0;
-
-.field public final synthetic r:I
-
-.field public final synthetic s:I
+.field public final synthetic l:Lbm1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;Lls6;Lwp3;Ln06;JJLo02;Lqz0;II)V
+.method public constructor <init>(Lbm1;)V
     .locals 0
 
     .line 1
@@ -38,139 +27,305 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lt02;->j:Le62;
+    iput-object p1, p0, Lt02;->l:Lbm1;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lt02;->k:Lls6;
+    iget-object p1, p1, Lbm1;->b:Ll46;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lt02;->l:Lwp3;
+    invoke-interface {p1}, Ll46;->iterator()Ljava/util/Iterator;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lt02;->m:Ln06;
-
     .line 11
+    move-result-object p1
+
     .line 12
-    iput-wide p5, p0, Lt02;->n:J
+    iput-object p1, p0, Lt02;->i:Ljava/util/Iterator;
 
     .line 13
     .line 14
-    iput-wide p7, p0, Lt02;->o:J
-
-    .line 15
-    .line 16
-    iput-object p9, p0, Lt02;->p:Lo02;
-
-    .line 17
-    .line 18
-    iput-object p10, p0, Lt02;->q:Lqz0;
-
-    .line 19
-    .line 20
-    iput p11, p0, Lt02;->r:I
-
-    .line 21
-    .line 22
-    iput p12, p0, Lt02;->s:I
-
-    .line 23
-    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+.method public final a()Z
+    .locals 4
 
     .line 1
-    move-object v10, p1
+    iget-object v0, p0, Lt02;->j:Ljava/util/Iterator;
 
     .line 2
-    check-cast v10, Lz11;
-
     .line 3
+    const/4 v1, 0x1
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 7
     .line 8
     .line 9
-    iget p1, p0, Lt02;->r:I
+    move-result v0
 
     .line 10
+    if-eqz v0, :cond_0
+
     .line 11
-    or-int/lit8 p1, p1, 0x1
-
     .line 12
+    iput-byte v1, p0, Lt02;->k:B
+
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
-
     .line 14
-    .line 15
-    .line 16
-    move-result v11
+    return v1
 
+    .line 15
+    :cond_0
+    iget-object v0, p0, Lt02;->i:Ljava/util/Iterator;
+
+    .line 16
     .line 17
-    iget p1, p0, Lt02;->s:I
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 18
     .line 19
-    invoke-static {p1}, Lqu5;->f0(I)I
-
     .line 20
-    .line 21
-    .line 22
-    move-result v12
+    move-result v2
 
+    .line 21
+    if-eqz v2, :cond_1
+
+    .line 22
     .line 23
-    iget-object v0, p0, Lt02;->j:Le62;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 24
     .line 25
-    iget-object v1, p0, Lt02;->k:Lls6;
-
     .line 26
+    move-result-object v0
+
     .line 27
-    iget-object v2, p0, Lt02;->l:Lwp3;
+    sget-object v2, Ls46;->j:Ls46;
 
     .line 28
     .line 29
-    iget-object v3, p0, Lt02;->m:Ln06;
+    iget-object v3, p0, Lt02;->l:Lbm1;
 
     .line 30
     .line 31
-    iget-wide v4, p0, Lt02;->n:J
+    iget-object v3, v3, Lbm1;->c:Lp72;
 
     .line 32
     .line 33
-    iget-wide v6, p0, Lt02;->o:J
+    invoke-interface {v3, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 34
     .line 35
-    iget-object v8, p0, Lt02;->p:Lo02;
-
     .line 36
+    move-result-object v0
+
     .line 37
-    iget-object v9, p0, Lt02;->q:Lqz0;
+    invoke-virtual {v2, v0}, Ls46;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 38
     .line 39
-    invoke-static/range {v0 .. v12}, Lnu;->m(Le62;Lls6;Lwp3;Ln06;JJLo02;Lqz0;Lz11;II)V
-
     .line 40
-    .line 41
-    .line 42
-    sget-object p0, La47;->a:La47;
+    move-result-object v0
 
+    .line 41
+    check-cast v0, Ljava/util/Iterator;
+
+    .line 42
     .line 43
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
     .line 44
+    .line 45
+    .line 46
+    move-result v2
+
+    .line 47
+    if-eqz v2, :cond_0
+
+    .line 48
+    .line 49
+    iput-object v0, p0, Lt02;->j:Ljava/util/Iterator;
+
+    .line 50
+    .line 51
+    iput-byte v1, p0, Lt02;->k:B
+
+    .line 52
+    .line 53
+    return v1
+
+    .line 54
+    :cond_1
+    const/4 v0, 0x2
+
+    .line 55
+    iput-byte v0, p0, Lt02;->k:B
+
+    .line 56
+    .line 57
+    const/4 v0, 0x0
+
+    .line 58
+    iput-object v0, p0, Lt02;->j:Ljava/util/Iterator;
+
+    .line 59
+    .line 60
+    const/4 p0, 0x0
+
+    .line 61
+    return p0
+.end method
+
+.method public final hasNext()Z
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Lt02;->k:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    if-ne v0, v1, :cond_0
+
+    .line 5
+    .line 6
+    return v1
+
+    .line 7
+    :cond_0
+    const/4 v1, 0x2
+
+    .line 8
+    if-ne v0, v1, :cond_1
+
+    .line 9
+    .line 10
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+
+    .line 12
+    :cond_1
+    invoke-virtual {p0}, Lt02;->a()Z
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lt02;->k:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x2
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    if-eq v0, v1, :cond_1
+
+    .line 6
+    .line 7
+    if-nez v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lt02;->a()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    invoke-static {}, Lnf1;->p()V
+
+    .line 16
+    .line 17
+    .line 18
+    return-object v2
+
+    .line 19
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 20
+    iput-byte v0, p0, Lt02;->k:B
+
+    .line 21
+    .line 22
+    iget-object p0, p0, Lt02;->j:Ljava/util/Iterator;
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 25
+    .line 26
+    .line 27
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
+
+    .line 31
     return-object p0
+
+    .line 32
+    :cond_1
+    invoke-static {}, Lnf1;->p()V
+
+    .line 33
+    .line 34
+    .line 35
+    return-object v2
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

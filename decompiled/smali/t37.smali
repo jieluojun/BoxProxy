@@ -1,117 +1,162 @@
-.class public abstract Lt37;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lt37;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final a:[[I
+.field public static final enum i:Lt37;
 
-.field public static final b:[Lu37;
+.field public static final enum j:Lt37;
 
-.field public static final c:Lfh0;
+.field public static final enum k:Lt37;
+
+.field public static final enum l:Lt37;
+
+.field public static final synthetic m:[Lt37;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     .line 1
-    const/4 v0, 0x3
+    new-instance v0, Lt37;
 
     .line 2
-    const-string v1, "CaseUnfold_13"
-
     .line 3
+    const-string v1, "Ok"
+
     .line 4
-    invoke-static {v0, v1}, Lv37;->L(ILjava/lang/String;)[Ljava/lang/Object;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
-    move-result-object v0
-
     .line 8
-    const/4 v1, 0x0
-
     .line 9
-    aget-object v2, v0, v1
+    sput-object v0, Lt37;->i:Lt37;
 
     .line 10
     .line 11
-    check-cast v2, [[I
+    new-instance v1, Lt37;
 
     .line 12
     .line 13
-    sput-object v2, Lt37;->a:[[I
+    const-string v2, "Failed"
 
     .line 14
     .line 15
     const/4 v3, 0x1
 
     .line 16
-    aget-object v0, v0, v3
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    check-cast v0, [Lu37;
-
     .line 19
+    sput-object v1, Lt37;->j:Lt37;
+
     .line 20
-    sput-object v0, Lt37;->b:[Lu37;
-
     .line 21
+    new-instance v2, Lt37;
+
     .line 22
-    new-instance v0, Lfh0;
-
     .line 23
-    .line 24
-    array-length v3, v2
+    const-string v3, "Skipped"
 
+    .line 24
     .line 25
     const/4 v4, 0x2
 
     .line 26
-    invoke-direct {v0, v3, v4}, Lfh0;-><init>(IB)V
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
     .line 29
-    :goto_0
-    array-length v3, v2
+    sput-object v2, Lt37;->k:Lt37;
 
     .line 30
-    if-ge v1, v3, :cond_0
-
     .line 31
+    new-instance v3, Lt37;
+
     .line 32
-    aget-object v3, v2, v1
-
     .line 33
-    .line 34
-    sget-object v4, Lt37;->b:[Lu37;
+    const-string v4, "Reused"
 
+    .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    aget-object v4, v4, v1
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
     .line 38
-    invoke-virtual {v0, v3, v4}, Lfh0;->k([ILu37;)V
-
     .line 39
+    sput-object v3, Lt37;->l:Lt37;
+
     .line 40
     .line 41
-    add-int/lit8 v1, v1, 0x1
+    filled-new-array {v0, v1, v2, v3}, [Lt37;
 
     .line 42
     .line 43
-    goto :goto_0
-
     .line 44
-    :cond_0
-    sput-object v0, Lt37;->c:Lfh0;
+    move-result-object v0
 
     .line 45
+    sput-object v0, Lt37;->m:[Lt37;
+
     .line 46
+    .line 47
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lt37;
+    .locals 1
+
+    .line 1
+    const-class v0, Lt37;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lt37;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lt37;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lt37;->m:[Lt37;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lt37;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,190 +1,219 @@
-.class public abstract Lsa3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lsa3;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final a:Lma6;
+.field public static final enum k:Lsa3;
 
-.field public static final b:Luz6;
+.field public static final enum l:Lsa3;
 
-.field public static final c:Luz6;
+.field public static final enum m:Lsa3;
 
-.field public static final d:Luz6;
+.field public static final enum n:Lsa3;
 
-.field public static final e:Luz6;
+.field public static final synthetic o:[Lsa3;
 
-.field public static final f:Lma6;
+.field public static final synthetic p:Lvw1;
 
-.field public static final g:F
 
-.field public static final h:F
+# instance fields
+.field public final i:C
 
-.field public static final i:Le6;
+.field public final j:C
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 9
 
     .line 1
-    const v0, 0x38d1b717    # 1.0E-4f
+    new-instance v0, Lsa3;
 
     .line 2
     .line 3
+    const-string v1, "OBJ"
+
     .line 4
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
     .line 5
-    .line 6
-    .line 7
-    move-result-object v0
+    const/4 v2, 0x0
 
+    .line 6
+    const/16 v3, 0x7b
+
+    .line 7
     .line 8
-    new-instance v1, Lma6;
+    const/16 v4, 0x7d
 
     .line 9
     .line 10
-    const v2, 0x3f51eb85    # 0.82f
+    invoke-direct {v0, v1, v2, v3, v4}, Lsa3;-><init>(Ljava/lang/String;ICC)V
 
     .line 11
     .line 12
     .line 13
-    const v3, 0x43b54000    # 362.5f
+    sput-object v0, Lsa3;->k:Lsa3;
 
     .line 14
     .line 15
-    .line 16
-    invoke-direct {v1, v2, v3, v0}, Lma6;-><init>(FFLjava/lang/Object;)V
+    new-instance v1, Lsa3;
 
+    .line 16
     .line 17
+    const-string v2, "LIST"
+
     .line 18
     .line 19
-    sput-object v1, Lsa3;->a:Lma6;
+    const/4 v5, 0x1
 
     .line 20
+    const/16 v6, 0x5b
+
     .line 21
-    const/16 v1, 0xc8
-
     .line 22
-    .line 23
-    const/4 v4, 0x0
+    const/16 v7, 0x5d
 
+    .line 23
     .line 24
-    const/4 v5, 0x0
+    invoke-direct {v1, v2, v5, v6, v7}, Lsa3;-><init>(Ljava/lang/String;ICC)V
 
     .line 25
-    const/4 v6, 0x6
-
     .line 26
-    invoke-static {v1, v4, v5, v6}, Lbf0;->W(IILrq1;I)Luz6;
-
     .line 27
+    sput-object v1, Lsa3;->l:Lsa3;
+
     .line 28
     .line 29
-    move-result-object v1
+    new-instance v2, Lsa3;
 
     .line 30
-    sput-object v1, Lsa3;->b:Luz6;
-
     .line 31
-    .line 32
-    const/16 v1, 0x96
+    const-string v5, "MAP"
 
+    .line 32
     .line 33
+    const/4 v8, 0x2
+
     .line 34
-    invoke-static {v1, v4, v5, v6}, Lbf0;->W(IILrq1;I)Luz6;
+    invoke-direct {v2, v5, v8, v3, v4}, Lsa3;-><init>(Ljava/lang/String;ICC)V
 
     .line 35
     .line 36
     .line 37
-    move-result-object v5
+    sput-object v2, Lsa3;->m:Lsa3;
 
     .line 38
-    sput-object v5, Lsa3;->c:Luz6;
-
     .line 39
+    new-instance v3, Lsa3;
+
     .line 40
-    sget-object v5, Lg17;->z0:Lgb4;
-
     .line 41
-    .line 42
-    const/16 v6, 0x12c
+    const-string v4, "POLY_OBJ"
 
+    .line 42
     .line 43
+    const/4 v5, 0x3
+
     .line 44
-    const/4 v7, 0x2
+    invoke-direct {v3, v4, v5, v6, v7}, Lsa3;-><init>(Ljava/lang/String;ICC)V
 
     .line 45
-    invoke-static {v6, v4, v5, v7}, Lbf0;->W(IILrq1;I)Luz6;
-
     .line 46
     .line 47
-    .line 48
-    move-result-object v6
+    sput-object v3, Lsa3;->n:Lsa3;
 
+    .line 48
     .line 49
-    sput-object v6, Lsa3;->d:Luz6;
+    filled-new-array {v0, v1, v2, v3}, [Lsa3;
 
     .line 50
     .line 51
-    invoke-static {v1, v4, v5, v7}, Lbf0;->W(IILrq1;I)Luz6;
-
     .line 52
-    .line 53
-    .line 54
-    move-result-object v1
+    move-result-object v0
 
+    .line 53
+    sput-object v0, Lsa3;->o:[Lsa3;
+
+    .line 54
     .line 55
-    sput-object v1, Lsa3;->e:Luz6;
+    new-instance v1, Lvw1;
 
     .line 56
     .line 57
-    new-instance v1, Lma6;
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
 
     .line 58
     .line 59
-    invoke-direct {v1, v2, v3, v0}, Lma6;-><init>(FFLjava/lang/Object;)V
-
     .line 60
+    sput-object v1, Lsa3;->p:Lvw1;
+
     .line 61
     .line 62
-    sput-object v1, Lsa3;->f:Lma6;
-
-    .line 63
-    .line 64
-    const/high16 v0, 0x43480000    # 200.0f
-
-    .line 65
-    .line 66
-    sput v0, Lsa3;->g:F
-
-    .line 67
-    .line 68
-    const/high16 v0, 0x42480000    # 50.0f
-
-    .line 69
-    .line 70
-    sput v0, Lsa3;->h:F
-
-    .line 71
-    .line 72
-    new-instance v0, Le6;
-
-    .line 73
-    .line 74
-    const/16 v1, 0x19
-
-    .line 75
-    .line 76
-    invoke-direct {v0, v1}, Le6;-><init>(B)V
-
-    .line 77
-    .line 78
-    .line 79
-    sput-object v0, Lsa3;->i:Le6;
-
-    .line 80
-    .line 81
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ICC)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-char p3, p0, Lsa3;->i:C
+
+    .line 5
+    .line 6
+    iput-char p4, p0, Lsa3;->j:C
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lsa3;
+    .locals 1
+
+    .line 1
+    const-class v0, Lsa3;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lsa3;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lsa3;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lsa3;->o:[Lsa3;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lsa3;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

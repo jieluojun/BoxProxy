@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/DefaultTypeMapper;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/sun/jna/TypeMapper;
@@ -88,195 +88,195 @@
     .end annotation
 
     .line 1
-    sget-object p0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Boolean;
 
     .line 2
     .line 3
-    const-class v0, Ljava/lang/Boolean;
+    sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     .line 4
     .line 5
-    if-ne p1, v0, :cond_0
+    if-ne p1, p0, :cond_0
 
     .line 6
     .line 7
-    return-object p0
+    return-object v0
 
     .line 8
     :cond_0
-    if-ne p1, p0, :cond_1
+    if-ne p1, v0, :cond_1
 
     .line 9
     .line 10
-    return-object v0
+    return-object p0
 
     .line 11
     :cond_1
-    sget-object p0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Byte;
 
     .line 12
     .line 13
-    const-class v0, Ljava/lang/Byte;
+    sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
     .line 14
     .line 15
-    if-ne p1, v0, :cond_2
+    if-ne p1, p0, :cond_2
 
     .line 16
     .line 17
-    return-object p0
+    return-object v0
 
     .line 18
     :cond_2
-    if-ne p1, p0, :cond_3
+    if-ne p1, v0, :cond_3
 
     .line 19
     .line 20
-    return-object v0
+    return-object p0
 
     .line 21
     :cond_3
-    sget-object p0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Character;
 
     .line 22
     .line 23
-    const-class v0, Ljava/lang/Character;
+    sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
 
     .line 24
     .line 25
-    if-ne p1, v0, :cond_4
+    if-ne p1, p0, :cond_4
 
     .line 26
     .line 27
-    return-object p0
+    return-object v0
 
     .line 28
     :cond_4
-    if-ne p1, p0, :cond_5
+    if-ne p1, v0, :cond_5
 
     .line 29
     .line 30
-    return-object v0
+    return-object p0
 
     .line 31
     :cond_5
-    sget-object p0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Short;
 
     .line 32
     .line 33
-    const-class v0, Ljava/lang/Short;
+    sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
     .line 34
     .line 35
-    if-ne p1, v0, :cond_6
+    if-ne p1, p0, :cond_6
 
     .line 36
     .line 37
-    return-object p0
+    return-object v0
 
     .line 38
     :cond_6
-    if-ne p1, p0, :cond_7
+    if-ne p1, v0, :cond_7
 
     .line 39
     .line 40
-    return-object v0
+    return-object p0
 
     .line 41
     :cond_7
-    sget-object p0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Integer;
 
     .line 42
     .line 43
-    const-class v0, Ljava/lang/Integer;
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     .line 44
     .line 45
-    if-ne p1, v0, :cond_8
+    if-ne p1, p0, :cond_8
 
     .line 46
     .line 47
-    return-object p0
+    return-object v0
 
     .line 48
     :cond_8
-    if-ne p1, p0, :cond_9
+    if-ne p1, v0, :cond_9
 
     .line 49
     .line 50
-    return-object v0
+    return-object p0
 
     .line 51
     :cond_9
-    sget-object p0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Long;
 
     .line 52
     .line 53
-    const-class v0, Ljava/lang/Long;
+    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     .line 54
     .line 55
-    if-ne p1, v0, :cond_a
+    if-ne p1, p0, :cond_a
 
     .line 56
     .line 57
-    return-object p0
+    return-object v0
 
     .line 58
     :cond_a
-    if-ne p1, p0, :cond_b
+    if-ne p1, v0, :cond_b
 
     .line 59
     .line 60
-    return-object v0
+    return-object p0
 
     .line 61
     :cond_b
-    sget-object p0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Float;
 
     .line 62
     .line 63
-    const-class v0, Ljava/lang/Float;
+    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
     .line 64
     .line 65
-    if-ne p1, v0, :cond_c
+    if-ne p1, p0, :cond_c
 
     .line 66
     .line 67
-    return-object p0
+    return-object v0
 
     .line 68
     :cond_c
-    if-ne p1, p0, :cond_d
+    if-ne p1, v0, :cond_d
 
     .line 69
     .line 70
-    return-object v0
+    return-object p0
 
     .line 71
     :cond_d
-    sget-object p0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+    const-class p0, Ljava/lang/Double;
 
     .line 72
     .line 73
-    const-class v0, Ljava/lang/Double;
+    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
     .line 74
     .line 75
-    if-ne p1, v0, :cond_e
+    if-ne p1, p0, :cond_e
 
     .line 76
     .line 77
-    return-object p0
+    return-object v0
 
     .line 78
     :cond_e
-    if-ne p1, p0, :cond_f
+    if-ne p1, v0, :cond_f
 
     .line 79
     .line 80
-    return-object v0
+    return-object p0
 
     .line 81
     :cond_f

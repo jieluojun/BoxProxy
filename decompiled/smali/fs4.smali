@@ -1,209 +1,243 @@
-.class public final enum Lfs4;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lfs4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# static fields
-.field public static final k:Ljc3;
-
-.field public static final enum l:Lfs4;
-
-.field public static final enum m:Lfs4;
-
-.field public static final enum n:Lfs4;
-
-.field public static final synthetic o:[Lfs4;
-
-.field public static final synthetic p:Lzv1;
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final i:Ljava/lang/Object;
+
+.field public final j:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lfs4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    const-string v2, "local"
+    iput-object p1, p0, Lfs4;->i:Ljava/lang/Object;
 
     .line 5
     .line 6
-    const-string v3, "Local"
+    iput-object p2, p0, Lfs4;->j:Ljava/lang/Object;
 
     .line 7
     .line 8
-    invoke-direct {v0, v1, v3, v2}, Lfs4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lfs4;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lfs4;
+
+    .line 12
+    .line 13
+    iget-object v1, p0, Lfs4;->i:Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    iget-object v3, p1, Lfs4;->i:Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    invoke-static {v1, v3}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-nez v1, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    iget-object p0, p0, Lfs4;->j:Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    iget-object p1, p1, Lfs4;->j:Ljava/lang/Object;
+
+    .line 27
+    .line 28
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+
+    .line 32
+    if-nez p0, :cond_3
+
+    .line 33
+    .line 34
+    return v2
+
+    .line 35
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iget-object v1, p0, Lfs4;->i:Ljava/lang/Object;
+
+    .line 3
+    .line 4
+    if-nez v1, :cond_0
+
+    .line 5
+    .line 6
+    move v1, v0
+
+    .line 7
+    goto :goto_0
+
+    .line 8
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     .line 9
     .line 10
     .line 11
-    sput-object v0, Lfs4;->l:Lfs4;
+    move-result v1
 
     .line 12
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
     .line 13
-    new-instance v1, Lfs4;
-
     .line 14
-    .line 15
-    const/4 v2, 0x1
+    iget-object p0, p0, Lfs4;->j:Ljava/lang/Object;
 
+    .line 15
     .line 16
-    const-string v3, "url"
+    if-eqz p0, :cond_1
 
     .line 17
     .line 18
-    const-string v4, "Url"
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 19
     .line 20
-    invoke-direct {v1, v2, v4, v3}, Lfs4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    .line 21
+    move-result v0
+
+    .line 22
+    :cond_1
+    add-int/2addr v1, v0
+
+    .line 23
+    return v1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "("
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Lfs4;->i:Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", "
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lfs4;->j:Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 21
     .line 22
     .line 23
-    sput-object v1, Lfs4;->m:Lfs4;
+    const/16 p0, 0x29
 
     .line 24
     .line 25
-    new-instance v2, Lfs4;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 26
     .line 27
-    const/4 v3, 0x2
-
     .line 28
-    const-string v4, "icon_pack"
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 29
     .line 30
-    const-string v5, "IconPack"
-
     .line 31
-    .line 32
-    invoke-direct {v2, v3, v5, v4}, Lfs4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 33
-    .line 34
-    .line 35
-    sput-object v2, Lfs4;->n:Lfs4;
-
-    .line 36
-    .line 37
-    filled-new-array {v0, v1, v2}, [Lfs4;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    sput-object v0, Lfs4;->o:[Lfs4;
-
-    .line 42
-    .line 43
-    new-instance v1, Lzv1;
-
-    .line 44
-    .line 45
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
-
-    .line 46
-    .line 47
-    .line 48
-    sput-object v1, Lfs4;->p:Lzv1;
-
-    .line 49
-    .line 50
-    new-instance v0, Ljc3;
-
-    .line 51
-    .line 52
-    const/16 v1, 0x13
-
-    .line 53
-    .line 54
-    const/4 v2, 0x0
-
-    .line 55
-    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
-
-    .line 56
-    .line 57
-    .line 58
-    sput-object v0, Lfs4;->k:Ljc3;
-
-    .line 59
-    .line 60
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Lfs4;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lfs4;
-    .locals 1
-
-    .line 1
-    const-class v0, Lfs4;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lfs4;
-
-    .line 8
-    .line 9
+    .line 32
     return-object p0
-.end method
-
-.method public static values()[Lfs4;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lfs4;->o:[Lfs4;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lfs4;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

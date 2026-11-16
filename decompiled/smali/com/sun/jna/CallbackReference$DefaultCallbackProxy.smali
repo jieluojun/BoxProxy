@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/CallbackReference$DefaultCallbackProxy;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/sun/jna/CallbackProxy;
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x2
     name = "DefaultCallbackProxy"
 .end annotation
 
@@ -249,7 +249,7 @@
 
     .line 99
     .line 100
-    invoke-static {p0, p2}, Lue1;->w(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-static {p0, p2}, Lnf1;->v(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 101
     .line 102
@@ -680,7 +680,7 @@
     move-result v1
 
     .line 30
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     .line 31
     .line 32
@@ -696,243 +696,223 @@
     move-result p0
 
     .line 38
-    if-eqz p0, :cond_2
+    if-nez p0, :cond_3
 
     .line 39
     .line 40
-    goto :goto_0
-
-    .line 41
-    :cond_2
     check-cast p1, Lcom/sun/jna/Structure;
 
+    .line 41
     .line 42
-    .line 43
     invoke-virtual {p1}, Lcom/sun/jna/Structure;->getPointer()Lcom/sun/jna/Pointer;
 
+    .line 43
     .line 44
     .line 45
-    .line 46
     move-result-object p0
 
-    .line 47
+    .line 46
     return-object p0
 
-    .line 48
-    :cond_3
+    .line 47
+    :cond_2
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
+    .line 48
     .line 49
-    .line 50
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_8
 
+    .line 50
     .line 51
-    .line 52
     const-class v1, Ljava/lang/Boolean;
 
+    .line 52
     .line 53
+    if-eq v0, v1, :cond_8
+
     .line 54
-    if-ne v0, v1, :cond_4
-
     .line 55
-    .line 56
-    goto :goto_5
-
-    .line 57
-    :cond_4
     const-class v1, Ljava/lang/String;
+
+    .line 56
+    .line 57
+    const-class v2, Lcom/sun/jna/WString;
 
     .line 58
     .line 59
-    const-class v2, Lcom/sun/jna/WString;
+    if-eq v0, v1, :cond_6
 
     .line 60
     .line 61
-    if-eq v0, v1, :cond_a
+    if-eq v0, v2, :cond_6
 
     .line 62
     .line 63
-    if-ne v0, v2, :cond_5
+    const-class v1, [Ljava/lang/String;
 
     .line 64
     .line 65
-    goto :goto_3
+    if-eq v0, v1, :cond_4
 
     .line 66
-    :cond_5
-    const-class v1, [Ljava/lang/String;
-
     .line 67
-    .line 68
-    if-eq v0, v1, :cond_8
-
-    .line 69
-    .line 70
     const-class v2, [Lcom/sun/jna/WString;
 
+    .line 68
+    .line 69
+    if-eq v0, v2, :cond_4
+
+    .line 70
     .line 71
-    .line 72
-    if-ne v0, v2, :cond_6
-
-    .line 73
-    .line 74
-    goto :goto_1
-
-    .line 75
-    :cond_6
     const-class p0, Lcom/sun/jna/Callback;
 
-    .line 76
-    .line 77
+    .line 72
+    .line 73
     invoke-virtual {p0, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    .line 74
+    .line 75
+    .line 76
+    move-result p0
+
+    .line 77
+    if-eqz p0, :cond_3
 
     .line 78
     .line 79
-    .line 80
-    move-result p0
+    check-cast p1, Lcom/sun/jna/Callback;
 
+    .line 80
     .line 81
-    if-eqz p0, :cond_7
+    invoke-static {p1}, Lcom/sun/jna/CallbackReference;->getFunctionPointer(Lcom/sun/jna/Callback;)Lcom/sun/jna/Pointer;
 
     .line 82
     .line 83
-    check-cast p1, Lcom/sun/jna/Callback;
-
     .line 84
-    .line 85
-    invoke-static {p1}, Lcom/sun/jna/CallbackReference;->getFunctionPointer(Lcom/sun/jna/Callback;)Lcom/sun/jna/Pointer;
-
-    .line 86
-    .line 87
-    .line 88
     move-result-object p0
 
-    .line 89
+    .line 85
     return-object p0
 
-    .line 90
-    :cond_7
-    :goto_0
+    .line 86
+    :cond_3
     return-object p1
 
-    .line 91
-    :cond_8
-    :goto_1
-    if-ne v0, v1, :cond_9
+    .line 87
+    :cond_4
+    if-ne v0, v1, :cond_5
 
-    .line 92
-    .line 93
+    .line 88
+    .line 89
     new-instance v0, Lcom/sun/jna/StringArray;
 
-    .line 94
-    .line 95
+    .line 90
+    .line 91
     move-object v1, p1
 
-    .line 96
+    .line 92
     check-cast v1, [Ljava/lang/String;
+
+    .line 93
+    .line 94
+    iget-object p0, p0, Lcom/sun/jna/CallbackReference$DefaultCallbackProxy;->encoding:Ljava/lang/String;
+
+    .line 95
+    .line 96
+    invoke-direct {v0, v1, p0}, Lcom/sun/jna/StringArray;-><init>([Ljava/lang/String;Ljava/lang/String;)V
 
     .line 97
     .line 98
-    iget-object p0, p0, Lcom/sun/jna/CallbackReference$DefaultCallbackProxy;->encoding:Ljava/lang/String;
-
     .line 99
+    goto :goto_0
+
     .line 100
-    invoke-direct {v0, v1, p0}, Lcom/sun/jna/StringArray;-><init>([Ljava/lang/String;Ljava/lang/String;)V
+    :cond_5
+    new-instance v0, Lcom/sun/jna/StringArray;
 
     .line 101
     .line 102
-    .line 103
-    goto :goto_2
-
-    .line 104
-    :cond_9
-    new-instance v0, Lcom/sun/jna/StringArray;
-
-    .line 105
-    .line 106
     move-object p0, p1
 
-    .line 107
+    .line 103
     check-cast p0, [Lcom/sun/jna/WString;
 
-    .line 108
-    .line 109
+    .line 104
+    .line 105
     invoke-direct {v0, p0}, Lcom/sun/jna/StringArray;-><init>([Lcom/sun/jna/WString;)V
 
-    .line 110
-    .line 111
-    .line 112
-    :goto_2
+    .line 106
+    .line 107
+    .line 108
+    :goto_0
     sget-object p0, Lcom/sun/jna/CallbackReference;->allocations:Ljava/util/Map;
 
-    .line 113
-    .line 114
+    .line 109
+    .line 110
     invoke-interface {p0, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 111
+    .line 112
+    .line 113
+    return-object v0
+
+    .line 114
+    :cond_6
+    if-ne v0, v2, :cond_7
 
     .line 115
     .line 116
-    .line 117
-    return-object v0
-
-    .line 118
-    :cond_a
-    :goto_3
-    if-ne v0, v2, :cond_b
-
-    .line 119
-    .line 120
     const/4 p0, 0x1
 
-    .line 121
-    goto :goto_4
+    .line 117
+    goto :goto_1
 
-    .line 122
-    :cond_b
+    .line 118
+    :cond_7
     const/4 p0, 0x0
 
-    .line 123
-    :goto_4
+    .line 119
+    :goto_1
     invoke-static {p1, p0}, Lcom/sun/jna/CallbackReference;->access$100(Ljava/lang/Object;Z)Lcom/sun/jna/Pointer;
 
-    .line 124
-    .line 125
-    .line 126
+    .line 120
+    .line 121
+    .line 122
     move-result-object p0
 
-    .line 127
+    .line 123
     return-object p0
 
-    .line 128
-    :cond_c
-    :goto_5
+    .line 124
+    :cond_8
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    .line 129
-    .line 130
+    .line 125
+    .line 126
     invoke-virtual {p0, p1}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    .line 127
+    .line 128
+    .line 129
+    move-result p0
+
+    .line 130
+    if-eqz p0, :cond_9
 
     .line 131
     .line 132
-    .line 133
-    move-result p0
-
-    .line 134
-    if-eqz p0, :cond_d
-
-    .line 135
-    .line 136
     sget-object p0, Lcom/sun/jna/Function;->INTEGER_TRUE:Ljava/lang/Integer;
 
-    .line 137
-    .line 138
+    .line 133
+    .line 134
     return-object p0
 
-    .line 139
-    :cond_d
+    .line 135
+    :cond_9
     sget-object p0, Lcom/sun/jna/Function;->INTEGER_FALSE:Ljava/lang/Integer;
 
-    .line 140
-    .line 141
+    .line 136
+    .line 137
     return-object p0
 .end method
 
@@ -1088,109 +1068,101 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 68
-    goto :goto_5
+    goto :goto_3
 
     .line 69
     :catch_0
     move-exception p0
 
     .line 70
-    goto :goto_2
+    invoke-static {}, Lcom/sun/jna/Native;->getCallbackExceptionHandler()Lcom/sun/jna/Callback$UncaughtExceptionHandler;
 
     .line 71
+    .line 72
+    .line 73
+    move-result-object v0
+
+    .line 74
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p0
+
+    .line 78
+    invoke-interface {v0, p1, p0}, Lcom/sun/jna/Callback$UncaughtExceptionHandler;->uncaughtException(Lcom/sun/jna/Callback;Ljava/lang/Throwable;)V
+
+    .line 79
+    .line 80
+    .line 81
+    goto :goto_2
+
+    .line 82
     :catch_1
     move-exception p0
 
-    .line 72
-    goto :goto_3
-
-    .line 73
-    :goto_2
-    invoke-static {}, Lcom/sun/jna/Native;->getCallbackExceptionHandler()Lcom/sun/jna/Callback$UncaughtExceptionHandler;
-
-    .line 74
-    .line 75
-    .line 76
-    move-result-object v0
-
-    .line 77
-    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
-
-    .line 78
-    .line 79
-    .line 80
-    move-result-object p0
-
-    .line 81
-    invoke-interface {v0, p1, p0}, Lcom/sun/jna/Callback$UncaughtExceptionHandler;->uncaughtException(Lcom/sun/jna/Callback;Ljava/lang/Throwable;)V
-
-    .line 82
     .line 83
-    .line 84
-    goto :goto_4
-
-    .line 85
-    :goto_3
     invoke-static {}, Lcom/sun/jna/Native;->getCallbackExceptionHandler()Lcom/sun/jna/Callback$UncaughtExceptionHandler;
 
+    .line 84
+    .line 85
     .line 86
-    .line 87
-    .line 88
     move-result-object v0
 
-    .line 89
+    .line 87
     invoke-interface {v0, p1, p0}, Lcom/sun/jna/Callback$UncaughtExceptionHandler;->uncaughtException(Lcom/sun/jna/Callback;Ljava/lang/Throwable;)V
 
+    .line 88
+    .line 89
     .line 90
-    .line 91
-    .line 92
     :cond_2
-    :goto_4
+    :goto_2
     const/4 p0, 0x0
 
-    .line 93
-    :goto_5
+    .line 91
+    :goto_3
     if-ge v3, v1, :cond_4
+
+    .line 92
+    .line 93
+    aget-object p1, v2, v3
 
     .line 94
     .line 95
-    aget-object p1, v2, v3
+    instance-of v0, p1, Lcom/sun/jna/Structure;
 
     .line 96
     .line 97
-    instance-of v0, p1, Lcom/sun/jna/Structure;
+    if-eqz v0, :cond_3
 
     .line 98
     .line 99
-    if-eqz v0, :cond_3
+    instance-of v0, p1, Lcom/sun/jna/Structure$ByValue;
 
     .line 100
     .line 101
-    instance-of v0, p1, Lcom/sun/jna/Structure$ByValue;
+    if-nez v0, :cond_3
 
     .line 102
     .line 103
-    if-nez v0, :cond_3
+    check-cast p1, Lcom/sun/jna/Structure;
 
     .line 104
     .line 105
-    check-cast p1, Lcom/sun/jna/Structure;
+    invoke-virtual {p1}, Lcom/sun/jna/Structure;->autoWrite()V
 
     .line 106
     .line 107
-    invoke-virtual {p1}, Lcom/sun/jna/Structure;->autoWrite()V
-
     .line 108
-    .line 109
-    .line 110
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
-    .line 111
-    .line 112
-    goto :goto_5
+    .line 109
+    .line 110
+    goto :goto_3
 
-    .line 113
+    .line 111
     :cond_4
     return-object p0
 .end method

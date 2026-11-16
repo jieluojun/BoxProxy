@@ -1,12 +1,15 @@
 .class public final Lq5;
-.super Landroid/graphics/drawable/Drawable;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic i:B
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic j:Ljava/lang/Object;
 
 
 # direct methods
@@ -14,296 +17,126 @@
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lq5;->a:B
+    iput-byte p2, p0, Lq5;->i:B
 
     .line 2
     .line 3
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+    iput-object p1, p0, Lq5;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
-    .line 6
-    iput-object p1, p0, Lq5;->b:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    return-void
-.end method
-
-.method private final a(I)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method private final b(I)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method private final c(Landroid/graphics/ColorFilter;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method private final d(Landroid/graphics/ColorFilter;)V
-    .locals 0
-
-    .line 1
     return-void
 .end method
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lq5;->a:B
+    iget-byte p1, p0, Lq5;->i:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lq5;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lq5;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    check-cast p0, Lzm2;
+    check-cast p0, Landroidx/appcompat/widget/Toolbar;
 
     .line 9
     .line 10
-    invoke-interface {p0, p1}, Lzm2;->d(Landroid/graphics/Canvas;)V
+    iget-object p0, p0, Landroidx/appcompat/widget/Toolbar;->T:Lh17;
 
     .line 11
     .line 12
-    .line 13
-    return-void
+    if-nez p0, :cond_0
 
+    .line 13
     .line 14
-    :pswitch_0
-    check-cast p0, Landroidx/appcompat/widget/ActionBarContainer;
+    const/4 p0, 0x0
 
     .line 15
+    goto :goto_0
+
     .line 16
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->p:Z
+    :cond_0
+    iget-object p0, p0, Lh17;->j:Lwo3;
 
     .line 17
     .line 18
-    if-eqz v0, :cond_0
+    :goto_0
+    if-eqz p0, :cond_1
 
     .line 19
     .line 20
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionBarContainer;->o:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Lwo3;->collapseActionView()Z
 
     .line 21
     .line 22
-    if-eqz p0, :cond_2
-
     .line 23
+    :cond_1
+    return-void
+
     .line 24
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    :pswitch_0
+    check-cast p0, Lk7;
 
     .line 25
     .line 26
-    .line 27
-    goto :goto_0
+    iget-object p1, p0, Lk7;->v:Li7;
 
+    .line 27
     .line 28
-    :cond_0
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->m:Landroid/graphics/drawable/Drawable;
+    const/4 v0, 0x1
 
     .line 29
+    iget-object p0, p0, Lk7;->b:Lm7;
+
     .line 30
-    if-eqz v0, :cond_1
-
     .line 31
-    .line 32
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {p1, v0, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
+    .line 32
     .line 33
     .line 34
+    move-result-object p0
+
     .line 35
-    :cond_1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->n:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     .line 36
     .line 37
-    if-eqz v0, :cond_2
-
     .line 38
+    return-void
+
     .line 39
-    iget-boolean p0, p0, Landroidx/appcompat/widget/ActionBarContainer;->q:Z
+    :pswitch_1
+    check-cast p0, Lh6;
 
     .line 40
     .line 41
-    if-eqz p0, :cond_2
+    invoke-virtual {p0}, Lh6;->a()V
 
     .line 42
     .line 43
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
     .line 44
+    return-void
+
     .line 45
-    .line 46
-    :cond_2
-    :goto_0
-    return-void
-
-    .line 47
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
-.end method
-
-.method public final getOpacity()I
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Lq5;->a:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    const/4 p0, 0x0
-
-    .line 7
-    return p0
-
-    .line 8
-    :pswitch_0
-    const/4 p0, 0x0
-
-    .line 9
-    return p0
-
-    .line 10
-    nop
-
-    .line 11
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public getOutline(Landroid/graphics/Outline;)V
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lq5;->a:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
-
-    .line 7
-    .line 8
-    .line 9
-    return-void
-
-    .line 10
-    :pswitch_0
-    iget-object p0, p0, Lq5;->b:Ljava/lang/Object;
-
-    .line 11
-    .line 12
-    check-cast p0, Landroidx/appcompat/widget/ActionBarContainer;
-
-    .line 13
-    .line 14
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->p:Z
-
-    .line 15
-    .line 16
-    if-eqz v0, :cond_0
-
-    .line 17
-    .line 18
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->o:Landroid/graphics/drawable/Drawable;
-
-    .line 19
-    .line 20
-    if-eqz v0, :cond_1
-
-    .line 21
-    .line 22
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionBarContainer;->m:Landroid/graphics/drawable/Drawable;
-
-    .line 23
-    .line 24
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
-
-    .line 25
-    .line 26
-    .line 27
-    goto :goto_0
-
-    .line 28
-    :cond_0
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionBarContainer;->m:Landroid/graphics/drawable/Drawable;
-
-    .line 29
-    .line 30
-    if-eqz p0, :cond_1
-
-    .line 31
-    .line 32
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
-
-    .line 33
-    .line 34
-    .line 35
-    :cond_1
-    :goto_0
-    return-void
-
-    .line 36
-    nop
-
-    .line 37
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final setAlpha(I)V
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Lq5;->a:B
-
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Lq5;->a:B
-
-    .line 2
-    .line 3
-    return-void
 .end method

@@ -1,159 +1,129 @@
-.class public final Lmg6;
+.class public abstract Lmg6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
+# static fields
+.field public static final a:Z
+
+.field public static final b:Lhg6$a;
+
+.field public static final c:Lig6$a;
+
+.field public static final d:Ljg6;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
     .line 2
+    const/4 v1, 0x1
+
     .line 3
-    .line 4
-    iput-object p1, p0, Lmg6;->a:Ljava/lang/Object;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
+    :try_start_0
+    const-string v2, "java.sql.Date"
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Lmg6;
-
     .line 5
-    .line 6
-    if-nez v0, :cond_1
+    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 6
     .line 7
     .line 8
+    move v2, v1
+
+    .line 9
     goto :goto_0
 
-    .line 9
-    :cond_1
-    check-cast p1, Lmg6;
-
     .line 10
+    :catch_0
+    move v2, v0
+
     .line 11
-    iget-object p0, p0, Lmg6;->a:Ljava/lang/Object;
+    :goto_0
+    sput-boolean v2, Lmg6;->a:Z
 
     .line 12
     .line 13
-    iget-object p1, p1, Lmg6;->a:Ljava/lang/Object;
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    new-instance v2, Llg6;
 
     .line 16
     .line 17
-    .line 18
-    move-result p0
+    const-class v3, Ljava/sql/Date;
 
+    .line 18
     .line 19
-    if-nez p0, :cond_2
+    invoke-direct {v2, v3, v0}, Llg6;-><init>(Ljava/lang/Class;B)V
 
     .line 20
     .line 21
-    :goto_0
-    const/4 p0, 0x0
-
     .line 22
-    return p0
+    new-instance v0, Llg6;
 
     .line 23
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
     .line 24
-    return p0
-.end method
+    const-class v2, Ljava/sql/Timestamp;
 
-.method public final hashCode()I
-    .locals 0
+    .line 25
+    .line 26
+    invoke-direct {v0, v2, v1}, Llg6;-><init>(Ljava/lang/Class;B)V
 
-    .line 1
-    iget-object p0, p0, Lmg6;->a:Ljava/lang/Object;
+    .line 27
+    .line 28
+    .line 29
+    sget-object v0, Lhg6;->b:Lhg6$a;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 30
+    .line 31
+    sput-object v0, Lmg6;->b:Lhg6$a;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 32
+    .line 33
+    sget-object v0, Lig6;->b:Lig6$a;
 
-    .line 7
-    mul-int/lit8 p0, p0, 0x1f
+    .line 34
+    .line 35
+    sput-object v0, Lmg6;->c:Lig6$a;
 
-    .line 8
-    .line 9
-    return p0
-.end method
+    .line 36
+    .line 37
+    sget-object v0, Lkg6;->b:Ljg6;
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 38
+    .line 39
+    sput-object v0, Lmg6;->d:Ljg6;
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 40
+    .line 41
+    goto :goto_1
 
-    .line 2
-    .line 3
-    const-string v1, "Result(data="
+    .line 42
+    :cond_0
+    const/4 v0, 0x0
 
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 43
+    sput-object v0, Lmg6;->b:Lhg6$a;
 
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lmg6;->a:Ljava/lang/Object;
+    .line 44
+    .line 45
+    sput-object v0, Lmg6;->c:Lig6$a;
 
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 46
+    .line 47
+    sput-object v0, Lmg6;->d:Ljg6;
 
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ", error=null)"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    .line 48
+    .line 49
+    :goto_1
+    return-void
 .end method

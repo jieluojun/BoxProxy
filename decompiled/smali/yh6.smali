@@ -1,490 +1,417 @@
 .class public final Lyh6;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lu62;
+.implements Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;
 
 
 # instance fields
-.field public final synthetic j:Z
+.field public final synthetic a:Lm20;
 
-.field public final synthetic k:Lha2;
-
-.field public final synthetic l:Lqm4;
-
-.field public final synthetic m:Lmt3;
-
-.field public final synthetic n:Lmt3;
-
-.field public final synthetic o:Lmt3;
-
-.field public final synthetic p:Lms3;
-
-.field public final synthetic q:Lqm4;
+.field public final synthetic b:Lrf5;
 
 
 # direct methods
-.method public constructor <init>(ZLha2;Lqm4;Lmt3;Lmt3;Lmt3;Lms3;Lqm4;Ly81;)V
+.method public constructor <init>(Lm20;Lrf5;)V
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Lyh6;->j:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p2, p0, Lyh6;->k:Lha2;
-
     .line 4
+    iput-object p1, p0, Lyh6;->a:Lm20;
+
     .line 5
-    iput-object p3, p0, Lyh6;->l:Lqm4;
-
     .line 6
+    iput-object p2, p0, Lyh6;->b:Lrf5;
+
     .line 7
-    iput-object p4, p0, Lyh6;->m:Lmt3;
-
     .line 8
-    .line 9
-    iput-object p5, p0, Lyh6;->n:Lmt3;
-
-    .line 10
-    .line 11
-    iput-object p6, p0, Lyh6;->o:Lmt3;
-
-    .line 12
-    .line 13
-    iput-object p7, p0, Lyh6;->p:Lms3;
-
-    .line 14
-    .line 15
-    iput-object p8, p0, Lyh6;->q:Lqm4;
-
-    .line 16
-    .line 17
-    const/4 p1, 0x3
-
-    .line 18
-    invoke-direct {p0, p1, p9}, Llh6;-><init>(ILy81;)V
-
-    .line 19
-    .line 20
-    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final onHeaderDecoded(Landroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
+    .locals 9
 
     .line 1
-    check-cast p1, Lac1;
-
-    .line 2
-    .line 3
-    check-cast p2, Ljava/lang/Number;
-
-    .line 4
-    .line 5
-    invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
-
-    .line 6
-    .line 7
-    .line 8
-    move-object v9, p3
-
-    .line 9
-    check-cast v9, Ly81;
-
-    .line 10
-    .line 11
-    new-instance v0, Lyh6;
-
-    .line 12
-    .line 13
-    iget-object v7, p0, Lyh6;->p:Lms3;
-
-    .line 14
-    .line 15
-    iget-object v8, p0, Lyh6;->q:Lqm4;
-
-    .line 16
-    .line 17
-    iget-boolean v1, p0, Lyh6;->j:Z
-
-    .line 18
-    .line 19
-    iget-object v2, p0, Lyh6;->k:Lha2;
-
-    .line 20
-    .line 21
-    iget-object v3, p0, Lyh6;->l:Lqm4;
-
-    .line 22
-    .line 23
-    iget-object v4, p0, Lyh6;->m:Lmt3;
-
-    .line 24
-    .line 25
-    iget-object v5, p0, Lyh6;->n:Lmt3;
-
-    .line 26
-    .line 27
-    iget-object v6, p0, Lyh6;->o:Lmt3;
-
-    .line 28
-    .line 29
-    invoke-direct/range {v0 .. v9}, Lyh6;-><init>(ZLha2;Lqm4;Lmt3;Lmt3;Lmt3;Lms3;Lqm4;Ly81;)V
-
-    .line 30
-    .line 31
-    .line 32
-    sget-object p0, La47;->a:La47;
-
-    .line 33
-    .line 34
-    invoke-virtual {v0, p0}, Lyh6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 35
-    .line 36
-    .line 37
-    return-object p0
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-virtual {p2}, Landroid/graphics/ImageDecoder$ImageInfo;->getSize()Landroid/util/Size;
 
     .line 2
     .line 3
     .line 4
-    iget-object p1, p0, Lyh6;->l:Lqm4;
+    move-result-object p2
 
     .line 5
-    .line 6
-    invoke-virtual {p1}, Lqm4;->g()F
+    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
+    .line 6
     .line 7
     .line 8
-    .line 9
     move-result v0
+
+    .line 9
+    invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
 
     .line 10
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
     .line 11
     .line 12
+    move-result v1
+
     .line 13
-    move-result v0
+    iget-object p2, p0, Lyh6;->a:Lm20;
 
     .line 14
-    const/high16 v1, 0x41280000    # 10.5f
-
     .line 15
+    iget-object p3, p2, Lm20;->b:Lfl4;
+
     .line 16
-    cmpl-float v0, v0, v1
-
     .line 17
+    iget-object v2, p3, Lfl4;->b:Lpb6;
+
     .line 18
-    iget-boolean v1, p0, Lyh6;->j:Z
-
     .line 19
+    iget-object v3, p3, Lfl4;->c:Lxx5;
+
     .line 20
-    if-lez v0, :cond_0
-
     .line 21
+    sget-object v4, Las2;->b:Lwy1;
+
     .line 22
-    iget-object v0, p0, Lyh6;->m:Lmt3;
-
     .line 23
-    .line 24
-    invoke-interface {v0}, Lmb6;->getValue()Ljava/lang/Object;
+    invoke-static {p3, v4}, Lpp;->D(Lfl4;Lwy1;)Ljava/lang/Object;
 
+    .line 24
     .line 25
     .line 26
+    move-result-object v5
+
     .line 27
-    move-result-object v0
+    check-cast v5, Lpb6;
 
     .line 28
-    check-cast v0, Lp62;
-
     .line 29
-    .line 30
-    if-eqz v0, :cond_0
+    invoke-static {v0, v1, v2, v3, v5}, Lnm;->w(IILpb6;Lxx5;Lpb6;)J
 
+    .line 30
     .line 31
     .line 32
-    xor-int/lit8 v2, v1, 0x1
+    move-result-wide v2
 
     .line 33
-    .line 34
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/16 v5, 0x20
 
+    .line 34
     .line 35
+    shr-long v5, v2, v5
+
     .line 36
     .line 37
-    move-result-object v2
+    long-to-int v5, v5
 
     .line 38
-    invoke-interface {v0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    const-wide v6, 0xffffffffL
 
     .line 39
     .line 40
     .line 41
-    :cond_0
-    iget-object v0, p0, Lyh6;->n:Lmt3;
-
     .line 42
     .line 43
-    invoke-interface {v0}, Lmb6;->getValue()Ljava/lang/Object;
+    and-long/2addr v2, v6
 
     .line 44
+    long-to-int v3, v2
+
     .line 45
+    const/4 v6, 0x1
+
     .line 46
-    move-result-object v0
+    if-lez v0, :cond_3
 
     .line 47
-    check-cast v0, Ljava/lang/Boolean;
-
     .line 48
-    .line 49
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    if-lez v1, :cond_3
 
+    .line 49
     .line 50
+    if-ne v0, v5, :cond_0
+
     .line 51
     .line 52
-    move-result v0
+    if-eq v1, v3, :cond_3
 
     .line 53
-    if-nez v0, :cond_6
-
     .line 54
+    :cond_0
+    move-object v2, v4
+
     .line 55
-    invoke-virtual {p1}, Lqm4;->g()F
+    iget-object v4, p3, Lfl4;->c:Lxx5;
 
     .line 56
     .line 57
+    invoke-static {p3, v2}, Lpp;->D(Lfl4;Lwy1;)Ljava/lang/Object;
+
     .line 58
-    move-result v0
-
     .line 59
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
     .line 60
-    .line 61
-    .line 62
-    move-result v0
+    move-result-object v2
 
+    .line 61
+    check-cast v2, Lpb6;
+
+    .line 62
     .line 63
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v8, v5
 
     .line 64
+    move-object v5, v2
+
     .line 65
-    cmpl-float v0, v0, v2
+    move v2, v8
 
     .line 66
-    .line 67
-    if-ltz v0, :cond_6
+    invoke-static/range {v0 .. v5}, Lnm;->x(IIIILxx5;Lpb6;)D
 
+    .line 67
     .line 68
     .line 69
-    iget-object v0, p0, Lyh6;->k:Lha2;
+    move-result-wide v2
 
     .line 70
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+
     .line 71
-    if-eqz v1, :cond_1
-
     .line 72
-    .line 73
-    invoke-virtual {p1}, Lqm4;->g()F
+    cmpg-double v4, v2, v4
 
+    .line 73
     .line 74
+    if-gez v4, :cond_1
+
     .line 75
     .line 76
-    move-result v2
+    move v4, v6
 
     .line 77
-    const/high16 v3, -0x3ed00000    # -11.0f
+    goto :goto_0
 
     .line 78
+    :cond_1
+    const/4 v4, 0x0
+
     .line 79
-    cmpg-float v2, v2, v3
+    :goto_0
+    iget-object p0, p0, Lyh6;->b:Lrf5;
 
     .line 80
     .line 81
-    if-lez v2, :cond_2
+    iput-boolean v4, p0, Lrf5;->i:Z
 
     .line 82
     .line 83
-    :cond_1
-    if-nez v1, :cond_3
+    if-nez v4, :cond_2
 
     .line 84
     .line 85
-    invoke-virtual {p1}, Lqm4;->g()F
+    iget-object p0, p3, Lfl4;->d:Liz4;
 
     .line 86
     .line 87
-    .line 88
-    move-result v2
+    sget-object v4, Liz4;->i:Liz4;
 
+    .line 88
     .line 89
-    const/high16 v3, 0x41200000    # 10.0f
+    if-ne p0, v4, :cond_3
 
     .line 90
     .line 91
-    cmpg-float v2, v2, v3
+    :cond_2
+    int-to-double v4, v0
 
     .line 92
+    mul-double/2addr v4, v2
+
     .line 93
-    if-gtz v2, :cond_3
+    invoke-static {v4, v5}, Lqn3;->f0(D)I
 
     .line 94
     .line 95
-    :cond_2
-    const/16 v1, 0x16
-
     .line 96
+    move-result p0
+
     .line 97
-    check-cast v0, Lqp4;
+    int-to-double v0, v1
 
     .line 98
+    mul-double/2addr v2, v0
+
     .line 99
-    invoke-virtual {v0, v1}, Lqp4;->a(I)V
+    invoke-static {v2, v3}, Lqn3;->f0(D)I
 
     .line 100
     .line 101
     .line 102
-    goto :goto_0
+    move-result v0
 
     .line 103
-    :cond_3
-    if-eqz v1, :cond_4
+    invoke-virtual {p1, p0, v0}, Landroid/graphics/ImageDecoder;->setTargetSize(II)V
 
     .line 104
     .line 105
-    invoke-virtual {p1}, Lqm4;->g()F
-
     .line 106
+    :cond_3
+    new-instance p0, Lvh6;
+
     .line 107
     .line 108
-    move-result v2
+    invoke-direct {p0, p2}, Lvh6;-><init>(Lm20;)V
 
     .line 109
-    const/high16 v3, -0x3ee00000    # -10.0f
-
     .line 110
     .line 111
-    cmpl-float v2, v2, v3
+    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setOnPartialImageListener(Landroid/graphics/ImageDecoder$OnPartialImageListener;)V
 
     .line 112
     .line 113
-    if-gez v2, :cond_5
-
     .line 114
-    .line 115
-    :cond_4
-    if-nez v1, :cond_6
+    invoke-static {p3}, Lbs2;->a(Lfl4;)Landroid/graphics/Bitmap$Config;
 
+    .line 115
     .line 116
     .line 117
-    invoke-virtual {p1}, Lqm4;->g()F
+    move-result-object p0
 
     .line 118
+    sget-object p2, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
+
     .line 119
     .line 120
-    move-result v1
+    if-ne p0, p2, :cond_4
 
     .line 121
-    const/high16 v2, 0x41300000    # 11.0f
-
     .line 122
+    const/4 p0, 0x3
+
     .line 123
-    cmpl-float v1, v1, v2
+    goto :goto_1
 
     .line 124
+    :cond_4
+    move p0, v6
+
     .line 125
-    if-ltz v1, :cond_6
+    :goto_1
+    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setAllocator(I)V
 
     .line 126
     .line 127
-    :cond_5
-    const/16 v1, 0x15
-
     .line 128
+    sget-object p0, Lbs2;->h:Lwy1;
+
     .line 129
-    check-cast v0, Lqp4;
-
     .line 130
-    .line 131
-    invoke-virtual {v0, v1}, Lqp4;->a(I)V
+    invoke-static {p3, p0}, Lpp;->D(Lfl4;Lwy1;)Ljava/lang/Object;
 
+    .line 131
     .line 132
     .line 133
+    move-result-object p0
+
     .line 134
-    :cond_6
-    :goto_0
-    iget-object v0, p0, Lyh6;->o:Lmt3;
+    check-cast p0, Ljava/lang/Boolean;
 
     .line 135
     .line 136
-    invoke-interface {v0}, Lmb6;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 137
     .line 138
     .line 139
-    move-result-object v0
+    move-result p0
 
     .line 140
-    check-cast v0, Ljn1;
+    xor-int/2addr p0, v6
 
     .line 141
-    .line 142
-    if-eqz v0, :cond_7
+    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setMemorySizePolicy(I)V
 
+    .line 142
     .line 143
     .line 144
-    new-instance v1, Lkn1;
+    sget-object p0, Lbs2;->c:Lwy1;
 
     .line 145
     .line 146
-    invoke-direct {v1, v0}, Lkn1;-><init>(Ljn1;)V
+    invoke-static {p3, p0}, Lpp;->D(Lfl4;Lwy1;)Ljava/lang/Object;
 
     .line 147
     .line 148
     .line 149
-    iget-object v0, p0, Lyh6;->p:Lms3;
+    move-result-object p2
 
     .line 150
-    .line 151
-    invoke-virtual {v0, v1}, Lms3;->c(Lus2;)V
+    check-cast p2, Landroid/graphics/ColorSpace;
 
+    .line 151
     .line 152
+    if-eqz p2, :cond_5
+
     .line 153
     .line 154
-    :cond_7
-    const/4 v0, 0x0
+    invoke-static {p3, p0}, Lpp;->D(Lfl4;Lwy1;)Ljava/lang/Object;
 
     .line 155
-    invoke-virtual {p1, v0}, Lqm4;->h(F)V
-
     .line 156
     .line 157
+    move-result-object p0
+
     .line 158
-    iget-object p0, p0, Lyh6;->q:Lqm4;
+    check-cast p0, Landroid/graphics/ColorSpace;
 
     .line 159
     .line 160
-    invoke-virtual {p0, v0}, Lqm4;->h(F)V
+    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setTargetColorSpace(Landroid/graphics/ColorSpace;)V
 
     .line 161
     .line 162
     .line 163
-    sget-object p0, La47;->a:La47;
+    :cond_5
+    sget-object p0, Lbs2;->d:Lwy1;
 
     .line 164
     .line 165
-    return-object p0
+    invoke-static {p3, p0}, Lpp;->D(Lfl4;Lwy1;)Ljava/lang/Object;
+
+    .line 166
+    .line 167
+    .line 168
+    move-result-object p0
+
+    .line 169
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 170
+    .line 171
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 172
+    .line 173
+    .line 174
+    move-result p0
+
+    .line 175
+    xor-int/2addr p0, v6
+
+    .line 176
+    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setUnpremultipliedRequired(Z)V
+
+    .line 177
+    .line 178
+    .line 179
+    return-void
 .end method

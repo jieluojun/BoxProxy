@@ -1,6 +1,6 @@
 .class public final Lof;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -25,7 +25,7 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Lbo3;
+    new-instance v0, Lks3;
 
     .line 5
     .line 6
@@ -43,7 +43,7 @@
 
 
 # virtual methods
-.method public a(J)I
+.method public final a(J)I
     .locals 7
 
     .line 1
@@ -73,228 +73,224 @@
     const/4 v4, 0x0
 
     .line 13
-    if-gt v0, v2, :cond_0
+    if-le v0, v2, :cond_0
 
     .line 14
     .line 15
-    goto :goto_0
+    shl-int/lit8 v2, v2, 0x1
 
     .line 16
-    :cond_0
-    mul-int/lit8 v2, v2, 0x2
-
     .line 17
-    .line 18
     new-array v0, v2, [J
 
+    .line 18
     .line 19
-    .line 20
     new-array v2, v2, [I
 
+    .line 20
     .line 21
-    .line 22
     array-length v5, v1
 
-    .line 23
-    invoke-static {v1, v0, v4, v4, v5}, Lpw;->r0([J[JIII)V
+    .line 22
+    invoke-static {v1, v0, v4, v4, v5}, Lcw;->h0([J[JIII)V
 
+    .line 23
     .line 24
     .line 25
-    .line 26
     iget-object v1, p0, Lof;->d:Ljava/lang/Cloneable;
 
+    .line 26
     .line 27
-    .line 28
     check-cast v1, [I
 
+    .line 28
     .line 29
-    .line 30
-    invoke-static {v4, v4, v3, v1, v2}, Lpw;->t0(III[I[I)V
+    invoke-static {v4, v4, v3, v1, v2}, Lcw;->j0(III[I[I)V
 
+    .line 30
     .line 31
     .line 32
-    .line 33
     iput-object v0, p0, Lof;->c:Ljava/lang/Object;
 
+    .line 33
     .line 34
-    .line 35
     iput-object v2, p0, Lof;->d:Ljava/lang/Cloneable;
 
+    .line 35
     .line 36
-    .line 37
-    :goto_0
+    :cond_0
     iget v0, p0, Lof;->a:I
 
+    .line 37
     .line 38
-    .line 39
     add-int/lit8 v1, v0, 0x1
 
+    .line 39
     .line 40
-    .line 41
     iput v1, p0, Lof;->a:I
 
+    .line 41
     .line 42
-    .line 43
     iget-object v1, p0, Lof;->e:Ljava/lang/Object;
 
+    .line 43
     .line 44
-    .line 45
     check-cast v1, [I
 
+    .line 45
     .line 46
-    .line 47
     array-length v2, v1
 
-    .line 48
+    .line 47
     iget v5, p0, Lof;->b:I
 
+    .line 48
     .line 49
-    .line 50
     if-lt v5, v2, :cond_2
 
+    .line 50
     .line 51
-    .line 52
-    mul-int/lit8 v2, v2, 0x2
+    shl-int/lit8 v2, v2, 0x1
 
+    .line 52
     .line 53
-    .line 54
     new-array v1, v2, [I
 
+    .line 54
     .line 55
-    .line 56
     move v5, v4
 
-    .line 57
-    :goto_1
+    .line 56
+    :goto_0
     if-ge v5, v2, :cond_1
 
+    .line 57
     .line 58
-    .line 59
     add-int/lit8 v6, v5, 0x1
 
+    .line 59
     .line 60
-    .line 61
     aput v6, v1, v5
 
+    .line 61
     .line 62
-    .line 63
     move v5, v6
 
-    .line 64
-    goto :goto_1
+    .line 63
+    goto :goto_0
 
-    .line 65
+    .line 64
     :cond_1
     iget-object v2, p0, Lof;->e:Ljava/lang/Object;
 
+    .line 65
     .line 66
-    .line 67
     check-cast v2, [I
 
+    .line 67
     .line 68
-    .line 69
-    invoke-static {v4, v4, v3, v2, v1}, Lpw;->t0(III[I[I)V
+    invoke-static {v4, v4, v3, v2, v1}, Lcw;->j0(III[I[I)V
 
+    .line 69
     .line 70
     .line 71
-    .line 72
     iput-object v1, p0, Lof;->e:Ljava/lang/Object;
 
+    .line 72
     .line 73
-    .line 74
     :cond_2
     move-object v2, v1
 
-    .line 75
+    .line 74
     iget v3, p0, Lof;->b:I
 
+    .line 75
     .line 76
-    .line 77
     aget v1, v1, v3
 
+    .line 77
     .line 78
-    .line 79
     iput v1, p0, Lof;->b:I
 
+    .line 79
     .line 80
-    .line 81
     iget-object v1, p0, Lof;->c:Ljava/lang/Object;
 
+    .line 81
     .line 82
-    .line 83
     check-cast v1, [J
 
+    .line 83
     .line 84
-    .line 85
     aput-wide p1, v1, v0
 
+    .line 85
     .line 86
-    .line 87
     iget-object v4, p0, Lof;->d:Ljava/lang/Cloneable;
 
+    .line 87
     .line 88
-    .line 89
     check-cast v4, [I
 
+    .line 89
     .line 90
-    .line 91
     aput v3, v4, v0
 
+    .line 91
     .line 92
-    .line 93
     aput v0, v2, v3
 
+    .line 93
     .line 94
-    .line 95
-    :goto_2
+    :goto_1
     if-lez v0, :cond_3
 
+    .line 95
     .line 96
-    .line 97
     add-int/lit8 v2, v0, 0x1
 
+    .line 97
     .line 98
-    .line 99
     shr-int/lit8 v2, v2, 0x1
 
+    .line 99
     .line 100
-    .line 101
     add-int/lit8 v2, v2, -0x1
 
+    .line 101
     .line 102
-    .line 103
     aget-wide v4, v1, v2
 
+    .line 103
     .line 104
-    .line 105
-    invoke-static {v4, v5, p1, p2}, Lyt2;->h0(JJ)I
+    invoke-static {v4, v5, p1, p2}, Lky2;->J(JJ)I
 
+    .line 105
     .line 106
     .line 107
-    .line 108
     move-result v4
 
-    .line 109
+    .line 108
     if-lez v4, :cond_3
 
+    .line 109
     .line 110
-    .line 111
     invoke-virtual {p0, v2, v0}, Lof;->d(II)V
 
+    .line 111
     .line 112
     .line 113
-    .line 114
     move v0, v2
 
-    .line 115
-    goto :goto_2
+    .line 114
+    goto :goto_1
 
-    .line 116
+    .line 115
     :cond_3
     return v3
 .end method
 
-.method public b(Landroid/content/res/TypedArray;Landroid/content/res/Resources$Theme;Ljava/lang/String;I)Lq7;
+.method public final b(Landroid/content/res/TypedArray;Landroid/content/res/Resources$Theme;Ljava/lang/String;I)Ll7;
     .locals 4
 
     .line 1
@@ -302,11 +298,11 @@
 
     .line 2
     .line 3
-    check-cast v0, Lorg/xmlpull/v1/XmlPullParser;
+    check-cast v0, Landroid/content/res/XmlResourceParser;
 
     .line 4
     .line 5
-    invoke-static {v0, p3}, Li17;->h(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {v0, p3}, Lxv6;->h(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     .line 6
     .line 7
@@ -362,11 +358,11 @@
 
     .line 32
     .line 33
-    new-instance p3, Lq7;
+    new-instance p3, Ll7;
 
     .line 34
     .line 35
-    invoke-direct {p3, v0, p2}, Lq7;-><init>(Landroid/graphics/Shader;I)V
+    invoke-direct {p3, v0, p2}, Ll7;-><init>(Landroid/graphics/Shader;I)V
 
     .line 36
     .line 37
@@ -392,7 +388,7 @@
 
     .line 47
     :try_start_0
-    invoke-static {p3, p4, p2}, Lq7;->f(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Lq7;
+    invoke-static {p3, p4, p2}, Ll7;->f(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Ll7;
 
     .line 48
     .line 49
@@ -429,41 +425,39 @@
 
     .line 62
     :goto_0
-    if-eqz p3, :cond_1
+    if-nez p3, :cond_2
 
     .line 63
     .line 64
-    goto :goto_1
+    :cond_1
+    new-instance p3, Ll7;
 
     .line 65
-    :cond_1
-    new-instance p3, Lq7;
-
     .line 66
-    .line 67
-    invoke-direct {p3, v0, v1}, Lq7;-><init>(Landroid/graphics/Shader;I)V
+    invoke-direct {p3, v0, v1}, Ll7;-><init>(Landroid/graphics/Shader;I)V
 
+    .line 67
     .line 68
     .line 69
-    .line 70
+    :cond_2
     :goto_1
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
 
+    .line 70
     .line 71
     .line 72
-    .line 73
     move-result p1
 
-    .line 74
+    .line 73
     invoke-virtual {p0, p1}, Lof;->e(I)V
 
+    .line 74
     .line 75
     .line 76
-    .line 77
     return-object p3
 .end method
 
-.method public c(Landroid/content/res/TypedArray;Ljava/lang/String;IF)F
+.method public final c(Landroid/content/res/TypedArray;Ljava/lang/String;IF)F
     .locals 1
 
     .line 1
@@ -471,11 +465,11 @@
 
     .line 2
     .line 3
-    check-cast v0, Lorg/xmlpull/v1/XmlPullParser;
+    check-cast v0, Landroid/content/res/XmlResourceParser;
 
     .line 4
     .line 5
-    invoke-static {v0, p2}, Li17;->h(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {v0, p2}, Lxv6;->h(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     .line 6
     .line 7
@@ -483,40 +477,36 @@
     move-result p2
 
     .line 9
-    if-nez p2, :cond_0
+    if-eqz p2, :cond_0
 
     .line 10
     .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_0
     invoke-virtual {p1, p3, p4}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
+    .line 12
     .line 13
     .line 14
-    .line 15
     move-result p4
 
-    .line 16
-    :goto_0
+    .line 15
+    :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
 
+    .line 16
     .line 17
     .line 18
-    .line 19
     move-result p1
 
-    .line 20
+    .line 19
     invoke-virtual {p0, p1}, Lof;->e(I)V
 
+    .line 20
     .line 21
     .line 22
-    .line 23
     return p4
 .end method
 
-.method public d(II)V
+.method public final d(II)V
     .locals 6
 
     .line 1
@@ -587,7 +577,7 @@
     return-void
 .end method
 
-.method public e(I)V
+.method public final e(I)V
     .locals 1
 
     .line 1
@@ -595,10 +585,10 @@
 
     .line 2
     .line 3
-    or-int/2addr p1, v0
+    or-int/2addr v0, p1
 
     .line 4
-    iput p1, p0, Lof;->a:I
+    iput v0, p0, Lof;->a:I
 
     .line 5
     .line 6

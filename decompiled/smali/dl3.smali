@@ -1,301 +1,287 @@
-.class public abstract Ldl3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ldl3;
+.super Lfl3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lu46;
-.implements Lnl3;
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Ljava/util/Iterator;
+.implements Lt23;
 
 
 # instance fields
-.field public j:Landroid/graphics/Rect;
+.field public final synthetic m:B
 
 
 # direct methods
-.method public static m(Landroid/widget/ListAdapter;Landroid/content/Context;I)I
-    .locals 10
+.method public constructor <init>(Lgl3;B)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    iput-byte p2, p0, Ldl3;->m:B
 
     .line 2
-    invoke-static {v0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
     .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 4
     .line 5
-    move-result v1
-
     .line 6
-    invoke-static {v0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
     .line 8
     .line 9
-    move-result v2
+    iput-object p1, p0, Lfl3;->l:Ljava/lang/Object;
 
     .line 10
-    invoke-interface {p0}, Landroid/widget/Adapter;->getCount()I
-
     .line 11
-    .line 12
-    .line 13
-    move-result v3
+    const/4 p2, -0x1
 
+    .line 12
+    iput p2, p0, Lfl3;->j:I
+
+    .line 13
     .line 14
-    const/4 v4, 0x0
+    iget p1, p1, Lgl3;->p:I
 
     .line 15
-    move v5, v0
-
     .line 16
-    move v6, v5
+    iput p1, p0, Lfl3;->k:I
 
     .line 17
-    move-object v7, v4
-
     .line 18
-    move-object v8, v7
+    invoke-virtual {p0}, Lfl3;->c()V
 
     .line 19
-    :goto_0
-    if-ge v0, v3, :cond_4
-
     .line 20
     .line 21
-    invoke-interface {p0, v0}, Landroid/widget/Adapter;->getItemViewType(I)I
-
-    .line 22
-    .line 23
-    .line 24
-    move-result v9
-
-    .line 25
-    if-eq v9, v6, :cond_0
-
-    .line 26
-    .line 27
-    move-object v8, v4
-
-    .line 28
-    move v6, v9
-
-    .line 29
-    :cond_0
-    if-nez v7, :cond_1
-
-    .line 30
-    .line 31
-    new-instance v7, Landroid/widget/FrameLayout;
-
-    .line 32
-    .line 33
-    invoke-direct {v7, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 34
-    .line 35
-    .line 36
-    :cond_1
-    invoke-interface {p0, v0, v8, v7}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object v8
-
-    .line 40
-    invoke-virtual {v8, v1, v2}, Landroid/view/View;->measure(II)V
-
-    .line 41
-    .line 42
-    .line 43
-    invoke-virtual {v8}, Landroid/view/View;->getMeasuredWidth()I
-
-    .line 44
-    .line 45
-    .line 46
-    move-result v9
-
-    .line 47
-    if-lt v9, p2, :cond_2
-
-    .line 48
-    .line 49
-    return p2
-
-    .line 50
-    :cond_2
-    if-le v9, v5, :cond_3
-
-    .line 51
-    .line 52
-    move v5, v9
-
-    .line 53
-    :cond_3
-    add-int/lit8 v0, v0, 0x1
-
-    .line 54
-    .line 55
-    goto :goto_0
-
-    .line 56
-    :cond_4
-    return v5
+    return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lqk3;)Z
-    .locals 0
+.method public final next()Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final f(Lqk3;)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final i(Landroid/content/Context;Lkk3;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public l(Lkk3;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public abstract n(Landroid/view/View;)V
-.end method
-
-.method public abstract o(Z)V
-.end method
-
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    iget-byte v0, p0, Ldl3;->m:B
 
     .line 2
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    move-result-object p1
+    packed-switch v0, :pswitch_data_0
 
     .line 5
-    check-cast p1, Landroid/widget/ListAdapter;
-
     .line 6
     .line 7
-    instance-of p2, p1, Landroid/widget/HeaderViewListAdapter;
+    invoke-virtual {p0}, Lfl3;->b()V
 
     .line 8
     .line 9
-    if-eqz p2, :cond_0
-
     .line 10
-    .line 11
-    move-object p2, p1
+    iget v0, p0, Lfl3;->i:I
 
+    .line 11
     .line 12
-    check-cast p2, Landroid/widget/HeaderViewListAdapter;
+    iget-object v2, p0, Lfl3;->l:Ljava/lang/Object;
 
     .line 13
     .line 14
-    invoke-virtual {p2}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+    check-cast v2, Lgl3;
 
     .line 15
     .line 16
-    .line 17
-    move-result-object p2
+    iget v3, v2, Lgl3;->n:I
 
+    .line 17
     .line 18
-    check-cast p2, Lgk3;
+    if-ge v0, v3, :cond_0
 
     .line 19
     .line 20
-    goto :goto_0
+    add-int/lit8 v1, v0, 0x1
 
     .line 21
-    :cond_0
-    move-object p2, p1
-
     .line 22
-    check-cast p2, Lgk3;
+    iput v1, p0, Lfl3;->i:I
 
     .line 23
     .line 24
-    :goto_0
-    iget-object p2, p2, Lgk3;->a:Lkk3;
+    iput v0, p0, Lfl3;->j:I
 
     .line 25
     .line 26
-    invoke-interface {p1, p3}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
+    iget-object v0, v2, Lgl3;->j:[Ljava/lang/Object;
 
     .line 27
     .line 28
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 29
-    move-result-object p1
-
     .line 30
-    check-cast p1, Landroid/view/MenuItem;
-
     .line 31
+    iget v1, p0, Lfl3;->j:I
+
     .line 32
-    instance-of p3, p0, Ljm0;
-
     .line 33
+    aget-object v1, v0, v1
+
     .line 34
-    if-nez p3, :cond_1
-
     .line 35
+    invoke-virtual {p0}, Lfl3;->c()V
+
     .line 36
-    const/4 p3, 0x0
-
     .line 37
-    goto :goto_1
-
     .line 38
-    :cond_1
-    const/4 p3, 0x4
+    goto :goto_0
 
     .line 39
-    :goto_1
-    invoke-virtual {p2, p1, p0, p3}, Lkk3;->q(Landroid/view/MenuItem;Lnl3;I)Z
+    :cond_0
+    invoke-static {}, Lnf1;->p()V
 
     .line 40
     .line 41
     .line 42
-    return-void
-.end method
+    :goto_0
+    return-object v1
 
-.method public abstract p(I)V
-.end method
+    .line 43
+    :pswitch_0
+    invoke-virtual {p0}, Lfl3;->b()V
 
-.method public abstract q(I)V
-.end method
+    .line 44
+    .line 45
+    .line 46
+    iget v0, p0, Lfl3;->i:I
 
-.method public abstract r(Landroid/widget/PopupWindow$OnDismissListener;)V
-.end method
+    .line 47
+    .line 48
+    iget-object v2, p0, Lfl3;->l:Ljava/lang/Object;
 
-.method public abstract s(Z)V
-.end method
+    .line 49
+    .line 50
+    check-cast v2, Lgl3;
 
-.method public abstract t(I)V
+    .line 51
+    .line 52
+    iget v3, v2, Lgl3;->n:I
+
+    .line 53
+    .line 54
+    if-ge v0, v3, :cond_1
+
+    .line 55
+    .line 56
+    add-int/lit8 v1, v0, 0x1
+
+    .line 57
+    .line 58
+    iput v1, p0, Lfl3;->i:I
+
+    .line 59
+    .line 60
+    iput v0, p0, Lfl3;->j:I
+
+    .line 61
+    .line 62
+    iget-object v1, v2, Lgl3;->i:[Ljava/lang/Object;
+
+    .line 63
+    .line 64
+    aget-object v1, v1, v0
+
+    .line 65
+    .line 66
+    invoke-virtual {p0}, Lfl3;->c()V
+
+    .line 67
+    .line 68
+    .line 69
+    goto :goto_1
+
+    .line 70
+    :cond_1
+    invoke-static {}, Lnf1;->p()V
+
+    .line 71
+    .line 72
+    .line 73
+    :goto_1
+    return-object v1
+
+    .line 74
+    :pswitch_1
+    invoke-virtual {p0}, Lfl3;->b()V
+
+    .line 75
+    .line 76
+    .line 77
+    iget v0, p0, Lfl3;->i:I
+
+    .line 78
+    .line 79
+    iget-object v2, p0, Lfl3;->l:Ljava/lang/Object;
+
+    .line 80
+    .line 81
+    check-cast v2, Lgl3;
+
+    .line 82
+    .line 83
+    iget v3, v2, Lgl3;->n:I
+
+    .line 84
+    .line 85
+    if-ge v0, v3, :cond_2
+
+    .line 86
+    .line 87
+    add-int/lit8 v1, v0, 0x1
+
+    .line 88
+    .line 89
+    iput v1, p0, Lfl3;->i:I
+
+    .line 90
+    .line 91
+    iput v0, p0, Lfl3;->j:I
+
+    .line 92
+    .line 93
+    new-instance v1, Lel3;
+
+    .line 94
+    .line 95
+    invoke-direct {v1, v2, v0}, Lel3;-><init>(Lgl3;I)V
+
+    .line 96
+    .line 97
+    .line 98
+    invoke-virtual {p0}, Lfl3;->c()V
+
+    .line 99
+    .line 100
+    .line 101
+    goto :goto_2
+
+    .line 102
+    :cond_2
+    invoke-static {}, Lnf1;->p()V
+
+    .line 103
+    .line 104
+    .line 105
+    :goto_2
+    return-object v1
+
+    .line 106
+    nop
+
+    .line 107
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

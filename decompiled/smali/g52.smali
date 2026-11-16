@@ -1,149 +1,135 @@
 .class public final Lg52;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final d:Lg52;
+.super Landroid/text/style/MetricAffectingSpan;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic i:B
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Z
+.field public final j:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lg52;
+    iput-byte p2, p0, Lg52;->i:B
 
     .line 2
     .line 3
-    const-string v1, ""
+    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
     .line 4
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v1, v2}, Lg52;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
+    iput-object p1, p0, Lg52;->j:Ljava/lang/Object;
 
     .line 7
     .line 8
-    .line 9
-    sput-object v0, Lg52;->d:Lg52;
-
-    .line 10
-    .line 11
-    new-instance v0, Lg52;
-
-    .line 12
-    .line 13
-    const-string v1, "  "
-
-    .line 14
-    .line 15
-    const/4 v2, 0x1
-
-    .line 16
-    const-string v3, "\n"
-
-    .line 17
-    .line 18
-    invoke-direct {v0, v3, v1, v2}, Lg52;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 19
-    .line 20
-    .line 21
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 2
+
+# virtual methods
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-byte v0, p0, Lg52;->i:B
 
     .line 2
     .line 3
+    iget-object p0, p0, Lg52;->j:Ljava/lang/Object;
+
     .line 4
-    const-string v0, "[\r\n]*"
-
     .line 5
-    .line 6
-    invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+    packed-switch v0, :pswitch_data_0
 
+    .line 6
     .line 7
     .line 8
-    .line 9
-    move-result v0
+    check-cast p0, Landroid/graphics/Typeface;
 
+    .line 9
     .line 10
-    const/4 v1, 0x0
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     .line 11
-    if-eqz v0, :cond_1
-
     .line 12
     .line 13
-    const-string v0, "[ \t]*"
-
-    .line 14
-    .line 15
-    invoke-virtual {p2, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v0
-
-    .line 19
-    if-eqz v0, :cond_0
-
-    .line 20
-    .line 21
-    iput-object p1, p0, Lg52;->a:Ljava/lang/String;
-
-    .line 22
-    .line 23
-    iput-object p2, p0, Lg52;->b:Ljava/lang/String;
-
-    .line 24
-    .line 25
-    iput-boolean p3, p0, Lg52;->c:Z
-
-    .line 26
-    .line 27
     return-void
 
-    .line 28
-    :cond_0
-    const-string p0, "Only combinations of spaces and tabs are allowed in indent."
+    .line 14
+    :pswitch_0
+    check-cast p0, Ljava/lang/String;
 
-    .line 29
-    .line 30
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    .line 15
+    .line 16
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
 
-    .line 31
-    .line 32
-    .line 33
-    throw v1
+    .line 17
+    .line 18
+    .line 19
+    return-void
 
-    .line 34
-    :cond_1
-    const-string p0, "Only combinations of \\n and \\r are allowed in newline."
+    .line 20
+    nop
 
-    .line 35
-    .line 36
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    .line 37
-    .line 38
-    .line 39
-    throw v1
+.method public final updateMeasureState(Landroid/text/TextPaint;)V
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lg52;->i:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lg52;->j:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    check-cast p0, Landroid/graphics/Typeface;
+
+    .line 9
+    .line 10
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    .line 11
+    .line 12
+    .line 13
+    return-void
+
+    .line 14
+    :pswitch_0
+    check-cast p0, Ljava/lang/String;
+
+    .line 15
+    .line 16
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+
+    .line 20
+    nop
+
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

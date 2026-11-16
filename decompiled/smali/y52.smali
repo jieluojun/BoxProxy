@@ -1,152 +1,321 @@
 .class public final Ly52;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ly52;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Lw52;
 
 
 # instance fields
-.field public j:Ljava/util/ArrayList;
+.field public final a:[F
 
-.field public k:Ljava/util/ArrayList;
-
-.field public l:[Ljz;
-
-.field public m:I
-
-.field public n:Ljava/lang/String;
-
-.field public o:Ljava/util/ArrayList;
-
-.field public p:Ljava/util/ArrayList;
-
-.field public q:Ljava/util/ArrayList;
+.field public final b:[F
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>([F[F)V
     .locals 2
 
     .line 1
-    new-instance v0, Ll6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x6
-
     .line 4
-    invoke-direct {v0, v1}, Ll6;-><init>(B)V
+    array-length v0, p1
 
     .line 5
+    array-length v1, p2
+
     .line 6
-    .line 7
-    sput-object v0, Ly52;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ly52;->j:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object v0, p0, Ly52;->k:Ljava/util/ArrayList;
+    if-ne v0, v1, :cond_0
 
     .line 7
     .line 8
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+    array-length v0, p1
 
     .line 9
+    if-eqz v0, :cond_0
+
     .line 10
     .line 11
-    iget-object v0, p0, Ly52;->l:[Ljz;
+    iput-object p1, p0, Ly52;->a:[F
 
     .line 12
     .line 13
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
+    iput-object p2, p0, Ly52;->b:[F
 
     .line 14
     .line 15
+    return-void
+
     .line 16
-    iget p2, p0, Ly52;->m:I
+    :cond_0
+    const-string p0, "Array lengths must match and be nonzero"
 
     .line 17
     .line 18
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 19
     .line 20
     .line 21
-    iget-object p2, p0, Ly52;->n:Ljava/lang/String;
+    const/4 p0, 0x0
+
+    .line 22
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final a(F)F
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Ly52;->b:[F
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Ly52;->a:[F
+
+    .line 4
+    .line 5
+    invoke-static {p1, v0, p0}, Lxl;->M(F[F[F)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final b(F)F
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Ly52;->a:[F
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Ly52;->b:[F
+
+    .line 4
+    .line 5
+    invoke-static {p1, v0, p0}, Lxl;->M(F[F[F)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    if-eq p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    if-eqz p1, :cond_1
+
+    .line 4
+    .line 5
+    instance-of v0, p1, Ly52;
+
+    .line 6
+    .line 7
+    if-eqz v0, :cond_1
+
+    .line 8
+    .line 9
+    check-cast p1, Ly52;
+
+    .line 10
+    .line 11
+    iget-object v0, p1, Ly52;->a:[F
+
+    .line 12
+    .line 13
+    iget-object v1, p0, Ly52;->a:[F
+
+    .line 14
+    .line 15
+    invoke-static {v1, v0}, Ljava/util/Arrays;->equals([F[F)Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v0
+
+    .line 19
+    if-eqz v0, :cond_1
+
+    .line 20
+    .line 21
+    iget-object p0, p0, Ly52;->b:[F
 
     .line 22
     .line 23
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    iget-object p1, p1, Ly52;->b:[F
+
+    .line 24
+    .line 25
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([F[F)Z
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    if-eqz p0, :cond_1
+
+    .line 30
+    .line 31
+    :cond_0
+    const/4 p0, 0x1
+
+    .line 32
+    return p0
+
+    .line 33
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 34
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Ly52;->a:[F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([F)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Ly52;->b:[F
+
+    .line 10
+    .line 11
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([F)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Ly52;->a:[F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 8
+    .line 9
+    .line 10
+    iget-object p0, p0, Ly52;->b:[F
+
+    .line 11
+    .line 12
+    invoke-static {p0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 17
+    .line 18
+    .line 19
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    .line 20
+    .line 21
+    const-string v2, "FontScaleConverter{fromSpValues="
+
+    .line 22
+    .line 23
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 24
     .line 25
     .line 26
-    iget-object p2, p0, Ly52;->o:Ljava/util/ArrayList;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 27
     .line 28
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
-
     .line 29
+    const-string v0, ", toDpValues="
+
     .line 30
     .line 31
-    iget-object p2, p0, Ly52;->p:Ljava/util/ArrayList;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 32
     .line 33
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
-
     .line 34
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 35
     .line 36
-    iget-object p0, p0, Ly52;->q:Ljava/util/ArrayList;
-
     .line 37
-    .line 38
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+    const-string p0, "}"
 
+    .line 38
     .line 39
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 40
     .line 41
-    return-void
+    .line 42
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p0
+
+    .line 46
+    return-object p0
 .end method

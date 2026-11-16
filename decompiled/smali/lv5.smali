@@ -1,148 +1,79 @@
 .class public final Llv5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public i:Ljava/io/File;
 
-.field public final b:Lu62;
+.field public j:I
 
-.field public final c:Lu62;
+.field public synthetic k:Ljava/lang/Object;
 
-.field public final d:Ljava/lang/Object;
+.field public final synthetic l:Lmv5;
 
-.field public final e:Llh6;
-
-.field public final f:Lu62;
-
-.field public g:Ljava/lang/Object;
-
-.field public h:I
-
-.field public final synthetic i:Lnv5;
+.field public m:I
 
 
 # direct methods
-.method public constructor <init>(Lnv5;Ljava/lang/Object;Lu62;Lu62;Ljava/lang/Object;Llh6;Lu62;)V
+.method public constructor <init>(Lmv5;Lq91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Llv5;->l:Lmv5;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Llv5;->i:Lnv5;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Llv5;->a:Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Llv5;->b:Lu62;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Llv5;->c:Lu62;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Llv5;->d:Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Llv5;->e:Llh6;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Llv5;->f:Lu62;
-
-    .line 17
-    .line 18
-    const/4 p1, -0x1
-
-    .line 19
-    iput p1, p0, Llv5;->h:I
-
-    .line 20
-    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    iget-object v0, p0, Llv5;->g:Ljava/lang/Object;
+    iput-object p1, p0, Llv5;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    instance-of v1, v0, Lcv5;
+    iget p1, p0, Llv5;->m:I
 
     .line 4
     .line 5
-    if-eqz v1, :cond_0
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    check-cast v0, Lcv5;
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Llv5;->m:I
+
     .line 9
-    iget v1, p0, Llv5;->h:I
-
     .line 10
+    const/4 p1, 0x0
+
     .line 11
-    iget-object p0, p0, Llv5;->i:Lnv5;
-
-    .line 12
-    .line 13
-    iget-object p0, p0, Lnv5;->j:Lrb1;
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1, p0}, Lcv5;->h(ILrb1;)V
-
-    .line 16
-    .line 17
-    .line 18
-    return-void
-
-    .line 19
-    :cond_0
-    instance-of p0, v0, Lwk1;
-
-    .line 20
-    .line 21
-    if-eqz p0, :cond_1
-
-    .line 22
-    .line 23
-    check-cast v0, Lwk1;
-
-    .line 24
-    .line 25
-    goto :goto_0
-
-    .line 26
-    :cond_1
     const/4 v0, 0x0
 
-    .line 27
-    :goto_0
-    if-eqz v0, :cond_2
+    .line 12
+    iget-object v1, p0, Llv5;->l:Lmv5;
 
-    .line 28
-    .line 29
-    invoke-interface {v0}, Lwk1;->a()V
+    .line 13
+    .line 14
+    invoke-virtual {v1, p1, p1, v0, p0}, Lmv5;->t([BLjava/io/File;ILq91;)Ljava/lang/Object;
 
-    .line 30
-    .line 31
-    .line 32
-    :cond_2
-    return-void
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    return-object p0
 .end method

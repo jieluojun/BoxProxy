@@ -1,96 +1,121 @@
-.class public abstract Ls74;
+.class public final synthetic Ls74;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lp72;
 
 
 # instance fields
-.field public final a:Ljava/util/Optional;
+.field public final synthetic i:B
 
-.field public final b:Lak6;
+.field public final synthetic j:Lp72;
 
-.field public c:Z
-
-.field public d:Ljava/util/Optional;
+.field public final synthetic k:Ln94;
 
 
 # direct methods
-.method public constructor <init>(Lak6;Ljava/util/Optional;)V
-    .locals 1
+.method public synthetic constructor <init>(Lp72;Ln94;B)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Ls74;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Ls74;->j:Lp72;
+
     .line 4
-    const-string v0, "tag in a Node is required."
-
     .line 5
-    .line 6
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-object p2, p0, Ls74;->k:Ln94;
 
+    .line 6
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
     .line 9
-    iput-object p1, p0, Ls74;->b:Lak6;
-
     .line 10
-    .line 11
-    iput-object p2, p0, Ls74;->a:Ljava/util/Optional;
-
-    .line 12
-    .line 13
-    const/4 p1, 0x0
-
-    .line 14
-    iput-boolean p1, p0, Ls74;->c:Z
-
-    .line 15
-    .line 16
-    invoke-static {}, Ljava/util/Optional;->empty()Ljava/util/Optional;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p1
-
-    .line 20
-    iput-object p1, p0, Ls74;->d:Ljava/util/Optional;
-
-    .line 21
-    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    const/4 p0, 0x3
-
-    .line 2
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    if-eq p0, p1, :cond_0
+    iget-byte v0, p0, Ls74;->i:B
 
     .line 2
     .line 3
-    const/4 p0, 0x0
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
-    return p0
-
     .line 5
-    :cond_0
-    const/4 p0, 0x1
+    iget-object v2, p0, Ls74;->k:Ln94;
 
     .line 6
-    return p0
+    .line 7
+    iget-object p0, p0, Ls74;->j:Lp72;
+
+    .line 8
+    .line 9
+    check-cast p1, Ljava/lang/Boolean;
+
+    .line 10
+    .line 11
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p1
+
+    .line 15
+    packed-switch v0, :pswitch_data_0
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-static {v2, p1}, Lae3;->j0(Ln94;Z)Ln94;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p1
+
+    .line 22
+    invoke-interface {p0, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    return-object v1
+
+    .line 26
+    :pswitch_0
+    invoke-static {v2, p1}, Lae3;->j0(Ln94;Z)Ln94;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p1
+
+    .line 30
+    invoke-interface {p0, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 31
+    .line 32
+    .line 33
+    return-object v1
+
+    .line 34
+    nop
+
+    .line 35
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

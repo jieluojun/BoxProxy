@@ -1,52 +1,63 @@
 .class public abstract Ltp1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final synthetic a:I
+.field public static final a:Ljava/lang/reflect/Field;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .line 1
-    const/4 v0, 0x4
+    const/4 v0, 0x0
 
     .line 2
-    new-array v1, v0, [Ljava/lang/ThreadLocal;
+    :try_start_0
+    const-class v1, Landroid/widget/AbsListView;
 
     .line 3
     .line 4
-    const/4 v2, 0x0
+    const-string v2, "mIsChildViewEnabled"
 
     .line 5
-    :goto_0
-    if-ge v2, v0, :cond_0
-
     .line 6
-    .line 7
-    new-instance v3, Ljava/lang/ThreadLocal;
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
+    .line 7
     .line 8
     .line 9
-    invoke-direct {v3}, Ljava/lang/ThreadLocal;-><init>()V
+    move-result-object v0
 
     .line 10
-    .line 11
-    .line 12
-    aput-object v3, v1, v2
+    const/4 v1, 0x1
 
+    .line 11
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 12
     .line 13
     .line 14
-    add-int/lit8 v2, v2, 0x1
-
-    .line 15
-    .line 16
     goto :goto_0
 
+    .line 15
+    :catch_0
+    move-exception v1
+
+    .line 16
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+
     .line 17
-    :cond_0
+    .line 18
+    .line 19
+    :goto_0
+    sput-object v0, Ltp1;->a:Ljava/lang/reflect/Field;
+
+    .line 20
+    .line 21
     return-void
 .end method

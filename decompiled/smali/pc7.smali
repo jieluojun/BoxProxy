@@ -1,99 +1,59 @@
 .class public final Lpc7;
-.super Ltc7;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/view/View$OnApplyWindowInsetsListener;
 
 
-# static fields
-.field public static final e:Landroid/view/animation/PathInterpolator;
+# instance fields
+.field public a:Lki7;
 
-.field public static final f:Lhy1;
+.field public final synthetic b:Landroid/view/View;
 
-.field public static final g:Landroid/view/animation/DecelerateInterpolator;
-
-.field public static final h:Landroid/view/animation/AccelerateInterpolator;
+.field public final synthetic c:Lyh4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Landroid/view/View;Lyh4;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 1
-    new-instance v0, Landroid/view/animation/PathInterpolator;
+    iput-object p1, p0, Lpc7;->b:Landroid/view/View;
 
     .line 2
     .line 3
-    const v1, 0x3f8ccccd    # 1.1f
+    iput-object p2, p0, Lpc7;->c:Lyh4;
 
     .line 4
     .line 5
-    .line 6
-    const/high16 v2, 0x3f800000    # 1.0f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    const/4 v3, 0x0
+    const/4 p1, 0x0
 
     .line 9
-    invoke-direct {v0, v3, v1, v3, v2}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+    iput-object p1, p0, Lpc7;->a:Lki7;
 
     .line 10
     .line 11
-    .line 12
-    sput-object v0, Lpc7;->e:Landroid/view/animation/PathInterpolator;
-
-    .line 13
-    .line 14
-    new-instance v0, Lhy1;
-
-    .line 15
-    .line 16
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v0, Lpc7;->f:Lhy1;
-
-    .line 20
-    .line 21
-    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
-
-    .line 22
-    .line 23
-    const/high16 v1, 0x3fc00000    # 1.5f
-
-    .line 24
-    .line 25
-    invoke-direct {v0, v1}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
-
-    .line 26
-    .line 27
-    .line 28
-    sput-object v0, Lpc7;->g:Landroid/view/animation/DecelerateInterpolator;
-
-    .line 29
-    .line 30
-    new-instance v0, Landroid/view/animation/AccelerateInterpolator;
-
-    .line 31
-    .line 32
-    invoke-direct {v0, v1}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
-
-    .line 33
-    .line 34
-    .line 35
-    sput-object v0, Lpc7;->h:Landroid/view/animation/AccelerateInterpolator;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static f(Luc7;Landroid/view/View;)V
-    .locals 2
+
+# virtual methods
+.method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+    .locals 5
 
     .line 1
-    invoke-static {p1}, Lpc7;->j(Landroid/view/View;)Llc7;
+    invoke-static {p2, p1}, Lki7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lki7;
 
     .line 2
     .line 3
@@ -101,395 +61,111 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_0
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 6
     .line 7
-    invoke-virtual {v0, p0}, Llc7;->a(Luc7;)V
+    iget-object v2, p0, Lpc7;->c:Lyh4;
 
     .line 8
     .line 9
+    const/16 v3, 0x1e
+
     .line 10
-    iget v0, v0, Llc7;->k:I
-
     .line 11
+    if-ge v1, v3, :cond_0
+
     .line 12
-    if-nez v0, :cond_0
-
     .line 13
-    .line 14
-    goto :goto_1
+    iget-object v4, p0, Lpc7;->b:Landroid/view/View;
 
+    .line 14
     .line 15
-    :cond_0
-    instance-of v0, p1, Landroid/view/ViewGroup;
+    invoke-static {p2, v4}, Lqc7;->a(Landroid/view/WindowInsets;Landroid/view/View;)V
 
     .line 16
     .line 17
-    if-eqz v0, :cond_1
-
     .line 18
+    iget-object p2, p0, Lpc7;->a:Lki7;
+
     .line 19
-    check-cast p1, Landroid/view/ViewGroup;
-
     .line 20
+    invoke-virtual {v0, p2}, Lki7;->equals(Ljava/lang/Object;)Z
+
     .line 21
-    const/4 v0, 0x0
-
     .line 22
-    :goto_0
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
-
     .line 23
-    .line 24
-    .line 25
-    move-result v1
+    move-result p2
 
+    .line 24
+    if-eqz p2, :cond_0
+
+    .line 25
     .line 26
-    if-ge v0, v1, :cond_1
+    invoke-interface {v2, p1, v0}, Lyh4;->g(Landroid/view/View;Lki7;)Lki7;
 
     .line 27
     .line 28
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
     .line 29
+    move-result-object p0
+
     .line 30
+    invoke-virtual {p0}, Lki7;->b()Landroid/view/WindowInsets;
+
     .line 31
-    move-result-object v1
-
     .line 32
-    invoke-static {p0, v1}, Lpc7;->f(Luc7;Landroid/view/View;)V
-
     .line 33
+    move-result-object p0
+
     .line 34
+    return-object p0
+
     .line 35
-    add-int/lit8 v0, v0, 0x1
-
-    .line 36
-    .line 37
-    goto :goto_0
-
-    .line 38
-    :cond_1
-    :goto_1
-    return-void
-.end method
-
-.method public static g(Landroid/view/View;Luc7;Lnd7;Z)V
-    .locals 2
-
-    .line 1
-    invoke-static {p0}, Lpc7;->j(Landroid/view/View;)Llc7;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    const/4 v1, 0x0
-
-    .line 6
-    if-eqz v0, :cond_1
-
-    .line 7
-    .line 8
-    iput-object p2, v0, Llc7;->j:Lnd7;
-
-    .line 9
-    .line 10
-    if-nez p3, :cond_1
-
-    .line 11
-    .line 12
-    invoke-virtual {v0, p1}, Llc7;->b(Luc7;)V
-
-    .line 13
-    .line 14
-    .line 15
-    iget p3, v0, Llc7;->k:I
-
-    .line 16
-    .line 17
-    if-nez p3, :cond_0
-
-    .line 18
-    .line 19
-    const/4 p3, 0x1
-
-    .line 20
-    goto :goto_0
-
-    .line 21
     :cond_0
-    move p3, v1
+    iput-object v0, p0, Lpc7;->a:Lki7;
 
-    .line 22
-    :cond_1
-    :goto_0
-    instance-of v0, p0, Landroid/view/ViewGroup;
-
-    .line 23
-    .line 24
-    if-eqz v0, :cond_2
-
-    .line 25
-    .line 26
-    check-cast p0, Landroid/view/ViewGroup;
-
-    .line 27
-    .line 28
-    :goto_1
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v0
-
-    .line 32
-    if-ge v1, v0, :cond_2
-
-    .line 33
-    .line 34
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    .line 35
     .line 36
     .line 37
-    move-result-object v0
+    invoke-interface {v2, p1, v0}, Lyh4;->g(Landroid/view/View;Lki7;)Lki7;
 
     .line 38
-    invoke-static {v0, p1, p2, p3}, Lpc7;->g(Landroid/view/View;Luc7;Lnd7;Z)V
-
     .line 39
     .line 40
+    move-result-object p0
+
     .line 41
-    add-int/lit8 v1, v1, 0x1
+    if-lt v1, v3, :cond_1
 
     .line 42
     .line 43
-    goto :goto_1
+    invoke-virtual {p0}, Lki7;->b()Landroid/view/WindowInsets;
 
     .line 44
-    :cond_2
-    return-void
-.end method
-
-.method public static h(Landroid/view/View;Lnd7;Ljava/util/List;)V
-    .locals 2
-
-    .line 1
-    invoke-static {p0}, Lpc7;->j(Landroid/view/View;)Llc7;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {v0, p1, p2}, Llc7;->c(Lnd7;Ljava/util/List;)Lnd7;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p1
-
-    .line 11
-    iget v0, v0, Llc7;->k:I
-
-    .line 12
-    .line 13
-    if-nez v0, :cond_0
-
-    .line 14
-    .line 15
-    goto :goto_1
-
-    .line 16
-    :cond_0
-    instance-of v0, p0, Landroid/view/ViewGroup;
-
-    .line 17
-    .line 18
-    if-eqz v0, :cond_1
-
-    .line 19
-    .line 20
-    check-cast p0, Landroid/view/ViewGroup;
-
-    .line 21
-    .line 22
-    const/4 v0, 0x0
-
-    .line 23
-    :goto_0
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    .line 24
-    .line 25
-    .line 26
-    move-result v1
-
-    .line 27
-    if-ge v0, v1, :cond_1
-
-    .line 28
-    .line 29
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object v1
-
-    .line 33
-    invoke-static {v1, p1, p2}, Lpc7;->h(Landroid/view/View;Lnd7;Ljava/util/List;)V
-
-    .line 34
-    .line 35
-    .line 36
-    add-int/lit8 v0, v0, 0x1
-
-    .line 37
-    .line 38
-    goto :goto_0
-
-    .line 39
-    :cond_1
-    :goto_1
-    return-void
-.end method
-
-.method public static i(Landroid/view/View;Luc7;Lj26;)V
-    .locals 2
-
-    .line 1
-    invoke-static {p0}, Lpc7;->j(Landroid/view/View;)Llc7;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {v0, p1, p2}, Llc7;->d(Luc7;Lj26;)Lj26;
-
-    .line 8
-    .line 9
-    .line 10
-    iget v0, v0, Llc7;->k:I
-
-    .line 11
-    .line 12
-    if-nez v0, :cond_0
-
-    .line 13
-    .line 14
-    goto :goto_1
-
-    .line 15
-    :cond_0
-    instance-of v0, p0, Landroid/view/ViewGroup;
-
-    .line 16
-    .line 17
-    if-eqz v0, :cond_1
-
-    .line 18
-    .line 19
-    check-cast p0, Landroid/view/ViewGroup;
-
-    .line 20
-    .line 21
-    const/4 v0, 0x0
-
-    .line 22
-    :goto_0
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result v1
-
-    .line 26
-    if-ge v0, v1, :cond_1
-
-    .line 27
-    .line 28
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object v1
-
-    .line 32
-    invoke-static {v1, p1, p2}, Lpc7;->i(Landroid/view/View;Luc7;Lj26;)V
-
-    .line 33
-    .line 34
-    .line 35
-    add-int/lit8 v0, v0, 0x1
-
-    .line 36
-    .line 37
-    goto :goto_0
-
-    .line 38
-    :cond_1
-    :goto_1
-    return-void
-.end method
-
-.method public static j(Landroid/view/View;)Llc7;
-    .locals 1
-
-    .line 1
-    const v0, 0x7f0900d0
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    .line 5
-    .line 6
-    .line 7
+    .line 45
+    .line 46
     move-result-object p0
 
-    .line 8
-    instance-of v0, p0, Loc7;
-
-    .line 9
-    .line 10
-    if-eqz v0, :cond_0
-
-    .line 11
-    .line 12
-    check-cast p0, Loc7;
-
-    .line 13
-    .line 14
-    iget-object p0, p0, Loc7;->a:Llc7;
-
-    .line 15
-    .line 16
+    .line 47
     return-object p0
 
-    .line 17
-    :cond_0
-    const/4 p0, 0x0
+    .line 48
+    :cond_1
+    sget-object p2, Lwc7;->a:Ljava/util/WeakHashMap;
 
-    .line 18
+    .line 49
+    .line 50
+    invoke-virtual {p1}, Landroid/view/View;->requestApplyInsets()V
+
+    .line 51
+    .line 52
+    .line 53
+    invoke-virtual {p0}, Lki7;->b()Landroid/view/WindowInsets;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object p0
+
+    .line 57
     return-object p0
 .end method

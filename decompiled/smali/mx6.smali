@@ -1,68 +1,16 @@
 .class public final Lmx6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final e:Lir5;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public a:F
+.field public final a:J
 
-.field public final b:Lqm4;
-
-.field public final c:Lum4;
-
-.field public final d:Lqm4;
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lzx5;
-
-    .line 2
-    .line 3
-    const/16 v1, 0x14
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lzx5;-><init>(B)V
-
-    .line 6
-    .line 7
-    .line 8
-    new-instance v1, Llx6;
-
-    .line 9
-    .line 10
-    const/4 v2, 0x0
-
-    .line 11
-    invoke-direct {v1, v2}, Llx6;-><init>(B)V
-
-    .line 12
-    .line 13
-    .line 14
-    invoke-static {v0, v1}, Lyr;->x(Lt62;Lp62;)Lir5;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object v0
-
-    .line 18
-    sput-object v0, Lmx6;->e:Lir5;
-
-    .line 19
-    .line 20
-    return-void
-.end method
-
-.method public constructor <init>(FFF)V
+.method public constructor <init>(JJ)V
     .locals 0
 
     .line 1
@@ -71,129 +19,186 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lmx6;->a:F
+    iput-wide p1, p0, Lmx6;->a:J
 
     .line 5
     .line 6
-    new-instance p1, Lqm4;
+    iput-wide p3, p0, Lmx6;->b:J
 
     .line 7
     .line 8
-    invoke-direct {p1, p3}, Lqm4;-><init>(F)V
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object p1, p0, Lmx6;->b:Lqm4;
-
-    .line 12
-    .line 13
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 14
-    .line 15
-    invoke-static {p1}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p1
-
-    .line 19
-    iput-object p1, p0, Lmx6;->c:Lum4;
-
-    .line 20
-    .line 21
-    new-instance p1, Lqm4;
-
-    .line 22
-    .line 23
-    invoke-direct {p1, p2}, Lqm4;-><init>(F)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object p1, p0, Lmx6;->d:Lqm4;
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()F
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget v0, p0, Lmx6;->a:F
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    instance-of v0, p1, Lmx6;
 
     .line 4
-    cmpg-float v0, v0, v1
-
     .line 5
+    if-eqz v0, :cond_0
+
     .line 6
-    if-nez v0, :cond_0
-
     .line 7
-    .line 8
-    return v1
+    check-cast p1, Lmx6;
 
+    .line 8
     .line 9
-    :cond_0
-    iget-object v0, p0, Lmx6;->d:Lqm4;
+    iget-wide v0, p1, Lmx6;->a:J
 
     .line 10
     .line 11
-    invoke-virtual {v0}, Lqm4;->g()F
+    sget v2, Ldv0;->i:I
 
     .line 12
     .line 13
-    .line 14
-    move-result v0
+    iget-wide v2, p0, Lmx6;->a:J
 
+    .line 14
     .line 15
-    iget p0, p0, Lmx6;->a:F
+    invoke-static {v2, v3, v0, v1}, Ls77;->a(JJ)Z
 
     .line 16
     .line 17
-    div-float/2addr v0, p0
-
     .line 18
-    return v0
+    move-result v0
+
+    .line 19
+    if-eqz v0, :cond_0
+
+    .line 20
+    .line 21
+    iget-wide v0, p0, Lmx6;->b:J
+
+    .line 22
+    .line 23
+    iget-wide p0, p1, Lmx6;->b:J
+
+    .line 24
+    .line 25
+    invoke-static {v0, v1, p0, p1}, Ls77;->a(JJ)Z
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    if-nez p0, :cond_1
+
+    .line 30
+    .line 31
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 32
+    return p0
+
+    .line 33
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 34
+    return p0
 .end method
 
-.method public final b(F)V
-    .locals 2
+.method public final hashCode()I
+    .locals 3
 
     .line 1
-    iget v0, p0, Lmx6;->a:F
+    sget v0, Ldv0;->i:I
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iget-wide v0, p0, Lmx6;->a:J
 
     .line 4
-    invoke-static {p1, v0, v1}, Lgf3;->t(FFF)F
-
     .line 5
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
     .line 6
     .line 7
-    move-result p1
-
     .line 8
-    iget-object p0, p0, Lmx6;->d:Lqm4;
+    move-result v0
 
     .line 9
-    .line 10
-    invoke-virtual {p0, p1}, Lqm4;->h(F)V
+    mul-int/lit8 v0, v0, 0x1f
 
+    .line 10
     .line 11
+    iget-wide v1, p0, Lmx6;->b:J
+
     .line 12
     .line 13
-    return-void
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p0
+
+    .line 17
+    add-int/2addr p0, v0
+
+    .line 18
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    iget-wide v0, p0, Lmx6;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ldv0;->h(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget-wide v1, p0, Lmx6;->b:J
+
+    .line 8
+    .line 9
+    invoke-static {v1, v2}, Ldv0;->h(J)Ljava/lang/String;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    const-string v1, ", selectionBackgroundColor="
+
+    .line 14
+    .line 15
+    const-string v2, ")"
+
+    .line 16
+    .line 17
+    const-string v3, "SelectionColors(selectionHandleColor="
+
+    .line 18
+    .line 19
+    invoke-static {v3, v0, v1, p0, v2}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    return-object p0
 .end method

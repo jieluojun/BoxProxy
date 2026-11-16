@@ -1,118 +1,240 @@
-.class public final enum Lrt2;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lrt2;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/view/GestureDetector$OnGestureListener;
 
 
-# static fields
-.field public static final enum j:Lrt2;
-
-.field public static final enum k:Lrt2;
-
-.field public static final synthetic l:[Lrt2;
+# instance fields
+.field public final synthetic a:Lst2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lst2;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lrt2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "Min"
+    .line 4
+    iput-object p1, p0, Lrt2;->a:Lst2;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onDown(Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 3
+
+    .line 1
+    iget-object p0, p0, Lrt2;->a:Lst2;
+
+    .line 2
+    .line 3
+    iget-object p1, p0, Lst2;->a:Lu9;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iget-boolean p2, p0, Lst2;->c:Z
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    const/4 v0, 0x1
+
     .line 8
+    if-nez p2, :cond_3
+
     .line 9
-    sput-object v0, Lrt2;->j:Lrt2;
-
     .line 10
-    .line 11
-    new-instance v1, Lrt2;
+    iget p0, p0, Lst2;->b:I
 
+    .line 11
     .line 12
+    const/4 p2, 0x0
+
     .line 13
-    const-string v2, "Max"
+    const/4 v1, 0x0
 
     .line 14
+    const/4 v2, 0x2
+
     .line 15
-    const/4 v3, 0x1
+    if-ne p0, v0, :cond_1
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+
     .line 18
     .line 19
-    sput-object v1, Lrt2;->k:Lrt2;
-
     .line 20
+    move-result p0
+
     .line 21
-    filled-new-array {v0, v1}, [Lrt2;
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
     .line 22
     .line 23
     .line 24
-    move-result-object v0
+    move-result p4
 
     .line 25
-    sput-object v0, Lrt2;->l:[Lrt2;
+    cmpl-float p0, p0, p4
 
     .line 26
     .line 27
+    if-lez p0, :cond_3
+
+    .line 28
+    .line 29
+    cmpl-float p0, p3, v1
+
+    .line 30
+    .line 31
+    if-lez p0, :cond_0
+
+    .line 32
+    .line 33
+    move v2, v0
+
+    .line 34
+    :cond_0
+    iget-object p0, p1, Lu9;->j:Lla;
+
+    .line 35
+    .line 36
+    invoke-virtual {p0}, Lla;->getFocusOwner()Lz32;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object p0
+
+    .line 40
+    check-cast p0, Lc42;
+
+    .line 41
+    .line 42
+    invoke-virtual {p0, v2, p2}, Lc42;->i(IZ)Z
+
+    .line 43
+    .line 44
+    .line 45
+    return v0
+
+    .line 46
+    :cond_1
+    if-ne p0, v2, :cond_3
+
+    .line 47
+    .line 48
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p0
+
+    .line 52
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+
+    .line 53
+    .line 54
+    .line 55
+    move-result p3
+
+    .line 56
+    cmpl-float p0, p0, p3
+
+    .line 57
+    .line 58
+    if-lez p0, :cond_3
+
+    .line 59
+    .line 60
+    cmpl-float p0, p4, v1
+
+    .line 61
+    .line 62
+    if-lez p0, :cond_2
+
+    .line 63
+    .line 64
+    move v2, v0
+
+    .line 65
+    :cond_2
+    iget-object p0, p1, Lu9;->j:Lla;
+
+    .line 66
+    .line 67
+    invoke-virtual {p0}, Lla;->getFocusOwner()Lz32;
+
+    .line 68
+    .line 69
+    .line 70
+    move-result-object p0
+
+    .line 71
+    check-cast p0, Lc42;
+
+    .line 72
+    .line 73
+    invoke-virtual {p0, v2, p2}, Lc42;->i(IZ)Z
+
+    .line 74
+    .line 75
+    .line 76
+    :cond_3
+    return v0
+.end method
+
+.method public final onLongPress(Landroid/view/MotionEvent;)V
+    .locals 0
+
+    .line 1
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lrt2;
-    .locals 1
+.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 0
 
     .line 1
-    const-class v0, Lrt2;
+    const/4 p0, 0x1
 
     .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lrt2;
-
-    .line 8
-    .line 9
-    return-object p0
+    return p0
 .end method
 
-.method public static values()[Lrt2;
-    .locals 1
+.method public final onShowPress(Landroid/view/MotionEvent;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lrt2;->l:[Lrt2;
+    return-void
+.end method
+
+.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
 
     .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lrt2;
-
-    .line 8
-    .line 9
-    return-object v0
+    return p0
 .end method

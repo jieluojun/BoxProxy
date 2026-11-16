@@ -1,42 +1,114 @@
 .class public abstract Lq91;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lrz;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Ljava/util/List;
+# instance fields
+.field private final _context:Lfc1;
 
-.field public static final b:Ljava/util/List;
-
-.field public static final c:[Ljava/lang/String;
+.field private transient intercepted:Lp91;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lp91;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lp91;)V
+    .locals 1
 
     .line 1
-    const-string v0, "v2fly"
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
-    const-string v1, "hysteria"
+    invoke-interface {p1}, Lp91;->getContext()Lfc1;
 
     .line 4
     .line 5
-    const-string v2, "mihomo"
-
     .line 6
+    move-result-object v0
+
     .line 7
-    const-string v3, "sing-box"
+    goto :goto_0
 
     .line 8
+    :cond_0
+    const/4 v0, 0x0
+
     .line 9
-    const-string v4, "xray"
+    :goto_0
+    invoke-direct {p0, p1, v0}, Lq91;-><init>(Lp91;Lfc1;)V
 
     .line 10
     .line 11
-    filled-new-array {v2, v3, v4, v0, v1}, [Ljava/lang/String;
+    .line 12
+    return-void
+.end method
+
+.method public constructor <init>(Lp91;Lfc1;)V
+    .locals 0
+
+    .line 13
+    invoke-direct {p0, p1}, Lrz;-><init>(Lp91;)V
+
+    .line 14
+    iput-object p2, p0, Lq91;->_context:Lfc1;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getContext()Lfc1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lq91;->_context:Lfc1;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    return-object p0
+.end method
+
+.method public final intercepted()Lp91;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lp91;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lq91;->intercepted:Lp91;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_1
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lq91;->getContext()Lfc1;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    sget-object v1, Lo6;->X:Lo6;
+
+    .line 10
+    .line 11
+    invoke-interface {v0, v1}, Lfc1;->p(Lec1;)Ldc1;
 
     .line 12
     .line 13
@@ -44,118 +116,161 @@
     move-result-object v0
 
     .line 15
-    invoke-static {v0}, Lim;->R([Ljava/lang/Object;)Ljava/util/List;
+    check-cast v0, Lhc1;
 
     .line 16
     .line 17
-    .line 18
-    move-result-object v0
+    if-eqz v0, :cond_0
 
+    .line 18
     .line 19
-    sput-object v0, Lq91;->a:Ljava/util/List;
+    new-instance v1, Lcl1;
 
     .line 20
     .line 21
-    const v0, 0x7f0f0306
+    invoke-direct {v1, v0, p0}, Lcl1;-><init>(Lhc1;Lq91;)V
 
     .line 22
     .line 23
     .line 24
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    goto :goto_0
+
+    .line 25
+    :cond_0
+    move-object v1, p0
+
+    .line 26
+    :goto_0
+    iput-object v1, p0, Lq91;->intercepted:Lp91;
+
+    .line 27
+    .line 28
+    return-object v1
+
+    .line 29
+    :cond_1
+    return-object v0
+.end method
+
+.method public releaseIntercepted()V
+    .locals 6
+
+    .line 1
+    iget-object v0, p0, Lq91;->intercepted:Lp91;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_2
+
+    .line 4
+    .line 5
+    if-eq v0, p0, :cond_2
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lq91;->getContext()Lfc1;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    sget-object v2, Lo6;->X:Lo6;
+
+    .line 12
+    .line 13
+    invoke-interface {v1, v2}, Lfc1;->p(Lec1;)Ldc1;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v1
+
+    .line 17
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 18
+    .line 19
+    .line 20
+    check-cast v1, Lhc1;
+
+    .line 21
+    .line 22
+    check-cast v0, Lcl1;
+
+    .line 23
+    .line 24
+    :cond_0
+    sget-object v1, Lhw;->a:Lsun/misc/Unsafe;
 
     .line 25
     .line 26
-    .line 27
-    move-result-object v0
+    sget-wide v2, Lcl1;->p:J
 
+    .line 27
     .line 28
-    const v1, 0x7f0f0308
+    invoke-virtual {v1, v0, v2, v3}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
 
     .line 29
     .line 30
     .line 31
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v4
 
     .line 32
+    sget-object v5, Lab;->H0:Lhx4;
+
     .line 33
     .line 34
-    move-result-object v1
+    if-eq v4, v5, :cond_0
 
     .line 35
-    const v2, 0x7f0f030c
-
     .line 36
+    invoke-virtual {v1, v0, v2, v3}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+
     .line 37
     .line 38
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 39
-    .line 40
-    .line 41
-    move-result-object v2
+    move-result-object v0
 
+    .line 40
+    instance-of v1, v0, Lri0;
+
+    .line 41
     .line 42
-    const v3, 0x7f0f030b
+    if-eqz v1, :cond_1
 
     .line 43
     .line 44
-    .line 45
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    check-cast v0, Lri0;
 
+    .line 45
     .line 46
+    goto :goto_0
+
     .line 47
+    :cond_1
+    const/4 v0, 0x0
+
     .line 48
-    move-result-object v3
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 49
-    const v4, 0x7f0f0305
-
     .line 50
+    invoke-virtual {v0}, Lri0;->m()V
+
     .line 51
     .line 52
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 53
+    :cond_2
+    sget-object v0, Lhy0;->j:Lhy0;
+
     .line 54
     .line 55
-    move-result-object v4
+    iput-object v0, p0, Lq91;->intercepted:Lp91;
 
     .line 56
-    filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/Integer;
-
     .line 57
-    .line 58
-    .line 59
-    move-result-object v0
-
-    .line 60
-    invoke-static {v0}, Lim;->R([Ljava/lang/Object;)Ljava/util/List;
-
-    .line 61
-    .line 62
-    .line 63
-    move-result-object v0
-
-    .line 64
-    sput-object v0, Lq91;->b:Ljava/util/List;
-
-    .line 65
-    .line 66
-    const-string v0, "*/*"
-
-    .line 67
-    .line 68
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    .line 69
-    .line 70
-    .line 71
-    move-result-object v0
-
-    .line 72
-    sput-object v0, Lq91;->c:[Ljava/lang/String;
-
-    .line 73
-    .line 74
     return-void
 .end method

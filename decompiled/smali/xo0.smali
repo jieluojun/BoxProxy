@@ -1,27 +1,27 @@
 .class public final synthetic Lxo0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Lp72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Ldy5;
+.field public final synthetic j:La46;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldy5;B)V
+.method public synthetic constructor <init>(La46;B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lxo0;->j:B
+    iput-byte p2, p0, Lxo0;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lxo0;->k:Ldy5;
+    iput-object p1, p0, Lxo0;->j:La46;
 
     .line 4
     .line 5
@@ -39,7 +39,7 @@
     .locals 4
 
     .line 1
-    iget-byte v0, p0, Lxo0;->j:B
+    iget-byte v0, p0, Lxo0;->i:B
 
     .line 2
     .line 3
@@ -52,7 +52,7 @@
     const/4 v3, 0x1
 
     .line 6
-    iget-object p0, p0, Lxo0;->k:Ldy5;
+    iget-object p0, p0, Lxo0;->j:La46;
 
     .line 7
     .line 8
@@ -61,11 +61,11 @@
     .line 9
     .line 10
     .line 11
-    check-cast p1, Lec;
+    check-cast p1, Ldc;
 
     .line 12
     .line 13
-    iget-object p1, p1, Lec;->a:Landroid/view/autofill/AutofillValue;
+    iget-object p1, p1, Ldc;->a:Landroid/view/autofill/AutofillValue;
 
     .line 14
     .line 15
@@ -98,7 +98,7 @@
 
     .line 29
     :cond_0
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     .line 30
     .line 31
@@ -110,7 +110,7 @@
     move-result p1
 
     .line 35
-    invoke-static {p1}, Lff3;->k(Z)Lcv6;
+    invoke-static {p1}, Lvx6;->a(Z)Lw07;
 
     .line 36
     .line 37
@@ -118,143 +118,135 @@
     move-result-object p1
 
     .line 39
-    invoke-static {p0, p1}, Lby5;->o(Ldy5;Lcv6;)V
+    invoke-static {p0, p1}, Ly36;->o(La46;Lw07;)V
 
     .line 40
     .line 41
     .line 42
-    move v1, v3
+    goto :goto_0
 
     .line 43
-    :cond_1
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :pswitch_0
+    check-cast p1, Ldc;
 
     .line 44
     .line 45
+    iget-object p1, p1, Ldc;->a:Landroid/view/autofill/AutofillValue;
+
     .line 46
-    move-result-object p0
-
     .line 47
-    return-object p0
-
-    .line 48
-    :pswitch_0
-    check-cast p1, Lec;
-
-    .line 49
-    .line 50
-    iget-object p1, p1, Lec;->a:Landroid/view/autofill/AutofillValue;
-
-    .line 51
-    .line 52
     invoke-virtual {p1}, Landroid/view/autofill/AutofillValue;->isToggle()Z
 
-    .line 53
-    .line 54
-    .line 55
+    .line 48
+    .line 49
+    .line 50
     move-result v0
 
-    .line 56
-    if-eqz v0, :cond_2
+    .line 51
+    if-eqz v0, :cond_1
 
-    .line 57
-    .line 58
+    .line 52
+    .line 53
     invoke-virtual {p1}, Landroid/view/autofill/AutofillValue;->getToggleValue()Z
 
-    .line 59
-    .line 60
-    .line 61
+    .line 54
+    .line 55
+    .line 56
     move-result p1
 
-    .line 62
+    .line 57
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    .line 63
-    .line 64
-    .line 65
+    .line 58
+    .line 59
+    .line 60
     move-result-object v2
 
-    .line 66
-    :cond_2
-    if-eqz v2, :cond_3
+    .line 61
+    :cond_1
+    if-eqz v2, :cond_2
 
-    .line 67
-    .line 68
+    .line 62
+    .line 63
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    .line 69
-    .line 70
-    .line 71
+    .line 64
+    .line 65
+    .line 66
     move-result p1
 
-    .line 72
-    invoke-static {p1}, Lff3;->k(Z)Lcv6;
+    .line 67
+    invoke-static {p1}, Lvx6;->a(Z)Lw07;
 
-    .line 73
-    .line 74
-    .line 75
+    .line 68
+    .line 69
+    .line 70
     move-result-object p1
 
-    .line 76
-    invoke-static {p0, p1}, Lby5;->o(Ldy5;Lcv6;)V
+    .line 71
+    invoke-static {p0, p1}, Ly36;->o(La46;Lw07;)V
 
-    .line 77
-    .line 78
-    .line 79
+    .line 72
+    .line 73
+    .line 74
+    :goto_0
     move v1, v3
 
-    .line 80
-    :cond_3
+    .line 75
+    :cond_2
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 76
+    .line 77
+    .line 78
+    move-result-object p0
+
+    .line 79
+    return-object p0
+
+    .line 80
+    :pswitch_1
+    check-cast p1, La57;
 
     .line 81
     .line 82
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 83
-    move-result-object p0
-
     .line 84
-    return-object p0
-
     .line 85
-    :pswitch_1
-    check-cast p1, Lcz6;
+    check-cast p1, Lat4;
 
     .line 86
     .line 87
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-boolean v3, p1, Lat4;->x:Z
 
     .line 88
     .line 89
+    iget-object v0, p1, Lat4;->w:Lqf;
+
     .line 90
-    check-cast p1, Lxm4;
-
     .line 91
-    .line 92
-    iput-boolean v3, p1, Lxm4;->y:Z
+    invoke-virtual {v0, p0}, Lqf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 92
     .line 93
     .line 94
-    iget-object v0, p1, Lxm4;->x:Lqf;
+    invoke-static {p1}, Lwa3;->I(Lr36;)V
 
     .line 95
     .line 96
-    invoke-virtual {v0, p0}, Lqf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 97
-    .line 98
-    .line 99
-    invoke-static {p1}, Lfh3;->H(Lux5;)V
-
-    .line 100
-    .line 101
-    .line 102
     sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    .line 103
-    .line 104
+    .line 98
+    .line 99
     return-object p0
 
-    .line 105
+    .line 100
+    nop
+
+    .line 101
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

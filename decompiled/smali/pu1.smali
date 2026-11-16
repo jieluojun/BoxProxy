@@ -1,128 +1,193 @@
-.class public Lpu1;
+.class public final Lpu1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lrz2;
+.implements Landroid/text/method/KeyListener;
 
 
-# static fields
-.field public static final a:Lit6;
+# instance fields
+.field public final a:Landroid/text/method/KeyListener;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/text/method/KeyListener;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lit6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    invoke-direct {v0, v1}, Lit6;-><init>(Lzh6;)V
+    iput-object p1, p0, Lpu1;->a:Landroid/text/method/KeyListener;
 
     .line 5
     .line 6
-    .line 7
-    sput-object v0, Lpu1;->a:Lit6;
-
-    .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ls4;
+.method public final clearMetaKeyState(Landroid/view/View;Landroid/text/Editable;I)V
     .locals 0
 
     .line 1
-    sget-object p0, Lou1;->c:Lou1;
+    iget-object p0, p0, Lpu1;->a:Landroid/text/method/KeyListener;
 
     .line 2
     .line 3
-    return-object p0
-.end method
+    invoke-interface {p0, p1, p2, p3}, Landroid/text/method/KeyListener;->clearMetaKeyState(Landroid/view/View;Landroid/text/Editable;I)V
 
-.method public final b()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public c(Lj81;Lyn0;Lry0;Landroid/os/Bundle;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public d()[Lk74;
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    new-array p0, p0, [Lk74;
-
-    .line 3
     .line 4
-    return-object p0
-.end method
-
-.method public destroy()V
-    .locals 0
-
-    .line 1
+    .line 5
+    .line 6
     return-void
 .end method
 
-.method public final e(Lj81;II)I
+.method public final getInputType()I
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    iget-object p0, p0, Lpu1;->a:Landroid/text/method/KeyListener;
 
     .line 2
+    .line 3
+    invoke-interface {p0}, Landroid/text/method/KeyListener;->getInputType()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
     return p0
 .end method
 
-.method public final f()Lr6;
-    .locals 0
+.method public final onKeyDown(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
+    .locals 3
 
     .line 1
-    sget-object p0, Lr6;->j0:Lr6;
+    const/16 v0, 0x43
 
     .line 2
     .line 3
-    return-object p0
+    const/4 v1, 0x1
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    if-eq p3, v0, :cond_1
+
+    .line 6
+    .line 7
+    const/16 v0, 0x70
+
+    .line 8
+    .line 9
+    if-eq p3, v0, :cond_0
+
+    .line 10
+    .line 11
+    move v0, v2
+
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    invoke-static {p2, p4, v1}, Lyy6;->m(Landroid/text/Editable;Landroid/view/KeyEvent;Z)Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v0
+
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_1
+    invoke-static {p2, p4, v2}, Lyy6;->m(Landroid/text/Editable;Landroid/view/KeyEvent;Z)Z
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    :goto_0
+    if-eqz v0, :cond_2
+
+    .line 23
+    .line 24
+    invoke-static {p2}, Landroid/text/method/MetaKeyKeyListener;->adjustMetaAfterKeypress(Landroid/text/Spannable;)V
+
+    .line 25
+    .line 26
+    .line 27
+    return v1
+
+    .line 28
+    :cond_2
+    iget-object p0, p0, Lpu1;->a:Landroid/text/method/KeyListener;
+
+    .line 29
+    .line 30
+    invoke-interface {p0, p1, p2, p3, p4}, Landroid/text/method/KeyListener;->onKeyDown(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p0
+
+    .line 34
+    if-eqz p0, :cond_3
+
+    .line 35
+    .line 36
+    return v1
+
+    .line 37
+    :cond_3
+    return v2
 .end method
 
-.method public g()Lit6;
+.method public final onKeyOther(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z
     .locals 0
 
     .line 1
-    sget-object p0, Lpu1;->a:Lit6;
+    iget-object p0, p0, Lpu1;->a:Landroid/text/method/KeyListener;
 
     .line 2
     .line 3
-    return-object p0
+    invoke-interface {p0, p1, p2, p3}, Landroid/text/method/KeyListener;->onKeyOther(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method
 
-.method public h()Z
+.method public final onKeyUp(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    iget-object p0, p0, Lpu1;->a:Landroid/text/method/KeyListener;
 
     .line 2
+    .line 3
+    invoke-interface {p0, p1, p2, p3, p4}, Landroid/text/method/KeyListener;->onKeyUp(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
     return p0
 .end method

@@ -1,199 +1,193 @@
-.class public abstract Lb77;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lb77;
+.super Lny6;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lkq1;
-
-
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method public final e(Ld62;)Landroid/graphics/fonts/Font;
     .locals 3
 
     .line 1
-    new-instance v0, Lzl6;
+    iget-object p0, p1, Ld62;->a:Landroid/net/Uri;
 
     .line 2
     .line 3
-    const/16 v1, 0x15
+    invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lzl6;-><init>(B)V
-
     .line 6
-    .line 7
-    .line 8
-    new-instance v1, Lkq1;
-
-    .line 9
-    .line 10
-    const/4 v2, 0x1
-
-    .line 11
-    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v1, Lb77;->a:Lkq1;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-.method public static final a(La77;Lqz0;Lz11;I)V
-    .locals 4
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    check-cast p2, Lt72;
-
-    .line 5
-    .line 6
-    const v0, 0xfee410b
+    move-result-object v0
 
     .line 7
+    const-string v1, "systemfont"
+
     .line 8
     .line 9
-    invoke-virtual {p2, v0}, Lt72;->d0(I)Lz11;
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 10
     .line 11
     .line 12
-    invoke-virtual {p2, p0}, Lt72;->g(Ljava/lang/Object;)Z
-
-    .line 13
-    .line 14
-    .line 15
     move-result v0
+
+    .line 13
+    iget-object p1, p1, Ld62;->e:Ljava/lang/String;
+
+    .line 14
+    .line 15
+    const/4 v1, 0x0
 
     .line 16
     if-eqz v0, :cond_0
 
     .line 17
     .line 18
-    const/4 v0, 0x4
+    invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     .line 19
-    goto :goto_0
-
     .line 20
-    :cond_0
-    const/4 v0, 0x2
-
     .line 21
-    :goto_0
-    or-int/2addr v0, p3
+    move-result-object p0
 
     .line 22
-    and-int/lit8 v1, v0, 0x13
+    goto :goto_0
 
     .line 23
+    :cond_0
+    move-object p0, v1
+
     .line 24
-    const/16 v2, 0x12
+    :goto_0
+    if-eqz p0, :cond_3
 
     .line 25
     .line 26
-    const/4 v3, 0x1
+    const/4 v0, 0x0
 
     .line 27
-    if-eq v1, v2, :cond_1
+    invoke-static {p0, v0}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
     .line 28
     .line 29
-    move v1, v3
-
     .line 30
-    goto :goto_1
+    move-result-object p0
 
     .line 31
-    :cond_1
-    const/4 v1, 0x0
+    sget-object v2, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     .line 32
-    :goto_1
-    and-int/2addr v0, v3
-
     .line 33
-    invoke-virtual {p2, v0, v1}, Lt72;->T(IZ)Z
+    invoke-static {v2, v0}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
     .line 34
     .line 35
     .line 36
-    move-result v0
+    move-result-object v0
 
     .line 37
-    if-eqz v0, :cond_2
+    if-eqz p0, :cond_1
 
     .line 38
     .line 39
-    sget-object v0, Lb77;->a:Lkq1;
+    invoke-virtual {p0, v0}, Landroid/graphics/Typeface;->equals(Ljava/lang/Object;)Z
 
     .line 40
     .line 41
-    invoke-virtual {v0, p0}, Lkq1;->a(Ljava/lang/Object;)Ltv4;
-
     .line 42
-    .line 43
-    .line 44
-    move-result-object v0
+    move-result v0
 
+    .line 43
+    if-eqz v0, :cond_2
+
+    .line 44
     .line 45
-    const/16 v1, 0x30
+    :cond_1
+    move-object p0, v1
 
     .line 46
-    .line 47
-    invoke-static {v0, p1, p2, v1}, Lhq;->e(Ltv4;Lt62;Lz11;I)V
+    :cond_2
+    if-eqz p0, :cond_3
 
+    .line 47
     .line 48
+    invoke-static {p0}, La77;->f(Landroid/graphics/Typeface;)Landroid/graphics/fonts/Font;
+
     .line 49
     .line 50
-    goto :goto_2
-
     .line 51
-    :cond_2
-    invoke-virtual {p2}, Lt72;->W()V
+    move-result-object p0
 
     .line 52
+    if-nez p0, :cond_4
+
     .line 53
     .line 54
-    :goto_2
-    invoke-virtual {p2}, Lt72;->u()Lu95;
+    :cond_3
+    return-object v1
 
     .line 55
+    :cond_4
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
     .line 56
     .line 57
-    move-result-object p2
-
     .line 58
-    if-eqz p2, :cond_3
+    move-result v0
 
     .line 59
-    .line 60
-    new-instance v0, Lr16;
+    if-eqz v0, :cond_5
 
+    .line 60
     .line 61
+    return-object p0
+
     .line 62
-    const/16 v1, 0xd
+    :cond_5
+    :try_start_0
+    new-instance v0, Landroid/graphics/fonts/Font$Builder;
 
     .line 63
     .line 64
-    invoke-direct {v0, v1, p3, p0, p1}, Lr16;-><init>(BILjava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Landroid/graphics/fonts/Font$Builder;-><init>(Landroid/graphics/fonts/Font;)V
 
     .line 65
     .line 66
     .line 67
-    iput-object v0, p2, Lu95;->d:Lt62;
+    invoke-virtual {v0, p1}, Landroid/graphics/fonts/Font$Builder;->setFontVariationSettings(Ljava/lang/String;)Landroid/graphics/fonts/Font$Builder;
 
     .line 68
     .line 69
-    :cond_3
-    return-void
+    .line 70
+    move-result-object p0
+
+    .line 71
+    invoke-virtual {p0}, Landroid/graphics/fonts/Font$Builder;->build()Landroid/graphics/fonts/Font;
+
+    .line 72
+    .line 73
+    .line 74
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 75
+    return-object p0
+
+    .line 76
+    :catch_0
+    const-string p0, "TypefaceCompatApi31Impl"
+
+    .line 77
+    .line 78
+    const-string p1, "Failed to clone Font instance. Fall back to provider font."
+
+    .line 79
+    .line 80
+    invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 81
+    .line 82
+    .line 83
+    return-object v1
 .end method

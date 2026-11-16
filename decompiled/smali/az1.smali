@@ -1,40 +1,65 @@
 .class public final Laz1;
-.super Ldz1;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lp3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public b:Z
+.field public final j:Lgf;
 
 
-# virtual methods
-.method public final a()Ljava/io/File;
-    .locals 1
+# direct methods
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
-    iget-boolean v0, p0, Laz1;->b:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    .line 4
+    new-instance v0, Lgf;
+
+    .line 5
+    .line 6
+    const/4 v1, 0x2
+
+    .line 7
+    invoke-direct {v0, v1}, Lgf;-><init>(B)V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object v0, p0, Laz1;->j:Lgf;
+
+    .line 11
+    .line 12
+    return-void
+.end method
+
+
+# virtual methods
+.method public final d()Ljava/util/Random;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Laz1;->j:Lgf;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     .line 4
     .line 5
-    const/4 p0, 0x0
-
     .line 6
-    return-object p0
+    move-result-object p0
 
     .line 7
-    :cond_0
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
-    iput-boolean v0, p0, Laz1;->b:Z
-
     .line 9
     .line 10
-    iget-object p0, p0, Ldz1;->a:Ljava/io/File;
+    check-cast p0, Ljava/util/Random;
 
     .line 11
     .line 12

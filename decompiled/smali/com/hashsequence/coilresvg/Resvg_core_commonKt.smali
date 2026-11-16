@@ -1,10 +1,10 @@
 .class public final Lcom/hashsequence/coilresvg/Resvg_core_commonKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method public static final use(Lcom/hashsequence/coilresvg/Disposable;Lp62;)Ljava/lang/Object;
+.method public static final use(Lcom/hashsequence/coilresvg/Disposable;Lp72;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -13,7 +13,7 @@
             "R:",
             "Ljava/lang/Object;",
             ">(TT;",
-            "Lp62;",
+            "Lp72;",
             ")TR;"
         }
     .end annotation
@@ -25,7 +25,7 @@
     .line 3
     .line 4
     :try_start_0
-    invoke-interface {p1, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
     .line 6

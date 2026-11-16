@@ -1,31 +1,84 @@
-.class public final Ln03;
+.class public abstract Ln03;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final d:Ld03;
 
 
 # instance fields
-.field public a:F
+.field public final a:Lx03;
 
-.field public b:F
+.field public final b:Lza5;
 
-.field public c:F
-
-.field public d:F
-
-.field public e:F
-
-.field public f:F
-
-.field public g:F
-
-.field public h:F
-
-.field public i:J
+.field public final c:Lje7;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 10
+
+    .line 1
+    new-instance v0, Ld03;
+
+    .line 2
+    .line 3
+    new-instance v1, Lx03;
+
+    .line 4
+    .line 5
+    const/4 v8, 0x1
+
+    .line 6
+    const/16 v9, 0x190
+
+    .line 7
+    .line 8
+    const/4 v2, 0x0
+
+    .line 9
+    const/4 v3, 0x1
+
+    .line 10
+    const-string v4, "    "
+
+    .line 11
+    .line 12
+    const-string v5, "type"
+
+    .line 13
+    .line 14
+    const/4 v6, 0x1
+
+    .line 15
+    sget-object v7, Lor0;->k:Lor0;
+
+    .line 16
+    .line 17
+    invoke-direct/range {v1 .. v9}, Lx03;-><init>(ZZLjava/lang/String;Ljava/lang/String;ZLor0;ZI)V
+
+    .line 18
+    .line 19
+    .line 20
+    sget-object v2, Lxv;->O:Lza5;
+
+    .line 21
+    .line 22
+    invoke-direct {v0, v1, v2}, Ln03;-><init>(Lx03;Lza5;)V
+
+    .line 23
+    .line 24
+    .line 25
+    sput-object v0, Ln03;->d:Ld03;
+
+    .line 26
+    .line 27
+    return-void
+.end method
+
+.method public constructor <init>(Lx03;Lza5;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,41 +86,30 @@
     .line 2
     .line 3
     .line 4
-    const/high16 v0, 0x3f800000    # 1.0f
+    iput-object p1, p0, Ln03;->a:Lx03;
 
     .line 5
     .line 6
-    iput v0, p0, Ln03;->a:F
+    iput-object p2, p0, Ln03;->b:Lza5;
 
     .line 7
     .line 8
-    iput v0, p0, Ln03;->b:F
+    new-instance p1, Lje7;
 
     .line 9
     .line 10
-    const/high16 v0, 0x41000000    # 8.0f
+    const/16 p2, 0xc
 
     .line 11
     .line 12
-    iput v0, p0, Ln03;->h:F
+    invoke-direct {p1, p2}, Lje7;-><init>(B)V
 
     .line 13
     .line 14
-    const/high16 v0, 0x3f000000    # 0.5f
-
     .line 15
+    iput-object p1, p0, Ln03;->c:Lje7;
+
     .line 16
-    invoke-static {v0, v0}, Lci3;->z(FF)J
-
     .line 17
-    .line 18
-    .line 19
-    move-result-wide v0
-
-    .line 20
-    iput-wide v0, p0, Ln03;->i:J
-
-    .line 21
-    .line 22
     return-void
 .end method

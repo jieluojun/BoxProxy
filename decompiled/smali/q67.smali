@@ -1,135 +1,105 @@
-.class public final Lq67;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public Lq67;
+.super Ls57;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
-
-
-# virtual methods
-.method public final a()Lvp3;
-    .locals 1
-
-    .line 1
-    new-instance p0, Lr67;
-
-    .line 2
-    .line 3
-    sget-object v0, Lr6;->v:Lp20;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Lvp3;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    iput-object v0, p0, Lr67;->x:Lp20;
-
-    .line 9
-    .line 10
-    return-object p0
-.end method
-
-.method public final b(Lvp3;)V
+# direct methods
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    check-cast p1, Lr67;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sget-object p0, Lr6;->v:Lp20;
-
     .line 4
-    .line 5
-    iput-object p0, p1, Lr67;->x:Lp20;
-
-    .line 6
-    .line 7
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+
+# virtual methods
+.method public final b(Le23;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p1}, Le23;->L()I
 
     .line 2
     .line 3
-    const/4 p0, 0x1
-
     .line 4
-    return p0
+    move-result p0
 
     .line 5
-    :cond_0
-    instance-of p0, p1, Lq67;
+    const/16 v0, 0x9
 
     .line 6
     .line 7
-    if-eqz p0, :cond_1
+    if-ne p0, v0, :cond_0
 
     .line 8
     .line 9
-    check-cast p1, Lq67;
+    invoke-virtual {p1}, Le23;->H()V
 
     .line 10
     .line 11
-    goto :goto_0
-
     .line 12
-    :cond_1
-    const/4 p1, 0x0
-
-    .line 13
-    :goto_0
-    if-nez p1, :cond_2
-
-    .line 14
-    .line 15
     const/4 p0, 0x0
 
-    .line 16
-    return p0
+    .line 13
+    return-object p0
 
+    .line 14
+    :cond_0
+    const/4 v0, 0x6
+
+    .line 15
+    if-ne p0, v0, :cond_1
+
+    .line 16
     .line 17
-    :cond_2
-    sget-object p0, Lr6;->v:Lp20;
+    invoke-virtual {p1}, Le23;->J()Ljava/lang/String;
 
     .line 18
     .line 19
-    invoke-virtual {p0, p0}, Lp20;->equals(Ljava/lang/Object;)Z
-
     .line 20
+    move-result-object p0
+
     .line 21
+    invoke-static {p0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
     .line 22
-    move-result p0
-
     .line 23
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 3
-    .line 4
-    .line 5
+    .line 24
     move-result p0
 
-    .line 6
-    return p0
+    .line 25
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p0
+
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_1
+    invoke-virtual {p1}, Le23;->w()Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p0
+
+    .line 34
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    return-object p0
 .end method

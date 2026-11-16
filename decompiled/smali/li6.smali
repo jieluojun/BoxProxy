@@ -1,36 +1,99 @@
-.class public abstract synthetic Lli6;
+.class public final Lli6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/CharSequence;
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public i:[C
+
+.field public j:Ljava/lang/String;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final charAt(I)C
+    .locals 0
 
     .line 1
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    iget-object p0, p0, Lli6;->i:[C
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    aget-char p0, p0, p1
 
+    .line 4
     .line 5
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
+    return p0
+.end method
+
+.method public final length()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lli6;->i:[C
+
+    .line 2
+    .line 3
+    array-length p0, p0
+
+    .line 4
+    return p0
+.end method
+
+.method public final subSequence(II)Ljava/lang/CharSequence;
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/String;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lli6;->i:[C
+
+    .line 4
+    .line 5
+    sub-int/2addr p2, p1
+
+    .line 6
+    invoke-direct {v0, p0, p1, p2}, Ljava/lang/String;-><init>([CII)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lli6;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    new-instance v0, Ljava/lang/String;
 
     .line 6
     .line 7
-    .line 8
-    move-result v0
+    iget-object v1, p0, Lli6;->i:[C
 
+    .line 8
     .line 9
-    sput v0, Lli6;->a:I
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
 
     .line 10
     .line 11
-    return-void
+    .line 12
+    iput-object v0, p0, Lli6;->j:Ljava/lang/String;
+
+    .line 13
+    .line 14
+    :cond_0
+    return-object v0
 .end method

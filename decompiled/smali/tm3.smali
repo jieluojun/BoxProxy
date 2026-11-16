@@ -1,303 +1,178 @@
 .class public final synthetic Ltm3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:Z
 
-.field public final synthetic k:Lfm3;
+.field public final synthetic j:Lnz0;
 
-.field public final synthetic l:Landroid/content/Context;
+.field public final synthetic k:Le72;
 
-.field public final synthetic m:Lkn3;
+.field public final synthetic l:Lsw3;
 
-.field public final synthetic n:Lmt3;
+.field public final synthetic m:Z
+
+.field public final synthetic n:I
+
+.field public final synthetic o:I
+
+.field public final synthetic p:Lo16;
+
+.field public final synthetic q:Lsp4;
+
+.field public final synthetic r:B
+
+.field public final synthetic s:S
 
 
 # direct methods
-.method public synthetic constructor <init>(BLfm3;Lkn3;Lmt3;Landroid/content/Context;)V
+.method public synthetic constructor <init>(ZLnz0;Le72;Lsw3;ZIILo16;Lsp4;II)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Ltm3;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p2, p0, Ltm3;->k:Lfm3;
-
     .line 4
+    iput-boolean p1, p0, Ltm3;->i:Z
+
     .line 5
-    iput-object p5, p0, Ltm3;->l:Landroid/content/Context;
-
     .line 6
+    iput-object p2, p0, Ltm3;->j:Lnz0;
+
     .line 7
-    iput-object p3, p0, Ltm3;->m:Lkn3;
-
     .line 8
+    iput-object p3, p0, Ltm3;->k:Le72;
+
     .line 9
-    iput-object p4, p0, Ltm3;->n:Lmt3;
-
     .line 10
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p4, p0, Ltm3;->l:Lsw3;
 
+    .line 11
     .line 12
+    iput-boolean p5, p0, Ltm3;->m:Z
+
     .line 13
     .line 14
+    iput p6, p0, Ltm3;->n:I
+
+    .line 15
+    .line 16
+    iput p7, p0, Ltm3;->o:I
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Ltm3;->p:Lo16;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Ltm3;->q:Lsp4;
+
+    .line 21
+    .line 22
+    iput-byte p10, p0, Ltm3;->r:B
+
+    .line 23
+    .line 24
+    iput-short p11, p0, Ltm3;->s:S
+
+    .line 25
+    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 12
 
     .line 1
-    iget-byte v0, p0, Ltm3;->j:B
+    move-object v9, p1
 
     .line 2
+    check-cast v9, Lt82;
+
     .line 3
-    const-string v1, "mihomo-scripts-delete:"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    check-cast p2, Ljava/lang/Integer;
 
+    .line 5
     .line 6
-    iget-object v3, p0, Ltm3;->l:Landroid/content/Context;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
     .line 8
-    iget-object v4, p0, Ltm3;->k:Lfm3;
-
     .line 9
+    iget-byte p1, p0, Ltm3;->r:B
+
     .line 10
-    sget-object v5, La47;->a:La47;
-
     .line 11
+    or-int/lit8 p1, p1, 0x1
+
     .line 12
-    iget-object v6, p0, Ltm3;->n:Lmt3;
-
     .line 13
-    .line 14
-    iget-object v7, p0, Ltm3;->m:Lkn3;
+    invoke-static {p1}, Lp06;->W(I)I
 
+    .line 14
     .line 15
     .line 16
-    packed-switch v0, :pswitch_data_0
+    move-result v10
 
     .line 17
+    iget-boolean v0, p0, Ltm3;->i:Z
+
     .line 18
     .line 19
-    invoke-interface {v6, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
+    iget-object v1, p0, Ltm3;->j:Lnz0;
 
     .line 20
     .line 21
+    iget-object v2, p0, Ltm3;->k:Le72;
+
     .line 22
-    iget-object p0, v7, Lkn3;->a:Ljava/lang/String;
-
     .line 23
+    iget-object v3, p0, Ltm3;->l:Lsw3;
+
     .line 24
-    new-instance v0, Leh2;
-
     .line 25
+    iget-boolean v4, p0, Ltm3;->m:Z
+
     .line 26
-    const/16 v1, 0xd
-
     .line 27
-    .line 28
-    invoke-direct {v0, v3, v1}, Leh2;-><init>(Landroid/content/Context;B)V
+    iget v5, p0, Ltm3;->n:I
 
+    .line 28
     .line 29
+    iget v6, p0, Ltm3;->o:I
+
     .line 30
     .line 31
-    invoke-virtual {v4, v3, p0, v0}, Lfm3;->l(Landroid/content/Context;Ljava/lang/String;Lp62;)V
+    iget-object v7, p0, Ltm3;->p:Lo16;
 
     .line 32
     .line 33
-    .line 34
-    return-object v5
+    iget-object v8, p0, Ltm3;->q:Lsp4;
 
+    .line 34
     .line 35
-    :pswitch_0
-    const/4 v10, 0x0
+    iget-short v11, p0, Ltm3;->s:S
 
     .line 36
-    invoke-interface {v6, v10}, Lmt3;->setValue(Ljava/lang/Object;)V
-
     .line 37
+    invoke-static/range {v0 .. v11}, Lvm3;->e(ZLnz0;Le72;Lsw3;ZIILo16;Lsp4;Lt82;II)V
+
     .line 38
     .line 39
-    iget-object v9, v7, Lkn3;->a:Ljava/lang/String;
-
     .line 40
+    sget-object p0, Ll97;->a:Ll97;
+
     .line 41
-    new-instance v0, Leh2;
-
     .line 42
-    .line 43
-    const/16 v2, 0xc
-
-    .line 44
-    .line 45
-    iget-object v8, p0, Ltm3;->l:Landroid/content/Context;
-
-    .line 46
-    .line 47
-    invoke-direct {v0, v8, v2}, Leh2;-><init>(Landroid/content/Context;B)V
-
-    .line 48
-    .line 49
-    .line 50
-    iget-object v7, p0, Ltm3;->k:Lfm3;
-
-    .line 51
-    .line 52
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 53
-    .line 54
-    .line 55
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 56
-    .line 57
-    .line 58
-    invoke-virtual {v1, v9}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 59
-    .line 60
-    .line 61
-    move-result-object p0
-
-    .line 62
-    new-instance v6, Lyl3;
-
-    .line 63
-    .line 64
-    const/4 v11, 0x0
-
-    .line 65
-    invoke-direct/range {v6 .. v11}, Lyl3;-><init>(Lfm3;Landroid/content/Context;Ljava/lang/String;Ly81;B)V
-
-    .line 66
-    .line 67
-    .line 68
-    invoke-virtual {v7, p0, v0, v6}, Lfm3;->i(Ljava/lang/String;Lp62;Lp62;)V
-
-    .line 69
-    .line 70
-    .line 71
-    return-object v5
-
-    .line 72
-    :pswitch_1
-    invoke-interface {v6, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 73
-    .line 74
-    .line 75
-    iget-object p0, v7, Lkn3;->a:Ljava/lang/String;
-
-    .line 76
-    .line 77
-    new-instance v0, Leh2;
-
-    .line 78
-    .line 79
-    const/4 v1, 0x6
-
-    .line 80
-    invoke-direct {v0, v3, v1}, Leh2;-><init>(Landroid/content/Context;B)V
-
-    .line 81
-    .line 82
-    .line 83
-    invoke-virtual {v4, v3, p0, v0}, Lfm3;->l(Landroid/content/Context;Ljava/lang/String;Lp62;)V
-
-    .line 84
-    .line 85
-    .line 86
-    return-object v5
-
-    .line 87
-    :pswitch_2
-    const/4 v10, 0x0
-
-    .line 88
-    invoke-interface {v6, v10}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 89
-    .line 90
-    .line 91
-    iget-object v9, v7, Lkn3;->a:Ljava/lang/String;
-
-    .line 92
-    .line 93
-    new-instance v0, Leh2;
-
-    .line 94
-    .line 95
-    const/4 v2, 0x5
-
-    .line 96
-    iget-object v8, p0, Ltm3;->l:Landroid/content/Context;
-
-    .line 97
-    .line 98
-    invoke-direct {v0, v8, v2}, Leh2;-><init>(Landroid/content/Context;B)V
-
-    .line 99
-    .line 100
-    .line 101
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 102
-    .line 103
-    .line 104
-    invoke-virtual {v1, v9}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 105
-    .line 106
-    .line 107
-    move-result-object v1
-
-    .line 108
-    new-instance v6, Lyl3;
-
-    .line 109
-    .line 110
-    const/4 v11, 0x0
-
-    .line 111
-    iget-object v7, p0, Ltm3;->k:Lfm3;
-
-    .line 112
-    .line 113
-    invoke-direct/range {v6 .. v11}, Lyl3;-><init>(Lfm3;Landroid/content/Context;Ljava/lang/String;Ly81;B)V
-
-    .line 114
-    .line 115
-    .line 116
-    invoke-virtual {v7, v1, v0, v6}, Lfm3;->i(Ljava/lang/String;Lp62;Lp62;)V
-
-    .line 117
-    .line 118
-    .line 119
-    return-object v5
-
-    .line 120
-    nop
-
-    .line 121
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

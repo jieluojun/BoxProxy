@@ -1,52 +1,82 @@
 .class public final Llv3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Luy;
 
 
 # instance fields
-.field public final a:Lq90;
-
-.field public final b:Ljava/util/Map;
-
-.field public final c:Lu62;
+.field public final synthetic a:J
 
 
 # direct methods
-.method public constructor <init>(Lq90;Ljava/util/Map;Lu62;)V
+.method public constructor <init>(J)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-wide p1, p0, Llv3;->a:J
 
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final b(Lfp1;Lsi1;Ld53;Lp72;F)V
+    .locals 10
+
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 v8, 0x0
+
+    .line 5
+    const/16 v9, 0x7e
+
+    .line 6
     .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-wide v1, p0, Llv3;->a:J
 
     .line 8
     .line 9
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/16 v3, 0x0
 
+    .line 10
     .line 11
+    const-wide/16 v5, 0x0
+
     .line 12
     .line 13
-    iput-object p1, p0, Llv3;->a:Lq90;
+    const/4 v7, 0x0
 
     .line 14
+    move-object v0, p1
+
     .line 15
-    iput-object p2, p0, Llv3;->b:Ljava/util/Map;
+    invoke-static/range {v0 .. v9}, Lfp1;->n0(Lfp1;JJJFII)V
 
     .line 16
     .line 17
-    iput-object p3, p0, Llv3;->c:Lu62;
-
     .line 18
-    .line 19
     return-void
 .end method

@@ -1,364 +1,332 @@
-.class public final Lu9;
-.super Ley;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lu9;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ld32;
+.implements Lp72;
 
 
 # instance fields
-.field public final j:Lr82;
+.field public final synthetic i:B
 
-.field public final k:Lyx5;
-
-.field public final l:Lqa;
-
-.field public final m:Lia5;
-
-.field public final n:Ljava/lang/String;
-
-.field public final o:Landroid/graphics/Rect;
-
-.field public final p:Landroid/view/autofill/AutofillId;
-
-.field public final q:Lls3;
-
-.field public r:Z
+.field public final synthetic j:Lla;
 
 
 # direct methods
-.method public constructor <init>(Lr82;Lyx5;Lqa;Lia5;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lla;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lu9;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lu9;->j:Lla;
+
     .line 4
-    iput-object p1, p0, Lu9;->j:Lr82;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lu9;->k:Lyx5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    iput-object p3, p0, Lu9;->l:Lqa;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lu9;->m:Lia5;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lu9;->n:Ljava/lang/String;
-
-    .line 13
-    .line 14
-    new-instance p1, Landroid/graphics/Rect;
-
-    .line 15
-    .line 16
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
-
-    .line 17
-    .line 18
-    .line 19
-    iput-object p1, p0, Lu9;->o:Landroid/graphics/Rect;
-
-    .line 20
-    .line 21
-    const/4 p1, 0x1
-
-    .line 22
-    invoke-virtual {p3, p1}, Landroid/view/View;->setImportantForAutofill(I)V
-
-    .line 23
-    .line 24
-    .line 25
-    invoke-virtual {p3}, Landroid/view/View;->getAutofillId()Landroid/view/autofill/AutofillId;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object p1
-
-    .line 29
-    if-eqz p1, :cond_0
-
-    .line 30
-    .line 31
-    iput-object p1, p0, Lu9;->p:Landroid/view/autofill/AutofillId;
-
-    .line 32
-    .line 33
-    new-instance p1, Lls3;
-
-    .line 34
-    .line 35
-    const/4 p2, 0x0
-
-    .line 36
-    invoke-direct {p1, p2}, Lls3;-><init>(Ljava/lang/Object;)V
-
-    .line 37
-    .line 38
-    .line 39
-    iput-object p1, p0, Lu9;->q:Lls3;
-
-    .line 40
-    .line 41
     return-void
-
-    .line 42
-    :cond_0
-    const-string p0, "Required value was null."
-
-    .line 43
-    .line 44
-    invoke-static {p0}, Ly96;->f(Ljava/lang/String;)Loy0;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object p0
-
-    .line 48
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final a(Lu32;Lu32;)V
-    .locals 9
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lu9;->l:Lqa;
+    iget-byte v0, p0, Lu9;->i:B
 
     .line 2
     .line 3
-    iget-object v1, p0, Lu9;->j:Lr82;
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     .line 6
-    if-eqz p1, :cond_0
+    iget-object p0, p0, Lu9;->j:Lla;
 
     .line 7
     .line 8
-    invoke-static {p1}, Lhq;->h0(Lmh1;)Lj13;
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
     .line 11
-    move-result-object p1
+    check-cast p1, Lzu4;
 
     .line 12
-    if-eqz p1, :cond_0
-
     .line 13
-    .line 14
-    invoke-virtual {p1}, Lj13;->w()Lrx5;
+    invoke-virtual {p0}, Lla;->getPointerIconService()Ldx4;
 
+    .line 14
     .line 15
     .line 16
+    move-result-object p0
+
     .line 17
-    move-result-object v3
+    return-object p0
 
     .line 18
-    if-eqz v3, :cond_0
+    :pswitch_0
+    check-cast p1, Lzu4;
 
     .line 19
     .line 20
-    invoke-static {v3}, Lg17;->P(Lrx5;)Z
+    invoke-virtual {p0}, Lla;->getTextToolbar()Lby6;
 
     .line 21
     .line 22
     .line 23
-    move-result v3
+    move-result-object p0
 
     .line 24
-    if-ne v3, v2, :cond_0
+    return-object p0
 
     .line 25
+    :pswitch_1
+    check-cast p1, Lzu4;
+
     .line 26
-    iget p1, p1, Lj13;->k:I
-
     .line 27
-    .line 28
-    invoke-virtual {v1}, Lr82;->P()Landroid/view/autofill/AutofillManager;
+    invoke-virtual {p0}, Lla;->getSoftwareKeyboardController()Lwe6;
 
+    .line 28
     .line 29
     .line 30
+    move-result-object p0
+
     .line 31
-    move-result-object v3
+    return-object p0
 
     .line 32
-    invoke-virtual {v3, v0, p1}, Landroid/view/autofill/AutofillManager;->notifyViewExited(Landroid/view/View;I)V
+    :pswitch_2
+    check-cast p1, Lzu4;
 
     .line 33
     .line 34
-    .line 35
-    :cond_0
-    if-eqz p2, :cond_1
+    invoke-virtual {p0}, Lla;->getTextInputService()Llv6;
 
+    .line 35
     .line 36
     .line 37
-    invoke-static {p2}, Lhq;->h0(Lmh1;)Lj13;
+    move-result-object p0
 
     .line 38
-    .line 39
-    .line 40
-    move-result-object p1
+    return-object p0
 
+    .line 39
+    :pswitch_3
+    check-cast p1, Lzu4;
+
+    .line 40
     .line 41
-    if-eqz p1, :cond_1
+    invoke-virtual {p0}, Lla;->getInputModeManager()Lbv2;
 
     .line 42
     .line 43
-    invoke-virtual {p1}, Lj13;->w()Lrx5;
-
     .line 44
+    move-result-object p0
+
     .line 45
+    return-object p0
+
     .line 46
-    move-result-object p2
+    :pswitch_4
+    check-cast p1, Lzu4;
 
     .line 47
-    if-eqz p2, :cond_1
-
     .line 48
-    .line 49
-    invoke-static {p2}, Lg17;->P(Lrx5;)Z
+    invoke-virtual {p0}, Lla;->getScrollCaptureInProgress()Z
 
+    .line 49
     .line 50
     .line 51
+    move-result p0
+
     .line 52
-    move-result p2
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 53
-    if-ne p2, v2, :cond_1
-
     .line 54
     .line 55
-    iget p1, p1, Lj13;->k:I
+    move-result-object p0
 
     .line 56
+    return-object p0
+
     .line 57
-    iget-object p0, p0, Lu9;->m:Lia5;
+    :pswitch_5
+    check-cast p1, Lzu4;
 
     .line 58
     .line 59
-    iget-object p2, p0, Lia5;->a:Lzr2;
+    invoke-virtual {p0}, Lla;->getSavedStateRegistry()Lul1;
 
     .line 60
     .line 61
-    invoke-virtual {p2, p1}, Lzr2;->b(I)Ljava/lang/Object;
-
     .line 62
+    move-result-object p0
+
     .line 63
+    return-object p0
+
     .line 64
-    move-result-object p2
+    :pswitch_6
+    check-cast p1, Lm32;
 
     .line 65
-    check-cast p2, Lj13;
-
     .line 66
-    .line 67
-    if-eqz p2, :cond_1
+    invoke-virtual {p0}, Lla;->getFocusOwner()Lz32;
 
+    .line 67
     .line 68
     .line 69
-    iget v3, p2, Lj13;->p:I
+    move-result-object p0
 
     .line 70
-    .line 71
-    const/4 v4, -0x4
+    iget-byte p1, p1, Lm32;->a:B
 
+    .line 71
     .line 72
-    if-eq v3, v4, :cond_1
+    check-cast p0, Lc42;
 
     .line 73
     .line 74
-    iget-object v3, p0, Lia5;->c:Llo2;
+    invoke-virtual {p0, p1, v2}, Lc42;->i(IZ)Z
 
     .line 75
     .line 76
-    invoke-virtual {p0, p2}, Lia5;->d(Lj13;)I
-
     .line 77
-    .line 78
-    .line 79
-    move-result p0
+    return-object v1
 
+    .line 78
+    :pswitch_7
+    check-cast p1, Le72;
+
+    .line 79
     .line 80
-    iget-object p2, v3, Llo2;->l:Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
 
     .line 81
     .line 82
-    check-cast p2, [J
-
     .line 83
+    move-result-object v0
+
     .line 84
-    aget-wide v3, p2, p0
+    if-eqz v0, :cond_0
 
     .line 85
     .line 86
-    add-int/2addr p0, v2
+    invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     .line 87
-    aget-wide v5, p2, p0
-
     .line 88
     .line 89
-    const/16 p0, 0x20
+    move-result-object v0
 
     .line 90
+    goto :goto_0
+
     .line 91
-    shr-long v7, v3, p0
+    :cond_0
+    const/4 v0, 0x0
 
     .line 92
+    :goto_0
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
     .line 93
-    long-to-int p2, v7
-
     .line 94
-    long-to-int v2, v3
-
     .line 95
-    shr-long v3, v5, p0
+    move-result-object v3
 
     .line 96
-    .line 97
-    long-to-int p0, v3
+    if-ne v0, v3, :cond_1
 
+    .line 97
     .line 98
-    long-to-int v3, v5
+    invoke-interface {p1}, Le72;->invoke()Ljava/lang/Object;
 
     .line 99
-    new-instance v4, Landroid/graphics/Rect;
-
     .line 100
     .line 101
-    invoke-direct {v4, p2, v2, p0, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+    goto :goto_1
 
     .line 102
+    :cond_1
+    invoke-virtual {p0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
+
     .line 103
     .line 104
-    invoke-virtual {v1}, Lr82;->P()Landroid/view/autofill/AutofillManager;
-
     .line 105
-    .line 106
-    .line 107
     move-result-object p0
 
+    .line 106
+    if-eqz p0, :cond_2
+
+    .line 107
     .line 108
-    invoke-virtual {p0, v0, p1, v4}, Landroid/view/autofill/AutofillManager;->notifyViewEntered(Landroid/view/View;ILandroid/graphics/Rect;)V
+    new-instance v0, Ly9;
 
     .line 109
     .line 110
+    invoke-direct {v0, p1, v2}, Ly9;-><init>(Le72;B)V
+
     .line 111
-    :cond_1
-    return-void
+    .line 112
+    .line 113
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 114
+    .line 115
+    .line 116
+    :cond_2
+    :goto_1
+    return-object v1
+
+    .line 117
+    :pswitch_8
+    check-cast p1, Loc1;
+
+    .line 118
+    .line 119
+    new-instance v0, Lgd;
+
+    .line 120
+    .line 121
+    invoke-virtual {p0}, Lla;->getTextInputService()Llv6;
+
+    .line 122
+    .line 123
+    .line 124
+    move-result-object v1
+
+    .line 125
+    invoke-direct {v0, p0, v1, p1}, Lgd;-><init>(Landroid/view/View;Llv6;Loc1;)V
+
+    .line 126
+    .line 127
+    .line 128
+    return-object v0
+
+    .line 129
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

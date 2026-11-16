@@ -1,69 +1,110 @@
 .class public final Ltp6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lqp6;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final synthetic e:B
 
-.field public final synthetic k:Lup6;
-
-.field public l:I
+.field public final synthetic f:Le72;
 
 
 # direct methods
-.method public constructor <init>(Lup6;Lz81;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Le72;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Ltp6;->k:Lup6;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    iput-byte v0, p0, Ltp6;->e:B
 
+    .line 3
     .line 4
+    iput-object p2, p0, Ltp6;->f:Le72;
+
     .line 5
     .line 6
+    invoke-direct {p0, p1, v0}, Lqp6;-><init>(Ljava/lang/String;Z)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ZLe72;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Ltp6;->e:B
+
+    iput-object p3, p0, Ltp6;->f:Le72;
+
+    .line 10
+    invoke-direct {p0, p1, p2}, Lqp6;-><init>(Ljava/lang/String;Z)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()J
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Ltp6;->j:Ljava/lang/Object;
+    iget-byte v0, p0, Ltp6;->e:B
 
     .line 2
     .line 3
-    iget p1, p0, Ltp6;->l:I
+    iget-object p0, p0, Ltp6;->f:Le72;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Ltp6;->l:I
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
 
     .line 9
     .line 10
-    iget-object p1, p0, Ltp6;->k:Lup6;
-
     .line 11
+    move-result-object p0
+
     .line 12
-    invoke-virtual {p1, p0}, Lup6;->y(Lz81;)Ljava/lang/Object;
+    check-cast p0, Ljava/lang/Number;
 
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
 
+    .line 15
     .line 16
-    return-object p0
+    .line 17
+    move-result-wide v0
+
+    .line 18
+    return-wide v0
+
+    .line 19
+    :pswitch_0
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
+
+    .line 20
+    .line 21
+    .line 22
+    const-wide/16 v0, -0x1
+
+    .line 23
+    .line 24
+    return-wide v0
+
+    .line 25
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

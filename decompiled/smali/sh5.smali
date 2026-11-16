@@ -1,94 +1,69 @@
-.class public final Lsh5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lsh5;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Ljava/lang/String;
-
-.field public k:Lnh5;
-
-.field public l:Lyi5;
-
-.field public m:Ljava/lang/String;
-
-.field public n:Ljava/util/Iterator;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public final synthetic p:Lvh5;
-
-.field public q:I
+# static fields
+.field public static final a:Lqh5;
 
 
 # direct methods
-.method public constructor <init>(Lvh5;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lsh5;->p:Lvh5;
+    sget-object v0, Lch0;->l:Lch0;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
     .line 6
+    new-instance v1, Lqh5;
+
+    .line 7
+    .line 8
+    invoke-direct {v1, v0}, Lqh5;-><init>(Lch0;)V
+
+    .line 9
+    .line 10
+    .line 11
+    sput-object v1, Lsh5;->a:Lqh5;
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public abstract a()J
+.end method
+
+.method public b()Lio3;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lsh5;->o:Ljava/lang/Object;
+    sget-object p0, Lio3;->c:Lsg5;
 
     .line 2
     .line 3
-    iget p1, p0, Lsh5;->q:I
+    const-string p0, "application/octet-stream"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-static {p0}, Lwa3;->E(Ljava/lang/String;)Lio3;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lsh5;->q:I
-
-    .line 9
-    .line 10
-    const/4 v3, 0x0
-
-    .line 11
-    const/4 v4, 0x0
-
-    .line 12
-    iget-object v0, p0, Lsh5;->p:Lvh5;
-
-    .line 13
-    .line 14
-    const/4 v1, 0x0
-
-    .line 15
-    const/4 v2, 0x0
-
-    .line 16
-    move-object v5, p0
-
-    .line 17
-    invoke-virtual/range {v0 .. v5}, Lvh5;->g(Ldh5;Ljava/lang/String;Ljava/util/Map;Ljava/util/List;Lz81;)Ljava/lang/Object;
-
-    .line 18
-    .line 19
-    .line 20
     move-result-object p0
 
-    .line 21
+    .line 9
     return-object p0
+.end method
+
+.method public abstract c(Lae5;)V
 .end method

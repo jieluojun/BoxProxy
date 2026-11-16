@@ -1,104 +1,77 @@
 .class public final Lnj1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Lj67;
+.field public final a:Ljava/lang/String;
 
-.field public final b:Lj67;
+.field public final b:Ljava/lang/String;
+
+.field public final c:J
+
+.field public d:J
+
+.field public e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public h:[I
+
+.field public final i:Ljava/util/TreeMap;
 
 
 # direct methods
-.method public constructor <init>(B)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JIII[ILjava/util/TreeMap;)V
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnj1;->a:Ljava/lang/String;
 
     .line 5
     .line 6
+    iput-object p2, p0, Lnj1;->b:Ljava/lang/String;
+
     .line 7
-    new-instance p1, Lj67;
-
     .line 8
-    .line 9
-    const/4 v0, 0x0
+    iput-wide p3, p0, Lnj1;->c:J
 
+    .line 9
     .line 10
-    invoke-direct {p1, v0}, Lj67;-><init>(I)V
+    const-wide/16 p1, 0x0
 
     .line 11
     .line 12
+    iput-wide p1, p0, Lnj1;->d:J
+
     .line 13
-    iput-object p1, p0, Lnj1;->a:Lj67;
-
     .line 14
+    iput p5, p0, Lnj1;->e:I
+
     .line 15
-    new-instance p1, Lj67;
-
     .line 16
-    .line 17
-    invoke-direct {p1, v0}, Lj67;-><init>(I)V
+    iput p6, p0, Lnj1;->f:I
 
+    .line 17
     .line 18
+    iput p7, p0, Lnj1;->g:I
+
     .line 19
     .line 20
-    iput-object p1, p0, Lnj1;->b:Lj67;
+    iput-object p8, p0, Lnj1;->h:[I
 
     .line 21
     .line 22
-    return-void
+    iput-object p9, p0, Lnj1;->i:Ljava/util/TreeMap;
 
     .line 23
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 24
-    .line 25
-    .line 26
-    new-instance p1, Lj67;
-
-    .line 27
-    .line 28
-    const/4 v0, 0x0
-
-    .line 29
-    invoke-direct {p1, v0}, Lj67;-><init>(I)V
-
-    .line 30
-    .line 31
-    .line 32
-    iput-object p1, p0, Lnj1;->a:Lj67;
-
-    .line 33
-    .line 34
-    new-instance p1, Lj67;
-
-    .line 35
-    .line 36
-    invoke-direct {p1, v0}, Lj67;-><init>(I)V
-
-    .line 37
-    .line 38
-    .line 39
-    iput-object p1, p0, Lnj1;->b:Lj67;
-
-    .line 40
-    .line 41
     return-void
-
-    .line 42
-    nop
-
-    .line 43
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method

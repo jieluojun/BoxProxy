@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/UniffiHandleMap;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field private final counter:Lwx;
+.field private final counter:Lhx;
 
 .field private final map:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -55,7 +55,7 @@
 
     .line 10
     .line 11
-    new-instance v0, Lwx;
+    new-instance v0, Lhx;
 
     .line 12
     .line 13
@@ -68,11 +68,11 @@
 
     .line 17
     .line 18
-    iput-wide v1, v0, Lwx;->a:J
+    iput-wide v1, v0, Lhx;->a:J
 
     .line 19
     .line 20
-    iput-object v0, p0, Lcom/hashsequence/coilresvg/UniffiHandleMap;->counter:Lwx;
+    iput-object v0, p0, Lcom/hashsequence/coilresvg/UniffiHandleMap;->counter:Lhx;
 
     .line 21
     .line 22
@@ -167,7 +167,7 @@
     .line 2
     .line 3
     .line 4
-    iget-object v0, p0, Lcom/hashsequence/coilresvg/UniffiHandleMap;->counter:Lwx;
+    iget-object v0, p0, Lcom/hashsequence/coilresvg/UniffiHandleMap;->counter:Lhx;
 
     .line 5
     .line 6
@@ -176,7 +176,7 @@
     .line 7
     .line 8
     .line 9
-    sget-object v1, Lwx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v1, Lhx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 10
     .line 11

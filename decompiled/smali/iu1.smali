@@ -1,17 +1,16 @@
 .class public final Liu1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lmo2;
+.super Lqm;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Z
+.field public final synthetic e:Lqm;
+
+.field public final synthetic f:Ljava/util/concurrent/ThreadPoolExecutor;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Lqm;Ljava/util/concurrent/ThreadPoolExecutor;)V
     .locals 0
 
     .line 1
@@ -20,95 +19,95 @@
     .line 2
     .line 3
     .line 4
-    iput-boolean p1, p0, Liu1;->j:Z
+    iput-object p1, p0, Liu1;->e:Lqm;
 
     .line 5
     .line 6
+    iput-object p2, p0, Liu1;->f:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Z
-    .locals 0
+.method public final N(Ljava/lang/Throwable;)V
+    .locals 1
 
     .line 1
-    iget-boolean p0, p0, Liu1;->j:Z
+    iget-object v0, p0, Liu1;->f:Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 2
     .line 3
-    return p0
-.end method
-
-.method public final d()Ld84;
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "Empty{"
+    :try_start_0
+    iget-object p0, p0, Liu1;->e:Lqm;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lqm;->N(Ljava/lang/Throwable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
     .line 8
-    iget-boolean p0, p0, Liu1;->j:Z
+    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
 
     .line 9
     .line 10
-    if-eqz p0, :cond_0
-
     .line 11
+    return-void
+
     .line 12
-    const-string p0, "Active"
+    :catchall_0
+    move-exception p0
 
     .line 13
+    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+
     .line 14
-    goto :goto_0
-
     .line 15
-    :cond_0
-    const-string p0, "New"
-
     .line 16
-    .line 17
-    :goto_0
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    throw p0
+.end method
 
-    .line 18
-    .line 19
-    .line 20
-    const/16 p0, 0x7d
+.method public final O(Lcg1;)V
+    .locals 1
 
-    .line 21
-    .line 22
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .line 1
+    iget-object v0, p0, Liu1;->f:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    .line 23
-    .line 24
-    .line 25
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 2
+    .line 3
+    :try_start_0
+    iget-object p0, p0, Liu1;->e:Lqm;
 
-    .line 26
-    .line 27
-    .line 28
-    move-result-object p0
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1}, Lqm;->O(Lcg1;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 29
-    return-object p0
+    .line 6
+    .line 7
+    .line 8
+    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+
+    .line 12
+    :catchall_0
+    move-exception p0
+
+    .line 13
+    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+
+    .line 14
+    .line 15
+    .line 16
+    throw p0
 .end method

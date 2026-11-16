@@ -1,24 +1,30 @@
 .class public final Ll86;
-.super Lyb6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public c:J
+.field public i:J
+
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Ldc5;
+
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>(JJ)V
+.method public constructor <init>(Ldc5;Lq91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Lyb6;-><init>(J)V
+    iput-object p1, p0, Ll86;->k:Ldc5;
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p3, p0, Ll86;->c:J
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -26,77 +32,44 @@
 
 
 # virtual methods
-.method public final a(Lyb6;)V
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Ll86;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iget p1, p0, Ll86;->l:I
+
     .line 4
-    check-cast p1, Ll86;
-
     .line 5
-    .line 6
-    iget-wide v0, p1, Ll86;->c:J
-
-    .line 7
-    .line 8
-    iput-wide v0, p0, Ll86;->c:J
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final b()Lyb6;
-    .locals 2
-
-    .line 1
-    invoke-static {}, Lh86;->h()La86;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0}, La86;->g()J
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    move-result-wide v0
+    iput p1, p0, Ll86;->l:I
 
     .line 9
-    invoke-virtual {p0, v0, v1}, Ll86;->c(J)Lyb6;
-
     .line 10
+    iget-object p1, p0, Ll86;->k:Ldc5;
+
     .line 11
     .line 12
-    move-result-object p0
+    const-wide/16 v0, 0x0
 
     .line 13
+    .line 14
+    invoke-virtual {p1, v0, v1, p0}, Ldc5;->N0(JLp91;)Ljava/lang/Object;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
     return-object p0
-.end method
-
-.method public final c(J)Lyb6;
-    .locals 3
-
-    .line 1
-    new-instance v0, Ll86;
-
-    .line 2
-    .line 3
-    iget-wide v1, p0, Ll86;->c:J
-
-    .line 4
-    .line 5
-    invoke-direct {v0, p1, p2, v1, v2}, Ll86;-><init>(JJ)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-object v0
 .end method

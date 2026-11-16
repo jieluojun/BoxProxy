@@ -1,195 +1,108 @@
-.class public final Lsh;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lmb6;
+.class public final enum Lsh;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final j:Lyz6;
+# static fields
+.field public static final enum i:Lsh;
 
-.field public final k:Lum4;
+.field public static final enum j:Lsh;
 
-.field public l:Lxh;
-
-.field public m:J
-
-.field public n:J
-
-.field public o:Z
+.field public static final synthetic k:[Lsh;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lyz6;Ljava/lang/Object;Lxh;I)V
-    .locals 9
-
-    and-int/lit8 p4, p4, 0x4
-
-    if-eqz p4, :cond_0
-
-    const/4 p3, 0x0
-
-    :cond_0
-    move-object v3, p3
-
-    const-wide/high16 v6, -0x8000000000000000L
-
-    const/4 v8, 0x0
-
-    const-wide/high16 v4, -0x8000000000000000L
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    .line 39
-    invoke-direct/range {v0 .. v8}, Lsh;-><init>(Lyz6;Ljava/lang/Object;Lxh;JJZ)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lyz6;Ljava/lang/Object;Lxh;JJZ)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lsh;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lsh;->j:Lyz6;
+    const-string v1, "BoundReached"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    invoke-static {p2}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
     .line 9
-    move-result-object v0
+    sput-object v0, Lsh;->i:Lsh;
 
     .line 10
-    iput-object v0, p0, Lsh;->k:Lum4;
-
     .line 11
+    new-instance v1, Lsh;
+
     .line 12
-    if-eqz p3, :cond_0
-
     .line 13
+    const-string v2, "Finished"
+
     .line 14
-    invoke-static {p3}, Lqe1;->D(Lxh;)Lxh;
-
     .line 15
+    const/4 v3, 0x1
+
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
-    move-result-object p1
-
     .line 18
-    goto :goto_0
-
     .line 19
-    :cond_0
-    iget-object p1, p1, Lyz6;->a:Lp62;
+    sput-object v1, Lsh;->j:Lsh;
 
     .line 20
     .line 21
-    invoke-interface {p1, p2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    filled-new-array {v0, v1}, [Lsh;
 
     .line 22
     .line 23
     .line 24
-    move-result-object p1
+    move-result-object v0
 
     .line 25
-    check-cast p1, Lxh;
+    sput-object v0, Lsh;->k:[Lsh;
 
     .line 26
     .line 27
-    invoke-virtual {p1}, Lxh;->d()V
-
-    .line 28
-    .line 29
-    .line 30
-    :goto_0
-    iput-object p1, p0, Lsh;->l:Lxh;
-
-    .line 31
-    .line 32
-    iput-wide p4, p0, Lsh;->m:J
-
-    .line 33
-    .line 34
-    iput-wide p6, p0, Lsh;->n:J
-
-    .line 35
-    .line 36
-    iput-boolean p8, p0, Lsh;->o:Z
-
-    .line 37
-    .line 38
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljava/lang/Object;
+.method public static valueOf(Ljava/lang/String;)Lsh;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lsh;->j:Lyz6;
+    const-class v0, Lsh;
 
     .line 2
     .line 3
-    iget-object v0, v0, Lyz6;->b:Lp62;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    iget-object p0, p0, Lsh;->l:Lxh;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    invoke-interface {v0, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p0, Lsh;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
     return-object p0
 .end method
 
-.method public final getValue()Ljava/lang/Object;
-    .locals 0
+.method public static values()[Lsh;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lsh;->k:Lum4;
+    sget-object v0, Lsh;->k:[Lsh;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 8
-
-    .line 1
-    iget-object v0, p0, Lsh;->k:Lum4;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Lum4;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -197,116 +110,9 @@
     move-result-object v0
 
     .line 7
-    invoke-virtual {p0}, Lsh;->a()Ljava/lang/Object;
+    check-cast v0, [Lsh;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object v1
-
-    .line 11
-    iget-boolean v2, p0, Lsh;->o:Z
-
-    .line 12
-    .line 13
-    iget-wide v3, p0, Lsh;->m:J
-
-    .line 14
-    .line 15
-    iget-wide v5, p0, Lsh;->n:J
-
-    .line 16
-    .line 17
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    .line 18
-    .line 19
-    const-string v7, "AnimationState(value="
-
-    .line 20
-    .line 21
-    invoke-direct {p0, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 25
-    .line 26
-    .line 27
-    const-string v0, ", velocity="
-
-    .line 28
-    .line 29
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 30
-    .line 31
-    .line 32
-    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 33
-    .line 34
-    .line 35
-    const-string v0, ", isRunning="
-
-    .line 36
-    .line 37
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 38
-    .line 39
-    .line 40
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    .line 41
-    .line 42
-    .line 43
-    const-string v0, ", lastFrameTimeNanos="
-
-    .line 44
-    .line 45
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    .line 48
-    invoke-virtual {p0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 49
-    .line 50
-    .line 51
-    const-string v0, ", finishedTimeNanos="
-
-    .line 52
-    .line 53
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 54
-    .line 55
-    .line 56
-    invoke-virtual {p0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 57
-    .line 58
-    .line 59
-    const-string v0, ")"
-
-    .line 60
-    .line 61
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 62
-    .line 63
-    .line 64
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 65
-    .line 66
-    .line 67
-    move-result-object p0
-
-    .line 68
-    return-object p0
+    return-object v0
 .end method

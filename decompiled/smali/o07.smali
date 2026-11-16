@@ -1,91 +1,25 @@
-.class public Lo07;
-.super La07;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lo07;
+.super Ljava/util/concurrent/CancellationException;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public final transient i:Lp07;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;Lp07;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
     .line 2
     .line 3
     .line 4
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Lrx2;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p1}, Lrx2;->L()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
+    iput-object p2, p0, Lo07;->i:Lp07;
 
     .line 5
-    const/16 v0, 0x9
-
     .line 6
-    .line 7
-    const/4 v1, 0x0
-
-    .line 8
-    if-ne p0, v0, :cond_0
-
-    .line 9
-    .line 10
-    invoke-virtual {p1}, Lrx2;->H()V
-
-    .line 11
-    .line 12
-    .line 13
-    return-object v1
-
-    .line 14
-    :cond_0
-    invoke-virtual {p1}, Lrx2;->J()Ljava/lang/String;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
-
-    .line 18
-    const-string p1, "null"
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    .line 21
-    .line 22
-    .line 23
-    move-result p1
-
-    .line 24
-    if-eqz p1, :cond_1
-
-    .line 25
-    .line 26
-    return-object v1
-
-    .line 27
-    :cond_1
-    new-instance p1, Ljava/net/URL;
-
-    .line 28
-    .line 29
-    invoke-direct {p1, p0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-
-    .line 30
-    .line 31
-    .line 32
-    return-object p1
+    return-void
 .end method

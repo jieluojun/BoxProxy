@@ -1,140 +1,136 @@
-.class public final enum Laj5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Laj5;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lhl5;
 
 
-# static fields
-.field public static final enum j:Laj5;
-
-.field public static final enum k:Laj5;
-
-.field public static final enum l:Laj5;
-
-.field public static final synthetic m:[Laj5;
+# instance fields
+.field public final a:Lge5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lge5;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Laj5;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const-string v1, "FollowState"
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    iput-object p1, p0, Laj5;->a:Lge5;
+
     .line 8
     .line 9
-    sput-object v0, Laj5;->j:Laj5;
-
-    .line 10
-    .line 11
-    new-instance v1, Laj5;
-
-    .line 12
-    .line 13
-    const-string v2, "Rules"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Laj5;->k:Laj5;
-
-    .line 20
-    .line 21
-    new-instance v2, Laj5;
-
-    .line 22
-    .line 23
-    const-string v3, "Providers"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Laj5;->l:Laj5;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Laj5;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Laj5;->m:[Laj5;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Laj5;
+
+# virtual methods
+.method public final a()Lhl5;
     .locals 1
 
     .line 1
-    const-class v0, Laj5;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const-string v0, "unexpected retry"
 
     .line 4
     .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
     .line 6
-    move-result-object p0
-
     .line 7
-    check-cast p0, Laj5;
-
     .line 8
-    .line 9
+    throw p0
+.end method
+
+.method public final c()Lgl5;
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    const-string v0, "already connected"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final cancel()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    const-string v0, "unexpected cancel"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final d()Lge5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Laj5;->a:Lge5;
+
+    .line 2
+    .line 3
     return-object p0
 .end method
 
-.method public static values()[Laj5;
+.method public final e()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final g()Lgl5;
     .locals 1
 
     .line 1
-    sget-object v0, Laj5;->m:[Laj5;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    const-string v0, "already connected"
 
     .line 4
     .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
     .line 6
-    move-result-object v0
-
     .line 7
-    check-cast v0, [Laj5;
-
     .line 8
-    .line 9
-    return-object v0
+    throw p0
 .end method

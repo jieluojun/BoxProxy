@@ -1,29 +1,14 @@
-.class public final synthetic Lv97;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.class public final Lv97;
+.super Lx97;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Landroid/content/Context;
-
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Lh97;
-
-.field public final synthetic n:Lmt3;
-
-.field public final synthetic o:Lmt3;
-
-.field public final synthetic p:Lmt3;
+.field public final synthetic b:Ljava/lang/reflect/Method;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lh97;Lmt3;Lmt3;Lmt3;)V
+.method public constructor <init>(Ljava/lang/reflect/Method;)V
     .locals 0
 
     .line 1
@@ -32,277 +17,82 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lv97;->j:Landroid/content/Context;
+    iput-object p1, p0, Lv97;->b:Ljava/lang/reflect/Method;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lv97;->k:Ljava/lang/String;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lv97;->l:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lv97;->m:Lh97;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lv97;->n:Lmt3;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lv97;->o:Lmt3;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lv97;->p:Lmt3;
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 7
+.method public final a(Ljava/lang/Class;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lv97;->n:Lmt3;
+    invoke-static {p1}, Lyu2;->n(Ljava/lang/Class;)Ljava/lang/String;
 
     .line 2
     .line 3
-    invoke-interface {v0}, Lmb6;->getValue()Ljava/lang/Object;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object v1
+    move-result-object v0
 
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
     .line 7
-    check-cast v1, Ljava/lang/String;
+    const-class v0, Ljava/lang/Object;
 
     .line 8
     .line 9
-    invoke-static {v1}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    filled-new-array {p1, v0}, [Ljava/lang/Object;
 
     .line 10
     .line 11
     .line 12
-    move-result-object v1
+    move-result-object p1
 
     .line 13
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object p0, p0, Lv97;->b:Ljava/lang/reflect/Method;
 
     .line 14
     .line 15
+    const/4 v0, 0x0
+
     .line 16
-    move-result-object v1
+    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 17
-    iget-object v2, p0, Lv97;->o:Lmt3;
-
     .line 18
     .line 19
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
+    move-result-object p0
 
     .line 20
-    .line 21
-    .line 22
-    move-result-object v3
+    return-object p0
 
+    .line 21
+    :cond_0
+    new-instance p0, Ljava/lang/AssertionError;
+
+    .line 22
     .line 23
-    check-cast v3, Ljava/lang/String;
+    const-string p1, "UnsafeAllocator is used for non-instantiable type: "
 
     .line 24
     .line 25
-    invoke-static {v3}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 26
     .line 27
     .line 28
-    move-result-object v3
+    move-result-object p1
 
     .line 29
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-direct {p0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     .line 30
     .line 31
     .line 32
-    move-result-object v3
-
-    .line 33
-    invoke-static {v1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
-
-    .line 34
-    .line 35
-    .line 36
-    move-result v4
-
-    .line 37
-    iget-object v5, p0, Lv97;->j:Landroid/content/Context;
-
-    .line 38
-    .line 39
-    const/4 v6, 0x0
-
-    .line 40
-    if-eqz v4, :cond_0
-
-    .line 41
-    .line 42
-    iget-object p0, p0, Lv97;->k:Ljava/lang/String;
-
-    .line 43
-    .line 44
-    invoke-static {v5, p0, v6}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object p0
-
-    .line 48
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
-
-    .line 49
-    .line 50
-    .line 51
-    goto :goto_1
-
-    .line 52
-    :cond_0
-    invoke-static {v3}, Lya7;->a(Ljava/lang/String;)Z
-
-    .line 53
-    .line 54
-    .line 55
-    move-result v4
-
-    .line 56
-    if-eqz v4, :cond_2
-
-    .line 57
-    .line 58
-    invoke-static {v3}, Lya7;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 59
-    .line 60
-    .line 61
-    move-result-object v4
-
-    .line 62
-    invoke-static {v4}, Landroid/webkit/URLUtil;->isNetworkUrl(Ljava/lang/String;)Z
-
-    .line 63
-    .line 64
-    .line 65
-    move-result v4
-
-    .line 66
-    if-nez v4, :cond_1
-
-    .line 67
-    .line 68
-    invoke-static {v3}, Lya7;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 69
-    .line 70
-    .line 71
-    move-result-object v4
-
-    .line 72
-    invoke-static {v4}, Landroid/webkit/URLUtil;->isValidUrl(Ljava/lang/String;)Z
-
-    .line 73
-    .line 74
-    .line 75
-    move-result v4
-
-    .line 76
-    if-nez v4, :cond_1
-
-    .line 77
-    .line 78
-    goto :goto_0
-
-    .line 79
-    :cond_1
-    iget-object v4, p0, Lv97;->m:Lh97;
-
-    .line 80
-    .line 81
-    invoke-virtual {v4, v1, v3}, Lh97;->a(Ljava/lang/String;Ljava/lang/String;)Lgr5;
-
-    .line 82
-    .line 83
-    .line 84
-    move-result-object v1
-
-    .line 85
-    iget-object v1, v1, Lgr5;->a:Ljava/lang/String;
-
-    .line 86
-    .line 87
-    invoke-virtual {v4, v1}, Lh97;->q(Ljava/lang/String;)V
-
-    .line 88
-    .line 89
-    .line 90
-    const-string v1, ""
-
-    .line 91
-    .line 92
-    invoke-interface {v0, v1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 93
-    .line 94
-    .line 95
-    invoke-interface {v2, v1}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 96
-    .line 97
-    .line 98
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 99
-    .line 100
-    iget-object p0, p0, Lv97;->p:Lmt3;
-
-    .line 101
-    .line 102
-    invoke-interface {p0, v0}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 103
-    .line 104
-    .line 105
-    goto :goto_1
-
-    .line 106
-    :cond_2
-    :goto_0
-    iget-object p0, p0, Lv97;->l:Ljava/lang/String;
-
-    .line 107
-    .line 108
-    invoke-static {v5, p0, v6}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    .line 109
-    .line 110
-    .line 111
-    move-result-object p0
-
-    .line 112
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
-
-    .line 113
-    .line 114
-    .line 115
-    :goto_1
-    sget-object p0, La47;->a:La47;
-
-    .line 116
-    .line 117
-    return-object p0
+    throw p0
 .end method

@@ -1,90 +1,53 @@
 .class public final Lsu3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Luu3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lsu3;
+# instance fields
+.field public final a:Lne6;
+
+.field public final b:Ljava/util/LinkedHashMap;
+
+.field public c:Laj;
+
+.field public d:Lh37;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .line 1
-    new-instance v0, Lsu3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    new-instance v0, Lne6;
+
     .line 5
     .line 6
-    sput-object v0, Lsu3;->a:Lsu3;
+    invoke-direct {v0}, Lne6;-><init>()V
 
     .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lsu3;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
     .line 8
     .line 9
-    const/4 p0, 0x0
+    iput-object v0, p0, Lsu3;->a:Lne6;
 
     .line 10
-    return p0
-
     .line 11
-    :cond_1
-    return v0
-.end method
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-.method public final hashCode()I
-    .locals 0
+    .line 12
+    .line 13
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 1
-    const p0, -0x55b036d
+    .line 14
+    .line 15
+    .line 16
+    iput-object v0, p0, Lsu3;->b:Ljava/util/LinkedHashMap;
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "Replace"
-
-    .line 2
-    .line 3
-    return-object p0
+    .line 17
+    .line 18
+    return-void
 .end method

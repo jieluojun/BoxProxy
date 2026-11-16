@@ -1,190 +1,149 @@
-.class public abstract Li77;
+.class public final Li77;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# instance fields
+.field public final i:B
 
 
 # direct methods
-.method public static a(Landroid/view/WindowInsets;Landroid/view/View;)V
-    .locals 1
+.method public synthetic constructor <init>(B)V
+    .locals 0
 
     .line 1
-    const v0, 0x7f0900d0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    iput-byte p1, p0, Li77;->i:B
 
     .line 5
     .line 6
-    .line 7
-    move-result-object v0
-
-    .line 8
-    check-cast v0, Landroid/view/View$OnApplyWindowInsetsListener;
-
-    .line 9
-    .line 10
-    if-eqz v0, :cond_0
-
-    .line 11
-    .line 12
-    invoke-interface {v0, p1, p0}, Landroid/view/View$OnApplyWindowInsetsListener;->onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-
-    .line 13
-    .line 14
-    .line 15
-    :cond_0
     return-void
 .end method
 
-.method public static b(Landroid/view/View;Lnd7;Landroid/graphics/Rect;)Lnd7;
-    .locals 1
+
+# virtual methods
+.method public final synthetic compareTo(Ljava/lang/Object;)I
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Lnd7;->b()Landroid/view/WindowInsets;
+    check-cast p1, Li77;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    iget-byte p1, p1, Li77;->i:B
 
+    .line 4
     .line 5
-    if-eqz v0, :cond_0
+    iget-byte p0, p0, Li77;->i:B
 
     .line 6
     .line 7
-    invoke-virtual {p0, v0, p2}, Landroid/view/View;->computeSystemWindowInsets(Landroid/view/WindowInsets;Landroid/graphics/Rect;)Landroid/view/WindowInsets;
+    and-int/lit16 p0, p0, 0xff
 
     .line 8
     .line 9
-    .line 10
-    move-result-object p1
+    and-int/lit16 p1, p1, 0xff
 
+    .line 10
     .line 11
-    invoke-static {p1, p0}, Lnd7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lnd7;
+    invoke-static {p0, p1}, Lky2;->I(II)I
 
     .line 12
     .line 13
     .line 14
+    move-result p0
+
+    .line 15
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Li77;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p1, Li77;
+
+    .line 6
+    .line 7
+    iget-byte p1, p1, Li77;->i:B
+
+    .line 8
+    .line 9
+    iget-byte p0, p0, Li77;->i:B
+
+    .line 10
+    .line 11
+    if-eq p0, p1, :cond_1
+
+    .line 12
+    .line 13
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 14
+    return p0
+
+    .line 15
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 16
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Li77;->i:B
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Byte;->hashCode(B)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Li77;->i:B
+
+    .line 2
+    .line 3
+    and-int/lit16 p0, p0, 0xff
+
+    .line 4
+    .line 5
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 6
+    .line 7
+    .line 8
     move-result-object p0
 
-    .line 15
-    return-object p0
-
-    .line 16
-    :cond_0
-    invoke-virtual {p2}, Landroid/graphics/Rect;->setEmpty()V
-
-    .line 17
-    .line 18
-    .line 19
-    return-object p1
-.end method
-
-.method public static c(Landroid/view/View;Llb4;)V
-    .locals 2
-
-    .line 1
-    if-eqz p1, :cond_0
-
-    .line 2
-    .line 3
-    new-instance v0, Lh77;
-
-    .line 4
-    .line 5
-    invoke-direct {v0, p0, p1}, Lh77;-><init>(Landroid/view/View;Llb4;)V
-
-    .line 6
-    .line 7
-    .line 8
-    goto :goto_0
-
     .line 9
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 10
-    :goto_0
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    .line 11
-    .line 12
-    const/16 v1, 0x1e
-
-    .line 13
-    .line 14
-    if-ge p1, v1, :cond_1
-
-    .line 15
-    .line 16
-    const p1, 0x7f0900c7
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 20
-    .line 21
-    .line 22
-    :cond_1
-    const p1, 0x7f0900c6
-
-    .line 23
-    .line 24
-    .line 25
-    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object p1
-
-    .line 29
-    if-eqz p1, :cond_2
-
-    .line 30
-    .line 31
-    return-void
-
-    .line 32
-    :cond_2
-    if-eqz v0, :cond_3
-
-    .line 33
-    .line 34
-    invoke-virtual {p0, v0}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
-
-    .line 35
-    .line 36
-    .line 37
-    return-void
-
-    .line 38
-    :cond_3
-    const p1, 0x7f0900d0
-
-    .line 39
-    .line 40
-    .line 41
-    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-object p1
-
-    .line 45
-    check-cast p1, Landroid/view/View$OnApplyWindowInsetsListener;
-
-    .line 46
-    .line 47
-    invoke-virtual {p0, p1}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
-
-    .line 48
-    .line 49
-    .line 50
-    return-void
+    return-object p0
 .end method

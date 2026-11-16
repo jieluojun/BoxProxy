@@ -1,17 +1,17 @@
 .class public final Lzn0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/text/CharacterIterator;
 
 
 # instance fields
-.field public final j:Ljava/lang/CharSequence;
+.field public final i:Ljava/lang/CharSequence;
 
-.field public final k:I
+.field public final j:I
 
-.field public l:I
+.field public k:I
 
 
 # direct methods
@@ -24,18 +24,18 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzn0;->j:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lzn0;->i:Ljava/lang/CharSequence;
 
     .line 5
     .line 6
-    iput p2, p0, Lzn0;->k:I
+    iput p2, p0, Lzn0;->j:I
 
     .line 7
     .line 8
     const/4 p1, 0x0
 
     .line 9
-    iput p1, p0, Lzn0;->l:I
+    iput p1, p0, Lzn0;->k:I
 
     .line 10
     .line 11
@@ -79,11 +79,11 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Lzn0;->l:I
+    iget v0, p0, Lzn0;->k:I
 
     .line 2
     .line 3
-    iget v1, p0, Lzn0;->k:I
+    iget v1, p0, Lzn0;->j:I
 
     .line 4
     .line 5
@@ -100,7 +100,7 @@
 
     .line 11
     :cond_0
-    iget-object p0, p0, Lzn0;->j:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lzn0;->i:Ljava/lang/CharSequence;
 
     .line 12
     .line 13
@@ -122,7 +122,7 @@
     const/4 v0, 0x0
 
     .line 2
-    iput v0, p0, Lzn0;->l:I
+    iput v0, p0, Lzn0;->k:I
 
     .line 3
     .line 4
@@ -151,7 +151,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lzn0;->k:I
+    iget p0, p0, Lzn0;->j:I
 
     .line 2
     .line 3
@@ -162,7 +162,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lzn0;->l:I
+    iget p0, p0, Lzn0;->k:I
 
     .line 2
     .line 3
@@ -173,7 +173,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lzn0;->k:I
+    iget v0, p0, Lzn0;->j:I
 
     .line 2
     .line 3
@@ -181,7 +181,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lzn0;->l:I
+    iput v0, p0, Lzn0;->k:I
 
     .line 6
     .line 7
@@ -198,11 +198,11 @@
 
     .line 12
     .line 13
-    iput v0, p0, Lzn0;->l:I
+    iput v0, p0, Lzn0;->k:I
 
     .line 14
     .line 15
-    iget-object p0, p0, Lzn0;->j:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lzn0;->i:Ljava/lang/CharSequence;
 
     .line 16
     .line 17
@@ -221,7 +221,7 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Lzn0;->l:I
+    iget v0, p0, Lzn0;->k:I
 
     .line 2
     .line 3
@@ -229,11 +229,11 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lzn0;->l:I
+    iput v0, p0, Lzn0;->k:I
 
     .line 6
     .line 7
-    iget v1, p0, Lzn0;->k:I
+    iget v1, p0, Lzn0;->j:I
 
     .line 8
     .line 9
@@ -241,7 +241,7 @@
 
     .line 10
     .line 11
-    iput v1, p0, Lzn0;->l:I
+    iput v1, p0, Lzn0;->k:I
 
     .line 12
     .line 13
@@ -254,7 +254,7 @@
 
     .line 17
     :cond_0
-    iget-object p0, p0, Lzn0;->j:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lzn0;->i:Ljava/lang/CharSequence;
 
     .line 18
     .line 19
@@ -273,7 +273,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lzn0;->l:I
+    iget v0, p0, Lzn0;->k:I
 
     .line 2
     .line 3
@@ -294,11 +294,11 @@
 
     .line 10
     .line 11
-    iput v0, p0, Lzn0;->l:I
+    iput v0, p0, Lzn0;->k:I
 
     .line 12
     .line 13
-    iget-object p0, p0, Lzn0;->j:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lzn0;->i:Ljava/lang/CharSequence;
 
     .line 14
     .line 15
@@ -317,7 +317,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lzn0;->k:I
+    iget v0, p0, Lzn0;->j:I
 
     .line 2
     .line 3
@@ -329,7 +329,7 @@
 
     .line 6
     .line 7
-    iput p1, p0, Lzn0;->l:I
+    iput p1, p0, Lzn0;->k:I
 
     .line 8
     .line 9
@@ -349,7 +349,7 @@
 
     .line 15
     .line 16
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 17
     .line 18

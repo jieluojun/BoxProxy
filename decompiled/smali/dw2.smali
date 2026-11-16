@@ -1,51 +1,197 @@
-.class public Ldw2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ldw2;
+.super Ls05;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Lb07;
+
+# static fields
+.field public static final c:Ldw2;
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldw2;
 
     .line 2
     .line 3
+    sget-object v1, Ltw2;->a:Ltw2;
+
     .line 4
-    return-void
-.end method
-
-.method public synthetic constructor <init>(I)V
-    .locals 0
-
     .line 5
-    invoke-direct {p0}, Ldw2;-><init>()V
+    invoke-direct {v0, v1}, Ls05;-><init>(Le33;)V
 
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Ldw2;->c:Ldw2;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ln92;Lh17;)La07;
+.method public final h(Ljava/lang/Object;)I
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/AssertionError;
+    check-cast p1, [I
 
     .line 2
     .line 3
-    const-string p1, "Factory should not be used"
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    .line 6
+    array-length p0, p1
+
+    .line 7
+    return p0
+.end method
+
+.method public final j(La21;ILjava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    check-cast p3, Lbw2;
+
+    .line 2
+    .line 3
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Ls05;->b:Lr05;
+
+    .line 7
+    .line 8
+    invoke-interface {p1, p0, p2}, La21;->y(Lt46;I)I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result p0
+
+    .line 12
+    invoke-static {p3}, Lq05;->c(Lq05;)V
+
+    .line 13
+    .line 14
+    .line 15
+    iget-object p1, p3, Lbw2;->a:[I
+
+    .line 16
+    .line 17
+    iget p2, p3, Lbw2;->b:I
+
+    .line 18
+    .line 19
+    add-int/lit8 v0, p2, 0x1
+
+    .line 20
+    .line 21
+    iput v0, p3, Lbw2;->b:I
+
+    .line 22
+    .line 23
+    aput p0, p1, p2
+
+    .line 24
+    .line 25
+    return-void
+.end method
+
+.method public final m()Lq05;
+    .locals 1
+
+    .line 1
+    new-instance p0, Lbw2;
+
+    .line 2
+    .line 3
+    const/16 v0, 0xa
+
+    .line 4
+    .line 5
+    new-array v0, v0, [I
 
     .line 6
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
-    throw p0
+    .line 9
+    .line 10
+    iput-object v0, p0, Lbw2;->a:[I
+
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    iput v0, p0, Lbw2;->b:I
+
+    .line 14
+    .line 15
+    return-object p0
+.end method
+
+.method public final n(Lji6;Ljava/lang/Object;I)V
+    .locals 3
+
+    .line 1
+    check-cast p2, [I
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    const/4 v0, 0x0
+
+    .line 10
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    .line 11
+    .line 12
+    aget v1, p2, v0
+
+    .line 13
+    .line 14
+    iget-object v2, p0, Ls05;->b:Lr05;
+
+    .line 15
+    .line 16
+    invoke-virtual {p1, v2, v0}, Lji6;->f(Lt46;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p1, v1}, Lji6;->j(I)V
+
+    .line 20
+    .line 21
+    .line 22
+    add-int/lit8 v0, v0, 0x1
+
+    .line 23
+    .line 24
+    goto :goto_0
+
+    .line 25
+    :cond_0
+    return-void
 .end method

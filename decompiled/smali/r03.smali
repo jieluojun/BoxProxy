@@ -1,28 +1,22 @@
-.class public abstract Lr03;
+.class public final Lr03;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Landroid/text/Layout$Alignment;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final serializer()Le33;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Le33;"
+        }
+    .end annotation
 
     .line 1
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
+    sget-object p0, Lv03;->a:Lv03;
 
     .line 2
     .line 3
-    sput-object v0, Lr03;->a:Landroid/text/Layout$Alignment;
-
-    .line 4
-    .line 5
-    sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
-
-    .line 6
-    .line 7
-    return-void
+    return-object p0
 .end method

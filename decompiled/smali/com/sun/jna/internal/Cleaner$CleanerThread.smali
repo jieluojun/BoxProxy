@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/internal/Cleaner$CleanerThread;
 .super Ljava/lang/Thread;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x2
     name = "CleanerThread"
 .end annotation
 
@@ -107,174 +107,168 @@
     goto :goto_0
 
     .line 24
-    :catch_0
-    move-exception v1
-
-    .line 25
-    goto :goto_3
-
-    .line 26
     :cond_1
     if-nez v1, :cond_0
 
+    .line 25
+    .line 26
+    iget-object v1, p0, Lcom/sun/jna/internal/Cleaner$CleanerThread;->this$0:Lcom/sun/jna/internal/Cleaner;
+
     .line 27
     .line 28
-    iget-object v1, p0, Lcom/sun/jna/internal/Cleaner$CleanerThread;->this$0:Lcom/sun/jna/internal/Cleaner;
+    invoke-static {v1}, Lcom/sun/jna/internal/Cleaner;->access$100(Lcom/sun/jna/internal/Cleaner;)Ljava/lang/ref/ReferenceQueue;
 
     .line 29
     .line 30
-    invoke-static {v1}, Lcom/sun/jna/internal/Cleaner;->access$100(Lcom/sun/jna/internal/Cleaner;)Ljava/lang/ref/ReferenceQueue;
-
     .line 31
-    .line 32
-    .line 33
     move-result-object v1
 
-    .line 34
+    .line 32
     monitor-enter v1
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 35
+    .line 33
     :try_start_1
     const-class v2, Lcom/sun/jna/internal/Cleaner;
 
-    .line 36
-    .line 37
+    .line 34
+    .line 35
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
+    .line 36
+    .line 37
     .line 38
-    .line 39
-    .line 40
     move-result-object v2
 
-    .line 41
+    .line 39
     invoke-static {v2}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
+    .line 40
+    .line 41
     .line 42
-    .line 43
-    .line 44
     move-result-object v2
 
-    .line 45
+    .line 43
     iget-object v3, p0, Lcom/sun/jna/internal/Cleaner$CleanerThread;->this$0:Lcom/sun/jna/internal/Cleaner;
+
+    .line 44
+    .line 45
+    invoke-static {v3}, Lcom/sun/jna/internal/Cleaner;->access$200(Lcom/sun/jna/internal/Cleaner;)Lcom/sun/jna/internal/Cleaner$CleanerRef;
 
     .line 46
     .line 47
-    invoke-static {v3}, Lcom/sun/jna/internal/Cleaner;->access$200(Lcom/sun/jna/internal/Cleaner;)Lcom/sun/jna/internal/Cleaner$CleanerRef;
-
     .line 48
-    .line 49
-    .line 50
     move-result-object v3
 
-    .line 51
+    .line 49
     if-nez v3, :cond_2
+
+    .line 50
+    .line 51
+    iget-object v3, p0, Lcom/sun/jna/internal/Cleaner$CleanerThread;->this$0:Lcom/sun/jna/internal/Cleaner;
 
     .line 52
     .line 53
-    iget-object v3, p0, Lcom/sun/jna/internal/Cleaner$CleanerThread;->this$0:Lcom/sun/jna/internal/Cleaner;
+    invoke-static {v3, v0}, Lcom/sun/jna/internal/Cleaner;->access$302(Lcom/sun/jna/internal/Cleaner;Ljava/lang/Thread;)Ljava/lang/Thread;
 
     .line 54
     .line 55
-    invoke-static {v3, v0}, Lcom/sun/jna/internal/Cleaner;->access$302(Lcom/sun/jna/internal/Cleaner;Ljava/lang/Thread;)Ljava/lang/Thread;
-
     .line 56
+    sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
+
     .line 57
     .line 58
-    sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
+    const-string v4, "Shutting down CleanerThread"
 
     .line 59
     .line 60
-    const-string v4, "Shutting down CleanerThread"
+    invoke-virtual {v2, v3, v4}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
     .line 61
     .line 62
-    invoke-virtual {v2, v3, v4}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
-
     .line 63
-    .line 64
-    .line 65
     monitor-exit v1
 
-    .line 66
-    goto :goto_4
+    .line 64
+    goto :goto_3
 
-    .line 67
-    :catchall_0
-    move-exception v2
-
-    .line 68
-    goto :goto_2
-
-    .line 69
+    .line 65
     :cond_2
     sget-object v3, Ljava/util/logging/Level;->FINER:Ljava/util/logging/Level;
 
-    .line 70
-    .line 71
+    .line 66
+    .line 67
     invoke-virtual {v2, v3}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z
+
+    .line 68
+    .line 69
+    .line 70
+    move-result v3
+
+    .line 71
+    if-eqz v3, :cond_5
 
     .line 72
     .line 73
-    .line 74
-    move-result v3
+    new-instance v3, Ljava/lang/StringBuilder;
 
+    .line 74
     .line 75
-    if-eqz v3, :cond_5
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 76
     .line 77
-    new-instance v3, Ljava/lang/StringBuilder;
-
     .line 78
-    .line 79
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 80
-    .line 81
-    .line 82
     iget-object v4, p0, Lcom/sun/jna/internal/Cleaner$CleanerThread;->this$0:Lcom/sun/jna/internal/Cleaner;
 
-    .line 83
-    .line 84
+    .line 79
+    .line 80
     invoke-static {v4}, Lcom/sun/jna/internal/Cleaner;->access$200(Lcom/sun/jna/internal/Cleaner;)Lcom/sun/jna/internal/Cleaner$CleanerRef;
 
-    .line 85
-    .line 86
-    .line 87
+    .line 81
+    .line 82
+    .line 83
     move-result-object v4
 
-    .line 88
+    .line 84
     :goto_1
     if-eqz v4, :cond_4
 
-    .line 89
-    .line 90
+    .line 85
+    .line 86
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
+
+    .line 87
+    .line 88
+    .line 89
+    move-result v5
+
+    .line 90
+    if-eqz v5, :cond_3
 
     .line 91
     .line 92
-    .line 93
-    move-result v5
+    const-string v5, ", "
 
+    .line 93
     .line 94
-    if-eqz v5, :cond_3
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 95
     .line 96
-    const-string v5, ", "
-
     .line 97
-    .line 98
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 99
-    .line 100
-    .line 101
     :cond_3
     invoke-static {v4}, Lcom/sun/jna/internal/Cleaner$CleanerRef;->access$500(Lcom/sun/jna/internal/Cleaner$CleanerRef;)Ljava/lang/Runnable;
+
+    .line 98
+    .line 99
+    .line 100
+    move-result-object v5
+
+    .line 101
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 102
     .line 103
@@ -282,108 +276,109 @@
     move-result-object v5
 
     .line 105
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 106
     .line 107
     .line 108
-    move-result-object v5
-
-    .line 109
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 110
-    .line 111
-    .line 112
     invoke-static {v4}, Lcom/sun/jna/internal/Cleaner$CleanerRef;->access$400(Lcom/sun/jna/internal/Cleaner$CleanerRef;)Lcom/sun/jna/internal/Cleaner$CleanerRef;
 
-    .line 113
-    .line 114
-    .line 115
+    .line 109
+    .line 110
+    .line 111
     move-result-object v4
 
-    .line 116
+    .line 112
     goto :goto_1
 
-    .line 117
+    .line 113
     :cond_4
     sget-object v4, Ljava/util/logging/Level;->FINER:Ljava/util/logging/Level;
 
-    .line 118
-    .line 119
+    .line 114
+    .line 115
     const-string v5, "Registered Cleaners: {0}"
 
-    .line 120
-    .line 121
+    .line 116
+    .line 117
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 118
+    .line 119
+    .line 120
+    move-result-object v3
+
+    .line 121
+    invoke-virtual {v2, v4, v5, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 122
     .line 123
     .line 124
-    move-result-object v3
-
-    .line 125
-    invoke-virtual {v2, v4, v5, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 126
-    .line 127
-    .line 128
     :cond_5
     monitor-exit v1
 
-    .line 129
-    goto/16 :goto_0
+    .line 125
+    goto :goto_0
 
-    .line 130
-    .line 131
+    .line 126
     :goto_2
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 132
+    .line 127
     :try_start_2
     throw v2
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 133
-    :goto_3
+    .line 128
+    :catchall_0
+    move-exception v2
+
+    .line 129
+    goto :goto_2
+
+    .line 130
+    :catch_0
+    move-exception v1
+
+    .line 131
     const-class v2, Lcom/sun/jna/internal/Cleaner;
+
+    .line 132
+    .line 133
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     .line 134
     .line 135
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
     .line 136
-    .line 137
-    .line 138
     move-result-object v2
 
-    .line 139
+    .line 137
     invoke-static {v2}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
+    .line 138
+    .line 139
     .line 140
-    .line 141
-    .line 142
     move-result-object v2
 
-    .line 143
+    .line 141
     sget-object v3, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
+
+    .line 142
+    .line 143
+    invoke-virtual {v2, v3, v0, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 144
     .line 145
-    invoke-virtual {v2, v3, v0, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
-
     .line 146
-    .line 147
-    .line 148
     goto/16 :goto_0
 
-    .line 149
-    .line 150
+    .line 147
+    .line 148
     :catch_1
-    :goto_4
+    :goto_3
     return-void
 .end method

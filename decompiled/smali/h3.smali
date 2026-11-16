@@ -1,13 +1,13 @@
 .class public final Lh3;
 .super Lg3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/ListIterator;
 
 
 # instance fields
-.field public final synthetic m:Lj3;
+.field public final synthetic l:Lj3;
 
 
 # direct methods
@@ -15,7 +15,7 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lh3;->m:Lj3;
+    iput-object p1, p0, Lh3;->l:Lj3;
 
     .line 2
     .line 3
@@ -43,7 +43,7 @@
 
     .line 14
     .line 15
-    iput p2, p0, Lg3;->k:I
+    iput p2, p0, Lg3;->j:I
 
     .line 16
     .line 17
@@ -59,7 +59,7 @@
 
     .line 21
     .line 22
-    invoke-static {p2, p1, p0, v0}, Lhs5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p1, p0, v0}, Llj6;->i(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 23
     .line 24
@@ -67,7 +67,7 @@
     move-result-object p0
 
     .line 26
-    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
+    invoke-static {p0}, Lnf1;->m(Ljava/lang/String;)V
 
     .line 27
     .line 28
@@ -104,7 +104,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 2
     .line 3
@@ -129,7 +129,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 2
     .line 3
@@ -152,7 +152,7 @@
 
     .line 6
     .line 7
-    iget v0, p0, Lg3;->k:I
+    iget v0, p0, Lg3;->j:I
 
     .line 8
     .line 9
@@ -160,11 +160,11 @@
 
     .line 10
     .line 11
-    iput v0, p0, Lg3;->k:I
+    iput v0, p0, Lg3;->j:I
 
     .line 12
     .line 13
-    iget-object p0, p0, Lh3;->m:Lj3;
+    iget-object p0, p0, Lh3;->l:Lj3;
 
     .line 14
     .line 15
@@ -180,7 +180,7 @@
 
     .line 20
     :cond_0
-    invoke-static {}, Lue1;->p()V
+    invoke-static {}, Lnf1;->p()V
 
     .line 21
     .line 22
@@ -195,7 +195,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lg3;->k:I
+    iget p0, p0, Lg3;->j:I
 
     .line 2
     .line 3

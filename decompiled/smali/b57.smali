@@ -1,219 +1,204 @@
-.class public abstract Lb57;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lb57;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:J
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
 
-.field public static final b:F
+
+# instance fields
+.field public final i:Lt83;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lt83;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {v0, v0}, Li02;->a(FF)J
-
     .line 3
     .line 4
+    iput-object p1, p0, Lb57;->i:Lt83;
+
     .line 5
-    move-result-wide v0
-
     .line 6
-    sput-wide v0, Lb57;->a:J
-
-    .line 7
-    .line 8
-    const v0, 0x40490fdb    # (float)Math.PI
-
-    .line 9
-    .line 10
-    .line 11
-    sput v0, Lb57;->b:F
-
-    .line 12
-    .line 13
     return-void
 .end method
 
-.method public static final a(FF)J
-    .locals 2
+
+# virtual methods
+.method public final a()Lrw3;
+    .locals 1
 
     .line 1
-    mul-float v0, p0, p0
+    new-instance v0, Lc57;
 
     .line 2
     .line 3
-    mul-float v1, p1, p1
+    invoke-direct {v0}, Lrw3;-><init>()V
 
     .line 4
     .line 5
-    add-float/2addr v1, v0
-
     .line 6
-    float-to-double v0, v1
+    iget-object p0, p0, Lb57;->i:Lt83;
 
     .line 7
-    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
-
     .line 8
+    iput-object p0, v0, Lc57;->w:Lt83;
+
     .line 9
     .line 10
-    move-result-wide v0
+    return-object v0
+.end method
+
+.method public final b(Lrw3;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Lc57;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lb57;->i:Lt83;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Lc57;->w:Lt83;
+
+    .line 6
+    .line 7
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lb57;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
 
     .line 11
-    double-to-float v0, v0
+    :cond_1
+    check-cast p1, Lb57;
 
     .line 12
-    const/4 v1, 0x0
-
     .line 13
-    cmpl-float v1, v0, v1
+    iget-object p0, p0, Lb57;->i:Lt83;
 
     .line 14
     .line 15
-    if-lez v1, :cond_0
+    iget-object p1, p1, Lb57;->i:Lt83;
 
     .line 16
     .line 17
-    div-float/2addr p0, v0
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 18
-    div-float/2addr p1, v0
-
     .line 19
-    invoke-static {p0, p1}, Li02;->a(FF)J
-
     .line 20
-    .line 21
-    .line 22
-    move-result-wide p0
+    move-result p0
 
+    .line 21
+    if-nez p0, :cond_2
+
+    .line 22
     .line 23
-    return-wide p0
+    return v2
 
     .line 24
-    :cond_0
-    const-string p0, "Required distance greater than zero"
-
-    .line 25
-    .line 26
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
-    .line 27
-    .line 28
-    .line 29
-    const-wide/16 p0, 0x0
-
-    .line 30
-    .line 31
-    return-wide p0
+    :cond_2
+    return v0
 .end method
 
-.method public static final b(FFF)F
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    const/high16 v0, 0x3f800000    # 1.0f
+    iget-object p0, p0, Lb57;->i:Lt83;
 
     .line 2
     .line 3
-    sub-float/2addr v0, p2
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
-    mul-float/2addr v0, p0
-
     .line 5
-    mul-float/2addr p2, p1
-
     .line 6
-    add-float/2addr p2, v0
+    move-result p0
 
     .line 7
-    return p2
-.end method
-
-.method public static final c(F)F
-    .locals 1
-
-    .line 1
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    .line 2
-    .line 3
-    rem-float/2addr p0, v0
-
-    .line 4
-    add-float/2addr p0, v0
-
-    .line 5
-    rem-float/2addr p0, v0
-
-    .line 6
     return p0
 .end method
 
-.method public static d(FF)J
-    .locals 4
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    float-to-double v0, p1
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
-    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
-
     .line 3
+    const-string v1, "TraversablePrefetchStateModifierElement(prefetchState="
+
     .line 4
     .line 5
-    move-result-wide v2
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
-    double-to-float p1, v2
-
     .line 7
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
-
     .line 8
+    iget-object p0, p0, Lb57;->i:Lt83;
+
     .line 9
     .line 10
-    move-result-wide v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
-    double-to-float v0, v0
-
     .line 12
-    invoke-static {p1, v0}, Li02;->a(FF)J
-
     .line 13
+    const-string p0, ")"
+
     .line 14
     .line 15
-    move-result-wide v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 16
-    invoke-static {v0, v1, p0}, Lrf3;->h0(JF)J
-
     .line 17
     .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 19
-    move-result-wide p0
-
     .line 20
-    sget-wide v0, Lb57;->a:J
-
     .line 21
+    move-result-object p0
+
     .line 22
-    invoke-static {p0, p1, v0, v1}, Lrf3;->W(JJ)J
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-wide p0
-
-    .line 26
-    return-wide p0
+    return-object p0
 .end method

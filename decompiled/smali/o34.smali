@@ -1,273 +1,134 @@
-.class public final synthetic Lo34;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final enum Lo34;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum i:Lo34;
 
-.field public final synthetic k:Li24;
+.field public static final enum j:Lo34;
+
+.field public static final synthetic k:[Lo34;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li24;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    iput-byte p2, p0, Lo34;->j:B
+    new-instance v0, Lo34;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lo34;->k:Li24;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
-
-    .line 1
-    iget-byte v0, p0, Lo34;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
+    const-string v1, "IconAndText"
 
     .line 4
     .line 5
     const/4 v2, 0x0
 
     .line 6
-    const/4 v3, 0x2
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
-    const/4 v4, 0x1
-
     .line 8
-    iget-object p0, p0, Lo34;->k:Li24;
-
     .line 9
+    sput-object v0, Lo34;->i:Lo34;
+
     .line 10
-    check-cast p1, Lz11;
-
     .line 11
+    new-instance v1, Lo34;
+
     .line 12
-    check-cast p2, Ljava/lang/Integer;
-
     .line 13
+    const-string v2, "IconOnly"
+
     .line 14
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
     .line 15
+    const/4 v3, 0x1
+
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
-    move-result p2
-
     .line 18
-    packed-switch v0, :pswitch_data_0
-
     .line 19
+    new-instance v2, Lo34;
+
     .line 20
     .line 21
-    and-int/lit8 v0, p2, 0x3
+    const-string v3, "IconWithSelectedLabel"
 
     .line 22
     .line 23
-    if-eq v0, v3, :cond_0
+    const/4 v4, 0x2
 
     .line 24
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 25
-    move v2, v4
-
     .line 26
-    :cond_0
-    and-int/2addr p2, v4
-
     .line 27
-    move-object v8, p1
+    sput-object v2, Lo34;->j:Lo34;
 
     .line 28
-    check-cast v8, Lt72;
-
     .line 29
-    .line 30
-    invoke-virtual {v8, p2, v2}, Lt72;->T(IZ)Z
+    filled-new-array {v0, v1, v2}, [Lo34;
 
+    .line 30
     .line 31
     .line 32
+    move-result-object v0
+
     .line 33
-    move-result p1
+    sput-object v0, Lo34;->k:[Lo34;
 
     .line 34
-    if-eqz p1, :cond_1
-
     .line 35
-    .line 36
-    iget-object p0, p0, Li24;->c:Ljava/lang/Integer;
+    return-void
+.end method
 
-    .line 37
-    .line 38
-    invoke-static {p0}, Lgf3;->h0(Ljava/lang/Integer;)Lvn2;
+.method public static valueOf(Ljava/lang/String;)Lo34;
+    .locals 1
 
-    .line 39
-    .line 40
-    .line 41
-    move-result-object v3
+    .line 1
+    const-class v0, Lo34;
 
-    .line 42
-    sget-object p0, Lvw0;->a:Lkq1;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 43
-    .line 44
-    invoke-virtual {v8, p0}, Lt72;->k(Lrv4;)Ljava/lang/Object;
-
-    .line 45
-    .line 46
-    .line 47
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 48
-    check-cast p0, Luw0;
+    .line 7
+    check-cast p0, Lo34;
 
-    .line 49
-    .line 50
-    invoke-virtual {p0}, Luw0;->i()J
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 51
-    .line 52
-    .line 53
-    move-result-wide v6
+.method public static values()[Lo34;
+    .locals 1
 
-    .line 54
-    const/16 v9, 0x180
+    .line 1
+    sget-object v0, Lo34;->k:[Lo34;
 
-    .line 55
-    .line 56
-    const/16 v10, 0xa
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 57
-    .line 58
-    const/4 v4, 0x0
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 59
-    const/4 v5, 0x0
+    .line 7
+    check-cast v0, [Lo34;
 
-    .line 60
-    invoke-static/range {v3 .. v10}, Lru5;->a(Lvn2;Lyl4;Lwp3;JLz11;II)V
-
-    .line 61
-    .line 62
-    .line 63
-    goto :goto_0
-
-    .line 64
-    :cond_1
-    invoke-virtual {v8}, Lt72;->W()V
-
-    .line 65
-    .line 66
-    .line 67
-    :goto_0
-    return-object v1
-
-    .line 68
-    :pswitch_0
-    and-int/lit8 v0, p2, 0x3
-
-    .line 69
-    .line 70
-    if-eq v0, v3, :cond_2
-
-    .line 71
-    .line 72
-    move v2, v4
-
-    .line 73
-    :cond_2
-    and-int/2addr p2, v4
-
-    .line 74
-    move-object v8, p1
-
-    .line 75
-    check-cast v8, Lt72;
-
-    .line 76
-    .line 77
-    invoke-virtual {v8, p2, v2}, Lt72;->T(IZ)Z
-
-    .line 78
-    .line 79
-    .line 80
-    move-result p1
-
-    .line 81
-    if-eqz p1, :cond_3
-
-    .line 82
-    .line 83
-    iget-object p0, p0, Li24;->c:Ljava/lang/Integer;
-
-    .line 84
-    .line 85
-    invoke-static {p0}, Lgf3;->h0(Ljava/lang/Integer;)Lvn2;
-
-    .line 86
-    .line 87
-    .line 88
-    move-result-object v3
-
-    .line 89
-    const/16 v9, 0x30
-
-    .line 90
-    .line 91
-    const/16 v10, 0xc
-
-    .line 92
-    .line 93
-    const/4 v4, 0x0
-
-    .line 94
-    const/4 v5, 0x0
-
-    .line 95
-    const-wide/16 v6, 0x0
-
-    .line 96
-    .line 97
-    invoke-static/range {v3 .. v10}, Lxm2;->a(Lvn2;Ljava/lang/String;Lwp3;JLz11;II)V
-
-    .line 98
-    .line 99
-    .line 100
-    goto :goto_1
-
-    .line 101
-    :cond_3
-    invoke-virtual {v8}, Lt72;->W()V
-
-    .line 102
-    .line 103
-    .line 104
-    :goto_1
-    return-object v1
-
-    .line 105
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,162 +1,261 @@
 .class public final Lw13;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt46;
+
+
+# static fields
+.field public static final b:Lw13;
+
+.field public static final c:Ljava/lang/String;
 
 
 # instance fields
-.field public final synthetic a:B
-
-.field public final synthetic b:Lx13;
-
-.field public final synthetic c:Ljava/lang/Object;
+.field public final synthetic a:Lde3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lx13;Ljava/lang/Object;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-byte p3, p0, Lw13;->a:B
+    new-instance v0, Lw13;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lw13;->b:Lx13;
+    invoke-direct {v0}, Lw13;-><init>()V
 
     .line 4
     .line 5
-    iput-object p2, p0, Lw13;->c:Ljava/lang/Object;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lw13;->b:Lw13;
 
+    .line 7
     .line 8
+    const-string v0, "kotlinx.serialization.json.JsonObject"
+
     .line 9
     .line 10
+    sput-object v0, Lw13;->c:Ljava/lang/String;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
-.method private final a()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
     .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    sget-object v0, Lpi6;->a:Lpi6;
+
+    .line 5
+    .line 6
+    sget-object v0, Lh13;->a:Lh13;
+
+    .line 7
+    .line 8
+    sget-object v0, Lpi6;->a:Lpi6;
+
+    .line 9
+    .line 10
+    sget-object v0, Lh13;->a:Lh13;
+
+    .line 11
+    .line 12
+    new-instance v0, Lde3;
+
+    .line 13
+    .line 14
+    sget-object v1, Lpi6;->b:Lu05;
+
+    .line 15
+    .line 16
+    sget-object v2, Lh13;->b:Lv46;
+
+    .line 17
+    .line 18
+    invoke-direct {v0, v1, v2}, Lde3;-><init>(Lt46;Lt46;)V
+
+    .line 19
+    .line 20
+    .line 21
+    iput-object v0, p0, Lw13;->a:Lde3;
+
+    .line 22
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public b()Lp13;
-    .locals 2
+.method public final a(Ljava/lang/String;)I
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lw13;->b:Lx13;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iget-object v1, v0, Lx13;->s:Lgt3;
-
     .line 4
+    iget-object p0, p0, Lw13;->a:Lde3;
+
     .line 5
-    iget-object p0, p0, Lw13;->c:Ljava/lang/Object;
-
     .line 6
-    .line 7
-    invoke-virtual {v1, p0}, Lgt3;->g(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lde3;->a(Ljava/lang/String;)I
 
+    .line 7
     .line 8
     .line 9
+    move-result p0
+
     .line 10
-    move-result-object p0
+    return p0
+.end method
 
-    .line 11
-    check-cast p0, Lj13;
+.method public final b()Ljava/lang/String;
+    .locals 0
 
-    .line 12
-    .line 13
-    if-eqz p0, :cond_0
+    .line 1
+    sget-object p0, Lw13;->c:Ljava/lang/String;
 
-    .line 14
-    .line 15
-    iget-object v0, v0, Lx13;->o:Lgt3;
-
-    .line 16
-    .line 17
-    invoke-virtual {v0, p0}, Lgt3;->g(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object p0
-
-    .line 21
-    check-cast p0, Lp13;
-
-    .line 22
-    .line 23
-    return-object p0
-
-    .line 24
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 25
+    .line 2
+    .line 3
     return-object p0
 .end method
 
-.method public final c()Z
-    .locals 2
+.method public final c()Lbe3;
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lw13;->a:B
+    sget-object p0, Lcj6;->h:Lcj6;
 
     .line 2
     .line 3
-    const/4 v1, 0x1
+    return-object p0
+.end method
+
+.method public final d()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x2
+
+    .line 2
+    return p0
+.end method
+
+.method public final e(I)Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lw13;->a:Lde3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lde3;->e(I)Ljava/lang/String;
 
     .line 4
-    packed-switch v0, :pswitch_data_0
-
     .line 5
     .line 6
-    .line 7
-    invoke-virtual {p0}, Lw13;->b()Lp13;
-
-    .line 8
-    .line 9
-    .line 10
     move-result-object p0
 
-    .line 11
-    if-eqz p0, :cond_0
+    .line 7
+    return-object p0
+.end method
 
-    .line 12
-    .line 13
-    iget-object p0, p0, Lp13;->f:Lho4;
+.method public final f()Z
+    .locals 0
 
-    .line 14
-    .line 15
-    if-eqz p0, :cond_0
+    .line 1
+    const/4 p0, 0x0
 
-    .line 16
-    .line 17
-    invoke-virtual {p0}, Lho4;->c()Z
+    .line 2
+    return p0
+.end method
 
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
+.method public final getAnnotations()Ljava/util/List;
+    .locals 0
 
-    .line 21
-    :cond_0
-    :pswitch_0
-    return v1
+    .line 1
+    sget-object p0, Liv1;->i:Liv1;
 
-    .line 22
-    nop
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 23
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final h()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final i(I)Ljava/util/List;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lw13;->a:Lde3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lde3;->i(I)Ljava/util/List;
+
+    .line 4
+    .line 5
+    .line 6
+    sget-object p0, Liv1;->i:Liv1;
+
+    .line 7
+    .line 8
+    return-object p0
+.end method
+
+.method public final j(I)Lt46;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lw13;->a:Lde3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lde3;->j(I)Lt46;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final k(I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lw13;->a:Lde3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lde3;->k(I)Z
+
+    .line 4
+    .line 5
+    .line 6
+    const/4 p0, 0x0
+
+    .line 7
+    return p0
 .end method

@@ -1,23 +1,35 @@
-.class public final Lhc6;
+.class public final synthetic Lhc6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lzd0;
+.implements Lt72;
 
 
 # instance fields
-.field public final b:Le62;
+.field public final synthetic i:Ljc6;
 
-.field public final c:Lt03;
+.field public final synthetic j:Lbd6;
 
-.field public final d:Z
+.field public final synthetic k:Lsw3;
 
-.field public final e:Lzd0;
+.field public final synthetic l:Ldc6;
+
+.field public final synthetic m:Lt72;
+
+.field public final synthetic n:Lu72;
+
+.field public final synthetic o:F
+
+.field public final synthetic p:F
+
+.field public final synthetic q:I
+
+.field public final synthetic r:I
 
 
 # direct methods
-.method public constructor <init>(Le62;Lt03;ZLzd0;)V
+.method public synthetic constructor <init>(Ljc6;Lbd6;Lsw3;Ldc6;Lt72;Lu72;FFII)V
     .locals 0
 
     .line 1
@@ -26,115 +38,139 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lhc6;->b:Le62;
+    iput-object p1, p0, Lhc6;->i:Ljc6;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lhc6;->c:Lt03;
+    iput-object p2, p0, Lhc6;->j:Lbd6;
 
     .line 7
     .line 8
-    iput-boolean p3, p0, Lhc6;->d:Z
+    iput-object p3, p0, Lhc6;->k:Lsw3;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lhc6;->e:Lzd0;
+    iput-object p4, p0, Lhc6;->l:Ldc6;
 
     .line 11
     .line 12
+    iput-object p5, p0, Lhc6;->m:Lt72;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lhc6;->n:Lu72;
+
+    .line 15
+    .line 16
+    iput p7, p0, Lhc6;->o:F
+
+    .line 17
+    .line 18
+    iput p8, p0, Lhc6;->p:F
+
+    .line 19
+    .line 20
+    iput p9, p0, Lhc6;->q:I
+
+    .line 21
+    .line 22
+    iput p10, p0, Lhc6;->r:I
+
+    .line 23
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(FFF)F
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
 
     .line 1
-    iget-object v0, p0, Lhc6;->b:Le62;
+    move-object v8, p1
 
     .line 2
-    .line 3
-    invoke-interface {v0}, Le62;->invoke()Ljava/lang/Object;
+    check-cast v8, Lt82;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    move-result-object v0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
-    check-cast v0, Ljava/lang/Number;
-
     .line 8
     .line 9
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+    iget p1, p0, Lhc6;->q:I
 
     .line 10
     .line 11
-    .line 12
-    move-result v0
+    or-int/lit8 p1, p1, 0x1
 
+    .line 12
     .line 13
-    int-to-float v0, v0
+    invoke-static {p1}, Lp06;->W(I)I
 
     .line 14
-    iget-object v1, p0, Lhc6;->c:Lt03;
-
     .line 15
     .line 16
-    sget-object v2, Lt03;->k:Lt03;
+    move-result v9
 
     .line 17
+    iget p1, p0, Lhc6;->r:I
+
     .line 18
-    if-ne v1, v2, :cond_0
-
     .line 19
+    invoke-static {p1}, Lp06;->W(I)I
+
     .line 20
-    const/4 v1, 0x1
-
     .line 21
-    goto :goto_0
-
     .line 22
-    :cond_0
-    const/4 v1, 0x0
+    move-result v10
 
     .line 23
-    :goto_0
-    iget-boolean v2, p0, Lhc6;->d:Z
+    iget-object v0, p0, Lhc6;->i:Ljc6;
 
     .line 24
     .line 25
-    if-nez v2, :cond_1
+    iget-object v1, p0, Lhc6;->j:Lbd6;
 
     .line 26
     .line 27
-    if-eqz v1, :cond_1
+    iget-object v2, p0, Lhc6;->k:Lsw3;
 
     .line 28
     .line 29
-    goto :goto_1
+    iget-object v3, p0, Lhc6;->l:Ldc6;
 
     .line 30
-    :cond_1
-    sub-float/2addr p1, v0
-
     .line 31
-    :goto_1
-    iget-object p0, p0, Lhc6;->e:Lzd0;
+    iget-object v4, p0, Lhc6;->m:Lt72;
 
     .line 32
     .line 33
-    sub-float/2addr p3, v0
+    iget-object v5, p0, Lhc6;->n:Lu72;
 
     .line 34
-    invoke-interface {p0, p1, p2, p3}, Lzd0;->a(FFF)F
-
     .line 35
+    iget v6, p0, Lhc6;->o:F
+
     .line 36
     .line 37
-    move-result p0
+    iget v7, p0, Lhc6;->p:F
 
     .line 38
-    return p0
+    .line 39
+    invoke-virtual/range {v0 .. v10}, Ljc6;->d(Lbd6;Lsw3;Ldc6;Lt72;Lu72;FFLt82;II)V
+
+    .line 40
+    .line 41
+    .line 42
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 43
+    .line 44
+    return-object p0
 .end method

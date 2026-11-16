@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/Resvg_core_androidKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
@@ -64,7 +64,7 @@
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 43
+    .line 42
     iget-wide v0, p0, Lcom/hashsequence/coilresvg/RustBufferStruct;->len:J
 
     const-wide/32 v2, 0x7fffffff
@@ -73,12 +73,12 @@
 
     const/4 v3, 0x0
 
-    if-gtz v2, :cond_2
+    if-gtz v2, :cond_1
 
-    .line 44
+    .line 43
     iget-object p0, p0, Lcom/hashsequence/coilresvg/RustBufferStruct;->data:Lcom/sun/jna/Pointer;
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
     const-wide/16 v4, 0x0
 
@@ -86,32 +86,28 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-static {p0}, Lcom/hashsequence/coilresvg/ByteBuffer;->constructor-impl(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_1
-    :goto_0
+    :cond_0
     return-object v3
 
-    .line 45
-    :cond_2
+    .line 44
+    :cond_1
     const-string p0, "cannot handle RustBuffer longer than Int.MAX_VALUE bytes: length is "
 
-    .line 46
-    invoke-static {v0, v1, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
+    .line 45
+    invoke-static {v0, v1, p0}, Lky1;->k(JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 47
-    invoke-static {p0}, Ljw1;->d(Ljava/lang/Object;)V
+    .line 46
+    invoke-static {p0}, Lex1;->b(Ljava/lang/Object;)V
 
     return-object v3
 .end method
@@ -141,7 +137,7 @@
     const/4 v3, 0x0
 
     .line 12
-    if-gtz v2, :cond_2
+    if-gtz v2, :cond_1
 
     .line 13
     .line 14
@@ -149,7 +145,7 @@
 
     .line 15
     .line 16
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
     .line 17
     .line 18
@@ -165,48 +161,43 @@
     move-result-object p0
 
     .line 24
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
     .line 25
     .line 26
-    goto :goto_0
-
-    .line 27
-    :cond_0
     invoke-static {p0}, Lcom/hashsequence/coilresvg/ByteBuffer;->constructor-impl(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
+    .line 27
     .line 28
     .line 29
-    .line 30
     move-result-object p0
 
-    .line 31
+    .line 30
     return-object p0
+
+    .line 31
+    :cond_0
+    return-object v3
 
     .line 32
     :cond_1
-    :goto_0
-    return-object v3
-
-    .line 33
-    :cond_2
     const-string p0, "cannot handle RustBuffer longer than Int.MAX_VALUE bytes: length is "
 
+    .line 33
     .line 34
-    .line 35
-    invoke-static {v0, v1, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, p0}, Lky1;->k(JLjava/lang/String;)Ljava/lang/String;
 
+    .line 35
     .line 36
     .line 37
-    .line 38
     move-result-object p0
 
-    .line 39
-    invoke-static {p0}, Ljw1;->d(Ljava/lang/Object;)V
+    .line 38
+    invoke-static {p0}, Lex1;->b(Ljava/lang/Object;)V
 
+    .line 39
     .line 40
     .line 41
-    .line 42
     return-object v3
 .end method
 
@@ -336,17 +327,21 @@
     return-object p0
 
     .line 35
-    :catchall_0
-    move-exception p0
-
-    .line 36
+    :goto_0
     :try_start_2
     monitor-exit v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 37
+    .line 36
     throw p0
+
+    .line 37
+    :catchall_0
+    move-exception p0
+
+    .line 38
+    goto :goto_0
 .end method
 
 .method public static final getNullPointer()Lcom/sun/jna/Pointer;
@@ -545,7 +540,7 @@
     .line 13
     .line 14
     .line 15
-    invoke-virtual {v2, v3}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp72;)Ljava/lang/Object;
 
     .line 16
     .line 17
@@ -858,14 +853,14 @@
     return-void
 .end method
 
-.method public static final uniffiRustCall(Lp62;)Ljava/lang/Object;
+.method public static final uniffiRustCall(Lp72;)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<U:",
             "Ljava/lang/Object;",
             ">(",
-            "Lp62;",
+            "Lp72;",
             ")TU;"
         }
     .end annotation
@@ -888,12 +883,12 @@
 
     .line 9
     .line 10
-    invoke-direct {v2, p0, v0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lp62;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
+    invoke-direct {v2, p0, v0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lp72;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
 
     .line 11
     .line 12
     .line 13
-    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp72;)Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -904,7 +899,7 @@
     return-object p0
 .end method
 
-.method public static final uniffiRustCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;Lp62;)Ljava/lang/Object;
+.method public static final uniffiRustCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;Lp72;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -915,7 +910,7 @@
             ">(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler<",
             "TE;>;",
-            "Lp62;",
+            "Lp72;",
             ")TU;"
         }
     .end annotation
@@ -939,12 +934,12 @@
 
     .line 10
     .line 11
-    invoke-direct {v1, p1, p0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lp62;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
+    invoke-direct {v1, p1, p0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lp72;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
 
     .line 12
     .line 13
     .line 14
-    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp72;)Ljava/lang/Object;
 
     .line 15
     .line 16
@@ -1518,7 +1513,7 @@
     return-void
 .end method
 
-.method public static final uniffiTraitInterfaceCall(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Le62;Lp62;)V
+.method public static final uniffiTraitInterfaceCall(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Le72;Lp72;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1526,8 +1521,8 @@
             "Ljava/lang/Object;",
             ">(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;",
-            "Le62;",
-            "Lp62;",
+            "Le72;",
+            "Lp72;",
             ")V"
         }
     .end annotation
@@ -1549,7 +1544,7 @@
     .line 9
     .line 10
     :try_start_0
-    invoke-interface {p1}, Le62;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Le72;->invoke()Ljava/lang/Object;
 
     .line 11
     .line 12
@@ -1557,7 +1552,7 @@
     move-result-object p1
 
     .line 14
-    invoke-interface {p2, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1605,7 +1600,7 @@
     return-void
 .end method
 
-.method public static final uniffiTraitInterfaceCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Le62;Lp62;Lp62;)V
+.method public static final uniffiTraitInterfaceCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Le72;Lp72;Lp72;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1615,9 +1610,9 @@
             "Ljava/lang/Throwable;",
             ">(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;",
-            "Le62;",
-            "Lp62;",
-            "Lp62;",
+            "Le72;",
+            "Lp72;",
+            "Lp72;",
             ")V"
         }
     .end annotation
@@ -1644,7 +1639,7 @@
     .line 12
     .line 13
     :try_start_0
-    invoke-interface {p1}, Le62;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Le72;->invoke()Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -1652,7 +1647,7 @@
     move-result-object p0
 
     .line 17
-    invoke-interface {p2, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1663,14 +1658,18 @@
 
     .line 21
     :catch_0
-    const-string p0, "This function has a reified type parameter and thus can only be inlined at compilation time, not called directly."
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 22
     .line 23
-    invoke-static {p0}, Lue1;->d(Ljava/lang/String;)V
+    const-string p1, "This function has a reified type parameter and thus can only be inlined at compilation time, not called directly."
 
     .line 24
     .line 25
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
     .line 26
-    return-void
+    .line 27
+    .line 28
+    throw p0
 .end method

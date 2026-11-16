@@ -1,15 +1,25 @@
 .class public final Ler4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:I
+.field public final a:Lsr4;
+
+.field public final b:Lus4;
+
+.field public final c:Lts4;
+
+.field public d:Z
+
+.field public e:Ljava/lang/Object;
+
+.field public final f:Ll83;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method public constructor <init>(IFLsr4;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,166 +27,56 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Ler4;->a:I
+    iput-object p3, p0, Ler4;->a:Lsr4;
 
     .line 5
     .line 6
-    return-void
-.end method
+    new-instance p3, Lus4;
 
-.method public static a(I)Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-eq p0, v0, :cond_3
-
-    .line 3
-    .line 4
-    const/4 v0, 0x2
-
-    .line 5
-    if-eq p0, v0, :cond_2
-
-    .line 6
     .line 7
-    const/4 v0, 0x3
-
     .line 8
-    if-eq p0, v0, :cond_1
+    invoke-direct {p3, p1}, Lus4;-><init>(I)V
 
     .line 9
     .line 10
-    const/4 v0, 0x4
-
     .line 11
-    if-eq p0, v0, :cond_0
+    iput-object p3, p0, Ler4;->b:Lus4;
 
     .line 12
     .line 13
-    const-string p0, "Unknown"
+    new-instance p3, Lts4;
 
     .line 14
     .line 15
-    return-object p0
+    invoke-direct {p3, p2}, Lts4;-><init>(F)V
 
     .line 16
-    :cond_0
-    const-string p0, "Eraser"
-
     .line 17
     .line 18
-    return-object p0
+    iput-object p3, p0, Ler4;->c:Lts4;
 
     .line 19
-    :cond_1
-    const-string p0, "Stylus"
-
     .line 20
-    .line 21
-    return-object p0
+    new-instance p2, Ll83;
 
+    .line 21
     .line 22
-    :cond_2
-    const-string p0, "Mouse"
+    const/16 p3, 0x1e
 
     .line 23
     .line 24
-    return-object p0
+    const/16 v0, 0x64
 
     .line 25
-    :cond_3
-    const-string p0, "Touch"
-
     .line 26
+    invoke-direct {p2, p1, p3, v0}, Ll83;-><init>(III)V
+
     .line 27
-    return-object p0
-.end method
+    .line 28
+    .line 29
+    iput-object p2, p0, Ler4;->f:Ll83;
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ler4;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    check-cast p1, Ler4;
-
-    .line 7
-    .line 8
-    iget p1, p1, Ler4;->a:I
-
-    .line 9
-    .line 10
-    iget p0, p0, Ler4;->a:I
-
-    .line 11
-    .line 12
-    if-eq p0, p1, :cond_1
-
-    .line 13
-    .line 14
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 15
-    return p0
-
-    .line 16
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 17
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Ler4;->a:I
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    iget p0, p0, Ler4;->a:I
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ler4;->a(I)Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+    .line 30
+    .line 31
+    return-void
 .end method

@@ -1,67 +1,84 @@
-.class public abstract Lhb0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lhb0;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lwu3;
+# instance fields
+.field public i:Z
+
+.field public j:Lvf5;
+
+.field public k:Lvf5;
+
+.field public l:B
+
+.field public m:I
+
+.field public n:I
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public final synthetic p:Ljb0;
+
+.field public q:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljb0;Lq91;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Luw3;->a:Ltw3;
+    iput-object p1, p0, Lhb0;->p:Ljb0;
 
     .line 2
     .line 3
-    new-instance v1, Lsm2;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
-    const/16 v2, 0xd
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lhb0;->o:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lhb0;->q:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    invoke-direct {v1, v2}, Lsm2;-><init>(B)V
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lhb0;->q:I
+
     .line 9
     .line 10
-    const/16 v2, 0xe
+    iget-object p1, p0, Lhb0;->p:Ljb0;
 
     .line 11
     .line 12
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/4 v0, 0x0
 
     .line 13
-    .line 14
-    invoke-static {v3, v1, v2}, Ldj3;->K(FLt62;I)Ltw3;
+    invoke-virtual {p1, v0, p0}, Ljb0;->a(ZLq91;)Ljava/lang/Object;
 
+    .line 14
     .line 15
     .line 16
+    move-result-object p0
+
     .line 17
-    move-result-object v1
-
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 19
-    .line 20
-    .line 21
-    new-instance v2, Lwu3;
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v0, v0, v1}, Lwu3;-><init>(Lsw3;Lsw3;Ltw3;)V
-
-    .line 24
-    .line 25
-    .line 26
-    sput-object v2, Lhb0;->a:Lwu3;
-
-    .line 27
-    .line 28
-    return-void
+    return-object p0
 .end method

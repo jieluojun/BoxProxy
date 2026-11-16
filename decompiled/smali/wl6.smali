@@ -1,111 +1,162 @@
-.class public final Lwl6;
-.super Lol6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lwl6;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final b:Ljava/lang/String;
+# static fields
+.field public static final enum i:Lwl6;
 
-.field public final c:I
+.field public static final enum j:Lwl6;
 
-.field public final d:Lp62;
+.field public static final enum k:Lwl6;
+
+.field public static final enum l:Lwl6;
+
+.field public static final synthetic m:[Lwl6;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/String;ILp62;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    invoke-direct {p0, p1}, Lol6;-><init>(Ljava/lang/Object;)V
+    new-instance v0, Lwl6;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p2, p0, Lwl6;->b:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    iput p3, p0, Lwl6;->c:I
-
-    .line 7
-    .line 8
-    iput-object p4, p0, Lwl6;->d:Lp62;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "TextContextMenuItem(key="
+    const-string v1, "InvalidRequest"
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
     .line 8
-    iget-object v1, p0, Lol6;->a:Ljava/lang/Object;
-
     .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sput-object v0, Lwl6;->i:Lwl6;
 
+    .line 10
     .line 11
+    new-instance v1, Lwl6;
+
     .line 12
     .line 13
-    const-string v1, ", label=\""
+    const-string v2, "Network"
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    iget-object v1, p0, Lwl6;->b:Ljava/lang/String;
-
     .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput-object v1, Lwl6;->j:Lwl6;
 
+    .line 20
     .line 21
+    new-instance v2, Lwl6;
+
     .line 22
     .line 23
-    const-string v1, "\", leadingIcon="
+    const-string v3, "RedirectLimit"
 
     .line 24
     .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v4, 0x2
 
     .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 27
     .line 28
-    const-string v1, ")"
-
     .line 29
+    sput-object v2, Lwl6;->k:Lwl6;
+
     .line 30
-    iget p0, p0, Lwl6;->c:I
-
     .line 31
-    .line 32
-    invoke-static {v1, v0, p0}, Lhs5;->n(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
+    new-instance v3, Lwl6;
 
+    .line 32
     .line 33
+    const-string v4, "MissingUsageHeader"
+
     .line 34
     .line 35
-    move-result-object p0
+    const/4 v5, 0x3
 
     .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lwl6;->l:Lwl6;
+
+    .line 40
+    .line 41
+    filled-new-array {v0, v1, v2, v3}, [Lwl6;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object v0
+
+    .line 45
+    sput-object v0, Lwl6;->m:[Lwl6;
+
+    .line 46
+    .line 47
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lwl6;
+    .locals 1
+
+    .line 1
+    const-class v0, Lwl6;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lwl6;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lwl6;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lwl6;->m:[Lwl6;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lwl6;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

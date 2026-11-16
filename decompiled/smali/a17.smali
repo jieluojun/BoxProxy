@@ -1,10 +1,18 @@
-.class public La17;
-.super La07;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final La17;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public final a:D
+
+.field public final b:D
+
+.field public final c:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(DD)V
     .locals 0
 
     .line 1
@@ -13,149 +21,108 @@
     .line 2
     .line 3
     .line 4
+    iput-wide p1, p0, La17;->a:D
+
+    .line 5
+    .line 6
+    iput-wide p3, p0, La17;->b:D
+
+    .line 7
+    .line 8
+    new-instance p1, Ljava/util/LinkedHashMap;
+
+    .line 9
+    .line 10
+    invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
+
+    .line 11
+    .line 12
+    .line 13
+    iput-object p1, p0, La17;->c:Ljava/util/LinkedHashMap;
+
+    .line 14
+    .line 15
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lrx2;)Ljava/lang/Object;
-    .locals 3
+.method public final a(I)D
+    .locals 9
 
     .line 1
-    invoke-virtual {p1}, Lrx2;->L()I
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 2
     .line 3
     .line 4
-    move-result p0
+    move-result-object v0
 
     .line 5
-    const/16 v0, 0x9
+    iget-object v1, p0, La17;->c:Ljava/util/LinkedHashMap;
 
     .line 6
     .line 7
-    if-ne p0, v0, :cond_0
+    invoke-virtual {v1, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
     .line 9
-    invoke-virtual {p1}, Lrx2;->H()V
-
     .line 10
-    .line 11
-    .line 12
-    const/4 p0, 0x0
+    move-result-object v2
 
+    .line 11
+    if-nez v2, :cond_0
+
+    .line 12
     .line 13
-    return-object p0
+    const-wide/high16 v5, 0x4069000000000000L    # 200.0
 
     .line 14
-    :cond_0
-    :try_start_0
-    invoke-virtual {p1}, Lrx2;->z()I
-
     .line 15
-    .line 16
-    .line 17
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    int-to-double v7, p1
 
+    .line 16
+    iget-wide v3, p0, La17;->a:D
+
+    .line 17
     .line 18
-    const/16 v0, 0xff
+    invoke-static/range {v3 .. v8}, Lpp;->A(DDD)Lef2;
 
     .line 19
     .line 20
-    if-gt p0, v0, :cond_1
-
     .line 21
+    move-result-object p0
+
     .line 22
-    const/16 v0, -0x80
+    iget-wide p0, p0, Lef2;->b:D
 
     .line 23
     .line 24
-    if-lt p0, v0, :cond_1
+    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     .line 25
     .line 26
-    int-to-byte p0, p0
-
     .line 27
-    invoke-static {p0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    move-result-object v2
 
     .line 28
+    invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 29
     .line 30
-    move-result-object p0
-
     .line 31
-    return-object p0
+    :cond_0
+    check-cast v2, Ljava/lang/Number;
 
     .line 32
-    :cond_1
-    new-instance v0, Lyw2;
-
     .line 33
-    .line 34
-    const-string v1, "Lossy conversion from "
+    invoke-virtual {v2}, Ljava/lang/Number;->doubleValue()D
 
+    .line 34
     .line 35
     .line 36
-    const-string v2, " to byte; at path "
+    move-result-wide p0
 
     .line 37
-    .line 38
-    invoke-static {p0, v1, v2}, Loc1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p0
-
-    .line 42
-    const/4 v1, 0x1
-
-    .line 43
-    invoke-virtual {p1, v1}, Lrx2;->p(Z)Ljava/lang/String;
-
-    .line 44
-    .line 45
-    .line 46
-    move-result-object p1
-
-    .line 47
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 48
-    .line 49
-    .line 50
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object p0
-
-    .line 54
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    .line 55
-    .line 56
-    .line 57
-    throw v0
-
-    .line 58
-    :catch_0
-    move-exception p0
-
-    .line 59
-    new-instance p1, Lyw2;
-
-    .line 60
-    .line 61
-    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    .line 62
-    .line 63
-    .line 64
-    throw p1
+    return-wide p0
 .end method

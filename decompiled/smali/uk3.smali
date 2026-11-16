@@ -1,98 +1,53 @@
-.class public final Luk3;
+.class public abstract Luk3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/view/MenuItem$OnActionExpandListener;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Landroid/view/MenuItem$OnActionExpandListener;
-
-.field public final synthetic b:Lvk3;
+# static fields
+.field public static final a:Lz36;
 
 
 # direct methods
-.method public constructor <init>(Lvk3;Landroid/view/MenuItem$OnActionExpandListener;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lz36;
 
     .line 2
     .line 3
+    const-string v1, "MagnifierPositionInRoot"
+
     .line 4
-    iput-object p1, p0, Luk3;->b:Lvk3;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Luk3;->a:Landroid/view/MenuItem$OnActionExpandListener;
+    invoke-direct {v0, v1}, Lz36;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
+    sput-object v0, Luk3;->a:Lz36;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
-
-# virtual methods
-.method public final onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
-    .locals 1
+.method public static a(Lp72;Lp72;)Lsw3;
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Luk3;->b:Lvk3;
+    sget-object v0, Ld42;->D:Ld42;
 
     .line 2
     .line 3
-    invoke-virtual {v0, p1}, Ls4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+    new-instance v1, Lrk3;
 
     .line 4
     .line 5
+    invoke-direct {v1, p0, p1, v0}, Lrk3;-><init>(Lp72;Lp72;Ld42;)V
+
     .line 6
-    move-result-object p1
-
     .line 7
-    iget-object p0, p0, Luk3;->a:Landroid/view/MenuItem$OnActionExpandListener;
-
     .line 8
-    .line 9
-    invoke-interface {p0, p1}, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final onMenuItemActionExpand(Landroid/view/MenuItem;)Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Luk3;->b:Lvk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0, p1}, Ls4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    iget-object p0, p0, Luk3;->a:Landroid/view/MenuItem$OnActionExpandListener;
-
-    .line 8
-    .line 9
-    invoke-interface {p0, p1}, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionExpand(Landroid/view/MenuItem;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
+    return-object v1
 .end method

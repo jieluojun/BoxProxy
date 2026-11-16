@@ -1,104 +1,167 @@
 .class public final Lfv1;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/util/ListIterator;
+.implements Lt23;
 
 
-# instance fields
-.field public j:Ll96;
-
-.field public k:Loz0;
-
-.field public l:Lnn2;
-
-.field public m:Ljava/lang/Object;
-
-.field public n:Lre4;
-
-.field public o:Liw1;
-
-.field public p:I
-
-.field public synthetic q:Ljava/lang/Object;
-
-.field public final synthetic r:Ljv1;
-
-.field public s:I
+# static fields
+.field public static final i:Lfv1;
 
 
 # direct methods
-.method public constructor <init>(Ljv1;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lfv1;->r:Ljv1;
+    new-instance v0, Lfv1;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    sput-object v0, Lfv1;->i:Lfv1;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+.method public final bridge synthetic add(Ljava/lang/Object;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lfv1;->q:Ljava/lang/Object;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 2
     .line 3
-    iget p1, p0, Lfv1;->s:I
+    const-string p1, "Operation is not supported for read-only collection"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lfv1;->s:I
+    throw p0
+.end method
 
-    .line 9
-    .line 10
-    const/4 v5, 0x0
+.method public final hasNext()Z
+    .locals 0
 
-    .line 11
-    const/4 v6, 0x0
+    .line 1
+    const/4 p0, 0x0
 
-    .line 12
-    iget-object v0, p0, Lfv1;->r:Ljv1;
+    .line 2
+    return p0
+.end method
 
-    .line 13
-    .line 14
-    const/4 v1, 0x0
+.method public final hasPrevious()Z
+    .locals 0
 
-    .line 15
-    const/4 v2, 0x0
+    .line 1
+    const/4 p0, 0x0
 
-    .line 16
-    const/4 v3, 0x0
+    .line 2
+    return p0
+.end method
 
-    .line 17
-    const/4 v4, 0x0
+.method public final next()Ljava/lang/Object;
+    .locals 0
 
-    .line 18
-    move-object v7, p0
+    .line 1
+    new-instance p0, Ljava/util/NoSuchElementException;
 
-    .line 19
-    invoke-virtual/range {v0 .. v7}, Ljv1;->a(Ll96;Loz0;Lnn2;Ljava/lang/Object;Lre4;Liw1;Lz81;)Ljava/lang/Object;
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    .line 20
-    .line 21
-    .line 22
-    move-result-object p0
+    .line 4
+    .line 5
+    .line 6
+    throw p0
+.end method
 
-    .line 23
-    return-object p0
+.method public final nextIndex()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    throw p0
+.end method
+
+.method public final previousIndex()I
+    .locals 0
+
+    .line 1
+    const/4 p0, -0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final bridge synthetic set(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

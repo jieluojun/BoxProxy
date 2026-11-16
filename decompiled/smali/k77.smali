@@ -1,62 +1,100 @@
-.class public abstract Lk77;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lk77;
+.super Lq05;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# direct methods
-.method public static a(Landroid/view/View;)Ljava/lang/CharSequence;
-    .locals 0
+# instance fields
+.field public a:[B
+
+.field public b:I
+
+
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityPaneTitle()Ljava/lang/CharSequence;
+    iget-object v0, p0, Lk77;->a:[B
 
     .line 2
     .line 3
+    iget p0, p0, Lk77;->b:I
+
     .line 4
+    .line 5
+    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([BI)[B
+
+    .line 6
+    .line 7
+    .line 8
     move-result-object p0
 
-    .line 5
-    return-object p0
+    .line 9
+    new-instance v0, Lj77;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p0}, Lj77;-><init>([B)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-object v0
 .end method
 
-.method public static b(Landroid/view/View;)Z
-    .locals 0
+.method public final b(I)V
+    .locals 2
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/View;->isAccessibilityHeading()Z
+    iget-object v0, p0, Lk77;->a:[B
 
     .line 2
     .line 3
+    array-length v1, v0
+
     .line 4
-    move-result p0
+    if-ge v1, p1, :cond_1
 
     .line 5
-    return p0
-.end method
+    .line 6
+    array-length v1, v0
 
-.method public static c(Landroid/view/View;)Z
-    .locals 0
+    .line 7
+    shl-int/lit8 v1, v1, 0x1
 
-    .line 1
-    invoke-virtual {p0}, Landroid/view/View;->isScreenReaderFocusable()Z
+    .line 8
+    .line 9
+    if-ge p1, v1, :cond_0
 
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
+    .line 10
+    .line 11
+    move p1, v1
 
-    .line 5
-    return p0
-.end method
+    .line 12
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
 
-.method public static d(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .locals 0
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityPaneTitle(Ljava/lang/CharSequence;)V
+    .line 16
+    iput-object p1, p0, Lk77;->a:[B
 
-    .line 2
-    .line 3
-    .line 4
+    .line 17
+    .line 18
+    :cond_1
     return-void
+.end method
+
+.method public final d()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lk77;->b:I
+
+    .line 2
+    .line 3
+    return p0
 .end method

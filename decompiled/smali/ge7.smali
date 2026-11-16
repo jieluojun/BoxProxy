@@ -1,19 +1,14 @@
 .class public final Lge7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Landroid/view/View;
-
-.field public final synthetic k:Lba5;
+.field public final a:Lfe7;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lba5;)V
+.method public constructor <init>(Lfe7;)V
     .locals 0
 
     .line 1
@@ -22,47 +17,57 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lge7;->j:Landroid/view/View;
+    iput-object p1, p0, Lge7;->a:Lfe7;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lge7;->k:Lba5;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    return-void
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    iget-object p1, p0, Lge7;->j:Landroid/view/View;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    const-string v1, "WaiterEB("
 
     .line 4
     .line 5
-    .line 6
-    iget-object p0, p0, Lge7;->k:Lba5;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {p0}, Lba5;->A()V
+    iget-object p0, p0, Lge7;->a:Lfe7;
 
     .line 9
     .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 11
-    return-void
+    .line 12
+    .line 13
+    const/16 p0, 0x29
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    return-object p0
 .end method

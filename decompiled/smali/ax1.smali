@@ -1,19 +1,21 @@
 .class public final Lax1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lkc7;
+.implements Lcs2;
 
 
 # instance fields
-.field public final a:Lkc7;
+.field public final a:Lnr2;
 
-.field public final b:Lkc7;
+.field public final b:Lyr2;
+
+.field public final c:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Lkc7;Lkc7;)V
+.method public constructor <init>(Lnr2;Lyr2;Ljava/lang/Throwable;)V
     .locals 0
 
     .line 1
@@ -22,315 +24,205 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lax1;->a:Lkc7;
+    iput-object p1, p0, Lax1;->a:Lnr2;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lax1;->b:Lkc7;
+    iput-object p2, p0, Lax1;->b:Lyr2;
 
     .line 7
     .line 8
+    iput-object p3, p0, Lax1;->c:Ljava/lang/Throwable;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lyh1;)I
-    .locals 1
+.method public final a()Lnr2;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lax1;->a:Lkc7;
+    iget-object p0, p0, Lax1;->a:Lnr2;
 
     .line 2
     .line 3
-    invoke-interface {v0, p1}, Lkc7;->a(Lyh1;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    iget-object p0, p0, Lax1;->b:Lkc7;
-
-    .line 8
-    .line 9
-    invoke-interface {p0, p1}, Lkc7;->a(Lyh1;)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    sub-int/2addr v0, p0
-
-    .line 14
-    if-gez v0, :cond_0
-
-    .line 15
-    .line 16
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_0
-    return v0
+    return-object p0
 .end method
 
-.method public final b(Lyh1;)I
-    .locals 1
+.method public final b()Lyr2;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lax1;->a:Lkc7;
+    iget-object p0, p0, Lax1;->b:Lyr2;
 
     .line 2
     .line 3
-    invoke-interface {v0, p1}, Lkc7;->b(Lyh1;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    iget-object p0, p0, Lax1;->b:Lkc7;
-
-    .line 8
-    .line 9
-    invoke-interface {p0, p1}, Lkc7;->b(Lyh1;)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    sub-int/2addr v0, p0
-
-    .line 14
-    if-gez v0, :cond_0
-
-    .line 15
-    .line 16
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_0
-    return v0
-.end method
-
-.method public final c(Lyh1;Lt03;)I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lax1;->a:Lkc7;
-
-    .line 2
-    .line 3
-    invoke-interface {v0, p1, p2}, Lkc7;->c(Lyh1;Lt03;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    iget-object p0, p0, Lax1;->b:Lkc7;
-
-    .line 8
-    .line 9
-    invoke-interface {p0, p1, p2}, Lkc7;->c(Lyh1;Lt03;)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    sub-int/2addr v0, p0
-
-    .line 14
-    if-gez v0, :cond_0
-
-    .line 15
-    .line 16
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_0
-    return v0
-.end method
-
-.method public final d(Lyh1;Lt03;)I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lax1;->a:Lkc7;
-
-    .line 2
-    .line 3
-    invoke-interface {v0, p1, p2}, Lkc7;->d(Lyh1;Lt03;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    iget-object p0, p0, Lax1;->b:Lkc7;
-
-    .line 8
-    .line 9
-    invoke-interface {p0, p1, p2}, Lkc7;->d(Lyh1;Lt03;)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    sub-int/2addr v0, p0
-
-    .line 14
-    if-gez v0, :cond_0
-
-    .line 15
-    .line 16
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_0
-    return v0
+    return-object p0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 2
 
     .line 1
-    const/4 v0, 0x1
+    if-eq p0, p1, :cond_1
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    instance-of v0, p1, Lax1;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lax1;
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    check-cast p1, Lax1;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
-    .line 10
-    return v2
+    iget-object v0, p0, Lax1;->a:Lnr2;
 
+    .line 10
     .line 11
-    :cond_1
-    check-cast p1, Lax1;
+    iget-object v1, p1, Lax1;->a:Lnr2;
 
     .line 12
     .line 13
-    iget-object v1, p1, Lax1;->a:Lkc7;
+    invoke-static {v0, v1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 14
     .line 15
-    iget-object v3, p0, Lax1;->a:Lkc7;
-
     .line 16
+    move-result v0
+
     .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    .line 20
-    move-result v1
+    iget-object v0, p0, Lax1;->b:Lyr2;
 
+    .line 20
     .line 21
-    if-eqz v1, :cond_2
+    iget-object v1, p1, Lax1;->b:Lyr2;
 
     .line 22
     .line 23
-    iget-object p1, p1, Lax1;->b:Lkc7;
+    invoke-static {v0, v1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 24
     .line 25
-    iget-object p0, p0, Lax1;->b:Lkc7;
-
     .line 26
+    move-result v0
+
     .line 27
-    invoke-static {p1, p0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eqz v0, :cond_0
 
     .line 28
     .line 29
-    .line 30
-    move-result p0
+    iget-object p0, p0, Lax1;->c:Ljava/lang/Throwable;
 
+    .line 30
     .line 31
-    if-eqz p0, :cond_2
+    iget-object p1, p1, Lax1;->c:Ljava/lang/Throwable;
 
     .line 32
     .line 33
-    return v0
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 34
-    :cond_2
-    return v2
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    if-nez p0, :cond_1
+
+    .line 38
+    .line 39
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 40
+    return p0
+
+    .line 41
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 42
+    return p0
 .end method
 
 .method public final hashCode()I
-    .locals 1
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lax1;->a:Lkc7;
+    iget-object v0, p0, Lax1;->a:Lnr2;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
+    const/4 v0, 0x0
+
     .line 6
-    move-result v0
+    goto :goto_0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     .line 8
     .line 9
-    iget-object p0, p0, Lax1;->b:Lkc7;
-
     .line 10
+    move-result v0
+
     .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    :goto_0
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 12
     .line 13
-    .line 14
-    move-result p0
+    iget-object v1, p0, Lax1;->b:Lyr2;
 
+    .line 14
     .line 15
-    add-int/2addr p0, v0
+    invoke-virtual {v1}, Lyr2;->hashCode()I
 
     .line 16
+    .line 17
+    .line 18
+    move-result v1
+
+    .line 19
+    add-int/2addr v1, v0
+
+    .line 20
+    mul-int/lit8 v1, v1, 0x1f
+
+    .line 21
+    .line 22
+    iget-object p0, p0, Lax1;->c:Ljava/lang/Throwable;
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
+
+    .line 28
+    add-int/2addr p0, v1
+
+    .line 29
     return p0
 .end method
 
@@ -342,7 +234,7 @@
 
     .line 2
     .line 3
-    const-string v1, "("
+    const-string v1, "ErrorResult(image="
 
     .line 4
     .line 5
@@ -351,7 +243,7 @@
     .line 6
     .line 7
     .line 8
-    iget-object v1, p0, Lax1;->a:Lkc7;
+    iget-object v1, p0, Lax1;->a:Lnr2;
 
     .line 9
     .line 10
@@ -360,7 +252,7 @@
     .line 11
     .line 12
     .line 13
-    const-string v1, " - "
+    const-string v1, ", request="
 
     .line 14
     .line 15
@@ -369,31 +261,49 @@
     .line 16
     .line 17
     .line 18
-    iget-object p0, p0, Lax1;->b:Lkc7;
+    iget-object v1, p0, Lax1;->b:Lyr2;
 
     .line 19
     .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 21
     .line 22
     .line 23
-    const-string p0, ")"
+    const-string v1, ", throwable="
 
     .line 24
     .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 26
     .line 27
     .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object p0, p0, Lax1;->c:Ljava/lang/Throwable;
 
     .line 29
     .line 30
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 31
+    .line 32
+    .line 33
+    const-string p0, ")"
+
+    .line 34
+    .line 35
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 39
+    .line 40
+    .line 41
     move-result-object p0
 
-    .line 32
+    .line 42
     return-object p0
 .end method

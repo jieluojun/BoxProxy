@@ -1,155 +1,321 @@
-.class public final synthetic Ls33;
+.class public final Ls33;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Lwe6;
 
-.field public final synthetic k:Lz82;
+.field public b:Lt33;
 
-.field public final synthetic l:Lu33;
+.field public c:Lz32;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lz82;Lu33;B)V
+.method public constructor <init>(Lwe6;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Ls33;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Ls33;->k:Lz82;
-
     .line 4
+    iput-object p1, p0, Ls33;->a:Lwe6;
+
     .line 5
-    iput-object p2, p0, Ls33;->l:Lu33;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Lt33;
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Ls33;->j:B
+    iget-object p0, p0, Ls33;->b:Lt33;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    iget-object v2, p0, Ls33;->l:Lu33;
+    return-object p0
 
     .line 6
+    :cond_0
+    const-string p0, "keyboardActions"
+
     .line 7
-    iget-object p0, p0, Ls33;->k:Lz82;
-
     .line 8
-    .line 9
-    check-cast p1, Lgg;
+    invoke-static {p0}, Lky2;->W(Ljava/lang/String;)V
 
+    .line 9
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x0
 
     .line 12
+    throw p0
+.end method
+
+.method public final b(I)Z
+    .locals 8
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    const/4 v1, 0x0
+
+    .line 3
+    const/4 v2, 0x5
+
+    .line 4
+    const/4 v3, 0x6
+
+    .line 5
+    const/4 v4, 0x2
+
+    .line 6
+    const/4 v5, 0x1
+
+    .line 7
+    const/4 v6, 0x7
+
+    .line 8
+    if-ne p1, v6, :cond_1
+
+    .line 9
+    .line 10
+    invoke-virtual {p0}, Ls33;->a()Lt33;
+
+    .line 11
+    .line 12
     .line 13
+    :cond_0
+    :goto_0
+    move-object v7, v1
+
     .line 14
-    invoke-virtual {p1}, Lgg;->e()Ljava/lang/Object;
+    goto :goto_1
 
     .line 15
+    :cond_1
+    if-ne p1, v4, :cond_2
+
     .line 16
     .line 17
-    move-result-object p1
+    invoke-virtual {p0}, Ls33;->a()Lt33;
 
     .line 18
-    check-cast p1, Ljava/lang/Number;
-
     .line 19
     .line 20
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
+    goto :goto_0
 
     .line 21
+    :cond_2
+    if-ne p1, v3, :cond_3
+
     .line 22
     .line 23
-    move-result p1
+    invoke-virtual {p0}, Ls33;->a()Lt33;
 
     .line 24
-    invoke-virtual {p0, p1}, Lz82;->g(F)V
-
     .line 25
     .line 26
+    goto :goto_0
+
     .line 27
-    iget-object p0, v2, Lu33;->c:Lgn2;
+    :cond_3
+    if-ne p1, v2, :cond_4
 
     .line 28
     .line 29
-    invoke-virtual {p0}, Lgn2;->invoke()Ljava/lang/Object;
+    invoke-virtual {p0}, Ls33;->a()Lt33;
 
     .line 30
     .line 31
     .line 32
-    return-object v1
+    goto :goto_0
 
     .line 33
-    :pswitch_0
-    invoke-virtual {p1}, Lgg;->e()Ljava/lang/Object;
+    :cond_4
+    const/4 v7, 0x3
 
     .line 34
+    if-ne p1, v7, :cond_5
+
     .line 35
     .line 36
-    move-result-object p1
+    invoke-virtual {p0}, Ls33;->a()Lt33;
 
     .line 37
-    check-cast p1, Ljava/lang/Number;
-
     .line 38
     .line 39
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
+    move-result-object v7
 
     .line 40
+    iget-object v7, v7, Lt33;->a:Lp72;
+
     .line 41
     .line 42
-    move-result p1
+    goto :goto_1
 
     .line 43
-    invoke-virtual {p0, p1}, Lz82;->g(F)V
+    :cond_5
+    const/4 v7, 0x4
 
     .line 44
+    if-ne p1, v7, :cond_6
+
     .line 45
     .line 46
-    iget-object p0, v2, Lu33;->c:Lgn2;
+    invoke-virtual {p0}, Ls33;->a()Lt33;
 
     .line 47
     .line 48
-    invoke-virtual {p0}, Lgn2;->invoke()Ljava/lang/Object;
-
     .line 49
-    .line 50
-    .line 51
-    return-object v1
+    goto :goto_0
 
+    .line 50
+    :cond_6
+    if-eq p1, v5, :cond_0
+
+    .line 51
     .line 52
-    nop
+    if-nez p1, :cond_d
 
     .line 53
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :goto_1
+    if-eqz v7, :cond_7
+
+    .line 56
+    .line 57
+    invoke-interface {v7, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 58
+    .line 59
+    .line 60
+    return v5
+
+    .line 61
+    :cond_7
+    const-string v7, "focusManager"
+
+    .line 62
+    .line 63
+    if-ne p1, v3, :cond_9
+
+    .line 64
+    .line 65
+    iget-object p0, p0, Ls33;->c:Lz32;
+
+    .line 66
+    .line 67
+    if-eqz p0, :cond_8
+
+    .line 68
+    .line 69
+    check-cast p0, Lc42;
+
+    .line 70
+    .line 71
+    invoke-virtual {p0, v5, v5}, Lc42;->i(IZ)Z
+
+    .line 72
+    .line 73
+    .line 74
+    return v5
+
+    .line 75
+    :cond_8
+    invoke-static {v7}, Lky2;->W(Ljava/lang/String;)V
+
+    .line 76
+    .line 77
+    .line 78
+    throw v1
+
+    .line 79
+    :cond_9
+    if-ne p1, v2, :cond_b
+
+    .line 80
+    .line 81
+    iget-object p0, p0, Ls33;->c:Lz32;
+
+    .line 82
+    .line 83
+    if-eqz p0, :cond_a
+
+    .line 84
+    .line 85
+    check-cast p0, Lc42;
+
+    .line 86
+    .line 87
+    invoke-virtual {p0, v4, v5}, Lc42;->i(IZ)Z
+
+    .line 88
+    .line 89
+    .line 90
+    return v5
+
+    .line 91
+    :cond_a
+    invoke-static {v7}, Lky2;->W(Ljava/lang/String;)V
+
+    .line 92
+    .line 93
+    .line 94
+    throw v1
+
+    .line 95
+    :cond_b
+    if-ne p1, v6, :cond_c
+
+    .line 96
+    .line 97
+    iget-object p0, p0, Ls33;->a:Lwe6;
+
+    .line 98
+    .line 99
+    if-eqz p0, :cond_c
+
+    .line 100
+    .line 101
+    check-cast p0, Lhi1;
+
+    .line 102
+    .line 103
+    invoke-virtual {p0}, Lhi1;->a()V
+
+    .line 104
+    .line 105
+    .line 106
+    return v5
+
+    .line 107
+    :cond_c
+    return v0
+
+    .line 108
+    :cond_d
+    const-string p0, "invalid ImeAction"
+
+    .line 109
+    .line 110
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
+
+    .line 111
+    .line 112
+    .line 113
+    return v0
 .end method

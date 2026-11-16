@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/Structure$StructureSet;
 .super Ljava/util/AbstractCollection;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/Set;
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x8
     name = "StructureSet"
 .end annotation
 
@@ -209,30 +209,26 @@
     move-result v1
 
     .line 44
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_1
 
     .line 45
     .line 46
-    goto :goto_1
-
-    .line 47
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
+    .line 47
     .line 48
-    .line 49
     goto :goto_0
 
-    .line 50
+    .line 49
     :cond_1
-    :goto_1
     return v0
 
-    .line 51
+    .line 50
     :cond_2
     const/4 p0, -0x1
 
-    .line 52
+    .line 51
     return p0
 .end method
 
