@@ -243,9 +243,15 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
-    invoke-static {p0, p1, v11}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-    invoke-static {p1, p0, v11}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .locals 26
+    move-object/from16 v20, p0
+    move-object/from16 v21, p1
+    move/from16 v22, v11
+invoke-static/range {v20 .. v22}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-object/from16 v23, p1
+    move-object/from16 v24, p0
+    move/from16 v25, v11
+invoke-static/range {v23 .. v25}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 1
     move-object/from16 v0, p0
@@ -1012,3 +1018,4 @@
         :lbl_9
     .end packed-switch
 .end method
+

@@ -559,7 +559,7 @@
     move-result v8
 
     .line 128
-    if-eqz v8, :lbl_20
+    if-eqz v8, :lbl_19
 
     .line 129
     .line 130
@@ -780,7 +780,7 @@ goto :lbl_6
     move-object v1, v5
 
     .line 222
-    goto :lbl_17
+    goto :lbl_16
 
     .line 223
     :lbl_12
@@ -799,7 +799,7 @@ goto :lbl_6
     move-object v1, v7
 
     .line 230
-    goto :lbl_17
+    goto :lbl_16
 
     .line 231
     :lbl_13
@@ -808,20 +808,19 @@ invoke-virtual {v9, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 move-result v1
 if-eqz v1, :lbl_14
 move-object v1, v5
-goto :lbl_17
+goto :lbl_16
 :lbl_14
 const-string v1, "sing-box_dingtalk"
 invoke-virtual {v9, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 move-result v1
 if-eqz v1, :lbl_15
 move-object v1, v7
-goto :lbl_17
+goto :lbl_16
 :lbl_15
     move-object v1, v8
 
     .line 232
-    :lbl_17
-    :lbl_17
+    :lbl_16
     invoke-virtual {v1, v8}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 233
@@ -830,7 +829,7 @@ goto :lbl_17
     move-result v1
 
     .line 236
-    if-nez v1, :lbl_18
+    if-nez v1, :lbl_17
 
     .line 237
     .line 238
@@ -873,10 +872,10 @@ goto :lbl_17
     .line 257
     .line 258
     .line 259
-    goto :lbl_19
+    goto :lbl_18
 
     .line 260
-    :lbl_18
+    :lbl_17
     const/4 v8, 0x0
 
     .line 261
@@ -916,7 +915,7 @@ goto :lbl_17
     .line 279
     .line 280
     .line 281
-    :lbl_19
+    :lbl_18
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 282
@@ -930,7 +929,7 @@ goto :lbl_17
 
     .line 287
     .line 288
-    :lbl_20
+    :lbl_19
     const/4 v8, 0x0
 
     .line 289

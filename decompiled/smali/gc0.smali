@@ -772,7 +772,7 @@
     const-string v0, "sing-box_dingtalk"
     invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
     move-result v0
-    if-nez v0, :lbl_4
+    if-nez v0, :lbl_3
     const-string v0, "singbox"
 
     .line 26
@@ -785,7 +785,7 @@
     move-result v0
 
     .line 31
-    if-nez v0, :lbl_4
+    if-nez v0, :lbl_3
 
     .line 32
     .line 33
@@ -801,7 +801,7 @@
     move-result v0
 
     .line 39
-    if-nez v0, :lbl_6
+    if-nez v0, :lbl_5
 
     .line 40
     .line 41
@@ -817,12 +817,11 @@
     move-result v0
 
     .line 47
-    if-eqz v0, :lbl_5
+    if-eqz v0, :lbl_4
 
     .line 48
     .line 49
-    :lbl_4
-    :lbl_4
+    :lbl_3
     const-string p0, "sing-box"
 
     .line 50
@@ -830,7 +829,7 @@
     return-object p0
 
     .line 52
-    :lbl_5
+    :lbl_4
     sget-object v0, Lgc0;->f:Ljava/util/List;
 
     .line 53
@@ -843,14 +842,14 @@
     move-result v0
 
     .line 58
-    if-eqz v0, :lbl_6
+    if-eqz v0, :lbl_5
 
     .line 59
     .line 60
     return-object p0
 
     .line 61
-    :lbl_6
+    :lbl_5
     const-string p0, "mihomo"
 
     .line 62

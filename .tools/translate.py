@@ -436,6 +436,31 @@ TRY_LABEL = re.compile(r'^(try_start|try_end|catch|catchall)_?\d*$')
 
 
 def renumber_labels(body):
+    # duplicate label definitions are invalid smali (apktool refuses to build);
+    # keep the first def of every name and drop later copies
+    lines = body.splitlines()
+    seen = set()
+    out = []
+    in_data = False
+    for line in lines:
+        s = line.strip()
+        if s.startswith(('.packed-switch', '.sparse-switch', '.array-data')):
+            in_data = True
+            out.append(line)
+            continue
+        if in_data:
+            if s.startswith(('.end packed-switch', '.end sparse-switch', '.end array-data')):
+                in_data = False
+            out.append(line)
+            continue
+        if LABEL_DEF.match(s):
+            if s[1:] in seen:
+                continue
+            seen.add(s[1:])
+        out.append(line)
+    body = '\n'.join(out)
+    if not body.endswith('\n'):
+        body += '\n'
     placed, _ = _labels_of(body)
     kept = [old for old in placed if not TRY_LABEL.match(old)]
     mapping = {old: 'lbl_%d' % i for i, old in enumerate(kept)}
@@ -523,6 +548,9 @@ def repair_labels(body, o_body, o2b, mapping, t_body, ctx):
     if aliases:
         lines = body.splitlines()
         for label, target in aliases:
+            if any(LABEL_DEF.match(l.strip()) and l.strip() == ':' + label
+                   for l in lines):
+                continue  # a def already exists; another copy would be a duplicate
             for i, line in enumerate(lines):
                 if LABEL_DEF.match(line.strip()) and line.strip() == ':' + target:
                     lines.insert(i, '    :' + label)
@@ -873,6 +901,90 @@ def apply_resources():
     (OUT / 'apktool.yml').write_text(yml)
 
 
+# ------------------------------------------------- 4-bit register legality
+def fix_invalid_registers(root):
+    """35c invokes cannot address registers above v15. Custom hook lines inserted
+    into high-.locals methods (p-registers resolved beyond v15) are illegal; stage
+    ALL their arguments into fresh consecutive locals and switch to /range form,
+    which uses 16-bit register slots."""
+    pat = re.compile(r'^\s*(invoke-\w+)(/\w+)? \{([^}]*)\}, (\S+)\s*$')
+    desc_types = re.compile(r'(?:\[+)?L[^;]+;|(?:\[+)[ZBCSIJFD]|[ZBCSIJFD]')
+    fixed = 0
+    for path in sorted(root.rglob('*.smali')):
+        text = path.read_text()
+        methods = list(re.finditer(r'^\.method .*?^\.end method', text, re.M | re.S))
+        if not methods:
+            continue
+        out = text
+        changed_file = False
+        for m in reversed(methods):
+            body = m.group(0)
+            lm = re.search(r'\.locals (\d+)', body)
+            if not lm:
+                continue
+            nlocals = int(lm.group(1))
+            # raw v-references at or above .locals would shift when we bump it
+            if re.search(r'\bv(%d\b|[2-9]\d{2,}|\d{4,})' % nlocals
+                         if nlocals >= 100 else r'\bv(%d\b|[2-9]\d{2,})' % nlocals, body):
+                flag('raw-high-register', str(path))
+                continue
+            lines = body.splitlines()
+            edits = []  # (line_index, [staging lines], rewritten invoke)
+            total_extra = 0
+            for i, line in enumerate(lines):
+                im = pat.match(line)
+                if not im or im.group(2) == '/range':
+                    continue
+                regs = [r.strip() for r in im.group(3).split(',') if r.strip()]
+                resolved = [nlocals + int(r[1:]) if r.startswith('p') else int(r[1:])
+                            for r in regs]
+                if all(x <= 15 for x in resolved):
+                    continue
+                dm = re.search(r'\(([^)]*)\)', im.group(4))
+                types = desc_types.findall(dm.group(1) if dm else '')
+                if not im.group(1).startswith('invoke-static'):
+                    types.insert(0, 'L')
+                if len(types) != len(regs):
+                    continue  # cannot map args to types; leave for manual review
+                # wide-aware staging layout starting at the current locals count
+                slots = []
+                s = 0
+                for ty in types:
+                    slots.append(s)
+                    s += 2 if ty in ('J', 'D') else 1
+                base = nlocals + total_extra
+                moves = []
+                for k, src in enumerate(regs):
+                    wide = types[k] in ('J', 'D')
+                    if wide:
+                        op = 'move-wide/from16'
+                    elif types[k].startswith(('L', '[')):
+                        op = 'move-object/from16'
+                    else:
+                        op = 'move/from16'
+                    moves.append('    %s v%d, %s' % (op, base + slots[k], src))
+                kind = im.group(1) if im.group(1).endswith('-wide') or types else im.group(1)
+                new_invoke = '%s/range {v%d .. v%d}, %s' % (
+                    im.group(1), base, base + s - 1, im.group(4))
+                edits.append((i, moves, new_invoke))
+                total_extra += s
+            if edits:
+                for i, moves, new_invoke in reversed(edits):
+                    lines[i:i + 1] = moves + [new_invoke]
+                body = '\n'.join(lines)
+                body = re.sub(r'\.locals \d+', '.locals %d' % (nlocals + total_extra),
+                              body, count=1)
+                if not body.endswith('\n'):
+                    body += '\n'
+                out = out[:m.start()] + body + out[m.end():]
+                changed_file = True
+                fixed += 1
+        if changed_file:
+            path.write_text(out)
+    if fixed:
+        print('fixed invalid-register methods:', fixed)
+
+
 # ------------------------------------------------------------------- main
 def main():
     plan = json.loads((REPO / 'upstream/26.11.05.d5c365e/migration/full.json').read_text())
@@ -943,6 +1055,7 @@ def main():
 
     # 3b. register audit
     audit_registers(OUT)
+    fix_invalid_registers(OUT)
 
     # 4. manifest + resources
     man141 = (T_ROOT / 'AndroidManifest.xml').read_text()

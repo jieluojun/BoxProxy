@@ -1974,7 +1974,7 @@
 
     .line 53
     .line 54
-    packed-switch v5, :lbl_47
+    packed-switch v5, :lbl_46
 
     .line 55
     .line 56
@@ -2120,12 +2120,12 @@
     const/4 v7, 0x0
 
     .line 123
-    sparse-switch v1, :lbl_48
+    sparse-switch v1, :lbl_47
 
     .line 124
     .line 125
     .line 126
-    goto/16 :lbl_46
+    goto/16 :lbl_45
 
     .line 127
     .line 128
@@ -2142,7 +2142,7 @@
     move-result v1
 
     .line 134
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 135
     .line 136
@@ -2329,7 +2329,7 @@
     move-result v1
 
     .line 229
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 230
     .line 231
@@ -2427,7 +2427,7 @@
     move-result v1
 
     .line 277
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 278
     .line 279
@@ -2525,7 +2525,7 @@
     move-result v1
 
     .line 325
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 326
     .line 327
@@ -2628,7 +2628,7 @@
     move-result v1
 
     .line 376
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 377
     .line 378
@@ -2938,7 +2938,7 @@
     move-result v1
 
     .line 523
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 524
     .line 525
@@ -3052,7 +3052,7 @@
     const-string v1, "mihomo_dingtalk"
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     move-result v1
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
     const/16 v0, 0x9
     iput v0, v3, Lxb1;->l:I
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -3086,7 +3086,7 @@
     const-string v1, "sing-box_dingtalk"
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     move-result v1
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
     const/16 v0, 0xa
     iput v0, v3, Lxb1;->l:I
     const-string v0, "jieluojun/sing-box"
@@ -3125,7 +3125,7 @@
     move-result v1
 
     .line 584
-    if-eqz v1, :lbl_45
+    if-eqz v1, :lbl_44
 
     .line 585
     .line 586
@@ -3304,9 +3304,8 @@
     return-object v14
 
     .line 674
+    :lbl_44
     :lbl_45
-    :lbl_45
-    :lbl_46
     const v1, 0x7f0f0156
 
     .line 675
@@ -3336,7 +3335,7 @@
     return-object p0
 
     .line 689
-    :lbl_47
+    :lbl_46
     .packed-switch 0x0
         :lbl_12
         :lbl_11
@@ -3373,7 +3372,7 @@
     .line 709
     .line 710
     .line 711
-    :lbl_48
+    :lbl_47
     .sparse-switch
     -0x7fc2cadc -> :lbl_34
         -0x54707cda -> :lbl_40
