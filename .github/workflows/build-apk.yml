@@ -1,7 +1,8 @@
 name: Build APK
 
-# Pull requests and branch builds produce one repository-signed version 176 APK.
-# Version 171 remains only on the tag/release path; version 176 is rebuilt from pinned inputs.
+# 构建 171 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
+#   pinned 171 snapshot -> verified full migration -> reference scan -> apktool b -> align/sign/upload
+# Apktool 2.9.3 必须与 pinned snapshot 一致；升级时需重新反编译并同步 sha256。
 
 on:
   workflow_dispatch:
@@ -11,18 +12,12 @@ on:
     paths:
       - "upstream/**"
       - "scripts/**"
-      - "decompiled/**"
-      - "app/BoxProxy-26.11.16.25abc84-arm64-v8a.apk"
-      - "app/BoxProxy-26.11.17.73f2816-arm64-v8a.apk"
       - ".github/workflows/build-apk.yml"
   pull_request:
     branches: [main]
     paths:
       - "upstream/**"
       - "scripts/**"
-      - "decompiled/**"
-      - "app/BoxProxy-26.11.16.25abc84-arm64-v8a.apk"
-      - "app/BoxProxy-26.11.17.73f2816-arm64-v8a.apk"
       - ".github/workflows/build-apk.yml"
 
 permissions:
@@ -40,8 +35,7 @@ env:
 
 jobs:
   build:
-    name: Rebuild, align, sign version 171 for tagged releases
-    if: startsWith(github.ref, 'refs/tags/v')
+    name: Rebuild, align, sign
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -202,221 +196,6 @@ jobs:
           path: artifacts/
           if-no-files-found: error
           retention-days: 30
-          compression-level: 6
-
-  build_176:
-    name: Rebuild customized version 176 (repository-signed)
-    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Setup JDK 17
-        uses: actions/setup-java@v6
-        with:
-          distribution: temurin
-          java-version: "17"
-
-      - name: Verify pinned 171 and 176 inputs
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import hashlib, json
-          from pathlib import Path
-
-          target = json.loads(Path('upstream/26.11.17.73f2816/manifest.json').read_text())
-          target_apk = Path(target['inputFile'])
-          if hashlib.sha256(target_apk.read_bytes()).hexdigest() != target['inputSha256']:
-              raise SystemExit('version 176 input APK checksum mismatch')
-          if target['versionCode'] != 176 or target['versionName'] != '26.11.17.73f2816':
-              raise SystemExit('version 176 manifest has an unexpected version')
-
-          base = json.loads(Path('upstream/26.11.16.25abc84/manifest.json').read_text())
-          base_dir = Path('upstream/26.11.16.25abc84')
-          archive = base_dir / base['sourceArchive']
-          if hashlib.sha256(archive.read_bytes()).hexdigest() != base['sourceArchiveSha256']:
-              raise SystemExit('pinned version 171 source archive checksum mismatch')
-
-          if target['decodeFramework']['apktoolJarEntry'] != 'brut/androlib/android-framework.jar':
-              raise SystemExit('unexpected pinned Apktool framework entry')
-          print('Pinned version 171/176 inputs and Apktool framework entry verified.')
-          PY
-
-      - name: Download pinned Apktool, AAPT2, and Android platform tools
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p .tools/apktool241 .tools/aaptjs3
-          npm pack --silent --pack-destination .tools apktool-jar@2.4.1
-          npm pack --silent --pack-destination .tools aaptjs3@2.0.2
-          npm pack --silent --pack-destination .tools @drxiaozhi/minapk@0.5.1
-          printf '%s  %s\n' \
-            '65accb583cf50fea0f6990dd92ba6d4d9129945c7c1805a30d3594b75e071dd7' '.tools/apktool-jar-2.4.1.tgz' \
-            '26031bd1acb577edce91675ae92daf63cf85795d4e2399333edeb994dd9197e9' '.tools/aaptjs3-2.0.2.tgz' \
-            '5e411bfdf4a0eae820d34afb9727e0675dcb3cc04608f602ee427c2b949c9e65' '.tools/drxiaozhi-minapk-0.5.1.tgz' | sha256sum -c -
-          tar -xzf .tools/apktool-jar-2.4.1.tgz -C .tools/apktool241
-          tar -xzf .tools/aaptjs3-2.0.2.tgz -C .tools/aaptjs3 --strip-components=1
-          chmod +x .tools/aaptjs3/bin/x64/linux/aapt2
-          tar -xOf .tools/drxiaozhi-minapk-0.5.1.tgz package/tools/android.jar > .tools/android-platform.jar
-          printf '%s  %s\n' \
-            'bdeb66211d1dc1c71f138003ce35f6d0cd19af6f8de7ffbdd5b118d02d825a52' '.tools/apktool241/package/bin/apktool_2.4.1.jar' \
-            'e4dff6060827a3e401bce376e47916f2f93a89602af54973ffd3fdfc2528be3f' '.tools/aaptjs3/bin/x64/linux/aapt2' \
-            '6cea1df3efb77103ac3e2beb9bf4718964b0e0869ab16d39d29d5cbae1c147ad' '.tools/android-platform.jar' | sha256sum -c -
-
-      - name: Prepare decode and build frameworks
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p .tools/decode-framework
-          unzip -p .tools/apktool241/package/bin/apktool_2.4.1.jar \
-            brut/androlib/android-framework.jar > .tools/decode-framework/1.apk
-          python3 - <<'PY'
-          import hashlib, json
-          from pathlib import Path
-
-          manifest = json.loads(Path('upstream/26.11.17.73f2816/manifest.json').read_text())
-          framework = manifest['decodeFramework']
-          if framework['apktoolJarEntry'] != 'brut/androlib/android-framework.jar':
-              raise SystemExit('unexpected pinned Apktool framework entry')
-          actual = hashlib.sha256(Path('.tools/decode-framework/1.apk').read_bytes()).hexdigest()
-          if actual != framework['sha256']:
-              raise SystemExit('pinned Apktool decode framework checksum mismatch')
-          print('Pinned Apktool embedded framework verified.')
-          PY
-          python3 scripts/publicize_android_framework.py \
-            --input .tools/android-platform.jar \
-            --output .tools/framework-platform/1.apk
-
-      - name: Recreate pinned migration and decode version 176
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p .tools/decode-test
-          python3 scripts/upstream_snapshot.py \
-            upstream/26.11.16.25abc84 \
-            --extract .tools/upstream-171
-          python3 scripts/migrate_upstream.py \
-            --snapshot upstream/26.11.16.25abc84 \
-            --output .tools/migrated-171
-          java -Xmx4g -jar .tools/apktool241/package/bin/apktool_2.4.1.jar \
-            d -f app/BoxProxy-26.11.17.73f2816-arm64-v8a.apk \
-            -p .tools/decode-framework \
-            -o .tools/decode-test/latest
-          test -f .tools/upstream-171/decompiled/apktool.yml
-          test -f .tools/migrated-171/decompiled/apktool.yml
-          test -f .tools/decode-test/latest/apktool.yml
-
-      - name: Generate and apply the reviewed 171 to 176 port
-        shell: bash
-        run: |
-          set -euo pipefail
-          printf '{"completed": []}\n' > .tools/v176-empty-coverage.json
-          python3 scripts/suggest_upstream_classes.py \
-            .tools/upstream-171/decompiled .tools/decode-test/latest \
-            --baseline HEAD --customized HEAD \
-            --output .tools/v176-suggested-classes.json
-          python3 scripts/build_176_maps.py
-          python3 scripts/port_176_candidate.py
-
-      - name: Validate generated Smali
-        run: |
-          python3 scripts/check_smali_references.py .tools/ported-176-try/decompiled
-          python3 scripts/check_smali_branch_offsets.py .tools/ported-176-try/decompiled
-          python3 scripts/check_smali_reference_moves.py .tools/ported-176-try/decompiled
-
-      - name: Build unsigned APK with Apktool
-        shell: bash
-        run: |
-          set -euo pipefail
-          java -Xmx4g -jar .tools/apktool241/package/bin/apktool_2.4.1.jar \
-            b .tools/ported-176-try/decompiled \
-            -p .tools/framework-platform \
-            -o "$RUNNER_TEMP/unsigned.apk"
-          ls -lh "$RUNNER_TEMP/unsigned.apk"
-
-      - name: Align, sign and verify version 176 APK
-        shell: bash
-        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          EXPECTED_VERSION_CODE: "176"
-          EXPECTED_VERSION_NAME: "26.11.17.73f2816"
-        run: |
-          set -euo pipefail
-
-          if [[ -z "${KEYSTORE_BASE64}" || -z "${KEYSTORE_PASSWORD}" || -z "${KEY_ALIAS}" ]]; then
-            echo "::error::Repository signing secrets KEYSTORE_BASE64, KEYSTORE_PASSWORD, and KEY_ALIAS are required for version 176."
-            exit 1
-          fi
-
-          sdk="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
-          bt="$(ls -d "$sdk"/build-tools/*/ 2>/dev/null | sort -V | tail -n 1 || true)"
-          if [[ -z "${bt}" || ! -x "${bt}apksigner" || ! -x "${bt}zipalign" || ! -x "${bt}aapt2" ]]; then
-            echo "build-tools not found, installing via sdkmanager..."
-            sdkmanager="$(find "$sdk/cmdline-tools" -name sdkmanager -type f 2>/dev/null | sort -V | tail -n 1 || true)"
-            if [[ -z "$sdkmanager" ]]; then
-              echo "::error::Android sdkmanager was not found under $sdk/cmdline-tools."
-              exit 1
-            fi
-            yes | "$sdkmanager" --licenses > /dev/null || true
-            "$sdkmanager" "build-tools;35.0.0"
-            bt="$(ls -d "$sdk"/build-tools/*/ | sort -V | tail -n 1)"
-          fi
-          echo "Using build-tools: $bt"
-
-          ks="$RUNNER_TEMP/release.keystore"
-          printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ks"
-          KS_PASS="$KEYSTORE_PASSWORD"
-          [[ -n "${KEY_PASSWORD}" ]] && KEY_PASS="$KEY_PASSWORD" || KEY_PASS="$KEYSTORE_PASSWORD"
-          export KS_PASS KEY_PASS
-
-          mkdir -p "$GITHUB_WORKSPACE/artifacts"
-          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-26.11.17.73f2816-rebuilt.apk"
-          "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
-          "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
-          "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
-            --ks-pass env:KS_PASS --key-pass env:KEY_PASS \
-            --out "$out" "$RUNNER_TEMP/aligned.apk"
-          "${bt}apksigner" verify --verbose --print-certs "$out"
-
-          badging="$("${bt}aapt2" dump badging "$out")"
-          printf '%s\n' "$badging" | sed -n '1,5p'
-          expected_package="package: name='com.boxproxy.box' versionCode='${EXPECTED_VERSION_CODE}' versionName='${EXPECTED_VERSION_NAME}'"
-          if ! grep -Fq -- "$expected_package" <<<"$badging"; then
-            echo "::error::APK badging mismatch; expected $expected_package"
-            printf '%s\n' "$badging"
-            exit 1
-          fi
-          unzip -t "$out" >/dev/null
-
-          (cd "$GITHUB_WORKSPACE/artifacts" && sha256sum "$(basename "$out")" > "$(basename "$out").sha256")
-          hash="$(sha256sum "$out" | cut -d ' ' -f 1)"
-          echo "Built repository-signed APK: $out"
-          echo "SHA-256: $hash"
-          {
-            echo "## BoxProxy version 176 build"
-            echo "- Package: com.boxproxy.box"
-            echo "- Version: 26.11.17.73f2816 / 176"
-            echo "- Result: aligned and signed with the repository keystore."
-            echo "- APK: $(basename "$out")"
-            echo "- SHA-256: $hash"
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Upload version 176 rebuilt APK artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: BoxProxy-26.11.17.73f2816-rebuilt
-          path: |
-            artifacts/BoxProxy-26.11.17.73f2816-rebuilt.apk
-            artifacts/BoxProxy-26.11.17.73f2816-rebuilt.apk.sha256
-          if-no-files-found: error
-          retention-days: 30
-          compression-level: 6
 
   release:
     name: Publish GitHub Release
