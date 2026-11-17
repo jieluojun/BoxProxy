@@ -1,8 +1,7 @@
 name: Build APK
 
-# Build both the pinned 171 release and the reviewed 176 customization port.
-# The 171 job keeps its Apktool 2.9.3 pipeline; build_176 decodes the pinned 176
-# APK, regenerates 171->176 maps, runs static checks, and uploads an unsigned APK.
+# Pull requests and branch builds produce one repository-signed version 176 APK.
+# Version 171 remains only on the tag/release path; version 176 is rebuilt from pinned inputs.
 
 on:
   workflow_dispatch:
@@ -47,7 +46,8 @@ env:
 
 jobs:
   build:
-    name: Rebuild, align, sign
+    name: Rebuild, align, sign version 171 for tagged releases
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -210,7 +210,7 @@ jobs:
           retention-days: 30
 
   build_176:
-    name: Rebuild customized version 176 (unsigned)
+    name: Rebuild customized version 176 (repository-signed)
     if: ${{ !startsWith(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -319,44 +319,100 @@ jobs:
           python3 scripts/check_smali_branch_offsets.py .tools/ported-176-try/decompiled
           python3 scripts/check_smali_reference_moves.py .tools/ported-176-try/decompiled
 
-      - name: Build and verify unsigned APK
+      - name: Build unsigned APK with Apktool
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifacts
-          output='artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk'
           java -Xmx4g -jar .tools/apktool241/package/bin/apktool_2.4.1.jar \
             b .tools/ported-176-try/decompiled \
             -p .tools/framework-platform \
-            -o "$output"
-          .tools/aaptjs3/bin/x64/linux/aapt2 dump badging "$output" > "$RUNNER_TEMP/v176-badging.txt"
-          expected="package: name='com.boxproxy.box' versionCode='176' versionName='26.11.17.73f2816'"
-          if ! grep -Fq "$expected" "$RUNNER_TEMP/v176-badging.txt"; then
-            cat "$RUNNER_TEMP/v176-badging.txt"
-            echo "::error::version 176 APK metadata mismatch"
+            -o "$RUNNER_TEMP/unsigned.apk"
+          ls -lh "$RUNNER_TEMP/unsigned.apk"
+
+      - name: Align, sign and verify version 176 APK
+        shell: bash
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          EXPECTED_VERSION_CODE: "176"
+          EXPECTED_VERSION_NAME: "26.11.17.73f2816"
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${KEYSTORE_BASE64}" || -z "${KEYSTORE_PASSWORD}" || -z "${KEY_ALIAS}" ]]; then
+            echo "::error::Repository signing secrets KEYSTORE_BASE64, KEYSTORE_PASSWORD, and KEY_ALIAS are required for version 176."
             exit 1
           fi
-          unzip -t "$output" >/dev/null
-          (cd artifacts && sha256sum "$(basename "$output")" > "$(basename "$output").sha256")
-          hash="$(sha256sum "$output" | cut -d ' ' -f 1)"
-          echo "Built unsigned APK: $output"
+
+          sdk="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          bt="$(ls -d "$sdk"/build-tools/*/ 2>/dev/null | sort -V | tail -n 1 || true)"
+          if [[ -z "${bt}" || ! -x "${bt}apksigner" || ! -x "${bt}zipalign" || ! -x "${bt}aapt2" ]]; then
+            echo "build-tools not found, installing via sdkmanager..."
+            sdkmanager="$(find "$sdk/cmdline-tools" -name sdkmanager -type f 2>/dev/null | sort -V | tail -n 1 || true)"
+            if [[ -z "$sdkmanager" ]]; then
+              echo "::error::Android sdkmanager was not found under $sdk/cmdline-tools."
+              exit 1
+            fi
+            yes | "$sdkmanager" --licenses > /dev/null || true
+            "$sdkmanager" "build-tools;35.0.0"
+            bt="$(ls -d "$sdk"/build-tools/*/ | sort -V | tail -n 1)"
+          fi
+          echo "Using build-tools: $bt"
+
+          ks="$RUNNER_TEMP/release.keystore"
+          printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ks"
+          KS_PASS="$KEYSTORE_PASSWORD"
+          [[ -n "${KEY_PASSWORD}" ]] && KEY_PASS="$KEY_PASSWORD" || KEY_PASS="$KEYSTORE_PASSWORD"
+          export KS_PASS KEY_PASS
+
+          mkdir -p "$GITHUB_WORKSPACE/artifacts"
+          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-signed.apk"
+          "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
+          "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
+          "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
+            --ks-pass env:KS_PASS --key-pass env:KEY_PASS \
+            --out "$out" "$RUNNER_TEMP/aligned.apk"
+          "${bt}apksigner" verify --verbose --print-certs "$out" | tee "$RUNNER_TEMP/apksigner-verify.txt"
+
+          badging="$("${bt}aapt2" dump badging "$out")"
+          printf '%s\n' "$badging" | sed -n '1,5p'
+          expected_package="package: name='com.boxproxy.box' versionCode='${EXPECTED_VERSION_CODE}' versionName='${EXPECTED_VERSION_NAME}'"
+          if ! grep -Fq -- "$expected_package" <<<"$badging"; then
+            echo "::error::APK badging mismatch; expected $expected_package"
+            printf '%s\n' "$badging"
+            exit 1
+          fi
+          unzip -t "$out" >/dev/null
+
+          (cd "$GITHUB_WORKSPACE/artifacts" && sha256sum "$(basename "$out")" > "$(basename "$out").sha256")
+          hash="$(sha256sum "$out" | cut -d ' ' -f 1)"
+          certificate="$(sed -n 's/^Signer #1 certificate SHA-256 digest: //p' "$RUNNER_TEMP/apksigner-verify.txt" | head -n 1)"
+          if [[ -z "$certificate" ]]; then
+            echo "::error::Could not read the signer certificate fingerprint."
+            exit 1
+          fi
+          echo "Built repository-signed APK: $out"
           echo "SHA-256: $hash"
+          echo "Signer certificate SHA-256: $certificate"
           {
             echo "## BoxProxy version 176 build"
-            echo "- Package: \`com.boxproxy.box\`"
-            echo "- Version: \`26.11.17.73f2816\` / \`176\`"
-            echo "- Result: unsigned; sign with the intended key before installation."
-            echo "- APK: \`$(basename "$output")\`"
-            echo "- SHA-256: \`$hash\`"
+            echo "- Package: com.boxproxy.box"
+            echo "- Version: 26.11.17.73f2816 / 176"
+            echo "- Result: aligned and signed with the repository keystore."
+            echo "- APK: $(basename "$out")"
+            echo "- SHA-256: $hash"
+            echo "- Signer certificate SHA-256: $certificate"
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload version 176 APK artifact
+      - name: Upload version 176 signed APK artifact
         uses: actions/upload-artifact@v7
         with:
-          name: BoxProxy-26.11.17.73f2816-custom-unsigned
+          name: BoxProxy-26.11.17.73f2816-custom-signed
           path: |
-            artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk
-            artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk.sha256
+            artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-signed.apk
+            artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-signed.apk.sha256
           if-no-files-found: error
           retention-days: 30
 
