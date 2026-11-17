@@ -1,0 +1,27 @@
+{
+  "versionName": "26.11.17.73f2816",
+  "versionCode": 176,
+  "packageName": "com.boxproxy.box",
+  "abi": "arm64-v8a",
+  "inputFile": "app/BoxProxy-26.11.17.73f2816-arm64-v8a.apk",
+  "inputSha256": "d5beb42e6461f738022d7a456357b93a24b200fa98be4ff7441d08f3d25c8213",
+  "migrationFrom": {
+    "versionName": "26.11.16.25abc84",
+    "versionCode": 171,
+    "sourceArchive": "../26.11.16.25abc84/apktool-source.tar.gz",
+    "sourceArchiveSha256": "dd45c60ec32b65eaa5cb1757457b92816197e6c1797c93af9e4a6999c15095b4"
+  },
+  "apktoolVersion": "2.4.1",
+  "decodeFramework": {
+    "file": "ci/apktool-framework-api23.apk",
+    "sha256": "fee7f101ff4d7fbaee9f715869248f1eb91e9fffe5f7eaf44fcf55192c5a3991"
+  },
+  "buildFramework": {
+    "package": "@drxiaozhi/minapk",
+    "version": "0.5.1",
+    "androidJarSha256": "6cea1df3efb77103ac3e2beb9bf4718964b0e0869ab16d39d29d5cbae1c147ad",
+    "publicizedResourceEntries": 10246
+  },
+  "mapping": "generated from the pinned 171 and 176 Apktool trees with scripts/suggest_upstream_classes.py and scripts/build_171_maps.py; explicit migration adaptations are reviewed in scripts/port_176_candidate.py",
+  "status": "full-custom-migration-locally-built-device-validation-pending"
+}
