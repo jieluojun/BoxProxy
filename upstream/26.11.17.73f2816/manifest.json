@@ -13,7 +13,7 @@
   },
   "apktoolVersion": "2.4.1",
   "decodeFramework": {
-    "file": "ci/apktool-framework-api23.apk",
+    "apktoolJarEntry": "brut/androlib/android-framework.jar",
     "sha256": "fee7f101ff4d7fbaee9f715869248f1eb91e9fffe5f7eaf44fcf55192c5a3991"
   },
   "buildFramework": {
@@ -23,5 +23,5 @@
     "publicizedResourceEntries": 10246
   },
   "mapping": "generated from the pinned 171 and 176 Apktool trees with scripts/suggest_upstream_classes.py and scripts/build_171_maps.py; explicit migration adaptations are reviewed in scripts/port_176_candidate.py",
-  "status": "full-custom-migration-locally-built-device-validation-pending"
+  "status": "full-custom-migration-ci-built-device-validation-pending"
 }

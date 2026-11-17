@@ -12,11 +12,8 @@ on:
       - "upstream/**"
       - "scripts/**"
       - "decompiled/**"
-      - "ci/**"
       - "app/BoxProxy-26.11.16.25abc84-arm64-v8a.apk"
       - "app/BoxProxy-26.11.17.73f2816-arm64-v8a.apk"
-      - "app/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk"
-      - "app/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk.sha256"
       - ".github/workflows/build-apk.yml"
   pull_request:
     branches: [main]
@@ -24,11 +21,8 @@ on:
       - "upstream/**"
       - "scripts/**"
       - "decompiled/**"
-      - "ci/**"
       - "app/BoxProxy-26.11.16.25abc84-arm64-v8a.apk"
       - "app/BoxProxy-26.11.17.73f2816-arm64-v8a.apk"
-      - "app/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk"
-      - "app/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-unsigned.apk.sha256"
       - ".github/workflows/build-apk.yml"
 
 permissions:
@@ -208,6 +202,7 @@ jobs:
           path: artifacts/
           if-no-files-found: error
           retention-days: 30
+          compression-level: 6
 
   build_176:
     name: Rebuild customized version 176 (repository-signed)
@@ -245,10 +240,9 @@ jobs:
           if hashlib.sha256(archive.read_bytes()).hexdigest() != base['sourceArchiveSha256']:
               raise SystemExit('pinned version 171 source archive checksum mismatch')
 
-          decode_framework = Path(target['decodeFramework']['file'])
-          if hashlib.sha256(decode_framework.read_bytes()).hexdigest() != target['decodeFramework']['sha256']:
-              raise SystemExit('pinned Apktool decode framework checksum mismatch')
-          print('Pinned version 171/176 inputs and decode framework verified.')
+          if target['decodeFramework']['apktoolJarEntry'] != 'brut/androlib/android-framework.jar':
+              raise SystemExit('unexpected pinned Apktool framework entry')
+          print('Pinned version 171/176 inputs and Apktool framework entry verified.')
           PY
 
       - name: Download pinned Apktool, AAPT2, and Android platform tools
@@ -277,7 +271,21 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .tools/decode-framework
-          cp ci/apktool-framework-api23.apk .tools/decode-framework/1.apk
+          unzip -p .tools/apktool241/package/bin/apktool_2.4.1.jar \
+            brut/androlib/android-framework.jar > .tools/decode-framework/1.apk
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          manifest = json.loads(Path('upstream/26.11.17.73f2816/manifest.json').read_text())
+          framework = manifest['decodeFramework']
+          if framework['apktoolJarEntry'] != 'brut/androlib/android-framework.jar':
+              raise SystemExit('unexpected pinned Apktool framework entry')
+          actual = hashlib.sha256(Path('.tools/decode-framework/1.apk').read_bytes()).hexdigest()
+          if actual != framework['sha256']:
+              raise SystemExit('pinned Apktool decode framework checksum mismatch')
+          print('Pinned Apktool embedded framework verified.')
+          PY
           python3 scripts/publicize_android_framework.py \
             --input .tools/android-platform.jar \
             --output .tools/framework-platform/1.apk
@@ -368,7 +376,7 @@ jobs:
           export KS_PASS KEY_PASS
 
           mkdir -p "$GITHUB_WORKSPACE/artifacts"
-          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-signed.apk"
+          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-26.11.17.73f2816-rebuilt.apk"
           "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
           "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
           "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
@@ -399,15 +407,16 @@ jobs:
             echo "- SHA-256: $hash"
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload version 176 signed APK artifact
+      - name: Upload version 176 rebuilt APK artifact
         uses: actions/upload-artifact@v7
         with:
-          name: BoxProxy-26.11.17.73f2816-custom-signed
+          name: BoxProxy-26.11.17.73f2816-rebuilt
           path: |
-            artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-signed.apk
-            artifacts/BoxProxy-26.11.17.73f2816-arm64-v8a-custom-signed.apk.sha256
+            artifacts/BoxProxy-26.11.17.73f2816-rebuilt.apk
+            artifacts/BoxProxy-26.11.17.73f2816-rebuilt.apk.sha256
           if-no-files-found: error
           retention-days: 30
+          compression-level: 6
 
   release:
     name: Publish GitHub Release
