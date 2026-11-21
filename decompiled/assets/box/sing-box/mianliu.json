@@ -19,6 +19,19 @@
       }
     },
     {
+      "type": "local",
+      "tag": "免流节点",
+      "path": "./proxies/免流节点.txt",
+      "health_check": {
+        "enabled": true,
+        "interval": "0m",
+        "timeout": "5s"
+      },
+      "override_dialer": {
+        "host": "m.youku.com"
+      }
+    },
+    {
       "type": "remote",
       "tag": "免流订阅",
       "url": "https://gist.githubusercontent.com/jieluojun/d4b528ee3418740112357a80e940d912/raw/MLSub",
@@ -265,7 +278,7 @@
     },
     {
       "type": "selector",
-      "tag": "订阅更新",
+      "tag": "订阅出口",
       "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Skicat.png",
       "outbounds": [
         "国外出口",
@@ -533,7 +546,7 @@
     "find_process": true,
     "auto_detect_interface": true,
     "default_domain_resolver": "腾讯DNS",
-    "default_http_client": "远程下载"
+    "default_http_client": "订阅下载"
   },
   "services": [
     {
@@ -545,7 +558,7 @@
         "enabled": true,
         "path": "sing-box-dashboard",
         "download_url": "https://v6.gh-proxy.org/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
-        "http_client": "远程下载"
+        "http_client": "面板下载"
       }
     }
   ],
@@ -560,16 +573,23 @@
       "external_controller": "0.0.0.0:9090",
       "external_ui": "ui",
       "external_ui_download_url": "https://v6.gh-proxy.org/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-no-fonts.zip",
-      "external_ui_http_client": "远程下载",
+      "external_ui_http_client": "面板下载",
       "default_mode": "规则"
     },
     "urltest_unified_delay": true
   },
   "http_clients": [
     {
-      "tag": "远程下载",
+      "tag": "订阅下载",
       "version": 2,
-      "detour": "订阅更新",
+      "detour": "订阅出口",
+      "stream_receive_window": 0,
+      "connection_receive_window": 0
+    },
+    {
+      "tag": "面板下载",
+      "version": 2,
+      "detour": "国内出口",
       "stream_receive_window": 0,
       "connection_receive_window": 0
     }

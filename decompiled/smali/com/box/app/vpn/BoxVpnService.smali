@@ -221,7 +221,12 @@
 .method private notif(Ljava/lang/String;)Landroid/app/Notification;
     .locals 6
 
-    const-string v0, "boxproxy_vpn"
+    # The foreground notification is posted on the shared "Box Status" channel
+    # and notification id (1001) of BoxPersistentNotificationService so that the
+    # notification shade keeps a single entry and the settings list keeps a single
+    # category: the dedicated "boxproxy_vpn" channel would add a second
+    # "BoxProxy VPN" type, which is dropped in VpnPrefs.processStart().
+    const-string v0, "box_persistent_status"
 
     const-string v1, "notification"
 
@@ -233,11 +238,31 @@
 
     new-instance v2, Landroid/app/NotificationChannel;
 
-    const-string v3, "BoxProxy VPN"
+    const v3, 0x7f0f02bc
+
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
 
     const/4 v4, 0x2
 
     invoke-direct {v2, v0, v3, v4}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+
+    const v3, 0x7f0f02bb
+
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, v3}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
+
+    invoke-virtual {v2, v3}, Landroid/app/NotificationChannel;->enableVibration(Z)V
+
+    invoke-virtual {v2, v3}, Landroid/app/NotificationChannel;->setShowBadge(Z)V
 
     invoke-virtual {v1, v2}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
@@ -298,7 +323,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x5650
+    const/16 v1, 0x3e9
 
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -336,7 +361,7 @@
 
     check-cast v1, Landroid/app/NotificationManager;
 
-    const/16 v2, 0x5650
+    const/16 v2, 0x3e9
 
     invoke-virtual {v1, v2, v0}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 

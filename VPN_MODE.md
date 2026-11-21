@@ -35,7 +35,7 @@
 
 | 文件 | 作用 |
 | --- | --- |
-| `smali/com/box/app/vpn/BoxVpnService.smali` | VpnService、前台通知、内核进程管理 |
+| `smali/com/box/app/vpn/BoxVpnService.smali` | VpnService、前台通知（复用「Box 状态」渠道/通知 id）、内核进程管理 |
 | `smali/com/box/app/vpn/VpnBridge.smali` | 启停控制、模式切换（钩入 `gg2.a`、`lb0.q`） |
 | `smali/com/box/app/vpn/VpnPrepareActivity.smali` | VPN 授权对话框 |
 | `smali/com/box/app/vpn/VpnShell.smali` / `VpnTask.smali` | 进程 / 线程辅助 |
@@ -187,6 +187,11 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 - 自启（开机 / 滑掉后台重启）时没有打开应用界面，Box 状态通知（运行中、网速、CPU/RAM、重新加载/停止/重启）
   原来要打开应用才出现。现在 VPN 起来后会直接启动 `BoxPersistentNotificationService`（`ACTION_SYNC`），
   并遵循应用里「常驻通知」的开关。
+- VPN 前台通知不再占用独立的通知类别：`BoxVpnService` 的前台通知改用「Box 状态」的渠道 `box_persistent_status`
+  与通知 id 1001（与 `BoxPersistentNotificationService` 共享），系统通知设置里只剩「Box 状态」一个类别，
+  开启「常驻通知」时通知栏也只保留一条 Box 状态通知；旧的 `boxproxy_vpn`（「BoxProxy VPN」）渠道在每次进程
+  启动时由 `VpnPrefs.processStart` 删除。注意 Android 不允许隐藏前台服务通知（渠道 importance 会被系统抬到
+  LOW、运行中也无法 cancel），未开启「常驻通知」时这条共享通知只显示 VPN 运行状态文本。
 - `autostart.log` 在每个新进程启动时清空重写（和 `runs.log` 每次启动清空一样），第一行是 `process started`，
   接着是上一个进程的退出原因。同一个进程内的服务重启不会清。
 

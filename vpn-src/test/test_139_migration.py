@@ -156,7 +156,7 @@ class FullMigrationTest(unittest.TestCase):
 
     def test_bundled_sing_box_template_matches_reviewed_upload(self):
         name = 'assets/box/sing-box/mianliu.json'
-        expected = 'dfdedffae90de3daf457b155834d58389834d43a32e8f9aff837a4c9ee2bcd89'
+        expected = 'b227b5c01ead532ef7a0684b186aafea56417796ffed6a67f2b6185ee3b4a6ea'
         self.assertEqual(migration.digest(ROOT / 'decompiled' / name), expected)
         self.assertEqual(migration.digest(self.project / name), expected)
         config = json.loads(self.text(name))
