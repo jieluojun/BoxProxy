@@ -906,6 +906,18 @@ def check_pump_ipv6_tagging(output, problems):
                    ' (IPv6 flows are tagged too)'):
         if needle not in pump:
             problems.append((pump_name, 'missing IPv6 tagging element: %r' % needle))
+    # ART rejects plain `move` on reference-typed registers (copy-cat1) with a
+    # VerifyError at class load; forward6's byte[]/this copies must be
+    # move-object/from16, while the int copy must stay a plain move (the
+    # opposite mix-up is rejected the same way).
+    for needle in ('move-object/from16 v13, p1', 'move-object/from16 v15, p0',
+                   'move/from16 v14, p2'):
+        if needle not in pump:
+            problems.append((pump_name, 'forward6 entry copy wrong: %r' % needle))
+    for needle in ('move/from16 v13, p1', 'move/from16 v15, p0',
+                   'move-object/from16 v14, p2'):
+        if needle in pump:
+            problems.append((pump_name, 'forward6 reference/int copy swapped: %r' % needle))
     if ' (IPv6 is disabled while they are in use)' in pump:
         problems.append((pump_name, 'stale IPv6-disabled log text left in place'))
     start = pump.find('.method public static ipv6(Z)Z')

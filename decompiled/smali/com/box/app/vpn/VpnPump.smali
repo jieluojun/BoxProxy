@@ -2432,9 +2432,9 @@
 .method private forward6([BI)V
     .registers 24
 
-    move/from16 v13, p1
+    move-object/from16 v13, p1
     move/from16 v14, p2
-    move/from16 v15, p0
+    move-object/from16 v15, p0
 
     const/16 v0, 0x30
     if-ge v14, v0, :f6n
