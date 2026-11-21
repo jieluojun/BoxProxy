@@ -2541,10 +2541,10 @@
     and-int/lit16 v1, v1, 0xff
     or-int/2addr v0, v1
     int-to-long v4, v0
-    const-wide/16 v18, 0x20
+    const/16 v18, 0x20
     shl-long v4, v4, v18
     int-to-long v0, v7
-    const-wide/16 v18, 0x10
+    const/16 v18, 0x10
     shl-long v0, v0, v18
     or-long v4, v4, v0
     int-to-long v0, v8

@@ -918,6 +918,18 @@ def check_pump_ipv6_tagging(output, problems):
                    'move-object/from16 v14, p2'):
         if needle in pump:
             problems.append((pump_name, 'forward6 reference/int copy swapped: %r' % needle))
+    # shl-long's shift amount is a 32-bit Integer operand: a const-wide leaves
+    # v18 as "Low-half Constant" and ART rejects the method
+    # ("register v18 has type Low-half Constant but expected Integer"), while
+    # cmp-long compares wide pairs and needs the const-wide form.
+    for needle in ('const/16 v18, 0x20', 'const/16 v18, 0x10',
+                   'const-wide/16 v18, 0x7d0', 'const-wide/16 v18, 0x7530'):
+        if needle not in pump:
+            problems.append((pump_name, 'forward6 constant form wrong: %r' % needle))
+    for needle in ('const-wide/16 v18, 0x20', 'const-wide/16 v18, 0x10',
+                   'const/16 v18, 0x7d0', 'const/16 v18, 0x7530'):
+        if needle in pump:
+            problems.append((pump_name, 'forward6 constant form swapped: %r' % needle))
     if ' (IPv6 is disabled while they are in use)' in pump:
         problems.append((pump_name, 'stale IPv6-disabled log text left in place'))
     start = pump.find('.method public static ipv6(Z)Z')
