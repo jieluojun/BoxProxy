@@ -885,6 +885,61 @@ def check_176_contracts(output, problems):
                                  '%r' % lines[index + 1]))
 
 
+
+def check_pump_ipv6_tagging(output, problems):
+    """IPv6 must stay enabled under process rules and be tagged like IPv4.
+
+    VpnPump.ipv6() no longer gates on `active`, the pump gained v6
+    forward/reverse/lookup twins that rewrite fdfe:dcba:9876::1 to
+    fdfe:dcba:9876::c8NN, and VpnTags.expr() emits the v6 twin of every
+    per-app SRC-IP-CIDR tag.
+    """
+    pump_name = 'smali/com/box/app/vpn/VpnPump.smali'
+    pump_path = output / pump_name
+    if not pump_path.is_file():
+        problems.append((pump_name, 'VpnPump.smali missing'))
+        return
+    pump = pump_path.read_text()
+    for needle in ('->forward6([BI)V', '->reverse6([BI)V', '->lookup6(I[BII)I',
+                   'Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;',
+                   'Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;',
+                   ' (IPv6 flows are tagged too)'):
+        if needle not in pump:
+            problems.append((pump_name, 'missing IPv6 tagging element: %r' % needle))
+    if ' (IPv6 is disabled while they are in use)' in pump:
+        problems.append((pump_name, 'stale IPv6-disabled log text left in place'))
+    start = pump.find('.method public static ipv6(Z)Z')
+    end = pump.find('.end method', start)
+    if start < 0 or end < 0:
+        problems.append((pump_name, 'ipv6(Z)Z method missing'))
+    else:
+        body = pump[start:end]
+        if '->active:Z' in body:
+            problems.append((pump_name, 'ipv6(Z)Z still gates on VpnPump.active'))
+        if 'Lcom/box/app/vpn/VpnSb;->on:Z' not in body:
+            problems.append((pump_name, 'ipv6(Z)Z must keep the sing-box no-IPv6 gate'))
+    tags_name = 'smali/com/box/app/vpn/VpnTags.smali'
+    tags_path = output / tags_name
+    if not tags_path.is_file():
+        problems.append((tags_name, 'VpnTags.smali missing'))
+        return
+    tags = tags_path.read_text()
+    if 'fdfe:dcba:9876::' not in tags:
+        problems.append((tags_name, 'ip6() tag prefix fdfe:dcba:9876:: missing'))
+    if '.method private static ip6(I)Ljava/lang/String;' not in tags:
+        problems.append((tags_name, 'ip6() method missing'))
+    start = tags.find('.method private expr(I)Ljava/lang/String;')
+    end = tags.find('.end method', start)
+    if start < 0 or end < 0:
+        problems.append((tags_name, 'expr(I) method missing'))
+    else:
+        body = tags[start:end]
+        if 'VpnTags;->ip6(I)Ljava/lang/String;' not in body:
+            problems.append((tags_name, 'expr() must emit the v6 twin of every tag'))
+        if '/128)' not in body:
+            problems.append((tags_name, 'expr() must emit /128 v6 CIDRs'))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--old', type=Path, default=Path('.tools/cmp/decompiled'))
@@ -956,6 +1011,7 @@ def main():
     check_vpn_status_identity_tolerance(args.output, problems)
     check_vpn_home_writability(args.output, problems)
     check_singbox_compare_default(args.output, problems)
+    check_pump_ipv6_tagging(args.output, problems)
     for name, detail in problems:
         print('MISMATCH', name)
         if isinstance(detail, dict):

@@ -865,7 +865,7 @@
     "smali/com/box/app/vpn/VpnPrefs.smali": "8474e05951db912d51ae7fdf9f055020931b2d2cbd81f038ad58ee8f2c3e6745",
     "smali/com/box/app/vpn/VpnPrepareActivity.smali": "1223e825af464bafb421cfb28c71da34c32c4c137a0c6cce03e5c8f658a5fedc",
     "smali/com/box/app/vpn/VpnPump$Flow.smali": "4dadf0ecdb098c5d5a706d4f6cecc800afa661f60dd8244f38e0f4ccf709049f",
-    "smali/com/box/app/vpn/VpnPump.smali": "8d09fb474e11a4dba0e096e4e44b723db7c74ed53ee226bde212e902460230f4",
+    "smali/com/box/app/vpn/VpnPump.smali": "32125ab8b92128c316f2c97d875c8809989c6d83bf17521d2168430082360721",
     "smali/com/box/app/vpn/VpnRoot$1.smali": "7c1b0bc0610b2fb98f7c2c29f26ba27629c1e208d843efd04a1b22c91422d3ef",
     "smali/com/box/app/vpn/VpnRoot$2.smali": "514ae7a311a8f345cace9a9683f9001d9360f53c5d0d1adb604941cb9030cca6",
     "smali/com/box/app/vpn/VpnRoot.smali": "378f7039b2caf517236d21d886680c9a0ddbc28130826e58dc0ad7a11f31e16c",
@@ -876,7 +876,7 @@
     "smali/com/box/app/vpn/VpnSb.smali": "69111da16c8c061f6aca6901a39fe21c985a7c198b69f2831d620eb202124ae7",
     "smali/com/box/app/vpn/VpnSeed.smali": "4c4684945afc3f1aff638ebe43a8602401806cd0bf0f2333e26cffd0507b721f",
     "smali/com/box/app/vpn/VpnShell.smali": "a6aaf8d6e01300ecc864822618cbe204f834167c0182cc74cf3032fea9ec88e2",
-    "smali/com/box/app/vpn/VpnTags.smali": "c65733ae7db68e2ce5804da9d86cc41710628885acbd9e32676893e391a19f03",
+    "smali/com/box/app/vpn/VpnTags.smali": "cd0209aa8fedb82e6ebba3286b83b47a9950cc0fc0aaaf962bb7749133cf73ff",
     "smali/com/box/app/vpn/VpnTask.smali": "4642663746bffd37e8659b81d63bfc6f9fdd1f1e918ccac4f04ef8e86ddaad9f",
     "smali/com/box/app/vpn/XrConfig.smali": "847dddfeef102d52a856694b9df9fd3dee599127753110b76c133157bb25ff92",
     "smali/kotlin/BuilderInference.smali": "ba3dd96010dc685b97abb4903e52227174c921c231ef139ff7816559f4953e2e",
@@ -11359,7 +11359,7 @@
     ]
   },
   "runtimeArchive": "runtime-payload.tar.gz",
-  "runtimeArchiveSha256": "34f48997e4fdffb4db69609a1a36c50340520216c89c8d4fa3af60c5008ef68e",
+  "runtimeArchiveSha256": "0378a9580edcb37fcca070e99f59868c7d26216caec700e88d2fd045a05c5eb1",
   "runtimeArchiveFileCount": 1432,
-  "runtimeArchiveBytes": 21164571
+  "runtimeArchiveBytes": 21180968
 }

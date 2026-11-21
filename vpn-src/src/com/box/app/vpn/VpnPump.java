@@ -27,6 +27,9 @@ import java.util.Map;
  * (172.19.0.1) is then rewritten to the tag address of that app
  * (172.19.200.N, see VpnTags) before the packet goes to the core over a
  * SEQPACKET socketpair, and the destination is rewritten back on the way out.
+ * IPv6 works the same way: the source fdfe:dcba:9876::1 becomes the tag
+ * address fdfe:dcba:9876::c8NN and is restored on the way back, so process
+ * rules no longer force IPv6 to be switched off.
  */
 public final class VpnPump implements Runnable {
     public static volatile boolean active;
@@ -47,6 +50,8 @@ public final class VpnPump implements Runnable {
 
     private final HashMap<Long, Flow> tcp = new HashMap<Long, Flow>();
     private final HashMap<Long, Flow> udp = new HashMap<Long, Flow>();
+    private final HashMap<Long, Flow> tcp6 = new HashMap<Long, Flow>();
+    private final HashMap<Long, Flow> udp6 = new HashMap<Long, Flow>();
     private long lastClean;
     private int logged;
 
@@ -126,7 +131,7 @@ public final class VpnPump implements Runnable {
             fo.close();
             tags = t;
             active = true;
-            log("process rules translated:" + t.describe() + " (IPv6 is disabled while they are in use)");
+            log("process rules translated:" + t.describe() + " (IPv6 flows are tagged too)");
             return true;
         } catch (Throwable t) {
             out.delete();
@@ -135,9 +140,9 @@ public final class VpnPump implements Runnable {
         }
     }
 
-    /** IPv6 is not tagged, so it is switched off while the pump is active. */
+    /** IPv6 is tagged exactly like IPv4; only the sing-box path has no IPv6. */
     public static boolean ipv6(boolean wanted) {
-        return active || VpnSb.on ? false : wanted;
+        return VpnSb.on ? false : wanted;
     }
 
     /** Returns the descriptor the core must use as its TUN. */
@@ -361,6 +366,10 @@ public final class VpnPump implements Runnable {
     }
 
     private void forward(byte[] b, int n) {
+        if ((b[0] & 0xF0) == 0x60) {
+            forward6(b, n);
+            return;
+        }
         if (n < 28 || (b[0] & 0xF0) != 0x40) {
             return;
         }
@@ -419,6 +428,10 @@ public final class VpnPump implements Runnable {
     }
 
     private void reverse(byte[] b, int n) {
+        if ((b[0] & 0xF0) == 0x60) {
+            reverse6(b, n);
+            return;
+        }
         if (n < 20 || (b[0] & 0xF0) != 0x40) {
             return;
         }
@@ -481,12 +494,20 @@ public final class VpnPump implements Runnable {
     private void clean(long now) {
         lastClean = now;
         clean(tcp, now - 600000L);
+        clean(tcp6, now - 600000L);
         clean(udp, now - 120000L);
+        clean(udp6, now - 120000L);
         if (tcp.size() > 30000) {
             tcp.clear();
         }
+        if (tcp6.size() > 30000) {
+            tcp6.clear();
+        }
         if (udp.size() > 30000) {
             udp.clear();
+        }
+        if (udp6.size() > 30000) {
+            udp6.clear();
         }
     }
 
@@ -497,5 +518,132 @@ public final class VpnPump implements Runnable {
                 it.remove();
             }
         }
+    }
+
+    // --------------------------------------------------- IPv6 counterparts
+
+    /** IPv6 forward: tags fdfe:dcba:9876::1 sources to fdfe:dcba:9876::c8NN. */
+    private void forward6(byte[] b, int n) {
+        if (n < 48) {
+            return;
+        }
+        int proto = b[6] & 0xFF;
+        if (proto != 6 && proto != 17) {
+            return; // extension headers / other protocols pass untouched
+        }
+        // only packets sourced by the tunnel address are tagged
+        byte[] want = new byte[] { (byte) 0xfd, (byte) 0xfe, (byte) 0xdc, (byte) 0xba, (byte) 0x98, (byte) 0x76,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
+        for (int i = 0; i < 16; i++) {
+            if (b[8 + i] != want[i]) {
+                return;
+            }
+        }
+        int sport = u16(b, 40);
+        int dport = u16(b, 42);
+        long dstLow = ((long) (b[36] & 0xFF) << 24) | ((long) (b[37] & 0xFF) << 16) | ((long) (b[38] & 0xFF) << 8)
+                | (b[39] & 0xFF);
+        long key = (dstLow << 32) | ((long) sport << 16) | dport;
+        HashMap<Long, Flow> m = proto == 6 ? tcp6 : udp6;
+        long now = System.currentTimeMillis();
+        Flow f = m.get(Long.valueOf(key));
+        boolean syn = proto == 6 && n >= 54 && (b[53] & 0x12) == 0x02;
+        if (f == null || (syn && now - f.last > 2000)) {
+            f = new Flow();
+            f.tag = lookup6(proto, b, sport, dport);
+            m.put(Long.valueOf(key), f);
+        }
+        f.last = now;
+        if (now - lastClean > 30000) {
+            clean(now);
+        }
+        boolean rst = proto == 6 && n >= 54 && (b[53] & 0x04) != 0;
+        int tag = f.tag;
+        if (rst) {
+            m.remove(Long.valueOf(key));
+        }
+        if (tag == 0) {
+            return;
+        }
+        int oldW = u16(b, 30);
+        int newW = 0xC800 | tag;
+        b[30] = (byte) 0xC8;
+        b[31] = (byte) tag;
+        if (proto == 6) {
+            if (n >= 58) {
+                csumFix(b, 56, oldW, newW, false);
+            }
+        } else if (u16(b, 46) != 0) {
+            csumFix(b, 46, oldW, newW, true);
+        }
+    }
+
+    /** IPv6 reverse: restores fdfe:dcba:9876::c8NN destinations to ::1. */
+    private void reverse6(byte[] b, int n) {
+        if (n < 48) {
+            return;
+        }
+        int proto = b[6] & 0xFF;
+        if (proto != 6 && proto != 17) {
+            return;
+        }
+        byte[] want = new byte[] { (byte) 0xfd, (byte) 0xfe, (byte) 0xdc, (byte) 0xba, (byte) 0x98, (byte) 0x76,
+                0, 0, 0, 0, 0, 0, 0, 0 };
+        for (int i = 0; i < 14; i++) {
+            if (b[24 + i] != want[i]) {
+                return;
+            }
+        }
+        if (b[38] != (byte) 0xC8) {
+            return;
+        }
+        int oldW = u16(b, 38);
+        b[38] = 0;
+        b[39] = 1;
+        if (proto == 6) {
+            if (n >= 58) {
+                csumFix(b, 56, oldW, 0x0001, false);
+            }
+        } else if (u16(b, 46) != 0) {
+            csumFix(b, 46, oldW, 0x0001, true);
+        }
+    }
+
+    /** Like lookup(), for IPv6 addresses. */
+    private int lookup6(int proto, byte[] b, int sport, int dport) {
+        VpnTags t = tags;
+        int tag = 0;
+        if (t == null || cm == null) {
+            return 0;
+        }
+        int uid = -1;
+        try {
+            byte[] s = new byte[16];
+            byte[] d = new byte[16];
+            System.arraycopy(b, 8, s, 0, 16);
+            System.arraycopy(b, 24, d, 0, 16);
+            InetSocketAddress local = new InetSocketAddress(InetAddress.getByAddress(s), sport);
+            InetSocketAddress remote = new InetSocketAddress(InetAddress.getByAddress(d), dport);
+            for (int i = 0; i < 3 && uid < 0; i++) {
+                uid = cm.getConnectionOwnerUid(proto, local, remote);
+                if (uid < 0) {
+                    Thread.sleep(2);
+                }
+            }
+        } catch (Throwable e) {
+            if (logged < 5) {
+                logged++;
+                log("getConnectionOwnerUid failed: " + e);
+            }
+            return 0;
+        }
+        tag = uid < 0 ? 0 : t.tagFor(uid, false);
+        if (logged < 40) {
+            logged++;
+            log((proto == 6 ? "tcp6 " : "udp6 ") + "flow :" + sport + " -> "
+                    + InetAddress.getByAddress(java.util.Arrays.copyOfRange(b, 24, 40)).getHostAddress() + ":" + dport
+                    + " uid=" + uid + " tag=" + tag);
+        }
+        return tag;
     }
 }

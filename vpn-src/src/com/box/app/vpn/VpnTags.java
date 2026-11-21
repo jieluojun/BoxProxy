@@ -253,14 +253,16 @@ public final class VpnTags implements SbConfig.Tags {
         return "172.19.200." + tag;
     }
 
-    /** Rule expression matching every app that satisfies clause id. */
+    /** IPv6 twin of ip(): fdfe:dcba:9876::c8NN, byte-for-byte parallel. */
+    private static String ip6(int tag) {
+        return "fdfe:dcba:9876::" + Integer.toHexString(0xC800 | tag);
+    }
+
+    /** Rule expression matching every app that satisfies clause id (v4 + v6 tags). */
     private String expr(int id) {
         ArrayList<Integer> tags = clauseTags.get(id);
         if (tags.isEmpty()) {
             return "SRC-IP-CIDR,255.255.255.255/32";
-        }
-        if (tags.size() == 1) {
-            return "SRC-IP-CIDR," + ip(tags.get(0).intValue()) + "/32";
         }
         StringBuilder sb = new StringBuilder("OR,(");
         for (int i = 0; i < tags.size(); i++) {
@@ -268,6 +270,8 @@ public final class VpnTags implements SbConfig.Tags {
                 sb.append(',');
             }
             sb.append("(SRC-IP-CIDR,").append(ip(tags.get(i).intValue())).append("/32)");
+            sb.append(',');
+            sb.append("(SRC-IP-CIDR,").append(ip6(tags.get(i).intValue())).append("/128)");
         }
         sb.append(')');
         return sb.toString();

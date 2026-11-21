@@ -397,136 +397,109 @@
 .method private expr(I)Ljava/lang/String;
     .registers 5
 
-    .line 258
     iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->clauseTags:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Ljava/util/ArrayList;
+    check-cast v0, Ljava/util/ArrayList;
 
-    .line 259
-    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_11
+    if-eqz v1, :cond_nonempty
 
-    const-string p1, "SRC-IP-CIDR,255.255.255.255/32"
+    const-string v0, "SRC-IP-CIDR,255.255.255.255/32"
 
-    return-object p1
+    return-object v0
 
-    .line 262
-    :cond_11
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_3b
-
-    .line 263
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v2, "SRC-IP-CIDR,"
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-static {p1}, Lcom/box/app/vpn/VpnTags;->ip(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "/32"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 265
-    :cond_3b
-    new-instance v0, Ljava/lang/StringBuilder;
+    :cond_nonempty
+    new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "OR,("
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 266
-    :goto_42
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+    const/4 v2, 0x0
 
-    move-result v2
+    :cond_loop
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    if-lt v1, v2, :cond_52
+    move-result v3
 
-    const/16 p1, 0x29
+    if-ge v2, v3, :cond_done
 
-    .line 272
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    if-nez v2, :cond_sep
 
-    .line 273
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v3, ","
 
-    move-result-object p1
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    :cond_sep
+    const-string v3, "(SRC-IP-CIDR,"
 
-    :cond_52
-    if-lez v1, :cond_59
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0x2c
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    .line 268
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    :cond_59
-    const-string v2, "(SRC-IP-CIDR,"
+    check-cast v3, Ljava/lang/Integer;
 
-    .line 270
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result v3
 
-    move-result-object v2
+    invoke-static {v3}, Lcom/box/app/vpn/VpnTags;->ip(I)Ljava/lang/String;
 
-    check-cast v2, Ljava/lang/Integer;
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v2
+    const-string v3, "/32),"
 
-    invoke-static {v2}, Lcom/box/app/vpn/VpnTags;->ip(I)Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    const-string v3, "(SRC-IP-CIDR,"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "/32)"
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    add-int/lit8 v1, v1, 0x1
+    check-cast v3, Ljava/lang/Integer;
 
-    goto :goto_42
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/box/app/vpn/VpnTags;->ip6(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "/128)"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :cond_loop
+
+    :cond_done
+    const-string v0, ")"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method private static indexOfIgnoreCase(Ljava/lang/String;Ljava/lang/String;)I
@@ -599,6 +572,30 @@
     move-result-object p0
 
     return-object p0
+.end method
+
+.method private static ip6(I)Ljava/lang/String;
+    .registers 4
+
+    or-int/lit16 p0, p0, 0xc800
+
+    invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "fdfe:dcba:9876::"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method private rewrite(Ljava/lang/String;)Ljava/lang/String;
