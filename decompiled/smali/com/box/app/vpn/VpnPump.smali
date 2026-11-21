@@ -69,6 +69,28 @@
     .end annotation
 .end field
 
+.field private final tcp6:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/Long;",
+            "Lcom/box/app/vpn/VpnPump$Flow;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final udp6:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/Long;",
+            "Lcom/box/app/vpn/VpnPump$Flow;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method private constructor <init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Landroid/net/ConnectivityManager;Z)V
@@ -95,6 +117,18 @@
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/box/app/vpn/VpnPump;->udp:Ljava/util/HashMap;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;
 
     .line 59
     iput-object p1, p0, Lcom/box/app/vpn/VpnPump;->tun:Ljava/io/FileDescriptor;
@@ -150,6 +184,22 @@
 
     invoke-static {v0, v1, v2}, Lcom/box/app/vpn/VpnPump;->clean(Ljava/util/HashMap;J)V
 
+    iget-object v0, p0, Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;
+
+    const-wide v1, 0x927c0
+
+    sub-long v1, p1, v1
+
+    invoke-static {v0, v1, v2}, Lcom/box/app/vpn/VpnPump;->clean(Ljava/util/HashMap;J)V
+
+    iget-object v0, p0, Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;
+
+    const-wide v1, 0x1d4c0
+
+    sub-long v1, p1, v1
+
+    invoke-static {v0, v1, v2}, Lcom/box/app/vpn/VpnPump;->clean(Ljava/util/HashMap;J)V
+
     .line 484
     iget-object v0, p0, Lcom/box/app/vpn/VpnPump;->udp:Ljava/util/HashMap;
 
@@ -191,6 +241,32 @@
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
     :cond_35
+    iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->size()I
+
+    move-result p1
+
+    if-le p1, p2, :cond_t6c
+
+    iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
+
+    :cond_t6c
+    iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->size()I
+
+    move-result p1
+
+    if-le p1, p2, :cond_u6c
+
+    iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
+
+    :cond_u6c
     return-void
 .end method
 
@@ -638,6 +714,15 @@
 
     and-int/lit16 v4, v4, 0xf0
 
+    const/16 v6, 0x60
+
+    if-ne v4, v6, :cond_fwd6
+
+    invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/VpnPump;->forward6([BI)V
+
+    return-void
+
+    :cond_fwd6
     const/16 v5, 0x40
 
     if-eq v4, v5, :cond_15
@@ -1136,18 +1221,13 @@
     .registers 2
 
     .line 140
-    sget-boolean v0, Lcom/box/app/vpn/VpnPump;->active:Z
-
-    if-nez v0, :cond_8
-
     sget-boolean v0, Lcom/box/app/vpn/VpnSb;->on:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_ok
 
-    :cond_8
     const/4 p0, 0x0
 
-    :cond_9
+    :cond_ok
     return p0
 .end method
 
@@ -1743,7 +1823,7 @@
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, " (IPv6 is disabled while they are in use)"
+    const-string v1, " (IPv6 flows are tagged too)"
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1801,6 +1881,15 @@
 
     and-int/lit16 v2, v2, 0xf0
 
+    const/16 v4, 0x60
+
+    if-ne v2, v4, :cond_rev6
+
+    invoke-direct {p0, p1, p2}, Lcom/box/app/vpn/VpnPump;->reverse6([BI)V
+
+    return-void
+
+    :cond_rev6
     const/16 v3, 0x40
 
     if-eq v2, v3, :cond_f
@@ -2338,4 +2427,513 @@
     :cond_c2
     :goto_c2
     return-void
+.end method
+
+.method private forward6([BI)V
+    .registers 24
+
+    move/from16 v13, p1
+    move/from16 v14, p2
+    move/from16 v15, p0
+
+    const/16 v0, 0x30
+    if-ge v14, v0, :f6n
+    return-void
+
+    :f6n
+    const/16 v0, 0x6
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    move v6, v0
+    const/4 v1, 0x6
+    if-eq v0, v1, :f6p
+    const/16 v1, 0x11
+    if-eq v0, v1, :f6p
+    return-void
+
+    :f6p
+    const/16 v0, 0x8
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xfd
+    if-ne v0, v1, :f6out
+    const/16 v0, 0x9
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xfe
+    if-ne v0, v1, :f6out
+    const/16 v0, 0xa
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xdc
+    if-ne v0, v1, :f6out
+    const/16 v0, 0xb
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xba
+    if-ne v0, v1, :f6out
+    const/16 v0, 0xc
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0x98
+    if-ne v0, v1, :f6out
+    const/16 v0, 0xd
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0x76
+    if-ne v0, v1, :f6out
+    const/16 v0, 0xe
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0xf
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x10
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x11
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x12
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x13
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x14
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x15
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x16
+    aget-byte v0, v13, v0
+    if-nez v0, :f6out
+    const/16 v0, 0x17
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    const/4 v1, 0x1
+    if-ne v0, v1, :f6out
+
+    const/16 v0, 0x28
+    invoke-static {v13, v0}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
+    move-result v7
+    const/16 v0, 0x2a
+    invoke-static {v13, v0}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
+    move-result v8
+
+    const/16 v0, 0x24
+    aget-byte v0, v13, v0
+    and-int/lit16 v0, v0, 0xff
+    shl-int/lit8 v0, v0, 0x18
+    const/16 v1, 0x25
+    aget-byte v1, v13, v1
+    and-int/lit16 v1, v1, 0xff
+    shl-int/lit8 v1, v1, 0x10
+    or-int/2addr v0, v1
+    const/16 v1, 0x26
+    aget-byte v1, v13, v1
+    and-int/lit16 v1, v1, 0xff
+    shl-int/lit8 v1, v1, 0x8
+    or-int/2addr v0, v1
+    const/16 v1, 0x27
+    aget-byte v1, v13, v1
+    and-int/lit16 v1, v1, 0xff
+    or-int/2addr v0, v1
+    int-to-long v4, v0
+    const-wide/16 v18, 0x20
+    shl-long v4, v4, v18
+    int-to-long v0, v7
+    const-wide/16 v18, 0x10
+    shl-long v0, v0, v18
+    or-long v4, v4, v0
+    int-to-long v0, v8
+    or-long v4, v4, v0
+
+    const/4 v0, 0x6
+    if-eq v6, v0, :f6tc
+    iget-object v9, v15, Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;
+    goto :f6mp
+
+    :f6tc
+    iget-object v9, v15, Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;
+
+    :f6mp
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-wide v2
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v10
+    invoke-virtual {v9, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v11
+    check-cast v11, Lcom/box/app/vpn/VpnPump$Flow;
+
+    const/4 v12, 0x0
+    const/4 v0, 0x6
+    if-ne v6, v0, :f6s0
+    const/16 v0, 0x36
+    if-ge v14, v0, :f6s1
+    goto :f6sd
+
+    :f6s1
+    const/16 v0, 0x35
+    aget-byte v0, v13, v0
+    and-int/lit8 v0, v0, 0x12
+    const/4 v1, 0x2
+    if-ne v0, v1, :f6sd
+    const/4 v12, 0x1
+    goto :f6sd
+
+    :f6s0
+    nop
+
+    :f6sd
+    if-eqz v11, :f6c
+    if-eqz v12, :f6u
+    iget-wide v0, v11, Lcom/box/app/vpn/VpnPump$Flow;->last:J
+    sub-long v0, v2, v0
+    const-wide/16 v18, 0x7d0
+    cmp-long v1, v0, v18
+    if-lez v1, :f6c
+    goto :f6u
+
+    :f6c
+    new-instance v11, Lcom/box/app/vpn/VpnPump$Flow;
+    const/4 v0, 0x0
+    invoke-direct {v11, v0}, Lcom/box/app/vpn/VpnPump$Flow;-><init>(Lcom/box/app/vpn/VpnPump$Flow;)V
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v10
+    invoke-direct {v15, v6, v13, v7, v8}, Lcom/box/app/vpn/VpnPump;->lookup6(I[BII)I
+    move-result v0
+    iput v0, v11, Lcom/box/app/vpn/VpnPump$Flow;->tag:I
+    invoke-virtual {v9, v10, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :f6u
+    iput-wide v2, v11, Lcom/box/app/vpn/VpnPump$Flow;->last:J
+    iget-wide v0, v15, Lcom/box/app/vpn/VpnPump;->lastClean:J
+    sub-long v0, v2, v0
+    const-wide/16 v18, 0x7530
+    cmp-long v1, v0, v18
+    if-lez v1, :f6cl
+    goto :f6cd
+
+    :f6cl
+    invoke-direct {v15, v2, v3}, Lcom/box/app/vpn/VpnPump;->clean(J)V
+
+    :f6cd
+    const/4 v12, 0x0
+    const/4 v0, 0x6
+    if-ne v6, v0, :f6r0
+    const/16 v0, 0x36
+    if-ge v14, v0, :f6r1
+    goto :f6rd
+
+    :f6r1
+    const/16 v0, 0x35
+    aget-byte v0, v13, v0
+    and-int/lit8 v0, v0, 0x4
+    if-eqz v0, :f6rd
+    const/4 v12, 0x1
+    goto :f6rd
+
+    :f6r0
+    nop
+
+    :f6rd
+    iget v10, v11, Lcom/box/app/vpn/VpnPump$Flow;->tag:I
+    if-eqz v12, :f6rf
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v0
+    invoke-virtual {v9, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :f6rf
+    if-nez v10, :f6o
+    return-void
+
+    :f6o
+    const/16 v0, 0x1e
+    invoke-static {v13, v0}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
+    move-result v7
+    const v0, 0xc800
+    or-int v0, v0, v10
+    const/16 v1, 0x1e
+    const/16 v2, 0xc8
+    aput-byte v2, v13, v1
+    const/16 v1, 0x1f
+    and-int/lit16 v2, v10, 0xff
+    aput-byte v2, v13, v1
+    const/4 v1, 0x6
+    if-ne v6, v1, :f6uc
+    const/16 v1, 0x3a
+    if-ge v14, v1, :f6tc2
+    return-void
+
+    :f6tc2
+    const/16 v1, 0x38
+    const/4 v2, 0x0
+    invoke-static {v13, v1, v7, v0, v2}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
+    return-void
+
+    :f6uc
+    const/16 v1, 0x2e
+    invoke-static {v13, v1}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
+    move-result v2
+    if-eqz v2, :f6out
+    const/4 v2, 0x1
+    invoke-static {v13, v1, v7, v0, v2}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
+
+    :f6out
+    return-void
+.end method
+
+.method private reverse6([BI)V
+    .registers 10
+
+    const/16 v0, 0x30
+    if-ge p2, v0, :r6n
+    return-void
+
+    :r6n
+    const/16 v0, 0x6
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    move v3, v0
+    const/4 v1, 0x6
+    if-eq v0, v1, :r6p
+    const/16 v1, 0x11
+    if-eq v0, v1, :r6p
+    return-void
+
+    :r6p
+    const/16 v0, 0x18
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xfd
+    if-ne v0, v1, :r6out
+    const/16 v0, 0x19
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xfe
+    if-ne v0, v1, :r6out
+    const/16 v0, 0x1a
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xdc
+    if-ne v0, v1, :r6out
+    const/16 v0, 0x1b
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xba
+    if-ne v0, v1, :r6out
+    const/16 v0, 0x1c
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0x98
+    if-ne v0, v1, :r6out
+    const/16 v0, 0x1d
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0x76
+    if-ne v0, v1, :r6out
+    const/16 v0, 0x1e
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x1f
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x20
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x21
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x22
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x23
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x24
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x25
+    aget-byte v0, p1, v0
+    if-nez v0, :r6out
+    const/16 v0, 0x26
+    aget-byte v0, p1, v0
+    and-int/lit16 v0, v0, 0xff
+    const/16 v1, 0xc8
+    if-ne v0, v1, :r6out
+
+    const/16 v0, 0x26
+    invoke-static {p1, v0}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
+    move-result v2
+    const/16 v0, 0x26
+    const/4 v1, 0x0
+    aput-byte v1, p1, v0
+    const/16 v0, 0x27
+    const/4 v1, 0x1
+    aput-byte v1, p1, v0
+
+    const/4 v1, 0x6
+    if-ne v3, v1, :r6u
+    const/16 v0, 0x3a
+    if-ge p2, v0, :r6t
+    return-void
+
+    :r6t
+    const/16 v0, 0x38
+    const/4 v1, 0x1
+    const/4 v4, 0x0
+    invoke-static {p1, v0, v2, v1, v4}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
+    return-void
+
+    :r6u
+    const/16 v0, 0x2e
+    invoke-static {p1, v0}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
+    move-result v1
+    if-eqz v1, :r6out
+    const/4 v1, 0x1
+    const/4 v4, 0x1
+    invoke-static {p1, v0, v2, v1, v4}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
+
+    :r6out
+    return-void
+.end method
+
+.method private lookup6(I[BII)I
+    .registers 16
+
+    sget-object v0, Lcom/box/app/vpn/VpnPump;->tags:Lcom/box/app/vpn/VpnTags;
+    const/4 v1, 0x0
+    if-eqz v0, :l6ret
+    iget-object v2, p0, Lcom/box/app/vpn/VpnPump;->cm:Landroid/net/ConnectivityManager;
+    if-nez v2, :l6a
+    goto :l6ret
+
+    :l6a
+    const/16 v2, 0x10
+    :try_start_0
+    new-array v3, v2, [B
+    const/4 v4, 0x0
+    :l6fs
+    if-ge v4, v2, :l6fd
+    add-int/lit8 v5, v4, 0x8
+    aget-byte v5, p2, v5
+    aput-byte v5, v3, v4
+    add-int/lit8 v4, v4, 0x1
+    goto :l6fs
+
+    :l6fd
+    new-array v4, v2, [B
+    const/4 v5, 0x0
+    :l6fd2
+    if-ge v5, v2, :l6fd3
+    add-int/lit8 v6, v5, 0x18
+    aget-byte v6, p2, v6
+    aput-byte v6, v4, v5
+    add-int/lit8 v5, v5, 0x1
+    goto :l6fd2
+
+    :l6fd3
+    new-instance v2, Ljava/net/InetSocketAddress;
+    invoke-static {v3}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
+    move-result-object v3
+    invoke-direct {v2, v3, p3}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
+    new-instance v3, Ljava/net/InetSocketAddress;
+    invoke-static {v4}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
+    move-result-object v5
+    invoke-direct {v3, v5, p4}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
+    const/4 v5, 0x0
+    const/4 v6, -0x1
+    const/4 v7, 0x3
+    :l6lp
+    if-ge v5, v7, :l6ex
+    if-ltz v6, :l6cl
+    goto :l6ex
+
+    :l6cl
+    iget-object v8, p0, Lcom/box/app/vpn/VpnPump;->cm:Landroid/net/ConnectivityManager;
+    invoke-virtual {v8, p1, v2, v3}, Landroid/net/ConnectivityManager;->getConnectionOwnerUid(ILjava/net/InetSocketAddress;Ljava/net/InetSocketAddress;)I
+    move-result v6
+    if-gez v6, :l6in
+    const-wide/16 v8, 0x2
+    invoke-static {v8, v9}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :l6ct
+
+    :l6in
+    add-int/lit8 v5, v5, 0x1
+    goto :l6lp
+
+    :l6ex
+    if-gez v6, :l6tg
+    const/4 v1, 0x0
+    goto :l6lg
+
+    :l6tg
+    invoke-virtual {v0, v6, v1}, Lcom/box/app/vpn/VpnTags;->tagFor(IZ)I
+    move-result v1
+
+    :l6lg
+    iget v2, p0, Lcom/box/app/vpn/VpnPump;->logged:I
+    const/16 v3, 0x28
+    if-ge v2, v3, :l6ret
+    iget v2, p0, Lcom/box/app/vpn/VpnPump;->logged:I
+    add-int/lit8 v2, v2, 0x1
+    iput v2, p0, Lcom/box/app/vpn/VpnPump;->logged:I
+    new-instance v2, Ljava/lang/StringBuilder;
+    const/4 v3, 0x6
+    if-ne p1, v3, :l6u
+    const-string v3, "tcp6 "
+    goto :l6p
+
+    :l6u
+    const-string v3, "udp6 "
+
+    :l6p
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v3, "flow :"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v3, " -> "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
+    move-result-object v3
+    invoke-virtual {v3}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
+    move-result-object v3
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, ":"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v3, " uid="
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v3, " tag="
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v2}, Lcom/box/app/vpn/VpnPump;->log(Ljava/lang/String;)V
+
+    :l6ret
+    return v1
+
+    :l6ct
+    move-exception v2
+    iget v3, p0, Lcom/box/app/vpn/VpnPump;->logged:I
+    const/4 v4, 0x5
+    if-ge v3, v4, :l6r0
+    iget v3, p0, Lcom/box/app/vpn/VpnPump;->logged:I
+    add-int/lit8 v3, v3, 0x1
+    iput v3, p0, Lcom/box/app/vpn/VpnPump;->logged:I
+    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v4, "getConnectionOwnerUid failed: "
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v2}, Lcom/box/app/vpn/VpnPump;->log(Ljava/lang/String;)V
+
+    :l6r0
+    return v1
 .end method

@@ -258,7 +258,7 @@ class Full171MigrationTest(unittest.TestCase):
 
             result = references.check(project)
             self.assertEqual(result['classes'], 9880)
-            self.assertEqual(result['references'], 578980)
+            self.assertEqual(result['references'], 579061)
             self.assertEqual(result['errors'], [])
             smali_files, branch_errors = branch_offsets.scan_project(project)
             self.assertEqual(smali_files, 9880)
