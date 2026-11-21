@@ -4,7 +4,7 @@ bind-address: "*"
 mode: rule
 log-level: silent
 find-process-mode: strict
-ipv6: false
+ipv6: true
 allow-lan: true
 unified-delay: true
 tcp-concurrent: true
@@ -48,7 +48,7 @@ tun:
   enable: true
   mtu: 9000
   device: mihomo
-  stack: mips
+  stack: mixed
   dns-hijack:
     - any:53
     - tcp://any:53
@@ -62,7 +62,7 @@ listeners:
     type: ebpf
     local:
       enable: false
-      ipv6: false
+      ipv6: true
       bypass-private-address: false
     shared:
       enable: false
@@ -70,16 +70,17 @@ listeners:
         - wlan2
         - br-lan
         - br0
-      ipv6: false
+      ipv6: true
       bypass-private-address: false
 
 dns:
   enable: true
   listen: 0.0.0.0:1053
-  ipv6: false
+  ipv6: true
   respect-rules: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
+  fake-ip-range6: fc00::/18
   fake-ip-filter:
     - rule-set:排除域名
     - rule-set:大陆域名
@@ -103,7 +104,7 @@ proxies:
   - { name: DNS_Hijack, type: dns }
   - { name: 直连出口, type: direct }
 
-代理合集: &providers { interval: 3600, proxy: 订阅更新, health-check: { enable: true, url: https://www.gstatic.com/generate_204, interval: 86400, timeout: 2000 } }
+代理合集: &providers { interval: 3600, proxy: 订阅出口, health-check: { enable: true, url: https://www.gstatic.com/generate_204, interval: 86400, timeout: 2000 } }
 混淆覆写: &host { override-expr: ['.servername = "v.qq.com"', '.sni = .servername', '(select(.network == "ws") | .["ws-opts"].headers.Host) = .servername', '(select(.network == "http") | .["http-opts"].headers.Host) = [.servername]', '(select(.network == "h2") | .["h2-opts"].headers.Host) = [.servername]', '(select(.network == "xhttp") | .["xhttp-opts"].headers.Host) = .servername', '(select(.type == "cns") | .headers.Host) = .servername'] }
 proxy-providers:
   百度直连:
@@ -181,7 +182,7 @@ proxy-groups:
     proxies: [百度直连,钉钉直连]
     icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Final.png
 
-  - name: 订阅更新
+  - name: 订阅出口
     type: select
     proxies: [国外出口, 国内出口, 直连出口]
     icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Skicat.png
@@ -252,8 +253,8 @@ proxy-groups:
     exclude-filter: "(?i)🇭🇰|🇨🇳|🇯🇵|🇰🇷|🇸🇬|🇺🇸|港|hk|hongkong|台|tw|taiwan|日|jp|japan|韩|kr|korea|新|sg|singapore|美|us|unitedstates|江苏|浙江|杭州|常州|南京|北京|上海|广东|广州|苏州|杭州|福州|扬州|贵州|兰州|徐州|郑州|广西|河南|河北|重庆|南宁|宿迁|沈阳|四川|安徽|深圳|辽宁|济南|九江|长沙|昆明|武汉|陕西|西宁|芜湖|天津|南昌|成都|山西|太原|保定|湖南|湖北|德阳|山东|十堰|青岛|合肥|云南|西安|内蒙古|青海"
     icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/XD.png
 
-域名集: &domain { type: http, interval: 86400, proxy: 订阅更新, behavior: domain, format: mrs }
-地址集: &ipcidr { type: http, interval: 86400, proxy: 订阅更新, behavior: ipcidr, format: mrs }
+域名集: &domain { type: http, interval: 86400, proxy: 订阅出口, behavior: domain, format: mrs }
+地址集: &ipcidr { type: http, interval: 86400, proxy: 订阅出口, behavior: ipcidr, format: mrs }
 
 rule-providers:
   排除域名:

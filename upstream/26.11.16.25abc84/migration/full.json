@@ -146,10 +146,10 @@
     "smali/zu5.smali": "4d0908508184351bce42ec6d6eb85c6c0c3b95d6691a7b4cb7669f5516470faf"
   },
   "additionsSha256": {
-    "assets/box/mihomo/mianliu.yaml": "da501ded244748d6eac94e6b78b847d05adc87db80be1c311a4a2c908c57f257",
+    "assets/box/mihomo/mianliu.yaml": "fe99c958e96500d1e5e7426308f19b01fe5c445acfe3fa235b424b5176d27b4e",
     "assets/box/scripts/ipv6_disable.sh": "dadd8ab035d123a14ed5b77b33eb2ea0b5d97f86135804c1342ac2afc740fcba",
     "assets/box/scripts/ipv6_restore.sh": "bf67da4d2d6940f166dca7ec8c8938a27f74b9cc3db696efde6a0070e2b09772",
-    "assets/box/sing-box/mianliu.json": "dfdedffae90de3daf457b155834d58389834d43a32e8f9aff837a4c9ee2bcd89",
+    "assets/box/sing-box/mianliu.json": "b227b5c01ead532ef7a0684b186aafea56417796ffed6a67f2b6185ee3b4a6ea",
     "assets/schema/sing-box-fork-hints.json": "0b86fc91c1c2880562df29875b41389b4e5178aea9ec24231e5566a3a5255304",
     "assets/schema/sing-box-fork.json": "ff264d1c69ab5c474e794e265d436cd4f136696edd119be4b29939af5e42ee8a",
     "assets/vpn/box-vpn.sh": "8896759a164c8471bd86f9025a2acc45588aa0917e6053a64c8e40152ef8c28a",
@@ -834,7 +834,7 @@
     "smali/com/box/app/vpn/BootReceiver.smali": "2ac41cb5e2f0fd27ede46a1724c17dddea38f907db7937d51a3c6a66eefe8d33",
     "smali/com/box/app/vpn/BootSync.smali": "f2475e1396c0eb01e084ae35bbd1d0211f34995227716bc6303de5009bdeafe7",
     "smali/com/box/app/vpn/BootTask.smali": "26609d1f78f40a26fc2bd03b1832ab7b0ca56edb669879b23019ffb1a3c9993f",
-    "smali/com/box/app/vpn/BoxVpnService.smali": "e2a34ccc4de0562f04adf40c503613adbaa88f7f76e6e50f9e3079a8116fa850",
+    "smali/com/box/app/vpn/BoxVpnService.smali": "3b1bd4e9e27aa07795212f07b2dc1c84f2c1959f1efe293b8fbbfea70d07b0f9",
     "smali/com/box/app/vpn/BoxctlFix.smali": "2608d73221ed4b781769f6ae8c5b69cf8deaf5ecc522376f22586fa7c6990160",
     "smali/com/box/app/vpn/CoreConfigHistory.smali": "5f5b10c4d80b70a040d7f5b716e93b1e144b7d2a7aa13a8db71e5affd62201de",
     "smali/com/box/app/vpn/FToast$Cb.smali": "cf5d016f18580923de67211c51aac1fa406c709f8260d9636ebde946c045e1fa",
@@ -862,7 +862,7 @@
     "smali/com/box/app/vpn/VpnNet$Tun.smali": "0dc2432645ebb573d7d0c03fb5f59da343692a1fe247b4140d28e15e778b5946",
     "smali/com/box/app/vpn/VpnNet$Udp.smali": "2200790960f32e816de1af2e861356ba92a9cb4d6f03c34ae86f225ce1081f5b",
     "smali/com/box/app/vpn/VpnNet.smali": "56db64cbc05300a7d7e788f929331065ca9709a51f7d1508a1c7875596118017",
-    "smali/com/box/app/vpn/VpnPrefs.smali": "8474e05951db912d51ae7fdf9f055020931b2d2cbd81f038ad58ee8f2c3e6745",
+    "smali/com/box/app/vpn/VpnPrefs.smali": "cd83c4bf40c21e416ff2f91f20dd06bdc0a844fc545bb8b43370ac0969961455",
     "smali/com/box/app/vpn/VpnPrepareActivity.smali": "1223e825af464bafb421cfb28c71da34c32c4c137a0c6cce03e5c8f658a5fedc",
     "smali/com/box/app/vpn/VpnPump$Flow.smali": "4dadf0ecdb098c5d5a706d4f6cecc800afa661f60dd8244f38e0f4ccf709049f",
     "smali/com/box/app/vpn/VpnPump.smali": "982f1f5e939651df1c5e34fd0957106bfd0cadccaf9ee55057ee4881fb9d3aff",
@@ -11359,7 +11359,7 @@
     ]
   },
   "runtimeArchive": "runtime-payload.tar.gz",
-  "runtimeArchiveSha256": "08b0d62c0fdb8223c78fe01bcfe6908d18c4e2fa12821a38941ae43134fb2c9d",
+  "runtimeArchiveSha256": "e3dad7ca62b5772ca9aaac48844d5a49968b1dc805f407927869072f024cc0c6",
   "runtimeArchiveFileCount": 1432,
-  "runtimeArchiveBytes": 21180972
+  "runtimeArchiveBytes": 21183302
 }

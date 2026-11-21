@@ -982,6 +982,30 @@
     .locals 8
 
     :try_start_0
+    # Drop the legacy per-VPN notification channel ("BoxProxy VPN"): the VPN
+    # foreground notification now rides the shared Box Status channel, so the
+    # old category must disappear from the system notification settings.
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_no_legacy
+
+    const-string v1, "notification"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/NotificationManager;
+
+    if-eqz v0, :cond_no_legacy
+
+    const-string v1, "boxproxy_vpn"
+
+    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
+
+    :cond_no_legacy
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->clearLog()V
 
     const-string v0, "process started"
