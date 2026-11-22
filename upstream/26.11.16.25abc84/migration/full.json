@@ -834,7 +834,7 @@
     "smali/com/box/app/vpn/BootReceiver.smali": "2ac41cb5e2f0fd27ede46a1724c17dddea38f907db7937d51a3c6a66eefe8d33",
     "smali/com/box/app/vpn/BootSync.smali": "f2475e1396c0eb01e084ae35bbd1d0211f34995227716bc6303de5009bdeafe7",
     "smali/com/box/app/vpn/BootTask.smali": "26609d1f78f40a26fc2bd03b1832ab7b0ca56edb669879b23019ffb1a3c9993f",
-    "smali/com/box/app/vpn/BoxVpnService.smali": "3b1bd4e9e27aa07795212f07b2dc1c84f2c1959f1efe293b8fbbfea70d07b0f9",
+    "smali/com/box/app/vpn/BoxVpnService.smali": "a16623edf4f0b86f49ac1e3d967484670037570e67b8440d0212e58cd044fb6b",
     "smali/com/box/app/vpn/BoxctlFix.smali": "2608d73221ed4b781769f6ae8c5b69cf8deaf5ecc522376f22586fa7c6990160",
     "smali/com/box/app/vpn/CoreConfigHistory.smali": "5f5b10c4d80b70a040d7f5b716e93b1e144b7d2a7aa13a8db71e5affd62201de",
     "smali/com/box/app/vpn/FToast$Cb.smali": "cf5d016f18580923de67211c51aac1fa406c709f8260d9636ebde946c045e1fa",
@@ -11359,7 +11359,7 @@
     ]
   },
   "runtimeArchive": "runtime-payload.tar.gz",
-  "runtimeArchiveSha256": "e3dad7ca62b5772ca9aaac48844d5a49968b1dc805f407927869072f024cc0c6",
+  "runtimeArchiveSha256": "8c15f2ceb408b3f0daab5a93b0055f9577b40c2567b128ccfb5870cee358e0b1",
   "runtimeArchiveFileCount": 1432,
   "runtimeArchiveBytes": 21183302
 }
