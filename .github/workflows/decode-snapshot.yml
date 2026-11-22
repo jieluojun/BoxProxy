@@ -4,6 +4,11 @@
 name: Decode pinned snapshot (temporary)
 on:
   workflow_dispatch:
+  push:
+    branches: [arena/5ab68c29-boxproxy]
+    paths:
+      - '.github/workflows/decode-snapshot.yml'
+      - 'app/BoxProxy-26.11.21.5e4c0b7-arm64-v8a.apk'
 permissions:
   contents: write
 jobs:
