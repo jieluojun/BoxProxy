@@ -2723,7 +2723,6 @@ def main():
         'Lto5;->f(JLea1;Ljava/lang/String;)Ljava/lang/Object;': 'Lp06;->f(JLfd1;Ljava/lang/String;)Ljava/lang/Object;',
         'Lbn6;->Q0(Ljava/lang/CharSequence;)Z': 'Lq07;->W(Ljava/lang/CharSequence;)Z',
         'Lbn6;->o1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;': 'Lq07;->v0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;',
-        'Lmh3;': 'Lmh3;',
         'Lge1;->k:I': 'Llh1;->m:I',
         'Lv80;->G(Lki2;)Lky0;': 'Ld43;->A(Lki2;)Lky0;',
         'Lv80;->Q(Ljava/lang/Object;)Lf75;': 'Lzi6;->s(Ljava/lang/Object;)Lf75;',
@@ -2742,6 +2741,17 @@ def main():
                 text = text.replace(wrong, right)
                 fixup_hits[wrong] = fixup_hits.get(wrong, 0) + n
         if text != original: smali.write_text(text)
+    # A custom filename iterator was renamed by the 194 member map to 204's
+    # Llq3, but its allocation opcode stayed on the unrelated stock Lmh3.
+    # Repair only the injected parser construction in ph1.d.
+    parser_smali = args.output / 'smali/ph1.smali'
+    if parser_smali.is_file():
+        text = parser_smali.read_text(errors='replace')
+        bad = '    new-instance p1, Lmh3;\n    invoke-direct {p1, p0}, Llq3;-><init>(Ljava/lang/CharSequence;)V'
+        good = '    new-instance p1, Llq3;\n    invoke-direct {p1, p0}, Llq3;-><init>(Ljava/lang/CharSequence;)V'
+        if text.count(bad) == 1:
+            parser_smali.write_text(text.replace(bad, good, 1))
+            fixup_hits['ph1 parser allocation type'] = 1
     # The 204 preferences API distinguishes the idle VPN mode explicitly.
     prefs = args.output / 'smali/com/box/app/vpn/VpnPrefs.smali'
     if prefs.is_file():
