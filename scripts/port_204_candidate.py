@@ -2765,6 +2765,15 @@ def main():
         if changed != text:
             enum_smali.write_text(changed)
             fixup_hits['xp5 enum constructor registers'] = 1
+        text = enum_smali.read_text(errors='replace')
+        field = '.field public static final enum t:Lxp5;'
+        if not re.search(r'^\.field[^\n]*\bt:Lxp5;', text, re.M):
+            lines = text.splitlines()
+            positions = [i for i, line in enumerate(lines) if line.startswith('.field ')]
+            if positions:
+                lines.insert(max(positions) + 1, field)
+                enum_smali.write_text('\n'.join(lines) + '\n')
+                fixup_hits['xp5 added enum field t'] = 1
     # A custom filename iterator was renamed by the 194 member map to 204's
     # Llq3, but its allocation opcode stayed on the unrelated stock Lmh3.
     # Repair only the injected parser construction in ph1.d.
