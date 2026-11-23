@@ -2899,6 +2899,19 @@ def main():
                                     'invoke-virtual {v7, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z', 1)
                 archive.write_text(text[:start] + body + text[end:])
                 fixup_hits['preserved archive filename register'] = 1
+    # These custom built-in defaults are not present in the pinned upstream
+    # APK snapshots. Bundle them into the candidate so AssetManager.open("box/...")
+    # used by RestoreCfg can find them at runtime.
+    asset_root = Path(__file__).resolve().parents[1] / 'decompiled/assets/box'
+    for relative in ('mihomo/mianliu.yaml', 'sing-box/mianliu.json'):
+        source_asset = asset_root / relative
+        target_asset = args.output / 'assets/box' / relative
+        if source_asset.is_file():
+            target_asset.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_asset, target_asset)
+            fixup_hits[f'bundled built-in config {relative}'] = 1
+        else:
+            report['errors'].append(f'missing built-in config asset: {source_asset}')
     report['referenceFixups'] = fixup_hits
     report['manifest'] = merge_manifest(args.old, args.custom, args.new, args.output)
     args.report_dir.mkdir(parents=True, exist_ok=True)
