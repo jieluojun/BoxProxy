@@ -2806,9 +2806,12 @@ def main():
         changed = text.replace('.implements Le62;', '.implements Lwg2;', 1)
         changed = changed.replace('.method public invoke()Ljava/lang/Object;',
                                   '.method public a()Ljava/lang/Object;', 1)
+        # Its coroutine/task callback was Le62.invoke(Object), mapped to Lhh2.g(Object).
+        changed = changed.replace('.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;',
+                                  '.method public g(Ljava/lang/Object;)Ljava/lang/Object;', 1)
         if changed != text:
             restore_cfg.write_text(changed)
-            fixup_hits['RestoreCfg implements 204 callback'] = 1
+            fixup_hits['RestoreCfg implements 204 callbacks'] = 1
     # CfgClick is an added zero-argument callback. The 204 mapped callback
     # contract is Lwg2.a(), not the old Le62.invoke() name.
     cfg_click = args.output / 'smali/com/box/app/cfg/CfgClick.smali'
