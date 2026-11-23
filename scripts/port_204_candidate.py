@@ -2798,6 +2798,17 @@ def main():
         if text.count(old) == 1:
             cfg_class.write_text(text.replace(old, new, 1))
             fixup_hits[cfg_class.stem + ' implements Llh2.e'] = 1
+    # CfgClick is an added zero-argument callback. The 204 mapped callback
+    # contract is Lwg2.a(), not the old Le62.invoke() name.
+    cfg_click = args.output / 'smali/com/box/app/cfg/CfgClick.smali'
+    if cfg_click.is_file():
+        text = cfg_click.read_text(errors='replace')
+        changed = text.replace('.implements Le62;', '.implements Lwg2;', 1)
+        changed = changed.replace('.method public final invoke()Ljava/lang/Object;',
+                                  '.method public final a()Ljava/lang/Object;', 1)
+        if changed != text:
+            cfg_click.write_text(changed)
+            fixup_hits['CfgClick implements 204 callback'] = 1
     # In the relocated mj5 composer hunk, the enum descriptor is s:Lxp5;
     # v14 is an unrelated sh5 state captured immediately before it. Use v15,
     # which receives the enum field, for the VPN bridge key lookup.
