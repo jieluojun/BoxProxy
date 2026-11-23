@@ -25,6 +25,7 @@ def sigscore(x,y):
 # Reviewed relocation targets for customized methods moved by the 204 R8 run.
 # Each target is checked against its concrete descriptor in the pinned 204 tree.
 MANUAL_METHODS={
+ 'Luu0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;': 'Ljx0;->y(Ljava/lang/Object;)Ljava/lang/Object;',
  'Lcc3;->R(ZZZZLg95;ZZZZLfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lu92;Lib2;)Ljava/util/List;': 'Lx33;->Q(Ly25;ZILhh2;Lhh2;Lhh2;Lki2;)Ljava/util/List;',
  'Lm46;->P(Lef5;Lib2;)Ljava/lang/String;': 'Le43;->I(Lxp5;Lki2;)Ljava/lang/String;',
  'Liu6;->j(Ljava/util/List;Ljava/util/Map;Lib2;)Ljava/util/ArrayList;': 'Lpk6;->j(Ljava/util/List;Ljava/util/Map;Lki2;)Ljava/util/ArrayList;',

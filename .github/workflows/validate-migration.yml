@@ -171,3 +171,22 @@ jobs:
           python3 scripts/check_smali_register_flow.py "$project"
           python3 scripts/check_smali_return_types.py "$project"
           echo "Validated stock 204 baseline ($version_name / $version_code); this is not evidence that a customized 204 candidate has been ported."
+      - name: Generate customized 204 candidate and enforce all smali gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/migrate_204.py --output .tools/ported-204
+          project=.tools/ported-204
+          version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' "$project/apktool.yml" | head -n 1 | tr -d '\r')"
+          version_code="$(sed -n 's/^  versionCode:[[:space:]]*//p' "$project/apktool.yml" | head -n 1 | tr -d '\r')"
+          [[ "$version_code" == "204" && "$version_name" == "26.11.21.5e4c0b7" ]]
+          python3 scripts/check_smali_references.py "$project"
+          python3 scripts/check_smali_labels.py "$project"
+          python3 scripts/check_smali_move_result.py "$project"
+          python3 scripts/check_smali_branch_offsets.py "$project"
+          python3 scripts/check_smali_reference_moves.py "$project"
+          python3 scripts/check_smali_register_flow.py "$project"
+          python3 scripts/check_smali_return_types.py "$project"
+          java -jar .tools/apktool_2.9.3.jar b "$project" \
+            -p .tools/framework -o "$RUNNER_TEMP/full-migration-204-unsigned.apk"
+          echo "Validated customized 204 candidate ($version_name / $version_code); device/root/VPN/upgrade checks remain device-dependent."

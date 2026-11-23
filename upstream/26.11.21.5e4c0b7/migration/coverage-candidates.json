@@ -812,11 +812,11 @@
     },
     {
       "old": "Luu0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
-      "new": "Ljx0;->v(Ljava/lang/Object;)Ljava/lang/Object;",
+      "new": "Ljx0;->y(Ljava/lang/Object;)Ljava/lang/Object;",
       "sourceFile": "smali/uu0.smali",
       "targetFile": "smali/jx0.smali",
       "mode": "patch",
-      "confidence": "fuzzy 0.667",
+      "confidence": "manual semantic relocation to probe-generation coroutine body",
       "evidence": [
         {
           "ev": "override",
