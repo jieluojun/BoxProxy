@@ -1,7 +1,7 @@
 {
  "oldClasses": 8535,
  "newClasses": 8722,
- "mapped": 6257,
+ "mapped": 6263,
  "conflicts": {},
  "unmapped": [
   "La04;",
@@ -2282,5 +2282,14 @@
   "Lzx6;",
   "Lzy1;",
   "Lzz3;"
- ]
+ ],
+ "unmappedCount": 2272,
+ "provisionalOverrides": {
+  "Lr85;": "Lmj5;",
+  "Lxm4;": "Lvw4;",
+  "Lj85;": "Lej5;",
+  "Lm75;": "Lhi5;",
+  "Lut0;": "Lkw0;",
+  "Ljk4;": "Leu4;"
+ }
 }
