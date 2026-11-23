@@ -2786,16 +2786,18 @@ def main():
             parser_smali.write_text(text.replace(bad, good, 1))
             fixup_hits['ph1 parser allocation type'] = 1
     # The 204 function interface Llh2 declares e(Object,Object), whereas
-    # the copied 194 wrapper kept the Kotlin-facing name invoke; implement the
-    # destination method name so Compose dispatch does not hit AbstractMethodError.
-    cfg_nav = args.output / 'smali/com/box/app/cfg/CfgNav.smali'
-    if cfg_nav.is_file():
-        text = cfg_nav.read_text(errors='replace')
+    # copied 194 Kotlin lambdas keep the method name invoke. Rename it for all
+    # added config lambdas that implement Llh2 to prevent AbstractMethodError.
+    cfg_dir = args.output / 'smali/com/box/app/cfg'
+    for cfg_class in cfg_dir.glob('*.smali') if cfg_dir.is_dir() else ():
+        text = cfg_class.read_text(errors='replace')
+        if '.implements Llh2;' not in text:
+            continue
         old = '.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;'
         new = '.method public final e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;'
         if text.count(old) == 1:
-            cfg_nav.write_text(text.replace(old, new, 1))
-            fixup_hits['CfgNav implements Llh2.e'] = 1
+            cfg_class.write_text(text.replace(old, new, 1))
+            fixup_hits[cfg_class.stem + ' implements Llh2.e'] = 1
     # In the relocated mj5 composer hunk, the enum descriptor is s:Lxp5;
     # v14 is an unrelated sh5 state captured immediately before it. Use v15,
     # which receives the enum field, for the VPN bridge key lookup.
