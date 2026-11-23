@@ -190,3 +190,10 @@ jobs:
           java -jar .tools/apktool_2.9.3.jar b "$project" \
             -p .tools/framework -o "$RUNNER_TEMP/full-migration-204-unsigned.apk"
           echo "Validated customized 204 candidate ($version_name / $version_code); device/root/VPN/upgrade checks remain device-dependent."
+      - name: Upload customized 204 unsigned APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BoxProxy-204-custom-unsigned
+          path: ${{ runner.temp }}/full-migration-204-unsigned.apk
+          if-no-files-found: error
+          retention-days: 14
