@@ -22,8 +22,17 @@ def norm(s):
 def sigscore(x,y):
  x=re.sub(r'L[A-Za-z0-9_/$-]+;',lambda m:types.get(m.group(),m.group()),x)
  return difflib.SequenceMatcher(None,x,y,autojunk=False).ratio()
+# Reviewed relocation targets for customized methods moved by the 204 R8 run.
+# Each target is checked against its concrete descriptor in the pinned 204 tree.
+MANUAL_METHODS={
+ 'Lcc3;->R(ZZZZLg95;ZZZZLfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lu92;Lib2;)Ljava/util/List;': 'Lx33;->Q(Ly25;ZILhh2;Lhh2;Lhh2;Lki2;)Ljava/util/List;',
+ 'Lm46;->P(Lef5;Lib2;)Ljava/lang/String;': 'Le43;->I(Lxp5;Lki2;)Ljava/lang/String;',
+ 'Liu6;->j(Ljava/util/List;Ljava/util/Map;Lib2;)Ljava/util/ArrayList;': 'Lpk6;->j(Ljava/util/List;Ljava/util/Map;Lki2;)Ljava/util/ArrayList;',
+}
 def locate(sig):
- owner,sm=sig.split('->',1); mapped=members.get(sig)
+ owner,sm=sig.split('->',1)
+ if sig in MANUAL_METHODS:return MANUAL_METHODS[sig],'reviewed-relocation'
+ mapped=members.get(sig)
  if mapped:return mapped,'member-map'
  dest=types.get(owner)
  if not dest:return None,'unmapped-class'

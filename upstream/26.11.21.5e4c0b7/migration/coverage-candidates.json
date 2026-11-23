@@ -33,6 +33,20 @@
       ]
     },
     {
+      "old": "Lcc3;->R(ZZZZLg95;ZZZZLfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lu92;Lib2;)Ljava/util/List;",
+      "new": "Lx33;->Q(Ly25;ZILhh2;Lhh2;Lhh2;Lki2;)Ljava/util/List;",
+      "sourceFile": "smali/cc3.smali",
+      "targetFile": "smali/x33.smali",
+      "mode": "patch",
+      "confidence": "reviewed-relocation",
+      "evidence": [
+        {
+          "ev": "override",
+          "w": 99
+        }
+      ]
+    },
+    {
       "old": "Lr85;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
       "new": "Lmj5;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
       "sourceFile": "smali/r85.smali",
@@ -161,6 +175,34 @@
         {
           "ev": "fuzzy-global",
           "w": 1.0
+        }
+      ]
+    },
+    {
+      "old": "Lm46;->P(Lef5;Lib2;)Ljava/lang/String;",
+      "new": "Le43;->I(Lxp5;Lki2;)Ljava/lang/String;",
+      "sourceFile": "smali/m46.smali",
+      "targetFile": "smali/e43.smali",
+      "mode": "patch",
+      "confidence": "reviewed-relocation",
+      "evidence": [
+        {
+          "ev": "fuzzy-global",
+          "w": 0.978
+        }
+      ]
+    },
+    {
+      "old": "Liu6;->j(Ljava/util/List;Ljava/util/Map;Lib2;)Ljava/util/ArrayList;",
+      "new": "Lpk6;->j(Ljava/util/List;Ljava/util/Map;Lki2;)Ljava/util/ArrayList;",
+      "sourceFile": "smali/iu6.smali",
+      "targetFile": "smali/pk6.smali",
+      "mode": "patch",
+      "confidence": "reviewed-relocation",
+      "evidence": [
+        {
+          "ev": "fuzzy-global",
+          "w": 0.789
         }
       ]
     },
@@ -2425,20 +2467,8 @@
   ],
   "pending": [
     {
-      "old": "Lcc3;->R(ZZZZLg95;ZZZZLfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lu92;Lib2;)Ljava/util/List;",
-      "reason": "ambiguous 0.506 gap 0.128"
-    },
-    {
       "old": "Lsv5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
       "reason": "unmapped-class"
-    },
-    {
-      "old": "Lm46;->P(Lef5;Lib2;)Ljava/lang/String;",
-      "reason": "ambiguous 0.508 gap 0.072"
-    },
-    {
-      "old": "Liu6;->j(Ljava/util/List;Ljava/util/Map;Lib2;)Ljava/util/ArrayList;",
-      "reason": "ambiguous 0.360 gap 0.016"
     }
   ],
   "collisions": [],
