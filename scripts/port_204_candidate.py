@@ -2785,6 +2785,17 @@ def main():
         if text.count(bad) == 1:
             parser_smali.write_text(text.replace(bad, good, 1))
             fixup_hits['ph1 parser allocation type'] = 1
+    # In the relocated mj5 composer hunk, the enum descriptor is s:Lxp5;
+    # v14 is an unrelated sh5 state captured immediately before it. Use v15,
+    # which receives the enum field, for the VPN bridge key lookup.
+    mj5 = args.output / 'smali/mj5.smali'
+    if mj5.is_file():
+        text = mj5.read_text(errors='replace')
+        wrong = 'invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lxp5;)I'
+        right = 'invoke-static {v15}, Lcom/box/app/vpn/VpnBridge;->key(Lxp5;)I'
+        if text.count(wrong) == 1:
+            mj5.write_text(text.replace(wrong, right, 1))
+            fixup_hits['mj5 VPN enum register'] = 1
     # The 204 preferences API distinguishes the idle VPN mode explicitly.
     prefs = args.output / 'smali/com/box/app/vpn/VpnPrefs.smali'
     if prefs.is_file():
