@@ -2798,6 +2798,17 @@ def main():
         if text.count(old) == 1:
             cfg_class.write_text(text.replace(old, new, 1))
             fixup_hits[cfg_class.stem + ' implements Llh2.e'] = 1
+    # RestoreCfg's menu singleton is also a zero-argument callback. Its old
+    # Le62.invoke() implementation must satisfy the 204 Lwg2.a() contract.
+    restore_cfg = args.output / 'smali/com/box/app/vpn/RestoreCfg.smali'
+    if restore_cfg.is_file():
+        text = restore_cfg.read_text(errors='replace')
+        changed = text.replace('.implements Le62;', '.implements Lwg2;', 1)
+        changed = changed.replace('.method public invoke()Ljava/lang/Object;',
+                                  '.method public a()Ljava/lang/Object;', 1)
+        if changed != text:
+            restore_cfg.write_text(changed)
+            fixup_hits['RestoreCfg implements 204 callback'] = 1
     # CfgClick is an added zero-argument callback. The 204 mapped callback
     # contract is Lwg2.a(), not the old Le62.invoke() name.
     cfg_click = args.output / 'smali/com/box/app/cfg/CfgClick.smali'
