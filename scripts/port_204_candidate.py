@@ -2752,6 +2752,19 @@ def main():
             parser_smali.write_text(text.replace(
                 bad, 'invoke-static {p1}, Lph1;->i(Ljava/lang/String;)Ljava/lang/String;', 1))
             fixup_hits['ph1 absolute path register'] = 1
+    # The relocated enum addition needs v9 for the fourth constructor word;
+    # the original target frame had only v0..v8 and its third argument was
+    # accidentally overwritten by the instance allocation.
+    enum_smali = args.output / 'smali/xp5.smali'
+    if enum_smali.is_file():
+        text = enum_smali.read_text(errors='replace')
+        changed = text.replace('.method static constructor <clinit>()V\n    .locals 9',
+                               '.method static constructor <clinit>()V\n    .locals 10', 1)
+        changed = changed.replace('    const-string v6, "vpn"\n    invoke-direct {v6, v7, v8, v6}, Lxp5;-><init>(ILjava/lang/String;Ljava/lang/String;)V',
+                                  '    const-string v9, "vpn"\n    invoke-direct {v6, v7, v8, v9}, Lxp5;-><init>(ILjava/lang/String;Ljava/lang/String;)V', 1)
+        if changed != text:
+            enum_smali.write_text(changed)
+            fixup_hits['xp5 enum constructor registers'] = 1
     # A custom filename iterator was renamed by the 194 member map to 204's
     # Llq3, but its allocation opcode stayed on the unrelated stock Lmh3.
     # Repair only the injected parser construction in ph1.d.
