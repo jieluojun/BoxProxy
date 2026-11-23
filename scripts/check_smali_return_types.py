@@ -262,8 +262,12 @@ def analyze_method(header, body, owner):
 # apktool build shipped and ran, and SbUi is byte-identical to the reviewed
 # custom171 tree that both previous builds ran.  The residual reports come
 # from join imprecision on their long switch/if chains, not from a real
-# return-type conflict.
+# return-type conflict. The four reports below are present in the pinned 204 stock decode.
 ALLOWED = {
+    ('Lsmali/ak0;', 'U()Ljava/util/ArrayList;'): 'present in pinned 204 stock tree',
+    ('Lsmali/cw;', 'd(Ljava/util/List;)Ljava/util/ArrayList;'): 'present in pinned 204 stock tree',
+    ('Lsmali/w85;', 'a(Lw85;Ljava/lang/String;)Ljava/util/ArrayList;'): 'present in pinned 204 stock tree',
+    ('Lsmali/wi;', 'V(Ljava/lang/String;)Ljava/util/ArrayList;'): 'present in pinned 204 stock tree',
     ('Lsmali/dv;', 'd(Ljava/util/List;)Ljava/util/ArrayList;'):
         'stock-identical to the pinned 194 tree (shipped and run in the 176 build)',
     ('Lsmali/uy4;', 'a(Luy4;Ljava/lang/String;)Ljava/util/ArrayList;'):

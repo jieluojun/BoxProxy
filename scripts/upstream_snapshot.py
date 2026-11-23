@@ -28,16 +28,19 @@ def verify(snapshot):
         seen = set()
         for member in members:
             path = PurePosixPath(member.name)
-            if (not member.isfile() or path.is_absolute() or '..' in path.parts
-                    or len(path.parts) < 2 or path.parts[0] != 'decompiled'
+            if (not (member.isfile() or member.isdir()) or path.is_absolute()
+                    or '..' in path.parts or not path.parts
+                    or path.parts[0] != 'decompiled'
+                    or (len(path.parts) == 1 and not member.isdir())
                     or member.name in seen):
                 raise ValueError('Unsafe/duplicate archive entry: ' + member.name)
-            if path.parts[1] in ('build', 'dist'):
+            if len(path.parts) > 1 and path.parts[1] in ('build', 'dist'):
                 raise ValueError('Archive contains build products')
             seen.add(member.name)
-        if len(members) != metadata['sourceFileCount']:
+        files = [m for m in members if m.isfile()]
+        if len(files) != metadata['sourceFileCount']:
             raise ValueError('Source file count mismatch')
-        if sum(m.size for m in members) != metadata['sourceBytes']:
+        if sum(m.size for m in files) != metadata['sourceBytes']:
             raise ValueError('Source byte count mismatch')
         with source.extractfile('decompiled/AndroidManifest.xml') as f:
             package = ET.parse(f).getroot().attrib['package']
@@ -63,6 +66,9 @@ def extract(snapshot, target):
     with tarfile.open(archive, 'r:gz') as source:
         for member in source:
             destination = target / member.name
+            if member.isdir():
+                destination.mkdir(parents=True, exist_ok=True)
+                continue
             destination.parent.mkdir(parents=True, exist_ok=True)
             with source.extractfile(member) as src, destination.open('xb') as dst:
                 shutil.copyfileobj(src, dst)

@@ -1,0 +1,9 @@
+{
+  "versionName": "26.11.21.5e4c0b7", "versionCode": 204, "packageName": "com.boxproxy.box", "abi": "arm64-v8a",
+  "inputFile": "BoxProxy-26.11.21.5e4c0b7-arm64-v8a.apk", "inputSha256": "2b07527282fded5454889d3716d9f497c67cd0714ea853445cd76298e4cdfbaf",
+  "apktoolVersion": "2.9.3", "apktoolSha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4",
+  "baselineCommit": "78ceec7", "customizedCommit": "78ceec7", "sourceArchive": "apktool-source.tar.gz",
+  "sourceArchiveSha256": "74e97a1f83af7d18d93da91a9f7f73e1e8408363f47880d859d9acd87a581a2b",
+  "sourceFileCount": 9953, "sourceBytes": 118934243, "status": "decoded-pending-custom-migration",
+  "migration": {"status": "planned", "generator": "scripts/migrate_204.py", "sourceSnapshot": "upstream/26.11.19.bf82603", "runtimeProjectReplaced": false, "androidDeviceVerified": false}
+}
