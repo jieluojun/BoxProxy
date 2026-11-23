@@ -2770,6 +2770,18 @@ def main():
         if bad_tail in text:
             coroutine.write_text(text.replace(bad_tail, '', 1))
             fixup_hits['removed unreachable archive matcher tail'] = 1
+    # The relocated 194 method's register allocation leaves the translated
+    # title in v1 where the 204 target expects a Kw1 item in the array. v2 is
+    # the just-constructed Kw1 wrapper for that resulting list; reuse it.
+    x33 = args.output / 'smali/x33.smali'
+    if x33.is_file():
+        text = x33.read_text(errors='replace')
+        bad_array = '    filled-new-array {v1, v2}, [Lkw1;'
+        corrected_array = ('    move-object v1, v2\n'
+                           '    filled-new-array {v1, v2}, [Lkw1;')
+        if text.count(bad_array) == 1:
+            x33.write_text(text.replace(bad_array, corrected_array, 1))
+            fixup_hits['x33 Q verifier item register'] = 1
     # A newly merged resource title is an integer resource ID; resolve it to
     # a String with the 204 resource helper rather than treating it as Object.
     x33 = args.output / 'smali/x33.smali'
