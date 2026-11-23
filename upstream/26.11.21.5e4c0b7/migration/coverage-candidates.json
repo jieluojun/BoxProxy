@@ -135,6 +135,20 @@
       ]
     },
     {
+      "old": "Lsv5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "new": "Lp76;->e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "sourceFile": "smali/sv5.smali",
+      "targetFile": "smali/p76.smali",
+      "mode": "patch",
+      "confidence": "fuzzy 0.988",
+      "evidence": [
+        {
+          "ev": "override",
+          "w": 99
+        }
+      ]
+    },
+    {
       "old": "Lo50;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
       "new": "Ly60;->g(Ljava/lang/Object;)Ljava/lang/Object;",
       "sourceFile": "smali/o50.smali",
@@ -2465,12 +2479,7 @@
     "smali/top/yukonga/mishka/custom/runtime/TproxyAppFilter.smali",
     "smali/top/yukonga/mishka/platform/ToastKt.smali"
   ],
-  "pending": [
-    {
-      "old": "Lsv5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-      "reason": "unmapped-class"
-    }
-  ],
+  "pending": [],
   "collisions": [],
   "manual": [],
   "manualTargets": {},

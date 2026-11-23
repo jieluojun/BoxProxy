@@ -1,11 +1,9 @@
 {
- "warning": "provisional interface/constructor-derived assignments; review before production use",
+ "warning": "provisional synthetic-lambda match supported by 0.9978 normalized invoke-body similarity and constructor shapes; replaces the weaker Lx0 candidate",
  "classes": {
-  "Lr85;": "Lmj5;",
-  "Lxm4;": "Lvw4;",
-  "Lj85;": "Lej5;",
-  "Lm75;": "Lhi5;",
-  "Lut0;": "Lkw0;",
-  "Ljk4;": "Leu4;"
+  "Lsv5;": "Lp76;"
+ },
+ "droppedCandidates": {
+  "Lx0;": "previously mapped to Lp76; invoke body similarity to target is only 0.0714"
  }
 }
