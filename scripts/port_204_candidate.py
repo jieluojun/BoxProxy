@@ -2741,6 +2741,17 @@ def main():
                 text = text.replace(wrong, right)
                 fixup_hits[wrong] = fixup_hits.get(wrong, 0) + n
         if text != original: smali.write_text(text)
+    parser_smali = args.output / 'smali/ph1.smali'
+    # The old instance method's p0 was a scratch String in 194, but on 204
+    # p0 is `this`; its absolute-path result is held in p1. Pass that String
+    # to the script builder to avoid ART's Object-vs-String parameter error.
+    if parser_smali.is_file():
+        text = parser_smali.read_text(errors='replace')
+        bad = 'invoke-static {p0}, Lph1;->i(Ljava/lang/String;)Ljava/lang/String;'
+        if text.count(bad) == 1:
+            parser_smali.write_text(text.replace(
+                bad, 'invoke-static {p1}, Lph1;->i(Ljava/lang/String;)Ljava/lang/String;', 1))
+            fixup_hits['ph1 absolute path register'] = 1
     # A custom filename iterator was renamed by the 194 member map to 204's
     # Llq3, but its allocation opcode stayed on the unrelated stock Lmh3.
     # Repair only the injected parser construction in ph1.d.
