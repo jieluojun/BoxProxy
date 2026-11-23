@@ -2912,6 +2912,16 @@ def main():
             fixup_hits[f'bundled built-in config {relative}'] = 1
         else:
             report['errors'].append(f'missing built-in config asset: {source_asset}')
+    # The pinned upstream tree also omits this custom VPN setup script. Without
+    # it BoxVpnService fails before core startup and no runs.log is created.
+    helper_source = Path(__file__).resolve().parents[1] / 'decompiled/assets/vpn/box-vpn.sh'
+    helper_target = args.output / 'assets/vpn/box-vpn.sh'
+    if helper_source.is_file():
+        helper_target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(helper_source, helper_target)
+        fixup_hits['bundled VPN helper script'] = 1
+    else:
+        report['errors'].append(f'missing VPN helper script asset: {helper_source}')
     report['referenceFixups'] = fixup_hits
     report['manifest'] = merge_manifest(args.old, args.custom, args.new, args.output)
     args.report_dir.mkdir(parents=True, exist_ok=True)
