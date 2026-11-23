@@ -2831,7 +2831,7 @@ def main():
     if x33.is_file():
         text = x33.read_text(errors='replace')
         bad_call = 'invoke-static {v1, v10}, Lzi6;->x(Ljava/lang/Object;Lki2;)Lzd4;'
-        corrected = 'invoke-static {v1, v10}, Lhk6;->s(ILki2;)Ljava/lang/String;'
+        corrected = 'invoke-static {v1, v7}, Lhk6;->s(ILki2;)Ljava/lang/String;'
         if text.count(bad_call) == 1:
             x33.write_text(text.replace(bad_call, corrected, 1))
             fixup_hits['resource title string resolution'] = 1
