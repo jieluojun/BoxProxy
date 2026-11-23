@@ -3362,16 +3362,19 @@ def main():
             '    invoke-virtual {v12, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z\n\n    .line 1296\n    .line 1297\n    .line 1298\n    move-result v12\n    if-nez v7, :boxproxy_entry_match\n    const-string v7, "-"\n    invoke-virtual {v10, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v7\n    invoke-virtual {v12, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z\n    move-result v7\n':
                 '    invoke-virtual {v12, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z\n\n    .line 1296\n    .line 1297\n    .line 1298\n    move-result v15\n    if-nez v7, :boxproxy_entry_match\n    const-string v7, "-"\n    invoke-virtual {v10, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v7\n    invoke-virtual {v12, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z\n    move-result v7\n',
         },
-        # The 194 oa0.invokeSuspend uses p1 (the Continuation parameter) for
-        # Lyl3.M(Object).  In 214 sn.v(Ljava/lang/Object;) there is only p0;
-        # p1 aliases v0 which is iget-byte (Int).  The invoke-static calls
-        # before sget-object p1 must use p0 (the Object parameter) instead.
-        # Replace the first two occurrences only (the ones before sget-object).
+        # The 194 oa0.invokeSuspend VPN blocks use v1 as a scratch register
+        # for VpnBridge.isVpnMode()/syncNow()/applyNow() results.  The generic
+        # delta maps that v1 to p1 in the 214 sn.v target, but p1 is the
+        # Object parameter of v(Ljava/lang/Object;) and must stay Reference.
+        # Rewrite the two inserted VPN blocks to use v12 (a fresh scratch
+        # local) instead of p1, and bump .locals from 12 to 13.
         'smali/sn.smali': {
-            '    invoke-static {p1}, Lyl3;->M(Ljava/lang/Object;)V\n\n    .line 29':
-                '    invoke-static {p0}, Lyl3;->M(Ljava/lang/Object;)V\n\n    .line 29',
-            '    invoke-static {p1}, Lyl3;->M(Ljava/lang/Object;)V\n\n    .line 38':
-                '    invoke-static {p0}, Lyl3;->M(Ljava/lang/Object;)V\n\n    .line 38',
+            '    .locals 12\n':
+                '    .locals 13\n',
+            '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result p1\n    if-eqz p1, :cond_58_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;\n    move-result-object p1\n    if-nez p1, :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, p1}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_root\n':
+                '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result v12\n    if-eqz v12, :cond_58_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;\n    move-result-object v12\n    if-nez v12, :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, v12}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_root\n',
+            '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result p1\n    if-eqz p1, :cond_6b_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;\n    move-result-object p1\n    if-nez p1, :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, p1}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_root\n':
+                '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result v12\n    if-eqz v12, :cond_6b_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;\n    move-result-object v12\n    if-nez v12, :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, v12}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_root\n',
         },
         # The 194 update-core compare dialog pre-fills sing-box's local
         # extraction regex from mm0's per-core prefix plus a shared tail

@@ -270,6 +270,16 @@ ALLOWED = {
         'stock-identical to the pinned 194 tree (shipped and run in the 176 build)',
     ('Lsmali/com/box/app/cfg/SbUi;', 'schemaAt(Ljava/util/List;)Ljava/util/Map;'):
         'byte-identical to the reviewed custom171 tree (run by both previous builds)',
+    # 214 renamed the same stock-identical methods; verified byte-identical
+    # (ignoring .line directives) to the pinned 214 upstream tree.
+    ('Lsmali/rv;', 'd(Ljava/util/List;)Ljava/util/ArrayList;'):
+        'stock-identical to the pinned 214 tree (renamed from 194 dv)',
+    ('Lsmali/q95;', 'a(Lq95;Ljava/lang/String;)Ljava/util/ArrayList;'):
+        'stock-identical to the pinned 214 tree (renamed from 194 uy4)',
+    ('Lsmali/bk0;', 'U()Ljava/util/ArrayList;'):
+        'stock-identical to the pinned 214 tree',
+    ('Lsmali/gu;', 'X(Ljava/lang/String;)Ljava/util/ArrayList;'):
+        'stock-identical to the pinned 214 tree',
 }
 
 
