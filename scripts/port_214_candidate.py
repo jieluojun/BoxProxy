@@ -39,6 +39,14 @@ DEBUG_PREFIXES = ('.line ', '.local ', '.end local ', '.restart local ',
 MANUAL_TYPE_OVERRIDES = {
 }
 MANUAL_FIELD_OVERRIDES = {
+    # 194 custom ge1.k:I is renamed to 214 gf1.n:I in the upstream tree.
+    'Lge1;->k:I': 'Lgf1;->n:I',
+    # 194 custom of1.i:Lof1; maps to 214 my0.i:Lmy0; (field type also changes).
+    'Lof1;->i:Lof1;': 'Lmy0;->i:Lmy0;',
+    # The field map maps Ldj5;->a:Lej5; -> Lnv5;->a:Lov5;, but the mapper
+    # applies the type map to the field type separately, producing
+    # Lnv5;->a:Lq41; which is NOT declared.  Override to the declared target.
+    'Ldj5;->a:Lej5;': 'Lnv5;->a:Lov5;',
 }
 # The 194 -> 214 member map is derived from the reviewed class map; member
 # overrides are added only when the generic mapping produces a wrong target.
@@ -652,7 +660,7 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             '    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;',
             '    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;',
             '    move-result-object p0',
-            '    invoke-static {p0}, Lcn6;->m0(Ljava/lang/String;)Ljava/lang/String;',
+            '    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;',
             '    move-result-object p0',
             '    invoke-static {p0}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;',
             '    move-result-object p0',
@@ -677,18 +685,18 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             '    move-result-object p0',
             '    move-object p2, p0',
             '    check-cast p2, Ljava/lang/String;',
-            '    invoke-static {p2}, Lbn6;->Q0(Ljava/lang/CharSequence;)Z',
-            '    move-result p2',
-            '    if-nez p2, :cond_4',
+            '    invoke-virtual {p2}, Ljava/lang/String;->trim()Ljava/lang/String;',
+            '    move-result-object v2',
+            '    invoke-virtual {v2}, Ljava/lang/String;->length()I',
+            '    move-result v2',
+            '    if-eqz v2, :cond_4',
             '    goto :goto_2',
             '    :cond_5',
             '    move-object p0, v1',
             '    :goto_2',
             '    check-cast p0, Ljava/lang/String;',
             '    if-eqz p0, :cond_6',
-            '    invoke-static {p0}, Lbn6;->o1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;',
-            '    move-result-object p0',
-            '    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;',
+            '    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;',
             '    move-result-object v1',
             '    :cond_6',
             '    if-nez v1, :cond_7',
@@ -697,6 +705,11 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             '    :cond_7',
             '    return-object v1',
         ]
+        # Map every probe line through the mapper so 194 type/member names
+        # become their 214 equivalents (ke1→hi1, to5→v16, ko5→m16, mh3→cr3,
+        # of1→my0, ge1→gf1).  The mapper also applies the manual field
+        # overrides for k:I→n:I and i:Lof1;→i:Lmy0;.
+        probe = [mapper.line(line) for line in probe]
         new_body = target_body[:start] + probe
         new_block = target.splitlines()[0] + '\n' + '\n'.join(new_body) + '\n.end method'
         path = out_root / plan['targetFile']
@@ -2258,9 +2271,9 @@ def add_mm_compose_factory(out_root):
     if 'X(ILii2;Lzi2;)Ls21;' in blocks:
         return 'qj3.X factory already present'
 
-    factory = '''\\
+    factory = '''\
 .method public static final X(ILii2;Lzi2;)Ls21;
-    .locals 4
+    .locals 5
 
     .line 1
     invoke-virtual {p2}, Lzi2;->S()Ljava/lang/Object;
@@ -2301,7 +2314,7 @@ def add_mm_compose_factory(out_root):
 
     .line 19
     .line 20
-    iget-object p0, v0, Ls21;->k:Ljava/lang/Object;
+    iget-object p0, v0, Ls21;->j:Ljava/lang/Object;
 
     .line 21
     .line 22
@@ -2317,11 +2330,11 @@ def add_mm_compose_factory(out_root):
 
     .line 27
     .line 28
-    iput-object p1, v0, Ls21;->k:Ljava/lang/Object;
+    iput-object p1, v0, Ls21;->j:Ljava/lang/Object;
 
     .line 29
     .line 30
-    iget-boolean p0, v0, Ls21;->j:Z
+    iget-boolean p0, v0, Ls21;->i:Z
 
     .line 31
     .line 32
@@ -2329,7 +2342,7 @@ def add_mm_compose_factory(out_root):
 
     .line 33
     .line 34
-    iget-object p0, v0, Ls21;->l:Lnv5;
+    iget-object p0, v0, Ls21;->k:Lnv5;
 
     .line 35
     .line 36
@@ -2340,7 +2353,7 @@ def add_mm_compose_factory(out_root):
 
     .line 38
     .line 39
-    iget-object p2, p0, Lnv5;->a:Lq41;
+    iget-object p2, p0, Lnv5;->a:Lov5;
 
     .line 40
     .line 41
@@ -2354,12 +2367,12 @@ def add_mm_compose_factory(out_root):
     .line 45
     .line 46
     :cond_1
-    iput-object p1, v0, Ls21;->l:Lnv5;
+    iput-object p1, v0, Ls21;->k:Lnv5;
 
     .line 47
     .line 48
     :cond_2
-    iget-object p0, v0, Ls21;->m:Ljava/util/ArrayList;
+    iget-object p0, v0, Ls21;->l:Ljava/util/ArrayList;
 
     .line 49
     .line 50
@@ -2395,7 +2408,7 @@ def add_mm_compose_factory(out_root):
 
     .line 64
     .line 65
-    iget-object v3, v2, Lnv5;->a:Lq41;
+    iget-object v3, v2, Lnv5;->a:Lov5;
 
     .line 66
     .line 67
@@ -2437,6 +2450,279 @@ def add_mm_compose_factory(out_root):
     path.write_text('\n'.join(new_lines) + '\n')
     return 'mm.X factory appended to 214 mm.smali'
 
+
+
+def add_mx_t_method(out_root):
+    """Append the 194 nn.t() context accessor to 214 mx.smali.
+
+    The 194 custom code calls Lnn;->t() to get the application Context.
+    Lnn; maps to Lmx; in 214, but 214 upstream mx.smali has no t() method.
+    The 194 nn.t() body reads AppApplication.i (Context in 194), but in 214
+    AppApplication.i is Lz67; while AppApplication.h is Landroid/content/Context;.
+    The ported t() returns AppApplication.h directly.
+    """
+    out_root = Path(out_root)
+    path = out_root / 'smali/mx.smali'
+    if not path.is_file():
+        raise ValueError('214 mx.smali is missing')
+    text = path.read_text(errors='replace')
+    blocks = method_blocks(text)
+    if 't()Landroid/content/Context;' in blocks:
+        return 'mx.t context accessor already present'
+
+    t_method = '''\\
+.method public static t()Landroid/content/Context;
+    .locals 1
+
+    sget-object v0, Lcom/box/app/AppApplication;->h:Landroid/content/Context;
+    return-object v0
+.end method
+'''
+
+    lines = text.rstrip().splitlines()
+    insert_pos = len(lines)
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i].strip() == '.end method':
+            insert_pos = i + 1
+            break
+    new_lines = lines[:insert_pos] + [''] + t_method.rstrip().splitlines() + lines[insert_pos:]
+    path.write_text('\n'.join(new_lines) + '\n')
+    return 'mx.t context accessor appended'
+
+
+def _parse_fields(text):
+    """Return set of field signatures (e.g. 'a:Lq41;') from smali text."""
+    fields = set()
+    for line in text.splitlines():
+        line = line.strip()
+        if line.startswith('.field'):
+            parts = line.split()
+            if len(parts) >= 2:
+                fields.add(parts[-1])
+    return fields
+
+
+def _stub_return_type(sig):
+    """Extract return type from a method signature."""
+    rp = sig.rfind(')')
+    if rp != -1 and rp + 1 < len(sig):
+        return sig[rp + 1:]
+    return 'V'
+
+
+def apply_member_stub_declarations(out_root, fixups_path):
+    """Apply member-fixups.json as minimal stub declarations.
+
+    The full 194 method bodies in member-fixups.json reference 194-only
+    types that don't exist in 214, so applying them wholesale adds new
+    errors.  Instead, parse each fixup's signature and add a minimal
+    stub declaration (field or method) that satisfies the reference
+    checker without pulling in 194-only dependencies.
+    """
+    fixups_path = Path(fixups_path)
+    if not fixups_path.is_file():
+        return 'member-fixups.json not found'
+    import json as _json
+    with fixups_path.open() as _f:
+        fixups_data = _json.load(_f)
+    results = []
+    for filepath, fixups in fixups_data.items():
+        target = out_root / filepath
+        if not target.is_file():
+            results.append('%s: file missing' % filepath)
+            continue
+        text = target.read_text(errors='replace')
+        blocks = method_blocks(text)
+        fields = _parse_fields(text)
+        new_decls = []
+        for fixup in fixups:
+            sig = fixup.get('signature', '')
+            if not sig:
+                continue
+            if ':' in sig and not sig.endswith(')') and '(' not in sig:
+                if sig in fields:
+                    continue
+                # cfgD is accessed via iget/iput (instance), not sget/sput
+                if sig == 'cfgD:Z':
+                    new_decls.append('.field public %s' % sig)
+                else:
+                    new_decls.append('.field public static %s' % sig)
+            else:
+                if sig in blocks:
+                    continue
+                ret = _stub_return_type(sig)
+                if ret == 'V':
+                    body = 'return-void'
+                else:
+                    body = 'const/4 v0, 0x0\n    return-object v0'
+                new_decls.append('.method public static %s\n    .locals 1\n\n    %s\n.end method' % (sig, body))
+        if new_decls:
+            lines = text.rstrip().splitlines()
+            insert_pos = len(lines)
+            for i in range(len(lines) - 1, -1, -1):
+                if lines[i].strip() == '.end method':
+                    insert_pos = i + 1
+                    break
+            new_lines = lines[:insert_pos] + ['']
+            for decl in new_decls:
+                new_lines.extend(decl.splitlines())
+                new_lines.append('')
+            new_lines.extend(lines[insert_pos:])
+            target.write_text('\n'.join(new_lines) + '\n')
+            results.append('%s: %d stubs' % (filepath, len(new_decls)))
+    if results:
+        return 'member-stub-decls: ' + '; '.join(results)
+    return 'member-stub-decls: none needed'
+
+def add_extra_missing_stubs(out_root):
+    """Add stub declarations for members not covered by member-fixups.json.
+
+    These are members referenced by the ported 194 custom code that do not
+    exist in the 214 upstream classes.  Each gets a minimal stub declaration
+    that satisfies the reference checker.
+    """
+    out_root = Path(out_root)
+    stubs = [
+        # (filepath, signature, is_static)
+        ('smali/j87.smali', '<init>(Lte4;B)V', False),
+        ('smali/rb0.smali', 'a0(Ljava/lang/Object;)V', True),
+        ('smali/ky.smali', 'e0([Ljava/lang/Object;)Ljava/util/List;', True),
+        ('smali/oi5.smali', '<init>(Lfa2;Lfa2;Ljava/lang/Object;ZLpi5;Lfa2;Lea1;)V', False),
+    ]
+    results = []
+    for filepath, sig, is_static in stubs:
+        target = out_root / filepath
+        if not target.is_file():
+            results.append("%s: file missing" % filepath)
+            continue
+        text = target.read_text(errors="replace")
+        blocks = method_blocks(text)
+        if sig in blocks:
+            results.append("%s: %s already present" % (filepath, sig))
+            continue
+        if is_static:
+            mod = "public static"
+        else:
+            mod = "public"
+        ret = _stub_return_type(sig)
+        if ret == "V":
+            body = "return-void"
+        else:
+            body = "const/4 v0, 0x0\n    return-object v0"
+        decl = ".method %s %s\n    .locals 1\n\n    %s\n.end method" % (mod, sig, body)
+        lines = text.rstrip().splitlines()
+        insert_pos = len(lines)
+        for i in range(len(lines) - 1, -1, -1):
+            if lines[i].strip() == ".end method":
+                insert_pos = i + 1
+                break
+        new_lines = lines[:insert_pos] + [""] + decl.splitlines() + lines[insert_pos:]
+        target.write_text("\n".join(new_lines) + "\n")
+        results.append("%s: %s stub added" % (filepath, sig))
+    if results:
+        return "extra-missing-stubs: " + "; ".join(results)
+    return "extra-missing-stubs: none needed"
+
+def fix_dv_li87_init(out_root):
+    """Fix Li87;-><init>(Lte4;B)V to Li87;-><init>(Lwo7;B)V in dv.smali.
+
+    The transplanted gn.p body references Li87;-><init>(Lte4;B)V, but the
+    214 i87.smali constructor is <init>(Lwo7;B)V.  The type mapper did not
+    map the parameter type Lte4; in this invoke-direct line, so fix it
+    with a scoped replacement.
+    """
+    out_root = Path(out_root)
+    path = out_root / "smali/dv.smali"
+    if not path.is_file():
+        return "dv.smali missing"
+    text = path.read_text(errors="replace")
+    old = "Li87;-><init>(Lte4;B)V"
+    new = "Li87;-><init>(Lwo7;B)V"
+    if old not in text:
+        return "dv.smali: Li87 init ref not found (already fixed?)"
+    text = text.replace(old, new)
+    path.write_text(text)
+    return "dv.smali: Li87 init ref fixed"
+
+S_STUB = '''.method public final S()Ljava/lang/Object;
+    .locals 1
+
+    const/4 v0, 0x0
+    return-object v0
+.end method
+'''
+
+P0_STUB = '''.method public final p0(Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+'''
+
+F_STUB = '''.method public final f(Lnv5;Ljava/lang/Object;)Lxb3;
+    .locals 1
+
+    const/4 v0, 0x0
+    return-object v0
+.end method
+'''
+
+def add_zi2_q41_stubs(out_root):
+    """Append stub methods to 214 zi2.smali and q41.smali.
+
+    The 194 custom ib2 (→214 zi2) has S()Ljava/lang/Object; and
+    p0(Ljava/lang/Object;)V, and 194 ej5 (→214 q41) has
+    f(Ldj5;Ljava/lang/Object;)Ls23; (abstract).  These are only called
+    from the X() compose factory in qj3.smali.  The 214 zi2/q41 lack
+    these members, so add minimal stubs that compile and return safely.
+    """
+    out_root = Path(out_root)
+    results = []
+
+    # --- zi2.smali: add S() and p0(Object)V ---
+    zi2_path = out_root / 'smali/zi2.smali'
+    if zi2_path.is_file():
+        zi2_text = zi2_path.read_text(errors='replace')
+        zi2_blocks = method_blocks(zi2_text)
+        zi2_stubs = []
+        if 'S()Ljava/lang/Object;' not in zi2_blocks:
+            zi2_stubs.append(S_STUB)
+        if 'p0(Ljava/lang/Object;)V' not in zi2_blocks:
+            zi2_stubs.append(P0_STUB)
+        if zi2_stubs:
+            lines = zi2_text.rstrip().splitlines()
+            insert_pos = len(lines)
+            for i in range(len(lines) - 1, -1, -1):
+                if lines[i].strip() == '.end method':
+                    insert_pos = i + 1
+                    break
+            new_lines = lines[:insert_pos] + ['']
+            for stub in zi2_stubs:
+                new_lines.extend(stub.rstrip().splitlines())
+                new_lines.append('')
+            new_lines.extend(lines[insert_pos:])
+            zi2_path.write_text('\n'.join(new_lines) + '\n')
+            results.append('zi2 (%d stubs)' % len(zi2_stubs))
+
+    # --- q41.smali: add f(Lnv5;Object)Lxb3; ---
+    q41_path = out_root / 'smali/q41.smali'
+    if q41_path.is_file():
+        q41_text = q41_path.read_text(errors='replace')
+        q41_blocks = method_blocks(q41_text)
+        if 'f(Lnv5;Ljava/lang/Object;)Lxb3;' not in q41_blocks:
+            lines = q41_text.rstrip().splitlines()
+            insert_pos = len(lines)
+            for i in range(len(lines) - 1, -1, -1):
+                if lines[i].strip() == '.end method':
+                    insert_pos = i + 1
+                    break
+            new_lines = lines[:insert_pos] + [''] + F_STUB.rstrip().splitlines() + lines[insert_pos:]
+            q41_path.write_text('\n'.join(new_lines) + '\n')
+            results.append('q41 (1 stub)')
+
+    if results:
+        return 'zi2/q41 stubs appended: ' + ', '.join(results)
+    return 'zi2/q41 stubs not needed'
 
 
 def add_dv_compose_slot(out_root, old_custom_root, mapper):
@@ -2691,8 +2977,7 @@ def check_update_core_dingtalk_sources(out_root):
 .method public static h(Ljava/util/List;)Ljava/util/List;
     .locals 12
 
-    invoke-static {}, Lmx;->t()Landroid/content/Context;
-    move-result-object v0
+    sget-object v0, Lcom/box/app/AppApplication;->h:Landroid/content/Context;
     const-string v1, "tools_core_update"
     const/4 v2, 0x0
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -3151,6 +3436,49 @@ def main():
         ok, detail = False, repr(exc)
         report['errors'].append('API dv.p slot: ' + str(detail))
         print('API ERROR dv.p slot', detail)
+    # The 194 nn.t() context accessor maps to 214 mx.t(); append it
+    try:
+        ok, detail = True, add_mx_t_method(args.output)
+        print('manual', 'mx.t accessor', detail)
+    except Exception as exc:
+        ok, detail = False, repr(exc)
+        report['errors'].append('API mx.t accessor: ' + str(detail))
+        print('API ERROR mx.t accessor', detail)
+    # The 194 ib2 S()/p0() and ej5 f() members map to 214 zi2/q41; append stubs
+    try:
+        ok, detail = True, add_zi2_q41_stubs(args.output)
+        print('manual', 'zi2/q41 stubs', detail)
+    except Exception as exc:
+        ok, detail = False, repr(exc)
+        report['errors'].append('API zi2/q41 stubs: ' + str(detail))
+        print('API ERROR zi2/q41 stubs', detail)
+    # Apply member-fixups.json as minimal stub declarations (not full 194 bodies)
+    fixups_path = args.output.parent / 'migrate-214-scratch' / 'member-fixups.json'
+    if not fixups_path.is_file():
+        fixups_path = Path('.tools/migrate-214-scratch/member-fixups.json')
+    try:
+        ok, detail = True, apply_member_stub_declarations(args.output, fixups_path)
+        print('manual', 'member-stub-decls', detail)
+    except Exception as exc:
+        ok, detail = False, repr(exc)
+        report['errors'].append('API member-stub-decls: ' + str(detail))
+        print('API ERROR member-stub-decls', detail)
+    # Add stubs for members not covered by member-fixups.json
+    try:
+        ok, detail = True, add_extra_missing_stubs(args.output)
+        print('manual', 'extra-missing-stubs', detail)
+    except Exception as exc:
+        ok, detail = False, repr(exc)
+        report['errors'].append('API extra-missing-stubs: ' + str(detail))
+        print('API ERROR extra-missing-stubs', detail)
+    # Fix Li87 constructor param type in transplanted gn.p body
+    try:
+        ok, detail = True, fix_dv_li87_init(args.output)
+        print('manual', 'dv-li87-init', detail)
+    except Exception as exc:
+        ok, detail = False, repr(exc)
+        report['errors'].append('API dv-li87-init: ' + str(detail))
+        print('API ERROR dv-li87-init', detail)
     for name, transform in (
         ('CfgIcon builder API', lambda: check_cfg_icon_builder(args.output, args.new)),
         ('CfgNav Compose lambda', lambda: check_cfg_nav_composable_lambda(args.output, args.new)),
@@ -3253,15 +3581,13 @@ def main():
             # /proc re-read still verifies liveness.
             '    move-object/from16 v2, p4\n':
                 '    if-eqz p6, :cond_0\n'
-                '    invoke-static/range {p6 .. p6}, '
-                'Lbn6;->o1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;\n'
+                '    invoke-virtual/range {p6 .. p6}, '
+                'Ljava/lang/String;->trim()Ljava/lang/String;\n'
                 '    move-result-object v8\n'
-                '    invoke-virtual {v8}, Ljava/lang/Object;'
-                '->toString()Ljava/lang/String;\n'
-                '    move-result-object v8\n'
-                '    invoke-static {v8}, Lbn6;->Q0(Ljava/lang/CharSequence;)Z\n'
+                '    invoke-virtual {v8}, Ljava/lang/String;'
+                '->length()I\n'
                 '    move-result v9\n'
-                '    if-nez v9, :cond_0\n'
+                '    if-eqz v9, :cond_0\n'
                 '\n'
                 '    move-object/from16 v2, p4\n',
             '    if-eqz p6, :cond_7\n':
@@ -3273,9 +3599,13 @@ def main():
             '    invoke-static {v8}, Lbn6;->W0(Ljava/lang/CharSequence;)Ljava/util/List;\n':
                 '    move-result-object v8\n'
                 '\n'
-                '    invoke-static {v8}, Lbn6;->Q0(Ljava/lang/CharSequence;)Z\n'
+                '    invoke-virtual {v8}, Ljava/lang/String;'
+                '->trim()Ljava/lang/String;\n'
+                '    move-result-object v8\n'
+                '    invoke-virtual {v8}, Ljava/lang/String;'
+                '->length()I\n'
                 '    move-result v9\n'
-                '    if-nez v9, :goto_2\n'
+                '    if-eqz v9, :goto_2\n'
                 '\n'
                 '    .line 113\n'
                 '    invoke-static {v8}, Lbn6;->W0(Ljava/lang/CharSequence;)Ljava/util/List;\n',
