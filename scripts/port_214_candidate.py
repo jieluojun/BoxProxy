@@ -945,7 +945,7 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
                                  if line.strip().startswith('return')), len(target_body))
             position = advance_chain(target_body, position)
             if raw:
-                inserts.append((position, raw))
+                inserts.append((position, raw, False))
 
     old_ref = plan['old']
     manual = None
@@ -977,7 +977,7 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             '    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->items(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;',
             '    move-result-object v0',
         ]
-        inserts, deletes = [(pos, raw)], set()
+        inserts, deletes = [(pos, raw, True)], set()
         reg_map.update({'v0': 'v0', 'v1': 'v1'})
         manual = 'settings list -> localized label -> VpnPrefs.items -> cx1'
         MANUAL_HITS['settings list'] += 1
@@ -1016,7 +1016,7 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             '    move-object/from16 v47, v4',
             '    filled-new-array/range {v45 .. v48}, [Ld75;',
         ]
-        inserts, deletes = [(pos, raw)], {pos}
+        inserts, deletes = [(pos, raw, True)], {pos}
         reg_map.update({'v0': 'v0', 'v1': 'v1', 'v2': 'v2', 'v3': 'v3',
                         'v4': 'v4', 'v45': 'v45', 'v46': 'v46',
                         'v47': 'v47', 'v48': 'v48'})
@@ -1040,28 +1040,32 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             '    invoke-direct {v4, p0, v5}, Ld75;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V',
             '    filled-new-array {p2, p1, v0, v4}, [Ld75;',
         ]
-        inserts, deletes = [(pos, raw)], {pos}
+        inserts, deletes = [(pos, raw, True)], {pos}
         reg_map.update({'p0': 'p0', 'p1': 'p1', 'p2': 'p2', 'v0': 'v0', 'v4': 'v4', 'v5': 'v5'})
         manual = 'add restore item to bk5 proxy menu'
         MANUAL_HITS['restore menu q75'] += 1
     elif old_ref.startswith('Lke1;->g('):
         # The customized 171 coroutine adds the two extra resume states next to
         # the upstream pswitch_0 block and lists them in the packed switch.
+        # The 214 upstream already defines :pswitch_9 in its own switch data,
+        # so the inserted labels are renamed to unique boxproxy names to avoid
+        # a duplicate-label collision.
         states = [
-            '    :pswitch_9', '    invoke-static {v1}, Lrl3;->a0(Ljava/lang/Object;)V',
-            '    goto/16 :goto_dd', '    :pswitch_10',
+            '    :boxproxy_pswitch_9', '    invoke-static {v1}, Lrl3;->a0(Ljava/lang/Object;)V',
+            '    goto/16 :goto_dd', '    :boxproxy_pswitch_10',
             '    invoke-static {v1}, Lrl3;->a0(Ljava/lang/Object;)V',
             '    goto/16 :goto_sd',
         ]
-        found = [index for index, (_, raw) in enumerate(inserts)
+        found = [index for index, (_, raw, _) in enumerate(inserts)
                  if raw and raw[0].strip() == ':pswitch_9'
                  and any('invoke-static' in line for line in raw)]
         if len(found) != 1:
             return False, 'fork coroutine state hunk changed'
         index = found[0]
         pos = inserts[index][0]
-        inserts[index] = (pos, states)
-        label_out.update({'pswitch_9': 'pswitch_9', 'pswitch_10': 'pswitch_10',
+        inserts[index] = (pos, states, inserts[index][2])
+        label_out.update({'pswitch_9': 'boxproxy_pswitch_9',
+                          'pswitch_10': 'boxproxy_pswitch_10',
                           'goto_dd': 'goto_dd', 'goto_sd': 'goto_sd'})
         reg_map.update({'v1': 'v1'})
         # The customized 194 patcher reused the :sswitch_7 label for the new
@@ -1099,15 +1103,15 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
         # builder anchor.  The 214 mx0.v method has a restructured script
         # builder that the generic delta already handles, so a missing anchor
         # is acceptable.
-        wrappers = [(position, raw) for position, raw in inserts
+        wrappers = [(position, raw, skip) for position, raw, skip in inserts
                     if any('wrapProbe' in line for line in raw)]
         if len(wrappers) != 1:
             return False, 'probe wrapper hunk changed'
-        position, raw = wrappers[0]
+        position, raw, skip = wrappers[0]
         anchor = 'invoke-static {v2}, Lcn6;->m0(Ljava/lang/String;)Ljava/lang/String;'
         hits = [i for i, line in enumerate(target_body) if line.strip() == anchor]
         if len(hits) == 1:
-            inserts = [(hits[0] + 1, raw) if item[0] == position else item for item in inserts]
+            inserts = [(hits[0] + 1, raw, skip) if item[0] == position else item for item in inserts]
         reg_map.update({'v2': 'v2'})
         manual = 'wrap the probe script with LdFix so bpld and _bp_seed are defined'
         MANUAL_HITS['probe wrapper'] += 1
@@ -1242,7 +1246,7 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
     target_loc_index, target_locals = get_locals(target_body)
     fresh, next_local = {}, target_locals
     translated, unmapped = [], []
-    for position, raw_lines in inserts:
+    for position, raw_lines, skip_mapper in inserts:
         group = []
         future_regs = set()
         for line in target_body[position:]:
@@ -1266,7 +1270,8 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
             mapped = rewrite_unquoted(
                 mapped, lambda code: LABEL_RE.sub(
                     lambda match: ':' + label_out.get(match.group(0)[1:], match.group(0)[1:]), code))
-            mapped = mapper.line(mapped, local)
+            if not skip_mapper:
+                mapped = mapper.line(mapped, local)
             if mapped.strip():
                 group.append(mapped)
         if group:
@@ -3351,12 +3356,20 @@ def main():
         'smali/ck3.smali': {
             '    invoke-static {v1, v1}, Lx84;->U(ILas2;)Ljava/lang/String;\n':
                 '',
+            '    invoke-static {v1, v1}, Lxl3;->U(ILzi2;)Ljava/lang/String;\n':
+                '',
+            '    const v1, 0x7f0f055a\n    move-result-object v1\n    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->items(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;\n    move-result-object v0\n':
+                '',
+            '    const v1, 0x7f0f0561\n    move-result-object v1\n    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->items(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;\n    move-result-object v0\n':
+                '',
         },
         # The entry-filter transplant in mx0.v uses v6 as a String for
         # startsWith, but the preceding equals call does move-result v6
         # (Int), clobbering the String.  Move the equals result to v15
         # (free at this point) so v6 stays a String.  Two occurrences.
         'smali/mx0.smali': {
+            '    :goto_c\n    move-result-object v2\n    invoke-static {v2}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;\n':
+                '    :goto_c\n    invoke-static {v2}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v2\n',
             '    invoke-virtual {v13, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z\n    move-result v6\n    if-nez v6, :cond_10\n    const-string v10, "-"\n    invoke-virtual {v13, v10}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v10\n    invoke-virtual {v6, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z\n    move-result v6\n':
                 '    invoke-virtual {v13, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z\n    move-result v15\n    if-nez v15, :cond_10\n    const-string v10, "-"\n    invoke-virtual {v13, v10}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v10\n    invoke-virtual {v6, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z\n    move-result v15\n',
             '    invoke-virtual {v12, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z\n\n    .line 1296\n    .line 1297\n    .line 1298\n    move-result v12\n    if-nez v7, :boxproxy_entry_match\n    const-string v7, "-"\n    invoke-virtual {v10, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v7\n    invoke-virtual {v12, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z\n    move-result v7\n':
@@ -3372,9 +3385,9 @@ def main():
             '    .locals 12\n':
                 '    .locals 13\n',
             '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result p1\n    if-eqz p1, :cond_58_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;\n    move-result-object p1\n    if-nez p1, :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, p1}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_root\n':
-                '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result v12\n    if-eqz v12, :cond_58_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;\n    move-result-object v12\n    if-nez v12, :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, v12}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_57\n    :cond_58_root\n',
+                '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result v12\n    if-eqz v12, :cond_58_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;\n    move-result-object v12\n    if-nez v12, :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_58_root\n    :cond_58_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, v12}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_58_root\n    :cond_58_root\n',
             '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result p1\n    if-eqz p1, :cond_6b_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;\n    move-result-object p1\n    if-nez p1, :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, p1}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_root\n':
-                '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result v12\n    if-eqz v12, :cond_6b_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;\n    move-result-object v12\n    if-nez v12, :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, v12}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_3a\n    :cond_6b_root\n',
+                '    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z\n    move-result v12\n    if-eqz v12, :cond_6b_root\n    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;\n    move-result-object v12\n    if-nez v12, :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v10, v11}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_6b_root\n    :cond_6b_fail\n    new-instance v10, Lvi0;\n    invoke-direct {v10, v9, v11, v12}, Lvi0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V\n    goto/16 :cond_6b_root\n    :cond_6b_root\n',
         },
         # The 194 update-core compare dialog pre-fills sing-box's local
         # extraction regex from mm0's per-core prefix plus a shared tail
