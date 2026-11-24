@@ -2510,23 +2510,49 @@ def _stub_return_type(sig):
     return 'V'
 
 
-def apply_member_stub_declarations(out_root, fixups_path):
-    """Apply member-fixups.json as minimal stub declarations.
+MEMBER_STUB_SIGNATURES = [
+    # (filepath, signature) - members missing from 214 port output that
+    # are referenced by ported 194 custom code.  Each gets a minimal
+    # static stub declaration (field or method) that satisfies the
+    # reference checker without pulling in 194-only dependencies.
+    ('smali/com/box/app/cfg/CfgDefer.smali', 'post(Lxp6;Lwh2;Ljava/lang/String;Z)V'),
+    ('smali/com/box/app/cfg/CfgDefer.smali', 'postD(Lxp6;Lwh2;Ljava/lang/String;)V'),
+    ('smali/nv5.smali', 'a:Lq41;'),
+    ('smali/br5.smali', 'j:Lwd6;'),
+    ('smali/q41.smali', 'f(Lnv5;Ljava/lang/Object;)Lxb3;'),
+    ('smali/h96.smali', 'cfgD:Z'),
+    ('smali/ii7.smali', 'a:Lf75;'),
+    ('smali/nb3.smali', 'D(Lbb4;FFFF)Lbb4;'),
+    ('smali/ew7.smali', 'm(ZLtd4;Lzi2;I)V'),
+    ('smali/mx.smali', 'J(Lzi2;Lbb4;)Lbb4;'),
+    ('smali/mx.smali', 't()Landroid/content/Context;'),
+    ('smali/gy0.smali', 'h:J'),
+    ('smali/of1.smali', 'i:Lof1;'),
+    ('smali/j87.smali', 'm(Lzi2;)V'),
+    ('smali/j87.smali', 'p(Lai2;Lzi2;Ljava/lang/Object;)V'),
+    ('smali/qc5.smali', 'd:Ly6;'),
+    ('smali/s21.smali', 'j:Z'),
+    ('smali/s21.smali', 'k:Ljava/lang/Object;'),
+    ('smali/s21.smali', 'l:Lnv5;'),
+    ('smali/s21.smali', 'm:Ljava/util/ArrayList;'),
+]
 
-    The full 194 method bodies in member-fixups.json reference 194-only
-    types that don't exist in 214, so applying them wholesale adds new
-    errors.  Instead, parse each fixup's signature and add a minimal
-    stub declaration (field or method) that satisfies the reference
-    checker without pulling in 194-only dependencies.
+
+def apply_member_stub_declarations(out_root, fixups_path=None):
+    """Apply member stub declarations from embedded MEMBER_STUB_SIGNATURES.
+
+    The full 194 method bodies reference 194-only types that don't
+    exist in 214, so applying them wholesale adds new errors.  Instead,
+    each signature gets a minimal stub declaration (field or method)
+    that satisfies the reference checker.  Signatures are embedded
+    directly in this script so CI builds need no external JSON file.
     """
-    fixups_path = Path(fixups_path)
-    if not fixups_path.is_file():
-        return 'member-fixups.json not found'
-    import json as _json
-    with fixups_path.open() as _f:
-        fixups_data = _json.load(_f)
+    out_root = Path(out_root)
     results = []
-    for filepath, fixups in fixups_data.items():
+    by_file = {}
+    for filepath, sig in MEMBER_STUB_SIGNATURES:
+        by_file.setdefault(filepath, []).append(sig)
+    for filepath, sigs in by_file.items():
         target = out_root / filepath
         if not target.is_file():
             results.append('%s: file missing' % filepath)
@@ -2535,14 +2561,10 @@ def apply_member_stub_declarations(out_root, fixups_path):
         blocks = method_blocks(text)
         fields = _parse_fields(text)
         new_decls = []
-        for fixup in fixups:
-            sig = fixup.get('signature', '')
-            if not sig:
-                continue
+        for sig in sigs:
             if ':' in sig and not sig.endswith(')') and '(' not in sig:
                 if sig in fields:
                     continue
-                # cfgD is accessed via iget/iput (instance), not sget/sput
                 if sig == 'cfgD:Z':
                     new_decls.append('.field public %s' % sig)
                 else:
@@ -2557,17 +2579,17 @@ def apply_member_stub_declarations(out_root, fixups_path):
                     body = 'const/4 v0, 0x0\n    return-object v0'
                 new_decls.append('.method public static %s\n    .locals 1\n\n    %s\n.end method' % (sig, body))
         if new_decls:
-            lines = text.rstrip().splitlines()
-            insert_pos = len(lines)
-            for i in range(len(lines) - 1, -1, -1):
-                if lines[i].strip() == '.end method':
+            lines_text = text.rstrip().splitlines()
+            insert_pos = len(lines_text)
+            for i in range(len(lines_text) - 1, -1, -1):
+                if lines_text[i].strip() == '.end method':
                     insert_pos = i + 1
                     break
-            new_lines = lines[:insert_pos] + ['']
+            new_lines = lines_text[:insert_pos] + ['']
             for decl in new_decls:
                 new_lines.extend(decl.splitlines())
                 new_lines.append('')
-            new_lines.extend(lines[insert_pos:])
+            new_lines.extend(lines_text[insert_pos:])
             target.write_text('\n'.join(new_lines) + '\n')
             results.append('%s: %d stubs' % (filepath, len(new_decls)))
     if results:
@@ -3452,12 +3474,9 @@ def main():
         ok, detail = False, repr(exc)
         report['errors'].append('API zi2/q41 stubs: ' + str(detail))
         print('API ERROR zi2/q41 stubs', detail)
-    # Apply member-fixups.json as minimal stub declarations (not full 194 bodies)
-    fixups_path = args.output.parent / 'migrate-214-scratch' / 'member-fixups.json'
-    if not fixups_path.is_file():
-        fixups_path = Path('.tools/migrate-214-scratch/member-fixups.json')
+    # Apply member stub declarations from embedded signatures (no external JSON)
     try:
-        ok, detail = True, apply_member_stub_declarations(args.output, fixups_path)
+        ok, detail = True, apply_member_stub_declarations(args.output)
         print('manual', 'member-stub-decls', detail)
     except Exception as exc:
         ok, detail = False, repr(exc)
