@@ -567,9 +567,13 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
                     ahead = [h for h in hits if h < min(near)] if near else []
                     at = min(ahead, key=lambda i: abs(i - guess)) if ahead else guess
         elif i1 == 0 or not any(is_instr(x) for x in up[:i1]):
-            # the delta opens the method: its anchor is the header itself, so it
-            # belongs right after .locals, ahead of the first instruction
-            at = -1
+            # The delta opens the method: its anchor is the header itself, so it
+            # belongs right after the register declaration, ahead of the first
+            # instruction.  Index -1 is *not* that place -- it is above the .method
+            # header, and splicing there drops the header and leaves the body
+            # outside any method, which the smali parser rejects.
+            at = next((i for i, l in enumerate(lines)
+                       if l.strip().startswith(('.locals', '.registers'))), -1)
         if at is None:
             # The anchor is the 194 instruction the delta follows, and the whole
             # placement argument rests on it still existing here.  Appending the
@@ -791,10 +795,23 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
                             replaced)
                            for at, block, replaced in inserts]
 
+    def indent_of(k):
+        while 0 <= k < len(lines):
+            raw = lines[k]
+            if raw.strip():
+                return raw[:len(raw) - len(raw.lstrip())]
+            k += 1
+        return '    '
+
     refused = []
     for at, block, replaced_from in sorted(inserts, key=lambda x: x[0], reverse=True):
         at = min(at, max(-1, end_of_body - 1))
         removed, after = dropped_run(at, replaced_from)
+        # match the indentation of the body the block lands in: smali does not care,
+        # but a wall of flush-left instructions is unreadable in a diff
+        pad = indent_of(at + 1)
+        block = [pad + l.strip() if l.strip() and not l.startswith(pad) else l
+                 for l in block]
         trial = lines[:at + 1] + block + lines[after:]
         if splits_a_pair(trial):
             # this delta cannot be spliced here without breaking the host's own
@@ -1017,7 +1034,10 @@ def main():
                 lines.extend([''] + block_lines)
             touched = True
 
-        stray = list(strays)
+        # Only a real instruction can identify a place: a directive like `.line 1`
+        # appears in every method of the class and would match anywhere.
+        stray = [x for x in strays
+                 if x[2] and not x[2].startswith(('.', ':', '#'))]
         if stray:
             # The delta may have been outlined into a sibling method by the 214
             # build: R8 moves code between methods freely, and a 194 coroutine
@@ -1052,6 +1072,13 @@ def main():
                 if len(spot) != 1:
                     continue
                 oi = spot[0]
+                # the splice must stay inside the method: the span text always ends
+                # with `.end method`, and code appended after it belongs to no
+                # method at all, which the smali parser rejects outright
+                last = max((i for i, l in enumerate(olines)
+                            if l.strip() == '.end method'), default=len(olines) - 1)
+                if oi >= last:
+                    continue
                 cur = list(oblk)
                 # the anchor produced a value the next instruction consumes, so
                 # step past that consumer, and give the block the register the
