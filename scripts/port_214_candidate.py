@@ -375,6 +375,33 @@ def splits_a_pair_standalone(text_lines):
     return False
 
 
+def switch_case_names(lines):
+    """Map each sswitch/pswitch label in a body to the string that selects it.
+
+    A string switch compiles to a table of hashes plus one block per case, and
+    each block starts by loading the case's own text: `:sswitch_3 / const-string
+    v1, "xray" / invoke-virtual equals`.  The number is just an index into the
+    table, so it means nothing across builds -- 194 gained two cases and 214 has
+    one 194 never had, and the same number names a different product in each.
+    The text is what actually selects the case, so that is the key to pair on.
+    """
+    out = {}
+    current = None
+    for line in lines:
+        code = line.strip()
+        if code.startswith((':sswitch', ':pswitch')):
+            current = code[1:]
+            continue
+        m = re.match(r'const-string(?:/jumbo)?\s+\S+,\s*"(.*)"$', code)
+        if m and current:
+            out.setdefault(current, m.group(1))
+            current = None
+        elif code and not code.startswith(('.', ':', '#')) and current:
+            # the block loaded something else first; its selector is not a literal
+            current = None
+    return out
+
+
 def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     """The 214 body with the 194 delta applied.
 
@@ -408,6 +435,7 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     host_labels = {l.strip()[1:] for l in lines
                    if l.strip().startswith(':') and ' ' not in l.strip()}
     inserts = []                    # (index in lines to insert after, block)
+    extra_switches = []             # switch cases a delta introduces, keyed by text
     orphaned = []                   # deltas with no anchor in this body
     # A delete in the reviewed tree is an instruction the customization took out
     # -- replacing `Enum.ordinal()` with the hook that answers the same question,
@@ -451,6 +479,7 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
         if tag == 'replace' and not any(m in l for l in cust[j1:j2] for m in custom_marks):
             continue
         block = [tr.text(l) for l in cust[j1:j2]]
+        isolated = False
         # a single-instruction block that restates an instruction this same delta
         # deletes is a rewrite, not drift -- the payload differs by design -- so it
         # must survive the customization gate below.  Without its replacement the
@@ -479,6 +508,58 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
         if custom_marks and not stands_in and \
                 not any(m in l for l in block for m in custom_marks):
             continue
+        # A block that opens a switch case names that case by the number the 194
+        # table gave it, and the two tables do not line up: this build has a `meow`
+        # case 194 never had, so from `hysteria` on every number shifted by one, and
+        # the reviewed build added two cases of its own.  Re-point the numbers by
+        # the case text, which is what actually selects a case at run time.
+        # Any block in a method that dispatches on a string switch may name a case
+        # by number -- the block need not start with the label itself, it can be an
+        # arm that jumps to one.  Run the remap whenever the host has such a table.
+        if any(l.strip().startswith('.sparse-switch') for l in lines) and (
+                any(l.strip().startswith((':sswitch', ':pswitch')) for l in block)
+                or any(re.search(r':(?:s|p)switch_\d', l) for l in block)):
+            # the block came from the *customized* 194 tree, so its case names
+            # follow that tree's numbering -- which already differs from upstream
+            case_194 = switch_case_names(cust)
+            case_214 = switch_case_names([l.strip() for l in lines])
+            by_text = {}
+            for name, text in case_214.items():
+                by_text.setdefault(text, name)
+            remap = {}
+            fresh_cases = []        # (label, selector text) this block introduces
+            used = {int(m.group(1)) for m in
+                    (re.match(r'[sp]switch_(\d+)$', n) for n in
+                     list(case_214) + list(host_labels)) if m}
+            next_free = max(used) + 1 if used else 0
+            for name, text in case_194.items():
+                if text in by_text:
+                    if by_text[text] != name:
+                        remap[name] = by_text[text]
+                else:
+                    # a case this build never had: give it a number of its own and
+                    # remember the selector, so the table below can be extended
+                    label = 'sswitch_%d' % next_free
+                    next_free += 1
+                    remap[name] = label
+                    fresh_cases.append((label, text))
+            if remap:
+                def repaint(line):
+                    return re.sub(r':((?:s|p)switch_\d+)\b',
+                                  lambda m: ':' + remap.get(m.group(1), m.group(1)), line)
+                block = [repaint(l) for l in block]
+            if fresh_cases:
+                # The block is a case arm the host has no entry for.  Give it a
+                # label of its own so the table can point at it.  It must not go
+                # where the anchor is: the anchor is the arm that already handles a
+                # different product, and landing on top of it makes that arm fall
+                # through into these instructions with its own register contents.
+                # Arms are a chain of compares ending in returns, so a new one
+                # appended after the last return of the method is reached only by
+                # the table entry this adds.
+                block = [':%s' % fresh_cases[0][0]] + block
+                extra_switches.extend(fresh_cases)
+                isolated = True
         # the 194 delta can name a label the 214 body already defines; splicing it
         # verbatim would define it twice and re-point the host's own branches, so
         # rename the incoming label and every reference to it inside the block
@@ -489,6 +570,11 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
                    if l.strip().startswith(':') and ' ' not in l.strip()
                    and not l.strip()[1:].startswith(('pswitch', 'ptry'))}
         for name in sorted(defined):
+            # a switch label is scoped to its own payload and re-pointing it is the
+            # remap's job, not a rename's: renaming it here leaves the table
+            # pointing at a label that no longer exists
+            if name.startswith(('sswitch', 'pswitch')):
+                continue
             if name in host_labels:
                 fresh = name + '_m214'
                 block = [re.sub(r'(?<![\w:])' + re.escape(name) + r'\b', fresh, l)
@@ -604,6 +690,28 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
             # outside any method, which the smali parser rejects.
             at = next((i for i, l in enumerate(lines)
                        if l.strip().startswith(('.locals', '.registers'))), -1)
+        if isolated:
+            # overrides whatever the anchor suggested: see the note where the arm
+            # is built.  The method ends with the switch payloads, and splicing
+            # there would land the instructions inside a table, so look for the
+            # last real instruction instead.
+            # Mark every line that belongs to a switch payload: the table opens
+            # with `.sparse-switch`, its rows look like ordinary instructions to
+            # is_code, and inserting among them corrupts the table.
+            in_payload = set()
+            depth = False
+            for i, l in enumerate(lines):
+                t = l.strip()
+                if t.startswith(('.sparse-switch', '.packed-switch', '.array-data')):
+                    depth = True
+                if depth:
+                    in_payload.add(i)
+                if t.startswith(('.end sparse-switch', '.end packed-switch',
+                                 '.end array-data')):
+                    depth = False
+            at = len(lines) - 1
+            while at > 0 and (at in in_payload or not is_code(lines[at].strip())):
+                at -= 1
         if at is None:
             # The anchor is the 194 instruction the delta follows, and the whole
             # placement argument rests on it still existing here.  Appending the
@@ -850,6 +958,35 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
             continue
         lines = trial
 
+    if extra_switches:
+        # A case the port introduces has no entry in the host's table, so nothing
+        # would ever branch to it.  Hash the selector the way the compiler does --
+        # a string switch dispatches on String.hashCode -- and add the pair, sorted
+        # by hash, the way dex expects a sparse-switch payload to be.
+        def sel_hash(text):
+            v = 0
+            for ch_text in text:
+                v = (v * 31 + ord(ch_text)) & 0xFFFFFFFF
+            return v - (1 << 32) if v >= (1 << 31) else v
+
+        row = re.compile(r'^\s*(-?0x[0-9a-fA-F]+|-?\d+)\s*->\s*:(\w+)\s*$')
+        opens = [i for i, l in enumerate(lines) if l.strip() == '.sparse-switch']
+        closes = [i for i, l in enumerate(lines) if l.strip() == '.end sparse-switch']
+        if opens and closes:
+            # work on the last table in the body, the one this switch uses
+            o_i, c_i = opens[-1], [c for c in closes if c > opens[-1]][0]
+            entries = []
+            for l in lines[o_i + 1:c_i]:
+                m = row.match(l.strip())
+                if m:
+                    entries.append((int(m.group(1), 0), m.group(2)))
+            have = {lab for _v, lab in entries}
+            for lab, txt in extra_switches:
+                if lab not in have:
+                    entries.append((sel_hash(txt), lab))
+            entries.sort(key=lambda e: e[0])
+            rebuilt_rows = ['    %d -> :%s' % (v, lab) for v, lab in entries]
+            lines = lines[:o_i + 1] + rebuilt_rows + lines[c_i:]
     rebuild.refused = [b for _at, b in refused]
     rebuild.orphaned = orphaned
     lines = widen_registers(lines)
