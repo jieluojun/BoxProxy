@@ -132,9 +132,16 @@ class Translator:
             return self.name(text)
         owner, _, rest = text.partition('->')
         if not OBFUSCATED_RE.match(owner):
-            # a readable owner keeps its name, but the types inside its signature
-            # still move with the build (control0(Ljava/lang/String;)Lcq2;)
-            return owner + '->' + sl.translate_types(rest, self.types)
+            # a readable owner keeps its name, but its members can still be renamed
+            # between builds (com/box/app/AppApplication;->i becomes ->h) and the
+            # types inside the signature move as well
+            translated = owner + '->' + sl.translate_types(rest, self.types)
+            hit = (self.methods.get(text) if '(' in rest else self.fields.get(text))
+            if hit:
+                return hit
+            hit = (self.methods.get(translated) if '(' in rest
+                   else self.fields.get(translated))
+            return hit or translated
         hit = self.methods.get(text) if '(' in rest else self.fields.get(text)
         if hit:
             return hit
@@ -282,6 +289,92 @@ def transplant(cust_block, tr, owner):
     return out
 
 
+PARAM_RE = re.compile(r'^\s*\.method[^\n]*?\(([^)]*)\)')
+REG_USE = re.compile(r'\b([vp])(\d+)\b')
+
+
+def _param_slots(sig_args):
+    """The number of register slots the parameters occupy."""
+    slots = 0
+    for piece in sig_args.split():
+        if not piece:
+            continue
+        slots += 2 if piece in ('J', 'D') else 1
+    return slots
+
+
+def widen_registers(lines):
+    """Grow .locals when the spliced code addresses a register the body lacks.
+
+    An obfuscator hands the same source line different registers in different
+    builds, and the reviewed customization of one method uses 48 where the 214
+    body declares 23.  Replaying its instructions without widening the frame
+    assembles fine and then fails the device verifier with "register index out of
+    range", so the frame is widened to cover the highest register the body
+    actually names.
+
+    Only .locals is handled.  A body using .registers already counts every slot,
+    including the parameters, and its own number is authoritative.
+    """
+    out = list(lines)
+    # locate the method header and the slots its parameters need
+    head = next((i for i, l in enumerate(out) if l.lstrip().startswith('.method')), None)
+    if head is None:
+        return out
+    match = PARAM_RE.match(out[head])
+    params = _param_slots(match.group(1)) if match else 0
+    if not any(l.strip().startswith('.registers') for l in out):
+        # p<N> names parameter slots, so the frame has to hold both
+        high_v = -1
+        high_p = -1
+        for line in out:
+            for kind, digits in REG_USE.findall(line):
+                n = int(digits)
+                if kind == 'v':
+                    high_v = max(high_v, n)
+                else:
+                    high_p = max(high_p, n)
+        # under .locals the parameters live *above* the locals, so p<k> addresses
+        # the slot locals+k.  A body that names p<k> therefore needs enough locals
+        # for the parameters to start no lower than the highest v it also uses.
+        needed = high_v + 1
+        if high_p >= 0:
+            needed = max(needed, high_p + 1 - params)
+        for i, line in enumerate(out):
+            stripped = line.strip()
+            if stripped.startswith('.locals'):
+                declared = int(stripped.split()[1])
+                if needed > declared:
+                    out[i] = line[:len(line) - len(line.lstrip())] + '.locals %d' % needed
+                break
+    return out
+
+
+def splits_a_pair_standalone(text_lines):
+    """True when a move-result no longer follows the invoke that feeds it.
+
+    Same rule rebuild() uses internally; it lives here too because the sibling
+    relocation pass has to check a splice it proposes into another method.
+    """
+    floor = len(text_lines)
+    for k in range(len(text_lines) - 1, -1, -1):
+        if text_lines[k].strip() == '.end method':
+            floor = k
+            break
+    previous = None
+    for line in text_lines[:floor]:
+        code = line.strip()
+        if not code or code.startswith(('.line', '.local', '.end local',
+                                        '.restart local', '.param', '.end param',
+                                        '.prologue', '.source')):
+            continue
+        if code.startswith('move-result') and not (previous and re.match(
+                r'^(invoke-|filled-new-array)', previous)):
+            return True
+        previous = code
+    return False
+
+
 def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     """The 214 body with the 194 delta applied.
 
@@ -301,6 +394,9 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     up = [l.strip() for l in up_lines]
     cust = [l.strip() for l in cust_lines]
     is_instr = lambda l: bool(l) and not l.startswith(('.', ':', '#'))
+    is_code = lambda l: bool(l.strip()) and not l.strip().startswith(('.', ':', '#'))
+    noise = ('.line', '.local', '.end local', '.restart local', '.param', '.end param',
+             '.prologue', '.source')
     sm = difflib.SequenceMatcher(a=up, b=cust, autojunk=False)
 
     lines = list(host_block.splitlines())
@@ -312,6 +408,38 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     host_labels = {l.strip()[1:] for l in lines
                    if l.strip().startswith(':') and ' ' not in l.strip()}
     inserts = []                    # (index in lines to insert after, block)
+    orphaned = []                   # deltas with no anchor in this body
+    # A delete in the reviewed tree is an instruction the customization took out
+    # -- replacing `Enum.ordinal()` with the hook that answers the same question,
+    # say.  Leaving it in place keeps the original call *and* the hook, and the
+    # hook was written against the 194 register numbers, so the pair ends up
+    # reading a register the host never loaded.  Deletions are therefore replayed
+    # too, matched on the instruction with its registers normalised away.
+    def shape(line):
+        text = re.sub(r'\b[vp]\d+\b', 'R', line.strip())
+        return text
+
+    # each deletion is recorded against the 194 position it sat at, so it can be
+    # matched to the host instruction nearest the same place rather than to the
+    # first look-alike in a body that repeats the pattern many times
+    deletes = []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag != 'delete':
+            continue
+        for offset, line in enumerate(up[i1:i2]):
+            if is_instr(line.strip()):
+                deletes.append((i1 + offset, shape(tr.text(line))))
+    # where those deletions land in the host body, so an insertion that pairs with
+    # one can be placed beside it instead of at a look-alike anchor elsewhere
+    delete_at = {}
+    for _source_at, _want in deletes:
+        _frac = _source_at / max(1, len(up))
+        _hit = [i for i, l in enumerate(lines)
+                if is_code(l.strip()) and shape(l) == _want]
+        if _hit:
+            delete_at[min(_hit, key=lambda i: abs(i / max(1, len(lines)) - _frac))] = \
+                _source_at
+
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag not in ('insert', 'replace'):
             continue
@@ -323,12 +451,33 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
         if tag == 'replace' and not any(m in l for l in cust[j1:j2] for m in custom_marks):
             continue
         block = [tr.text(l) for l in cust[j1:j2]]
+        # a single-instruction block that restates an instruction this same delta
+        # deletes is a rewrite, not drift -- the payload differs by design -- so it
+        # must survive the customization gate below.  Without its replacement the
+        # deletion would leave the host reading a register nothing assigns.
+        # The deletion a rewrite pairs with sits at or just after the block: difflib
+        # reports the new instruction first and the removed one next.  A window
+        # rather than a direction, because the two can also come out the other way
+        # round when a surrounding statement moved.
+        # The replacement rarely matches the deleted line: a rewritten shell script
+        # shares its first characters with the old one and nothing after.  What it
+        # does share is the opcode and the register it writes, so compare those.
+        def head(line):
+            text = line.strip()
+            op = text.split(None, 1)[0] if text else ''
+            regs = re.findall(r'\b[vp]\d+\b', text)
+            return op, regs[0] if regs else ''
+        stands_in = (len([l for l in block if is_code(l)]) == 1
+                     and any(abs(src_at - i1) <= 8
+                             and head(block[0]) == head(tr.text(up[src_at]))
+                             for src_at, _w in deletes))
         # custom-194 is upstream-194 plus the reviewed customization, so a delta can
         # also be plain drift between the two 194 builds (a switch table that the
         # newer compiler laid out differently, say).  Only a delta that touches a
         # customization symbol is part of the port; replaying drift would graft one
         # build's compiler output onto another and duplicate labels doing it.
-        if custom_marks and not any(m in l for l in block for m in custom_marks):
+        if custom_marks and not stands_in and \
+                not any(m in l for l in block for m in custom_marks):
             continue
         # the 194 delta can name a label the 214 body already defines; splicing it
         # verbatim would define it twice and re-point the host's own branches, so
@@ -352,22 +501,105 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
         # already has the same instruction where the value is produced.
         while block and (not block[0].strip() or block[0].strip().startswith('.')):
             block.pop(0)
+        # The register the dropped consumer wrote is the one the rest of the block
+        # reads, and the host writes the same value to a differently numbered
+        # register.  Remember which, so the block can be re-pointed at the host's
+        # copy once its place in the body is known.
+        result_reg = None
         if block and re.match(r'^\s*move-result', block[0].strip()):
+            tail = block[0].strip().split(None, 1)
+            result_reg = tail[1].strip() if len(tail) > 1 else None
             block.pop(0)
-        block_opens_with_result = False
         anchor = next((k for k in range(i1 - 1, -1, -1) if is_instr(up[k])), None)
         at = None
         if anchor is not None:
             want = tr.text(up[anchor]).strip()
             hits = host_instr.get(want)
+            if not hits:
+                # The same instruction can survive the build with its registers
+                # renumbered.  Matching with the register numbers removed is only
+                # safe when exactly one instruction in the body has that shape:
+                # a body that repeats it gives no way to tell which occurrence the
+                # delta meant, and guessing puts the block on the wrong path.
+                loose = {}
+                for i, line in enumerate(lines):
+                    if is_instr(line.strip()):
+                        loose.setdefault(re.sub(r'\b[vp]\d+\b', 'R', line.strip()), []).append(i)
+                # A lone occurrence needs no disambiguation: the registers moved
+                # but the instruction is unmistakably the same one.  Several need a
+                # positional winner, and only a clear one -- when two copies sit
+                # close together the delta's fraction cannot say which it meant, and
+                # placing the block at the wrong copy is what puts a hook on a path
+                # where its registers hold something else.
+                hits = loose.get(re.sub(r'\b[vp]\d+\b', 'R', want), [])
+                if len(hits) > 1:
+                    frac = anchor / max(1, len(up))
+                    ranked = sorted(hits, key=lambda i: abs(i / max(1, len(lines)) - frac))
+                    if abs(ranked[0] / max(1, len(lines)) - frac) > \
+                            0.5 * abs(ranked[1] / max(1, len(lines)) - frac):
+                        hits = []
             if hits:
-                # the same instruction can occur many times in a long coroutine
-                # body; pick the occurrence nearest the delta's relative position
-                # so successive deltas do not pile onto the same anchor
-                frac = anchor / max(1, len(up))
-                at = min(hits, key=lambda i: abs(i / max(1, len(lines)) - frac))
+                # The same instruction can occur many times in a long coroutine
+                # body, so the occurrence nearest the delta's relative position is
+                # the best guess -- except when this same delta also deletes an
+                # instruction: the customization put the two together (it took a
+                # call out and put its replacement in), so the copy just ahead of
+                # that deletion is the one it meant.  A body that repeats the
+                # anchor far from the deletion would otherwise take the block.
+                # A block that restates an instruction the same delta deletes --
+                # `const-string v13, "new text"` where 194 dropped
+                # `const-string v13, "old text"` -- has an exact place: the host
+                # instruction being removed.  The anchor cannot be trusted there,
+                # because the text it names may repeat earlier in the body and the
+                # block would land at a copy whose registers hold other values.
+                paired = None
+                if len(block) == 1 and is_code(block[0]):
+                    for host_at, src_at in delete_at.items():
+                        if src_at <= i1 and re.sub(r'"[^"]*"', '"S"', shape(block[0])) == \
+                                re.sub(r'"[^"]*"', '"S"', shape(tr.text(up[src_at]))):
+                            paired = host_at
+                if paired is not None:
+                    at = paired - 1
+                else:
+                    frac = anchor / max(1, len(up))
+                    guess = min(hits, key=lambda i: abs(i / max(1, len(lines)) - frac))
+                    near = [d for d in delete_at if d > min(hits)]
+                    ahead = [h for h in hits if h < min(near)] if near else []
+                    at = min(ahead, key=lambda i: abs(i - guess)) if ahead else guess
+        elif i1 == 0 or not any(is_instr(x) for x in up[:i1]):
+            # the delta opens the method: its anchor is the header itself, so it
+            # belongs right after .locals, ahead of the first instruction
+            at = -1
         if at is None:
-            at = len(lines) - 1
+            # The anchor is the 194 instruction the delta follows, and the whole
+            # placement argument rests on it still existing here.  Appending the
+            # block to the end of the body instead puts it on some unrelated path,
+            # where the registers it names were never loaded -- the class then
+            # fails ART verification at load time.  Refusing costs one hook; the
+            # fallback costs a crash, so the delta is reported and left out.
+            # The delta may simply have been split off into a sibling method: R8
+            # inlines and outlines freely between builds, and a 194 coroutine body
+            # that was one method can come back as several.  Record what the block
+            # hung off so main() can look for that instruction elsewhere in the
+            # class before giving the hook up.
+            orphaned.append((tag, block,
+                             tr.text(up[anchor]).strip() if anchor is not None else None))
+            continue
+        # The block began at a move-result the host already owns.  Its remaining
+        # instructions read the value that consumer produced, so they belong after
+        # the host's own copy, and the register has to become the one the host
+        # wrote -- the 194 numbering died with the dropped line.
+        if result_reg is not None:
+            nxt = at + 1
+            while nxt < len(lines) and lines[nxt].strip().startswith(noise):
+                nxt += 1
+            host_consumer = lines[nxt].strip() if nxt < len(lines) else ''
+            if re.match(r'^\s*move-result', host_consumer) and is_code(host_consumer):
+                host_reg = host_consumer.split(None, 1)[1].strip()
+                if host_reg and host_reg != result_reg:
+                    block = [re.sub(r'\b' + re.escape(result_reg) + r'\b', host_reg, l)
+                             for l in block]
+                at = nxt
         replaced_from = ([tr.text(l) for l in up[i1:i2]] if tag == 'replace'
                          else [])
         inserts.append((at, block, replaced_from))
@@ -399,8 +631,6 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     # never split an invoke from the move-result that reads its value: the pair is
     # a single unit in dex, and inserting between them makes the class unverifiable
     move_get = re.compile(r'^\s*move-result(?:-wide|-object)?\b')
-    noise = ('.line', '.local', '.end local', '.restart local', '.param', '.end param',
-             '.prologue', '.source')
     def first_code(k, step):
         while 0 <= k < len(lines) and lines[k].strip().startswith(noise):
             k += step
@@ -425,8 +655,6 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     # roughly the length it had.  Neither half may cross the method's own end: the
     # body is a slice of one .method block, so anything past .end method belongs to
     # the next method and must not move.
-    def is_code(l):
-        return bool(l.strip()) and not l.strip().startswith(('.', ':', '#'))
 
     end_of_body = len(lines)
     for k in range(len(lines) - 1, -1, -1):
@@ -487,6 +715,82 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
             return [], at + 1
         return span, j
 
+    # How much the register numbering moved between the two builds, learned from
+    # the instructions a deletion pairs up.  The reviewed hook was written against
+    # the 194 numbers, so without this it reads a register the host never loaded:
+    # `key(v14)` where the 214 body holds that enum in v15.  One shift per call
+    # site, taken from the instruction the delete replaces.
+    # A 194 deletion means two different things.  When the same delta also inserts
+    # an instruction of that shape, the customization *rewrote* that instruction --
+    # drift, or a constant it moved -- and the host is free to hold its own copy on
+    # its own account; dropping it strips a value a later host instruction reads.
+    # When nothing stands in for it, the customization genuinely took the call out
+    # (replacing `Enum.ordinal()` with the hook that answers the same question), and
+    # it must go or the host keeps both the call and the hook.
+    # The decisive question is not what the host holds but whether the reviewed
+    # build still has the instruction anywhere.  Different method order or a moved
+    # statement shows up as a delete followed by an insert elsewhere; the call is
+    # still there, and replaying the delete only strips the host's own copy of a
+    # value a later instruction reads.  An instruction that is gone from the
+    # reviewed body entirely was genuinely taken out, and must go.
+    # Counting decides it: a shape that still occurs in the reviewed body as often
+    # as it does upstream only moved, so the host's copy must stay.  A shape with
+    # one fewer occurrence was taken out, so the host's copy must go.
+    up_shapes, cust_shapes = {}, {}
+    for l in up:
+        if is_code(l):
+            up_shapes[shape(l)] = up_shapes.get(shape(l), 0) + 1
+    for l in cust:
+        if is_code(l):
+            cust_shapes[shape(l)] = cust_shapes.get(shape(l), 0) + 1
+    def moved_only(src_at):
+        want = shape(tr.text(up[src_at]))
+        return cust_shapes.get(want, 0) >= up_shapes.get(shape(up[src_at]), 1)
+    restated = {src for src_at, want in deletes
+                for h, src in delete_at.items() if src == src_at
+                if moved_only(src_at)}
+    true_deletes = [d for d in deletes if d[0] not in restated]
+    if true_deletes:
+        drop = set()
+        shifts = {}
+        for source_at, want in true_deletes:
+            frac = source_at / max(1, len(up))
+            best = None
+            for i, line in enumerate(lines):
+                if i >= end_of_body or i in drop:
+                    continue
+                if is_code(line.strip()) and shape(line) == want:
+                    if best is None or abs(i / max(1, len(lines)) - frac) < \
+                            abs(best / max(1, len(lines)) - frac):
+                        best = i
+            if best is None:
+                continue
+            drop.add(best)
+            source_regs = [m for m in re.findall(r'\b([vp])(\d+)\b', tr.text(up[source_at]))]
+            host_regs = [m for m in re.findall(r'\b([vp])(\d+)\b', lines[best])]
+            if len(source_regs) == len(host_regs) and source_regs:
+                kind = source_regs[0][0]
+                delta = int(host_regs[0][1]) - int(source_regs[0][1])
+                if delta and kind == 'v':
+                    shifts[best if best < end_of_body else end_of_body] = delta
+        if drop:
+            lines = [l for i, l in enumerate(lines) if i not in drop]
+            end_of_body = len(lines)
+            for k in range(len(lines) - 1, -1, -1):
+                if lines[k].strip() == '.end method':
+                    end_of_body = k
+                    break
+            if shifts:
+                # an insert placed just after the deleted instruction inherits its
+                # shift; the block was written in the 194 numbering
+                inserts = [(at - sum(1 for d in drop if d <= at),
+                            [re.sub(r'\bv(\d+)\b',
+                                    lambda m, s=shifts[min(shifts, key=lambda k: abs(k - at))]:
+                                    'v%d' % (int(m.group(1)) + s), l)
+                             for l in block],
+                            replaced)
+                           for at, block, replaced in inserts]
+
     refused = []
     for at, block, replaced_from in sorted(inserts, key=lambda x: x[0], reverse=True):
         at = min(at, max(-1, end_of_body - 1))
@@ -500,6 +804,8 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
         lines = trial
 
     rebuild.refused = [b for _at, b in refused]
+    rebuild.orphaned = orphaned
+    lines = widen_registers(lines)
     return lines
 
 
@@ -607,6 +913,7 @@ def main():
             else:
                 i += 1
         touched = False
+        strays = []             # deltas whose anchor is not in the method they map to
         for header, cust_block in changed.items():
             up_block = upstream_methods[header]
             # changed is keyed by the full '.method ...' header while spans is
@@ -645,21 +952,28 @@ def main():
                        in WHOLESALE else None)
             rebuilt = rebuilt or rebuild(block, up_block.splitlines(),
                                          cust_block.splitlines(), tr, marks)
+            # rebuild() reports its strays on the function itself, so the next call
+            # would overwrite them; keep them for the class-wide pass below
+            strays.extend(rebuild.orphaned)
             if rebuild.refused:
-                # The customization rewrote this body wholesale -- its register
-                # assignment differs from the host's -- so no splice of the delta
-                # can land without orphaning an instruction.  Take the reviewed
-                # body in full instead; it is the only faithful form of this edit.
-                whole = transplant(cust_block, sig, tr)
-                if whole is None:
-                    report['skipped'].append({'class': cls, 'method': sig,
-                                              'reason': 'delta would split an '
-                                                        'invoke/move-result pair'})
-                    continue
-                rebuilt = whole
+                # A splice was refused because it would break the host's own
+                # invoke/move-result pairing.  Replacing the body with the 194 one
+                # is *not* a way out: that body was compiled against the 194 class
+                # tree, so every type and member it names is a 194 name, and only
+                # the ones in the maps get translated -- the rest silently become
+                # references to unrelated 214 classes that happen to share the
+                # obfuscated name.  The delta is left out and reported instead.
+                report['skipped'].append({'class': cls, 'method': sig,
+                                          'reason': 'delta would split an '
+                                                    'invoke/move-result pair'})
+                continue
             if sum(1 for l in rebuilt if l.startswith('.end method')) != 1:
                 report['skipped'].append({'class': cls, 'method': sig, 'reason': 'malformed body'})
                 continue
+            # A delta whose anchor is nowhere in this body may have been outlined
+            # into a sibling method by the 214 build.  Before giving the hook up,
+            # look for the anchor in the class's other methods and splice the block
+            # there; the instruction it hangs off is what identifies the place.
             # the delta may call a 194 helper that this build dropped; inserting such
             # a body leaves a reference the tree cannot resolve, so refuse it and
             # say which symbol was missing
@@ -702,6 +1016,120 @@ def main():
             for block_lines in appended:
                 lines.extend([''] + block_lines)
             touched = True
+
+        stray = list(strays)
+        if stray:
+            # The delta may have been outlined into a sibling method by the 214
+            # build: R8 moves code between methods freely, and a 194 coroutine
+            # body that was one method can come back as several.  Work on the
+            # class text rather than the span indices -- inserting into one
+            # method shifts every span after it, and a stale index silently
+            # swallows the neighbouring method's .end method.
+            blocks = []
+            for item in stray:
+                _tag, oblk, orang = item
+                if not orang:
+                    continue
+                oshape = re.sub(r'\b[vp]\d+\b', 'R', orang.strip())
+                homes = []
+                for other_sig, oa, ob, obody in spans:
+                    hits = [i for i, l in enumerate(obody.splitlines())
+                            if l.strip() == orang.strip()
+                            or re.sub(r'\b[vp]\d+\b', 'R', l.strip()) == oshape]
+                    if hits:
+                        homes.append(other_sig)
+                # one method, and the anchor unique inside it: anything else is
+                # a guess, and a guess here puts a hook on a path where its
+                # registers hold other values
+                if len(homes) != 1:
+                    continue
+                homed = homes[0]
+                body_now = next(b for s2, _a, _b, b in spans if s2 == homed)
+                olines = body_now.splitlines()
+                spot = [i for i, l in enumerate(olines)
+                        if l.strip() == orang.strip()
+                        or re.sub(r'\b[vp]\d+\b', 'R', l.strip()) == oshape]
+                if len(spot) != 1:
+                    continue
+                oi = spot[0]
+                cur = list(oblk)
+                # the anchor produced a value the next instruction consumes, so
+                # step past that consumer, and give the block the register the
+                # host wrote rather than the 194 number
+                nxt = oi + 1
+                while nxt < len(olines) and (not olines[nxt].strip()
+                                             or olines[nxt].strip().startswith(
+                        ('.line', '.local', '.end local', '.restart local',
+                         '.param', '.end param', '.prologue', '.source'))):
+                    nxt += 1
+                consumer = olines[nxt].strip() if nxt < len(olines) else ''
+                if re.match(r'^move-result', consumer) and ' ' in consumer:
+                    host_reg = consumer.split(None, 1)[1].strip()
+                    src_reg = None
+                    for _l in cur:
+                        m2 = re.search(r'\bv\d+\b', _l.strip())
+                        if m2:
+                            src_reg = m2.group(0)
+                            break
+                    if host_reg and src_reg and host_reg != src_reg:
+                        cur = [re.sub(r'\b' + re.escape(src_reg) + r'\b',
+                                      host_reg, _l) for _l in cur]
+                    # the host already owns this consumer; drop only the first
+                    # move-result, a later one belongs to an invoke in the block
+                    dropped = False
+                    kept = []
+                    for l in cur:
+                        if not dropped and re.match(r'^\s*move-result', l):
+                            dropped = True
+                            continue
+                        kept.append(l)
+                    oi = nxt
+                    cur = kept
+                    # an invoke whose value nobody reads is a dropped return, and
+                    # 194 read it -- put the consumer back on the host register
+                    if cur and re.match(r'^\s*(invoke-|filled-new-array)', cur[-1].strip()):
+                        after_paren = cur[-1].strip().partition(')')[2].strip()
+                        if after_paren and after_paren != 'V':
+                            cur = cur + ['    move-result-object ' + host_reg
+                                         if after_paren.startswith(('L', '['))
+                                         else '    move-result ' + host_reg]
+                indented = ['    ' + l.strip() if l.strip() and not l.startswith('    ')
+                            else l for l in cur]
+                trial = olines[:oi + 1] + indented + olines[oi + 1:]
+                if splits_a_pair_standalone(trial):
+                    continue
+                blocks.append((homed, trial))
+                report['edits'].append({'class': cls, 'target': host_cls,
+                                        'kind': 'patched-sibling', 'method': homed})
+                touched = True
+            for homed, trial in blocks:
+                body_new = widen_registers(trial)
+                if sum(1 for l in body_new if l.startswith('.end method')) != 1:
+                    continue
+                # Locate the method in the text as it stands: every earlier
+                # splice in this class moved the offsets, and using a remembered
+                # one cuts the body off at the wrong line -- which is how a
+                # method ends up holding its neighbour and a label gets defined
+                # twice.
+                at = next((i for i, l in enumerate(lines)
+                           if l.startswith('.method')
+                           and sl.signature_string(l) == homed), None)
+                if at is None:
+                    continue
+                stop = at
+                while stop < len(lines) and not lines[stop].startswith('.end method'):
+                    stop += 1
+                shift = len(body_new) - (stop + 1 - at)
+                lines = lines[:at] + body_new + lines[stop + 1:]
+                # every method below this one moved by shift lines; leaving
+                # their spans stale makes the next patch cut a body at the
+                # wrong place and swallow the method that follows it
+                spans = [(s2,
+                          a2 if a2 <= at else a2 + shift,
+                          b2 if b2 <= at else b2 + shift,
+                          blk) for s2, a2, b2, blk in spans if s2 != homed]
+                spans.append((homed, at, at + len(body_new), '\n'.join(body_new)))
+                spans.sort(key=lambda x: x[1])
 
         if touched and args.apply:
             host_path.write_text('\n'.join(lines) + '\n')

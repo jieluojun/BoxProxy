@@ -122,6 +122,9 @@ jobs:
           python3 scripts/check_smali_branch_offsets.py "$PROJECT_DIR"
           python3 scripts/check_smali_reference_moves.py "$PROJECT_DIR"
           python3 scripts/check_smali_register_flow.py  "$PROJECT_DIR"
+          # a spliced body can address slots its frame never declared; ART rejects
+          # the whole class for it, and nothing else here models the frame size
+          python3 scripts/check_smali_registers.py      "$PROJECT_DIR"
           # the 214 upstream itself carries four return-object bodies the ART
           # verifier accepts loosely; only what the port introduces is a failure
           python3 scripts/check_smali_return_types.py   "$PROJECT_DIR" \
