@@ -993,6 +993,69 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
     return lines
 
 
+def ensure_vpn_case(root):
+    """Give the run-mode enum the VPN constant the transplanted hooks use.
+
+    The VPN run mode exists in the customization as a stored mode name -- the
+    setting round-trips as the string "vpn" and isVpnMode() reads it back -- but
+    the enum that lists the modes for the picker never had a value for it in
+    this build.  Every hook that asks "is this the VPN mode" therefore reads a
+    field that is not there and the app dies with NoSuchFieldError the first
+    time one runs.
+
+    The build the hooks come from solves it by aliasing: the constant carries
+    the ordinal TUN already takes, which is exactly why key() offsets it by
+    0x10 to keep the Compose change key distinct.  Add it the same way.
+
+    The array of constants can no longer be filled by filled-new-array/range,
+    because that needs the six instances to sit in consecutive registers and
+    the new one lands past them; build it by hand instead, one slot each.
+    """
+    path = root / 'smali' / 'br5.smali'
+    if not path.is_file():
+        return 'no br5.smali'
+    text = path.read_text()
+    if 'Lbr5;->t:' in text:
+        return 'already present'
+    if '.field public static final enum o:Lbr5;' not in text:
+        return 'unrecognised enum layout'
+
+    text = text.replace(
+        '.field public static final enum o:Lbr5;\n',
+        '.field public static final enum o:Lbr5;\n\n.field public static final enum t:Lbr5;\n', 1)
+    # v6 holds the new instance; it and its temporaries need room above the nine
+    # the compiler used
+    text = text.replace('    .locals 9\n', '    .locals 10\n', 1)
+
+    old = ('    .line 72\n'
+           '    .line 73\n'
+           '    filled-new-array/range {v0 .. v5}, [Lbr5;\n')
+    body = ('    .line 71\n'
+            '    new-instance v6, Lbr5;\n\n'
+            '    .line 72\n'
+            '    const/4 v7, 0x0\n\n'
+            '    .line 73\n'
+            '    const-string v8, "Vpn"\n\n'
+            '    .line 74\n'
+            '    const-string v9, "vpn"\n\n'
+            '    .line 75\n'
+            '    invoke-direct {v6, v7, v8, v9}, Lbr5;-><init>(ILjava/lang/String;Ljava/lang/String;)V\n\n'
+            '    .line 76\n'
+            '    sput-object v6, Lbr5;->t:Lbr5;\n\n'
+            '    .line 77\n'
+            '    const/4 v7, 0x7\n\n'
+            '    new-array v7, v7, [Lbr5;\n')
+    for slot, reg in enumerate(('v6', 'v0', 'v1', 'v2', 'v3', 'v4', 'v5')):
+        body += '\n    const/4 v8, 0x%d\n\n    aput-object %s, v7, v8\n' % (slot, reg)
+    body += '\n    move-object v0, v7\n'
+    if old not in text:
+        return 'unrecognised array build'
+    text = text.replace(old, body, 1)
+    path.write_text(text)
+    return 'added'
+
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -1327,6 +1390,11 @@ def main():
 
         if touched and args.apply:
             host_path.write_text('\n'.join(lines) + '\n')
+
+    if args.apply:
+        outcome = ensure_vpn_case(new)
+        report['vpnCase'] = outcome
+        print('vpn run-mode constant: %s' % outcome)
 
     report['unmappedMember'] = sorted(tr.misses)
     Path(args.report).write_text(json.dumps(report, indent=1) + '\n')
