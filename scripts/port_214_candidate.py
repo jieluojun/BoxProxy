@@ -558,8 +558,38 @@ def rebuild(host_block, up_lines, cust_lines, tr, custom_marks=frozenset()):
                         if src_at <= i1 and re.sub(r'"[^"]*"', '"S"', shape(block[0])) == \
                                 re.sub(r'"[^"]*"', '"S"', shape(tr.text(up[src_at]))):
                             paired = host_at
+                # The instruction the delta lands *before* is the stronger anchor:
+                # it is the first thing the delta did not change, and when the host
+                # still holds exactly one copy of it the block has an exact place.
+                # The instruction before the delta is often a `return-object` or a
+                # `move-result` that the body repeats a hundred times.
+                # A label the delta opens on is the precise place: it survives the
+                # build even when the instructions around it are rewritten.  The
+                # label sits just above the block, above the .line directives that
+                # came with it, so look back through those.
+                follow = None
+                for k in range(min(i1, len(up)) - 1, -1, -1):
+                    if up[k].startswith(':') and ' ' not in up[k]:
+                        follow = k
+                        break
+                    if is_instr(up[k]):
+                        break
+                follow_at = None
+                if follow is not None:
+                    lab = up[follow][1:]
+                    lab_hits = [i for i, l in enumerate(lines) if l.strip() == ':' + lab]
+                    if len(lab_hits) == 1:
+                        follow_at = lab_hits[0] + 1
+                if follow_at is None:
+                    fx = next((k for k in range(i2, len(up)) if is_instr(up[k])), None)
+                    if fx is not None:
+                        fhits = host_instr.get(tr.text(up[fx]).strip())
+                        if fhits and len(fhits) == 1:
+                            follow_at = fhits[0]
                 if paired is not None:
                     at = paired - 1
+                elif follow_at is not None:
+                    at = follow_at - 1
                 else:
                     frac = anchor / max(1, len(up))
                     guess = min(hits, key=lambda i: abs(i / max(1, len(lines)) - frac))

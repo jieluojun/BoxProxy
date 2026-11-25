@@ -7127,7 +7127,9 @@
  "unmappedMember": [
   "Lef5;->t:Lef5;",
   "Ljc0;->r(true),",
+  "Lmm0;->u0(Landroid/database/sqlite/SQLiteDatabase;Ljc0;)V",
   "Lne1;->h(Ljava/util/List;)Ljava/util/List;",
+  "Loa0;->j:B",
   "Lsa3;->G(Lib2;)Luv0;",
   "Lsa3;->Q(Ljava/lang/Object;)Lgx4;",
   "Lya3;->c0(ILib2;)Ljava/lang/String;"
