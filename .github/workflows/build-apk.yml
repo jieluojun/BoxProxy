@@ -1,8 +1,15 @@
 name: Build APK
 
-# 构建 194 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
-#   pinned 171 snapshot -> reviewed 171 -> 194 port -> reference scan -> apktool b -> align/sign/upload
-# Apktool 2.9.3 必须与 pinned snapshot 一致；升级时需重新反编译并同步 sha256。
+# Rebuild the 214 release with the reviewed customization ported onto it.
+#
+#   pinned 214 APK -> decompile -> regenerate the 194 trees -> port the reviewed
+#   deltas -> run every smali check -> apktool b (dex only) -> repack over the
+#   upstream entries -> zipalign -p 4 -> apksigner -> verify badging
+#
+# Only classes.dex ever differs from upstream: the port changes code and nothing
+# else, so every resource is carried over from the pinned package byte for byte.
+# apktool is used for one thing, turning smali into a dex, because the bundled
+# version predates this app's resource table and has no aapt to rebuild it.
 
 on:
   workflow_dispatch:
@@ -10,13 +17,17 @@ on:
     branches: [main]
     tags: ["v*"]
     paths:
+      - "app/**"
       - "upstream/**"
+      - "migration/**"
       - "scripts/**"
       - ".github/workflows/build-apk.yml"
   pull_request:
     branches: [main]
     paths:
+      - "app/**"
       - "upstream/**"
+      - "migration/**"
       - "scripts/**"
       - ".github/workflows/build-apk.yml"
 
@@ -28,39 +39,19 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  APKTOOL_VERSION: "2.9.3"
-  # 官方 apktool_2.9.3.jar 的 sha256（与发行包大小 23254968 字节对应，已交叉验证）
-  APKTOOL_SHA256: "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
-  PROJECT_DIR: ".tools/ci-194/decompiled"
+  # the snapshot the port targets, and the package it decompiles from
+  UPSTREAM_VERSION: "26.11.23.aa98568"
+  UPSTREAM_APK: "app/BoxProxy-26.11.23.aa98568-arm64-v8a.apk"
+  PROJECT_DIR: ".tools/stage/draft"
 
 jobs:
   build:
-    name: Rebuild, align, sign
+    name: Port, verify, align, sign
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
-      # The candidate is fully determined by the pinned snapshots and the
-      # migration scripts; cache it so repeat builds skip the ~60s
-      # extract/replay/maps/port/verify pipeline (the key hashes every input).
-      - name: Cache pinned 194 migration candidate
-        uses: actions/cache@v6
-        with:
-          path: .tools/ci-194
-          key: ci-194-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'scripts/**') }}
-
-      - name: Generate the pinned 194 migration candidate
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [[ -f "$PROJECT_DIR/apktool.yml" ]]; then
-            echo ">> pinned 194 candidate restored from cache; skipping regeneration"
-          else
-            python3 scripts/migrate_194.py --output .tools/ci-194
-          fi
-          test -f "$PROJECT_DIR/apktool.yml"
 
       - name: Setup JDK 17
         uses: actions/setup-java@v6
@@ -68,71 +59,137 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      # The three decompiled trees are ~100 MB of smali that regenerates from
+      # committed artifacts; caching them keeps a no-op rebuild down to minutes.
+      - name: Cache decompiled trees
+        uses: actions/cache@v6
+        with:
+          path: .tools
+          key: tools-${{ hashFiles('app/*.apk', 'upstream/**', 'scripts/setup_tools.sh', 'scripts/migrate_194.py') }}
+
+      - name: Regenerate the working trees
+        shell: bash
+        run: |
+          set -euo pipefail
+          # this environment has a JDK and node already; the helper only installs
+          # jdk4py when java is missing, which never happens on a runner
+          bash scripts/setup_tools.sh all
+          test -d .tools/base-214/decompiled/smali
+          test -d .tools/up-194/decompiled
+          test -d .tools/custom-194/decompiled
+
+      - name: Port the reviewed deltas onto 214
+        shell: bash
+        run: |
+          set -euo pipefail
+          # --skip-maps on purpose: migration/214 holds the reviewed maps, and
+          # regenerating them re-solves a question that is already settled
+          python3 scripts/port_214.py --skip-maps
+          test -d "$PROJECT_DIR/smali"
+
       - name: Read version from apktool.yml
         id: ver
         shell: bash
         run: |
           set -euo pipefail
-          version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' "$PROJECT_DIR/apktool.yml" | head -n 1 | tr -d '\r')"
-          version_code="$(sed -n 's/^  versionCode:[[:space:]]*//p' "$PROJECT_DIR/apktool.yml" | head -n 1 | tr -d '\r')"
+          # the port copies the 214 tree, so its apktool.yml is the upstream one
+          cp "$PROJECT_DIR/apktool.yml" /tmp/apktool.yml
+          # apktool quotes the code, and the value is compared against aapt2's
+          # badging output, which never quotes it
+          version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' /tmp/apktool.yml | head -n 1 | tr -d '\r' | tr -d "'\"")"
+          version_code="$(sed -n 's/^  versionCode:[[:space:]]*//p' /tmp/apktool.yml | head -n 1 | tr -d '\r' | tr -d "'\"")"
           if [[ -z "$version_name" || -z "$version_code" ]]; then
-            echo "::error::failed to parse versionName/versionCode from $PROJECT_DIR/apktool.yml"
+            echo "::error::failed to parse versionName/versionCode from apktool.yml"
             exit 1
           fi
-          if [[ "$version_code" != "194" || "$version_name" != "26.11.19.bf82603" ]]; then
-            echo "::error::refusing to build non-194 project ($version_name / $version_code)"
+          if [[ "$version_name" != "$UPSTREAM_VERSION" ]]; then
+            echo "::error::refusing to build $version_name; this workflow targets $UPSTREAM_VERSION"
             exit 1
           fi
           echo "version_name=${version_name}" >> "$GITHUB_OUTPUT"
           echo "version_code=${version_code}" >> "$GITHUB_OUTPUT"
           echo "BoxProxy versionName=${version_name} versionCode=${version_code}"
 
-      - name: Cache apktool
-        uses: actions/cache@v6
-        with:
-          path: ~/tools
-          key: apktool-${{ env.APKTOOL_VERSION }}-${{ env.APKTOOL_SHA256 }}
-
-      - name: Download apktool (official release, sha256 verified)
+      - name: Reject unusable smali
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$HOME/tools"
-          jar="$HOME/tools/apktool_${APKTOOL_VERSION}.jar"
-          if [[ ! -f "$jar" ]]; then
-            curl -fsSL --retry 3 -o "$jar" \
-              "https://github.com/iBotPeaches/Apktool/releases/download/v${APKTOOL_VERSION}/apktool_${APKTOOL_VERSION}.jar"
+          # every check must pass: a tree that fails one of these assembles into
+          # a dex the ART verifier rejects on device, which is worse than no build
+          python3 scripts/check_smali_references.py     "$PROJECT_DIR"
+          python3 scripts/check_smali_labels.py         "$PROJECT_DIR"
+          python3 scripts/check_smali_move_result.py    "$PROJECT_DIR"
+          python3 scripts/check_smali_branch_offsets.py "$PROJECT_DIR"
+          python3 scripts/check_smali_reference_moves.py "$PROJECT_DIR"
+          python3 scripts/check_smali_register_flow.py  "$PROJECT_DIR"
+          # the 214 upstream itself carries four return-object bodies the ART
+          # verifier accepts loosely; only what the port introduces is a failure
+          python3 scripts/check_smali_return_types.py   "$PROJECT_DIR" \
+            --baseline .tools/base-214/decompiled
+
+      - name: Confirm every customization hook survived
+        shell: bash
+        run: |
+          set -euo pipefail
+          # the port is only correct if the reviewed call sites are still there;
+          # a silent skip would otherwise ship a build with the feature disabled
+          missing=0
+          while read -r symbol want; do
+            [[ -z "$symbol" ]] && continue
+            got="$(grep -rl -- "$symbol" "$PROJECT_DIR/smali" | wc -l)"
+            if [[ "$got" -ne "$want" ]]; then
+              echo "::error::$symbol expected in $want files, found in $got"
+              missing=1
+            fi
+          done <<'HOOKS'
+          VpnPrefs;->processStart 1
+          VpnPrefs;->items 1
+          VpnRoot;->rootModes 1
+          VpnBridge;->isVpnMode 5
+          VpnBridge;->syncNow 1
+          VpnBridge;->applyNow 1
+          VpnAppProxy;->sel 1
+          BoxctlFix;->wrap 1
+          AppPerm;->check 1
+          CfgNav;->wrap 1
+          CoreConfigHistory;->onUpdate 1
+          FToast;->init 1
+          LdFix;->wrapProbe 2
+          HOOKS
+          exit "$missing"
+
+      - name: Assemble classes.dex
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${RUNNER_TEMP:?RUNNER_TEMP must be set by the runner}"
+          # apktool stops at the packaging step (no aapt for this resource table),
+          # but it writes the dex first, and that is the only artifact needed
+          set +e
+          java -Xmx4g -jar .tools/bin/apktool.jar b "$PROJECT_DIR" -o "$RUNNER_TEMP/discard.apk" \
+            2>&1 | tee "$RUNNER_TEMP/apktool.log"
+          status=${PIPESTATUS[0]}
+          set -e
+          if [[ ! -f "$PROJECT_DIR/build/apk/classes.dex" ]]; then
+            echo "::error::apktool did not produce classes.dex (exit $status)"
+            exit 1
           fi
-          echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
-          java -jar "$jar" --version
+          if ! grep -qi 'smaling' "$RUNNER_TEMP/apktool.log"; then
+            echo "::error::apktool never reached the smali step"
+            exit 1
+          fi
+          ls -lh "$PROJECT_DIR/build/apk/classes.dex"
+          echo "::notice::apktool exited $status after writing the dex; packaging is done separately"
 
-      - name: Validate internal smali member references
-        run: python3 scripts/check_smali_references.py "$PROJECT_DIR"
-
-      - name: Reject duplicate or dangling Smali labels
-        run: python3 scripts/check_smali_labels.py "$PROJECT_DIR"
-
-      - name: Reject misplaced move-result instructions
-        run: python3 scripts/check_smali_move_result.py "$PROJECT_DIR"
-
-      - name: Reject zero-offset Smali branches
-        run: python3 scripts/check_smali_branch_offsets.py "$PROJECT_DIR"
-
-      - name: Reject verifier-unsafe object register moves
-        run: python3 scripts/check_smali_reference_moves.py "$PROJECT_DIR"
-
-      - name: Reject undefined register reads on any control flow path
-        run: python3 scripts/check_smali_register_flow.py "$PROJECT_DIR"
-
-      - name: Reject return-object values that fail ART verification
-        run: python3 scripts/check_smali_return_types.py "$PROJECT_DIR"
-
-      - name: Build unsigned APK with apktool
+      - name: Repack over the upstream entries
         shell: bash
         run: |
           set -euo pipefail
-          java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$RUNNER_TEMP/unsigned.apk"
-          ls -lh "$RUNNER_TEMP/unsigned.apk"
+          mkdir -p artifacts
+          python3 scripts/assemble_apk.py \
+            --project "$PROJECT_DIR" \
+            --source "$UPSTREAM_APK" \
+            --out "$RUNNER_TEMP/unsigned.apk"
 
       - name: Align, sign and verify
         id: sign
@@ -147,7 +204,6 @@ jobs:
         run: |
           set -euo pipefail
 
-          # ---- 定位 Android SDK build-tools（zipalign / apksigner / aapt2）----
           sdk="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
           bt="$(ls -d "$sdk"/build-tools/*/ 2>/dev/null | sort -V | tail -n 1 || true)"
           if [[ -z "${bt}" || ! -x "${bt}apksigner" ]]; then
@@ -159,42 +215,36 @@ jobs:
           fi
           echo "Using build-tools: $bt"
 
-          # ---- 准备签名密钥：优先使用仓库 Secrets，否则生成临时调试密钥 ----
-          if [[ -n "${KEYSTORE_BASE64}" ]]; then
-            if [[ -z "${KEYSTORE_PASSWORD}" || -z "${KEY_ALIAS}" ]]; then
-              echo "::error::配置了 KEYSTORE_BASE64 时，必须同时配置 KEYSTORE_PASSWORD 与 KEY_ALIAS"
-              exit 1
-            fi
-            ks="$RUNNER_TEMP/release.keystore"
-            printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ks"
-            KS_PASS="$KEYSTORE_PASSWORD"
-            [[ -n "${KEY_PASSWORD}" ]] && KEY_PASS="$KEY_PASSWORD" || KEY_PASS="$KEYSTORE_PASSWORD"
-            SIGN_MODE="release (Secrets keystore)"
-          else
-            ks="$RUNNER_TEMP/debug.keystore"
-            keytool -genkeypair -keystore "$ks" -storepass android -alias androiddebugkey \
-              -keypass android -dname "CN=Android Debug,O=Android,C=US" \
-              -keyalg RSA -keysize 2048 -validity 10000
-            KEY_ALIAS="androiddebugkey" KS_PASS="android" KEY_PASS="android"
-            SIGN_MODE="debug (ephemeral, generated in CI)"
-            echo "::warning::未配置签名 Secrets，已使用 CI 临时生成的调试密钥签名；该产物不可覆盖安装正式版本。"
+          # ---- 签名材料 ----
+          if [[ -z "${KEYSTORE_BASE64}" || -z "${KEYSTORE_PASSWORD}" || -z "${KEY_ALIAS}" ]]; then
+            echo "::error::needs KEYSTORE_BASE64, KEYSTORE_PASSWORD and KEY_ALIAS secrets; refusing to ship a debug-signed build"
+            exit 1
           fi
+          ks="$RUNNER_TEMP/release.keystore"
+          printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ks"
+          KS_PASS="$KEYSTORE_PASSWORD"
+          KEY_PASS="${KEY_PASSWORD:-$KEYSTORE_PASSWORD}"
           export KS_PASS KEY_PASS
+          SIGN_MODE="release (repository secrets)"
 
-          # ---- zipalign -> sign -> verify ----
           mkdir -p "$GITHUB_WORKSPACE/artifacts"
-          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-${{ steps.ver.outputs.version_name }}-rebuilt.apk"
+          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-${{ steps.ver.outputs.version_name }}-port.apk"
+
           "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
           "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
+          # apksigner emits v1+v2+v3 in one pass and refuses to leave the file
+          # unverifiable, which is the guarantee this build needs
           "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
             --ks-pass env:KS_PASS --key-pass env:KEY_PASS \
+            --min-sdk-version 26 \
             --out "$out" "$RUNNER_TEMP/aligned.apk"
           "${bt}apksigner" verify --verbose --print-certs "$out" | tee "$RUNNER_TEMP/apksigner-verify.txt"
+
           badging="$("${bt}aapt2" dump badging "$out")"
           printf '%s\n' "$badging" | sed -n '1,5p'
-          expected_package="package: name='com.boxproxy.box' versionCode='${EXPECTED_VERSION_CODE}' versionName='${EXPECTED_VERSION_NAME}'"
-          if ! grep -Fq -- "$expected_package" <<<"$badging"; then
-            echo "::error::APK badging mismatch; expected $expected_package"
+          expected="package: name='com.boxproxy.box' versionCode='${EXPECTED_VERSION_CODE}' versionName='${EXPECTED_VERSION_NAME}'"
+          if ! grep -Fq -- "$expected" <<<"$badging"; then
+            echo "::error::APK badging mismatch; expected $expected"
             printf '%s\n' "$badging"
             exit 1
           fi
@@ -206,6 +256,7 @@ jobs:
             echo "| 项目 | 值 |"
             echo "|---|---|"
             echo "| 包名 | \`com.boxproxy.box\` |"
+            echo "| 上游基线 | \`${UPSTREAM_VERSION}\` |"
             echo "| versionName / versionCode | ${{ steps.ver.outputs.version_name }} / ${{ steps.ver.outputs.version_code }} |"
             echo "| 签名模式 | ${SIGN_MODE} |"
             echo "| 产物 | \`$(basename "$out")\` ($(du -h "$out" | cut -f 1)) |"
@@ -215,7 +266,7 @@ jobs:
       - name: Upload APK artifact
         uses: actions/upload-artifact@v7
         with:
-          name: BoxProxy-${{ steps.ver.outputs.version_name }}-rebuilt
+          name: BoxProxy-${{ steps.ver.outputs.version_name }}-port
           path: artifacts/
           if-no-files-found: error
           retention-days: 30
@@ -232,7 +283,7 @@ jobs:
       - name: Download built APK
         uses: actions/download-artifact@v8
         with:
-          pattern: BoxProxy-*-rebuilt
+          pattern: BoxProxy-*-port
           path: artifacts
           merge-multiple: true
 
@@ -245,4 +296,4 @@ jobs:
           gh release create "${{ github.ref_name }}" artifacts/*.apk artifacts/*.sha256 \
             --repo "${{ github.repository }}" --verify-tag \
             --title "BoxProxy ${{ github.ref_name }}" \
-            --notes "由 GitHub Actions 从 upstream/26.11.19.bf82603 的 194 完整迁移候选回编译（apktool ${APKTOOL_VERSION} + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"
+            --notes "由 GitHub Actions 从上游 26.11.23.aa98568 回编译，并把已审阅的定制移植到该版本（apktool 汇编 classes.dex + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"

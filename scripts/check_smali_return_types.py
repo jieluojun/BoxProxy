@@ -16,6 +16,7 @@ is reported.  Unresolvable definitions make the check skip instead of
 guessing, so anything the verifier would accept stays silent.
 """
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -292,23 +293,58 @@ def check_file(path, root):
     return problems
 
 
+def scan(root):
+    """Every finding in a tree, keyed so two trees can be compared."""
+    found = {}
+    for path in sorted(root.rglob('*.smali')):
+        for problem in check_file(path, root):
+            found.setdefault(problem.rpartition(' (register')[0], set()).add(problem)
+    return found
+
+
 def main(argv):
-    if len(argv) != 2:
-        print('usage: check_smali_return_types.py <project-dir>', file=sys.stderr)
-        return 2
-    root = Path(argv[1])
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('root', type=Path)
+    parser.add_argument('--baseline', type=Path,
+                        help='tree the port started from; its findings are known good '
+                             'and are reported but not counted as failures')
+    args = parser.parse_args(argv[1:])
+
+    root = args.root
     if not root.is_dir():
         print('not a directory: %s' % root, file=sys.stderr)
         return 2
+    found = scan(root)
+    checked = sum(1 for _ in root.rglob('*.smali'))
+
+    inherited = {}
+    if args.baseline:
+        if not args.baseline.is_dir():
+            print('not a directory: %s' % args.baseline, file=sys.stderr)
+            return 2
+        inherited = scan(args.baseline)
+
     problems = []
-    checked = 0
-    for path in sorted(root.rglob('*.smali')):
-        checked += 1
-        problems.extend(check_file(path, root))
-    for problem in problems:
-        print(problem)
-    print('Checked %d Smali files, %d return-object conflicts'
-          % (checked, len(problems)))
+    carried = 0
+    for key in sorted(found):
+        # the same finding in the tree the port started from is that build's own
+        # business: it shipped and ran, so the verifier accepts it.  Only what the
+        # port adds is a regression this check is here to catch.
+        if key in inherited:
+            carried += len(found[key])
+            continue
+        problems.extend(sorted(found[key]))
+
+    for line in problems:
+        print(line)
+    if args.baseline:
+        print('Checked %d Smali files, %d return-object conflicts (%d carried over '
+              'from the baseline, %d introduced here)'
+              % (checked, carried + len(problems), carried, len(problems)))
+    else:
+        print('Checked %d Smali files, %d return-object conflicts'
+              % (checked, len(problems)))
     return 1 if problems else 0
 
 
