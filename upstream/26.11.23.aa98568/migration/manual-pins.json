@@ -169,15 +169,17 @@
    "insert": [
     "    move-result v16",
     "    if-nez v16, :boxproxy_entry_match",
-    "    const-string v16, \"-\"",
-    "    invoke-virtual {v14, v16}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;",
-    "    move-result-object v16",
-    "    invoke-virtual {v12, v16}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+    "    move-object/from16 v17, v14",
+    "    const-string v18, \"-\"",
+    "    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;",
+    "    move-result-object v17",
+    "    move-object/from16 v16, v12",
+    "    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
     "    move-result v16",
     "    if-eqz v16, :cond_1e",
     "    :boxproxy_entry_match"
    ],
-   "evidence": "the same match on the core-entry name inside the download coroutine. 214 swapped the equals operands (v12 is the file name, v14 the entry name read from Lii1;->c) and writes the result into the receiver register, which the customization still needs - so the block is written against 214 own allocation, with v16 as the temp (no register above v15 is read again anywhere later in the method) and :cond_1e as the skip target. the generic alignment kept the two upstream instructions the 194 hunk had replaced, so the test ran on a register the insertion never wrote; the reviewed block names the anchor and the pruned lines instead of hoping the score lines them up the anchor names the :goto_17 label in front of the call because R8 kept a second, unrelated Object->equals(v12, v14) pair later in the same coroutine"
+   "evidence": "the same match on the core-entry name inside the download coroutine. 214 swapped the equals operands (v12 is the file name, v14 the entry name read from Lii1;->c) and writes the result into the receiver register, which the customization still needs - so the block is written against 214 own allocation, on v16, v17 and v18, none of which is read again anywhere later in the method; the two calls are written in their /range form because the non-range invoke formats only encode registers v0-v15, which the assembler rejects outright and :cond_1e as the skip target. the generic alignment kept the two upstream instructions the 194 hunk had replaced, so the test ran on a register the insertion never wrote; the reviewed block names the anchor and the pruned lines instead of hoping the score lines them up the anchor names the :goto_17 label in front of the call because R8 kept a second, unrelated Object->equals(v12, v14) pair later in the same coroutine"
   }
  ],
  "mergedTypes": {
