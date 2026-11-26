@@ -88,18 +88,22 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 内核与 App 同一个 UID，必须把 App 排除在 VPN 之外，否则内核的出站连接会绕回 VPN。
 没有应用侧代理时，App 自己发的请求会绕过 TUN、直接走网络。
 
-**当前排查结论是候选根因，不是设备确认的事实：**214 的首页延迟和 WAN/IP API 使用独立静态 OkHttp 客户端，但共用默认客户端构造器。OkHttp 在构造客户端时把 `ProxySelector` 存进客户端字段；`VpnAppProxy` 则要等本地代理端口可连接后才 `activate()` 并更改系统默认 selector。这样，VPN 启动前已创建的默认客户端可能继续持有旧 selector，造成这些 Home 请求直连。迁移修复只改共同构造器的默认分支，让未显式配置 selector 的客户端持有稳定的 `VpnAppProxy.sel()` 实例；该实例按每次请求时的 `active` 状态选路，显式 selector 保持原样。迁移门已静态核对 Home 客户端、构造器、请求分发和 selector 路径，但这还没有证明真机上的根因或实际出站结果。
+**当前仍是候选解释，尚未设备确认：**你刚反馈刷新检查时只有 `google.com` 在内核日志中出现，其它域名没有事务。若当时 Mihomo 连接/访问日志确实正常开启，这表示其它请求没有到达 Mihomo（因此不是内核里的 `DIRECT` 规则结果）；但单凭“无记录”仍不能区分 App 没发起该请求、日志未记录，或连接绕过本地代理。
+
+静态追踪确认：首页延迟在 `fg` 里用 `Lav2.g`，WAN/IP 在 `ty2.g()` → `ty2.b()` 里用 `Lty2.e`；两者是不同的缓存 OkHttp 客户端。前一版只把默认 selector 改成稳定的 `VpnAppProxy.sel()`，但你报告它没有解决问题。新发现的缺口是：OkHttp 可能在再次调用 selector 之前，直接复用连接池里 VPN 启动前建立的同主机直连连接；稳定 selector 并不会自动清掉旧连接。候选修正是在这两个探针的每次请求中，VPN active 时克隆原 OkHttp 配置并换成 `maxIdleConnections=0` 的新连接池，同时保留当前 live selector；非 VPN 时仍使用原客户端。迁移门会核验两个请求都实际使用克隆客户端。这个机制与缺日志现象吻合，但仍不是已确认根因或已验证的出站结果；也不能用 `[app-proxy]` selector 日志代替 Mihomo 事务记录。
 
 - `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
   配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
 - `VpnAppProxy`：
   - 内核进程启动后还要等本地代理端口接受连接才置 `active`；无端口、超时或等待期间，请求仍可能直连，这是启动窗口/失败回退，不是本次 OkHttp 修复能消除的路径；
-  - 默认 OkHttp 客户端使用上述稳定 selector；本版本 `i94` 中的外部 URL 下载使用无参数 `URL.openConnection()` 创建 `HttpURLConnection`，未见应用自带的 selector 缓存或显式 `NO_PROXY`，它依赖进程默认 selector。静态验收确认了调用点和 activate/stop 的默认 selector 设置路径；URLConnection 实际采用 selector、连上本地端口并从 Mihomo 出口，仍需设备确认；
-  - `fz5` 的另一处 `URL.openConnection()` 来自 `ClassLoader.getResource()`，用于读取 classpath/JAR 本地资源，不是远端请求；
+  - 默认 OkHttp 客户端使用上述稳定 selector；首页延迟和 WAN/IP 两条探针路径还会在 VPN active 时用新的零 idle 连接池构造单次请求客户端，避免沿用 VPN 启动前的 OkHttp 直连池。其它 OkHttp 调用不受这项探针隔离改动影响；
+  - 本版本 `i94` 中的外部 URL 下载另走无参数 `URL.openConnection()` 创建 `HttpURLConnection`，未见显式 `Proxy.NO_PROXY`，依赖进程默认 selector。静态审计确认调用点与 activate/stop 的默认 selector 路径，但它实际采用 selector、是否复用平台连接、是否到达 Mihomo 仍需独立验证；
+  - `fz5` 的 `URL.openConnection()` 来自 `ClassLoader.getResource()`，用于读取 classpath/JAR 本地资源，不是远端请求；
   - Web 面板通过 `ProxyController` 设 WebView 代理覆盖，切换 HTTP/SOCKS loopback endpoint，并将 `127.0.0.1`、`localhost`、`<local>` 设为绕过项；停止 VPN 时清除覆盖。静态门检查这条调用链，但 WebView provider 支持及真实流量仍待设备验证。
+  - 扫描候选 Smali 的 Socket/HTTP 调用点：`a71` 的 Socket 是 OkHttp 路由连接实现，按 route 中的 `Proxy` 建连；`VpnAppProxy$T` 只用 Socket 探测本机代理端口；`VpnNet.openRelay` 直连 `127.0.0.1:<relayPort>`，用于实验内核的 TUN→SOCKS 转发。它们都不是 `fg`/`ty2` 的 Home 请求实现。扫描命中 `i94` 一处外部 `HttpURLConnection`、WebView 的独立代理覆盖，未找到 Cronet 调用点或另一处应用层 HTTP stack；反射/native 代码及真机行为不由这项静态扫描排除。
 - 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
 
-限制：直接用 Socket 或 Cronet 的请求不走该 selector；配置里启用了 `authentication` 且 127.0.0.1 不在
+限制：应用自建且不经 OkHttp/URLConnection/WebView 覆盖的 Socket 或 Cronet 请求不会走该 selector；候选中的 OkHttp `NO_PROXY` 用法位于 hostless/空 selector fallback，另有一个始终直连的 `hv4` fallback selector，但共享 client 构造器会先取非空的 `VpnAppProxy.sel()`（其 singleton 始终存在）。配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
 `mixed-port` 时，该端口也会对局域网开放。`proxying <host>` 只证明 selector 选择，不证明连接成功或 Mihomo 出口。需在真机验证。
 

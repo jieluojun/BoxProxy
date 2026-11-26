@@ -22,6 +22,8 @@ system-default selector snapshot in OkHttp's shared client constructor, reproduc
 the Home routing bypass this hop must prevent.  Row 21 removes global selector
 installation, which would leave direct HttpURLConnection requests on their old
 default; row 22 drops the WebView's local-host bypass from its ProxyController override.
+Rows 23 to 25 exercise the follow-up pool fix: the fresh pool must remain zero-idle,
+and both the Home latency and WAN/IP call sites must use the cloned client.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -348,6 +350,16 @@ MUTATIONS = [
      replace('invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;',
              'invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;'),
      r'shared app-proxy routing'),
+    ('active probe pool permits idle socket reuse', 'smali/com/box/app/vpn/VpnAppProxy.smali',
+     replace_first('new-instance v1, Lzy7;\n\n    const/4 v2, 0x0',
+                   'new-instance v1, Lzy7;\n\n    const/4 v2, 0x1'),
+     r'probe connection-pool isolation'),
+    ('Home latency request skips its fresh pool', 'smali/fg.smali',
+     replace('invoke-static {p0}, Lcom/box/app/vpn/VpnAppProxy;->probeClient(Llw4;)Llw4;',
+             'move-object p0, p0'), r'probe connection-pool isolation'),
+    ('WAN/IP request skips its fresh pool', 'smali/ty2.smali',
+     replace('invoke-static {p1}, Lcom/box/app/vpn/VpnAppProxy;->probeClient(Llw4;)Llw4;',
+             'move-object p1, p1'), r'probe connection-pool isolation'),
     ('direct URL loses the app-wide default selector', 'smali/com/box/app/vpn/VpnAppProxy.smali',
      replace_first('invoke-static {v1}, Ljava/net/ProxySelector;->setDefault('
                    'Ljava/net/ProxySelector;)V', 'nop'),

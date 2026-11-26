@@ -130,7 +130,8 @@ def main():
         # block stages its /range call through, the interface contract of the
         # copied custom classes, whose method definitions no reference map reaches,
         # the shared Home OkHttp route whose default selector would otherwise be
-        # frozen into each client at construction, the direct URL.openConnection
+        # frozen into each client, the active probes' fresh ConnectionPool that
+        # prevents pre-VPN direct sockets from being reused, the direct URL.openConnection
         # inventory and its process-default routing boundary, and the WebView
         # ProxyController activation/clear path.
         # The type walk is also run over the pristine 214 tree, which must report

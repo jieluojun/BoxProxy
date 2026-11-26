@@ -1021,6 +1021,136 @@ def check_shared_okhttp_app_proxy_route(args, pins, problems):
     return len(problems) == problems_before
 
 
+def check_probe_connection_pool_isolation(args, pins, problems):
+    """Prevent active Home/IP probes from reusing pre-VPN OkHttp connections.
+
+    A live ProxySelector is only consulted when OkHttp selects a route. A
+    same-host connection already in the pool can be eligible before that call,
+    so changing the selector alone does not invalidate a direct route created
+    while the VPN was inactive. The two app-owned probes therefore clone their
+    configured client with a fresh zero-idle pool while active.
+    """
+    problems_before = len(problems)
+    name = 'probe connection-pool isolation'
+    contract = (pins.get('runtimeContracts') or {}).get('probeConnectionPoolIsolation')
+
+    def fail(detail):
+        problems.append((name, detail))
+
+    if not isinstance(contract, dict):
+        fail('manual-pins.json has no reviewed probeConnectionPoolIsolation runtime contract')
+        return False
+
+    helper_path = args.output / contract.get('helperFile', '')
+    helper_text = helper_path.read_text(errors='replace') if helper_path.is_file() else ''
+    helper = method_blocks(helper_text).get(contract.get('helperMethod', ''))
+    if helper is None:
+        fail('VpnAppProxy.probeClient(Llw4;)Llw4; is missing')
+        return False
+
+    helper_lines = [line.split('#', 1)[0].strip() for line in helper.splitlines()]
+    code = [smali_liveness.code(line) for line in helper_lines]
+    code = [line for line in code if line]
+    active_field = contract.get('activeField', '')
+    builder_call = contract.get('clientBuilderCall', '')
+    pool_field = contract.get('builderPoolField', '')
+    pool_ctor = contract.get('poolConstructor', '')
+    client_ctor = contract.get('clientConstructor', '')
+    helper_path_tokens = [
+        'sget-boolean v0, ' + str(active_field),
+        'if-eqz v0, :cond_probe_direct',
+        'invoke-virtual {p0}, ' + str(builder_call),
+        'move-result-object v0',
+        'new-instance v1, Lzy7;',
+        'const/4 v2, 0x' + format(int(contract.get('poolIdleLimit', -1)), 'x'),
+        'const-wide/16 v3, 0x1',
+        'sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;',
+        'invoke-direct {v1, v2, v3, v4, v5}, ' + str(pool_ctor),
+        'iput-object v1, v0, ' + str(pool_field),
+        'new-instance v1, Llw4;',
+        'invoke-direct {v1, v0}, ' + str(client_ctor),
+        'return-object v1',
+        'return-object p0',
+    ]
+    positions = [next((index for index, line in enumerate(code) if line == token), None)
+                 for token in helper_path_tokens]
+    label_positions = [index for index, line in enumerate(helper_lines)
+                       if line == ':cond_probe_direct']
+    branch_to_inactive = any(line == 'if-eqz v0, :cond_probe_direct' for line in code)
+    target_code = ([smali_liveness.code(line)
+                    for line in helper_lines[label_positions[0] + 1:]
+                    if smali_liveness.code(line)] if len(label_positions) == 1 else [])
+    inactive_return_at_target = target_code == ['return-object p0']
+    if (any(index is None for index in positions) or positions != sorted(positions)
+            or not branch_to_inactive or not inactive_return_at_target):
+        fail('probeClient must return the original client while inactive and, while active, clone '
+             'its configuration with a fresh zero-idle ConnectionPool')
+
+    app_proxy = 'Lcom/box/app/vpn/VpnAppProxy;'
+    helper_call = app_proxy + '->probeClient(Llw4;)Llw4;'
+    request_items = contract.get('requests')
+    if not isinstance(request_items, list) or len(request_items) != 2:
+        fail('the runtime contract must enumerate both Home latency and WAN/IP request paths')
+        request_items = request_items if isinstance(request_items, list) else []
+    for item in request_items:
+        request_file = item.get('file', '')
+        request_path = args.output / request_file
+        request_text = request_path.read_text(errors='replace') if request_path.is_file() else ''
+        method = method_blocks(request_text).get(item.get('method', ''))
+        client_field = item.get('clientField', '')
+        if method is None:
+            fail('%s no longer has its pinned request method' % request_file)
+            continue
+        request_code = [smali_liveness.code(line) for line in method.splitlines()]
+        request_code = [line for line in request_code if line]
+        load = next((index for index, line in enumerate(request_code)
+                     if line.startswith('sget-object ') and client_field in line), None)
+        call = next((index for index, line in enumerate(request_code)
+                     if line.startswith('invoke-static {') and helper_call in line), None)
+        if load is None or call is None or call <= load:
+            fail('%s must pass its cached client through probeClient' % request_file)
+            continue
+        load_match = re.match(r'^sget-object (\S+),', request_code[load])
+        call_match = re.match(r'^invoke-static \{([^}]+)\},', request_code[call])
+        if not load_match or not call_match or load_match.group(1) != call_match.group(1).strip():
+            fail('%s must pass the loaded client register to probeClient' % request_file)
+            continue
+        result_index = call + 1
+        client_register = call_match.group(1).strip()
+        if (result_index >= len(request_code)
+                or request_code[result_index] != 'move-result-object ' + client_register):
+            fail('%s must use probeClient\'s returned client, not discard it' % request_file)
+            continue
+        call_index = next((index for index in range(result_index + 1, len(request_code))
+                           if 'Lpu5;-><init>' in request_code[index]), None)
+        if call_index is None or call_index <= result_index:
+            fail('%s must construct the OkHttp call after selecting the active-mode client'
+                 % request_file)
+            continue
+        invoke = request_code[call_index]
+        registers = re.search(r'invoke-direct(?:/range)?\s+\{([^}]+)\}', invoke)
+        if not registers or client_register not in [part.strip()
+                                                     for part in registers.group(1).split(',')]:
+            fail('%s no longer builds the OkHttp call with the helper-returned client'
+                 % request_file)
+
+    # Manual pins are the durable migration recipe. Require the helper and both
+    # call-site edits there, not just in the generated scratch tree.
+    fixups = pins.get('scopedFixups') or {}
+    helper_fixups = fixups.get(contract.get('helperFile'), [])
+    if not any(contract.get('helperMethod', '') in item.get('right', '')
+               and item.get('evidence') for item in helper_fixups):
+        fail('the durable VpnAppProxy helper fixup is missing from manual-pins.json')
+    for item in request_items:
+        file_fixups = fixups.get(item.get('file', ''), [])
+        if not any(helper_call in fixup.get('right', '') and fixup.get('evidence')
+                   for fixup in file_fixups):
+            fail('the durable probeClient call-site fixup is missing for %s'
+                 % item.get('file', 'unknown'))
+
+    return len(problems) == problems_before
+
+
 def check_direct_url_open_connections(args, pins, problems):
     """Inventory direct URLConnection sites and prove their app-proxy boundary.
 
@@ -2618,6 +2748,7 @@ def main():
     check_pinned_fields(pins, args, problems)
     check_custom_surfaces(args.output, problems)
     route_ok = check_shared_okhttp_app_proxy_route(args, pins, problems)
+    probe_pool_ok = check_probe_connection_pool_isolation(args, pins, problems)
     direct_url_ok = check_direct_url_open_connections(args, pins, problems)
     webview_ok = check_webview_app_proxy(args, pins, problems)
     flow = check_type_flow(touched, args.output, problems)
@@ -2658,12 +2789,13 @@ def main():
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
           '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d, '
-          'emitter methods: %d, shared app-proxy route: %s, direct URL audit: %s, '
-          'WebView route: %s; findings: %d'
+          'emitter methods: %d, shared app-proxy route: %s, probe pool isolation: %s, '
+          'direct URL audit: %s, WebView route: %s; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
              staging, impl_missing, impl_control, emitters, 'ok' if route_ok else 'FAILED',
-             'ok' if direct_url_ok else 'FAILED', 'ok' if webview_ok else 'FAILED', len(problems)))
+             'ok' if probe_pool_ok else 'FAILED', 'ok' if direct_url_ok else 'FAILED',
+             'ok' if webview_ok else 'FAILED', len(problems)))
     return 1 if problems else 0
 
 

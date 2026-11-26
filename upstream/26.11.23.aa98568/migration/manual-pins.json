@@ -102,7 +102,28 @@
       {
         "wrong": "    invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;",
         "right": "    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;",
-        "evidence": "the 214 shared OkHttp client constructor caches ProxySelector.getDefault() in every default client, while VPN activation changes only the process default later; the Home latency client Lav2.g, WAN/IP client Lty2.e, and other default OkHttp clients all use this constructor with a null builder selector. Bind that common default once to VpnAppProxy.sel(), whose singleton selects dynamically from VpnAppProxy.active, so clients created before or after activation share the live app-proxy route. The existing non-null builder-selector branch stays intact, and HttpURLConnection/WebView keep their separate existing app-proxy paths. This repairs the shared route, not an individual probe retry or its selector log."
+        "evidence": "the 214 shared OkHttp client constructor caches ProxySelector.getDefault() in every default client, while VPN activation changes only the process default later; the Home latency client Lav2.g, WAN/IP client Lty2.e, and other default OkHttp clients all use this constructor with a null builder selector. Bind that common default once to VpnAppProxy.sel(), whose singleton selects dynamically from VpnAppProxy.active, while preserving the existing non-null builder-selector branch. This changes route selection for new connections only; it does not invalidate pre-VPN sockets already in the OkHttp pool."
+      }
+    ],
+    "smali/com/box/app/vpn/VpnAppProxy.smali": [
+      {
+        "wrong": "# Appends a line to runs.log.\n.method public static log",
+        "right": ".method public static probeClient(Llw4;)Llw4;\n    .locals 6\n\n    sget-boolean v0, Lcom/box/app/vpn/VpnAppProxy;->active:Z\n\n    if-eqz v0, :cond_probe_direct\n\n    invoke-virtual {p0}, Llw4;->a()Lkw4;\n\n    move-result-object v0\n\n    new-instance v1, Lzy7;\n\n    const/4 v2, 0x0\n\n    const-wide/16 v3, 0x1\n\n    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;\n\n    invoke-direct {v1, v2, v3, v4, v5}, Lzy7;-><init>(IJLjava/util/concurrent/TimeUnit;)V\n\n    iput-object v1, v0, Lkw4;->b:Lzy7;\n\n    new-instance v1, Llw4;\n\n    invoke-direct {v1, v0}, Llw4;-><init>(Lkw4;)V\n\n    return-object v1\n\n    :cond_probe_direct\n    return-object p0\n.end method\n\n# Appends a line to runs.log.\n.method public static log",
+        "evidence": "the live selector fix cannot make OkHttp consult ProxySelector.select() when it reuses an already pooled direct connection. In this release Lzy7 is OkHttp's ConnectionPool and Llw4.a() clones the existing client's full configuration. For active VPN probe calls, clone that configuration with a fresh pool whose maxIdleConnections is zero; the clone keeps the same live selector but cannot reuse pre-activation direct sockets. When inactive, return the original client unchanged."
+      }
+    ],
+    "smali/fg.smali": [
+      {
+        "wrong": "    invoke-static {}, Ljava/lang/System;->nanoTime()J\n\n    .line 200\n    .line 201\n    .line 202\n    move-result-wide v2\n\n    .line 203\n    sget-object p0, Lav2;->g:Llw4;\n\n    .line 204\n    .line 205\n    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;\n\n    .line 206\n    .line 207\n    .line 208\n    new-instance v0, Lpu5;",
+        "right": "    sget-object p0, Lav2;->g:Llw4;\n\n    invoke-static {p0}, Lcom/box/app/vpn/VpnAppProxy;->probeClient(Llw4;)Llw4;\n\n    move-result-object p0\n\n    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;\n\n    invoke-static {}, Ljava/lang/System;->nanoTime()J\n\n    .line 200\n    .line 201\n    .line 202\n    move-result-wide v2\n\n    .line 206\n    .line 207\n    .line 208\n    new-instance v0, Lpu5;",
+        "evidence": "fg builds each Home latency call from Lav2.g. Pass the cached client through probeClient before starting the latency timer so active VPN tests get a fresh zero-idle connection pool without including client-clone overhead in the measured network time."
+      }
+    ],
+    "smali/ty2.smali": [
+      {
+        "wrong": "    sget-object p1, Lty2;->e:Llw4;\n\n    .line 73\n    .line 74\n    new-instance p2, Lny5;",
+        "right": "    sget-object p1, Lty2;->e:Llw4;\n\n    invoke-static {p1}, Lcom/box/app/vpn/VpnAppProxy;->probeClient(Llw4;)Llw4;\n\n    move-result-object p1\n\n    .line 73\n    .line 74\n    new-instance p2, Lny5;",
+        "evidence": "ty2.b executes the WAN/IP request through the cached Lty2.e client. Replace only the per-call client while VPN mode is active, before constructing the OkHttp call; the fresh pool prevents an earlier direct connection from being reused."
       }
     ]
   },
@@ -136,7 +157,30 @@
       "routeSelectorField": "Lq7;->g:Ljava/net/ProxySelector;",
       "selectorCallFile": "smali/bv5.smali",
       "selectorImplFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
-      "evidence": "214 Home latency and WAN/IP calls use the two listed static clients; both are lazy default clients from xc0.a. OkHttp stores the chosen selector in Llw4.l; pu5 passes it to Lav5, wk0 carries Lav5.p into q7.g, and bv5 calls ProxySelector.select. VpnAppProxy.sel() returns its singleton; select() reads active on every request, delegates to orig while inactive, keeps local endpoints direct, and sends active external requests to the configured loopback proxy."
+      "evidence": "214 Home latency and WAN/IP calls use the two listed static clients; both are lazy default clients from xc0.a. OkHttp stores the chosen selector in Llw4.l; pu5 passes it to Lav5, wk0 carries Lav5.p into q7.g, and bv5 calls ProxySelector.select when selecting a new route. VpnAppProxy.sel() returns its singleton; select() reads active, delegates to orig while inactive, keeps local endpoints direct, and selects the configured loopback proxy for active external routes. A pooled same-host connection can be reused before select() runs again, so this selector trace alone is not proof of the actual transaction route."
+    },
+    "probeConnectionPoolIsolation": {
+      "helperFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
+      "helperMethod": "probeClient(Llw4;)Llw4;",
+      "activeField": "Lcom/box/app/vpn/VpnAppProxy;->active:Z",
+      "clientBuilderCall": "Llw4;->a()Lkw4;",
+      "builderPoolField": "Lkw4;->b:Lzy7;",
+      "poolConstructor": "Lzy7;-><init>(IJLjava/util/concurrent/TimeUnit;)V",
+      "poolIdleLimit": 0,
+      "clientConstructor": "Llw4;-><init>(Lkw4;)V",
+      "requests": [
+        {
+          "file": "smali/fg.smali",
+          "method": "v(Ljava/lang/Object;)Ljava/lang/Object;",
+          "clientField": "Lav2;->g:Llw4;"
+        },
+        {
+          "file": "smali/ty2.smali",
+          "method": "b(Ljava/lang/String;Ljava/lang/String;ZLyd1;)Ljava/lang/Object;",
+          "clientField": "Lty2;->e:Llw4;"
+        }
+      ],
+      "evidence": "The route selector is consulted only when OkHttp chooses a route. In this release qu5.e() can reuse a same-host pooled connection when the immutable Address still matches; the stable VpnAppProxy selector object is the same before and after activation, while an existing direct route is stored on the connection. For only the two Home/IP probe call sites, probeClient clones the full OkHttp client configuration and swaps in a ConnectionPool with maxIdleConnections=0 while active. The clone retains the live ProxySelector but cannot borrow a pre-VPN direct socket; outside VPN mode the helper returns the original client. This is a migration-safe candidate fix, not runtime proof that the device has installed or exercised it."
     },
     "directUrlOpenConnections": {
       "openConnectionPrefix": "Ljava/net/URL;->openConnection(",
