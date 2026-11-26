@@ -1,0 +1,9 @@
+{
+ "note": "Deltas of the 194 customized tree that are not replayed onto 26.11.23 because the construct they call no longer exists; each has to be re-implemented by hand before it can return.",
+ "excluded": [
+  {
+   "old": "Lbq4;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "reason": "the whole delta is the battery toggle row: it calls Lms6;->a(ZLfa2;String;Lyz0;ZLib2;III)V, the composable switch row of the 194 settings page. 214 reworked that class (its Lms6; namesake is an unrelated R8 reuse holding 5 methods) and no 214 class takes the same row arguments, so the row would compile against the wrong method and crash at runtime. The BattToggle/VpnPrefs helpers stay in the tree; only the row emission is withheld, until it is rewritten against the 214 row emitter."
+  }
+ ]
+}

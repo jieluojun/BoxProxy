@@ -1,0 +1,30 @@
+{
+  "versionName": "26.11.23.aa98568",
+  "versionCode": 214,
+  "packageName": "com.boxproxy.box",
+  "abi": "arm64-v8a",
+  "inputFile": "BoxProxy-26.11.23.aa98568-arm64-v8a.apk",
+  "inputSha256": "4ea0be53488ec5d9eda190c1a04c3420c2ec427a15c30496e7d88e8c5a7ad774",
+  "apktoolVersion": "2.9.3",
+  "apktoolSha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4",
+  "baselineCommit": "2826da30e963a18a1d78519dc69ed499ca2b642b",
+  "customizedCommit": "2826da30e963a18a1d78519dc69ed499ca2b642b",
+  "sourceArchive": "apktool-source.tar.gz",
+  "sourceArchiveSha256": "369735385e09a1fca3b6573f79fe542b694f31d8f9e5db8835a942f2206a888d",
+  "sourceFileCount": 9983,
+  "sourceBytes": 119390979,
+  "status": "decoded-pending-custom-migration",
+  "migration": {
+    "status": "planned",
+    "plan": "migration/coverage.json",
+    "classMap": "migration/class-map.json",
+    "classMapOverrides": "migration/class-map-overrides.json",
+    "classMapReview": "migration/class-map-review.json",
+    "manualPins": "migration/manual-pins.json",
+    "deltaGaps": "migration/delta-gaps.json",
+    "generator": "scripts/migrate_214.py",
+    "sourceSnapshot": "upstream/26.11.19.bf82603",
+    "runtimeProjectReplaced": false,
+    "androidDeviceVerified": false
+  }
+}

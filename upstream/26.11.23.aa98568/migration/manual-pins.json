@@ -1,0 +1,70 @@
+{
+ "note": "Reviewed placement data of the 194 -> 214 hop. The porter replays the tree delta generically and consults this file for the handful of decisions that cannot be derived from a score: a reference the class map cannot name, a field the customization introduces, an insertion whose anchor the alignment could land one instruction off. Every entry states the evidence, and the porter proves each one resolves in both trees and fires exactly once.",
+ "types": {},
+ "fields": {
+  "Lef5;->t:Lef5;": {
+   "new": "Lbr5;->t:Lbr5;",
+   "evidence": "the customization appends a seventh vpn mode constant to the enum; 194 Lef5; had k..p upstream plus the added t, 214 spells the same enum as Lbr5; with j..o, so the added constant continues the shifted lettering at t (Lbr5; declares no t field, and its <clinit> is replaced by the replayed Lef5;-><clinit>()V hunk that assigns it)"
+  },
+  "Lzh5;->i:Lql6;": {
+   "new": "Lju5;->h:Lpz6;",
+   "evidence": "VpnPrefs reads the captured StateFlow out of the continuation wrapper it hands to a coroutine: 194 Lzh5;->i:Lql6;, and the 214 image of that wrapper (Lju5;, see the class map review) names the same captured field h:Lpz6; - the letter differs because R8 renamed the wrapper, not because the slot did"
+  }
+ },
+ "members": {
+  "Lya3;->c0(ILib2;)Ljava/lang/String;": {
+   "new": "Lxl3;->U(ILzi2;)Ljava/lang/String;",
+   "evidence": "the string-resource lookup the settings rows use; 214 has no Lti3;->c0, and Lxl3;->U is its image (same int-id plus parameter object shape, called from the same row builders)"
+  },
+  "Lgn;->p(Lu92;Lw04;ZZJFFFLyz0;Lib2;II)V": {
+   "new": "Ldw;->i(Llh2;Lbb4;ZZJFFFLs21;Lzi2;II)V",
+   "evidence": "the compose Row intrinsic CfgNav calls; R8 rewrote its body so no digest matches, and of the two methods with that shape Ldw;->i and Lla4;->b, only Ldw;->i takes the Ls21; (image of Lyz0;) slot argument the call site passes - Lla4;->b takes Lai2;"
+  },
+  "Lmm;->X(ILra2;Lib2;)Lyz0;": {
+   "new": "Lix;->u0(ILii2;Lzi2;)Ls21;",
+   "evidence": "the remember/derivedStateOf facade the config editor navigation uses; Lmm; has no 214 image class, and Lix;->u0 is the only static with that mapped signature"
+  },
+  "Lhs;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J": {
+   "new": "Lnx;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+   "evidence": "the stream copy helper used by the config export/import paths: Lhs; is a name R8 reused in 214 for an unrelated 2-method class, while Lnx;->C has the identical body and signature (the merge that also took Lmm; into Lix;)"
+  },
+  "Lj23;->q(Ljava/lang/Object;Ljava/lang/Object;)Z": {
+   "new": "Lob3;->s(Ljava/lang/Object;Ljava/lang/Object;)Z",
+   "evidence": "null-safe equality: 214 reuses the name Lj23; for a class with 4 methods and no identical body; the inlined home of the helper is Lob3;, whose s(Object,Object)Z is it"
+  },
+  "Lnn;->t()Landroid/content/Context;": {
+   "new": "Lob3;->B()Landroid/content/Context;",
+   "evidence": "the application-context accessor the same custom code reaches for; it lives in the same class the equality helper was inlined into"
+  },
+  "Lsa3;->Q(Ljava/lang/Object;)Lgx4;": {
+   "new": "Lml3;->B(Ljava/lang/Object;)Lz75;",
+   "evidence": "the result-wrapping call of the root-service bridge (Lgx4; -> Lz75;)"
+  },
+  "Lsa3;->G(Lib2;)Luv0;": {
+   "new": "Lrj3;->H(Lzi2;)Lny0;",
+   "evidence": "the flow-collection call of the same bridge; Lrj3;->M(Lzi2;)Lkr7; is the decoy with the same arity"
+  }
+ },
+ "addedFields": [
+  {
+   "class": "Lbr5;",
+   "declaration": ".field public static final enum t:Lbr5;",
+   "evidence": "the customization appends a seventh vpn mode constant to the enum; 194 Lef5; had k..p upstream plus the added t, 214 spells the same enum as Lbr5; with j..o, so the added constant continues the shifted lettering at t (Lbr5; declares no t field, and its <clinit> is replaced by the replayed Lef5;-><clinit>()V hunk that assigns it)"
+  },
+  {
+   "class": "Lh96;",
+   "declaration": ".field public cfgD:Z",
+   "evidence": "the config-dirty flag the 194 customization added to the config object (Lfw5;->cfgD:Z); 214 spells that class as Lh96; and its field list stops at y:Lz75;, so the flag has to be re-introduced"
+  }
+ ],
+ "referenceFixups": [],
+ "scopedFixups": {},
+ "windowRewrites": [],
+ "placements": [],
+ "mergedTypes": {
+  "Lln;": "the matcher maps Lln; to Lix;; the reviewed coverage target Lmm0;->H -> Lix;->F shares it",
+  "Lmm0;": "R8 dissolved this static facade into Lix;; the one member the customization needs is supplied as a reviewed coverage target, so Lix; legitimately has two owners"
+ },
+ "rules": [],
+ "checks": []
+}

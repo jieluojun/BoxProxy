@@ -1,0 +1,60 @@
+{
+ "note": "Reviewed 194 -> 214 class decisions. Each entry records why the machine could not decide, so the next release can re-check the reasoning instead of inheriting a bare name.",
+ "classes": {
+  "Lr85;": [
+   "Ljk5;",
+   "the compose settings-list class that receives the config-icon hunk: unique string payloads of the 194 body appear only in Ljk5;"
+  ],
+  "Lcc3;": [
+   "Lck3;",
+   "find_method_home: the 194 Lcc3; method n0 body lives in 214 Lck3;->n0"
+  ],
+  "Lm46;": [
+   "Lpm6;",
+   "find_method_home: the K() entry point of the 194 facade is 214 Lpm6;->K"
+  ],
+  "Lep3;": [
+   "Lyj3;",
+   "find_method_home: the S() entry point of the 194 facade is 214 Lyj3;->S"
+  ],
+  "Lan4;": [
+   "Ltx4;",
+   "required by the config editor; no unique-body proof, resolved through its string payloads and its referrers"
+  ],
+  "Lup2;": [
+   "Lwy2;",
+   "required by the config editor; resolved with the same evidence as Lan4;"
+  ],
+  "Lpa1;": [
+   "Lba1;",
+   "the vpn entry-filter lambda: Lba1;->c is the only 214 method that both casts to the vpn mode enum Lbr5; before Enum->ordinal()I and matches the 194 body with a masked ratio of 0.816 over 895 instructions; the earlier candidate Lje1;->c (375 instructions, no Lbr5; reference) is a different lambda"
+  ],
+  "Ljn;": [
+   "Ldv;",
+   "the status probe class: 214 Ldv;->L(String,String,Ljf1;,String,String,String,String,String,Long,Long,J)Z is the only method in the tree with that parameter shape and Ldv; also holds 4 of the Ljn; bodies; Ldv; was free in the map"
+  ],
+  "Lj85;": [
+   "Lbk5;",
+   "the restore-menu lambda holder: Lj85; declares exactly <init>(Lu92;Lu92;Lu92;B)V and invoke(Object,Object)Object, and 214 Lbk5; declares exactly the same two methods with the captured argument types remapped (Llh2;) and identical masked bodies; Lbk5; is otherwise free in the map"
+  ],
+  "Lzh5;": [
+   "Lju5;",
+   "the continuation wrapper VpnPrefs reaches into: Lzh5; declares exactly <init>(Lql6;Lal6;)V, a(Lx42;Lea1;)Object, b(Ldf1;ILaf0;)Lw42; and getValue()Object, and 214 Lju5; declares the same four with every captured type remapped (Lql6;->Lpz6;, Lal6;->Lzy6;, Lx42;->Lkc2;, Lea1;->Lxd1;); Law; (the image of Lmv;) holds it in field f, and Lju5; is free in the map"
+  ]
+ },
+ "evicted": [
+  "Ll46;"
+ ],
+ "evictionEvidence": {
+  "Ll46;": "the matcher claimed Lpm6; for Ll46;, but the facade member the customization calls belongs to Lm46;; R8 reused the Lpm6; name"
+ },
+ "mergedTypes": {},
+ "facadePolicy": "A class map has to stay one-to-one: both scripts/validate_class_map.py and the porter depend on it to make a rename reversible. R8 merges a facade into its call site's class, so the members the customization calls are mapped by an explicit member pin (or by a reviewed coverage target), and the facade class itself is left unmapped - Lgn;, Lmm;, Lmm0;, Lj23;, Lms6; - rather than crowding a second owner out of the target class.",
+ "unmappedFacades": {
+  "Lgn;": "absorbed: 214 has no class with the Lgn; body set; its use is the modeRes facade chain in Ljk5;",
+  "Lmm;": "absorbed into Lix;; Lmm;->X(ILra2;Lib2;)Lyz0; is pinned to Lix;->u0(ILii2;Lzi2;)Ls21;",
+  "Lmm0;": "absorbed into Lix;; H(Lle1;)Lwe1; is a reviewed coverage target (Lix;->F(Lii1;)Lti1;)",
+  "Lj23;": "inlined into Lob3;; q(Object,Object)Z is pinned to Lob3;->s(Object,Object)Z",
+  "Lms6;": "the battery-row composable: no 214 class holds its body set and its parameter shape is not reproduced anywhere, so the row is not re-anchored by a blind class-level guess"
+ }
+}

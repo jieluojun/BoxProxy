@@ -17,6 +17,7 @@ guessing, so anything the verifier would accept stays silent.
 """
 
 import re
+import argparse
 import sys
 from pathlib import Path
 
@@ -293,22 +294,39 @@ def check_file(path, root):
 
 
 def main(argv):
-    if len(argv) != 2:
-        print('usage: check_smali_return_types.py <project-dir>', file=sys.stderr)
+    parser = argparse.ArgumentParser(
+        description='Report return-object instructions whose register can reach the '
+                    'method as a different type. With --baseline, findings that the '
+                    'upstream tree already carries are subtracted: a port must not be '
+                    'blamed for a conflict it did not introduce, and a release can add '
+                    'one of its own.')
+    parser.add_argument('project', type=Path)
+    parser.add_argument('--baseline', type=Path,
+                        help='unmodified upstream tree whose findings are subtracted')
+    args = parser.parse_args(argv[1:])
+    if not args.project.is_dir():
+        print('not a directory: %s' % args.project, file=sys.stderr)
         return 2
-    root = Path(argv[1])
-    if not root.is_dir():
-        print('not a directory: %s' % root, file=sys.stderr)
-        return 2
-    problems = []
-    checked = 0
-    for path in sorted(root.rglob('*.smali')):
-        checked += 1
-        problems.extend(check_file(path, root))
+
+    def scan(root):
+        found = []
+        for path in sorted(root.rglob('*.smali')):
+            found.extend(check_file(path, root))
+        return found
+
+    problems = scan(args.project)
+    checked = len(list(args.project.rglob('*.smali')))
+    known = set(scan(args.baseline)) if args.baseline else set()
+    if args.baseline:
+        introduced = [problem for problem in problems if problem not in known]
+        for problem in introduced:
+            print(problem)
+        print('Checked %d Smali files, %d return-object conflicts, %d already present in '
+              '%s' % (checked, len(problems), len(problems) - len(introduced), args.baseline))
+        return 1 if introduced else 0
     for problem in problems:
         print(problem)
-    print('Checked %d Smali files, %d return-object conflicts'
-          % (checked, len(problems)))
+    print('Checked %d Smali files, %d return-object conflicts' % (checked, len(problems)))
     return 1 if problems else 0
 
 
