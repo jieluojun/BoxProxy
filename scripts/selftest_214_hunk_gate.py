@@ -374,6 +374,11 @@ MUTATIONS = [
      replace('if-nez v2, :cond_vpn_run_dir_bad',
              'if-eqz v2, :cond_vpn_run_dir_bad'),
      r'vpn_run_dir_ownership_repair'),
+    ('root run-dir repair uses the wrong Android identity',
+     'smali/com/box/app/vpn/VpnBridge.smali',
+     replace('Landroid/system/Os;->getuid()I',
+             'Landroid/system/Os;->getpid()I'),
+     r'vpn_run_dir_ownership_repair'),
 ]
 
 

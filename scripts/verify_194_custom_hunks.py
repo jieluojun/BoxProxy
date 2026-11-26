@@ -417,18 +417,24 @@ def check_vpn_run_dir_ownership_repair(output, problems):
         'Ljava/io/File;->canWrite()Z',
         'Ljava/io/File;->canExecute()Z',
         'const-string v2, "runs.log"',
-        'Landroid/content/Context;->getFilesDir()Ljava/io/File;',
-        'stat -c %u:%g',
-        'chown $_owner',
-        'chmod u+rwx',
-        'chown -R $_owner',
-        'chmod -R u+rwX',
+        'Landroid/system/Os;->getuid()I',
+        'Landroid/system/Os;->getgid()I',
+        '/system/bin/mkdir -p',
+        '/system/bin/chown -R',
+        '/system/bin/chmod -R u+rwX',
+        '2>> \'"',
+        'VpnPrefs;->note(Ljava/lang/String;)V',
         'const-string v8, "su"',
         'const-string v8, "-c"',
         'const-wide/16 v8, 0x1e',
         'VpnShell;->code(Ljava/util/List;J)I',
         'if-nez v2, :cond_vpn_run_dir_bad',
     ), 'run-directory repair', problems, name)
+
+    if 'stat -c %u:%g' in bridge or 'Landroid/content/Context;->getFilesDir()Ljava/io/File;' in bridge:
+        problems.append((name, 'run-directory owner must come from android.system.Os.getuid/getgid, not shell stat'))
+    if 'VPN run-dir repair: su exit=' not in bridge or '2>> ' not in bridge:
+        problems.append((name, 'root repair must log its su result and shell diagnostics'))
 
     shell_path = output / 'smali/com/box/app/vpn/VpnShell.smali'
     shell_code = method_text(shell_path, 'code(Ljava/util/List;J)I') if shell_path.is_file() else ''
