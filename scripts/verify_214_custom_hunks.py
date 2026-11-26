@@ -106,6 +106,14 @@ Gate 11 - the interface contract of the copied custom surface.  A customization 
 that implements one of the release's interfaces has to answer the member the release
 calls it by; references are translated by the maps, definitions are not, and ART does not
 require a concrete class to implement its interfaces, so only a device dispatch notices.
+
+Gate 12 - the instructions our own copied emitter runs.  A customization that hands the
+core a *string* has to build it with instructions that mean what the Java they were written
+from says, and copying is exactly the step that no map audits: gate 11 checks a definition's
+name, this one checks its body.  Two traps, both shipped: a 2-int/lit16 whose literal is
+read as signed, and a list separator whose guard tests the index the wrong way round.
+Neither is a shape the release could be blamed for, and the control for both is zero on the
+194 tree that shipped working.
 """
 
 import argparse
@@ -1992,6 +2000,101 @@ def check_custom_interface_implementations(output, custom, added, problems):
                          % (desc, owner, name, proto)))
     return len(missing), len(control)
 
+
+LITERAL_TRAP = re.compile(r'^((?:and|or|xor)-int/lit(8|16))\s+\S[^,]*,\s*\S[^,]*,\s*(-?0x[0-9a-fA-F]+)$')
+LIST_OPENER = re.compile(r'^const-string(?:/jumbo)? \S+, "([A-Z][A-Za-z0-9_$.]*,\()"$')
+SEPARATOR = re.compile(r'^const-string(?:/jumbo)? \S+, ","$')
+APPEND = re.compile(r'->append\(Ljava/lang/String;\)Ljava/lang/StringBuilder;')
+SKIP_GUARD = re.compile(r'^if-(nez|eqz|lez|ltz|gez|gtz) ([vp]\d+), :([A-Za-z0-9_$]+)$')
+ZERO_START = re.compile(r'^const/4 ([vp]\d+), 0x0$')
+ONE_STEP = re.compile(r'^add-int/lit8 ([vp]\d+), \1, 0x1$')
+
+
+def check_copied_emitters(output, added, problems):
+    """A string this project hands to the core is only as good as the instructions that build it.
+
+    The custom surface reaches the release in two ways: as references, which the maps
+    translate and gates 1 to 11 audit, and as *code the core runs on our behalf* - a class
+    that builds a config string and writes it where the release will read it.  That second
+    half is copied byte for byte, so nothing in the hop reviews it, and 214 shipped two
+    defects of exactly this kind in ``VpnTags``, the class that rewrites ``PROCESS-NAME``
+    rules into per-app ``SRC-IP-CIDR`` tags for a VPN with no root to look up a connection
+    owner with.  ``ip6()`` wrote ``or-int/lit16 p0, p0, 0xc800``, and a 2-int/lit16 literal
+    is signed: the tag came out as ``fdfe:dcba:9876::ffffc801`` where ``VpnPump.forward6``
+    tags the packet bytes with ``0xC8,tag``, i.e. ``::c801`` - every IPv6 rule missing, for
+    ever, quietly.  ``expr()`` guarded its list separator with ``if-nez`` where the Java says
+    ``if (i > 0)``, so the comma landed before the first element, ``OR,(,(A),(B))`` split into
+    an empty first rule, and the device never got a VPN at all:
+    ``Parse config error: rules[5] [...] error: payloadRule error``.  Both survived ``apktool
+    b``, the reference scan and gates 1 to 11, because both are legal smali.
+
+    Only rule *emitters* are walked - a method that appends a list opener like ``OR,(``, which
+    is what a core config string is made of - and the loop rules are the ones the Java spells
+    out (index starts at 0, steps by 1, separator skipped on the first turn), because that is
+    the shape the two defects broke and nothing else in these files claims to be.
+    """
+    walked = 0
+    for relative in sorted(added):
+        path = output / relative
+        if not path.is_file():
+            continue
+        text = path.read_text(errors='replace')
+        for number, line in enumerate(text.splitlines(), 1):
+            instruction = smali_liveness.code(line)
+            trap = LITERAL_TRAP.match(instruction)
+            if trap is None or trap.group(3).startswith('-'):
+                continue
+            width, digits = trap.group(2), trap.group(3)[2:]
+            value = int(digits, 16)
+            if value <= (0x7f if width == '8' else 0x7fff):
+                continue
+            high = 0xffffff00 if width == '8' else 0xffff0000
+            problems.append(('%s:%d' % (relative, number),
+                             'emitter literal: %s reads its literal as signed, so the register '
+                             'holds 0x%08x and not the 0x%x the Java source writes - a value this '
+                             'file then formats, masks or compares is wrong across its high half, '
+                             'and D8 would not have emitted this form (a 32-bit const and a 2addr '
+                             'op are what the same Java expression compiles to in VpnPump.smali)'
+                             % (instruction, value | high, value)))
+        for signature, block in method_blocks(text).items():
+            lines = block.splitlines()
+            codes = [(index, smali_liveness.code(line)) for index, line in enumerate(lines)]
+            codes = [(index, code) for index, code in codes if code]
+            opener = next((LIST_OPENER.match(code).group(1) for _index, code in codes
+                           if LIST_OPENER.match(code)), None)
+            if opener is None:
+                continue
+            walked += 1
+            counters = {match.group(1) for _index, code in codes for match in
+                        [ZERO_START.match(code)] if match}
+            counters &= {match.group(1) for _index, code in codes for match in
+                         [ONE_STEP.match(code)] if match}
+            if not counters:
+                continue
+            labels = smali_liveness.labels_of(lines)
+            for position, (index, code) in enumerate(codes):
+                if SEPARATOR.match(code) is None or position == 0:
+                    continue
+                following = codes[position + 1][1] if position + 1 < len(codes) else ''
+                if not APPEND.search(following):
+                    continue
+                guard = SKIP_GUARD.match(codes[position - 1][1])
+                if (guard is not None and guard.group(1) in ('eqz', 'lez')
+                        and guard.group(2) in counters
+                        and labels.get(guard.group(3), 0) > index):
+                    continue
+                problems.append(('%s %s' % (relative, signature),
+                                 'emitter separator: the loop that joins %r into the core\'s '
+                                 'rule string appends its comma %s, so the built text starts with '
+                                 'an empty element and the release rejects the rule it was given '
+                                 '(``OR,(,(A),(B))`` is payloadRule error, before the VPN comes '
+                                 'up at all) - the Java this file was generated from says '
+                                 '``if (i > 0)``'
+                                 % (opener, 'unconditionally' if guard is None else
+                                    'under ``%s``, which is true on the first turn rather than '
+                                    'the rest' % codes[position - 1][1])))
+    return walked
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -2038,6 +2141,7 @@ def main():
     added_smali = [item for item in coverage['added'] if item.endswith('.smali')]
     impl_missing, impl_control = check_custom_interface_implementations(
             args.output, args.custom, added_smali, problems)
+    emitters = check_copied_emitters(args.output, added_smali, problems)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -2067,10 +2171,11 @@ def main():
         else:
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
-          '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d; findings: %d'
+          '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d, '
+          'emitter methods: %d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             staging, impl_missing, impl_control, len(problems)))
+             staging, impl_missing, impl_control, emitters, len(problems)))
     return 1 if problems else 0
 
 

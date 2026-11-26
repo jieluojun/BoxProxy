@@ -118,7 +118,7 @@ def main():
                              % (report.get('ok'), len(expected['completed'])))
 
         # The hunk gate: every coverage entry is re-derived from the pinned 194
-        # delta and compared with this tree, eleven ways - instruction shape and
+        # delta and compared with this tree, twelve ways - instruction shape and
         # frame growth, the constants and payloads a shape comparison erases, the
         # reviewed splice recomputed from the 214 upstream, the smali
         # register/encoding law, the contracts of migration/hunk-contracts.json,

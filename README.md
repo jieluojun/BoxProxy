@@ -13,13 +13,14 @@
 - [214 迁移输入](upstream/26.11.23.aa98568/migration/)：`class-map.json`（7128 类，一对一）、
   `class-map-review.json`（10 处人工修正及其证据）、`coverage.json`（51 个方法 + 1363 个新增文件 +
   1 项明示撤回）、`manual-pins.json`（13 个成员 pin、2 个字段 pin、2 个新增字段、8 处人工落位：
-  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法）、`hunk-contracts.json`（9 条无法用形状比较表达的
+  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；3 条单文件 fixup，其中 2 条修的是复制来的
+  定制类自己写错的两条指令）、`hunk-contracts.json`（9 条无法用形状比较表达的
   规则）、`delta-gaps.json`（引用审计结果）
 - 定制 hunk 的验收门：`scripts/verify_214_custom_hunks.py` 从 194 增量重新推导每个条目（指令形状与帧增长、载荷字面量、
   按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面，以及寄存器在此处真正装着的类型 —— 后者按本树类层次判定，
   并对 214 上游整棵树跑 0 命中对照），由 `scripts/migrate_214.py`
-  强制执行；`scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（12 行，含两处真机崩溃的复刻），
-  证明这道门会变红而不是空转
+  强制执行；`scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（19 行：1 行控制 + 18 项变异，
+  其中 8 项是真机故障的复刻），证明这道门会变红而不是空转
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ## 本地构建
@@ -46,7 +47,7 @@ PROJECT_DIR=.tools/local-171/decompiled \
 
 本地已完成 Apktool 回编译，并从生成的 APK 重新反编译 `classes.dex` 验证 `CfgNav.e` 的 `Lla2` Composer 接收器、`S`/`V` guard、回调接口类型链及全树引用/分支/对象寄存器检查。该 APK 为 `.tools/BoxProxy-26.11.16.25abc84-cfgnav-fixed-unsigned.apk`（versionCode 171；APK SHA-256 `f50ea39ea808325bbe6ee25d1d542a5c8ef6e2320d1336bff759219836313a60`；`classes.dex` SHA-256 `8a6679a886b6ebefeba729d690cf99c62652f583ba7ebeba95e13021263b8563`）。它也包含已修复的 `zu5.invoke`，但仍是**未对齐、未签名**的本地回编译产物，不等同于 GitHub Actions 的签名 APK，也尚未在 Redmi 真机上验证。
 
-## 214 候选的六处真机崩溃、第 7 到第 11 道门
+## 214 候选的七处真机故障、第 7 到第 12 道门
 
 已发布的 214 包在进入主界面时崩溃：
 
@@ -209,15 +210,54 @@ java.lang.AbstractMethodError: abstract method "java.lang.Object ai2.e(java.lang
   会正好把另外那 638 个文件漏在外面。控制组因此是**能跑的 194 定制树**（同一判据、同一文件表，0 命中），不是上游。
 - 验收门第 11 项 `check_custom_interface_implementations`（摘要行新增 `custom interfaces: <产物命中>/<194 对照命中>`）：坏的那版报 9 条、
   点名 `Lcom/box/app/cfg/CfgNav; … defines no e(…)`；修正后 `0/0`。
-- 自检加一行（现 17 行）：把 `CfgNav` 那个定义名从 `e` 改回 194 的 `invoke` → 门必须报 `custom interface`；它只动一行，不会连带别的
+- 自检加一行：把 `CfgNav` 那个定义名从 `e` 改回 194 的 `invoke` → 门必须报 `custom interface`；它只动一行，不会连带别的
   `invoke`（`CfgNav` 自己那个 `private static e(…)` 与原型都不同）。
 
-六处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 11 道门（含对上游整树 8752 个 smali 文件的对照 0 命中）与 17 行自检
-全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，重编译树上类型流同样 0 命中）；本跳的
-smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
+### 第 7 处：`payloadRule error` —— 复制来的定制类给内核写了一条内核读不懂的规则
 
-真机复验仍未完成：上面这些是对 ART verifier 的**离线复刻**，`apktool b` 与 11 道门都替不了设备签字；第 5、6 两处尤其如此——它们的症状正是"离线全绿、
-装机才炸"。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
+VPN 模式（无 root）能起来之后，启动失败改由内核报：
+
+```
+time=... level=fatal msg="Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,(SRC-IP-CIDR,172.19.200.1/32),
+(SRC-IP-CIDR,fdfe:dcba:9876::ffffc801/128))),游戏UDP] error: payloadRule error"
+```
+
+这条 `rules[5]` 不是用户写的：用户配置里那一行是 `AND,(NETWORK,UDP),(PROCESS-NAME-REGEX,…),游戏UDP`，
+是 `com.box.app.vpn.VpnTags` 在启动时把它改写成"按 tag 地址匹配"的形式（`VpnPump` 把每个 App 的包改写源地址，
+内核再用 `SRC-IP-CIDR` 命中，见 `VPN_MODE.md`）。改写文本由手写的 smali 拼出来，两句都写错了：
+
+- `expr()` 用 `if-nez v2, :cond_sep` 保护那个分隔逗号，而 Java 源里写的是 `if (i > 0)` —— 条件反了，逗号跑到第一个元素
+  前面，内核把 `OR,(,(A),(B))` 的第一个元素切成空串，直接 `payloadRule error` 退出。
+- `ip6()` 写的是 `or-int/lit16 p0, p0, 0xc800`：smali 的 2-int/lit16 字面量是**有符号**的，实际或进去的是 `0xffffc800`，
+  tag 1 就成了 `fdfe:dcba:9876::ffffc801`，而 `VpnPump.forward6` 往包里写的是 `0xC8,tag` 两字节，即 `::c801`。
+  这一句不报错，只是所有 IPv6 规则永远匹配不到。
+
+`or-int/lit16` 是手写 smali 特有的坑：D8 编译同一句 Java（`0xC800 | tag`）会发出 `const v0, 0xc800` + `or-int/2addr`，
+`VpnPump.smali` 里就是这个样子。全树 913 个项目自有 smali 文件里，这样的"正写但高位被符号扩展"的字面量只有这一处（新门
+的判定就是这条统计）。
+
+修的是**输入**，不是产物：`manual-pins.json` 的 `scopedFixups` 多了这两条（每条必须命中一次，否则 porter 直接失败），
+`decompiled/` 里同一文件同步改掉，让运行工程、宿主测试与 214 候选三者一致。194 的 payload 是哈希钉死的历史记录，不能回头改，
+所以这一跳用 fixup 把它对齐回它自己的 Java —— 这也是 `vpn-src/README.md` 说"提交的是生成物"时想要保证的那件事。
+
+- 宿主测试 `vpn-src/test/VpnTagsTest.java`（由 `run-config-rewriters.sh` 跑）测的是**产物里的那份 smali**：把 `VpnTags*.smali`
+  与已有的三个 rewriter 一起 assemble 成 dex、enjarify 成 jar，再用 `stubs/android` 里的签名喂一个假 `PackageManager`，
+  然后按内核的做法逐层切分它生成的规则，要求任何深度都没有空元素、括号平衡、IPv6 tag 与 `VpnPump` 写的字节一致，
+  未安装的 App 落到 `255.255.255.255/32`。这两处错误它都能各报一条；它跑在 `validate-migration.yml`（该 workflow 触发路径含
+  `decompiled/**`），而 `decompiled/` 不参与 214 复现，所以那半边由门负责。
+- 验收门第 12 项 `check_copied_emitters`（摘要行新增 `emitter methods: <扫到的规则拼接方法数>`）：在 `coverage.added`
+  这 1356 个被复制的 smali 上跑两条判定 —— 符号扩展陷阱，以及"拼接列表的方法里，分隔符必须在第一轮跳过"（识别方式是方法内
+  出现 `OR,(` 这类列表开引号、索引从 0 起步并自增）。坏的那版报 2 条，修正后 0 条；194 对照树同样各 1 条，说明这不是本跳引入的，
+  而是复制路径没人审。
+- 自检再加两行（现 19 行）：把那个守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
+  `or-int/lit16 …, 0xc800` → 必须报 `emitter literal`。两行都只动 `VpnTags.smali`。
+
+七处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`（3 条单文件 fixup 各自命中 1 次），7 个 smali 检查器 + 12 道门（含对上游整树
+8752 个 smali 文件的对照 0 命中）与 19 行自检全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，
+重编译树上类型流同样 0 命中）；本跳的 smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
+
+真机复验仍未完成：上面这些是对 ART verifier 的**离线复刻**，`apktool b` 与 12 道门都替不了设备签字；第 5、6、7 三处尤其如此——它们的症状正是
+"离线全绿、装机才炸"，而第 7 处连 ART 都不经过：错的只是我们写给另一个程序读的一段文本。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
 
 ## CI 产物与设备验证
 

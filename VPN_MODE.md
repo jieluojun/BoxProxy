@@ -56,7 +56,13 @@
   1. 启动时应用读取 `files/vpn/config.yaml`，把每个 PROCESS 子句换成对应的 `SRC-IP-CIDR,172.19.200.N/32`，结果写到 `files/vpn/config.run.yaml`（核心用这个文件启动，原配置不改动）。包名按本机已安装应用匹配：`PROCESS-NAME` 按包名忽略大小写相等，`PROCESS-NAME-REGEX` 用 Java 正则（忽略大小写、部分匹配）。
   2. TUN 描述符改由应用读取（`VpnPump`），对每条新连接调用 `ConnectivityManager.getConnectionOwnerUid()` 得到 UID，再把该包的源地址 `172.19.0.1` 改写成该应用对应的标签地址 `172.19.200.N`（重算 IP/TCP/UDP 校验和）后，经 SEQPACKET socketpair 交给内核；内核回包的目的地址再改回 `172.19.0.1`。
   3. 内核按 `SRC-IP-CIDR` 命中规则，所以可以指定任意策略组。
-  限制：只处理 IPv4（使用该功能时 VPN 不再声明 IPv6）；分片包、ICMP 不打标记；`PROCESS-PATH*`、`rule-providers` 里的 PROCESS 规则不翻译；应用清单在启动时读取，新装应用需重启 VPN；数据多经过一次 Java 层，大流量下比不用 PROCESS 规则时耗电更多；配置里没有 PROCESS 规则时完全不启用这一层。排查：`runs.log` 里 `[pump]` 开头的行会列出翻译结果和前 40 条连接的 uid/标签。
+  4. 改写出来的文本有两处必须成立，而它们只能靠测试守住（`apktool b` 与安装都不读这段字符串）：内核要能按
+     `TYPE,(a),(b)` 逐层切开它（列表里混进一个空元素，内核就在启动前 `payloadRule error` 退出），以及 IPv6 的
+     tag 地址要等于 `VpnPump.forward6` 写进包里的两个字节 `0xC8,tag`，即 `fdfe:dcba:9876::c8NN`——写成
+     `or-int/lit16 …, 0xc800` 会因符号扩展变成 `::ffffc801`，规则就永远不命中，而且不报任何错。
+     前者由 `vpn-src/test/VpnTagsTest.java` 在**产物 smali** 上验（assemble→dex→enjarify 后按内核的切分规则逐层
+     比较），214 跳的门 `check_copied_emitters` 在迁移树上再验一遍。
+  限制：sing-box 路径不处理 IPv6（只有它不声明 IPv6），mihomo 路径 IPv4/IPv6 一样打 tag；分片包、ICMP 不打标记；`PROCESS-PATH*`、`rule-providers` 里的 PROCESS 规则不翻译；应用清单在启动时读取，新装应用需重启 VPN；数据多经过一次 Java 层，大流量下比不用 PROCESS 规则时耗电更多；配置里没有 PROCESS 规则时完全不启用这一层。排查：`runs.log` 里 `[pump]` 开头的行会列出翻译结果和前 40 条连接的 uid/标签。
 
 ## 自动覆写（启动配置）在 VPN 模式下的生效方式
 

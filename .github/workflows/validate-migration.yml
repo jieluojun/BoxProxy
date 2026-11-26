@@ -73,7 +73,7 @@ jobs:
           ENJARIFY: .tools/enjarify
         shell: bash
         run: JAVA="$JAVA_HOME/bin/java" vpn-src/test/run-upstream-migration.sh
-      - name: Test shipped sing-box, Xray, V2Fly and Hysteria rewriter smali
+      - name: Test shipped core rewriter smali and the mihomo rule emitter
         env:
           ECJ_JAR: .tools/ecj/package/jar/ctxo-jdt-analyzer-17.jar
           APKTOOL_JAR: .tools/apktool/package/bin/apktool_2.4.1.jar

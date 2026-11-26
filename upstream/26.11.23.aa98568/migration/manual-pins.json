@@ -85,6 +85,18 @@
         "right": "    filled-new-array/range {v3 .. v12}, [Lii1;",
         "evidence": "the two reviewed DingTalk elements occupy v11 and v12"
       }
+    ],
+    "smali/com/box/app/vpn/VpnTags.smali": [
+      {
+        "wrong": "    if-nez v2, :cond_sep",
+        "right": "    if-eqz v2, :cond_sep",
+        "evidence": "expr() joins the tag rules of one clause with a comma, and the branch that skips that separator has its polarity flipped in the copied 171 payload: `if-nez` jumps past the append when the index is NOT zero, so the comma is emitted before the first element instead of between elements. The rule the core then reads starts its OR payload with an empty element, and mihomo aborts before the VPN comes up with `Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,(SRC-IP-CIDR,...))),...] error: payloadRule error`. vpn-src/src/com/box/app/vpn/VpnTags.java has always said `if (i > 0)`; this realigns the shipped smali with its own source"
+      },
+      {
+        "wrong": "    or-int/lit16 p0, p0, 0xc800",
+        "right": "    const v0, 0xc800\n\n    or-int/2addr p0, v0",
+        "evidence": "a smali 2-int/lit16 literal is signed, so this ORs 0xffffc800 and ip6() spells tag 1 fdfe:dcba:9876::ffffc801 while VpnPump.forward6 tags the packet bytes with 0xC8,tag, i.e. ::c801 - every IPv6 process rule would then miss for ever, silently. D8 compiles the Java `0xC800 | tag` into exactly these two instructions (VpnPump.smali has `const v6, 0xc800` for the same expression), so this is the generated shape, not a new invention"
+      }
     ]
   },
   "windowRewrites": [],

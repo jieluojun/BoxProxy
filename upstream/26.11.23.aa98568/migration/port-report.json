@@ -14,6 +14,8 @@
     "Lh96; .field public cfgD:Z"
   ],
   "referenceFixups": {
+    "    if-nez v2, :cond_sep": 1,
+    "    or-int/lit16 p0, p0, 0xc800": 1,
     "    filled-new-array/range {v3 .. v10}, [Lii1;": 1
   },
   "interfaceMemberRenames": [
@@ -133,7 +135,8 @@
     ],
     "referenceFixups": 0,
     "scopedFixups": {
-      "smali/ki1.smali": 1
+      "smali/ki1.smali": 1,
+      "smali/com/box/app/vpn/VpnTags.smali": 2
     }
   },
   "registerRenames": [

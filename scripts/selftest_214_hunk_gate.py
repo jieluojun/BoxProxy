@@ -9,13 +9,15 @@ insert, a splice that landed one instruction later, a grafted call that the
 release renamed under it.  Each row edits one thing in a copy of the migrated
 tree and requires scripts/verify_214_custom_hunks.py to report it, with the
 finding coming from the gate that owns that property - so a row cannot pass for
-the wrong reason.  Rows 10 to 16 are the six 214 device failures of this hop: the
+the wrong reason.  Rows 10 to 18 are the seven 214 device failures of this hop: the
 producer of a grafted value renamed away from the register the target's own code
 reads, an operand a replaced line carried from the frame it was written in, the flag
 an arm zeroed instead of the resource id the merge reads, the spill that arm owed the
 merge, a block that staged its ``/range`` call through a register this frame still
-needed, and a copied class that kept the previous release's name for the interface
-member the release dispatches.  Row 14 is the exemption nothing needed.
+needed, a copied class that kept the previous release's name for the interface member
+the release dispatches, and the two instructions of the copied class that builds the
+rule string the core is handed - a separator that ran on the first turn and a literal
+that read as signed.  Row 14 is the exemption nothing needed.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -245,6 +247,47 @@ def take_the_interface_member_rename_back_off(text):
     return out
 
 
+def run_the_rule_separator_on_the_first_turn(text):
+    """Let a copied emitter put its list separator in front of the first element.
+
+    ``VpnTags.expr`` joins the per-app tag rules of one clause into the ``OR,(...)`` payload
+    the core is handed.  Skipping the comma on the first turn is what the Java says
+    (``if (i > 0)``); the 214 device got ``OR,(,(SRC-IP-CIDR,...))`` instead, the payload split
+    into an empty first rule, and mihomo exited before the VPN existed: ``Parse config error:
+    rules[5] [...] error: payloadRule error``.  The file assembles, dexes and installs - the
+    string it builds is only ever read by another program.
+    """
+    out, count = re.subn(r'^(\s*)if-eqz (v\d+), :cond_sep$', r'\1if-nez \2, :cond_sep',
+                         text, count=1, flags=re.M)
+    if count != 1:
+        raise LookupError('the emitter no longer guards its separator with if-eqz')
+    return out
+
+
+def fold_the_tag_or_back_into_a_signed_literal(text):
+    """Give a copied emitter back the 16-bit literal that reads its tag as signed.
+
+    ``VpnTags.ip6`` turns a tag number into the IPv6 address the rules match on.  Written as
+    ``or-int/lit16 p0, p0, 0xc800`` the literal is signed, so tag 1 became
+    ``fdfe:dcba:9876::ffffc801`` while ``VpnPump.forward6`` tags the packet bytes with
+    ``0xC8,tag`` - ``::c801``.  Nothing throws: the IPv6 half of every process rule simply
+    never matches, which is the worst way for a device bug to hide.  Undoing the realignment
+    has to put the two generated instructions back into the one hand-written form.
+    """
+    lines = text.splitlines(keepends=True)
+    for index, line in enumerate(lines):
+        if line.strip() != 'const v0, 0xc800':
+            continue
+        following = next((spot for spot in range(index + 1, len(lines))
+                          if lines[spot].strip()), None)
+        if following is None or lines[following].strip() != 'or-int/2addr p0, v0':
+            continue
+        lines[index] = '    or-int/lit16 p0, p0, 0xc800\n'
+        del lines[following]
+        return ''.join(lines)
+    raise LookupError('ip6() no longer builds the tag with a 32-bit const and a 2addr or')
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -279,6 +322,12 @@ MUTATIONS = [
     ('the member a copied custom class answers its interface by',
      'smali/com/box/app/cfg/CfgNav.smali', take_the_interface_member_rename_back_off,
      r'custom interface'),
+    ('the separator a copied emitter joins its rule list with',
+     'smali/com/box/app/vpn/VpnTags.smali', run_the_rule_separator_on_the_first_turn,
+     r'emitter separator'),
+    ('the 16-bit literal a copied emitter reads as a signed one',
+     'smali/com/box/app/vpn/VpnTags.smali', fold_the_tag_or_back_into_a_signed_literal,
+     r'emitter literal'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),
