@@ -12,6 +12,11 @@ finding coming from the gate that owns that property - so a row cannot pass for
 the wrong reason.  The last rows are the 214 device failure itself: the producer
 of a grafted value renamed away from the register the target's own code reads.
 
+Two of the gates read the *reviewed placement* rather than the tree, because a
+placement that omits a line must not silence the check by omitting it from the
+tree too.  A row for those edits `@pins` - a copy of migration/manual-pins.json -
+instead of a file in the tree.
+
 The rows are reviewed expectations of THIS hop, like migration/hunk-contracts.json:
 they name instructions of the built tree.  A row whose needle has disappeared -
 because the pin or the release moved - is reported as a failure rather than
@@ -25,6 +30,7 @@ skipped, so the battery cannot rot into silence.
 ``migrate_214.py --gate-selftest`` runs it against the tree it just produced.
 """
 import argparse
+import json
 import os
 import re
 import shutil
@@ -136,12 +142,55 @@ def re_add_the_flag_write_of_the_old_release(text):
     except StopIteration:
         raise LookupError('the needle is gone: the reviewed arm of ba1.c no longer writes '
                           'its invalidation key')
-    if lines[key + 1].strip() == 'const/4 v15, 0x0':
+    try:
+        flag = next(n for n in range(key + 1, min(len(lines), key + 5))
+                    if lines[n].strip() == 'const/4 v4, 0x0')
+    except StopIteration:
+        raise LookupError('the reviewed arm no longer zeroes its flag in v4 right after '
+                          'its key')
+    if any(lines[n].strip() == 'const/4 v15, 0x0' for n in range(key + 1, flag)):
         raise LookupError('the tree still carries the 194 flag write')
-    if lines[key + 1].strip() != 'const/4 v4, 0x0':
-        raise LookupError('the reviewed arm no longer zeroes its flag in v4 here')
-    lines.insert(key + 1, '    const/4 v15, 0x0\n')
+    lines.insert(flag, '    const/4 v15, 0x0\n')
     return ''.join(lines)
+
+
+def drop_a_line_the_reviewed_arm_borrows_from_the_release(text):
+    """Take the register spill out of the reviewed placement, leaving the tree alone.
+
+    `v4` is the compose flag in 214's `Lp92;->n(Lzi2;IILzi2;Z)` merge, but unlike 194 it
+    is not idle there: all five of the release's own arms that reach `:goto_6` copy `v4`
+    into `v22` first, because the tail hands `v22` to `Lv74;->d(...)` as its `Lyw1;`
+    argument.  Removing only the copy keeps the ported block consistent with its pin and
+    leaves `v22` null on the first composition of the row - the
+    `NullPointerException ... Object.getClass() on a null object reference` at
+    `ba1.c:573` the device reported.
+    """
+    data = json.loads(text)
+    for pin in data.get('placements', []):
+        insert = pin.get('insert')
+        if isinstance(insert, list) and any(str(line).strip() == 'move-object/from16 v22, v4'
+                                            for line in insert):
+            pin['insert'] = [line for line in insert
+                             if str(line).strip() != 'move-object/from16 v22, v4']
+            return json.dumps(data, indent=2) + '\n'
+    raise LookupError('no reviewed placement carries its register spill any more')
+
+
+def invent_a_tolerance_the_release_does_not_need(text):
+    """Exempt a literal that no delta of this release carries, in the reviewed pins.
+
+    A tolerance that exempts nothing is not slack, it is a mute button: it keeps
+    silencing that literal class for the plan on every later run.  The 214 hop had
+    one of these on `Lpa1;->a(`, for a line its own reviewed arm stopped writing, and
+    only the gate that compares the four literal differences sees that the entry is inert.
+    """
+    data = json.loads(text)
+    pin = next((p for p in data.get('placements', [])
+                if p.get('plan') == 'Lpa1;->a(' and 'tolerates' not in p), None)
+    if pin is None:
+        raise LookupError('the arm placement already carries a tolerance to extend')
+    pin['tolerates'] = {'m:v22,v4': 1}
+    return json.dumps(data, indent=2) + '\n'
 
 
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
@@ -169,16 +218,20 @@ MUTATIONS = [
      point_the_replacement_at_the_slot_of_the_old_release, r'type flow'),
     ('the flag zero of the old release, back in the id register', 'smali/ba1.smali',
      re_add_the_flag_write_of_the_old_release, r'grafted arm'),
+    ('the spill the reviewed arm borrows from the release', '@pins',
+     drop_a_line_the_reviewed_arm_borrows_from_the_release, r'grafted arm'),
+    ('a reviewed tolerance that exempts nothing', '@pins',
+     invent_a_tolerance_the_release_does_not_need, r'reviewed tolerance'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),
 ]
 
 
-def run_gate(args, tree):
+def run_gate(args, tree, pins=None):
     command = [sys.executable, str(Path(__file__).resolve().parent / 'verify_214_custom_hunks.py'),
                '--old', args.old, '--new', args.new, '--custom', args.custom,
-               '--coverage', args.coverage, '--maps', args.maps, '--pins', args.pins,
+               '--coverage', args.coverage, '--maps', args.maps, '--pins', pins or args.pins,
                '--contracts', args.contracts, '--output', tree]
     proc = subprocess.run([str(part) for part in command], capture_output=True, text=True,
                           cwd=str(REPO))
@@ -201,10 +254,37 @@ def main():
     # the reviewed tree itself can never be touched through the link
     with tempfile.TemporaryDirectory(prefix='boxproxy-gate-selftest-',
                                      dir=str(source.parent)) as work:
+        pins = Path(args.pins)
         for name, rel, mutate, expect in MUTATIONS:
             tree = Path(work) / 'tree'
             shutil.rmtree(tree, ignore_errors=True)
             subprocess.run(['cp', '-al', str(source) + '/.', str(tree)], check=True)
+            if rel == '@pins':
+                # a claim about the reviewed placement, edited in a copy of the pin file
+                before, pins = Path(args.pins).read_text(errors='replace'), Path(work) / 'pins.json'
+                try:
+                    after = mutate(before)
+                except LookupError as error:
+                    print('FAIL %-46s %s' % (name, error))
+                    failures += 1
+                    continue
+                if after == before:
+                    print('FAIL %-46s the mutation changed nothing' % name)
+                    failures += 1
+                    continue
+                pins.write_text(after)
+                code, out = run_gate(args, tree, pins=pins)
+                pins = Path(args.pins)
+                detail = re.sub(r'\s+', ' ', out)
+                findings = [line for line in out.splitlines() if line.startswith('MISMATCH')]
+                ok = code != 0 and re.search(expect, detail)
+                print('%-4s %-46s exit %d  %s' % ('' if ok else 'FAIL', name, code,
+                                                  (findings[0] if findings else
+                                                   out.splitlines()[-1])[:64]))
+                if not ok:
+                    failures += 1
+                    print('     ' + detail[:500])
+                continue
             if mutate is not None:
                 path = tree / rel
                 before = path.read_text(errors='replace')

@@ -891,6 +891,21 @@ def check_hop(args, coverage, maps, pins, problems, resolver):
         for placement in placements:
             for key, value in (placement.get('tolerates') or {}).items():
                 tolerances[key] += value
+        # A reviewed tolerance has to exempt something this release actually
+        # changed.  A key no raw difference needs is not harmless slack: it keeps
+        # silencing that literal class for this plan forever, which is how an
+        # exemption written for an older version of the reviewed block would outlive
+        # it.  So an unused one is a finding, not an optimisation.
+        if tolerances:
+            raw = (expected_added - actual_added, actual_added - expected_added,
+                   expected_removed - actual_removed, actual_removed - expected_removed)
+            for key, value in sorted(tolerances.items()):
+                if not any(difference.get(key) for difference in raw):
+                    problems.append((label, 'reviewed tolerance %s x%d exempts nothing - the '
+                                            'literal delta it names is already balanced, so the '
+                                            'entry only silences this plan'
+                                            % (('…' + key[-40:]) if len(key) > 44 else key,
+                                               value)))
         missing = (expected_added - actual_added - tolerances)
         extra = (actual_added - expected_added - tolerances)
         lost = (expected_removed - actual_removed - tolerances)
@@ -1633,19 +1648,19 @@ GRAFT_WRITE_RE = re.compile(r'^(?:const\S*|move\S*|iget-\w+|sget-\w+|new-instanc
 GRAFT_JUMP_RE = re.compile(r'^goto(?:/16|/32)?\s+(:\w+)$')
 GRAFT_LABEL_RE = re.compile(r'^(:\w+)\s*$')
 GRAFT_OPERAND_RE = re.compile(r'\b[vp]\d+\b')
+GRAFT_SPILL_RE = re.compile(r'^move-object(?:/from16|/range)?\s+([vp]\d+),\s*([vp]\d+)\s*$')
 
 
 def grafted_significant(lines):
-    """(indexes, stripped text) of the executable lines of a method body."""
-    index, order, texts = {}, [], []
+    """The executable text of a file, plus the source line each one came from."""
+    order, texts = [], []
     for number, line in enumerate(lines):
         text = strip_comment(line).strip()
         if not text or text.startswith('.line') or text.startswith('#'):
             continue
-        index[number] = len(texts)
         order.append(number)
         texts.append(text)
-    return order, texts, index
+    return order, texts
 
 
 def grafted_reads(instruction):
@@ -1663,82 +1678,191 @@ def grafted_reads(instruction):
     return GRAFT_OPERAND_RE.findall(instruction[:boundary])
 
 
-def check_grafted_arm_roles(pins, output, problems, files):
-    """A reviewed arm hands its values to the merge it jumps to - they have to survive.
+def grafted_regions(pins, output, files):
+    """(pin, file, method text, anchor position, reviewed block) for every placement.
 
-    A hand-placed block is written against the *target* frame, and its last act is a
-    jump onto a merge point that the release's own arms also reach.  Every value it
-    put in a register for that merge has to still be there when the merge reads it.
-    The 214 core-detail row shows what happens when one register's role moved: the
-    194 shortcut zeroed `v15`, which was its flag slot, while 214 zeroed the flag in
-    `v4` and used `v15` for the string resource id - so the ported block zeroed the
-    id it had just computed and the merge called `getString(0)`, crashing on the
-    device with `Resources$NotFoundException: String resource ID #0x0`.  No type can
-    see that (three ints, all consistent) and no name-based check can either, so this
-    walks the arm itself: for every value it takes from an invoke result, the register
-    must not be re-written by a constant or a plain move before the jump, when the
-    instruction at the merge label reads that register.
+    The block that is analysed is the *reviewed* text, located in the ported file by its
+    anchor alone: the two arm checks below are claims about what the placement says, and
+    a placement that omits a line must not be able to silence them by omitting it from
+    the tree as well (that is exactly how the shipped arm stayed self-inconsistent - the
+    tree and the pin agreed perfectly).  Whether the tree really carries those lines where
+    the anchor says they belong is gate 3's job.
     """
-    checked = 0
+    found = []
     placements = [pin for pin in pins.get('placements', []) if pin.get('anchor')
                   and pin.get('insert') and not pin.get('replace')]
     for file_name in sorted(files):
         path = output / file_name
         if not path.is_file():
             continue
-        lines = path.read_text(errors='replace').splitlines()
-        order, texts, _ = grafted_significant(lines)
-        label_at = {}
+        _, texts = grafted_significant(path.read_text(errors='replace').splitlines())
+        spans, opened = [], None
         for position, text in enumerate(texts):
-            match = GRAFT_LABEL_RE.match(text)
-            if match:
-                label_at.setdefault(match.group(1), position)
+            if text.startswith('.method'):
+                opened = position
+            elif text == '.end method' and opened is not None:
+                spans.append((opened, position))
+                opened = None
         for pin in placements:
             def spell(lines):
                 lines = lines if isinstance(lines, list) else [lines]
                 return [strip_comment(line).strip() for line in lines if strip_comment(line).strip()]
 
-            head = spell(pin['anchor'])
-            block = spell(pin['insert'])
-            if not block:
+            head, block = spell(pin['anchor']), spell(pin['insert'])
+            if not block or not head:
                 continue
-            needle = head + block
-            starts = [position + len(head) for position
-                      in range(len(texts) - len(needle) + 1)
-                      if texts[position:position + len(needle)] == needle]
-            for start in starts:
-                checked += 1
-                for offset, text in enumerate(block):
-                    match = GRAFT_JUMP_RE.match(text)
-                    if match is None or match.group(1) not in label_at:
+            for hit in [position for position in range(len(texts) - len(head) + 1)
+                        if texts[position:position + len(head)] == head]:
+                # an anchor line can be common in a big class: only the occurrence the
+                # block was actually placed at is an arm to analyse
+                after = texts[hit + len(head)] if hit + len(head) < len(texts) else ''
+                if after and after != block[0]:
+                    continue
+                body = [span for span in spans if span[0] <= hit <= span[1]]
+                if not body:
+                    continue
+                low, high = body[0]
+                found.append((pin, file_name, texts[low:high + 1], hit - low, block))
+    return found
+
+
+def grafted_merge(texts, label):
+    """The instruction a jump lands on: the merge point every arm has to satisfy."""
+    for position, text in enumerate(texts):
+        if GRAFT_LABEL_RE.match(text) and text == label:
+            if position + 1 < len(texts) and not GRAFT_LABEL_RE.match(texts[position + 1]):
+                return texts[position + 1]
+            return None
+    return None
+
+
+def check_grafted_arm_roles(pins, output, problems, files):
+    """A reviewed arm hands its values to the merge it jumps to - they have to survive.
+
+    A hand-placed block is written against the *target* frame, and its last act is a
+    jump onto a merge point that the release's own arms also reach.  Every value it put
+    in a register for that merge has to still be there when the merge reads it.  The
+    214 core-detail row shows what happens when one register's role moved: the 194
+    shortcut zeroed `v15`, which was its flag slot, while 214 zeroed the flag in `v4`
+    and used `v15` for the string resource id - so the ported block zeroed the id it had
+    just computed and the merge called `getString(0)`, crashing on the device with
+    `Resources$NotFoundException: String resource ID #0x0`.  No type can see that (three
+    ints, all consistent) and no name-based check can either, so this walks the arm
+    itself: for every value it takes from an invoke result, the register must not be
+    re-written by a constant or a plain move before the jump, when the instruction at the
+    merge label reads that register.
+    """
+    checked = 0
+    for pin, file_name, texts, _start, block in grafted_regions(pins, output, files):
+        checked += 1
+        for offset, text in enumerate(block):
+            match = GRAFT_JUMP_RE.match(text)
+            if match is None:
+                continue
+            merge = grafted_merge(texts, match.group(1))
+            if merge is None:
+                continue
+            reads = grafted_reads(merge)
+            if not reads:
+                continue
+            written = {}
+            for inner in block[:offset]:
+                # a value the arm takes from an invoke is the value it hands to the
+                # merge; a re-write of that register can only be deliberate
+                target = GRAFT_RESULT_RE.match(inner)
+                if target is not None:
+                    written[target.group(1)] = inner
+                    continue
+                target = GRAFT_WRITE_RE.match(inner)
+                if target is None:
+                    continue
+                register = target.group(1)
+                producer = written.pop(register, '')
+                if producer and register in reads:
+                    problems.append((pin.get('plan', file_name) + ' in ' + file_name,
+                                     'grafted arm: %s is computed for the merge at %s by "%s" and '
+                                     'then re-written by "%s" before the jump, which %s still reads - '
+                                     'a register whose role moved between the two releases'
+                                     % (register, match.group(1), producer, inner, merge)))
+    return checked
+
+
+def check_grafted_arm_spills(pins, output, problems, files):
+    """A register the release's arms save before they reuse it has to be saved too.
+
+    The same merge, the other failure mode.  `Lp92;->n(Lzi2;IILzi2;Z)` wants its flag in
+    `v4`, but in 214 `v4` is not an idle slot any more: all six stock arms that reach
+    `:goto_6` write `move-object/from16 v22, v4` first, because the tail hands `v22` to
+    `Lv74;->d(...)` as its `Lyw1;` argument, and only then reuse `v4` as the flag.  194
+    zeroed a register nobody was saving, so the customization carried no spill - and the
+    reviewed block that copied the zero without the spill left `v22` at its old value,
+    null on the first composition, which the device answered with
+    `NullPointerException: ... Object.getClass() on a null object reference` at
+    `ba1.c:573`.  A clobbered register and a stale register are the same mistake wearing
+    different clothes, and gate 7 sees neither: an object reference that is simply absent
+    still type-checks.
+
+    So the rule is read off the release itself, with no contract to maintain: collect
+    every jump onto the merge in the ported file, keep the spill-then-overwrite pairs
+    that *all* of those arms perform, and require the grafted arm to perform the same
+    spill - the release's own habit rather than one arm's accident, which is what keeps
+    the rule from firing on any block that happens to jump.
+    """
+    checked = 0
+    for pin, file_name, texts, anchor, block in grafted_regions(pins, output, files):
+        for offset, text in enumerate(block):
+            match = GRAFT_JUMP_RE.match(text)
+            if match is None:
+                continue
+            label = match.group(1)
+            merge = grafted_merge(texts, label)
+            if merge is None:
+                continue
+            checked += 1
+            required, seen, matched = None, 0, 0
+            for position, other in enumerate(texts):
+                if anchor < position <= anchor + len(block):
+                    continue        # the grafted arm is the one being asked about
+                if not re.match(r'^goto(?:/16|/32)?\s+%s$' % re.escape(label), other):
+                    continue
+                seen += 1
+                run = []
+                walk = position - 1
+                while walk >= 0 and len(run) < 8:
+                    step = texts[walk]
+                    if GRAFT_LABEL_RE.match(step) or step.startswith('goto') \
+                            or step.startswith('if-') or step.startswith('return'):
+                        break
+                    run.append(step)
+                    walk -= 1
+                pairs = []
+                for index, step in enumerate(run):      # run runs newest first
+                    spill = GRAFT_SPILL_RE.match(step)
+                    if spill is None:
                         continue
-                    merge = label_at[match.group(1)] + 1
-                    if merge >= len(texts) or texts[merge].startswith(':'):
-                        continue
-                    reads = grafted_reads(texts[merge])
-                    if not reads:
-                        continue
-                    written = {}
-                    for inner in range(start + 1, start + 1 + len(block)):
-                        # a value the arm takes from an invoke is the value it hands to the
-                        # merge; a re-write of that register can only be deliberate
-                        target = GRAFT_RESULT_RE.match(texts[inner])
-                        if target is not None:
-                            written[target.group(1)] = texts[inner]
-                            continue
-                        target = GRAFT_WRITE_RE.match(texts[inner])
-                        if target is None or GRAFT_RESULT_RE.match(texts[inner]):
-                            continue
-                        register = target.group(1)
-                        producer = written.pop(register, '')
-                        if producer and register in reads:
-                            problems.append((pin.get('plan', file_name) + ' in ' + file_name,
-                                             'grafted arm: %s is computed for the merge at %s by '
-                                             '\"%s\" and then re-written by \"%s\" before the jump, '
-                                             'which %s still reads - a register whose role moved '
-                                             'between the two releases'
-                                             % (register, match.group(1), producer, texts[inner],
-                                                texts[merge])))
+                    for later in run[:index]:
+                        written = GRAFT_WRITE_RE.match(later)
+                        if written is not None and written.group(1) == spill.group(2):
+                            pairs.append((spill.group(1), spill.group(2)))
+                            break
+                if not pairs:
+                    continue
+                matched += 1
+                required = pairs if required is None else [p for p in required if p in pairs]
+            # the rule has to be the release's own habit, not one arm's accident
+            if not required or matched < 2 or matched != seen:
+                continue
+            performed = {(m.group(1), m.group(2)) for m in
+                         (GRAFT_SPILL_RE.match(line) for line in block) if m}
+            for destination, source in required:
+                if (destination, source) in performed:
+                    continue
+                problems.append((pin.get('plan', file_name) + ' in ' + file_name,
+                                 'grafted arm: every arm that reaches %s saves %s from %s before it '
+                                 'overwrites %s there, and the reviewed block overwrites %s without '
+                                 'that spill - %s keeps whatever it held, which the tail still hands '
+                                 'to a callee'
+                                 % (label, destination, source, source, source, destination)))
     return checked
 
 
@@ -1783,6 +1907,7 @@ def main():
     check_custom_surfaces(args.output, problems)
     flow = check_type_flow(touched, args.output, problems)
     grafted = check_grafted_arm_roles(pins, args.output, problems, touched)
+    spills = check_grafted_arm_spills(pins, args.output, problems, touched)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -1812,9 +1937,9 @@ def main():
         else:
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
-          '%s; grafted arms: %d; findings: %d'
+          '%s; grafted arms: %d/%d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
-             flow, '' if control is None else ', control tree: %d' % control, grafted,
+             flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
              len(problems)))
     return 1 if problems else 0
 

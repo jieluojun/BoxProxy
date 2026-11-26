@@ -46,7 +46,7 @@ PROJECT_DIR=.tools/local-171/decompiled \
 
 本地已完成 Apktool 回编译，并从生成的 APK 重新反编译 `classes.dex` 验证 `CfgNav.e` 的 `Lla2` Composer 接收器、`S`/`V` guard、回调接口类型链及全树引用/分支/对象寄存器检查。该 APK 为 `.tools/BoxProxy-26.11.16.25abc84-cfgnav-fixed-unsigned.apk`（versionCode 171；APK SHA-256 `f50ea39ea808325bbe6ee25d1d542a5c8ef6e2320d1336bff759219836313a60`；`classes.dex` SHA-256 `8a6679a886b6ebefeba729d690cf99c62652f583ba7ebeba95e13021263b8563`）。它也包含已修复的 `zu5.invoke`，但仍是**未对齐、未签名**的本地回编译产物，不等同于 GitHub Actions 的签名 APK，也尚未在 Redmi 真机上验证。
 
-## 214 候选的三处真机崩溃、第 7 道与第 8 道门
+## 214 候选的四处真机崩溃、第 7 到第 9 道门
 
 已发布的 214 包在进入主界面时崩溃：
 
@@ -119,11 +119,42 @@ android.content.res.Resources$NotFoundException: String resource ID #0x0
   它就看不见。8 条 placement 里有 6 条被检查，坏的那版报 1 条、修正后 0 条，其余 5 条始终静默。
 - 自检再加一行：把那行 194 的标志清零塞回 `ba1.c` 的块里 → 门必须报 `grafted arm`（现 13 行，含 1 行控制行）。
 
-三处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 8 道门（含 8752 文件上游对照
-0 命中）与 13 行自检全绿；`apktool b` 后重新反编译，`smali/jk5.smali` 与候选逐行相同（891 行、0 差异），对重编译树
-再跑类型流检查同样 0 命中。
+第 8 道门补上的是那行的删除；同一条臂紧接着暴露出第二个缺陷。`Resources$NotFoundException` 不再出现，同一台设备改报
 
-真机复验仍未完成：本节的结论来自离线 verifier 复刻与对照，设备侧确认见下。
+```
+java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+    at v74.d(:12)  at ba1.c(:573)
+```
+
+`ba1.c` 的 `.line 573` 就是那条臂跳到的合并点：`invoke-static/range {v16 .. v32}, Lv74;->d(Ljava/util/List;ILjava/lang/String;…)`，
+17 个实参正好占满 v16..v32，`v22` 是其中的 `Lyw1;`。214 上游里到达 `:goto_6` 的 6 条臂（`ba1.smali` 中 5 条显式 `goto` 加 1 条直落，上游的搬运分别在 968/1008/1029/1050/1071/1092 行，先搬运、再 `const/4 v4, 0x0`、再填 key 与资源 id）
+无一例外先 `move-object/from16 v22, v4` 再 `const/4 v4, 0x0`——在这个方法里 `v4` 不是空着的槽位，它是被搬走的对象。194 的 `pa1` 那 6 条臂
+只是 `const/4 v15, 0x0` 清一个当时没人读的寄存器，既不搬运也不清零；所以按 214 的角色逐行改写后，移植块既不该带 194 的清零（第 8 道门），
+也不该漏掉 214 的搬运。上一版只补了 `const/4 v4, 0x0`：`v22` 于是留着更早的块（`hi1.d` 调用前把实参槽清零的 772/776 行）塞给它的 0，
+第一次组装这一行时 `v74.d` 头部对引用实参做的 `getClass()` 判空就抛了 NPE。搬运与清零是一对，删一半比不删更危险。
+
+- 输入侧修正：`manual-pins.json` 中 `Lpa1;->a(` 的 `insert` 由 7 行变 8 行（加回 `move-object/from16 v22, v4`）。修正后的 `Lba1;->c(…)`
+  与 214 上游逐行比对，除了这 8 行完全相同（906 行 vs 898 行）——合并点的寄存器契约因此是从上游原样继承的，不是我们新造的约定。
+  整棵候选树（10108 个 smali 文件）里也只有 `smali/ba1.smali` 一个文件变：相对这两处修正之前的产物，是删掉 `const/4 v15, 0x0`、
+  加上 `move-object/from16 v22, v4`，行数不变。
+- 顺手删掉这条 placement 的 `tolerates`。它是为"块里多出的那个 `0x0`"写的豁免，但第 8 道门删掉那行之后两侧已经平衡：豁免不再挡任何
+  差异，却会继续替这个 plan 挡掉以后真正的差异（`i:0` 能挡掉任何整数常量 0 的增减）。所以门现在把"挡不到东西的豁免"当问题报，自检里也
+  加了一行：给 `Lpa1;->a(` 塞一个空豁免 → 必须报 `reviewed tolerance`。
+- 验收门加了第 9 项 `check_grafted_arm_spills`：对同一条人工落位，找出块里跳到的标签，把该文件里所有跳到这个标签的上游臂都过一遍，
+  只有当"先搬运、后复用"是这个 release 每条臂的习惯（全部命中且不止一条）时才把它当契约来要求；被移植的块复用了同一个寄存器却没搬运就报。
+  上游只要求数得出 `goto` 的那 5 条臂，直落的那条臂额外印证了同一条规则，不参与判定。
+  它与第 8 道门方向相反：那条问"我为合并点算的值有没有被自己抹掉"，这条问"我抹掉的值有没有先替合并点存好"。
+- 两道门读的都是**评审过的 `insert`**（按 `anchor` 在产物里定位，并要求块首行紧随锚点，于是同一个锚点在 `ba1.smali` 里出现 10 次也不会散开），
+  不是产物里的块：否则一条漏了行的 pin 会让产物与 pin 一起缺，门 3 的逐字节比对两头都对得上，反倒最安静。自检因此多了 `@pins` 这种行——
+  改的是 `manual-pins.json` 的副本，不是树里的文件。
+- 8 条 placement 里 7 条带 `anchor`+`insert`，其中 1 条跳到合并点（摘要行 `grafted arms: 7/1` 就是这两个数）：坏的那版报 1 条，修正后 0 条，
+  其余 6 条始终静默。
+
+四处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 9 道门（含 8752 文件上游对照 0 命中）与
+15 行自检全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，重编译树上类型流同样
+0 命中）；本跳的 smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
+
+真机复验仍未完成：第 4 处修正同样只到离线复刻与对照为止，设备侧确认见下。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
 
 ## CI 产物与设备验证
 
