@@ -12,12 +12,10 @@ class missing the renamed interface member, and the rule separator emitted on
 the first loop turn. Row 18 reproduces the separate silent IPv6 tag-literal
 mismatch. Row 14 checks rejection of a stale exemption; row 19 checks the
 ``/range`` encoding constraint. Row 20 restores async VPN app-proxy activation,
-so a status-triggered probe could run before the port waiter completes. Row 21
-reverts the reviewed 194 -> 214 HTTP-client selector hunk, making the eager
-home-latency client snapshot ``ProxySelector.getDefault()`` instead of the
-selector that can switch to the local proxy after activation. These are
-regression guards for distinct static paths; neither proves which one caused a
-device observation.
+which makes a status-triggered home probe *able* to see the original selector
+before the local port waiter completes. That is a regression guard for a
+screenshot-consistent hypothesis, not proof that the captured Google request
+actually took the direct route.
 
 Each row edits one thing in a copy of the migrated tree and requires
 scripts/verify_214_custom_hunks.py to report it, with the finding coming from
@@ -361,11 +359,6 @@ MUTATIONS = [
     ('VPN home-probe app-proxy readiness race hypothesis',
      'smali/com/box/app/vpn/VpnAppProxy.smali',
      race_the_vpn_app_proxy_against_home_probes, r'vpn app proxy activation'),
-    ('home latency client snapshots the process-wide default selector',
-     'smali/lw4.smali',
-     replace('invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;',
-             'invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;'),
-     r'VPN latency client selector'),
 ]
 
 

@@ -125,12 +125,10 @@ def main():
         # register types at reads (the walk ART runs, which caught a shipped 214
         # verifier failure), both sides of hand-placed arm contracts, /range call
         # staging, copied custom interface implementations, copied rule emitters,
-        # VPN app-proxy readiness ordering, and preservation of the 194 selector
-        # customization in the 214 global latency client.  These guard distinct
-        # paths: readiness ordering prevents status-triggered probes racing the
-        # waiter, while the client hunk prevents a pre-activation construction
-        # from snapshotting the old process-wide selector.  Both are static checks,
-        # not device confirmation of the Google failure's exact cause.
+        # and VPN app-proxy readiness before publishing running.  The last check
+        # guards the screenshot-correlated race hypothesis: the home latency
+        # client's selector is inactive until the local core port accepts a
+        # connection.  This is a static regression guard, not device confirmation.
         # The type walk is also run over the pristine 214 tree, which must report
         # nothing: a finding there means the walk is wrong, not the release.  This replaces
         # the "seven checkers are the gate" arrangement, which assembled and

@@ -115,20 +115,14 @@ read as signed, and a list separator whose guard tests the index the wrong way r
 Neither is a shape the release could be blamed for, and the control for both is zero on the
 194 tree that shipped working.
 
-Gate 13 - the VPN app-proxy readiness ordering. A status-triggered probe must not be
-published as running before the existing local-port waiter has attempted activation. This
-checks ordering, not successful activation: a missing port or exhausted waiter can still
-leave app traffic on the original route.
-
-Gate 14 - preserve the customized selector in the 194 -> 214 HTTP-client mapping. The
-customized 194 constructor uses ``VpnAppProxy.sel()``; the 214 OkHttp client constructor
-otherwise snapshots ``ProxySelector.getDefault()`` into a final field. The 214 homepage
-latency singleton eagerly builds and stores that client, so initializing it before VPN
-activation would retain the old selector and bypass later activation. The gate proves the
-194 class/member mapping and source hunk, then requires the 214 candidate to call the dynamic
-app selector; it also pins the Google latency request to this client so a future release
-change forces review. This is a static regression check, not proof of the device's first-use
-time or of the screenshot's exact failure cause.
+Gate 13 - the VPN home-probe app-proxy readiness hypothesis. Static tracing confirms the
+latency client is configured with the app's proxy selector, which delegates to the original
+selector until the local port waiter activates it. The old ordering made it possible for a
+status-triggered probe to run before activation; the VPN/TUN screenshots are consistent with
+that timing gap, but do not prove the captured Google request took the direct route. This gate
+requires the service to invoke the existing waiter synchronously before it publishes
+``running`` or ``notifyStatus``. It checks ordering, not successful activation: a missing port
+or exhausted waiter can still leave app traffic on the original route.
 """
 
 import argparse
@@ -2115,13 +2109,13 @@ def check_vpn_app_proxy_activation(output, added, problems):
     """Guard the VPN status transition against an asynchronous app-proxy readiness race.
 
     Android excludes BoxProxy's UID from its own VPN, so the app's HTTP client needs
-    VpnAppProxy's selector to use the local core port. Gate 14 separately preserves that
-    selector in the 214 global latency client; this check orders its activation attempt.
-    Run the existing waiter synchronously and invoke it before publishing running/notifyStatus,
-    so consumers triggered by that status cannot race the pending activation. The 23:19 device
-    log had no google.com selector line even though the user confirms testing; neither that
-    observation nor the earlier screenshots proves this timing race. This guard also does not
-    turn a missing port or exhausted wait into a core-start failure.
+    VpnAppProxy's selector to use the local core port.  Static tracing confirms the home
+    latency client is configured with that selector, which delegates to the original route
+    until the waiter connects and activates it.  Run the existing waiter synchronously and
+    invoke it before publishing running/notifyStatus, so consumers triggered by that status
+    cannot race the pending activation.  The screenshots are consistent with this race but
+    do not prove it occurred; this guard also does not turn a missing port or exhausted wait
+    into a core-start failure.
     """
     paths = {
         'proxy': 'smali/com/box/app/vpn/VpnAppProxy.smali',
@@ -2186,91 +2180,6 @@ def check_vpn_app_proxy_activation(output, added, problems):
                and published < running < notified)
 
 
-def check_vpn_latency_client_selector(old, custom, new, output, maps, problems):
-    """Keep the 194 app-proxy selector change in the 214 global latency client.
-
-    This is distinct from readiness ordering: a client that snapshots the process-wide
-    default before activation retains that selector even after the service is ready.  The
-    194 customized tree already avoids that capture by storing VpnAppProxy's dynamic
-    selector; prove the mapped 214 constructor still does so and that it is the client the
-    Google home-latency request actually uses.
-    """
-    label = 'VPN latency client selector'
-    ok = True
-    for old_type, new_type in (('Lul4;', 'Llw4;'), ('Ltl4;', 'Lkw4;')):
-        mapped = (maps.get('types') or {}).get(old_type, {}).get('new')
-        if mapped != new_type:
-            problems.append((label, 'class map changed: %s -> %r (expected %s)' %
-                             (old_type, mapped, new_type)))
-            ok = False
-
-    signatures = {
-        '194 upstream': (old, 'smali/ul4.smali', '<init>(Ltl4;)V'),
-        '194 customized': (custom, 'smali/ul4.smali', '<init>(Ltl4;)V'),
-        '214 upstream': (new, 'smali/lw4.smali', '<init>(Lkw4;)V'),
-        '214 candidate': (output, 'smali/lw4.smali', '<init>(Lkw4;)V'),
-    }
-    blocks = {name: block_of(root, path, signature)
-              for name, (root, path, signature) in signatures.items()}
-    missing = [name for name, block in blocks.items() if block is None]
-    if missing:
-        problems.append((label, 'mapped OkHttp constructor missing from: ' + ', '.join(missing)))
-        return 0
-
-    default_call = ('invoke-static {}, Ljava/net/ProxySelector;->getDefault()'
-                    'Ljava/net/ProxySelector;')
-    app_call = ('invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()'
-                'Ljava/net/ProxySelector;')
-    code = {name: code_lines(block) for name, block in blocks.items()}
-    if default_call not in code['194 upstream'] or app_call in code['194 upstream']:
-        problems.append((label, '194 upstream baseline no longer has the reviewed default-selector call'))
-        ok = False
-    if app_call not in code['194 customized'] or default_call in code['194 customized']:
-        problems.append((label, '194 customization no longer carries VpnAppProxy.sel()'))
-        ok = False
-    if default_call not in code['214 upstream'] or app_call in code['214 upstream']:
-        problems.append((label, '214 upstream constructor changed; review the selector port'))
-        ok = False
-    if app_call not in code['214 candidate'] or default_call in code['214 candidate']:
-        problems.append((label, '214 candidate must keep VpnAppProxy.sel() instead of snapshotting '
-                         'ProxySelector.getDefault()'))
-        ok = False
-
-    selector = block_of(output, 'smali/com/box/app/vpn/VpnAppProxy.smali',
-                        'sel()Ljava/net/ProxySelector;')
-    selector_codes = set(code_lines(selector or ''))
-    select = block_of(output, 'smali/com/box/app/vpn/VpnAppProxy.smali',
-                      'select(Ljava/net/URI;)Ljava/util/List;')
-    if ('sget-object v0, Lcom/box/app/vpn/VpnAppProxy;->INSTANCE:'
-            'Lcom/box/app/vpn/VpnAppProxy;' not in selector_codes
-            or 'return-object v0' not in selector_codes):
-        problems.append((label, 'VpnAppProxy.sel() must return the dynamic selector singleton'))
-        ok = False
-    if (select is None or 'Lcom/box/app/vpn/VpnAppProxy;->active:Z' not in select
-            or 'Lcom/box/app/vpn/VpnAppProxy;->orig:Ljava/net/ProxySelector;' not in select):
-        problems.append((label, 'VpnAppProxy.select() no longer delegates before activation and '
-                         'switches on active'))
-        ok = False
-
-    initializer = block_of(output, 'smali/av2.smali', '<clinit>()V')
-    init_codes = set(code_lines(initializer or ''))
-    if not {'const-string v4, "https://google.com"',
-            'sget-object v0, Lxc0;->f:Lz67;',
-            'invoke-virtual {v0}, Lz67;->getValue()Ljava/lang/Object;',
-            'sput-object v0, Lav2;->g:Llw4;'} <= init_codes:
-        problems.append((label, '214 home latency singleton no longer eagerly stores its Google '
-                         'client in Lav2.g'))
-        ok = False
-
-    request_path = output / 'smali/fg.smali'
-    request = request_path.read_text(errors='replace') if request_path.is_file() else ''
-    if ('"BoxApp/Latency"' not in request or '"bytes=0-0"' not in request
-            or 'Lav2;->g:Llw4;' not in request):
-        problems.append((label, 'Google home-latency request no longer uses the Lav2.g client'))
-        ok = False
-    return int(ok)
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -2319,8 +2228,6 @@ def main():
             args.output, args.custom, added_smali, problems)
     emitters = check_copied_emitters(args.output, added_smali, problems)
     vpn_proxy = check_vpn_app_proxy_activation(args.output, added_smali, problems)
-    vpn_latency = check_vpn_latency_client_selector(
-        args.old, args.custom, args.new, args.output, maps, problems)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -2351,10 +2258,10 @@ def main():
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
           '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d, '
-          'emitter methods: %d, VPN proxy: %d, VPN latency selector: %d; findings: %d'
+          'emitter methods: %d, VPN proxy: %d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             staging, impl_missing, impl_control, emitters, vpn_proxy, vpn_latency, len(problems)))
+             staging, impl_missing, impl_control, emitters, vpn_proxy, len(problems)))
     return 1 if problems else 0
 
 
