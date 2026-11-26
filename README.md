@@ -13,14 +13,14 @@
 - [214 迁移输入](upstream/26.11.23.aa98568/migration/)：`class-map.json`（7128 类，一对一）、
   `class-map-review.json`（10 处人工修正及其证据）、`coverage.json`（51 个方法 + 1363 个新增文件 +
   1 项明示撤回）、`manual-pins.json`（13 个成员 pin、2 个字段 pin、2 个新增字段、8 处人工落位：
-  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；5 条单文件 fixup，含 1 条既有数组范围修正、
-  2 条 `VpnTags` emitter 修正和 2 条 VPN App proxy readiness 顺序修正）、`hunk-contracts.json`（9 条无法用形状比较表达的
-  规则）、`delta-gaps.json`（引用审计结果）
+  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；6 条单文件 fixup，含 1 条数组范围修正、
+  2 条 `VpnTags` emitter 修正、1 条 194→214 HTTP-client selector 迁移和 2 条 VPN readiness 顺序修正）、
+  `hunk-contracts.json`（9 条无法用形状比较表达的规则）、`delta-gaps.json`（引用审计结果）
 - 定制 hunk 的验收门：`scripts/verify_214_custom_hunks.py` 从 194 增量重新推导每个条目（指令形状与帧增长、载荷字面量、
-  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面、寄存器类型、复制 emitter 和 VPN App proxy readiness 顺序；
+  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面、寄存器类型、复制 emitter、VPN readiness 顺序和首页测速 client selector；
   寄存器类型检查另对 214 上游整棵树跑 0 命中对照），由 `scripts/migrate_214.py` 强制执行；
-  `scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（20 行：1 行控制 + 19 项变异；其中 8 项复刻已记录的真机故障，
-  另 1 项覆盖本轮尚待设备确认的 VPN 首页测速代理就绪竞态假设），证明这道门会变红而不是空转
+  `scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（21 行：1 行控制 + 20 项变异；其中 8 项复刻已记录的真机故障，
+  另 2 项分别覆盖 readiness 与 selector 快照静态回归假设，不冒充本轮设备根因证明），证明这道门会变红而不是空转
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ## 本地构建
@@ -249,24 +249,26 @@ time=... level=fatal msg="Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,
   这 1356 个被复制的 smali 上跑两条判定 —— 符号扩展陷阱，以及"拼接列表的方法里，分隔符必须在第一轮跳过"（识别方式是方法内
   出现 `OR,(` 这类列表开引号、索引从 0 起步并自增）。坏的那版报 2 条，修正后 0 条；194 对照树同样各 1 条，说明这不是本跳引入的，
   而是复制路径没人审。
-- 自检再加两行（原 19 行，加入 VPN readiness 变异后 20 行）：把那个守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
-  `or-int/lit16 …, 0xc800` → 必须报 `emitter literal`。两行都只动 `VpnTags.smali`。
+- emitter 自检新增两项后，self-test 有 21 行（1 行控制 + 20 项变异）：把守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
+  `or-int/lit16 …, 0xc800` → 必须报 `emitter literal`。这两项只动 `VpnTags.smali`；第 20 行测试异步 readiness 回归，第 21 行测试 194→214 selector hunk 丢失。
 
-### VPN 首页 Google `--`：本地代理 readiness race（候选修复，设备根因待确认）
+### VPN 首页 Google `--`：readiness 与 selector 快照是两条不同路径
 
 两张截图给出的是**模式差异**，不是根因证明：`Screenshot_2026-11-26-21-59-08-785_com.boxproxy.box.jpg`（21:59:08）为 `Mihomo · VPN`，Baidu 57 ms、Cloudflare 565 ms、Google `--`；17 秒后的 `Screenshot_2026-11-26-21-59-25-724_com.boxproxy.box.jpg`（21:59:25）为 `Mihomo · TUN`，Baidu 41 ms、Cloudflare 302 ms、Google 303 ms。两图 WAN IP 都是 `180.98.0.240`、地区均显示中国。它们支持“VPN 模式下 Google 探测路径不同”的判断，但单凭截图不能区分代理尚未就绪、探测没经过代理、网络波动等原因。
 
-这次把 `fd2.g` 的路径追到 HTTP client，原先“测速是否使用 VPN App proxy 尚未证明”的疑问已有静态答案：`fd2.<clinit>` 从 `Lab0.f` 取 `Lib4`，`xf.smali` 用这个 client 发 `https://google.com` 的 `Range: bytes=0-0` 请求；`Lib4` 构造时若 `Hb4.m` 未显式设置，会调用 `VpnAppProxy.sel()`，而 `Lab0.a(...)` 创建的 builder 没设置该字段。该 selector 在 `active=false` 时委托原 selector（通常直连），`active=true` 时才返回 `127.0.0.1:<port>` 的 HTTP/SOCKS proxy。因此，测速 client **确实配置了** App proxy selector；未证实的是截图对应请求发生时 `active` 是否仍为 false。
+旧 139 基线里，`fd2.g` 取用的 `Lib4` 默认调用 `VpnAppProxy.sel()`；但这不能直接推断 214 候选也保留了同一行为。映射核对确认 194 的 `Lul4;` → 214 的 `Llw4;`、builder `Ltl4;` → `Lkw4;`：194 upstream 构造器读 `ProxySelector.getDefault()`，194 customized 已改为 `VpnAppProxy.sel()`，而此前 214 候选 `Llw4.<init>` 又读回全局默认并保存到 final selector 字段。214 的 `Lav2.<clinit>` 会强制计算 `Lxc0.f`、立即构建并存下全局 `Lav2.g` client；目标列表含 `https://google.com`，`fg` 用 `BoxApp/Latency` 与 `Range: bytes=0-0` 通过这个 client 发请求。因此，如果 `Lav2` 在 VPN 激活前首次初始化，client 会永久持有旧 selector；之后即使 waiter 成功，Google 请求也不会调用 `VpnAppProxy.select()`，`proxying google.com` 自然不会出现。这个候选迁移差异独立于 readiness 顺序，而且 class 首次初始化的设备时刻仍未从日志确认。
 
-代码时序与竞态假设相符：`BoxVpnService.doStart()` 原先先写 `running=true`、发通知，再调用 `VpnAppProxy.start()`；后者把既有 `VpnAppProxy$T.run()` 放到新线程，`run()` 需要先连上本地端口才 `activate()`。UI 可在 waiter 完成前观察到运行状态。当前修正落在受审输入 `manual-pins.json` 的两个 `scopedFixups`，并同步反映在 `decompiled/`：`start()` 直接运行 waiter；`doStart()` 在发布 `running` 和 `notifyStatus()` 前调用它。该调用来自 `VpnTask` 工作线程；waiter 最多尝试 80 次、每次 socket connect timeout 300 ms、失败间隔 250 ms。若无端口或耗尽重试仍未就绪，原 helper 仍允许 VPN 服务进入 running 且本应用请求直连——本次没有改成“核心启动失败”，这是仍需监测的边界。
+readiness 顺序本身仍值得保留：`BoxVpnService.doStart()` 原先先写 `running=true`、发通知，再调用 `VpnAppProxy.start()`；后者把既有 `VpnAppProxy$T.run()` 放到新线程，`run()` 需要先连上本地端口才 `activate()`。UI 因而可能在 waiter 完成前观察到运行状态。当前修正落在受审输入 `manual-pins.json` 的两个 `scopedFixups`，并同步反映在 139 基线 `decompiled/`：`start()` 直接运行 waiter；`doStart()` 在发布 `running` 和 `notifyStatus()` 前调用它。该调用来自 `VpnTask` 工作线程；waiter 最多尝试 80 次、每次 socket connect timeout 300 ms、失败间隔 250 ms。若无端口或耗尽重试仍未就绪，原 helper 仍允许 VPN 服务进入 running 且本应用请求直连。本次没有改成“核心启动失败”，这是仍需监测的边界；并且同步等待本身不能修复已缓存旧 selector 的 HTTP client。
 
-验收门第 13 项 `check_vpn_app_proxy_activation` 检查 `Socket.connect` 先于 `activate`、waiter 是同步运行、服务先完成这次 readiness 尝试再发布状态；self-test 第 20 行把 `run()` 改回后台 `Thread.start()`，必须让该门报 `vpn app proxy activation`。这是针对截图现象的**竞态防护假设**，并非声称已设备复现；上传的 `run.zip.txt` 只有 19:58 的另一轮日志，没有 21:59 截图对应的 `runs.log`，也没有本轮 APK/设备复验。
+设备证据要按同一轮解读：23:19 的 `run.zip-2.txt` 中，`runs.log` 有 `[app-proxy] app traffic goes through 127.0.0.1:7890`，却没有 `proxying google.com`。用户已确认那轮 VPN 启动后等过首页测速，并又手动测过；不能再把缺少 selector 记录归因于“没打开/没测首页”。`mtalk.google.com:5228` 与 gstatic 健康检查不是首页 Google 探测；该日志也没有证明请求是否到达 HTTP worker、是否在选择路由前失败，或由什么网络层拒绝。截图和日志都不能单独定根因。
+
+针对可静态确认的迁移回退，`manual-pins.json` 新增 `smali/lw4.smali` fixup，将 214 `Llw4.<init>` 的 `ProxySelector.getDefault()` 改回定制版的 `VpnAppProxy.sel()`；selector 是随 `active` 动态切换的 singleton，不会在 client 创建时固定旧默认值。验收门第 14 项会核对 194 upstream/customized、194→214 class map、214 upstream/candidate、`Lav2.g` 的 Google 请求链；self-test 第 21 行把该调用改回 `getDefault()`，必须报 `VPN latency client selector`。第 13 项 readiness gate 与第 20 行异步 waiter 变异仍保留，但它与 selector 快照是两条独立路径。上述静态修复没有设备签字；`Lav2` 在该轮首次初始化的具体时刻、Google 探测的请求/响应结果，以及修复包上的 `[app-proxy] proxying google.com` 仍待同轮真机日志确认。
 
 另一个问题是不同轮次、不能混为一谈：`run.zip.txt` 的 `mihomo.log` 在 2026-11-26 19:58:21 明确报 `rules[5] ... payloadRule error` 后退出；同轮 `runs.log` 显示 `[pump] process rules translated ...`、随后 pump 因 `ECONNRESET` 停止，并在 19:58:24 看到 `/proc/2835/fd/3` 已不存在。此轮核心根本没成功运行，`VpnAppProxy` readiness 无机会证明 Google 是否走代理。这条独立配置故障来自 `PROCESS-NAME-REGEX` 被 `VpnTags` 写成 `OR,(,(...)`：两处已由受审 `scopedFixups` 修正，并由 `VpnTagsTest` 在**迁移候选实际 smali**上测出无空元素、括号平衡、IPv6 tag 与 pump 字节一致。
 
-本轮重新完整运行 `python3 scripts/migrate_214.py --output .tools/arena-probe-214-final --gate-selftest`：porter `51/51`、`errors []`、`additions 1363`，5 条单文件 fixup 各命中一次；hunk gate 9 contracts、37 touched files、type-flow 0 findings、上游 control 0，VPN proxy 检查计数 1；20 行 self-test 全通过。7 个 smali checker 均通过（候选 10108 类；return-object 的 4 条与 214 上游基线相同）。另外，`vpn-src/test/run-config-rewriters.sh` 对最终迁移候选运行通过，包含在实际 smali 上执行的 `VpnTagsTest`；快照安全测试 8/8 通过，修改过的 Python、shell、pin JSON、`git diff --check` 均通过。用测试工具包的 Apktool 2.4.1 `SmaliBuilder` 也将整个候选 smali 树组装成 15 MB `classes.dex` 成功（这不是完整 APK 构建）。
+本轮在新目录完整运行 `python3 scripts/migrate_214.py --output .tools/arena-probe-214-selector --gate-selftest`：porter `51/51`、`errors []`、`additions 1363`；6 条单文件 fixup 各命中一次。Hunk gate：9 contracts、37 touched files、type-flow 0 findings、上游 control 0，VPN proxy readiness 与 latency selector 检查均为 1；21 行 self-test 全通过。7 个 smali checker 均通过（候选 10108 类；return-object 的 4 个冲突都已存在于 214 upstream）。`vpn-src/test/run-config-rewriters.sh` 也以该候选为输入通过，包含实际 smali 上的 `VpnTagsTest`；快照安全测试 8/8 通过。当前变更的 Python 语法、pin JSON 与 `git diff --check` 亦已通过。
 
-仍未完成：当前环境无 Android 设备，未做 VPN/TUN 实测；没有用项目锁定的 Apktool 2.9.3 完整回编译 APK（`java` 原先不可用，当前仅为宿主测试临时取得 Java 17 和测试用 Apktool 2.4.1）。所以这些离线结果不替代设备签字，也不能把候选竞态保护写成已验证修复；已发布的 214 包仍不会被这次工作区改动自动替换。
+仍未完成：当前没有 Android 设备，未用修复后的 APK 做 VPN/TUN 实测，也未确认 `[app-proxy] proxying google.com` 是否出现；本次验证是完整候选迁移、smali 静态门和宿主 rewriter 测试，不等同于设备根因签字或完整 APK 安装验证。已发布的 214 包不会被这次工作区改动自动替换。
 
 ## CI 产物与设备验证
 

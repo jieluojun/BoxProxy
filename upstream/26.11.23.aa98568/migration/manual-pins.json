@@ -86,6 +86,13 @@
         "evidence": "the two reviewed DingTalk elements occupy v11 and v12"
       }
     ],
+    "smali/lw4.smali": [
+      {
+        "wrong": "    invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;",
+        "right": "    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;",
+        "evidence": "The reviewed 194 customized tree changes Lul4.<init>(Ltl4;)V from ProxySelector.getDefault() to VpnAppProxy.sel(); the pinned map carries Lul4 -> Llw4 and Ltl4 -> Lkw4. The 214 Llw4 constructor otherwise snapshots the process-wide default selector into its final field. Lav2.<clinit> eagerly evaluates Lxc0.f and stores the resulting client in Lav2.g; the Google home-latency coroutine fg sends its BoxApp/Latency request through that client. If this client is first built before VpnAppProxy.activate(), it retains the old selector after readiness and never asks VpnAppProxy.select() to route/log google.com. Preserve the customized dynamic selector: VpnAppProxy.sel() returns the singleton whose select() follows the active state."
+      }
+    ],
     "smali/com/box/app/vpn/VpnTags.smali": [
       {
         "wrong": "    if-nez v2, :cond_sep",
@@ -102,7 +109,7 @@
       {
         "wrong": "    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;\n\n    const/4 v2, 0x1\n\n    invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V\n\n    new-instance v2, Ljava/lang/Thread;\n\n    invoke-direct {v2, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V\n\n    invoke-virtual {v2}, Ljava/lang/Thread;->start()V",
         "right": "    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;\n\n    const/4 v2, 0x1\n\n    invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V\n\n    invoke-virtual {v1}, Lcom/box/app/vpn/VpnAppProxy$T;->run()V",
-        "evidence": "The VPN excludes BoxProxy itself from the tunnel. Static tracing confirms the home latency client's fd2.g HTTP client uses VpnAppProxy.sel(): inactive delegates to the original selector, active routes to the local core proxy. The previous asynchronous waiter ran after the service published running, so a status-triggered probe could race activation; the screenshots are consistent but do not prove that happened. Run the existing port waiter synchronously."
+        "evidence": "The VPN excludes BoxProxy itself from the tunnel. VpnAppProxy's selector delegates to the original route until the local port waiter activates it. The 194-to-214 OkHttp client selector is preserved separately by the smali/lw4.smali scoped fixup and the VPN latency selector gate; this pin only orders the activation attempt before publishing running/notifyStatus. The previous asynchronous waiter ran after the service published running, so a status-triggered probe could race activation. The screenshots and 23:19 logs do not prove that this readiness race caused the Google result. Run the existing port waiter synchronously."
       }
     ],
     "smali/com/box/app/vpn/BoxVpnService.smali": [
