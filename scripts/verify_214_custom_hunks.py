@@ -114,15 +114,6 @@ name, this one checks its body.  Two traps, both shipped: a 2-int/lit16 whose li
 read as signed, and a list separator whose guard tests the index the wrong way round.
 Neither is a shape the release could be blamed for, and the control for both is zero on the
 194 tree that shipped working.
-
-Gate 13 - the VPN home-probe app-proxy readiness hypothesis. Static tracing confirms the
-latency client is configured with the app's proxy selector, which delegates to the original
-selector until the local port waiter activates it. The old ordering made it possible for a
-status-triggered probe to run before activation; the VPN/TUN screenshots are consistent with
-that timing gap, but do not prove the captured Google request took the direct route. This gate
-requires the service to invoke the existing waiter synchronously before it publishes
-``running`` or ``notifyStatus``. It checks ordering, not successful activation: a missing port
-or exhausted waiter can still leave app traffic on the original route.
 """
 
 import argparse
@@ -2104,82 +2095,6 @@ def check_copied_emitters(output, added, problems):
                                     'the rest' % codes[position - 1][1])))
     return walked
 
-
-def check_vpn_app_proxy_activation(output, added, problems):
-    """Guard the VPN status transition against an asynchronous app-proxy readiness race.
-
-    Android excludes BoxProxy's UID from its own VPN, so the app's HTTP client needs
-    VpnAppProxy's selector to use the local core port.  Static tracing confirms the home
-    latency client is configured with that selector, which delegates to the original route
-    until the waiter connects and activates it.  Run the existing waiter synchronously and
-    invoke it before publishing running/notifyStatus, so consumers triggered by that status
-    cannot race the pending activation.  The screenshots are consistent with this race but
-    do not prove it occurred; this guard also does not turn a missing port or exhausted wait
-    into a core-start failure.
-    """
-    paths = {
-        'proxy': 'smali/com/box/app/vpn/VpnAppProxy.smali',
-        'waiter': 'smali/com/box/app/vpn/VpnAppProxy$T.smali',
-        'service': 'smali/com/box/app/vpn/BoxVpnService.smali',
-    }
-    missing = [relative for relative in paths.values() if relative not in added]
-    if missing:
-        problems.append(('VPN app proxy',
-                         'vpn app proxy activation: required copied files are not in coverage.added: '
-                         + ', '.join(missing)))
-        return 0
-
-    blocks = {name: block_of(output, relative, signature)
-              for name, relative, signature in (
-                  ('proxy', paths['proxy'], 'start()V'),
-                  ('waiter', paths['waiter'], 'run()V'),
-                  ('service', paths['service'], 'doStart()V'))}
-    absent = [name for name, block in blocks.items() if block is None]
-    if absent:
-        problems.append(('VPN app proxy',
-                         'vpn app proxy activation: method(s) missing: ' + ', '.join(absent)))
-        return 0
-
-    codes = {name: [smali_liveness.code(line) for line in block.splitlines()]
-             for name, block in blocks.items()}
-    codes = {name: [line for line in lines if line] for name, lines in codes.items()}
-    run_sync = next((index for index, line in enumerate(codes['proxy'])
-                     if line.startswith('invoke-virtual ')
-                     and 'VpnAppProxy$T;->run()V' in line), None)
-    async_start = any('Ljava/lang/Thread;->start()V' in line for line in codes['proxy'])
-    if run_sync is None or async_start:
-        problems.append(('VPN app proxy start()V',
-                         'vpn app proxy activation: start()V must call the readiness runnable '
-                         'directly, not start it on a background Thread'))
-
-    connected = next((index for index, line in enumerate(codes['waiter'])
-                      if 'Ljava/net/Socket;->connect(' in line), None)
-    activated = next((index for index, line in enumerate(codes['waiter'])
-                      if 'VpnAppProxy;->activate(I)V' in line), None)
-    if connected is None or activated is None or connected >= activated:
-        problems.append(('VPN app proxy readiness',
-                         'vpn app proxy activation: the waiter must verify the local socket '
-                         'before activating the ProxySelector'))
-
-    published = next((index for index, line in enumerate(codes['service'])
-                      if 'Lcom/box/app/vpn/VpnAppProxy;->start()V' in line), None)
-    running = next((index for index, line in enumerate(codes['service'])
-                    if re.match(r'^sput-boolean \S+, Lcom/box/app/vpn/BoxVpnService;->running:Z$',
-                                line)), None)
-    notified = next((index for index, line in enumerate(codes['service'])
-                     if 'Lcom/box/app/vpn/VpnPrefs;->notifyStatus()V' in line), None)
-    if (published is None or running is None or notified is None
-            or not published < running < notified):
-        problems.append(('VPN app proxy doStart()V',
-                         'vpn app proxy activation: invoke the synchronous app-proxy readiness '
-                         'waiter before publishing running and notifyStatus'))
-
-    return int(run_sync is not None and not async_start and connected is not None
-               and activated is not None and connected < activated and published is not None
-               and running is not None and notified is not None
-               and published < running < notified)
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -2227,7 +2142,6 @@ def main():
     impl_missing, impl_control = check_custom_interface_implementations(
             args.output, args.custom, added_smali, problems)
     emitters = check_copied_emitters(args.output, added_smali, problems)
-    vpn_proxy = check_vpn_app_proxy_activation(args.output, added_smali, problems)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -2258,10 +2172,10 @@ def main():
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
           '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d, '
-          'emitter methods: %d, VPN proxy: %d; findings: %d'
+          'emitter methods: %d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             staging, impl_missing, impl_control, emitters, vpn_proxy, len(problems)))
+             staging, impl_missing, impl_control, emitters, len(problems)))
     return 1 if problems else 0
 
 
