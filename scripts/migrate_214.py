@@ -118,7 +118,7 @@ def main():
                              % (report.get('ok'), len(expected['completed'])))
 
         # The hunk gate: every coverage entry is re-derived from the pinned 194
-        # delta and compared with this tree, twelve ways - instruction shape and
+        # delta and compared with this tree, fifteen ways - instruction shape and
         # frame growth, the constants and payloads a shape comparison erases, the
         # reviewed splice recomputed from the 214 upstream, the smali
         # register/encoding law, the contracts of migration/hunk-contracts.json,
@@ -127,8 +127,12 @@ def main():
         # failed with: a producer renumbered away from the consumer its target code
         # kept assembles fine and dies at the first touch of the class), the merge
         # contract of a hand-placed arm in both directions, the register a grafted
-        # block stages its /range call through, and the interface contract of the
-        # copied custom classes, whose method definitions no reference map reaches.
+        # block stages its /range call through, the interface contract of the
+        # copied custom classes, whose method definitions no reference map reaches,
+        # the shared Home OkHttp route whose default selector would otherwise be
+        # frozen into each client at construction, the direct URL.openConnection
+        # inventory and its process-default routing boundary, and the WebView
+        # ProxyController activation/clear path.
         # The type walk is also run over the pristine 214 tree, which must report
         # nothing: a finding there means the walk is wrong, not the release.  This replaces
         # the "seven checkers are the gate" arrangement, which assembled and

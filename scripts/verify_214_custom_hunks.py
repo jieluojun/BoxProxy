@@ -114,6 +114,30 @@ name, this one checks its body.  Two traps, both shipped: a 2-int/lit16 whose li
 read as signed, and a list separator whose guard tests the index the wrong way round.
 Neither is a shape the release could be blamed for, and the control for both is zero on the
 194 tree that shipped working.
+
+Gate 13 - the shared Home HTTP route.  The 214 Home latency client (``Lav2.g``) and WAN/IP
+client (``Lty2.e``) are default ``Llw4`` clients created by the same ``Lxc0`` factory.  The
+OkHttp client constructor snapshots ``ProxySelector.getDefault()`` into ``Llw4.l``; changing
+the process default only after the VPN core is ready cannot update clients already created.
+The reviewed release-scoped fix makes only the no-explicit-selector branch use the stable
+``VpnAppProxy.sel()`` singleton.  This gate compares the whole constructor class with pristine
+214 plus that one fix, follows both Home clients through the common factory to the route
+selector, and checks the singleton's active/inactive and local-address behavior.  It validates
+the shared path, not a single probe retry or a selector log.
+
+Gate 14 - the direct ``URL.openConnection()`` inventory.  Every call site is classified:
+the request in ``i94`` creates an external ``HttpURLConnection`` with no explicit proxy and
+relies on the process-default selector; ``fz5`` opens a ``ClassLoader.getResource()`` URL for
+a local classpath resource.  New or missing call sites require review.  The external path is
+checked against the worker's loopback-port readiness probe and ``VpnAppProxy.activate()``
+installing the default selector; the no-port/timeout direct fallback is explicit.  That static
+relationship does not prove the platform route succeeded on a device.
+
+Gate 15 - the WebView proxy boundary.  The gate follows VPN activation to the main-thread
+``VpnAppProxy$T`` task and ``ProxyController.setProxyOverride``, verifies HTTP/SOCKS loopback
+configuration and the local-host bypass list, and checks VPN stop clears the override.  This
+proves the Smali path is present, not that a given WebView provider supports the call or that
+requests reached Mihomo; those still require runtime validation.
 """
 
 import argparse
@@ -789,6 +813,465 @@ def check_custom_surfaces(output, problems):
         problems.append((str(tags.relative_to(output)), 'the ip6() tag prefix is missing'))
     if '.method private static ip6(I)Ljava/lang/String;' not in tags_text:
         problems.append((str(tags.relative_to(output)), 'the ip6() method is missing'))
+
+
+def check_shared_okhttp_app_proxy_route(args, pins, problems):
+    """Prove Home's default HTTP clients share the VPN selector at the OkHttp boundary.
+
+    The selector used by a client is copied into the client's immutable field when
+    ``Llw4`` is constructed.  A process-wide ``setDefault`` when the VPN becomes
+    ready is therefore too late for any Home client created earlier.  This check
+    pins the release-specific constructor patch to pristine 214, follows the two
+    Home clients from their lazy factories through that constructor and the call
+    path, and verifies the app selector actually changes routes when active.
+    """
+    problems_before = len(problems)
+    name = 'shared app-proxy routing'
+    contract = (pins.get('runtimeContracts') or {}).get('sharedOkHttpAppProxy')
+
+    def fail(detail):
+        problems.append((name, detail))
+
+    if not isinstance(contract, dict):
+        fail('manual-pins.json has no reviewed sharedOkHttpAppProxy runtime contract')
+        return False
+
+    client_file = contract.get('clientFile')
+    constructor_sig = contract.get('clientConstructor')
+    builder_field = contract.get('builderSelectorField')
+    client_field = contract.get('clientSelectorField')
+    selector_factory = contract.get('selectorFactory')
+    fixups = (pins.get('scopedFixups') or {}).get(client_file, [])
+    matching = [item for item in fixups if item.get('right') ==
+                ('    invoke-static {}, ' + str(selector_factory))]
+    if len(matching) != 1:
+        fail('the release-scoped fixup does not uniquely bind the default client to %s'
+             % selector_factory)
+        return False
+
+    upstream_path = args.new / client_file
+    output_path = args.output / client_file
+    if not upstream_path.is_file() or not output_path.is_file():
+        fail('the pinned client file is missing from 214 upstream or the migrated tree: %s'
+             % client_file)
+        return False
+    upstream_text = upstream_path.read_text(errors='replace')
+    client_text = output_path.read_text(errors='replace')
+    fixup = matching[0]
+    wrong, right = fixup.get('wrong', ''), fixup.get('right', '')
+    if (not fixup.get('evidence') or not wrong or not right
+            or upstream_text.count(wrong) != 1):
+        fail('the 214 upstream does not contain the reviewed client-constructor anchor exactly once')
+    else:
+        expected = upstream_text.replace(wrong, right, 1)
+        if client_text != expected:
+            fail('the shared client class is not pristine 214 plus exactly the reviewed selector fix')
+    if client_text.count(right) != 1 or client_text.count(wrong):
+        fail('the client constructor does not contain exactly one app-proxy selector call and no '
+             'frozen system-default call')
+
+    constructor = method_blocks(client_text).get(constructor_sig)
+    if constructor is None:
+        fail('the pinned client constructor %s is missing' % constructor_sig)
+    else:
+        code = [smali_liveness.code(line) for line in constructor.splitlines()]
+        code = [line for line in code if line]
+        load_re = re.compile(r'^iget-object ([vp]\d+), p1, ' + re.escape(str(builder_field)) + r'$')
+        loads = [(index, load_re.match(line)) for index, line in enumerate(code)]
+        loads = [(index, match) for index, match in loads if match]
+        if len(loads) != 1:
+            fail('the client constructor does not read its builder selector exactly once')
+        else:
+            load_index, load = loads[0]
+            register = load.group(1)
+            branch = next((index for index in range(load_index + 1, len(code))
+                           if re.match(r'^if-nez ' + re.escape(register) + r', :[A-Za-z0-9_$]+$',
+                                       code[index])), None)
+            default_call = 'invoke-static {}, ' + str(selector_factory)
+            call_index = next((index for index in range(load_index + 1, len(code))
+                               if code[index] == default_call), None)
+            result_index = next((index for index in range((call_index or 0) + 1, len(code))
+                                 if code[index] == 'move-result-object ' + register), None)
+            store_line = 'iput-object %s, p0, %s' % (register, client_field)
+            store_index = next((index for index in range(load_index + 1, len(code))
+                                if code[index] == store_line), None)
+            if (branch is None or call_index is None or result_index is None or store_index is None
+                    or not load_index < branch < call_index < result_index < store_index):
+                fail('the constructor must preserve a non-null builder selector and store the '
+                     'stable app-proxy selector only for the default branch')
+
+    # The Home latency and WAN/IP API objects are separate static clients, but both
+    # get their client from xc0's lazy default-client factory and make requests through it.
+    home_clients = contract.get('homeClients')
+    if not isinstance(home_clients, list) or not home_clients:
+        fail('the runtime contract does not enumerate the Home clients')
+    else:
+        for item in home_clients:
+            field = item.get('field', '')
+            owner, separator, member = field.partition('->')
+            if not separator or ':' not in member:
+                fail('malformed Home client field in the runtime contract: %r' % field)
+                continue
+            class_path = resolver_path(args.output, owner)
+            if class_path is None:
+                fail('Home client owner %s has no class file' % owner)
+                continue
+            home_text = class_path.read_text(errors='replace')
+            init = method_blocks(home_text).get('<clinit>()V') or ''
+            lazy_field = item.get('lazyField', '')
+            request_file = item.get('requestFile', '')
+            request_path = args.output / request_file
+            if (lazy_field not in init or field not in init
+                    or not request_path.is_file()
+                    or field not in request_path.read_text(errors='replace')):
+                fail('%s is not constructed from its pinned lazy client and used by its request '
+                     'path' % field)
+            if 'check-cast v0, ' + str(client_field).split('->', 1)[0] not in init:
+                fail('%s no longer resolves to the shared HTTP client type' % field)
+
+    builder_factory = contract.get('builderFactory') or {}
+    factory_path = args.output / builder_factory.get('file', '')
+    factory_block = (method_blocks(factory_path.read_text(errors='replace')).get(
+                     builder_factory.get('method', '')) if factory_path.is_file() else None)
+    builder_owner = str(builder_field).split('->', 1)[0]
+    client_owner = str(client_field).split('->', 1)[0]
+    expected_constructor = client_owner + '->' + str(constructor_sig)
+    if (factory_block is None or not re.search(r'new-instance\s+\S+,\s*' +
+                                                re.escape(builder_owner), factory_block)
+            or expected_constructor not in factory_block
+            or builder_field in factory_block):
+        fail('the Home factory must build a default client without installing a different selector')
+
+    dispatcher_path = args.output / contract.get('dispatcherFile', '')
+    carrier_path = args.output / contract.get('selectorCarrierFile', '')
+    connection_path = args.output / contract.get('connectionRouteFile', '')
+    selector_path = args.output / contract.get('selectorCallFile', '')
+    selector_call = 'Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;'
+    dispatcher = dispatcher_path.read_text(errors='replace') if dispatcher_path.is_file() else ''
+    carrier = carrier_path.read_text(errors='replace') if carrier_path.is_file() else ''
+    connection = connection_path.read_text(errors='replace') if connection_path.is_file() else ''
+    selector_route = selector_path.read_text(errors='replace') if selector_path.is_file() else ''
+    carrier_field = contract.get('selectorCarrierField', '')
+    route_field = contract.get('routeSelectorField', '')
+    carrier_owner = carrier_field.split('->', 1)[0]
+    if (client_field not in dispatcher or carrier_owner not in dispatcher
+            or 'Ljava/net/ProxySelector;' not in dispatcher):
+        fail('the OkHttp call path no longer passes the shared client selector to its carrier')
+    if (carrier_field not in carrier
+            or 'iput-object p1, p0, ' + carrier_field not in carrier):
+        fail('the selector carrier no longer stores the selector passed by the client')
+    if ('iget-object v0, v1, ' + carrier_field not in connection
+            or 'Lq7;-><init>' not in connection
+            or 'Ljava/net/ProxySelector;' not in connection):
+        fail('the connection route no longer carries the shared selector into its route object')
+    if (route_field not in selector_route or selector_call not in selector_route):
+        fail('the OkHttp route path no longer calls ProxySelector.select through its selector field')
+
+    proxy_path = args.output / contract.get('selectorImplFile', '')
+    proxy_text = proxy_path.read_text(errors='replace') if proxy_path.is_file() else ''
+    proxy_methods = method_blocks(proxy_text)
+    app_proxy = 'Lcom/box/app/vpn/VpnAppProxy;'
+    instance_field = app_proxy + '->INSTANCE:' + app_proxy
+    sel = proxy_methods.get('sel()Ljava/net/ProxySelector;', '')
+    if instance_field not in sel or 'return-object v0' not in sel:
+        fail('VpnAppProxy.sel() no longer returns its stable singleton')
+    selector = proxy_methods.get('select(Ljava/net/URI;)Ljava/util/List;', '')
+    code = [smali_liveness.code(line) for line in selector.splitlines()]
+    code = [line for line in code if line]
+    inactive_path = [
+        'sget-boolean v0, ' + app_proxy + '->active:Z',
+        'if-nez v0, :cond_on',
+        'sget-object v0, ' + app_proxy + '->orig:Ljava/net/ProxySelector;',
+        'if-eqz v0, :cond_direct',
+        'invoke-virtual {v0, p1}, ' + selector_call,
+    ]
+    positions = [next((index for index, line in enumerate(code) if line == token), None)
+                 for token in inactive_path]
+    if selector and (any(index is None for index in positions)
+                     or positions != sorted(positions)):
+        fail('VpnAppProxy.select() must delegate to the original selector while inactive')
+    if not selector:
+        fail('VpnAppProxy.select(URI) is missing')
+    for host, test_method in (('localhost', 'equals'), ('127.', 'startsWith'),
+                              ('172.19.', 'startsWith'), ('::1', 'equals'),
+                              ('[::1]', 'equals')):
+        needle = 'const-string v1, "%s"' % host
+        index = next((i for i, line in enumerate(code) if line == needle), None)
+        tail = code[index:index + 7] if index is not None else []
+        if (index is None or not any('Ljava/lang/String;->%s(' % test_method in line
+                                     for line in tail)
+                or not any(line.startswith('if-nez ') and line.endswith(':cond_direct')
+                           for line in tail)):
+            fail('VpnAppProxy.select() no longer keeps local host %r direct' % host)
+    proxy_address_path = [
+        'const-string v4, "127.0.0.1"',
+        'sget v5, ' + app_proxy + '->port:I',
+        'invoke-direct {v3, v4, v5}, Ljava/net/InetSocketAddress;-><init>(Ljava/lang/String;I)V',
+        'invoke-direct {v4, v2, v3}, Ljava/net/Proxy;-><init>(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V',
+    ]
+    positions = [next((index for index, line in enumerate(code) if line == token), None)
+                 for token in proxy_address_path]
+    if (any(index is None for index in positions) or positions != sorted(positions)
+            or 'Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;' not in selector
+            or 'Ljava/net/Proxy$Type;->SOCKS:Ljava/net/Proxy$Type;' not in selector):
+        fail('active external requests no longer select the configured loopback HTTP/SOCKS proxy')
+    if 'Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;' not in selector:
+        fail('inactive/local requests no longer have a direct fallback')
+
+    return len(problems) == problems_before
+
+
+def check_direct_url_open_connections(args, pins, problems):
+    """Inventory direct URLConnection sites and prove their app-proxy boundary.
+
+    There is one caller-supplied external URL, opened as HttpURLConnection without
+    an explicit Proxy, and one ClassLoader resource URL.  Only the former is an
+    app-network request: it relies on the process default selector installed by
+    VpnAppProxy.activate().  Keeping the full inventory pinned means a new
+    openConnection call cannot silently escape this audit.
+    """
+    problems_before = len(problems)
+    name = 'direct URL routing'
+    runtime = pins.get('runtimeContracts') or {}
+    contract = runtime.get('directUrlOpenConnections')
+    selector_contract = runtime.get('sharedOkHttpAppProxy') or {}
+
+    def fail(detail):
+        problems.append((name, detail))
+
+    if not isinstance(contract, dict) or not isinstance(contract.get('paths'), list):
+        fail('manual-pins.json has no reviewed directUrlOpenConnections inventory')
+        return False
+
+    app_proxy = 'Lcom/box/app/vpn/VpnAppProxy;'
+    implementation = selector_contract.get('selectorImplFile', '')
+    proxy_path = args.output / implementation
+    proxy_blocks = (method_blocks(proxy_path.read_text(errors='replace'))
+                    if proxy_path.is_file() else {})
+    prefix = contract.get('openConnectionPrefix')
+    if not prefix:
+        fail('the URL.openConnection inventory has no instruction prefix')
+        return False
+    expected = collections.Counter()
+    for item in contract['paths']:
+        if not isinstance(item, dict):
+            fail('malformed direct URL path contract: %r' % (item,))
+            continue
+        file_name, signature, kind = item.get('file', ''), item.get('method', ''), item.get('kind')
+        path = args.output / file_name
+        block = method_blocks(path.read_text(errors='replace')).get(signature) if path.is_file() else None
+        if block is None:
+            fail('pinned URL.openConnection site is missing: %s %s' % (file_name, signature))
+            continue
+        expected[(file_name, signature)] += 1
+        code = [smali_liveness.code(line) for line in block.splitlines()]
+        code = [line for line in code if line]
+        calls = [(index, line) for index, line in enumerate(code) if prefix in line]
+        if len(calls) != 1:
+            fail('%s %s must contain exactly one URL.openConnection call, found %d'
+                 % (file_name, signature, len(calls)))
+            continue
+        call_index, call = calls[0]
+        if kind == 'external-http':
+            expected_call = 'Ljava/net/URL;->openConnection()Ljava/net/URLConnection;'
+            if call != 'invoke-virtual {v0}, ' + expected_call:
+                # This call's receiver register is release-specific, but it may not
+                # acquire a Proxy argument or be redirected to an unknown overload.
+                if not re.match(r'^invoke-virtual \{[vp]\d+\}, ' +
+                                re.escape(expected_call) + r'$', call):
+                    fail('the external URL path must use no-argument URL.openConnection(), '
+                         'not an explicit or unreviewed proxy overload')
+            if 'Ljava/net/URL;-><init>(Ljava/lang/String;)V' not in block:
+                fail('the external HttpURLConnection is no longer created from its reviewed URL string')
+            if 'Ljava/net/HttpURLConnection;' not in block:
+                fail('the external URL result is no longer treated as HttpURLConnection')
+            caller_file, caller_sig = item.get('callerFile', ''), item.get('callerMethod', '')
+            caller_path = args.output / caller_file
+            caller_block = (method_blocks(caller_path.read_text(errors='replace')).get(caller_sig)
+                            if caller_path.is_file() else None)
+            if (caller_block is None or 'Li94;-><init>' not in caller_block
+                    or 'Lbw;->f0(' not in caller_block):
+                fail('the reviewed external URL coroutine is no longer reached through its pinned '
+                     'async caller')
+            runnable_path = args.output / item.get('activationRunnableFile', '')
+            runnable_text = (runnable_path.read_text(errors='replace')
+                             if runnable_path.is_file() else '')
+            runnable = method_blocks(runnable_text).get('run()V', '')
+            runnable_code = [smali_liveness.code(line) for line in runnable.splitlines()]
+            runnable_code = [line for line in runnable_code if line]
+            ready_fragments = [
+                'new-instance v1, Ljava/net/Socket;',
+                'invoke-direct {v1}, Ljava/net/Socket;-><init>()V',
+                'const-string v3, "127.0.0.1"',
+                'sget v4, Lcom/box/app/vpn/VpnAppProxy;->port:I',
+                'Ljava/net/InetSocketAddress;-><init>(Ljava/lang/String;I)V',
+                'Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V',
+                'invoke-virtual {v1}, Ljava/net/Socket;->close()V',
+                'Lcom/box/app/vpn/VpnAppProxy;->activate(I)V',
+            ]
+            ready_positions = [next((index for index, line in enumerate(runnable_code)
+                                     if fragment in line), None)
+                               for fragment in ready_fragments]
+            if (not runnable or any(index is None for index in ready_positions)
+                    or ready_positions != sorted(ready_positions)):
+                fail('the external URL path no longer activates its global selector only after '
+                     'the local proxy port accepts a loopback connection')
+            if ('local proxy port did not open, app traffic stays direct' not in runnable
+                    or 'no local proxy port in the config, app traffic stays direct'
+                    not in proxy_blocks.get('start()V', '')):
+                fail('the no-port/timeout direct fallback is no longer explicitly reported')
+        elif kind == 'classpath-resource':
+            resource = 'Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;'
+            resource_index = next((index for index, line in enumerate(code) if resource in line), None)
+            if resource_index is None or resource_index >= call_index:
+                fail('the non-network URL.openConnection path no longer follows ClassLoader.getResource')
+            elif ('Ljava/net/JarURLConnection;' not in block
+                  or 'Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;' not in block):
+                fail('the classpath URL path no longer reads its local resource stream')
+        else:
+            fail('unrecognized direct URL classification %r for %s' % (kind, file_name))
+        if not item.get('evidence'):
+            fail('the pinned direct URL path has no review evidence: %s %s'
+                 % (file_name, signature))
+
+    actual = collections.Counter()
+    for directory in sorted(Path(args.output).glob('smali*')):
+        for path in sorted(directory.glob('**/*.smali')):
+            relative = str(path.relative_to(args.output))
+            for signature, block in method_blocks(path.read_text(errors='replace')).items():
+                code = [smali_liveness.code(line) for line in block.splitlines()]
+                count = sum(prefix in line for line in code if line)
+                if count:
+                    actual[(relative, signature)] += count
+    if actual != expected:
+        fail('the direct URL.openConnection inventory changed (unreviewed/missing sites): '
+             'expected %s, found %s' % (sorted(expected.items()), sorted(actual.items())))
+
+    external = [item for item in contract['paths'] if item.get('kind') == 'external-http']
+    if len(external) != 1:
+        fail('the reviewed release must identify exactly one external HttpURLConnection path')
+
+    activate = proxy_blocks.get('activate(I)V', '')
+    activate_code = [smali_liveness.code(line) for line in activate.splitlines()]
+    activate_code = [line for line in activate_code if line]
+    default_set = 'Ljava/net/ProxySelector;->setDefault(Ljava/net/ProxySelector;)V'
+    set_index = next((index for index, line in enumerate(activate_code)
+                      if default_set in line), None)
+    active_index = next((index for index, line in enumerate(activate_code)
+                         if 'sput-boolean' in line and app_proxy + '->active:Z' in line), None)
+    if (set_index is None or active_index is None or active_index >= set_index
+            or app_proxy + '->INSTANCE:' + app_proxy not in activate):
+        fail('VpnAppProxy.activate() must mark the selector active and install its singleton as '
+             'the process default for direct URLConnection requests')
+
+    stop = proxy_blocks.get('stop()V', '')
+    stop_code = [smali_liveness.code(line) for line in stop.splitlines()]
+    stop_code = [line for line in stop_code if line]
+    restore_index = next((index for index, line in enumerate(stop_code)
+                          if default_set in line), None)
+    original_index = next((index for index, line in enumerate(stop_code)
+                           if 'sget-object' in line and app_proxy + '->orig:' in line), None)
+    if (restore_index is None or original_index is None or original_index >= restore_index
+            or app_proxy + '->active:Z' not in stop):
+        fail('VpnAppProxy.stop() must restore the original process selector for direct URL paths')
+
+    return len(problems) == problems_before
+
+
+def check_webview_app_proxy(args, pins, problems):
+    """Prove the WebView proxy override is scheduled, applied and cleared."""
+    problems_before = len(problems)
+    name = 'WebView app-proxy routing'
+    contract = (pins.get('runtimeContracts') or {}).get('webViewAppProxy')
+
+    def fail(detail):
+        problems.append((name, detail))
+
+    if not isinstance(contract, dict):
+        fail('manual-pins.json has no reviewed webViewAppProxy runtime contract')
+        return False
+
+    implementation = args.output / contract.get('implementationFile', '')
+    runnable = args.output / contract.get('runnableFile', '')
+    impl_text = implementation.read_text(errors='replace') if implementation.is_file() else ''
+    runnable_text = runnable.read_text(errors='replace') if runnable.is_file() else ''
+    impl_blocks = method_blocks(impl_text)
+    runnable_blocks = method_blocks(runnable_text)
+    webview = impl_blocks.get(contract.get('webViewMethod', ''), '')
+    activate = impl_blocks.get(contract.get('activateMethod', ''), '')
+    stop = impl_blocks.get(contract.get('stopMethod', ''), '')
+    post = impl_blocks.get('post(I)V', '')
+    run = runnable_blocks.get('run()V', '')
+    if not webview or not activate or not stop or not post or not run:
+        fail('the WebView implementation, activation/stop methods, main-thread post, or runnable '
+             'callback is missing')
+        return False
+    if ('Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;' not in post
+            or 'Landroid/os/Handler;-><init>(Landroid/os/Looper;)V' not in post
+            or 'Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z' not in post
+            or 'Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V' not in post):
+        fail('VpnAppProxy.post() no longer dispatches its WebView task through the main looper')
+
+    web_code = [smali_liveness.code(line) for line in webview.splitlines()]
+    web_code = [line for line in web_code if line]
+    set_call = contract.get('setProxyBoundary', '')
+    clear_call = contract.get('clearProxyBoundary', '')
+    if not set_call or not any(set_call in line for line in web_code):
+        fail('VpnAppProxy.webview(true) no longer calls ProxyController.setProxyOverride')
+    if not clear_call or not any(clear_call in line for line in web_code):
+        fail('VpnAppProxy.webview(false) no longer clears the ProxyController override')
+    if ('http://127.0.0.1:' not in webview or 'socks5://127.0.0.1:' not in webview
+            or '->socks:Z' not in webview):
+        fail('the WebView override no longer chooses the configured loopback HTTP/SOCKS endpoint')
+    set_index = next((index for index, line in enumerate(web_code) if set_call in line), None)
+    for host in contract.get('bypassHosts', []):
+        literal_index, register = None, None
+        for index, line in enumerate(web_code):
+            if line.startswith('const-string') and line.endswith(', "%s"' % host):
+                literal_index = index
+                register = line.split(None, 1)[1].split(',', 1)[0]
+                break
+        if literal_index is None or set_index is None:
+            fail('the WebView override no longer preserves local bypass host %r' % host)
+            continue
+        stored = any(line.startswith('aput-object ')
+                     and line[len('aput-object '):].split(',', 1)[0].strip() == register
+                     for line in web_code[literal_index + 1:set_index])
+        if literal_index >= set_index or not stored:
+            fail('the WebView override no longer places local bypass host %r in its bypass list'
+                 % host)
+
+    def scheduled(mode, block):
+        code = [smali_liveness.code(line) for line in block.splitlines()]
+        code = [line for line in code if line]
+        for index, line in enumerate(code[:-1]):
+            match = re.match(r'^const/4 ([vp]\d+), (0x[0-9a-f]+)$', line)
+            if not match or int(match.group(2), 16) != mode:
+                continue
+            if code[index + 1] == ('invoke-static {%s}, Lcom/box/app/vpn/VpnAppProxy;->post(I)V'
+                                   % match.group(1)):
+                return True
+        return False
+
+    if not scheduled(2, activate):
+        fail('VpnAppProxy.activate() no longer posts WebView proxy mode 2 after activation')
+    if not scheduled(3, stop):
+        fail('VpnAppProxy.stop() no longer posts WebView proxy-clear mode 3')
+
+    run_code = [smali_liveness.code(line) for line in run.splitlines()]
+    run_code = [line for line in run_code if line]
+    true_call = 'invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V'
+    if not any(run_code[index:index + 3] ==
+               ['const/4 v1, 0x2', 'if-ne v0, v1, :cond_not2', true_call]
+               for index in range(max(0, len(run_code) - 2))):
+        fail('the main-thread runnable no longer applies the WebView override for mode 2')
+    if not any(run_code[index:index + 2] == ['const/4 v1, 0x0', true_call]
+               for index in range(len(run_code) - 1)):
+        fail('the main-thread runnable no longer clears the WebView override for mode 3')
+    if not contract.get('evidence'):
+        fail('the reviewed WebView route has no evidence note')
+
+    return len(problems) == problems_before
 
 
 # --------------------------------------------------------------------------------------
@@ -2134,6 +2617,9 @@ def main():
                              args.custom, trace)
     check_pinned_fields(pins, args, problems)
     check_custom_surfaces(args.output, problems)
+    route_ok = check_shared_okhttp_app_proxy_route(args, pins, problems)
+    direct_url_ok = check_direct_url_open_connections(args, pins, problems)
+    webview_ok = check_webview_app_proxy(args, pins, problems)
     flow = check_type_flow(touched, args.output, problems)
     grafted = check_grafted_arm_roles(pins, args.output, problems, touched)
     spills = check_grafted_arm_spills(pins, args.output, problems, touched)
@@ -2172,10 +2658,12 @@ def main():
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
           '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d, '
-          'emitter methods: %d; findings: %d'
+          'emitter methods: %d, shared app-proxy route: %s, direct URL audit: %s, '
+          'WebView route: %s; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             staging, impl_missing, impl_control, emitters, len(problems)))
+             staging, impl_missing, impl_control, emitters, 'ok' if route_ok else 'FAILED',
+             'ok' if direct_url_ok else 'FAILED', 'ok' if webview_ok else 'FAILED', len(problems)))
     return 1 if problems else 0
 
 

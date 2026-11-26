@@ -13,14 +13,15 @@
 - [214 迁移输入](upstream/26.11.23.aa98568/migration/)：`class-map.json`（7128 类，一对一）、
   `class-map-review.json`（10 处人工修正及其证据）、`coverage.json`（51 个方法 + 1363 个新增文件 +
   1 项明示撤回）、`manual-pins.json`（13 个成员 pin、2 个字段 pin、2 个新增字段、8 处人工落位：
-  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；3 条单文件 fixup，其中 2 条修的是复制来的
-  定制类自己写错的两条指令）、`hunk-contracts.json`（9 条无法用形状比较表达的
+  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；4 条单文件 fixup：2 条修正复制类里的错误指令，
+  另 2 条修正 214 的数组窗口与共享 OkHttp 默认路由）、`hunk-contracts.json`（9 条无法用形状比较表达的
   规则）、`delta-gaps.json`（引用审计结果）
 - 定制 hunk 的验收门：`scripts/verify_214_custom_hunks.py` 从 194 增量重新推导每个条目（指令形状与帧增长、载荷字面量、
-  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面，以及寄存器在此处真正装着的类型 —— 后者按本树类层次判定，
-  并对 214 上游整棵树跑 0 命中对照），由 `scripts/migrate_214.py`
-  强制执行；`scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（19 行：1 行控制 + 18 项变异，
-  其中 8 项是真机故障的复刻），证明这道门会变红而不是空转
+  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面、寄存器类型，以及首页延迟/WAN API 的共享 OkHttp selector、
+  `URL.openConnection()` 路径清单和 WebView ProxyController 调用链），并对 214 上游整棵树跑 0 命中对照。
+  这些静态门检查构造和路由边界，不声称请求成功连到本地代理或由 Mihomo 出口；设备验证仍待执行。
+  由 `scripts/migrate_214.py` 强制执行；`scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性
+  （22 行：1 行控制 + 21 项变异，其中 8 项是真机故障的复刻），证明这道门会变红而不是空转
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ## 本地构建

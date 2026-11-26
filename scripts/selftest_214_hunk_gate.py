@@ -9,15 +9,19 @@ insert, a splice that landed one instruction later, a grafted call that the
 release renamed under it.  Each row edits one thing in a copy of the migrated
 tree and requires scripts/verify_214_custom_hunks.py to report it, with the
 finding coming from the gate that owns that property - so a row cannot pass for
-the wrong reason.  Rows 10 to 18 are the seven 214 device failures of this hop: the
-producer of a grafted value renamed away from the register the target's own code
-reads, an operand a replaced line carried from the frame it was written in, the flag
-an arm zeroed instead of the resource id the merge reads, the spill that arm owed the
-merge, a block that staged its ``/range`` call through a register this frame still
-needed, a copied class that kept the previous release's name for the interface member
-the release dispatches, and the two instructions of the copied class that builds the
-rule string the core is handed - a separator that ran on the first turn and a literal
-that read as signed.  Row 14 is the exemption nothing needed.
+the wrong reason.  Rows 10 to 18 cover the eight 214 device-failure reproductions
+and the inert-tolerance check: the producer of a grafted value renamed away from the
+register the target's own code reads, an operand a replaced line carried from the frame
+it was written in, the flag an arm zeroed instead of the resource id the merge reads,
+the spill that arm owed the merge, a block that staged its ``/range`` call through a
+register this frame still needed, a copied class that kept the previous release's name
+for the interface member the release dispatches, and the two instructions of the copied
+class that builds the rule string the core is handed - a separator that ran on the first
+turn and a literal that read as signed.  Row 14 is the exemption nothing needed.  Row 20 restores the
+system-default selector snapshot in OkHttp's shared client constructor, reproducing
+the Home routing bypass this hop must prevent.  Row 21 removes global selector
+installation, which would leave direct HttpURLConnection requests on their old
+default; row 22 drops the WebView's local-host bypass from its ProxyController override.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -55,6 +59,15 @@ def replace(old, new):
         if text.count(old) < 1:
             raise LookupError('the needle is gone: ' + old[:60])
         return text.replace(old, new)
+    return mutate
+
+
+def replace_first(old, new):
+    """Change only the first reviewed occurrence (used when activate and stop share a call)."""
+    def mutate(text):
+        if old not in text:
+            raise LookupError('the needle is gone: ' + old[:60])
+        return text.replace(old, new, 1)
     return mutate
 
 
@@ -331,6 +344,17 @@ MUTATIONS = [
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),
+    ('shared Home client snapshots the system selector again', 'smali/lw4.smali',
+     replace('invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;',
+             'invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;'),
+     r'shared app-proxy routing'),
+    ('direct URL loses the app-wide default selector', 'smali/com/box/app/vpn/VpnAppProxy.smali',
+     replace_first('invoke-static {v1}, Ljava/net/ProxySelector;->setDefault('
+                   'Ljava/net/ProxySelector;)V', 'nop'),
+     r'direct URL routing'),
+    ('WebView drops its local-host bypass', 'smali/com/box/app/vpn/VpnAppProxy.smali',
+     replace('const-string v10, "<local>"', 'const-string v10, "not-local"'),
+     r'WebView app-proxy routing'),
 ]
 
 

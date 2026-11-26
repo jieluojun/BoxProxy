@@ -86,23 +86,22 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 ## App 自身流量（延迟检测 / IP 检测 / Web 面板）
 
 内核与 App 同一个 UID，必须把 App 排除在 VPN 之外，否则内核的出站连接会绕回 VPN。
-副作用是 App 自己发的请求（首页延迟、WAN 检测、Web 面板里的延迟/网络信息）直连，不走代理。
+没有应用侧代理时，App 自己发的请求会绕过 TUN、直接走网络。
 
-处理方式：VPN 运行期间，把 App 自己的请求指向内核的本地代理端口，VPN 仍然排除 App。
+**当前排查结论是候选根因，不是设备确认的事实：**214 的首页延迟和 WAN/IP API 使用独立静态 OkHttp 客户端，但共用默认客户端构造器。OkHttp 在构造客户端时把 `ProxySelector` 存进客户端字段；`VpnAppProxy` 则要等本地代理端口可连接后才 `activate()` 并更改系统默认 selector。这样，VPN 启动前已创建的默认客户端可能继续持有旧 selector，造成这些 Home 请求直连。迁移修复只改共同构造器的默认分支，让未显式配置 selector 的客户端持有稳定的 `VpnAppProxy.sel()` 实例；该实例按每次请求时的 `active` 状态选路，显式 selector 保持原样。迁移门已静态核对 Home 客户端、构造器、请求分发和 selector 路径，但这还没有证明真机上的根因或实际出站结果。
 
 - `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
   配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
 - `VpnAppProxy`：
-  - 内核存活后等本地端口可连接，再启用（日志 `[app-proxy] …` 写入 `runs.log`）；
-  - `ProxySelector`：App 内置的 OkHttp（`z84` 构建时改用 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，
-    127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
-  - WebView：通过 `ProxyController` 的同一套边界接口做代理覆盖（`127.0.0.1`、`localhost`、`<local>` 直连），
-    Web 面板里的请求也走内核。
+  - 内核进程启动后还要等本地代理端口接受连接才置 `active`；无端口、超时或等待期间，请求仍可能直连，这是启动窗口/失败回退，不是本次 OkHttp 修复能消除的路径；
+  - 默认 OkHttp 客户端使用上述稳定 selector；本版本 `i94` 中的外部 URL 下载使用无参数 `URL.openConnection()` 创建 `HttpURLConnection`，未见应用自带的 selector 缓存或显式 `NO_PROXY`，它依赖进程默认 selector。静态验收确认了调用点和 activate/stop 的默认 selector 设置路径；URLConnection 实际采用 selector、连上本地端口并从 Mihomo 出口，仍需设备确认；
+  - `fz5` 的另一处 `URL.openConnection()` 来自 `ClassLoader.getResource()`，用于读取 classpath/JAR 本地资源，不是远端请求；
+  - Web 面板通过 `ProxyController` 设 WebView 代理覆盖，切换 HTTP/SOCKS loopback endpoint，并将 `127.0.0.1`、`localhost`、`<local>` 设为绕过项；停止 VPN 时清除覆盖。静态门检查这条调用链，但 WebView provider 支持及真实流量仍待设备验证。
 - 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
 
-限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
+限制：直接用 Socket 或 Cronet 的请求不走该 selector；配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
-`mixed-port` 时，该端口也会对局域网开放。需在真机验证。
+`mixed-port` 时，该端口也会对局域网开放。`proxying <host>` 只证明 selector 选择，不证明连接成功或 Mihomo 出口。需在真机验证。
 
 ## sing-box / xray / v2fly / hysteria 内核（实验性）
 

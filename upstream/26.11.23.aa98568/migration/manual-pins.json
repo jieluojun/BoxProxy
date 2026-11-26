@@ -1,5 +1,5 @@
 {
-  "note": "Reviewed placement data of the 194 -> 214 hop. The porter replays the tree delta generically and consults this file for the handful of decisions that cannot be derived from a score: a reference the class map cannot name, a field the customization introduces, an insertion whose anchor the alignment could land one instruction off. Every entry states the evidence, and the porter proves each one resolves in both trees and fires exactly once.",
+  "note": "Reviewed placement and release-scoped runtime-fix data for the 194 -> 214 hop. The porter replays the tree delta generically and consults this file for the handful of decisions that cannot be derived from a score: a reference the class map cannot name, a field the customization introduces, an insertion whose anchor the alignment could land one instruction off, or a small shared-runtime fix that exists only in the 214 base. Every entry states the evidence, and the porter and hunk gate prove it resolves and fires exactly once.",
   "types": {},
   "fields": {
     "Lef5;->t:Lef5;": {
@@ -97,7 +97,79 @@
         "right": "    const v0, 0xc800\n\n    or-int/2addr p0, v0",
         "evidence": "a smali 2-int/lit16 literal is signed, so this ORs 0xffffc800 and ip6() spells tag 1 fdfe:dcba:9876::ffffc801 while VpnPump.forward6 tags the packet bytes with 0xC8,tag, i.e. ::c801 - every IPv6 process rule would then miss for ever, silently. D8 compiles the Java `0xC800 | tag` into exactly these two instructions (VpnPump.smali has `const v6, 0xc800` for the same expression), so this is the generated shape, not a new invention"
       }
+    ],
+    "smali/lw4.smali": [
+      {
+        "wrong": "    invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;",
+        "right": "    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;",
+        "evidence": "the 214 shared OkHttp client constructor caches ProxySelector.getDefault() in every default client, while VPN activation changes only the process default later; the Home latency client Lav2.g, WAN/IP client Lty2.e, and other default OkHttp clients all use this constructor with a null builder selector. Bind that common default once to VpnAppProxy.sel(), whose singleton selects dynamically from VpnAppProxy.active, so clients created before or after activation share the live app-proxy route. The existing non-null builder-selector branch stays intact, and HttpURLConnection/WebView keep their separate existing app-proxy paths. This repairs the shared route, not an individual probe retry or its selector log."
+      }
     ]
+  },
+  "runtimeContracts": {
+    "sharedOkHttpAppProxy": {
+      "clientFile": "smali/lw4.smali",
+      "clientConstructor": "<init>(Lkw4;)V",
+      "builderSelectorField": "Lkw4;->m:Ljava/net/ProxySelector;",
+      "clientSelectorField": "Llw4;->l:Ljava/net/ProxySelector;",
+      "selectorFactory": "Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;",
+      "builderFactory": {
+        "file": "smali/xc0.smali",
+        "method": "a(JJLjava/lang/Long;ZLxr1;I)Llw4;"
+      },
+      "homeClients": [
+        {
+          "field": "Lav2;->g:Llw4;",
+          "lazyField": "Lxc0;->f:Lz67;",
+          "requestFile": "smali/fg.smali"
+        },
+        {
+          "field": "Lty2;->e:Llw4;",
+          "lazyField": "Lxc0;->e:Lz67;",
+          "requestFile": "smali/ty2.smali"
+        }
+      ],
+      "dispatcherFile": "smali/pu5.smali",
+      "selectorCarrierFile": "smali/av5.smali",
+      "selectorCarrierField": "Lav5;->p:Ljava/net/ProxySelector;",
+      "connectionRouteFile": "smali/wk0.smali",
+      "routeSelectorField": "Lq7;->g:Ljava/net/ProxySelector;",
+      "selectorCallFile": "smali/bv5.smali",
+      "selectorImplFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
+      "evidence": "214 Home latency and WAN/IP calls use the two listed static clients; both are lazy default clients from xc0.a. OkHttp stores the chosen selector in Llw4.l; pu5 passes it to Lav5, wk0 carries Lav5.p into q7.g, and bv5 calls ProxySelector.select. VpnAppProxy.sel() returns its singleton; select() reads active on every request, delegates to orig while inactive, keeps local endpoints direct, and sends active external requests to the configured loopback proxy."
+    },
+    "directUrlOpenConnections": {
+      "openConnectionPrefix": "Ljava/net/URL;->openConnection(",
+      "paths": [
+        {
+          "file": "smali/i94.smali",
+          "method": "v(Ljava/lang/Object;)Ljava/lang/Object;",
+          "kind": "external-http",
+          "callerFile": "smali/n97.smali",
+          "callerMethod": "h(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Lyd1;)Ljava/lang/Object;",
+          "activationRunnableFile": "smali/com/box/app/vpn/VpnAppProxy$T.smali",
+          "evidence": "The coroutine builds a URL from the caller-supplied String and opens a no-argument HttpURLConnection; it does not pass Proxy.NO_PROXY or retain an app-owned selector. This is an external request and depends on the platform URL handler's process-default selector once VpnAppProxy.activate() installs it."
+        },
+        {
+          "file": "smali/fz5.smali",
+          "method": "q(Lr85;)Lgx6;",
+          "kind": "classpath-resource",
+          "evidence": "The URL comes from ClassLoader.getResource() and is read as a classpath/JAR resource; it is not an external HTTP request and should not be counted as an app traffic bypass."
+        }
+      ],
+      "evidence": "An inventory of every URL.openConnection call in this release-specific tree; new or removed call sites must be reviewed. The dynamic HTTP path follows the global URLConnection proxy route after the T runnable confirms the local port accepts a connection; the class-loader resource path is local."
+    },
+    "webViewAppProxy": {
+      "implementationFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
+      "runnableFile": "smali/com/box/app/vpn/VpnAppProxy$T.smali",
+      "webViewMethod": "webview(Z)V",
+      "activateMethod": "activate(I)V",
+      "stopMethod": "stop()V",
+      "setProxyBoundary": "ProxyControllerBoundaryInterface;->setProxyOverride(",
+      "clearProxyBoundary": "ProxyControllerBoundaryInterface;->clearProxyOverride(",
+      "bypassHosts": ["localhost", "127.0.0.1", "<local>"],
+      "evidence": "VpnAppProxy.activate() posts WebView mode 2 after the local port is ready; VpnAppProxy$T.run() applies the ProxyController override using the configured loopback HTTP/SOCKS endpoint and bypasses local panel hosts. VpnAppProxy.stop() posts mode 3 to clear the override. This is a static path check; WebView provider support and actual panel egress still require device confirmation."
+    }
   },
   "windowRewrites": [],
   "placements": [
