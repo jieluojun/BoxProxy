@@ -94,7 +94,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from port_214_candidate import (Mapper, get_locals, method_blocks, parameter_words,
-                               public_map, sig_lines)
+                               public_map, sig_lines, strip_comment)
 
 # --------------------------------------------------------------------------------------
 # shared parsing helpers
@@ -1119,6 +1119,348 @@ def init_clobbers(lines):
     return findings
 
 
+# --------------------------------------------------------------------------------------
+# gate 7 - the type a register provably holds where a ported hunk reads it
+# --------------------------------------------------------------------------------------
+
+OBJECT_TYPE = 'Ljava/lang/Object;'
+STRING_TYPE = 'Ljava/lang/String;'
+SLOT_RE = re.compile(r'^([vp])(\d+)$')
+FIELD_READ_RE = re.compile(r'^(iget-object|iget-object/16|iget-object/from16)\s+(\S+),\s*\S+,\s*'
+                           r'L[^;]+;->([A-Za-z0-9_$]+):(\S+)$')
+FIELD_WRITE_RE = re.compile(r'^(iput-object|iput-object/16|iput-object/from16)\s+(\S+),\s*\S+,\s*'
+                           r'L[^;]+;->[A-Za-z0-9_$]+:(\S+)$')
+STATIC_READ_RE = re.compile(r'^(sget-object|sget-object/16|sget-object/from16)\s+(\S+),\s*'
+                            r'L[^;]+;->[A-Za-z0-9_$]+:(\S+)$')
+CONST_STRING_RE2 = re.compile(r'^const-string(?:/jumbo)?\s+(\S+)\s*,')
+NEW_INSTANCE_RE2 = re.compile(r'^new-instance\s+(\S+),\s*(\S+)$')
+CHECK_CAST_RE2 = re.compile(r'^check-cast\s+(\S+),\s*(\S+)$')
+MOVE_OBJECT_RE2 = re.compile(r'^move-object(?:/16|/from16)?\s+(\S+),\s*(\S+)$')
+MOVE_RESULT_OBJ_RE = re.compile(r'^move-result-object(?:/16)?\s+(\S+)$')
+RETURN_OBJECT_RE2 = re.compile(r'^return-object\s+(\S+)$')
+INVOKE_RE2 = re.compile(r'^invoke-(virtual|super|direct|static|interface)(/range)?\s+\{([^}]*)\}'
+                        r'\s*,\s*L[^;]+;->[A-Za-z0-9_$<>]+\(([^)]*)\)(\S+)$')
+TERMINATOR_RE = re.compile(r'^(goto(?:/16|/32)?|if-[a-z0-9-]+\S*|throw-verification-error|throw'
+                           r'|return(?:-[a-z]+)?|packed-switch|sparse-switch|fill-array-data'
+                           r'|execute-inline)\b')
+BRANCH_LABEL_RE = re.compile(r'^(goto(?:/16|/32)?|if-[a-z0-9-]+|packed-switch|sparse-switch'
+                             r'|fill-array-data)\b')
+WILD_TERMINATOR_RE = re.compile(r'^(packed-switch|sparse-switch|execute-inline)\b')
+LABEL_DEF_RE = re.compile(r'^:([A-Za-z_][\w]*)(?:\s|#.*)?$')
+LABEL_USE_RE = re.compile(r':([A-Za-z_][\w]*)(?:\s|#.*)?$')
+
+
+def frame_slot(register, locals_count):
+    """The frame slot a written register names, or None if it is not one.
+
+    Registers are keyed by frame slot rather than by their spelling, because
+    Apktool writes the same slot as ``p2`` in one instruction and as a ``/range``
+    window of ``v`` slots in the next; matching only the spelling loses the
+    connection between a producer and its consumer, which is the very thing
+    this gate has to see.
+    """
+    match = SLOT_RE.match(register)
+    if not match:
+        return None
+    return int(match.group(2)) if match.group(1) == 'v' else locals_count + int(match.group(2))
+
+
+def name_of(slot_value, locals_count):
+    return ('v%d' % slot_value if slot_value < locals_count
+            else 'p%d' % (slot_value - locals_count))
+
+
+def invoke_arguments(code, locals_count):
+    """((parameter type, frame slot), ...) for an invoke, plus its return type.
+
+    The register list of an invoke is positional but not one-per-parameter: a
+    long or a double takes two words, and a virtual call spends its first
+    register on the receiver.  Both forms are walked in words, so the pairing
+    cannot drift - and a window the walk cannot align is reported as unknown
+    rather than guessed at.
+    """
+    match = INVOKE_RE2.match(code)
+    if not match:
+        return None
+    kind, window, listed_raw, parameters, returns = match.groups()
+    parameters = TYPE_TOKEN_RE.findall(parameters)
+    words = [2 if token in 'JD' else 1 for token in parameters]
+    receiver = 1 if kind in ('virtual', 'super', 'interface') else 0
+    total = receiver + sum(words)
+    listed = [item.strip() for item in listed_raw.split(',') if item.strip()]
+    slots = []
+    if window:
+        if len(listed) != 2:
+            return None
+        low = frame_slot(listed[0], locals_count)
+        high = frame_slot(listed[1], locals_count)
+        if low is None or high is None or high - low + 1 < total:
+            return None
+        # an invoke/range window may cover more words than the signature needs
+        # (R8 keeps a tail alive), but it always starts at the receiver or the
+        # first parameter, so the alignment is anchored at the low end
+        slots = [low + offset for offset in range(total)]
+    else:
+        if len(listed) != total:
+            return None
+        slots = [frame_slot(register, locals_count) for register in listed]
+        if any(item is None for item in slots):
+            return None
+    paired, cursor = [], receiver
+    for token, width in zip(parameters, words):
+        paired.append((token, slots[cursor]))
+        cursor += width
+    return paired, returns
+
+
+def blocks_of(body):
+    """Split a method body into basic blocks and wire them together.
+
+    A block ends at any control transfer - a branch, a jump, a return - and in
+    front of every label, because a label is where another path arrives; the
+    type of a register therefore has to be merged there instead of carried down
+    the source order.  A terminator this walk cannot resolve (a switch whose
+    case table lives in a payload, an inline call) marks the block wild, and
+    whatever it reaches becomes unknown: the gate gives up coverage rather than
+    guessing.
+    """
+    blocks, current, start_index = [], [], 0
+    targets = {}
+    for index, code in enumerate(body):
+        label = LABEL_DEF_RE.match(code)
+        if label:
+            if current:
+                blocks.append({'lines': current, 'start': start_index, 'term': None})
+                current = []
+            targets[label.group(1)] = len(blocks)
+            start_index = index
+            continue
+        current.append(code)
+        if TERMINATOR_RE.match(code):
+            blocks.append({'lines': current, 'start': start_index, 'term': code})
+            current = []
+            start_index = index + 1
+    if current:
+        blocks.append({'lines': current, 'start': start_index, 'term': None})
+    for position, block in enumerate(blocks):
+        term = block['term'] or ''
+        head = term.split(' ', 1)[0]
+        jump = LABEL_USE_RE.search(term) if BRANCH_LABEL_RE.match(head) else None
+        block['jump'] = targets.get(jump.group(1)) if jump else None
+        block['fall'] = position + 1 if position + 1 < len(blocks) else None
+        block['wild'] = bool(WILD_TERMINATOR_RE.match(head)) or bool(block['term']) and (
+            head.startswith('goto') and block['jump'] is None
+            or head == 'fill-array-data')
+        block['preds'] = []
+    for position, block in enumerate(blocks):
+        head = (block['term'] or '').split(' ', 1)[0]
+        if head.startswith('if-'):
+            tails = [block['jump'], block['fall']]
+        elif head.startswith('goto'):
+            tails = [block['jump']]
+        elif block['wild']:
+            tails = [block['jump'], block['fall']]
+        elif block['term']:
+            tails = []                                  # return, throw
+        else:
+            tails = [block['fall']]                     # fell out of the block
+        for tail in tails:
+            if tail is not None and 0 <= tail < len(blocks) \
+                    and position not in blocks[tail]['preds']:
+                blocks[tail]['preds'].append(position)
+    return blocks
+
+
+def check_type_flow(touched, output, problems, files=None):
+    """A reference can resolve by name and still be handed too wide a register.
+
+    This is the check ART itself performs and no reference scan can reach.  When
+    an aligned hunk renumbered its producer, the code the port kept from the
+    target still reads the old register: every member resolves, every literal
+    matches, the file assembles, and the first touch of the class dies with a
+    VerifyError on the device - which is how the 214 core detail screen crashed
+    with ``register v5 has type Reference java.lang.Object but expected
+    Reference: java.lang.String``, after the ``move-result-object`` of the
+    customization's ``File.getAbsolutePath()`` had been moved to a scratch slot
+    while the call consuming the value was kept from 214.
+
+    So the walk types every register of a touched method from the instructions
+    that state a type themselves - a field descriptor, a const-string, a
+    new-instance, a check-cast, the return type an invoke reference declares, the
+    parameters of the enclosing method and its receiver - and propagates those
+    types across the method's basic blocks, merging at every join: a register
+    keeps a type at a block only where EVERY path into it produced that type.
+    The finding is then the one combination that is never legal: an Object handed
+    to a narrowed reference parameter, or returned as one, with no check-cast in
+    between.  That needs no class hierarchy, because no class is a subtype of
+    anything below Object; and anything the walk cannot align becomes unknown, so
+    the gate loses coverage instead of credibility.  A control run over the whole
+    upstream tree reports nothing (``--type-flow-control``), because a shipping
+    release has already been verified by ART.
+    """
+    found = 0
+    for file_name in (files if files is not None else sorted(touched)):
+        path = output / file_name
+        if not path.is_file():
+            continue
+        for signature, block_text in method_blocks(path.read_text(errors='replace')).items():
+            lines = block_text.splitlines()
+            local_index, locals_count = get_locals(lines)
+            if local_index is None:
+                continue
+            header = lines[0].strip()
+            parameters = TYPE_TOKEN_RE.findall(
+                signature[signature.index('(') + 1:signature.rindex(')')]) \
+                if '(' in signature and ')' in signature else []
+            # The frame is v0..v(locals-1) followed by the argument words: a
+            # non-static method spends the first on its receiver, and a long or a
+            # double takes two words.  Types are keyed by frame slot, which is what
+            # makes a `pN` in one instruction and a `vN` window in the next the same
+            # register for this walk.
+            static = ' static ' in ' ' + header.split(' ', 1)[1] + ' '
+            entry, cursor = {}, locals_count + (0 if static else 1)
+            if not static:
+                entry[locals_count] = 'L' + path.stem + ';'
+            for token in parameters:
+                entry[cursor] = token
+                cursor += 2 if token in 'JD' else 1
+            returns = signature.rpartition(')')[2]
+            body = [strip_comment(line).strip() for line in lines[local_index + 1:]]
+            body = [code for code in body if code and not code.startswith('.')]
+            blocks = blocks_of(body)
+            if not blocks:
+                continue
+
+            def walk(seed, codes):
+                """One straight-line pass: (exit types, findings)."""
+                types, pending, hits = dict(seed), None, []
+
+                def typed_slot(register, value):
+                    slot_value = frame_slot(register, locals_count)
+                    if slot_value is not None:
+                        types[slot_value] = value
+
+                for code in codes:
+                    invoke = invoke_arguments(code, locals_count)
+                    if invoke is not None:
+                        for expected, register in invoke[0]:
+                            if not expected.startswith('L') or expected == OBJECT_TYPE:
+                                continue
+                            if types.get(register) != OBJECT_TYPE:
+                                continue
+                            hits.append('type flow: %s is handed to %s as %s, but every path into '
+                                        'this block produced it as %s and nothing casts it - a hunk '
+                                        'whose producer was renumbered away from the consumer its '
+                                        'target code kept needs a reviewed placement'
+                                        % (name_of(register, locals_count),
+                                           code.split('}, ', 1)[-1][:64], expected, OBJECT_TYPE))
+                        pending = invoke[1]
+                        continue
+                    match = MOVE_RESULT_OBJ_RE.match(code)
+                    if match:
+                        slot_value = frame_slot(match.group(1), locals_count)
+                        if slot_value is not None:
+                            types[slot_value] = pending
+                        pending = None
+                        continue
+                    match = CHECK_CAST_RE2.match(code)
+                    if match:
+                        typed_slot(match.group(1), match.group(2))
+                        continue
+                    match = STATIC_READ_RE.match(code)
+                    if match:
+                        typed_slot(match.group(2), match.group(3))
+                        continue
+                    match = NEW_INSTANCE_RE2.match(code)
+                    if match:
+                        typed_slot(match.group(1), match.group(2))
+                        continue
+                    match = FIELD_READ_RE.match(code)
+                    if match:
+                        typed_slot(match.group(2), match.group(4))
+                        continue
+                    match = CONST_STRING_RE2.match(code)
+                    if match:
+                        typed_slot(match.group(1), STRING_TYPE)
+                        continue
+                    match = MOVE_OBJECT_RE2.match(code)
+                    if match:
+                        source = frame_slot(match.group(2), locals_count)
+                        typed_slot(match.group(1), types.get(source))
+                        continue
+                    match = FIELD_WRITE_RE.match(code)
+                    if match:
+                        source = frame_slot(match.group(2), locals_count)
+                        expected = match.group(3)
+                        if expected.startswith('L') and expected != OBJECT_TYPE \
+                                and types.get(source) == OBJECT_TYPE:
+                            hits.append('type flow: %s is stored into the %s field %s, but every '
+                                        'path into this block produced it as %s and nothing casts it'
+                                        % (name_of(source, locals_count), expected,
+                                           code.split(', ', 2)[-1][:48], OBJECT_TYPE))
+                        pending = None
+                        continue
+                    match = RETURN_OBJECT_RE2.match(code)
+                    if match:
+                        source = frame_slot(match.group(1), locals_count)
+                        if returns.startswith('L') and returns != OBJECT_TYPE \
+                                and not returns.startswith('[') \
+                                and types.get(source) == OBJECT_TYPE:
+                            hits.append('type flow: the method returns %s as %s while every path into '
+                                        'this block produced an uncast Object'
+                                        % (name_of(source, locals_count), returns))
+                        continue
+                    # anything else may write any register it names: untype them
+                    operands = code.split(None, 1)
+                    if len(operands) > 1:
+                        for register in re.findall(r'\b[vp]\d+\b', operands[1]):
+                            slot_value = frame_slot(register, locals_count)
+                            if slot_value is not None:
+                                types[slot_value] = None
+                    pending = None
+                return types, hits
+
+            entries, exits = [None] * len(blocks), [None] * len(blocks)
+            for _ in range(2 * len(blocks) + 4):
+                changed = False
+                for position, block in enumerate(blocks):
+                    if block['wild']:
+                        incoming = {}                     # joined with unmodelled code
+                    else:
+                        incoming = dict(entry) if position == 0 else None
+                        for pred in block['preds']:
+                            # A predecessor whose exit is not known yet (a loop
+                            # header's back edge, on the first round) does not
+                            # block the block: the merged type only has to hold
+                            # on the paths that are already modelled, and the
+                            # entry is narrowed again as soon as the missing one
+                            # arrives.  Findings are reported from the final
+                            # states, so the widening is never what a message
+                            # rests on.
+                            if exits[pred] is None:
+                                continue
+                            incoming = dict(exits[pred]) if incoming is None else {
+                                key: value for key, value in incoming.items()
+                                if exits[pred].get(key) == value}
+                        if position and incoming is None:
+                            continue
+                    if incoming is None or entries[position] == incoming:
+                        continue
+                    entries[position] = dict(incoming)
+                    changed = True
+                    exits[position], _ = walk(incoming, block['lines'])
+                if not changed:
+                    break
+            for position, block in enumerate(blocks):
+                if entries[position] is None:
+                    continue
+                _, hits = walk(entries[position], block['lines'])
+                for hit in hits:
+                    found += 1
+                    problems.append((signature + ' in ' + file_name, hit))
+    return found
+
+
 def check_frame_parity(coverage, args, pins, problems):
     """The port has to grow the frame and the array windows exactly as the
     customization did on the previous release.
@@ -1181,6 +1523,9 @@ def main():
     parser.add_argument('--maps', type=Path, required=True)
     parser.add_argument('--pins', type=Path, required=True)
     parser.add_argument('--contracts', type=Path, required=True)
+    parser.add_argument('--type-flow-control', type=Path, default=None,
+                        help='run the register type walk over this whole tree too (the pristine '
+                             'upstream decompiled/) and require it to report nothing')
     parser.add_argument('--explain', action='store_true',
                         help='print how every contract anchor resolved')
     args = parser.parse_args()
@@ -1203,6 +1548,21 @@ def main():
                              args.custom, trace)
     check_pinned_fields(pins, args, problems)
     check_custom_surfaces(args.output, problems)
+    flow = check_type_flow(touched, args.output, problems)
+    control = None
+    if args.type_flow_control:
+        root = args.type_flow_control
+        if not root.is_dir():
+            parser.error('no tree to control against: ' + str(root))
+        everything = sorted(str(path.relative_to(root))
+                            for directory in sorted(p.name for p in root.glob('smali*'))
+                            for path in (root / directory).glob('**/*.smali'))
+        control_before = len(problems)
+        control = check_type_flow(set(), root, problems, files=everything)
+        for index in range(control_before, len(problems)):
+            name, detail = problems[index]
+            problems[index] = (name, 'upstream control (this tree is not produced by the port, '
+                                     'so the walk is wrong here, not the release): ' + detail)
     if args.explain:
         print('contract resolutions:')
         for entry in trace:
@@ -1217,9 +1577,10 @@ def main():
                     print('   %-15s %s' % (key, json.dumps(detail[key], ensure_ascii=False)[:400]))
         else:
             print('   ', detail)
-    print('%schecked %d coverage entries, %d contracts, %d touched files; findings: %d'
-          % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen,
-             len(touched), len(problems)))
+    print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)%s;'
+          ' findings: %d'
+          % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
+             flow, '' if control is None else ', control tree: %d' % control, len(problems)))
     return 1 if problems else 0
 
 

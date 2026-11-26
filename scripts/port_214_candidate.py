@@ -615,6 +615,115 @@ def apply_reviewed_placements(placements, path, default_sig, audit):
     return True, {'inserts': total, 'deletes': 0, 'unmappedRegisters': [], 'alignment': 1.0}
 
 
+def operand_registers(line):
+    """(prefix, register names) of the operand area of an instruction.
+
+    Only the part in front of the first type token or string literal is looked
+    at: a field descriptor or a payload string can contain a token that spells
+    like a register (``Lx;->p1:I``), and renaming there would corrupt the line
+    rather than its operands.  A line that carries a register word beyond that
+    boundary is reported as unusable by returning None.
+    """
+    text = strip_comment(line).strip()
+    if not text:
+        return None
+    boundary = len(text)
+    for pattern in ('"', r'L[A-Za-z0-9_/$]+;'):
+        match = re.search(pattern, text)
+        if match:
+            boundary = min(boundary, match.start())
+    registers = REG_RE.findall(text[:boundary])
+    if not registers or REG_RE.findall(text[boundary:]):
+        return None
+    return text[:boundary], registers
+
+
+def in_frame(register, target_locals, target_words):
+    """Is `register` a slot the target method's own frame can hold?
+
+    The mirror has to stay inside the frame the target declares: v-slots run to
+    `.locals` and p-slots to the parameter words (the receiver included), so a
+    renamed operand can never name a slot the assembled method does not have.
+    """
+    kind, number = register[0], int(register[1:])
+    if not target_locals:
+        return False                      # no frame declared: nothing to check against
+    if kind == 'v':
+        return number < target_locals
+    return number < target_words
+
+
+def preserved_line_rename(base_line, custom_line, target_line, reg_map, target_locals,
+                          target_words):
+    """Mirror a customization's register rename onto a line the port kept.
+
+    An ``equal`` region of the base-to-customization diff is kept from the
+    target, because the shape key ignores register names: the two instructions
+    are interchangeable as long as they hold each other's values in the same
+    slots.  They are not when the customization *moved* a value to another
+    register, which is exactly what the core-detail probe rewrite did - it took
+    the stock ``invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()`` pair
+    (214 ``hi1.d``), re-pointed the result at ``p0`` and fed ``p0`` to
+    ``Lhi1;->i(Ljava/lang/String;)`` plus the string builder, because ``p0`` is
+    the slot the coroutine resume value is read from and the tail of the branch
+    hands the finished script to ``Lv16;->f(JLxd1;Ljava/lang/String;)`` in it.
+    Keeping the target's ``move-result-object p1`` next to the grafted ``{p0}``
+    split the producer from its consumer: the port assembled, the offline checks
+    were satisfied, and ART rejected the class on the device with ``register v5``
+    (the frame's ``p0``) holding an Object where a String was required.
+
+    So the rename is mirrored when it is unambiguous: the customization renamed
+    a register the base and the target still spell alike, the mapped name comes
+    from this method's own register map, and no ``/range`` window (whose ends
+    have to stay contiguous) is involved.  Anything else is left exactly as it
+    was, which is the status quo - the type-flow gate of the hunk verifier
+    reports whatever that leaves behind.
+    """
+    base = operand_registers(base_line)
+    custom = operand_registers(custom_line)
+    target = operand_registers(target_line)
+    if not (base and custom and target) or '..' in base[0] + custom[0] + target[0]:
+        return None
+    _, base_regs = base
+    _, custom_regs = custom
+    _, target_regs = target
+    if not (len(base_regs) == len(custom_regs) == len(target_regs)):
+        return None
+    if base_regs != target_regs:
+        # the target already re-spelled this line: its own naming is authoritative
+        return None
+    if custom_regs == base_regs:
+        return None
+    renamed, moved, seen_custom = list(target_regs), [], set()
+    for index, (custom_reg, base_reg) in enumerate(zip(custom_regs, base_regs)):
+        if custom_reg == base_reg:
+            continue
+        value = reg_map.get(custom_reg, custom_reg)
+        if not re.fullmatch(r'[vp]\d+', value or ''):
+            return None
+        if not in_frame(value, target_locals, target_words):
+            # the slot the customization used does not exist in the target frame
+            return None
+        seen_custom.add(custom_reg)
+        renamed[index] = value
+        # named by the slot the target reads and the slot the customization moved
+        # the value to, which is what a reviewer has to be able to check
+        moved.append(base_reg + '->' + value)
+    if not moved or len(seen_custom) != len(moved):
+        # the same custom register named twice on one line: the rename cannot say
+        # which occurrence is meant, so the line is left exactly as it was
+        return None
+    text = target_line.strip()
+    cursor = 0
+    parts = []
+    for index, register in enumerate(target_regs):
+        start = text.index(register, cursor)
+        parts.append(text[cursor:start] + renamed[index])
+        cursor = start + len(register)
+    parts.append(text[cursor:])
+    return ''.join(parts), moved
+
+
 def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, audit):
     rel = plan['sourceFile']
     old_sig = plan['old'].split('->', 1)[1]
@@ -640,6 +749,9 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
     if not (custom and base and target):
         return False, 'method block missing'
     custom_body, base_body, target_body = body_of(custom), body_of(base), body_of(target)
+    # the headers, captured before the register-range repair below reuses the
+    # name `base` for a slot number
+    base_header, target_header = base.splitlines()[0], target.splitlines()[0]
 
     # A reviewed placement: the pin file says where the hunk belongs, by naming
     # an anchor instruction that is unique in the target method, and the exact
@@ -1049,8 +1161,38 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
 
     label_out, _ = label_maps(base_body, target_body, custom_body, base_to_target, labelmap, r_old)
     deletes, inserts = set(), []
+    renamed_lines = []
+    # Mirroring a rename is only meaningful on identical frames: `pN` counts
+    # parameter words from the end of the locals, so a method that grew or shrank
+    # its frame between the two releases has no shared meaning for the name.
+    same_frame = (parameter_words(base_header) == parameter_words(target_header)
+                  and get_locals(base_body)[1] == get_locals(target_body)[1])
     for tag, i1, i2, j1, j2 in delta.get_opcodes():
         if tag == 'equal':
+            # A line the customization shares with the base is kept from the
+            # target, which is sound only while the registers agree: the shape
+            # key ignores their names.  Where the customization moved a value to
+            # another register, mirror the move - otherwise the grafted block
+            # reads a slot the preserved line never writes.
+            for offset in range(i2 - i1):
+                if not same_frame:
+                    break
+                base_index = base_seq[i1 + offset][0]
+                if base_index not in base_to_target:
+                    continue
+                position = base_to_target[base_index]
+                result = preserved_line_rename(base_seq[i1 + offset][1],
+                                               custom_seq[j1 + offset][1],
+                                               target_body[position], reg_map,
+                                               get_locals(target_body)[1],
+                                               parameter_words(target_header))
+                if result is None:
+                    continue
+                new_line, moved = result
+                if new_line != target_body[position].strip():
+                    renamed_lines.append({'line': new_line, 'registers': moved,
+                                          'was': target_body[position].strip()})
+                    target_body[position] = '    ' + new_line
             continue
         if tag in ('delete', 'replace'):
             for seq_i in range(i1, i2):
@@ -1423,6 +1565,8 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
         return False, 'target method replacement failed'
     audit_entry.update({'insertions': [len(lines) for _, lines in translated],
                         'deletions': len(deletes)})
+    if renamed_lines:
+        audit_entry['registerRenamed'] = renamed_lines
     audit.append(audit_entry)
     return True, {'inserts': sum(len(group) for _, group in translated),
                   'deletes': len(deletes), 'alignment': round(alignment, 4),
@@ -3113,6 +3257,9 @@ def main():
         if MANUAL_HITS.get(name, 0) != expected:
             report['errors'].append('MANUAL ' + name + ': expected ' + str(expected)
                                     + ' hit(s) but got ' + str(MANUAL_HITS.get(name, 0)))
+    report['registerRenames'] = [{'method': entry['new'], 'was': item['was'],
+                                  'line': item['line'], 'registers': item['registers']}
+                                 for entry in audit for item in entry.get('registerRenamed', [])]
     args.report_dir.mkdir(parents=True, exist_ok=True)
     (args.report_dir / 'port-hunks.json').write_text(json.dumps(audit, indent=2) + '\n')
     (args.report_dir / 'delta-stage6-report.json').write_text(json.dumps(report, indent=2) + '\n')

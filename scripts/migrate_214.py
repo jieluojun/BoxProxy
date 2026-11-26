@@ -118,14 +118,19 @@ def main():
                              % (report.get('ok'), len(expected['completed'])))
 
         # The hunk gate: every coverage entry is re-derived from the pinned 194
-        # delta and compared with this tree, six ways - instruction shape, the
-        # constants and payloads a shape comparison erases, the reviewed splice
-        # recomputed from the 214 upstream, the smali register/encoding law, the
-        # contracts of migration/hunk-contracts.json, and the custom-only
-        # surfaces.  It replaces the "seven checkers are the gate" arrangement,
-        # which assembled and validated a build whose core registry dropped two
-        # cores and whose asset regex matched no release (see the notes in
-        # scripts/verify_214_custom_hunks.py).
+        # delta and compared with this tree, seven ways - instruction shape and
+        # frame growth, the constants and payloads a shape comparison erases, the
+        # reviewed splice recomputed from the 214 upstream, the smali
+        # register/encoding law, the contracts of migration/hunk-contracts.json,
+        # the custom-only surfaces, and the type each register provably holds where
+        # a hunk reads it (the walk ART runs, which is what the shipped 214 build
+        # failed with: a producer renumbered away from the consumer its target code
+        # kept assembles fine and dies at the first touch of the class).  The last
+        # gate is also run over the pristine 214 tree, which must report nothing:
+        # a finding there means the walk is wrong, not the release.  This replaces
+        # the "seven checkers are the gate" arrangement, which assembled and
+        # validated a build whose core registry dropped two cores and whose asset
+        # regex matched no release (see the notes in scripts/verify_214_custom_hunks.py).
         run([sys.executable, 'scripts/verify_214_custom_hunks.py',
              '--old', up194 / 'decompiled',
              '--new', up214 / 'decompiled',
@@ -134,7 +139,8 @@ def main():
              '--maps', maps,
              '--pins', Path(SNAPSHOT_214) / 'migration' / 'manual-pins.json',
              '--contracts', Path(SNAPSHOT_214) / 'migration' / 'hunk-contracts.json',
-             '--output', project])
+             '--output', project,
+             '--type-flow-control', up214 / 'decompiled'])
         if args.gate_selftest:
             run([sys.executable, 'scripts/selftest_214_hunk_gate.py',
                  '--old', up194 / 'decompiled',

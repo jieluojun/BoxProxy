@@ -9,7 +9,8 @@ insert, a splice that landed one instruction later, a grafted call that the
 release renamed under it.  Each row edits one thing in a copy of the migrated
 tree and requires scripts/verify_214_custom_hunks.py to report it, with the
 finding coming from the gate that owns that property - so a row cannot pass for
-the wrong reason.
+the wrong reason.  The last rows are the 214 device failure itself: the producer
+of a grafted value renamed away from the register the target's own code reads.
 
 The rows are reviewed expectations of THIS hop, like migration/hunk-contracts.json:
 they name instructions of the built tree.  A row whose needle has disappeared -
@@ -59,6 +60,35 @@ def move_branch_one_line_later(text):
     return ''.join(lines)
 
 
+def move_producer_off_the_grafted_consumer(text):
+    """Send the customization's path result back to the register upstream used.
+
+    `hi1.d` reads the resume value into p0, overwrites p0 with the String the
+    `File.getAbsolutePath()` call of the core probe returns, and hands p0 to the
+    helper that assembles the script.  Reverting only the producer - leaving the
+    grafted consumers reading p0 - keeps every instruction, literal and label the
+    port reviewed and moves one word of the frame: the first register the verifier
+    can prove at the merge is then `Ljava/lang/Object;`, which is exactly the
+    ``register v5 ... expected Reference: java.lang.String`` rejection the shipped
+    214 build died on.
+    """
+    lines = text.splitlines(keepends=True)
+    try:
+        start = next(n for n, line in enumerate(lines) if line.strip().startswith('.method')
+                     and ' d(Ljava/io/File;Lyd1;)Ljava/lang/Object;' in line)
+        end = next(n for n in range(start, len(lines)) if lines[n].strip() == '.end method')
+        call = next(n for n in range(start, end) if lines[n].strip()
+                    == 'invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;')
+        producer = next(n for n in range(call, end)
+                        if lines[n].strip() == 'move-result-object p0')
+    except StopIteration:
+        raise LookupError('the needle is gone: the path call or its producer in hi1.d')
+    if lines[producer - 1].strip() == 'move-result-object p0':
+        raise LookupError('the producer is not a lone move-result')
+    lines[producer] = lines[producer].replace('move-result-object p0', 'move-result-object p1')
+    return ''.join(lines)
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -78,6 +108,8 @@ MUTATIONS = [
      replace('Lcom/box/app/cfg/LdFix;->wrapProbe', 'Lg17;->wrapProbe'), r'count of'),
     ('the instruction the splice is anchored on', 'smali/mx0.smali',
      replace('invoke-static {v0}, Lg17;->X(', 'invoke-static {v0}, Lg17;->Y('), r'placement'),
+    ('the producer of a grafted value, back on the upstream slot', 'smali/hi1.smali',
+     move_producer_off_the_grafted_consumer, r'type flow'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),
