@@ -118,17 +118,17 @@ def main():
                              % (report.get('ok'), len(expected['completed'])))
 
         # The hunk gate: every coverage entry is re-derived from the pinned 194
-        # delta and compared with this tree, twelve ways - instruction shape and
-        # frame growth, the constants and payloads a shape comparison erases, the
-        # reviewed splice recomputed from the 214 upstream, the smali
-        # register/encoding law, the contracts of migration/hunk-contracts.json,
-        # the custom-only surfaces, the type each register provably holds where a
-        # hunk reads it (the walk ART runs, which is what the shipped 214 build
-        # failed with: a producer renumbered away from the consumer its target code
-        # kept assembles fine and dies at the first touch of the class), the merge
-        # contract of a hand-placed arm in both directions, the register a grafted
-        # block stages its /range call through, and the interface contract of the
-        # copied custom classes, whose method definitions no reference map reaches.
+        # delta and compared with this tree across the reviewed properties -
+        # instruction shape and frame growth, the constants and payloads a shape
+        # comparison erases, the splice recomputed from the 214 upstream, the
+        # smali register/encoding law, hunk contracts, custom-only surfaces,
+        # register types at reads (the walk ART runs, which caught a shipped 214
+        # verifier failure), both sides of hand-placed arm contracts, /range call
+        # staging, copied custom interface implementations, copied rule emitters,
+        # and VPN app-proxy readiness before publishing running.  The last check
+        # guards the screenshot-correlated race hypothesis: the home latency
+        # client's selector is inactive until the local core port accepts a
+        # connection.  This is a static regression guard, not device confirmation.
         # The type walk is also run over the pristine 214 tree, which must report
         # nothing: a finding there means the walk is wrong, not the release.  This replaces
         # the "seven checkers are the gate" arrangement, which assembled and

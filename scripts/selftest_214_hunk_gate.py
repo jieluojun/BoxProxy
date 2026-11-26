@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 """Prove the hunk gate is not vacuous, by corrupting one reviewed property at a time.
 
-A green verifier only means something if the verifier can go red.  Every row of
-MUTATIONS below is a defect that has actually been shipped past the seven smali
-checkers, ``apktool b`` and an install: a payload string one character off, a
-constant list that lost two of its members, a frame that was never grown for the
-insert, a splice that landed one instruction later, a grafted call that the
-release renamed under it.  Each row edits one thing in a copy of the migrated
-tree and requires scripts/verify_214_custom_hunks.py to report it, with the
-finding coming from the gate that owns that property - so a row cannot pass for
-the wrong reason.  Rows 10 to 18 are the seven 214 device failures of this hop: the
-producer of a grafted value renamed away from the register the target's own code
-reads, an operand a replaced line carried from the frame it was written in, the flag
-an arm zeroed instead of the resource id the merge reads, the spill that arm owed the
-merge, a block that staged its ``/range`` call through a register this frame still
-needed, a copied class that kept the previous release's name for the interface member
-the release dispatches, and the two instructions of the copied class that builds the
-rule string the core is handed - a separator that ran on the first turn and a literal
-that read as signed.  Row 14 is the exemption nothing needed.
+A green verifier only means something if the verifier can go red. Rows 2 to 9
+are deliberate mutations of basic hunk properties (payload, constants, frame,
+registers, placement and contract matching), not claims that each was observed
+on a device. Rows 10, 11, 12, 13, 15, 16 and 17 recreate the seven documented
+214 device failures: a grafted producer left in the upstream slot, an operand
+copied from the old register frame, a flag write that clears a resource id, a
+missing merge spill, a staging register still live in the target frame, a copied
+class missing the renamed interface member, and the rule separator emitted on
+the first loop turn. Row 18 reproduces the separate silent IPv6 tag-literal
+mismatch. Row 14 checks rejection of a stale exemption; row 19 checks the
+``/range`` encoding constraint. Row 20 restores async VPN app-proxy activation,
+which makes a status-triggered home probe *able* to see the original selector
+before the local port waiter completes. That is a regression guard for a
+screenshot-consistent hypothesis, not proof that the captured Google request
+actually took the direct route.
+
+Each row edits one thing in a copy of the migrated tree and requires
+scripts/verify_214_custom_hunks.py to report it, with the finding coming from
+the gate that owns that property - so a row cannot pass for the wrong reason.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -288,6 +290,29 @@ def fold_the_tag_or_back_into_a_signed_literal(text):
     raise LookupError('ip6() no longer builds the tag with a 32-bit const and a 2addr or')
 
 
+def race_the_vpn_app_proxy_against_home_probes(text):
+    """Restore async activation so the gate must catch a possible home-probe race.
+
+    In VPN mode the app UID is outside the TUN. The traced latency client is configured with
+    the selector that delegates to the original route until the local port waiter activates
+    it. If a status-triggered refresh runs before activation, it can therefore use that
+    original route. The screenshots are consistent with this timing gap but do not prove the
+    captured request took that route. Replacing the synchronous call with the old Thread start
+    recreates only the candidate regression and requires the gate to reject it.
+    """
+    old = '    invoke-virtual {v1}, Lcom/box/app/vpn/VpnAppProxy$T;->run()V'
+    new = '\n'.join((
+        '    new-instance v2, Ljava/lang/Thread;',
+        '',
+        '    invoke-direct {v2, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V',
+        '',
+        '    invoke-virtual {v2}, Ljava/lang/Thread;->start()V',
+    ))
+    if text.count(old) != 1:
+        raise LookupError('VpnAppProxy.start() no longer calls the readiness runnable synchronously')
+    return text.replace(old, new)
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -331,6 +356,9 @@ MUTATIONS = [
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),
+    ('VPN home-probe app-proxy readiness race hypothesis',
+     'smali/com/box/app/vpn/VpnAppProxy.smali',
+     race_the_vpn_app_proxy_against_home_probes, r'vpn app proxy activation'),
 ]
 
 

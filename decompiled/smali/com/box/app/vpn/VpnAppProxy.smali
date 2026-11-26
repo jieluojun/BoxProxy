@@ -411,11 +411,7 @@
 
     invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V
 
-    new-instance v2, Ljava/lang/Thread;
-
-    invoke-direct {v2, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
+    invoke-virtual {v1}, Lcom/box/app/vpn/VpnAppProxy$T;->run()V
 
     return-void
 .end method

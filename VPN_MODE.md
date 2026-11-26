@@ -93,12 +93,15 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 - `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
   配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
 - `VpnAppProxy`：
-  - 内核存活后等本地端口可连接，再启用（日志 `[app-proxy] …` 写入 `runs.log`）；
-  - `ProxySelector`：App 内置的 OkHttp（`z84` 构建时改用 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，
+  - `BoxVpnService.doStart()` 在 `VpnTask` 后台线程里同步等待本地代理就绪，然后才发布 `running` / `notifyStatus()`；`VpnAppProxy$T.run()` 必须成功连上本地端口才调用 `activate()`（日志 `[app-proxy] …` 写入 `runs.log`）。这样首页在收到“运行中”后发起的测速不会抢在 selector 切换前；
+    但若配置没有可用端口或 waiter 用完 80 次尝试仍失败，VPN 服务仍会报告 running，本应用请求会继续直连，需结合 `[app-proxy]` 日志排查；
+  - `ProxySelector`：App 内置的 OkHttp（`fd2.g` 取用 `Lab0.f` 构造的 `Lib4`，其默认 selector 为 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，
     127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
   - WebView：通过 `ProxyController` 的同一套边界接口做代理覆盖（`127.0.0.1`、`localhost`、`<local>` 直连），
     Web 面板里的请求也走内核。
 - 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
+
+排查时请保留**与截图同一轮**的 `runs.log`：`[app-proxy] app traffic goes through 127.0.0.1:<port>` 表示 readiness waiter 已激活 selector；`[app-proxy] proxying google.com` 表示该 HTTP client 实际向 selector 询问了目标路由。前者缺失表示没有观察到成功激活，后者缺失还可能是未触发该探测，不能单独当作“绕过代理”的证明。
 
 限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了

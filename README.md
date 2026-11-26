@@ -13,14 +13,14 @@
 - [214 迁移输入](upstream/26.11.23.aa98568/migration/)：`class-map.json`（7128 类，一对一）、
   `class-map-review.json`（10 处人工修正及其证据）、`coverage.json`（51 个方法 + 1363 个新增文件 +
   1 项明示撤回）、`manual-pins.json`（13 个成员 pin、2 个字段 pin、2 个新增字段、8 处人工落位：
-  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；3 条单文件 fixup，其中 2 条修的是复制来的
-  定制类自己写错的两条指令）、`hunk-contracts.json`（9 条无法用形状比较表达的
+  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法；5 条单文件 fixup，含 1 条既有数组范围修正、
+  2 条 `VpnTags` emitter 修正和 2 条 VPN App proxy readiness 顺序修正）、`hunk-contracts.json`（9 条无法用形状比较表达的
   规则）、`delta-gaps.json`（引用审计结果）
 - 定制 hunk 的验收门：`scripts/verify_214_custom_hunks.py` 从 194 增量重新推导每个条目（指令形状与帧增长、载荷字面量、
-  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面，以及寄存器在此处真正装着的类型 —— 后者按本树类层次判定，
-  并对 214 上游整棵树跑 0 命中对照），由 `scripts/migrate_214.py`
-  强制执行；`scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（19 行：1 行控制 + 18 项变异，
-  其中 8 项是真机故障的复刻），证明这道门会变红而不是空转
+  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面、寄存器类型、复制 emitter 和 VPN App proxy readiness 顺序；
+  寄存器类型检查另对 214 上游整棵树跑 0 命中对照），由 `scripts/migrate_214.py` 强制执行；
+  `scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（20 行：1 行控制 + 19 项变异；其中 8 项复刻已记录的真机故障，
+  另 1 项覆盖本轮尚待设备确认的 VPN 首页测速代理就绪竞态假设），证明这道门会变红而不是空转
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ## 本地构建
@@ -47,7 +47,7 @@ PROJECT_DIR=.tools/local-171/decompiled \
 
 本地已完成 Apktool 回编译，并从生成的 APK 重新反编译 `classes.dex` 验证 `CfgNav.e` 的 `Lla2` Composer 接收器、`S`/`V` guard、回调接口类型链及全树引用/分支/对象寄存器检查。该 APK 为 `.tools/BoxProxy-26.11.16.25abc84-cfgnav-fixed-unsigned.apk`（versionCode 171；APK SHA-256 `f50ea39ea808325bbe6ee25d1d542a5c8ef6e2320d1336bff759219836313a60`；`classes.dex` SHA-256 `8a6679a886b6ebefeba729d690cf99c62652f583ba7ebeba95e13021263b8563`）。它也包含已修复的 `zu5.invoke`，但仍是**未对齐、未签名**的本地回编译产物，不等同于 GitHub Actions 的签名 APK，也尚未在 Redmi 真机上验证。
 
-## 214 候选的七处真机故障、第 7 到第 12 道门
+## 214 候选的七处已定位真机故障、第 7 到第 13 道门
 
 已发布的 214 包在进入主界面时崩溃：
 
@@ -249,15 +249,24 @@ time=... level=fatal msg="Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,
   这 1356 个被复制的 smali 上跑两条判定 —— 符号扩展陷阱，以及"拼接列表的方法里，分隔符必须在第一轮跳过"（识别方式是方法内
   出现 `OR,(` 这类列表开引号、索引从 0 起步并自增）。坏的那版报 2 条，修正后 0 条；194 对照树同样各 1 条，说明这不是本跳引入的，
   而是复制路径没人审。
-- 自检再加两行（现 19 行）：把那个守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
+- 自检再加两行（原 19 行，加入 VPN readiness 变异后 20 行）：把那个守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
   `or-int/lit16 …, 0xc800` → 必须报 `emitter literal`。两行都只动 `VpnTags.smali`。
 
-七处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`（3 条单文件 fixup 各自命中 1 次），7 个 smali 检查器 + 12 道门（含对上游整树
-8752 个 smali 文件的对照 0 命中）与 19 行自检全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，
-重编译树上类型流同样 0 命中）；本跳的 smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
+### VPN 首页 Google `--`：本地代理 readiness race（候选修复，设备根因待确认）
 
-真机复验仍未完成：上面这些是对 ART verifier 的**离线复刻**，`apktool b` 与 12 道门都替不了设备签字；第 5、6、7 三处尤其如此——它们的症状正是
-"离线全绿、装机才炸"，而第 7 处连 ART 都不经过：错的只是我们写给另一个程序读的一段文本。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
+两张截图给出的是**模式差异**，不是根因证明：`Screenshot_2026-11-26-21-59-08-785_com.boxproxy.box.jpg`（21:59:08）为 `Mihomo · VPN`，Baidu 57 ms、Cloudflare 565 ms、Google `--`；17 秒后的 `Screenshot_2026-11-26-21-59-25-724_com.boxproxy.box.jpg`（21:59:25）为 `Mihomo · TUN`，Baidu 41 ms、Cloudflare 302 ms、Google 303 ms。两图 WAN IP 都是 `180.98.0.240`、地区均显示中国。它们支持“VPN 模式下 Google 探测路径不同”的判断，但单凭截图不能区分代理尚未就绪、探测没经过代理、网络波动等原因。
+
+这次把 `fd2.g` 的路径追到 HTTP client，原先“测速是否使用 VPN App proxy 尚未证明”的疑问已有静态答案：`fd2.<clinit>` 从 `Lab0.f` 取 `Lib4`，`xf.smali` 用这个 client 发 `https://google.com` 的 `Range: bytes=0-0` 请求；`Lib4` 构造时若 `Hb4.m` 未显式设置，会调用 `VpnAppProxy.sel()`，而 `Lab0.a(...)` 创建的 builder 没设置该字段。该 selector 在 `active=false` 时委托原 selector（通常直连），`active=true` 时才返回 `127.0.0.1:<port>` 的 HTTP/SOCKS proxy。因此，测速 client **确实配置了** App proxy selector；未证实的是截图对应请求发生时 `active` 是否仍为 false。
+
+代码时序与竞态假设相符：`BoxVpnService.doStart()` 原先先写 `running=true`、发通知，再调用 `VpnAppProxy.start()`；后者把既有 `VpnAppProxy$T.run()` 放到新线程，`run()` 需要先连上本地端口才 `activate()`。UI 可在 waiter 完成前观察到运行状态。当前修正落在受审输入 `manual-pins.json` 的两个 `scopedFixups`，并同步反映在 `decompiled/`：`start()` 直接运行 waiter；`doStart()` 在发布 `running` 和 `notifyStatus()` 前调用它。该调用来自 `VpnTask` 工作线程；waiter 最多尝试 80 次、每次 socket connect timeout 300 ms、失败间隔 250 ms。若无端口或耗尽重试仍未就绪，原 helper 仍允许 VPN 服务进入 running 且本应用请求直连——本次没有改成“核心启动失败”，这是仍需监测的边界。
+
+验收门第 13 项 `check_vpn_app_proxy_activation` 检查 `Socket.connect` 先于 `activate`、waiter 是同步运行、服务先完成这次 readiness 尝试再发布状态；self-test 第 20 行把 `run()` 改回后台 `Thread.start()`，必须让该门报 `vpn app proxy activation`。这是针对截图现象的**竞态防护假设**，并非声称已设备复现；上传的 `run.zip.txt` 只有 19:58 的另一轮日志，没有 21:59 截图对应的 `runs.log`，也没有本轮 APK/设备复验。
+
+另一个问题是不同轮次、不能混为一谈：`run.zip.txt` 的 `mihomo.log` 在 2026-11-26 19:58:21 明确报 `rules[5] ... payloadRule error` 后退出；同轮 `runs.log` 显示 `[pump] process rules translated ...`、随后 pump 因 `ECONNRESET` 停止，并在 19:58:24 看到 `/proc/2835/fd/3` 已不存在。此轮核心根本没成功运行，`VpnAppProxy` readiness 无机会证明 Google 是否走代理。这条独立配置故障来自 `PROCESS-NAME-REGEX` 被 `VpnTags` 写成 `OR,(,(...)`：两处已由受审 `scopedFixups` 修正，并由 `VpnTagsTest` 在**迁移候选实际 smali**上测出无空元素、括号平衡、IPv6 tag 与 pump 字节一致。
+
+本轮重新完整运行 `python3 scripts/migrate_214.py --output .tools/arena-probe-214-final --gate-selftest`：porter `51/51`、`errors []`、`additions 1363`，5 条单文件 fixup 各命中一次；hunk gate 9 contracts、37 touched files、type-flow 0 findings、上游 control 0，VPN proxy 检查计数 1；20 行 self-test 全通过。7 个 smali checker 均通过（候选 10108 类；return-object 的 4 条与 214 上游基线相同）。另外，`vpn-src/test/run-config-rewriters.sh` 对最终迁移候选运行通过，包含在实际 smali 上执行的 `VpnTagsTest`；快照安全测试 8/8 通过，修改过的 Python、shell、pin JSON、`git diff --check` 均通过。用测试工具包的 Apktool 2.4.1 `SmaliBuilder` 也将整个候选 smali 树组装成 15 MB `classes.dex` 成功（这不是完整 APK 构建）。
+
+仍未完成：当前环境无 Android 设备，未做 VPN/TUN 实测；没有用项目锁定的 Apktool 2.9.3 完整回编译 APK（`java` 原先不可用，当前仅为宿主测试临时取得 Java 17 和测试用 Apktool 2.4.1）。所以这些离线结果不替代设备签字，也不能把候选竞态保护写成已验证修复；已发布的 214 包仍不会被这次工作区改动自动替换。
 
 ## CI 产物与设备验证
 

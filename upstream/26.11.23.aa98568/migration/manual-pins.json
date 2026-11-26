@@ -97,6 +97,20 @@
         "right": "    const v0, 0xc800\n\n    or-int/2addr p0, v0",
         "evidence": "a smali 2-int/lit16 literal is signed, so this ORs 0xffffc800 and ip6() spells tag 1 fdfe:dcba:9876::ffffc801 while VpnPump.forward6 tags the packet bytes with 0xC8,tag, i.e. ::c801 - every IPv6 process rule would then miss for ever, silently. D8 compiles the Java `0xC800 | tag` into exactly these two instructions (VpnPump.smali has `const v6, 0xc800` for the same expression), so this is the generated shape, not a new invention"
       }
+    ],
+    "smali/com/box/app/vpn/VpnAppProxy.smali": [
+      {
+        "wrong": "    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;\n\n    const/4 v2, 0x1\n\n    invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V\n\n    new-instance v2, Ljava/lang/Thread;\n\n    invoke-direct {v2, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V\n\n    invoke-virtual {v2}, Ljava/lang/Thread;->start()V",
+        "right": "    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;\n\n    const/4 v2, 0x1\n\n    invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V\n\n    invoke-virtual {v1}, Lcom/box/app/vpn/VpnAppProxy$T;->run()V",
+        "evidence": "The VPN excludes BoxProxy itself from the tunnel. Static tracing confirms the home latency client's fd2.g HTTP client uses VpnAppProxy.sel(): inactive delegates to the original selector, active routes to the local core proxy. The previous asynchronous waiter ran after the service published running, so a status-triggered probe could race activation; the screenshots are consistent but do not prove that happened. Run the existing port waiter synchronously."
+      }
+    ],
+    "smali/com/box/app/vpn/BoxVpnService.smali": [
+      {
+        "wrong": "    const/4 v0, 0x1\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z\n\n    const/4 v0, 0x0\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->starting:Z\n\n    const-string v0, \"\\u975e root VPN \\u6a21\\u5f0f\\u8fd0\\u884c\\u4e2d\"\n\n    const-string v1, \"Running in non-root VPN mode\"\n\n    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object v0\n\n    invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->updateNotif(Ljava/lang/String;)V\n\n    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V",
+        "right": "    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V\n\n    const/4 v0, 0x1\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z\n\n    const/4 v0, 0x0\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->starting:Z\n\n    const-string v0, \"\\u975e root VPN \\u6a21\\u5f0f\\u8fd0\\u884c\\u4e2d\"\n\n    const-string v1, \"Running in non-root VPN mode\"\n\n    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object v0\n\n    invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->updateNotif(Ljava/lang/String;)V",
+        "evidence": "Invoke the synchronous local-proxy readiness waiter before publishing running and notifyStatus, so a consumer triggered by that status cannot race activation. The selector path is statically confirmed; the VPN-vs-TUN screenshots are consistent with this timing issue but are not proof of the cause. The existing waiter still returns after missing-port or retry exhaustion, so this pin orders readiness attempts rather than converting that separate condition into core-start failure."
+      }
     ]
   },
   "windowRewrites": [],

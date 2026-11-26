@@ -815,6 +815,8 @@
 
     sput-wide v2, Lcom/box/app/vpn/BoxVpnService;->startSec:J
 
+    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V
+
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
@@ -832,8 +834,6 @@
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->updateNotif(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V
 
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->notifyStatus()V
 
