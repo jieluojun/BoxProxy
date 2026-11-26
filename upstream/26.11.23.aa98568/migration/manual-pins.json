@@ -110,6 +110,26 @@
         "wrong": "    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;\n\n    const/4 v2, 0x1\n\n    invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V\n\n    new-instance v2, Ljava/lang/Thread;\n\n    invoke-direct {v2, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V\n\n    invoke-virtual {v2}, Ljava/lang/Thread;->start()V",
         "right": "    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;\n\n    const/4 v2, 0x1\n\n    invoke-direct {v1, v2, v0}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V\n\n    invoke-virtual {v1}, Lcom/box/app/vpn/VpnAppProxy$T;->run()V",
         "evidence": "The VPN excludes BoxProxy itself from the tunnel. VpnAppProxy's selector delegates to the original route until the local port waiter activates it. The 194-to-214 OkHttp client selector is preserved separately by the smali/lw4.smali scoped fixup and the VPN latency selector gate; this pin only orders the activation attempt before publishing running/notifyStatus. The previous asynchronous waiter ran after the service published running, so a status-triggered probe could race activation. The screenshots and 23:19 logs do not prove that this readiness race caused the Google result. Run the existing port waiter synchronously."
+      },
+      {
+        "wrong": ".field public static volatile nsel:I\n",
+        "right": ".field public static volatile nsel:I\n\n.field public static activeState:Lz75;\n",
+        "evidence": "Expose a Compose-observable snapshot of the selector activation state. Home reads this mutable state during composition so the Home probe effects can be restarted when the local proxy becomes usable; the selector itself remains the source of truth in the volatile active field."
+      },
+      {
+        "wrong": "    sput-object v0, Lcom/box/app/vpn/VpnAppProxy;->INSTANCE:Lcom/box/app/vpn/VpnAppProxy;\n\n    return-void",
+        "right": "    sput-object v0, Lcom/box/app/vpn/VpnAppProxy;->INSTANCE:Lcom/box/app/vpn/VpnAppProxy;\n\n    const/4 v0, 0x0\n\n    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;\n\n    move-result-object v0\n\n    invoke-static {v0}, Lml3;->B(Ljava/lang/Object;)Lz75;\n\n    move-result-object v0\n\n    sput-object v0, Lcom/box/app/vpn/VpnAppProxy;->activeState:Lz75;\n\n    return-void",
+        "evidence": "Initialize the observable activation state to the selector default (inactive). The value is a Compose mutable state like VpnPrefs uses, so an activation transition can recompose Home even if the screen was already open before a manual VPN start."
+      },
+      {
+        "wrong": ".end method\n\n.method public connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V",
+        "right": ".end method\n\n.method public static setActiveState(Z)V\n    .locals 2\n\n    sget-object v0, Lcom/box/app/vpn/VpnAppProxy;->activeState:Lz75;\n\n    if-eqz v0, :cond_ret\n\n    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;\n\n    move-result-object v1\n\n    invoke-virtual {v0, v1}, Lz75;->setValue(Ljava/lang/Object;)V\n\n    :cond_ret\n    return-void\n.end method\n\n.method public connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V",
+        "evidence": "Update the Compose-observable activation state from the main-thread callback. This must not alter ProxySelector routing; it only makes Home effects observe activation and re-run their probes after the local port is confirmed."
+      },
+      {
+        "wrong": "    sput-boolean v0, Lcom/box/app/vpn/VpnAppProxy;->active:Z\n\n    :try_start_0",
+        "right": "    sput-boolean v0, Lcom/box/app/vpn/VpnAppProxy;->active:Z\n\n    const/4 v1, 0x0\n\n    sput-boolean v1, Lav2;->d:Z\n\n    :try_start_0",
+        "evidence": "After the readiness waiter proves the local proxy port is open, clear the Home latency one-shot guard before publishing the observable active-state change. The Home effect then performs a fresh pass through the same dynamic Llw4 selector; this covers manual start after Home already issued its initial direct-mode pass."
       }
     ],
     "smali/com/box/app/vpn/BoxVpnService.smali": [
@@ -117,6 +137,49 @@
         "wrong": "    const/4 v0, 0x1\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z\n\n    const/4 v0, 0x0\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->starting:Z\n\n    const-string v0, \"\\u975e root VPN \\u6a21\\u5f0f\\u8fd0\\u884c\\u4e2d\"\n\n    const-string v1, \"Running in non-root VPN mode\"\n\n    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object v0\n\n    invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->updateNotif(Ljava/lang/String;)V\n\n    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V",
         "right": "    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V\n\n    const/4 v0, 0x1\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z\n\n    const/4 v0, 0x0\n\n    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->starting:Z\n\n    const-string v0, \"\\u975e root VPN \\u6a21\\u5f0f\\u8fd0\\u884c\\u4e2d\"\n\n    const-string v1, \"Running in non-root VPN mode\"\n\n    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object v0\n\n    invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->updateNotif(Ljava/lang/String;)V",
         "evidence": "Invoke the synchronous local-proxy readiness waiter before publishing running and notifyStatus, so a consumer triggered by that status cannot race activation. The selector path is statically confirmed; the VPN-vs-TUN screenshots are consistent with this timing issue but are not proof of the cause. The existing waiter still returns after missing-port or retry exhaustion, so this pin orders readiness attempts rather than converting that separate condition into core-start failure."
+      }
+    ],
+    "smali/com/box/app/vpn/VpnAppProxy$T.smali": [
+      {
+        "wrong": "    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V\n\n    return-void",
+        "right": "    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->setActiveState(Z)V\n\n    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V\n\n    return-void",
+        "evidence": "Publish the active transition on the UI thread before applying the WebView proxy. Home subscribes to the Compose state and re-launches its probe effects for the newly ready selector."
+      },
+      {
+        "wrong": "    const/4 v1, 0x0\n\n    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V",
+        "right": "    const/4 v1, 0x0\n\n    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->setActiveState(Z)V\n\n    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V",
+        "evidence": "Clear the observable active state on the UI thread during stop so Home does not treat a stopped local proxy as ready. A subsequent activation resets the latency one-shot guard and can trigger a new active-session pass."
+      }
+    ],
+    "smali/hw.smali": [
+      {
+        "wrong": ".method public static final t(ZLjava/util/List;Lzi2;I)V\n    .locals 11\n\n    .line 1\n    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "right": ".method public static final t(ZLjava/util/List;Lzi2;I)V\n    .locals 12\n\n    .line 1\n    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;\n\n    sget-object v11, Lcom/box/app/vpn/VpnAppProxy;->activeState:Lz75;\n\n    invoke-virtual {v11}, Lz75;->getValue()Ljava/lang/Object;\n\n    move-result-object v11\n\n    check-cast v11, Ljava/lang/Boolean;\n\n    invoke-virtual {v11}, Ljava/lang/Boolean;->booleanValue()Z\n\n    move-result v11",
+        "evidence": "Read the observable selector state while Home is composing and include it in both LaunchedEffect keys below. When manual VPN start activates the local port, this snapshot invalidates the effects even though the selected IP mode and target list are unchanged."
+      },
+      {
+        "wrong": "    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;\n\n    .line 82\n    .line 83\n    .line 84\n    move-result-object v1",
+        "right": "    new-instance v1, Ljava/util/ArrayList;\n\n    const/4 v10, 0x2\n\n    invoke-direct {v1, v10}, Ljava/util/ArrayList;-><init>(I)V\n\n    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;\n\n    move-result-object v10\n\n    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z\n\n    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;\n\n    move-result-object v10\n\n    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z\n\n    .line 82\n    .line 83\n    .line 84",
+        "evidence": "Key the LAN/WAN mode effect by both the selected mode and the observed proxy-active state. On activation the same Zy2 callback can re-run the WAN lookup instead of retaining an IP fetched before the proxy was ready."
+      },
+      {
+        "wrong": "    invoke-static {v0, p2, p1}, Ldy3;->v(Lai2;Lzi2;Ljava/lang/Object;)V",
+        "right": "    new-instance v10, Ljava/util/ArrayList;\n\n    const/4 v2, 0x2\n\n    invoke-direct {v10, v2}, Ljava/util/ArrayList;-><init>(I)V\n\n    invoke-virtual {v10, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z\n\n    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;\n\n    move-result-object v2\n\n    invoke-virtual {v10, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z\n\n    invoke-static {v0, p2, v10}, Ldy3;->v(Lai2;Lzi2;Ljava/lang/Object;)V",
+        "evidence": "Key the latency LaunchedEffect by the configured target list plus selector-active state. A false-to-true transition forces a new pass for Baidu, Cloudflare and Google after the core port is ready, rather than relying on the one-shot direct-mode request."
+      }
+    ],
+    "smali/y3.smali": [
+      {
+        "wrong": "    iget-boolean v7, v6, Lqu2;->b:Z\n\n    .line 704\n    .line 705\n    if-eqz v7, :cond_2b",
+        "right": "    iget-boolean v7, v6, Lqu2;->b:Z\n\n    .line 704\n    .line 705\n    if-eqz v7, :cond_2b\n\n    sget-boolean v7, Lcom/box/app/vpn/VpnAppProxy;->active:Z\n\n    if-nez v7, :cond_2b",
+        "evidence": "When the dynamic selector is active, do not suppress a same-target latency refresh merely because a direct-mode measurement populated the state earlier. The active-state effect key causes one fresh call through Lav2.b after readiness; while inactive the original measured-and-same-target dedupe remains unchanged."
+      }
+    ],
+    "smali/zy2.smali": [
+      {
+        "wrong": "    iget-boolean v1, v1, Ljy2;->c:Z\n\n    .line 105\n    .line 106\n    if-nez v1, :cond_6",
+        "right": "    iget-boolean v1, v1, Ljy2;->c:Z\n\n    .line 105\n    .line 106\n    sget-boolean v6, Lcom/box/app/vpn/VpnAppProxy;->active:Z\n\n    if-nez v6, :boxproxy_wan_active\n\n    if-nez v1, :cond_6\n\n    :boxproxy_wan_active",
+        "evidence": "When Home is already open, its first WAN lookup can finish before a manual VPN start and set the initialized bit. The observable active key relaunches this effect; when active it must call Ty2.e even if the previous direct-mode state is populated, so IPv4/IPv6 ip.sb and the ipwho enrichment use the dynamic selector."
       }
     ]
   },
