@@ -60,7 +60,8 @@
       "line": "move-result-object p0",
       "registers": [
         "p1->p0"
-      ]
+      ],
+      "kind": "preserved line"
     },
     {
       "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
@@ -68,7 +69,8 @@
       "line": "invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
       "registers": [
         "p1->p0"
-      ]
+      ],
+      "kind": "preserved line"
     },
     {
       "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
@@ -76,7 +78,8 @@
       "line": "check-cast p2, Ljava/lang/String;",
       "registers": [
         "p0->p2"
-      ]
+      ],
+      "kind": "preserved line"
     },
     {
       "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
@@ -84,7 +87,8 @@
       "line": "if-nez v1, :cond_4",
       "registers": [
         "p0->v1"
-      ]
+      ],
+      "kind": "preserved line"
     },
     {
       "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
@@ -92,7 +96,30 @@
       "line": "return-object v1",
       "registers": [
         "p0->v1"
-      ]
+      ],
+      "kind": "preserved line"
+    },
+    {
+      "method": "Ljk5;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "was": "invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "line": "    invoke-static {v15}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "registers": [
+        "v14->v15"
+      ],
+      "replaced": "invoke-virtual {v15}, Ljava/lang/Enum;->ordinal()I",
+      "kind": "replaced line"
+    }
+  ],
+  "registerRealignments": [
+    {
+      "method": "Ljk5;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "was": "invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "line": "    invoke-static {v15}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "registers": [
+        "v14->v15"
+      ],
+      "replaced": "invoke-virtual {v15}, Ljava/lang/Enum;->ordinal()I",
+      "kind": "replaced line"
     }
   ],
   "manualHits": {},

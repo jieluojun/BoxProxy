@@ -89,6 +89,34 @@ def move_producer_off_the_grafted_consumer(text):
     return ''.join(lines)
 
 
+def point_the_replacement_at_the_slot_of_the_old_release(text):
+    """Hand the enum probe the register the previous release used for that enum.
+
+    A `replace` hunk carries the numbering of the frame it was written in: the
+    customization turns the stock `Ljava/lang/Enum;->ordinal()I` of the core detail
+    row into `Lcom/box/app/vpn/VpnBridge;->key(Lbr5;)I`, and 194 held that enum in
+    v14 while the 214 method keeps it in v15 and left v14 on the String field read
+    two instructions earlier.  Reverting the operand alone keeps every instruction,
+    literal and label of the reviewed hunk and moves one word of the frame - which
+    is what the shipped build did, and the verifier answered with ``register v14 has
+    type Reference: java.lang.String but expected Reference: br5`` on the device.
+    """
+    lines = text.splitlines(keepends=True)
+    try:
+        start = next(n for n, line in enumerate(lines) if line.strip().startswith('.method')
+                     and ' c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)' in line)
+        end = next(n for n in range(start, len(lines)) if lines[n].strip() == '.end method')
+        call = next(n for n in range(start, end) if lines[n].strip()
+                    == 'invoke-static {v15}, Lcom/box/app/vpn/VpnBridge;->key(Lbr5;)I')
+        producer = next(n for n in range(start, call) if lines[n].strip()
+                        == 'iget-object v14, v0, Ljk5;->q:Ljava/lang/String;')
+    except StopIteration:
+        raise LookupError('the needle is gone: the VpnBridge->key call or the String read '
+                          'before it in jk5.c')
+    lines[call] = lines[call].replace('{v15}', '{v14}')
+    return ''.join(lines)
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -110,6 +138,8 @@ MUTATIONS = [
      replace('invoke-static {v0}, Lg17;->X(', 'invoke-static {v0}, Lg17;->Y('), r'placement'),
     ('the producer of a grafted value, back on the upstream slot', 'smali/hi1.smali',
      move_producer_off_the_grafted_consumer, r'type flow'),
+    ('the operand a replaced line carried from the old frame', 'smali/jk5.smali',
+     point_the_replacement_at_the_slot_of_the_old_release, r'type flow'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),

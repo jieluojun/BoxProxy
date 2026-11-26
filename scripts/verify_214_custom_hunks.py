@@ -1271,6 +1271,108 @@ def blocks_of(body):
     return blocks
 
 
+def class_index(root):
+    """`type name -> (super, implements...)` of a tree, built once and read lazily.
+
+    ART proves a reference parameter by the producer's *class*, not by its name, so a
+    gate that wants to call a concrete type in the wrong slot an error has to know what
+    each class of the tree extends and implements.  The path index is built in one glob
+    and only the head of a file a lookup actually asks for is read, and a type this tree
+    cannot explain is reported as unresolved instead of as a violation - which keeps a
+    control pass over 8752 upstream files both quick and silent.
+    """
+    cached = getattr(class_index, '_cache', None)
+    if cached is None:
+        cached = class_index._cache = {}
+    key = str(root)
+    if key in cached:
+        return cached[key]
+
+    paths = {}
+    for path in root.glob('smali*/**/*.smali'):
+        parts = path.relative_to(root).parts
+        if len(parts) < 2:
+            continue
+        package = parts[1:-1]                            # drop smali_classesN and .smali
+        # a smali descriptor spells its package with slashes, exactly as the path does
+        type_name = 'L' + '/'.join(package + (parts[-1][:-len('.smali')],)) + ';'
+        current = paths.get(type_name)
+        if current is None or len(package) < len(current[1:-1]):
+            paths[type_name] = parts
+
+    heads, closure_cache = {}, {}
+
+    def info(type_name):
+        if type_name not in heads:
+            parts = paths.get(type_name)
+            parents = None
+            if parts is not None:
+                parents = []
+                for line in (root.joinpath(*parts)).read_text(encoding='utf-8',
+                                                               errors='ignore').splitlines():
+                    stripped = line.strip()
+                    if stripped.startswith(('.super ', '.implements ')):
+                        parents.append(stripped.split(None, 1)[1].strip())
+                    elif not stripped.startswith(('.class', '.package', '#', '')):
+                        break
+            heads[type_name] = parents
+        return heads[type_name]
+
+    def closure(type_name):
+        """(types reachable upwards from `type_name`, is that list the whole story?)
+
+        A class the tree does not define - a framework or library type - has parents
+        this gate cannot read, so the walk says so instead of guessing: `complete` is
+        only true when every hop up to `Ljava/lang/Object;` was found in this tree.
+        """
+        if type_name not in closure_cache:
+            seen, frontier, complete = {type_name}, [type_name], type_name in paths
+            while frontier and len(seen) < 64:
+                parents = info(frontier.pop())
+                if parents is None:
+                    complete = False
+                    continue
+                for parent in parents:
+                    if parent not in seen:
+                        seen.add(parent)
+                        frontier.append(parent)
+            closure_cache[type_name] = (seen, complete)
+        return closure_cache[type_name]
+
+    closure.tree_types = paths
+    cached[key] = closure
+    return closure
+
+
+def argument_type_safe(known, expected, closure):
+    """Can a value known to be of type `known` legally land in an `expected` slot?
+
+    Only relationships this tree can prove are acted on.  An uncast Object in a
+    narrowed slot is always wrong and needs no hierarchy.  Otherwise the producer's
+    class is walked upwards through the classes the tree defines; a framework class
+    above that walk cannot be resolved from here, so the mismatch is reported only
+    when the slot asks for a class this tree defines - no framework class
+    (java.lang.String included) is a subtype of an application class - or when the
+    walk itself explains the difference.
+    """
+    if known is None or known == expected or expected == OBJECT_TYPE:
+        return True
+    if known == OBJECT_TYPE:
+        return False
+    if expected.startswith('[') or known.startswith('['):
+        return True
+    reachable, complete = closure(known)
+    if expected in reachable:
+        return True
+    if known not in closure.tree_types:
+        # the producer is a framework type and the slot asks for a class this tree
+        # defines: no framework class extends or implements an application class
+        return expected not in closure.tree_types
+    # the ancestry of an application class is only evidence while every hop of it
+    # could be read here; an unresolved parent means no claim, not a violation
+    return not complete
+
+
 def check_type_flow(touched, output, problems, files=None):
     """A reference can resolve by name and still be handed too wide a register.
 
@@ -1290,15 +1392,19 @@ def check_type_flow(touched, output, problems, files=None):
     parameters of the enclosing method and its receiver - and propagates those
     types across the method's basic blocks, merging at every join: a register
     keeps a type at a block only where EVERY path into it produced that type.
-    The finding is then the one combination that is never legal: an Object handed
-    to a narrowed reference parameter, or returned as one, with no check-cast in
-    between.  That needs no class hierarchy, because no class is a subtype of
-    anything below Object; and anything the walk cannot align becomes unknown, so
-    the gate loses coverage instead of credibility.  A control run over the whole
+    The finding is any slot whose one proven type cannot stand in the other: an
+    uncast Object handed to a narrowed parameter (which no hierarchy can rescue),
+    or a concrete type handed to a parameter of a concrete type it does not
+    extend - which is how a verbatim 194 replacement of the 214 core-detail enum
+    read the wrong register, `register v14 has type Reference java.lang.String but
+    expected Reference br5`, because in 194 that enum lived in v14 and in 214 in
+    v15.  Anything the walk cannot align, and any producer class this tree cannot
+    explain, becomes unknown, so the gate loses coverage instead of credibility.  A control run over the whole
     upstream tree reports nothing (``--type-flow-control``), because a shipping
     release has already been verified by ART.
     """
     found = 0
+    closure = class_index(output)
     for file_name in (files if files is not None else sorted(touched)):
         path = output / file_name
         if not path.is_file():
@@ -1320,7 +1426,13 @@ def check_type_flow(touched, output, problems, files=None):
             static = ' static ' in ' ' + header.split(' ', 1)[1] + ' '
             entry, cursor = {}, locals_count + (0 if static else 1)
             if not static:
-                entry[locals_count] = 'L' + path.stem + ';'
+                # a packaged class's descriptor spells its package with slashes, so the
+                # receiver's type has to come from the path and not from the file name -
+                # the hierarchy walk below looks this type up in the tree
+                parts = Path(file_name).parts
+                entry[locals_count] = ('L' + '/'.join(parts[1:-1]
+                                                       + (parts[-1][:-len('.smali')],)) + ';'
+                                       if len(parts) > 1 else 'L' + path.stem + ';')
             for token in parameters:
                 entry[cursor] = token
                 cursor += 2 if token in 'JD' else 1
@@ -1344,16 +1456,22 @@ def check_type_flow(touched, output, problems, files=None):
                     invoke = invoke_arguments(code, locals_count)
                     if invoke is not None:
                         for expected, register in invoke[0]:
-                            if not expected.startswith('L') or expected == OBJECT_TYPE:
+                            known = types.get(register)
+                            if not expected.startswith('L') or known is None \
+                                    or known == expected:
                                 continue
-                            if types.get(register) != OBJECT_TYPE:
+                            if known == OBJECT_TYPE:
+                                why = ('every path into this block produced it as an uncast Object '
+                                       'and nothing casts it')
+                            elif argument_type_safe(known, expected, closure):
                                 continue
-                            hits.append('type flow: %s is handed to %s as %s, but every path into '
-                                        'this block produced it as %s and nothing casts it - a hunk '
-                                        'whose producer was renumbered away from the consumer its '
-                                        'target code kept needs a reviewed placement'
+                            else:
+                                why = 'every path into this block produced it as %s' % known
+                            hits.append('type flow: %s is handed to %s as %s, but %s - a hunk '
+                                        'whose producer or consumer was renumbered against the '
+                                        'other needs a reviewed placement'
                                         % (name_of(register, locals_count),
-                                           code.split('}, ', 1)[-1][:64], expected, OBJECT_TYPE))
+                                           code.split('}, ', 1)[-1][:64], expected, why))
                         pending = invoke[1]
                         continue
                     match = MOVE_RESULT_OBJ_RE.match(code)
@@ -1391,21 +1509,21 @@ def check_type_flow(touched, output, problems, files=None):
                     match = FIELD_WRITE_RE.match(code)
                     if match:
                         source = frame_slot(match.group(2), locals_count)
-                        expected = match.group(3)
-                        if expected.startswith('L') and expected != OBJECT_TYPE \
-                                and types.get(source) == OBJECT_TYPE:
+                        expected, known = match.group(3), types.get(source)
+                        if expected.startswith('L') and known is not None and known != expected \
+                                and not argument_type_safe(known, expected, closure):
                             hits.append('type flow: %s is stored into the %s field %s, but every '
                                         'path into this block produced it as %s and nothing casts it'
                                         % (name_of(source, locals_count), expected,
-                                           code.split(', ', 2)[-1][:48], OBJECT_TYPE))
+                                           code.split(', ', 2)[-1][:48], known))
                         pending = None
                         continue
                     match = RETURN_OBJECT_RE2.match(code)
                     if match:
                         source = frame_slot(match.group(1), locals_count)
-                        if returns.startswith('L') and returns != OBJECT_TYPE \
-                                and not returns.startswith('[') \
-                                and types.get(source) == OBJECT_TYPE:
+                        if returns.startswith('L') and not returns.startswith('[') \
+                                and types.get(source) is not None \
+                                and not argument_type_safe(types[source], returns, closure):
                             hits.append('type flow: the method returns %s as %s while every path into '
                                         'this block produced an uncast Object'
                                         % (name_of(source, locals_count), returns))

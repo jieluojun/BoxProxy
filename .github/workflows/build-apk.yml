@@ -45,6 +45,18 @@ jobs:
       # The candidate is fully determined by the pinned snapshots and the
       # migration scripts; cache it so repeat builds skip the ~60s
       # extract/replay/maps/port/verify pipeline (the key hashes every input).
+      #
+      # This step is the one and only place the 214 hop is validated, for pushes and
+      # for pull requests alike: `scripts/migrate_214.py` regenerates the candidate
+      # from the pinned inputs, runs the custom-hunk gate (with its control pass over
+      # the pristine upstream tree) and the seven smali checkers before it copies the
+      # tree out, and `--gate-selftest` corrupts one reviewed property at a time to
+      # prove the gate goes red rather than being vacuous.  validate-migration.yml
+      # used to rebuild this hop a second time and now covers only the earlier hops
+      # and the host-side tests, which nothing else runs.  A cache hit skips them
+      # because the key above hashes every input they read; a cache populated by a
+      # run that failed before publishing has no `apktool.yml`, which the test below
+      # turns into a hard failure rather than a build of a stale tree.
       - name: Cache pinned 214 migration candidate
         uses: actions/cache@v6
         with:
@@ -56,9 +68,9 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -f "$PROJECT_DIR/apktool.yml" ]]; then
-            echo ">> pinned 214 candidate restored from cache; skipping regeneration"
+            echo ">> pinned 214 candidate restored from cache; the gate and its self-test ran when it was generated"
           else
-            python3 scripts/migrate_214.py --output .tools/ci-214
+            python3 scripts/migrate_214.py --output .tools/ci-214 --gate-selftest
           fi
           test -f "$PROJECT_DIR/apktool.yml"
 

@@ -724,6 +724,75 @@ def preserved_line_rename(base_line, custom_line, target_line, reg_map, target_l
     return ''.join(parts), moved
 
 
+def replaced_line_rename(base_line, target_line, custom_line, target_locals, target_words):
+    """Re-spell a customization's replacement to the registers of the line it replaces.
+
+    A `replace` region drops a stock line and puts the custom line in its place, and
+    the porter carries that custom text over verbatim - so every register it names is
+    the name the 194 frame gave it.  R8 renumbers freely between releases, and when it
+    does, the ported line reads a slot that holds something else: the core-detail enum
+    probe replaced the stock ``invoke-virtual {v14}, Ljava/lang/Enum;->ordinal()I``
+    with ``invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lbr5;)I``, which was
+    right in 194, while the 214 method of the same shape kept that enum in v15 and
+    left v14 on the ``Ljava/lang/String;`` field read two instructions earlier.  The
+    hunk assembled, resolved and passed every name-based check, and ART rejected the
+    class on the device with ``register v14 has type Reference java.lang.String but
+    expected Reference br5``.
+
+    The two versions of the *replaced* line say what the customization meant: they are
+    the same stock instruction, so their operands line up one for one, and that pairing
+    is the register correspondence of the replacement.  It is applied only when the
+    frames agree, the two instruction shapes are identical apart from the numbering,
+    the custom line reads exactly as many operands, and each of them is explained by
+    the pairing - anything else is left as it was, which is what the type-flow gate of
+    the hunk verifier is there to report.
+    """
+    shapes = [operand_registers(line) for line in (base_line, target_line, custom_line)]
+    if not all(shapes):
+        return None
+
+    def masked(prefix, registers):
+        for name in sorted(set(registers), key=len, reverse=True):
+            prefix = re.sub(r'\b%s\b' % re.escape(name), '@', prefix)
+        return prefix
+
+    (base_prefix, base_regs), (target_prefix, target_regs), (custom_prefix, custom_regs) = shapes
+    if not base_regs or '..' in base_prefix + target_prefix + custom_prefix:
+        return None
+    if len(base_regs) != len(target_regs) or masked(base_prefix, base_regs) != masked(target_prefix,
+                                                                                       target_regs):
+        # not the same stock instruction in the two releases: no correspondence to read
+        return None
+    if base_regs == target_regs:
+        return None
+    if len(custom_regs) != len(base_regs) or set(custom_regs) - set(base_regs):
+        # the replacement reads a register the replaced line does not, so the pairing
+        # says nothing about it
+        return None
+    pairing = dict(zip(base_regs, target_regs))
+    moved, renamed = [], list(custom_regs)
+    for index, register in enumerate(custom_regs):
+        value = pairing[register]
+        if not in_frame(value, target_locals, target_words):
+            return None
+        if value != register:
+            renamed[index] = value
+            moved.append(register + '->' + value)
+    if not moved:
+        return None
+    # the instruction keeps its own indentation, so the ported tree still diffs
+    # against the target line by line
+    text = custom_line.rstrip('\n')
+    indent = len(text) - len(text.lstrip())
+    cursor, parts = 0, []
+    for index, register in enumerate(custom_regs):
+        start = text.index(register, cursor)
+        parts.append(text[cursor:start] + renamed[index])
+        cursor = start + len(register)
+    parts.append(text[cursor:])
+    return ''.join(parts), moved
+
+
 def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, audit):
     rel = plan['sourceFile']
     old_sig = plan['old'].split('->', 1)[1]
@@ -1162,11 +1231,16 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
     label_out, _ = label_maps(base_body, target_body, custom_body, base_to_target, labelmap, r_old)
     deletes, inserts = set(), []
     renamed_lines = []
+    realigned_lines = []
     # Mirroring a rename is only meaningful on identical frames: `pN` counts
     # parameter words from the end of the locals, so a method that grew or shrank
     # its frame between the two releases has no shared meaning for the name.
     same_frame = (parameter_words(base_header) == parameter_words(target_header)
                   and get_locals(base_body)[1] == get_locals(target_body)[1])
+    # A re-spelling read from a pair of instructions needs only that `pN` still means
+    # the same slot; a frame that grew between releases is the very reason the v-slots
+    # moved, so `same_frame` must not gate it.
+    same_params = parameter_words(base_header) == parameter_words(target_header)
     for tag, i1, i2, j1, j2 in delta.get_opcodes():
         if tag == 'equal':
             # A line the customization shares with the base is kept from the
@@ -1201,6 +1275,25 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
                     deletes.add(base_to_target[old_index])
         if tag in ('insert', 'replace'):
             raw = [custom_seq[i][1] for i in range(j1, j2)]
+            if tag == 'replace' and same_params and len(raw) == i2 - i1:
+                # a replacement carries the numbering of the release it was written
+                # for: re-spell it from the two versions of the line it replaces, which
+                # are the only place the correspondence between those frames is stated
+                for offset in range(i2 - i1):
+                    base_index = base_seq[i1 + offset][0]
+                    if base_index not in base_to_target:
+                        continue
+                    result = replaced_line_rename(base_seq[i1 + offset][1],
+                                                  target_body[base_to_target[base_index]],
+                                                  raw[offset], get_locals(target_body)[1],
+                                                  parameter_words(target_header))
+                    if result is None:
+                        continue
+                    raw[offset] = result[0]
+                    realigned_lines.append({'line': result[0], 'registers': result[1],
+                                            'was': custom_seq[j1 + offset][1].strip(),
+                                            'replaced': target_body[
+                                                base_to_target[base_index]].strip()})
             raw = [line for line in raw if line.strip()
                    and not line.strip().startswith(DEBUG_PREFIXES)
                    and not line.strip().startswith(('.locals ', '.registers '))]
@@ -1567,6 +1660,8 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
                         'deletions': len(deletes)})
     if renamed_lines:
         audit_entry['registerRenamed'] = renamed_lines
+    if realigned_lines:
+        audit_entry['registerRealigned'] = realigned_lines
     audit.append(audit_entry)
     return True, {'inserts': sum(len(group) for _, group in translated),
                   'deletes': len(deletes), 'alignment': round(alignment, 4),
@@ -3236,6 +3331,16 @@ def main():
                       'scopedFixups': {name: len(table) for name, table in scoped_fixups.items()}}
 
     report['manifest'] = merge_manifest(args.old, args.custom, args.new, args.output)
+    report['registerRenames'] = [{'method': entry['new'], 'was': item['was'],
+                                  'line': item['line'], 'registers': item['registers'],
+                                  'kind': 'preserved line'}
+                                 for entry in audit for item in entry.get('registerRenamed', [])]
+    report['registerRealignments'] = [{'method': entry['new'], 'was': item['was'],
+                                       'line': item['line'], 'registers': item['registers'],
+                                       'replaced': item['replaced'], 'kind': 'replaced line'}
+                                      for entry in audit
+                                      for item in entry.get('registerRealigned', [])]
+    report['registerRenames'] += report['registerRealignments']
     report['manualHits'] = {name: MANUAL_HITS.get(name, 0) for name in sorted(ACTIVE_RULES)}
     report['inactiveRules'] = sorted(set(EXPECTED_MANUAL_HITS) - ACTIVE_RULES)
     for name in sorted(CHECKS):
@@ -3257,9 +3362,6 @@ def main():
         if MANUAL_HITS.get(name, 0) != expected:
             report['errors'].append('MANUAL ' + name + ': expected ' + str(expected)
                                     + ' hit(s) but got ' + str(MANUAL_HITS.get(name, 0)))
-    report['registerRenames'] = [{'method': entry['new'], 'was': item['was'],
-                                  'line': item['line'], 'registers': item['registers']}
-                                 for entry in audit for item in entry.get('registerRenamed', [])]
     args.report_dir.mkdir(parents=True, exist_ok=True)
     (args.report_dir / 'port-hunks.json').write_text(json.dumps(audit, indent=2) + '\n')
     (args.report_dir / 'delta-stage6-report.json').write_text(json.dumps(report, indent=2) + '\n')
