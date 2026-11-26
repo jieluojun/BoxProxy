@@ -9,8 +9,12 @@ insert, a splice that landed one instruction later, a grafted call that the
 release renamed under it.  Each row edits one thing in a copy of the migrated
 tree and requires scripts/verify_214_custom_hunks.py to report it, with the
 finding coming from the gate that owns that property - so a row cannot pass for
-the wrong reason.  The last rows are the 214 device failure itself: the producer
-of a grafted value renamed away from the register the target's own code reads.
+the wrong reason.  Rows 10 to 15 are the five 214 device failures of this hop:
+the producer of a grafted value renamed away from the register the target's own
+code reads, an operand a replaced line carried from the frame it was written in,
+the flag an arm zeroed instead of the resource id the merge reads, the spill that
+arm owed the merge, and a block that staged its ``/range`` call through a register
+this frame still needed.  Row 14 is the exemption nothing needed.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -193,6 +197,34 @@ def invent_a_tolerance_the_release_does_not_need(text):
     return json.dumps(data, indent=2) + '\n'
 
 
+def spend_a_live_register_on_the_staged_call(text):
+    """Put a grafted block's staging span back on the register this frame still needs.
+
+    The porter re-anchors the span a helper call is staged through to registers the target
+    method has finished with.  Moving it back to the numbers 194 used is the shipped 214
+    defect itself: `Lv86;->e` copied a `Context` into `v16` for `CfgNav;->wrap`, 214 reads
+    `v16` again 29 instructions later to build an argument list, and ART rejected the class
+    over the `Lqe2;` slot that got the Context instead.
+    """
+    lines = text.splitlines(keepends=True)
+    call = next((index for index, line in enumerate(lines)
+                 if 'Lcom/box/app/cfg/CfgNav;->wrap' in line), None)
+    if call is None:
+        raise LookupError('the tree no longer carries the CfgNav splice')
+    copies = [index for index in range(max(0, call - 4), call)
+              if re.match(r'^\s*move(?:-object)?/from16 v\d+, v\d+\s*$', lines[index])]
+    if len(copies) < 3:
+        raise LookupError('the splice no longer stages three copies into one /range span')
+    span = ['v%d' % (14 + offset) for offset in range(len(copies))]
+    for index, register in zip(copies[-len(span):], span):
+        # line by line: rewriting the file's first /range would corrupt an unrelated
+        # release call, and a row must fail only for the reason it names
+        lines[index] = re.sub(r'\s[vp]\d+,', ' ' + register + ',', lines[index], count=1)
+    lines[call] = re.sub(r'\{\s*\S+ \.\. \S+\s*\}', '{%s .. %s}' % (span[0], span[-1]),
+                         lines[call], count=1)
+    return ''.join(lines)
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -222,6 +254,8 @@ MUTATIONS = [
      drop_a_line_the_reviewed_arm_borrows_from_the_release, r'grafted arm'),
     ('a reviewed tolerance that exempts nothing', '@pins',
      invent_a_tolerance_the_release_does_not_need, r'reviewed tolerance'),
+    ('the register a grafted block stages its call through', 'smali/v86.smali',
+     spend_a_live_register_on_the_staged_call, r'grafted staging'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),

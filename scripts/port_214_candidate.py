@@ -36,6 +36,8 @@ import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import smali_liveness
+
 ANDROID = '{http://schemas.android.com/apk/res/android}'
 TYPE_RE = re.compile(r'L[A-Za-z0-9_/$-]+;')
 REF_M = re.compile(r'\b(L[A-Za-z0-9_/$-]+;)->([^\s(:]+)(\([^)]*\)\S+)')
@@ -791,6 +793,105 @@ def replaced_line_rename(base_line, target_line, custom_line, target_locals, tar
         cursor = start + len(register)
     parts.append(text[cursor:])
     return ''.join(parts), moved
+
+
+def block_self_clobber(block, exempt):
+    """Which registers a block reads after it has already overwritten them.
+
+    Comparing that before and after a re-anchor is how the rewrite proves it kept the
+    block's own data flow: a staging span that collides with a value the block reads
+    later would be consumed after it was written, and only this check tells that apart
+    from the block as reviewed.  `exempt` names the registers the block is entitled to
+    pass through itself - its staging span and its result destinations.
+    """
+    out, written = set(), set()
+    for text in block:
+        writes, reads = smali_liveness.operands(smali_liveness.code(text))
+        out |= (reads & written) - exempt
+        written |= writes
+    return out
+
+
+def graft_staging_rebase(lines, start, end, frame_locals):
+    """Move a grafted block's staging span out of registers the target still needs.
+
+    A customization that reaches one of our helpers through ``/range`` first copies its
+    arguments into a contiguous span - and which numbers are free to copy through is a
+    fact about the frame the block was written in, not about the call.  214 handed one
+    of those numbers to live code: ``Lv86;->e`` reads ``v16`` again 29 instructions
+    further down (`move-object/from16 v31, v16`) to assemble an argument list, so the
+    ported copy of a ``Context`` into ``v16`` arrived in the ``Lqe2;`` slot of
+    ``Lb96;-><init>`` and ART refused the class.  The block's shape is its reviewed
+    content, so nothing here is dropped or reordered: the copies and the span are
+    re-anchored to registers this method has finished with at that point, taken from the
+    top of the frame down because that is where R8 leaves the registers a method never
+    reaches, and if the frame has nothing dead to give the block is reported for a
+    reviewed placement instead of guessed at.
+    """
+    rebased, errors = [], []
+    labels = smali_liveness.labels_of(lines)
+    handlers = smali_liveness.try_entries(lines, labels, start, end)
+    skip = frozenset(range(start, end))
+    for call, copies in smali_liveness.staging_blocks(lines, start, end):
+        staged = [reg for reg, (_src, _where) in copies]
+        named = smali_liveness.registers(smali_liveness.code(lines[call]))
+        if set(named) != set(staged) or len(named) < 2:
+            # a span this block only partly stages: re-anchoring part of a /range call
+            # would change which registers the call reads, which is not this rule's to do
+            continue
+        live = []
+        for reg in staged:
+            hit = smali_liveness.first_use(lines, labels, end, reg, skip=skip, extra=handlers)
+            if hit is not None:
+                live.append((reg, hit))
+        if not live:
+            continue
+        block = lines[start:end]
+        results = set()
+        for text in block:
+            if smali_liveness.code(text).startswith('move-result'):
+                results |= smali_liveness.operands(smali_liveness.code(text))[0]
+        before = block_self_clobber(block, set(staged) | results)
+        named_elsewhere = set()
+        for text in block:
+            named_elsewhere |= set(smali_liveness.registers(smali_liveness.code(text)))
+        named_elsewhere -= set(staged)
+        picked = None
+        for low in range(max(0, frame_locals - len(staged)), -1, -1):
+            span = ['v%d' % index for index in range(low, low + len(staged))]
+            if set(span) & named_elsewhere:
+                continue        # the block reads or writes that register itself
+            if any(smali_liveness.needs_register(lines, labels, end, reg, skip=skip,
+                                                 extra=handlers)
+                   for reg in span):
+                continue
+            trial = list(block)
+            for (_reg, (_src, where)), fresh in zip(copies, span):
+                trial[where - start] = re.sub(r'\s([vp]\d+),', ' ' + fresh + ',',
+                                              lines[where], count=1)
+            trial[call - start] = re.sub(r'\{\s*\S+ \.\. \S+\s*\}',
+                                         '{%s .. %s}' % (span[0], span[-1]),
+                                         lines[call], count=1)
+            if block_self_clobber(trial, set(span) | results) - before:
+                continue        # the new span would break the block's own data flow
+            picked = span
+            break
+        if picked is None:
+            errors.append('grafted staging at %d: %s is read below by "%s" and the frame '
+                          'has no dead span to re-anchor it to'
+                          % (call, ', '.join(reg for reg, _hit in live),
+                             smali_liveness.code(lines[live[0][1]])))
+            continue
+        for (reg, (_src, where)), fresh in zip(copies, picked):
+            lines[where] = re.sub(r'\s([vp]\d+),', ' ' + fresh + ',', lines[where], count=1)
+        lines[call] = re.sub(r'\{\s*\S+ \.\. \S+\s*\}', '{%s .. %s}' % (picked[0],
+                                                                             picked[-1]),
+                             lines[call], count=1)
+        rebased.append({'was': ' '.join(staged), 'now': ' '.join(picked),
+                        'call': smali_liveness.code(lines[call]).split(', ', 1)[0],
+                        'because': ['%s is read below by "%s"' % (reg, lines[hit].strip())
+                                    for reg, hit in live]})
+    return rebased, errors
 
 
 def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, audit):
@@ -1638,14 +1739,26 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
     for index in sorted(deletes, reverse=True):
         if 0 <= index < len(target_body):
             target_body.pop(index)
+    placed = []
     for position, group in sorted(translated, key=lambda item: item[0], reverse=True):
         adjusted = position - sum(1 for deletion in deletes if deletion < position)
-        target_body[max(0, min(adjusted, len(target_body))):max(0, min(adjusted, len(target_body)))] = group
+        adjusted = max(0, min(adjusted, len(target_body)))
+        target_body[adjusted:adjusted] = group
+        placed.append((adjusted, len(group)))
     for old_text, new_text in body_fixes:
         hits = [i for i, line in enumerate(target_body) if line.strip() == old_text]
         if len(hits) != 1:
             return False, 'body fix anchor missing or ambiguous: ' + old_text
         target_body[hits[0]] = '    ' + new_text
+    for start, length in sorted(placed):
+        rebased, errors = graft_staging_rebase(target_body, start, start + length,
+                                               get_locals(target_body)[1])
+        if errors:
+            return False, '; '.join(errors)
+        for item in rebased:
+            item['method'] = plan['new']
+            item['block'] = '%d lines' % length
+            audit_entry.setdefault('graftScratch', []).append(item)
     locals_index, locals_count = get_locals(target_body)
     need = max(target_locals, next_local)
     if need > locals_count:
@@ -3341,6 +3454,7 @@ def main():
                                       for entry in audit
                                       for item in entry.get('registerRealigned', [])]
     report['registerRenames'] += report['registerRealignments']
+    report['graftScratch'] = [item for entry in audit for item in entry.get('graftScratch', [])]
     report['manualHits'] = {name: MANUAL_HITS.get(name, 0) for name in sorted(ACTIVE_RULES)}
     report['inactiveRules'] = sorted(set(EXPECTED_MANUAL_HITS) - ACTIVE_RULES)
     for name in sorted(CHECKS):

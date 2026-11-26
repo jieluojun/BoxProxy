@@ -82,6 +82,25 @@ Gate 6 - custom-only surfaces.  The customization's own assets, helper scripts
 and ``com.box.app`` classes are copied, not ported, but they carry invariants
 that a copy step can break (the IPv6 pump tagging, the root boot script, the
 VPN helper's home healing), so they are re-checked against the built tree.
+
+Gate 7 - the type a hunk's register provably holds, walked over the ported tree and
+over the pristine 214 upstream as a control, using this tree's own class hierarchy.
+
+Gates 8 and 9 - the merge contract of a hand-placed arm, in both directions: a value
+the arm computes for the merge must survive to it (gate 8), and a value the merge
+hands to a later call must be saved before the arm overwrites the register holding it
+(gate 9).  Both read the reviewed ``insert`` located by its ``anchor``, so a pin that
+omits a line cannot silence the check by omitting it from the tree too.
+
+Gate 10 - the register a grafted block stages a ``/range`` call through.  A block
+copied into another frame copies its arguments into whatever contiguous span the
+``/range`` encoding needs, and which numbers are free to copy through is a fact about
+the frame the block was written in, not about the call.  A release that reads one of
+them again - not at the block's merge, which may not exist, but anywhere further down
+the method's own paths - gets the customization's value where it expected its own,
+and ART rejects the class.  Liveness is asked along successors and catch entries,
+because a read further down the text is not a use: a branch can step over it, and a
+write on every path that reaches it makes the register free again.
 """
 
 import argparse
@@ -93,6 +112,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import smali_liveness
 from port_214_candidate import (Mapper, get_locals, method_blocks, parameter_words,
                                public_map, sig_lines, strip_comment)
 
@@ -1866,6 +1886,73 @@ def check_grafted_arm_spills(pins, output, problems, files):
     return checked
 
 
+def check_grafted_staging(output, upstream, files, problems):
+    """A grafted block may only stage its own call through registers the target is done with.
+
+    A customization that reaches one of our helpers through ``/range`` copies its
+    arguments into a contiguous span first, and which numbers are free to copy through
+    is a fact about the frame the block was written in.  The 214 core-detail crash is what
+    happens when the next release put live code on one of them: the ported block copied a
+    ``Context`` into ``v16`` in ``Lv86;->e``, 214 reads ``v16`` again 29 instructions
+    later (`move-object/from16 v31, v16`) to assemble an argument list, and the
+    ``Lqe2;`` slot of ``Lb96;-><init>`` got the Context - ART refused the class with
+    `register v31 has type Reference: android.content.Context but expected Reference: qe2`.
+    194's own twin of that block stages into the same three numbers and is clean, because
+    in that frame none of them is read again before it is rewritten - ``v16``'s next touch
+    there is ``const/16 v16, 0x1``.  Which numbers a block may copy through is therefore a
+    question about the ported tree, and no register list in a reviewed file can answer it.
+
+    Runs are found by diffing the migrated method against the 214 upstream one, so the
+    grafted text - whether it came from the alignment or from a reviewed placement - is
+    what is examined.  Liveness follows the method's own edges and its catch handlers,
+    because a read further down the text is not a use: a branch can step over it, and a
+    write on every path that reaches it leaves the register free for the copy.
+    """
+    checked = 0
+    for file_name in sorted(files):
+        migrated, origin = output / file_name, upstream / file_name
+        if not migrated.is_file() or not origin.is_file():
+            continue
+        moved = method_blocks(migrated.read_text(errors='replace'))
+        gave = method_blocks(origin.read_text(errors='replace'))
+        for signature, block in moved.items():
+            other = gave.get(signature)
+            if other is None:
+                continue
+            order, texts = grafted_significant(block.splitlines())
+            _, before = grafted_significant(other.splitlines())
+            if not texts or texts == before:
+                continue
+            body = block.splitlines()
+            labels = smali_liveness.labels_of(body)
+            for tag, _i1, _i2, j1, j2 in difflib.SequenceMatcher(None, before, texts,
+                                                                 autojunk=False).get_opcodes():
+                if tag not in ('insert', 'replace') or j2 <= j1:
+                    continue
+                start, end = order[j1], order[j2 - 1] + 1
+                handlers = smali_liveness.try_entries(body, labels, start, end)
+                skip = frozenset(range(start, end))
+                for call, copies in smali_liveness.staging_blocks(body, start, end):
+                    checked += 1
+                    staged = smali_liveness.registers(smali_liveness.code(body[call]))
+                    for register, (_source, _where) in copies:
+                        if register not in staged:
+                            continue
+                        hit = smali_liveness.first_use(body, labels, end, register,
+                                                       skip=skip, extra=handlers)
+                        if hit is None:
+                            continue
+                        problems.append((signature + ' in ' + file_name,
+                                         'grafted staging: the block copies %s in for "%s", '
+                                         'which is scratch in the frame the block was written '
+                                         'in but not here - the release reads it again at "%s" '
+                                         'before writing it, so the copy arrives where the '
+                                         'release expects its own value'
+                                         % (register, smali_liveness.code(body[call]),
+                                            smali_liveness.code(body[hit]))))
+    return checked
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -1908,6 +1995,7 @@ def main():
     flow = check_type_flow(touched, args.output, problems)
     grafted = check_grafted_arm_roles(pins, args.output, problems, touched)
     spills = check_grafted_arm_spills(pins, args.output, problems, touched)
+    staging = check_grafted_staging(args.output, args.new, touched, problems)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -1937,10 +2025,10 @@ def main():
         else:
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
-          '%s; grafted arms: %d/%d; findings: %d'
+          '%s; grafted arms: %d/%d, staging runs: %d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             len(problems)))
+             staging, len(problems)))
     return 1 if problems else 0
 
 

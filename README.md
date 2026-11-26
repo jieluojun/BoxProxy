@@ -46,7 +46,7 @@ PROJECT_DIR=.tools/local-171/decompiled \
 
 本地已完成 Apktool 回编译，并从生成的 APK 重新反编译 `classes.dex` 验证 `CfgNav.e` 的 `Lla2` Composer 接收器、`S`/`V` guard、回调接口类型链及全树引用/分支/对象寄存器检查。该 APK 为 `.tools/BoxProxy-26.11.16.25abc84-cfgnav-fixed-unsigned.apk`（versionCode 171；APK SHA-256 `f50ea39ea808325bbe6ee25d1d542a5c8ef6e2320d1336bff759219836313a60`；`classes.dex` SHA-256 `8a6679a886b6ebefeba729d690cf99c62652f583ba7ebeba95e13021263b8563`）。它也包含已修复的 `zu5.invoke`，但仍是**未对齐、未签名**的本地回编译产物，不等同于 GitHub Actions 的签名 APK，也尚未在 Redmi 真机上验证。
 
-## 214 候选的四处真机崩溃、第 7 到第 9 道门
+## 214 候选的五处真机崩溃、第 7 到第 10 道门
 
 已发布的 214 包在进入主界面时崩溃：
 
@@ -150,11 +150,44 @@ java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Clas
 - 8 条 placement 里 7 条带 `anchor`+`insert`，其中 1 条跳到合并点（摘要行 `grafted arms: 7/1` 就是这两个数）：坏的那版报 1 条，修正后 0 条，
   其余 6 条始终静默。
 
-四处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 9 道门（含 8752 文件上游对照 0 命中）与
-15 行自检全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，重编译树上类型流同样
-0 命中）；本跳的 smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
+补上那次搬运之后 NPE 不再出现，设备却在**另一个类**上被 verifier 拒收：
 
-真机复验仍未完成：第 4 处修正同样只到离线复刻与对照为止，设备侧确认见下。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
+```
+java.lang.VerifyError: Verifier rejected class v86: java.lang.Object v86.e(java.lang.Object, java.lang.Object) failed to verify:
+[0x308] register v31 has type Reference: android.content.Context but expected Reference: qe2
+```
+
+`v86` 是 194 的 `sv5`，方法体是整方法对齐搬过来的：候选树里 `Lv86;->e(…)` 与 214 上游逐行比对只多出两块各 5 行的定制，两块形状
+相同——把三个实参抄进 v14/v15/v16、`invoke-static/range {v14 .. v16}` 调
+`Lcom/box/app/cfg/CfgNav;->wrap(Lai2;Lh96;Landroid/content/Context;)Lai2;`、再 `move-result-object` 收回 v8（第二块收回 v6）。
+第二块没事；第一块抄走的 `v16` 在 214 这一帧里还要用：上游在同一条路径上、29 条指令之后（文件里隔开 117 行）有
+`move-object/from16 v31, v16`，而那个 `v31` 正是 `invoke-direct/range {v27 .. v35}, Lb96;-><init>(Lte4;Lk96;Llh2;Lqe2;…)` 的
+`Lqe2;` 槽——我们抄进 `v16` 的 `Context` 顺着 `v31` 走进那个槽，verifier 当场拒收。`apktool b` 对这四行毫无意见：`v16` 是个合法
+寄存器，`.locals 52` 也够用。
+
+第 8、9 两道门算的是"块与合并点之间"的账，这里没有合并点。**哪些号可以乱抄，是"这段代码当初写在哪一帧里"的事实，不是这条调用的事实**：
+`/range` 要求连续，194 那块才需要这三行抄送；194 的孪生块抄的也是 v14/v15/v16，在 194 那一帧里无害——那一帧里这三个号在下面被重写
+之前没人读（`v16` 下一次被碰到是 `const/16 v16, 0x1`）。所以这条
+既不能靠一张寄存器黑名单回答，也不能照抄 194 的写法。
+
+- 修正：porter 新增 `graft_staging_rebase`。对齐插进来的块形状一字不动（还是 5 行、还是那个 `/range`），只把抄送目标换成这一帧此刻用完的
+  连续区间：从 `.locals` 顶上往下找，要求区间里每个号"从这里往下先被重写、不被读"，并要求块自己的读数不会先被新号打断（重写前后各跑一次
+  块内数据流比较，只准变好）。`v86` 第一块因此落在 v49/v50/v51，这三个号整个方法一次都没提过。找不到可用的连续区间时**不猜**：报
+  `grafted staging … no dead span`，交人工落位。整树只差 `smali/v86.smali` 一个文件、4 行，行数不变。
+- 验收门加了第 10 项 `check_grafted_staging`：把每个被改动的文件里"移植块相对 214 上游多出来的每一段"diff 出来（对齐插的与人工落位插的都算），
+  凡是"抄进去只为服务块内某条 invoke"的寄存器，沿方法自己的边与 catch 入口看它下面第一次被碰到时是读还是写——是读就报。
+  "文本下面有读"不等于"还要用"：分支会绕过那次读，也可能只有某条路径先写它。这条判据在 194 定制树（同样的块、能跑的那版）上 0 命中，
+  在坏掉的 214 树上恰好 1 命中，点名的就是设备拒收的那个类。
+- "谁读谁写、控制流往哪儿走"的分析收进新的 `scripts/smali_liveness.py`（`code`/`operands`/`successors`/`first_use`/`try_entries`/
+  `staging_blocks`）：porter 用它挑寄存器，门用它判定，一份实现两处用，里面没有任何发布版本的名字。
+- 自检加一行：把 `v86` 那三行抄送连同 span 改回 194 用的 v14/v15/v16 → 门必须报 `grafted staging`（现 16 行，含 1 行控制行）。
+
+五处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 10 道门（含对上游整树 8752 个 smali 文件的对照 0 命中）与 16 行自检
+全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，重编译树上类型流同样 0 命中）；本跳的
+smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
+
+真机复验仍未完成：上面这些是对 ART verifier 的**离线复刻**，`apktool b` 与 10 道门都替不了设备签字；第 5 处尤其如此——它的症状正是"离线全绿、
+装机拒收"。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
 
 ## CI 产物与设备验证
 

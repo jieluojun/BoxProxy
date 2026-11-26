@@ -122,6 +122,18 @@
       "kind": "replaced line"
     }
   ],
+  "graftScratch": [
+    {
+      "was": "v14 v15 v16",
+      "now": "v49 v50 v51",
+      "call": "invoke-static/range {v49 .. v51}",
+      "because": [
+        "v16 is read below by \"move-object/from16 v31, v16\""
+      ],
+      "method": "Lv86;->e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "block": "5 lines"
+    }
+  ],
   "manualHits": {},
   "inactiveRules": [
     "archive matcher",
