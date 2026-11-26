@@ -97,6 +97,15 @@ jobs:
           path: .tools/ported-194
           key: ported-194-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'scripts/**') }}
 
+      - name: Cache pinned 214 migration candidate
+        uses: actions/cache@v6
+        with:
+          path: .tools/ported-214
+          key: ported-214-${{ hashFiles('upstream/26.11.19.bf82603/**', 'upstream/26.11.23.aa98568/**', 'scripts/**') }}
+
+      - name: Extract the pinned 214 upstream tree for the return-type baseline
+        run: python3 scripts/upstream_snapshot.py upstream/26.11.23.aa98568 --extract .tools/ported-214-upstream
+
       - name: Rebuild complete pinned 171 migration (unsigned)
         shell: bash
         run: |
@@ -154,3 +163,26 @@ jobs:
           java -jar .tools/apktool_2.9.3.jar b .tools/ported-194/decompiled \
             -p .tools/framework -o "$RUNNER_TEMP/full-migration-194-unsigned.apk"
           echo "Validated full 194 implementation ($version_name / $version_code). Physical Android/root/VPN and signature-compatible upgrade checks require devices and the original signing key."
+      - name: Rebuild complete pinned 214 migration (unsigned)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f .tools/ported-214/decompiled/apktool.yml ]]; then
+            echo ">> pinned 214 migration restored from cache"
+          else
+            python3 scripts/migrate_214.py --output .tools/ported-214
+          fi
+          version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' .tools/ported-214/decompiled/apktool.yml | head -n 1 | tr -d '\r')"
+          version_code="$(sed -n 's/^  versionCode:[[:space:]]*//p' .tools/ported-214/decompiled/apktool.yml | head -n 1 | tr -d '\r')"
+          [[ "$version_code" == "214" && "$version_name" == "26.11.23.aa98568" ]]
+          python3 scripts/check_smali_branch_offsets.py .tools/ported-214/decompiled
+          python3 scripts/check_smali_reference_moves.py .tools/ported-214/decompiled
+          python3 scripts/check_smali_labels.py .tools/ported-214/decompiled
+          python3 scripts/check_smali_move_result.py .tools/ported-214/decompiled
+          python3 scripts/check_smali_references.py .tools/ported-214/decompiled
+          python3 scripts/check_smali_register_flow.py .tools/ported-214/decompiled
+          python3 scripts/check_smali_return_types.py .tools/ported-214/decompiled \
+            --baseline .tools/ported-214-upstream/decompiled
+          java -jar .tools/apktool_2.9.3.jar b .tools/ported-214/decompiled \
+            -p .tools/framework -o "$RUNNER_TEMP/full-migration-214-unsigned.apk"
+          echo "Validated full 214 implementation ($version_name / $version_code). Physical Android/root/VPN and signature-compatible upgrade checks require devices and the original signing key."

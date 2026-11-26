@@ -1,0 +1,69 @@
+{
+  "ok": 51,
+  "errors": [],
+  "whole": 14,
+  "patch": 36,
+  "added": 1,
+  "fields": 2,
+  "additions": 1363,
+  "toast": 26,
+  "manifest": 15,
+  "semanticFixes": [],
+  "addedFields": [
+    "Lbr5; .field public static final enum t:Lbr5;",
+    "Lh96; .field public cfgD:Z"
+  ],
+  "referenceFixups": {
+    "    filled-new-array/range {v3 .. v10}, [Lii1;": 1
+  },
+  "pins": {
+    "types": {},
+    "fields": {
+      "Lef5;->t:Lef5;": "Lbr5;->t:Lbr5;",
+      "Lzh5;->i:Lql6;": "Lju5;->h:Lpz6;"
+    },
+    "members": {
+      "Lya3;->c0(ILib2;)Ljava/lang/String;": "Lxl3;->U(ILzi2;)Ljava/lang/String;",
+      "Lgn;->p(Lu92;Lw04;ZZJFFFLyz0;Lib2;II)V": "Ldw;->i(Llh2;Lbb4;ZZJFFFLs21;Lzi2;II)V",
+      "Lmm;->X(ILra2;Lib2;)Lyz0;": "Lix;->u0(ILii2;Lzi2;)Ls21;",
+      "Lhs;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J": "Lnx;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+      "Lj23;->q(Ljava/lang/Object;Ljava/lang/Object;)Z": "Lob3;->s(Ljava/lang/Object;Ljava/lang/Object;)Z",
+      "Lnn;->t()Landroid/content/Context;": "Lob3;->B()Landroid/content/Context;",
+      "Lsa3;->Q(Ljava/lang/Object;)Lgx4;": "Lml3;->B(Ljava/lang/Object;)Lz75;",
+      "Lsa3;->G(Lib2;)Luv0;": "Lrj3;->H(Lzi2;)Lny0;",
+      "Lne1;->c()Ljava/util/ArrayList;": "Lki1;->d()Ljava/util/ArrayList;",
+      "Lne1;->d()Ljava/util/ArrayList;": "Lki1;->f()Ljava/util/ArrayList;",
+      "Lne1;->e(Ljava/lang/String;)Ljava/lang/String;": "Lki1;->g(Ljava/lang/String;)Ljava/lang/String;",
+      "Lne1;->f(Ljava/util/ArrayList;Z)V": "Lki1;->h(Ljava/util/ArrayList;Z)V",
+      "Lne1;->g(Lle1;)V": "Lki1;->i(Lii1;)V"
+    },
+    "addedFields": 2,
+    "placements": [
+      "Lpa1;->a(",
+      "Lne1;->c(",
+      "Lu6;->p(",
+      "Luu0;->invokeSuspend("
+    ],
+    "referenceFixups": 0,
+    "scopedFixups": {
+      "smali/ki1.smali": 1
+    }
+  },
+  "manualHits": {},
+  "inactiveRules": [
+    "archive matcher",
+    "battery unrestricted row",
+    "core path probe",
+    "core registry",
+    "coroutine states",
+    "entry filter",
+    "field h register",
+    "private working directory",
+    "probe wrapper",
+    "restore menu k",
+    "restore menu q75",
+    "settings list",
+    "vpn enum",
+    "vpn mode res shortcut"
+  ]
+}

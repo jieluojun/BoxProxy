@@ -43,6 +43,26 @@
   "Lsa3;->G(Lib2;)Luv0;": {
    "new": "Lrj3;->H(Lzi2;)Lny0;",
    "evidence": "the flow-collection call of the same bridge; Lrj3;->M(Lzi2;)Lkr7; is the decoy with the same arity"
+  },
+  "Lne1;->c()Ljava/util/ArrayList;": {
+   "new": "Lki1;->d()Ljava/util/ArrayList;",
+   "evidence": "the update-source list builder: Lne1; has no 214 image class of its own and Lki1; shifted every member name, so the reference cannot be resolved by the tree-diff member votes (it would silently land on Lki1;->d, the 194 body of c, only for the ones that happen to keep their letter)"
+  },
+  "Lne1;->d()Ljava/util/ArrayList;": {
+   "new": "Lki1;->f()Ljava/util/ArrayList;",
+   "evidence": "same shift; Lki1;->f()Ljava/util/ArrayList; is the image of the 194 Lne1;->d body (coverage pairs them at body-ratio 0.796), while an unmapped Lne1;->d would resolve to Lki1;->d, the image of Lne1;->c"
+  },
+  "Lne1;->e(Ljava/lang/String;)Ljava/lang/String;": {
+   "new": "Lki1;->g(Ljava/lang/String;)Ljava/lang/String;",
+   "evidence": "same shift; the asset-name helper is Lki1;->g"
+  },
+  "Lne1;->f(Ljava/util/ArrayList;Z)V": {
+   "new": "Lki1;->h(Ljava/util/ArrayList;Z)V",
+   "evidence": "same shift; writing the source list back is Lki1;->h (214 has no Lki1;->f with that signature)"
+  },
+  "Lne1;->g(Lle1;)V": {
+   "new": "Lki1;->i(Lii1;)V",
+   "evidence": "same shift; the single-source update is Lki1;->i"
   }
  },
  "addedFields": [
@@ -58,9 +78,108 @@
   }
  ],
  "referenceFixups": [],
- "scopedFixups": {},
+ "scopedFixups": {
+  "smali/ki1.smali": [
+   {
+    "wrong": "    filled-new-array/range {v3 .. v10}, [Lii1;",
+    "right": "    filled-new-array/range {v3 .. v12}, [Lii1;",
+    "evidence": "the two reviewed DingTalk elements occupy v11 and v12"
+   }
+  ]
+ },
  "windowRewrites": [],
- "placements": [],
+ "placements": [
+  {
+   "plan": "Lpa1;->a(",
+   "anchor": "check-cast v14, Lbr5;",
+   "insert": [
+    "    invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lbr5;)I",
+    "    move-result v15",
+    "    if-eqz v15, :cond_pv_novpn",
+    "    const v14, -0x1c301169",
+    "    const/4 v15, 0x0",
+    "    const/4 v4, 0x0",
+    "    goto :goto_6",
+    "    :cond_pv_novpn"
+   ],
+   "evidence": "the vpn mode resource shortcut has to sit between the enum cast and the null guard the ordinal dispatch puts in front of it: the generic alignment landed the same seven lines one instruction later, which clobbers the enum register with the modeRes result (the verifier then reads getClass()/ordinal() on an Int) and leaves the resource register unset on the jump path. 214 keeps the enum in v14 and the row lookup reads the id in v14 and the resource in v15, so the shortcut writes v15 for its test and both for :goto_6, mirroring the const/4 v4, 0x0 the arm itself sets before the label. The -0x1c301169 literal is the hash of the name string, copied from the 194 customization."
+  },
+  {
+   "plan": "Lne1;->c(",
+   "anchor": "move-object/from16 v10, v22",
+   "insert": [
+    "    new-instance v11, Lii1;",
+    "    const-string v12, \"mihomo_dingtalk\"",
+    "    const-string v13, \"Mihomo Smart + eBPF + \\u9489\\u9489\\u76f4\\u8fde\"",
+    "    const-string v14, \"mihomo\"",
+    "    const-string v15, \"github\"",
+    "    const-string v16, \"jieluojun/mihomo\"",
+    "    const-string v17, \"tag\"",
+    "    const-string v18, \"Prerelease-Alpha\"",
+    "    const-string v19, \"mihomo-android-arm64-v-3-alpha-smart-[A-Za-z0-9._-]+\\\\.gz\"",
+    "    const/16 v20, 0x1",
+    "    const-string v21, \"\"",
+    "    const-string v22, \"\"",
+    "    const/16 v23, 0x0",
+    "    invoke-direct/range {v11 .. v23}, Lii1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;I)V",
+    "    new-instance v12, Lii1;",
+    "    const-string v13, \"sing-box_dingtalk\"",
+    "    const-string v14, \"Sing-Box Smart + eBPF + \\u9489\\u9489\\u76f4\\u8fde\"",
+    "    const-string v15, \"sing-box\"",
+    "    const-string v16, \"github\"",
+    "    const-string v17, \"jieluojun/sing-box\"",
+    "    const-string v18, \"latest\"",
+    "    const-string v19, \"\"",
+    "    const-string v20, \"sing-box-.+-android-arm64-v8a-ebpf\\\\.tar\\\\.gz\"",
+    "    const/16 v21, 0x1",
+    "    const-string v22, \"\"",
+    "    const-string v23, \"\"",
+    "    const/16 v24, 0x0",
+    "    invoke-direct/range {v12 .. v24}, Lii1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;I)V"
+   ],
+   "evidence": "the two DingTalk core sources are appended to the release list right before the array is filled, reusing the argument windows the previous elements just consumed (v11..v23 and v12..v24 in 214, where 194 used v22..v34 and v35..v47 with a 48-register frame) - the 214 method needs no frame growth because it already addresses v24, so the .locals bump the 194 hunk carried is dropped and the two objects land in v11 and v12, the two slots the array range has to grow to (see the scoped fixup of the filled-new-array line)."
+  },
+  {
+   "plan": "Lu6;->p(",
+   "anchor": "invoke-static {v3, p1}, Lob3;->s(Ljava/lang/Object;Ljava/lang/Object;)Z",
+   "pruneAfter": 2,
+   "insert": [
+    "    move-result v6",
+    "    if-nez v6, :boxproxy_match",
+    "    const-string v6, \"-\"",
+    "    invoke-virtual {p1, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;",
+    "    move-result-object v6",
+    "    invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+    "    move-result v6",
+    "    if-eqz v6, :cond_7",
+    "    const-wide/32 v6, 0x100000",
+    "    cmp-long v6, v4, v6",
+    "    if-ltz v6, :cond_7",
+    "    :boxproxy_match"
+   ],
+   "evidence": "the archive-name match: a downloaded asset whose name is the release name plus \"-\" is taken when it is at least 1 MiB. 214 kept the same shape (v3 the path, v4/v5 the size, v6/v7 free afterwards in a .locals 8 frame), so the 194 block is copied verbatim behind the equals call, replacing its move-result/if-eqz pair. the generic alignment kept the two upstream instructions the 194 hunk had replaced, so the test ran on a register the insertion never wrote; the reviewed block names the anchor and the pruned lines instead of hoping the score lines them up"
+  },
+  {
+   "plan": "Luu0;->invokeSuspend(",
+   "anchor": [
+    ":goto_17",
+    "invoke-virtual {v12, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z"
+   ],
+   "pruneAfter": 2,
+   "insert": [
+    "    move-result v16",
+    "    if-nez v16, :boxproxy_entry_match",
+    "    const-string v16, \"-\"",
+    "    invoke-virtual {v14, v16}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;",
+    "    move-result-object v16",
+    "    invoke-virtual {v12, v16}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+    "    move-result v16",
+    "    if-eqz v16, :cond_1e",
+    "    :boxproxy_entry_match"
+   ],
+   "evidence": "the same match on the core-entry name inside the download coroutine. 214 swapped the equals operands (v12 is the file name, v14 the entry name read from Lii1;->c) and writes the result into the receiver register, which the customization still needs - so the block is written against 214 own allocation, with v16 as the temp (no register above v15 is read again anywhere later in the method) and :cond_1e as the skip target. the generic alignment kept the two upstream instructions the 194 hunk had replaced, so the test ran on a register the insertion never wrote; the reviewed block names the anchor and the pruned lines instead of hoping the score lines them up the anchor names the :goto_17 label in front of the call because R8 kept a second, unrelated Object->equals(v12, v14) pair later in the same coroutine"
+  }
+ ],
  "mergedTypes": {
   "Lln;": "the matcher maps Lln; to Lix;; the reviewed coverage target Lmm0;->H -> Lix;->F shares it",
   "Lmm0;": "R8 dissolved this static facade into Lix;; the one member the customization needs is supplied as a reviewed coverage target, so Lix; legitimately has two owners"

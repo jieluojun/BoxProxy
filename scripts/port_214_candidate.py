@@ -470,21 +470,67 @@ def replace_block(path, target_sig, new_block):
     return True
 
 
+def significant(line):
+    """An instruction, as opposed to a blank line or Apktool debug bookkeeping."""
+    text = line.strip()
+    return bool(text) and not text.startswith(DEBUG_PREFIXES)
+
+
 def apply_reviewed_placement(placement, target, target_body, path, target_sig, audit):
     """Insert the reviewed instructions behind the reviewed anchor, nothing else."""
-    anchor = placement['anchor'].strip()
-    hits = [index for index, line in enumerate(target_body) if line.strip() == anchor]
+    audit_prune = []
+    # an anchor is one instruction, or a sequence of them: a loop body that R8
+    # duplicated needs its surrounding lines to be named as well
+    anchor = placement['anchor']
+    window = [line.strip() for line in (anchor if isinstance(anchor, list) else [anchor])]
+    hits = [index for index in range(len(target_body) - len(window) + 1)
+            if [line.strip() for line in target_body[index:index + len(window)]] == window]
     if len(hits) != 1:
         return False, ('reviewed placement anchor %r is present %d time(s), need exactly 1'
-                       % (anchor, len(hits)))
+                       % (window, len(hits)))
+    hits = [hits[0] + len(window) - 1]
     insert = [line.rstrip() for line in placement['insert']]
-    first = insert[0].strip()
-    if any(line.strip() == first for line in target_body):
+    # the first instruction of a hunk is usually an ordinary move-result, so the
+    # proof that the port already happened is the marker the customization
+    # leaves behind: a label it defines, or a call into com.box.app
+    markers = {line.strip() for line in insert
+               if re.fullmatch(r'\s*:[A-Za-z_][\w]*', line)}
+    markers |= {line.strip() for line in insert if 'Lcom/box/' in line}
+    if markers and any(line.strip() in markers for line in target_body):
         return False, 'reviewed placement is already applied'
-    for label in (line.strip() for line in insert):
-        if label.startswith(':') and any(line.strip() == label for line in target_body):
+    # a label the inserted code defines may not exist yet, and a label it jumps
+    # to has to belong to the target method unless the insert itself provides it
+    defined = {line.strip() for line in insert if re.fullmatch(r'\s*:[A-Za-z_][\w]*', line)}
+    existing = {line.strip() for line in target_body}
+    for label in sorted(defined):
+        if label in existing:
             return False, 'reviewed placement label is already taken: ' + label
+    jumped = {match.group(0) for line in insert if line.strip().startswith(('goto', 'if-'))
+              for match in re.finditer(r':[A-Za-z_][\w]*', line)}
+    for label in sorted(jumped - defined):
+        if label not in existing:
+            return False, 'reviewed placement jumps to an unknown label: ' + label
     body = list(target_body)
+    # a hunk that REPLACED upstream instructions cannot be expressed as an
+    # insertion alone: the reviewed anchor names the instruction the replaced
+    # block follows, and pruneAfter says how many of the target's own
+    # instructions the reviewed block stands in for.  Counting from the anchor
+    # keeps this independent of how the surrounding code was scheduled.
+    prune = int(placement.get('pruneAfter', 0))
+    if prune:
+        # count significant instructions, not raw lines: Apktool leaves the
+        # .line bookkeeping between them, and deleting it would shift the
+        # debug info of everything that follows
+        start = hits[0] + 1
+        seen, end = 0, start
+        while end < len(target_body) and seen < prune:
+            if significant(target_body[end]):
+                seen += 1
+            end += 1
+        if seen < prune:
+            return False, 'reviewed placement has nothing to prune behind its anchor'
+        audit_prune.append([line.strip() for line in target_body[start:end] if significant(line)])
+        del body[start:end]
     body[hits[0] + 1:hits[0] + 1] = insert
     needed = placement.get('registers')
     if needed:
@@ -502,7 +548,8 @@ def apply_reviewed_placement(placement, target, target_body, path, target_sig, a
     if not replace_block(path, target_sig, new_block):
         return False, 'reviewed placement could not replace the method block'
     audit.append({'old': placement['plan'], 'new': placement.get('evidence', ''),
-                  'placement': True, 'anchor': anchor, 'inserts': len(insert)})
+                  'placement': True, 'anchor': window, 'inserts': len(insert),
+                  'pruned': [line for group in audit_prune for line in group]})
     MANUAL_HITS['placement: ' + placement['plan']] += 1
     return True, {'inserts': len(insert), 'deletes': 0,
                   'unmappedRegisters': [], 'alignment': 1.0}
@@ -2957,7 +3004,6 @@ def main():
         if not (args.output / name).is_file():
             report['errors'].append('FIXUP %s: the file is not in the migrated tree' % name)
     fixup_hits = {}
-    scoped_fixups = PINS['scopedFixups']
     for smali in sorted((args.output / 'smali').rglob('*.smali')):
         text = smali.read_text(errors='replace')
         original = text

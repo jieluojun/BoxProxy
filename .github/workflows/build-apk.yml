@@ -1,7 +1,7 @@
 name: Build APK
 
-# 构建 194 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
-#   pinned 171 snapshot -> reviewed 171 -> 194 port -> reference scan -> apktool b -> align/sign/upload
+# 构建 214 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
+#   pinned 171 -> 194（定制增量来源）-> reviewed 194 -> 214 port -> reference scan -> apktool b -> align/sign/upload
 # Apktool 2.9.3 必须与 pinned snapshot 一致；升级时需重新反编译并同步 sha256。
 
 on:
@@ -31,7 +31,7 @@ env:
   APKTOOL_VERSION: "2.9.3"
   # 官方 apktool_2.9.3.jar 的 sha256（与发行包大小 23254968 字节对应，已交叉验证）
   APKTOOL_SHA256: "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
-  PROJECT_DIR: ".tools/ci-194/decompiled"
+  PROJECT_DIR: ".tools/ci-214/decompiled"
 
 jobs:
   build:
@@ -45,22 +45,27 @@ jobs:
       # The candidate is fully determined by the pinned snapshots and the
       # migration scripts; cache it so repeat builds skip the ~60s
       # extract/replay/maps/port/verify pipeline (the key hashes every input).
-      - name: Cache pinned 194 migration candidate
+      - name: Cache pinned 214 migration candidate
         uses: actions/cache@v6
         with:
-          path: .tools/ci-194
-          key: ci-194-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'scripts/**') }}
+          path: .tools/ci-214
+          key: ci-214-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'upstream/26.11.23.aa98568/**', 'scripts/**') }}
 
-      - name: Generate the pinned 194 migration candidate
+      - name: Generate the pinned 214 migration candidate
         shell: bash
         run: |
           set -euo pipefail
           if [[ -f "$PROJECT_DIR/apktool.yml" ]]; then
-            echo ">> pinned 194 candidate restored from cache; skipping regeneration"
+            echo ">> pinned 214 candidate restored from cache; skipping regeneration"
           else
-            python3 scripts/migrate_194.py --output .tools/ci-194
+            python3 scripts/migrate_214.py --output .tools/ci-214
           fi
           test -f "$PROJECT_DIR/apktool.yml"
+
+      # the return-type scan is only meaningful against the tree the port started
+      # from: upstream 214 itself has four conflicts it inherited from R8
+      - name: Extract the pinned 214 upstream tree (baseline for the return-type scan)
+        run: python3 scripts/upstream_snapshot.py upstream/26.11.23.aa98568 --extract .tools/ci-214-upstream
 
       - name: Setup JDK 17
         uses: actions/setup-java@v6
@@ -79,8 +84,8 @@ jobs:
             echo "::error::failed to parse versionName/versionCode from $PROJECT_DIR/apktool.yml"
             exit 1
           fi
-          if [[ "$version_code" != "194" || "$version_name" != "26.11.19.bf82603" ]]; then
-            echo "::error::refusing to build non-194 project ($version_name / $version_code)"
+          if [[ "$version_code" != "214" || "$version_name" != "26.11.23.aa98568" ]]; then
+            echo "::error::refusing to build non-214 project ($version_name / $version_code)"
             exit 1
           fi
           echo "version_name=${version_name}" >> "$GITHUB_OUTPUT"
@@ -125,7 +130,9 @@ jobs:
         run: python3 scripts/check_smali_register_flow.py "$PROJECT_DIR"
 
       - name: Reject return-object values that fail ART verification
-        run: python3 scripts/check_smali_return_types.py "$PROJECT_DIR"
+        run: |
+          python3 scripts/check_smali_return_types.py "$PROJECT_DIR" \
+            --baseline .tools/ci-214-upstream/decompiled
 
       - name: Build unsigned APK with apktool
         shell: bash
@@ -245,4 +252,4 @@ jobs:
           gh release create "${{ github.ref_name }}" artifacts/*.apk artifacts/*.sha256 \
             --repo "${{ github.repository }}" --verify-tag \
             --title "BoxProxy ${{ github.ref_name }}" \
-            --notes "由 GitHub Actions 从 upstream/26.11.19.bf82603 的 194 完整迁移候选回编译（apktool ${APKTOOL_VERSION} + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"
+            --notes "由 GitHub Actions 从 upstream/26.11.23.aa98568 的 214 完整迁移候选回编译（apktool ${APKTOOL_VERSION} + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"

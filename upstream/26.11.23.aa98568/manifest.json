@@ -25,6 +25,11 @@
     "generator": "scripts/migrate_214.py",
     "sourceSnapshot": "upstream/26.11.19.bf82603",
     "runtimeProjectReplaced": false,
-    "androidDeviceVerified": false
+    "androidDeviceVerified": false,
+    "coverageTargets": "migration/coverage-targets.json",
+    "coverageExclusions": "migration/coverage-exclusions.json",
+    "portReport": "migration/port-report.json",
+    "requiredClasses": "migration/required-classes.json",
+    "notes": "51 of 51 coverage entries replayed clean (references, labels, move-result, branch offsets, register moves, register flow, return types); the battery toggle row is withheld, see migration/coverage-exclusions.json; verify_214_custom_hunks.py still carries 194-era expectations."
   }
 }
