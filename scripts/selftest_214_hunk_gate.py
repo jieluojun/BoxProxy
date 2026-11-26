@@ -23,7 +23,9 @@ the Home routing bypass this hop must prevent.  Row 21 removes global selector
 installation, which would leave direct HttpURLConnection requests on their old
 default; row 22 drops the WebView's local-host bypass from its ProxyController override.
 Rows 23 to 25 exercise the follow-up pool fix: the fresh pool must remain zero-idle,
-and both the Home latency and WAN/IP call sites must use the cloned client.
+and both the Home latency and WAN/IP call sites must use the cloned client. Row 26
+inverts the root-run-directory `su` exit-status branch, which must treat exit code zero
+as success before verifying the VPN app UID can write the log.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -367,6 +369,11 @@ MUTATIONS = [
     ('WebView drops its local-host bypass', 'smali/com/box/app/vpn/VpnAppProxy.smali',
      replace('const-string v10, "<local>"', 'const-string v10, "not-local"'),
      r'WebView app-proxy routing'),
+    ('root run-dir repair inverts the su exit status',
+     'smali/com/box/app/vpn/VpnBridge.smali',
+     replace('if-nez v2, :cond_vpn_run_dir_bad',
+             'if-eqz v2, :cond_vpn_run_dir_bad'),
+     r'vpn_run_dir_ownership_repair'),
 ]
 
 

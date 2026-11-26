@@ -1108,3 +1108,214 @@
     :catch_0
     return-object v1
 .end method
+
+# A root-mode boxctl run can leave box/run owned by root. Repair it before the
+# app-uid VPN helper opens runs.log; the fast path never invokes su.
+.method public static repairRunDir(Ljava/io/File;)Z
+    .locals 12
+
+    if-eqz p0, :cond_vpn_run_dir_bad_out
+
+    :try_start_vpn_run_dir
+    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-nez v0, :cond_vpn_run_dir_existing
+
+    invoke-virtual {p0}, Ljava/io/File;->mkdirs()Z
+
+    :cond_vpn_run_dir_existing
+    invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_vpn_run_dir_bad
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "runs.log"
+
+    invoke-direct {v1, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_repair
+
+    invoke-virtual {p0}, Ljava/io/File;->canWrite()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_repair
+
+    invoke-virtual {p0}, Ljava/io/File;->canExecute()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_repair
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_ready
+
+    invoke-virtual {v1}, Ljava/io/File;->canWrite()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_repair
+
+    :cond_vpn_run_dir_ready
+    const/4 v0, 0x1
+
+    goto :goto_vpn_run_dir_return
+
+    :cond_vpn_run_dir_repair
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "_owner=$(stat -c %u:%g '"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "' 2>/dev/null) || exit 1; mkdir -p '"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "' && chown $_owner '"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "' && chmod u+rwx '"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "' && chown -R $_owner '"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "' && chmod -R u+rwX '"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "'"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v7, Ljava/util/ArrayList;
+
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+
+    const-string v8, "su"
+
+    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v8, "-c"
+
+    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-wide/16 v8, 0x1e
+
+    invoke-static {v7, v8, v9}, Lcom/box/app/vpn/VpnShell;->code(Ljava/util/List;J)I
+
+    move-result v2
+
+    if-nez v2, :cond_vpn_run_dir_bad
+
+    :cond_vpn_run_dir_verify
+    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_bad
+
+    invoke-virtual {p0}, Ljava/io/File;->canWrite()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_bad
+
+    invoke-virtual {p0}, Ljava/io/File;->canExecute()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_bad
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_verified
+
+    invoke-virtual {v1}, Ljava/io/File;->canWrite()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_vpn_run_dir_bad
+
+    :cond_vpn_run_dir_verified
+    const/4 v0, 0x1
+
+    goto :goto_vpn_run_dir_return
+
+    :cond_vpn_run_dir_bad
+    const/4 v0, 0x0
+
+    :goto_vpn_run_dir_return
+    :try_end_vpn_run_dir
+    .catch Ljava/lang/Throwable; {:try_start_vpn_run_dir .. :try_end_vpn_run_dir} :catch_vpn_run_dir
+
+    return v0
+
+    :catch_vpn_run_dir
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_vpn_run_dir_bad_out
+    const/4 v0, 0x0
+
+    return v0
+.end method

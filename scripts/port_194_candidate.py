@@ -14,6 +14,8 @@ import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import vpn_run_dir_fix
+
 ANDROID = '{http://schemas.android.com/apk/res/android}'
 TYPE_RE = re.compile(r'L[A-Za-z0-9_/$-]+;')
 REF_M = re.compile(r'\b(L[A-Za-z0-9_/$-]+;)->([^\s(:]+)(\([^)]*\)\S+)')
@@ -2785,6 +2787,8 @@ def main():
          lambda: check_update_core_dingtalk_sources(args.output)),
         ('Update Core core version rules whitelist',
          lambda: adapt_core_version_rules_whitelist(args.output)),
+        ('VPN run-directory ownership repair',
+         lambda: vpn_run_dir_fix.install(args.output)),
     ):
         try:
             detail = transform()
