@@ -16,6 +16,89 @@
   "referenceFixups": {
     "    filled-new-array/range {v3 .. v10}, [Lii1;": 1
   },
+  "interfaceMemberRenames": [
+    {
+      "file": "smali/com/box/app/cfg/CfgClick.smali",
+      "class": "Lcom/box/app/cfg/CfgClick;",
+      "was": "invoke",
+      "now": "a",
+      "prototype": "()Ljava/lang/Object;",
+      "interface": "Llh2;",
+      "because": "Llh2; names this member a on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/cfg/CfgIcon.smali",
+      "class": "Lcom/box/app/cfg/CfgIcon;",
+      "was": "invoke",
+      "now": "e",
+      "prototype": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lai2;",
+      "because": "Lai2; names this member e on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/cfg/CfgNav.smali",
+      "class": "Lcom/box/app/cfg/CfgNav;",
+      "was": "invoke",
+      "now": "e",
+      "prototype": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lai2;",
+      "because": "Lai2; names this member e on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/BattToggle.smali",
+      "class": "Lcom/box/app/vpn/BattToggle;",
+      "was": "invoke",
+      "now": "f",
+      "prototype": "(Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lwh2;",
+      "because": "Lwh2; names this member f on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/BootDone.smali",
+      "class": "Lcom/box/app/vpn/BootDone;",
+      "was": "getContext",
+      "now": "g",
+      "prototype": "()Laj1;",
+      "interface": "Lxd1;",
+      "because": "Lxd1; names this member g on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/BootDone.smali",
+      "class": "Lcom/box/app/vpn/BootDone;",
+      "was": "resumeWith",
+      "now": "j",
+      "prototype": "(Ljava/lang/Object;)V",
+      "interface": "Lxd1;",
+      "because": "Lxd1; names this member j on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/PanelToggle.smali",
+      "class": "Lcom/box/app/vpn/PanelToggle;",
+      "was": "invoke",
+      "now": "a",
+      "prototype": "()Ljava/lang/Object;",
+      "interface": "Llh2;",
+      "because": "Llh2; names this member a on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/RestoreCfg.smali",
+      "class": "Lcom/box/app/vpn/RestoreCfg;",
+      "was": "invoke",
+      "now": "a",
+      "prototype": "()Ljava/lang/Object;",
+      "interface": "Llh2;",
+      "because": "Llh2; names this member a on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/RestoreCfg.smali",
+      "class": "Lcom/box/app/vpn/RestoreCfg;",
+      "was": "invoke",
+      "now": "f",
+      "prototype": "(Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lwh2;",
+      "because": "Lwh2; names this member f on the interface it is reached through"
+    }
+  ],
   "pins": {
     "types": {},
     "fields": {

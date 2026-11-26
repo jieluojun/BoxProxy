@@ -893,6 +893,280 @@ def graft_staging_rebase(lines, start, end, frame_locals):
                                     for reg, hit in live]})
     return rebased, errors
 
+# --------------------------------------------------------------------------------------
+# the copied custom surface and the release's interfaces
+# --------------------------------------------------------------------------------------
+
+# The files coverage lists as ``added`` are copied into the tree rather than ported, and
+# only their references are translated, so a member the release renamed between versions
+# is left behind in their definitions - and nothing in the tree notices until the first
+# interface dispatch.
+
+CLASS_LINE_RE = re.compile(r'^\.class\s+(.*)$')
+SUPER_LINE_RE = re.compile(r'^\.super\s+(L[^;]+;)\s*$')
+IMPLEMENTS_LINE_RE = re.compile(r'^\.implements\s+(L[^;]+;)\s*(?:#.*)?$')
+METHOD_DEF_RE = re.compile(r'^(\s*)\.method\s+(.*?)\s+(\S+?)(\([^)]*\)\S*)\s*(?:#.*)?$')
+
+
+def smali_class(path):
+    """The four things an interface-contract question asks a smali file.
+
+    Keeps the file's lines and each method header's index, because the caller that
+    renames a member has to rewrite exactly that line.
+    """
+    lines = Path(path).read_text(errors='replace').splitlines(keepends=True)
+    info = dict(desc=None, access='', super=None, implements=[], methods=[], lines=lines,
+                path=str(path))
+    for index, text in enumerate(lines):
+        stripped = text.strip()
+        match = CLASS_LINE_RE.match(stripped)
+        if match:
+            parts = match.group(1).split()
+            info['desc'] = parts[-1]
+            info['access'] = ' '.join(parts[:-1])
+            continue
+        match = SUPER_LINE_RE.match(stripped)
+        if match:
+            info['super'] = match.group(1)
+            continue
+        match = IMPLEMENTS_LINE_RE.match(stripped)
+        if match:
+            info['implements'].append(match.group(1))
+            continue
+        match = METHOD_DEF_RE.match(text)
+        if match:
+            indent, mods, name, proto = match.groups()
+            info['methods'].append(dict(name=name, proto=proto, mods=mods, line=index,
+                                        indent=indent))
+    return info if info['desc'] else None
+
+
+def smali_path(root, desc):
+    """The file a class descriptor lives in, whichever smali* dir holds it."""
+    if not desc or not (desc.startswith('L') and desc.endswith(';')):
+        return None
+    relative = desc[1:-1] + '.smali'
+    for base in sorted(Path(root).glob('smali*')):
+        candidate = base / relative
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def interface_abstracts(root, desc, seen=None, depth=0):
+    """Every abstract method a class must answer by declaring ``desc``."""
+    out = []
+    if desc is None or depth > 8 or desc == 'Ljava/lang/Object;':
+        return out
+    seen = set() if seen is None else seen
+    if desc in seen:
+        return out
+    seen.add(desc)
+    path = smali_path(root, desc)
+    if path is None:
+        return out
+    info = smali_class(path)
+    if info is None or 'interface' not in info['access'].split():
+        return out
+    for item in info['methods']:
+        if 'abstract' in item['mods'].split():
+            out.append((desc, item['name'], item['proto']))
+    for parent in info['implements']:
+        out += interface_abstracts(root, parent, seen, depth + 1)
+    return out
+
+
+def own_and_inherited(info, root):
+    """Method names this class and its superclasses define, statics excluded."""
+    def defined(item):
+        return {(m['name'], m['proto']) for m in item['methods']
+                if 'static' not in m['mods'].split()}
+    out, parent, seen = defined(info), info['super'], {info['desc']}
+    while parent and parent != 'Ljava/lang/Object;' and parent not in seen and len(seen) < 14:
+        seen.add(parent)
+        path = smali_path(root, parent)
+        if path is None:
+            break
+        item = smali_class(path)
+        if item is None:
+            break
+        out |= defined(item)
+        parent = item['super']
+    return out
+
+
+def declared_interfaces(root, info):
+    """Interfaces this class answers to, including the ones its superclasses declare."""
+    out, parent, seen = set(info['implements']), info['super'], {info['desc']}
+    while parent and parent != 'Ljava/lang/Object;' and parent not in seen and len(seen) < 14:
+        seen.add(parent)
+        path = smali_path(root, parent)
+        if path is None:
+            break
+        item = smali_class(path)
+        if item is None:
+            break
+        out |= set(item['implements'])
+        parent = item['super']
+    return out
+
+
+def custom_surface(root, added):
+    """The customization's own classes, parsed out of one tree.
+
+    `added` is the reviewed list of files this hop copies in, which is the right scope for
+    an interface-contract question: it keeps the rule off the release's tree, where R8
+    deletes interface methods nothing dispatches on and 42 classes would otherwise look
+    broken.  A file this project copies has no such excuse.
+    """
+    for relative in sorted(added):
+        if not relative.endswith('.smali'):
+            continue
+        path = Path(root) / relative
+        if not path.is_file():
+            continue
+        info = smali_class(path)
+        if info is not None:
+            yield relative, info
+
+
+def unimplemented_interface_members(root, added):
+    """Where a concrete customization class cannot answer an interface it declares.
+
+    ART does not check this while verifying a class: a concrete class is allowed to
+    reach an interface method it never defined, and the failure is an
+    ``AbstractMethodError`` thrown at the first dispatch - which is why an
+    ``apktool b`` and every reference checker stay quiet about it.  R8's own tree is no
+    control for the rule (214 upstream has 42 classes whose interface methods it dropped
+    because nothing dispatches on them), but the customization's files are copied rather
+    than compiled, so nothing removed anything here: a missing member is always a
+    translation gap, which is exactly what the 214 core-detail crash was.
+    """
+    out = []
+    for relative, info in custom_surface(root, added):
+        access = info['access'].split()
+        if 'interface' in access or 'abstract' in access:
+            continue
+        required = []
+        for desc in info['implements']:
+            required += interface_abstracts(root, desc)
+        if not required:
+            continue
+        provided = own_and_inherited(info, root)
+        for owner, name, proto in required:
+            if (name, proto) not in provided:
+                out.append((relative, info['desc'], owner, name, proto))
+    return out
+
+
+def realign_custom_interface_members(out_root, custom_root, mapper, added):
+    """Re-spell a copied custom class's implementation to the member the release now names.
+
+    ``CfgNav`` is our Compose navigation-icon wrapper: it implements the release's
+    two-argument composable-lambda interface, and in 194 that interface's method was
+    ``Lja2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;``.  214's
+    image is ``Lai2;->e(…)`` - the class map names the type, and the member map names the
+    member, so the copy step translated both the ``.implements`` line and the call this
+    class makes on the delegate it wraps.  A method *definition* carries no owner, so
+    nothing translated it, and the shipped tree defined ``invoke`` while declaring
+    ``Lai2;``: ``wrap`` returned that object as the release's ``Lai2;``, 214 called
+    ``ai2.e`` on it, and the device died with
+    ``AbstractMethodError: abstract method "java.lang.Object ai2.e(java.lang.Object,
+    java.lang.Object)" on receiver ... CfgNav``.  Nine such definitions were missing -
+    every custom class that implements a release interface with a renamed member,
+    including ``Lxd1;->g``/``j`` for the coroutine completion (194: ``getContext`` and
+    ``resumeWith``).
+
+    A rename is applied only when the member map proves it: the 194 class must declare the
+    interface the old member belongs to, and exactly one definition in the file must carry
+    that old name with the prototype the new interface asks for.  Anything else - no
+    candidate, two of them, the new name already taken - is reported instead of guessed,
+    because inventing a method name here is how a green build becomes a runtime crash.
+    """
+    reverse = {}
+    for old_key, new_key in mapper.maps['members'].items():
+        reverse.setdefault(new_key, []).append(old_key)
+    findings = {}
+    for relative, desc, owner, name, proto in unimplemented_interface_members(out_root, added):
+        findings.setdefault((relative, desc), []).append((owner, name, proto))
+    renamed, errors = [], []
+    for (relative, desc), wanted in sorted(findings.items()):
+        path = out_root / relative
+        info = smali_class(path)
+        source = custom_root / relative
+        if info is None or not source.is_file():
+            errors.append('IMPL %s: %s cannot answer %s, and there is no 194 source file to '
+                          'derive the member name from'
+                          % (relative, desc, ', '.join(sorted('%s->%s%s' % row) for row in wanted)))
+            continue
+        old_info = smali_class(source)
+        if old_info is None:
+            errors.append('IMPL %s: the 194 source file declares no class, so the interface it '
+                          'answered to cannot be read' % relative)
+            continue
+        old_interfaces = declared_interfaces(custom_root, old_info)
+        lines = list(info['lines'])
+        changed = False
+        for owner, name_new, proto in sorted(wanted):
+            new_key = '%s->%s%s' % (owner, name_new, proto)
+            hits, repeated = set(), set()
+            for old_key in reverse.get(new_key, []):
+                owner_old, rest = old_key.split('->', 1)
+                name_old = rest[:rest.index('(')]
+                if owner_old not in old_interfaces:
+                    continue
+                matched = [item for item in info['methods']
+                           if item['name'] == name_old and item['proto'] == proto
+                           and 'abstract' not in item['mods'].split()]
+                if len(matched) > 1:
+                    repeated.add(name_old)
+                elif matched:
+                    hits.add((name_old, matched[0]['line']))
+            if not hits:
+                errors.append('IMPL %s: %s declares %s but the member map has no entry naming '
+                              '%s->%s%s, and the file defines %s - a human has to say which '
+                              'definition answers it'
+                              % (relative, desc, owner, owner, name_new, proto,
+                                 ', '.join(sorted('%s%s' % (m['name'], m['proto'])
+                                                   for m in info['methods'])) or 'nothing'))
+                continue
+            if repeated:
+                errors.append('IMPL %s: %s defines %s more than once with the prototype %s wants,'
+                              ' so the rename cannot say which one answers it'
+                              % (relative, desc, ', '.join(sorted(repeated)), owner))
+                continue
+            if len(hits) > 1:
+                errors.append('IMPL %s: %s->%s%s is reached from %s, which is more than one 194 '
+                              'member of the declared interfaces - refusing to pick'
+                              % (relative, desc, owner, name_new,
+                                 ', '.join(sorted(name for name, _line in hits))))
+                continue
+            name_old, line = hits.pop()
+            pattern = r'^(\s*\.method\s+(?:\S+\s+)*?)%s(\()' % re.escape(name_old)
+            lines[line], count = re.subn(
+                pattern, lambda match: match.group(1) + name_new + match.group(2),
+                lines[line], count=1)
+            if count != 1:
+                errors.append('IMPL %s: the header naming %s->%s is not where the parse said it '
+                              'was' % (relative, desc, name_old))
+                continue
+            # a reference to our own member has to follow the definition, or the file would
+            # call a method it no longer has (a reference from anywhere else in the tree is
+            # caught by check_smali_references, which resolves members, not just classes)
+            changed = True
+            stale = '%s;->%s%s' % (desc, name_old, proto)
+            for index, text in enumerate(lines):
+                if stale in text:
+                    lines[index] = text.replace(stale, '%s;->%s%s' % (desc, name_new, proto))
+            renamed.append({'file': relative, 'class': desc, 'was': name_old, 'now': name_new,
+                            'prototype': proto, 'interface': owner,
+                            'because': '%s names this member %s on the interface it is reached '
+                                       'through' % (owner, name_new)})
+        if changed:
+            path.write_text(''.join(lines))
+    return renamed, errors
+
+
 
 def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, audit):
     rel = plan['sourceFile']
@@ -3436,6 +3710,18 @@ def main():
         if not fixup_hits.get(wrong):
             report['errors'].append('FIXUP ' + wrong + ': no occurrence in the migrated tree')
     report['referenceFixups'] = fixup_hits
+    # A copied custom class keeps the *definition* of a member the release renamed, which
+    # no reference translation touches; see realign_custom_interface_members.
+    interface_renames, interface_errors = realign_custom_interface_members(
+        args.output, args.custom, mapper, [item for item in coverage['added']
+                                           if item.endswith('.smali')])
+    report['errors'].extend(interface_errors)
+    report['interfaceMemberRenames'] = interface_renames
+    for item in interface_renames:
+        print('interface member realigned', item['file'], item['class'], item['was'], '=>',
+              item['now'], item['prototype'])
+    for detail in interface_errors:
+        print('IMPL ERROR', detail)
     report['pins'] = {'types': PINS['types'], 'fields': PINS['fields'],
                       'members': PINS['members'],
                       'addedFields': len(PINS['addedFields']),

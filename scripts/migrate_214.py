@@ -118,16 +118,19 @@ def main():
                              % (report.get('ok'), len(expected['completed'])))
 
         # The hunk gate: every coverage entry is re-derived from the pinned 194
-        # delta and compared with this tree, seven ways - instruction shape and
+        # delta and compared with this tree, eleven ways - instruction shape and
         # frame growth, the constants and payloads a shape comparison erases, the
         # reviewed splice recomputed from the 214 upstream, the smali
         # register/encoding law, the contracts of migration/hunk-contracts.json,
-        # the custom-only surfaces, and the type each register provably holds where
-        # a hunk reads it (the walk ART runs, which is what the shipped 214 build
+        # the custom-only surfaces, the type each register provably holds where a
+        # hunk reads it (the walk ART runs, which is what the shipped 214 build
         # failed with: a producer renumbered away from the consumer its target code
-        # kept assembles fine and dies at the first touch of the class).  The last
-        # gate is also run over the pristine 214 tree, which must report nothing:
-        # a finding there means the walk is wrong, not the release.  This replaces
+        # kept assembles fine and dies at the first touch of the class), the merge
+        # contract of a hand-placed arm in both directions, the register a grafted
+        # block stages its /range call through, and the interface contract of the
+        # copied custom classes, whose method definitions no reference map reaches.
+        # The type walk is also run over the pristine 214 tree, which must report
+        # nothing: a finding there means the walk is wrong, not the release.  This replaces
         # the "seven checkers are the gate" arrangement, which assembled and
         # validated a build whose core registry dropped two cores and whose asset
         # regex matched no release (see the notes in scripts/verify_214_custom_hunks.py).

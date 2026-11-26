@@ -9,12 +9,13 @@ insert, a splice that landed one instruction later, a grafted call that the
 release renamed under it.  Each row edits one thing in a copy of the migrated
 tree and requires scripts/verify_214_custom_hunks.py to report it, with the
 finding coming from the gate that owns that property - so a row cannot pass for
-the wrong reason.  Rows 10 to 15 are the five 214 device failures of this hop:
-the producer of a grafted value renamed away from the register the target's own
-code reads, an operand a replaced line carried from the frame it was written in,
-the flag an arm zeroed instead of the resource id the merge reads, the spill that
-arm owed the merge, and a block that staged its ``/range`` call through a register
-this frame still needed.  Row 14 is the exemption nothing needed.
+the wrong reason.  Rows 10 to 16 are the six 214 device failures of this hop: the
+producer of a grafted value renamed away from the register the target's own code
+reads, an operand a replaced line carried from the frame it was written in, the flag
+an arm zeroed instead of the resource id the merge reads, the spill that arm owed the
+merge, a block that staged its ``/range`` call through a register this frame still
+needed, and a copied class that kept the previous release's name for the interface
+member the release dispatches.  Row 14 is the exemption nothing needed.
 
 Two of the gates read the *reviewed placement* rather than the tree, because a
 placement that omits a line must not silence the check by omitting it from the
@@ -225,6 +226,25 @@ def spend_a_live_register_on_the_staged_call(text):
     return ''.join(lines)
 
 
+def take_the_interface_member_rename_back_off(text):
+    """Put a copied custom class back on the member name the previous release used.
+
+    The porter re-spells a customization class's implementation to the member the target
+    release declares, because a method definition names no owner and the reference maps
+    never reach it.  Undoing that is the shipped 214 defect: `Lcom/box/app/cfg/CfgNav;`
+    declared 214's `Lai2;` while still defining `invoke`, the wrapped composable lambda came
+    back from `wrap` as the release's `Lai2;`, its first `ai2.e` dispatch landed on a method
+    the class does not have, and the device threw AbstractMethodError.  `apktool b` and the
+    reference checks stay quiet, because the class really does define an `invoke`.
+    """
+    out, count = re.subn(r'^(\.method\s+public final )e(\(Ljava/lang/Object;Ljava/lang/'
+                         r'Object;\)Ljava/lang/Object;\s*)$', r'\1invoke\2', text,
+                         count=1, flags=re.M)
+    if count != 1:
+        raise LookupError('CfgNav no longer defines the renamed interface member')
+    return out
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -256,6 +276,9 @@ MUTATIONS = [
      invent_a_tolerance_the_release_does_not_need, r'reviewed tolerance'),
     ('the register a grafted block stages its call through', 'smali/v86.smali',
      spend_a_live_register_on_the_staged_call, r'grafted staging'),
+    ('the member a copied custom class answers its interface by',
+     'smali/com/box/app/cfg/CfgNav.smali', take_the_interface_member_rename_back_off,
+     r'custom interface'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),

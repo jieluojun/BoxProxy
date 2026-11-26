@@ -101,6 +101,11 @@ the method's own paths - gets the customization's value where it expected its ow
 and ART rejects the class.  Liveness is asked along successors and catch entries,
 because a read further down the text is not a use: a branch can step over it, and a
 write on every path that reaches it makes the register free again.
+
+Gate 11 - the interface contract of the copied custom surface.  A customization class
+that implements one of the release's interfaces has to answer the member the release
+calls it by; references are translated by the maps, definitions are not, and ART does not
+require a concrete class to implement its interfaces, so only a device dispatch notices.
 """
 
 import argparse
@@ -114,7 +119,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import smali_liveness
 from port_214_candidate import (Mapper, get_locals, method_blocks, parameter_words,
-                               public_map, sig_lines, strip_comment)
+                               public_map, sig_lines, strip_comment,
+                               unimplemented_interface_members)
 
 # --------------------------------------------------------------------------------------
 # shared parsing helpers
@@ -1953,6 +1959,39 @@ def check_grafted_staging(output, upstream, files, problems):
     return checked
 
 
+def check_custom_interface_implementations(output, custom, added, problems):
+    """Every custom class has to answer the interfaces it declares, not merely name them.
+
+    The customization's own classes are copied into the tree with their references
+    translated by the type and member maps - but a method *definition* names no owner,
+    so no translation reaches it, and the release renames those members every time it is
+    minified.  The 214 core-detail crash was that gap: ``Lcom/box/app/cfg/CfgNav;``
+    declared 214's ``Lai2;`` while still defining ``invoke``, because 194's image of that
+    interface spelled the member ``invoke``; the shipped ``wrap`` handed the object to the
+    release as its ``Lai2;``, the release dispatched ``ai2.e``, and the device died with
+    ``AbstractMethodError``.  Nothing sees this on the way in: ART does not require a
+    concrete class to implement its interfaces while verifying it, ``apktool b`` assembles
+    it, and every reference resolves because the class does have an ``invoke`` - it is just
+    not the one that gets called.
+
+    R8's own tree cannot be the control (214 upstream has 42 classes whose interface
+    methods it deleted behind provably dead dispatch), so the control is the 194 customized
+    tree, which reports nothing for the same rule and shipped working.  The scope is the
+    reviewed list of added files for the same reason: those are copied, so a missing member
+    is always a translation gap and never a compiler decision - and it reaches past
+    ``com.box.app`` into the other namespaces this project adds, which a prefix would hide.
+    """
+    missing = unimplemented_interface_members(output, added)
+    control = unimplemented_interface_members(custom, added)
+    for relative, desc, owner, name, proto in missing:
+        problems.append((desc + ' in ' + relative,
+                         'custom interface: %s declares %s but the copied class defines no '
+                         '%s%s - the release renamed that member and only the references were '
+                         'translated, so the first interface dispatch on one of these objects '
+                         'throws AbstractMethodError at run time'
+                         % (desc, owner, name, proto)))
+    return len(missing), len(control)
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -1996,6 +2035,9 @@ def main():
     grafted = check_grafted_arm_roles(pins, args.output, problems, touched)
     spills = check_grafted_arm_spills(pins, args.output, problems, touched)
     staging = check_grafted_staging(args.output, args.new, touched, problems)
+    added_smali = [item for item in coverage['added'] if item.endswith('.smali')]
+    impl_missing, impl_control = check_custom_interface_implementations(
+            args.output, args.custom, added_smali, problems)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -2025,10 +2067,10 @@ def main():
         else:
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
-          '%s; grafted arms: %d/%d, staging runs: %d; findings: %d'
+          '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             staging, len(problems)))
+             staging, impl_missing, impl_control, len(problems)))
     return 1 if problems else 0
 
 

@@ -46,7 +46,7 @@ PROJECT_DIR=.tools/local-171/decompiled \
 
 本地已完成 Apktool 回编译，并从生成的 APK 重新反编译 `classes.dex` 验证 `CfgNav.e` 的 `Lla2` Composer 接收器、`S`/`V` guard、回调接口类型链及全树引用/分支/对象寄存器检查。该 APK 为 `.tools/BoxProxy-26.11.16.25abc84-cfgnav-fixed-unsigned.apk`（versionCode 171；APK SHA-256 `f50ea39ea808325bbe6ee25d1d542a5c8ef6e2320d1336bff759219836313a60`；`classes.dex` SHA-256 `8a6679a886b6ebefeba729d690cf99c62652f583ba7ebeba95e13021263b8563`）。它也包含已修复的 `zu5.invoke`，但仍是**未对齐、未签名**的本地回编译产物，不等同于 GitHub Actions 的签名 APK，也尚未在 Redmi 真机上验证。
 
-## 214 候选的五处真机崩溃、第 7 到第 10 道门
+## 214 候选的六处真机崩溃、第 7 到第 11 道门
 
 已发布的 214 包在进入主界面时崩溃：
 
@@ -182,12 +182,42 @@ java.lang.VerifyError: Verifier rejected class v86: java.lang.Object v86.e(java.
   `staging_blocks`）：porter 用它挑寄存器，门用它判定，一份实现两处用，里面没有任何发布版本的名字。
 - 自检加一行：把 `v86` 那三行抄送连同 span 改回 194 用的 v14/v15/v16 → 门必须报 `grafted staging`（现 16 行，含 1 行控制行）。
 
-五处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 10 道门（含对上游整树 8752 个 smali 文件的对照 0 命中）与 16 行自检
+第 5 处修好后 `v86` 过了 verifier、方法真的跑起来了，设备于是撞上同一处的**下一次派发**——这一次崩的不是移植进去的方法体，是我们自己
+的 `com/box/app/cfg/CfgNav.smali`：
+
+```
+java.lang.AbstractMethodError: abstract method "java.lang.Object ai2.e(java.lang.Object, java.lang.Object)" on receiver java.lang.Class<com.box.app.cfg.CfgNav>
+```
+
+`CfgNav` 是被**复制**进 214 的定制类，不是被对齐移植的。它实现的那个"两参数 Compose lambda"接口，194 里是
+`Lja2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;`，214 的像是 `Lai2;->e(…)`。类图把 `.implements` 与字段类型改了名，
+成员图把**引用**里的成员名也改了名（连 `CfgNav` 转发给被包装对象的那句 `invoke-interface` 都变成了 `Lai2;->e`）——但**方法定义行没有所有者前缀**，
+两张映射都够不着它。于是产物里的 `CfgNav` 声明 `Lai2;`、只定义 `invoke`；`wrap` 把这个对象当作 `Lai2;` 交回 214，214 派发 `ai2.e`，ART 抛错。
+
+这一类比前面五处都隐蔽：**ART 不在 verify 期要求具体类实现它声明的接口**（缺了就是运行期 `AbstractMethodError`，这是 Java 语义），
+`apktool b` 照过，`check_smali_references` 照 0 错——那个类确实有个 `invoke`，只是没有人会去调它。整树同一条判据共有 **9 处、7 个类**：
+`CfgNav`/`CfgIcon` 的 `invoke`→`e`，`CfgClick`/`PanelToggle`/`RestoreCfg` 的 `invoke`→`a`，`BattToggle`/`RestoreCfg` 的 `invoke`→`f`，
+`BootDone` 的 `getContext`→`g` 与 `resumeWith`→`j`（214 把 `Lxd1;` 的两个协程成员也改了名）。设备只是先撞上了第一个。
+
+- 修正：porter 新增 `realign_custom_interface_members`（在所有落位与 fixup 之后跑）。一条改名只有被**成员图证明**才执行：194 的那个类确实
+  声明着旧成员所属的接口、产物里恰好有一个"旧名 + 新接口要求的原型"的定义、且新名不与已有定义相撞；三者有任何一样不成立就**报错不猜**
+  （`IMPL …` 进 `report['errors']`，重放直接失败），因为在这里凭空编一个方法名就是把"离线全绿"再变成一次装机崩溃。改名同时带走同一文件里
+  对自己旧名的引用；跨文件的残留引用由 `check_smali_references`（它解析成员，不只是类）兜底。7 个文件、只动 `.method` 定义行。
+- 判定与改名共用同一个函数 `unimplemented_interface_members`：一条具体类里"实现了某接口却没有该接口的抽象成员"的清单，**只问 `coverage.added`
+  列出的那些被复制进来的文件**（1356 个 smali：不止 `com/box/app`，还有 `top/yukonga/mishka`、我们自带的 kotlin 运行时那批）。范围必须这么窄：
+  同一条判据在 214 上游整树上报 **42** 处——那是 R8 删掉了没人派发的接口方法，合法；而复制来的文件没有"编译器删过"的借口。按命名空间前缀划线
+  会正好把另外那 638 个文件漏在外面。控制组因此是**能跑的 194 定制树**（同一判据、同一文件表，0 命中），不是上游。
+- 验收门第 11 项 `check_custom_interface_implementations`（摘要行新增 `custom interfaces: <产物命中>/<194 对照命中>`）：坏的那版报 9 条、
+  点名 `Lcom/box/app/cfg/CfgNav; … defines no e(…)`；修正后 `0/0`。
+- 自检加一行（现 17 行）：把 `CfgNav` 那个定义名从 `e` 改回 194 的 `invoke` → 门必须报 `custom interface`；它只动一行，不会连带别的
+  `invoke`（`CfgNav` 自己那个 `private static e(…)` 与原型都不同）。
+
+六处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 11 道门（含对上游整树 8752 个 smali 文件的对照 0 命中）与 17 行自检
 全绿。上一轮还对产物做过 `apktool b` 反编译比对（`smali/jk5.smali` 与候选逐行相同、891 行 0 差异，重编译树上类型流同样 0 命中）；本跳的
 smali→dex 证明由 CI 的 `Build APK` 出，本地没有 apktool/JRE 可用。
 
-真机复验仍未完成：上面这些是对 ART verifier 的**离线复刻**，`apktool b` 与 10 道门都替不了设备签字；第 5 处尤其如此——它的症状正是"离线全绿、
-装机拒收"。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
+真机复验仍未完成：上面这些是对 ART verifier 的**离线复刻**，`apktool b` 与 11 道门都替不了设备签字；第 5、6 两处尤其如此——它们的症状正是"离线全绿、
+装机才炸"。已发布的 `26.11.23.aa98568` 在重新打 tag 之前仍是会崩的那个包。
 
 ## CI 产物与设备验证
 
