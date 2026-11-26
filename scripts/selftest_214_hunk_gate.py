@@ -117,6 +117,33 @@ def point_the_replacement_at_the_slot_of_the_old_release(text):
     return ''.join(lines)
 
 
+def re_add_the_flag_write_of_the_old_release(text):
+    """Put 194's flag zero back into the reviewed arm.
+
+    The 214 arm of the vpn mode shortcut tests the `modeRes` result in v15, which is the
+    slot the merge at `:goto_6` reads as the string resource id, and zeroes the compose
+    flag in v4 - in 194 the flag *was* v15.  Restoring that line keeps every literal,
+    label and instruction the review approved and destroys the id one line before the
+    merge reads it, which is the `Resources$NotFoundException: String resource ID #0x0`
+    the second device died on: an integer, so no type walk can see it.  The mutation is
+    scoped to the two lines that follow this arm's key, because the same file's stock
+    dispatch uses v15 as scratch all over.
+    """
+    lines = text.splitlines(keepends=True)
+    try:
+        key = next(n for n, line in enumerate(lines)
+                   if line.strip() == 'const v14, -0x1c301169')
+    except StopIteration:
+        raise LookupError('the needle is gone: the reviewed arm of ba1.c no longer writes '
+                          'its invalidation key')
+    if lines[key + 1].strip() == 'const/4 v15, 0x0':
+        raise LookupError('the tree still carries the 194 flag write')
+    if lines[key + 1].strip() != 'const/4 v4, 0x0':
+        raise LookupError('the reviewed arm no longer zeroes its flag in v4 here')
+    lines.insert(key + 1, '    const/4 v15, 0x0\n')
+    return ''.join(lines)
+
+
 # (what is corrupted, file in the migrated tree, the mutation, the gate that owns it)
 MUTATIONS = [
     ('control: the ported tree as produced', None, None, None),
@@ -140,6 +167,8 @@ MUTATIONS = [
      move_producer_off_the_grafted_consumer, r'type flow'),
     ('the operand a replaced line carried from the old frame', 'smali/jk5.smali',
      point_the_replacement_at_the_slot_of_the_old_release, r'type flow'),
+    ('the flag zero of the old release, back in the id register', 'smali/ba1.smali',
+     re_add_the_flag_write_of_the_old_release, r'grafted arm'),
     ('scratch register above v15 without /range', 'smali/mx0.smali',
      replace('invoke-virtual/range {v16 .. v17}', 'invoke-virtual {v16, v17}'),
      r'encoding|register|v15'),

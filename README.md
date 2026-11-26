@@ -46,7 +46,7 @@ PROJECT_DIR=.tools/local-171/decompiled \
 
 本地已完成 Apktool 回编译，并从生成的 APK 重新反编译 `classes.dex` 验证 `CfgNav.e` 的 `Lla2` Composer 接收器、`S`/`V` guard、回调接口类型链及全树引用/分支/对象寄存器检查。该 APK 为 `.tools/BoxProxy-26.11.16.25abc84-cfgnav-fixed-unsigned.apk`（versionCode 171；APK SHA-256 `f50ea39ea808325bbe6ee25d1d542a5c8ef6e2320d1336bff759219836313a60`；`classes.dex` SHA-256 `8a6679a886b6ebefeba729d690cf99c62652f583ba7ebeba95e13021263b8563`）。它也包含已修复的 `zu5.invoke`，但仍是**未对齐、未签名**的本地回编译产物，不等同于 GitHub Actions 的签名 APK，也尚未在 Redmi 真机上验证。
 
-## 214 候选的两处真机 VerifyError 与第 7 道门
+## 214 候选的三处真机崩溃、第 7 道与第 8 道门
 
 已发布的 214 包在进入主界面时崩溃：
 
@@ -97,9 +97,31 @@ java.lang.VerifyError: Verifier rejected class jk5: java.lang.Object jk5.c(java.
 - `scripts/selftest_214_hunk_gate.py` 加了两行：把 `hi1.d` 的生产者改回 `p1`、把 `jk5.c` 的 `{v15}` 改回 `{v14}`，
   各让门报出一条 type flow，证明这道门不是因为宽松才绿（共 12 行，含 1 行"原样产物必须全绿"的控制行）。
 
-两处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器、hunk 门（含上游对照）与
-12 行自检全绿；`apktool b` 后重新反编译，`smali/jk5.smali` 与候选逐行相同（891 行、0 差异），对重编译树再跑类型流
-检查同样 0 命中。
+修好这两处之后，同一台设备打开核心详情页仍崩，但这一条不是 verifier 拒收，而是资源查找：
+
+```
+android.content.res.Resources$NotFoundException: String resource ID #0x0
+    at xl3.U(...)  at p92.n(...)  at ba1.c(...)
+```
+
+`ba1` 是 194 的 `pa1`，`p92.n(Lzi2;IILzi2;Z)` 是那一行文本的装配点：v14 装失效 key、v15 装字符串资源 id、v4 装标志。
+人工落位的 pin（`manual-pins.json` placement `Lpa1;->a(`）把 194 那块按 214 的角色改写过寄存器 —— 枚举留在 v14、
+`modeRes` 结果落 v15、标志清零改用 v4 —— 却漏删了 194 用来清标志的那行 `const/4 v15, 0x0`：它把刚取到的资源 id 又清零，
+`goto :goto_6` 之后合并点就拿着 0 去 `getString`。三个都是 int，名字、字面量、标签、帧、类型全都自洽 —— 前 7 道门
+没有一道看得见"块里自己把自己算出来的值抹掉"。资源 id 本身是对的：`modeRes` 返回 `0x7f0f0576`，即 214 里
+`string/proxy_mode_vpn` 的 id（194 是 `0x7f0f056f`，靠 `id_map` 重映射保证），所以缺的只有那行删除。
+
+- 输入侧修正：`manual-pins.json` 去掉那行并把三个角色写进 `evidence`；产物由 porter 重放得到，与修正前整树相比
+  只有 `smali/ba1.smali` 一个文件、一行（被删的那行）不同。
+- 验收门加了第 8 项 `check_grafted_arm_roles`：对每条带 `anchor` + `insert` 的人工落位，找出块内跳出到既有标签的
+  `goto`，看该标签后第一条指令读哪些寄存器；块内由 `move-result*` 取回的值，若在跳到合并点之前又被 `const*`/`move*`
+  改写而这个寄存器仍被合并点读取，就报错。这条检查专为"评审过的落位本身写错"而设：门 3 只比对产物与 pin，两者一起错
+  它就看不见。8 条 placement 里有 6 条被检查，坏的那版报 1 条、修正后 0 条，其余 5 条始终静默。
+- 自检再加一行：把那行 194 的标志清零塞回 `ba1.c` 的块里 → 门必须报 `grafted arm`（现 13 行，含 1 行控制行）。
+
+三处修好后的完整重放：porter `ok 51 / errors [] / additions 1363`，7 个 smali 检查器 + 8 道门（含 8752 文件上游对照
+0 命中）与 13 行自检全绿；`apktool b` 后重新反编译，`smali/jk5.smali` 与候选逐行相同（891 行、0 差异），对重编译树
+再跑类型流检查同样 0 命中。
 
 真机复验仍未完成：本节的结论来自离线 verifier 复刻与对照，设备侧确认见下。
 

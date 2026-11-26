@@ -188,12 +188,11 @@
         "    move-result v15",
         "    if-eqz v15, :cond_pv_novpn",
         "    const v14, -0x1c301169",
-        "    const/4 v15, 0x0",
         "    const/4 v4, 0x0",
         "    goto :goto_6",
         "    :cond_pv_novpn"
       ],
-      "evidence": "the vpn mode resource shortcut has to sit between the enum cast and the null guard the ordinal dispatch puts in front of it: the generic alignment landed the same seven lines one instruction later, which clobbers the enum register with the modeRes result (the verifier then reads getClass()/ordinal() on an Int) and leaves the resource register unset on the jump path. 214 keeps the enum in v14 and the row lookup reads the id in v14 and the resource in v15, so the shortcut writes v15 for its test and both for :goto_6, mirroring the const/4 v4, 0x0 the arm itself sets before the label. The -0x1c301169 literal is the hash of the name string, copied from the 194 customization.",
+      "evidence": "the vpn mode resource shortcut has to sit between the enum cast and the null guard the ordinal dispatch puts in front of it: the generic alignment landed the same seven lines one instruction later, which clobbers the enum register with the modeRes result (the verifier then reads getClass()/ordinal() on an Int) and leaves the resource register unset on the jump path. 214 keeps the enum in v14, and its arm reads the merge as `invoke-static {v1, v14, v15, v1, v4}, Lp92;->n(Lzi2;IILzi2;Z)Ljava/lang/String;`: v14 is the invalidation key, v15 is the string resource id and v4 the flag. So the shortcut tests the modeRes result in v15, writes its own key into v14 and zeroes v4 for the flag - and must NOT carry 194's `const/4 v15, 0x0`, which was 194's flag write and here zeroes the id again before the jump: that is what made the shipped 214 build crash with `Resources$NotFoundException: String resource ID #0x0` when the row composed. The -0x1c301169 literal is the hasChanged key of this row, the same one 194 writes.",
       "tolerates": {
         "i:0": 1
       },

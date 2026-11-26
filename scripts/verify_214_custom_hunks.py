@@ -1627,6 +1627,121 @@ def check_frame_parity(coverage, args, pins, problems):
             problems.append((plan['old'], label))
 
 
+GRAFT_RESULT_RE = re.compile(r'^move-result(?:-object|-wide)?\s+([vp]\d+)\b')
+GRAFT_WRITE_RE = re.compile(r'^(?:const\S*|move\S*|iget-\w+|sget-\w+|new-instance|check-cast|'
+                            r'(?:int|long|float|double|byte|char|short)-to-\w+)\s+(?:/range\s+)?([vp]\d+)\b')
+GRAFT_JUMP_RE = re.compile(r'^goto(?:/16|/32)?\s+(:\w+)$')
+GRAFT_LABEL_RE = re.compile(r'^(:\w+)\s*$')
+GRAFT_OPERAND_RE = re.compile(r'\b[vp]\d+\b')
+
+
+def grafted_significant(lines):
+    """(indexes, stripped text) of the executable lines of a method body."""
+    index, order, texts = {}, [], []
+    for number, line in enumerate(lines):
+        text = strip_comment(line).strip()
+        if not text or text.startswith('.line') or text.startswith('#'):
+            continue
+        index[number] = len(texts)
+        order.append(number)
+        texts.append(text)
+    return order, texts, index
+
+
+def grafted_reads(instruction):
+    """The registers an instruction reads or writes, before any descriptor or literal.
+
+    A field descriptor or a payload string can contain a token that spells like a
+    register, so the scan stops where the operands stop - the same boundary the
+    porter respects when it re-spells a line.
+    """
+    boundary = len(instruction)
+    for pattern in ('"', r'L[A-Za-z0-9_/$]+;'):
+        match = re.search(pattern, instruction)
+        if match:
+            boundary = min(boundary, match.start())
+    return GRAFT_OPERAND_RE.findall(instruction[:boundary])
+
+
+def check_grafted_arm_roles(pins, output, problems, files):
+    """A reviewed arm hands its values to the merge it jumps to - they have to survive.
+
+    A hand-placed block is written against the *target* frame, and its last act is a
+    jump onto a merge point that the release's own arms also reach.  Every value it
+    put in a register for that merge has to still be there when the merge reads it.
+    The 214 core-detail row shows what happens when one register's role moved: the
+    194 shortcut zeroed `v15`, which was its flag slot, while 214 zeroed the flag in
+    `v4` and used `v15` for the string resource id - so the ported block zeroed the
+    id it had just computed and the merge called `getString(0)`, crashing on the
+    device with `Resources$NotFoundException: String resource ID #0x0`.  No type can
+    see that (three ints, all consistent) and no name-based check can either, so this
+    walks the arm itself: for every value it takes from an invoke result, the register
+    must not be re-written by a constant or a plain move before the jump, when the
+    instruction at the merge label reads that register.
+    """
+    checked = 0
+    placements = [pin for pin in pins.get('placements', []) if pin.get('anchor')
+                  and pin.get('insert') and not pin.get('replace')]
+    for file_name in sorted(files):
+        path = output / file_name
+        if not path.is_file():
+            continue
+        lines = path.read_text(errors='replace').splitlines()
+        order, texts, _ = grafted_significant(lines)
+        label_at = {}
+        for position, text in enumerate(texts):
+            match = GRAFT_LABEL_RE.match(text)
+            if match:
+                label_at.setdefault(match.group(1), position)
+        for pin in placements:
+            def spell(lines):
+                lines = lines if isinstance(lines, list) else [lines]
+                return [strip_comment(line).strip() for line in lines if strip_comment(line).strip()]
+
+            head = spell(pin['anchor'])
+            block = spell(pin['insert'])
+            if not block:
+                continue
+            needle = head + block
+            starts = [position + len(head) for position
+                      in range(len(texts) - len(needle) + 1)
+                      if texts[position:position + len(needle)] == needle]
+            for start in starts:
+                checked += 1
+                for offset, text in enumerate(block):
+                    match = GRAFT_JUMP_RE.match(text)
+                    if match is None or match.group(1) not in label_at:
+                        continue
+                    merge = label_at[match.group(1)] + 1
+                    if merge >= len(texts) or texts[merge].startswith(':'):
+                        continue
+                    reads = grafted_reads(texts[merge])
+                    if not reads:
+                        continue
+                    written = {}
+                    for inner in range(start + 1, start + 1 + len(block)):
+                        # a value the arm takes from an invoke is the value it hands to the
+                        # merge; a re-write of that register can only be deliberate
+                        target = GRAFT_RESULT_RE.match(texts[inner])
+                        if target is not None:
+                            written[target.group(1)] = texts[inner]
+                            continue
+                        target = GRAFT_WRITE_RE.match(texts[inner])
+                        if target is None or GRAFT_RESULT_RE.match(texts[inner]):
+                            continue
+                        register = target.group(1)
+                        producer = written.pop(register, '')
+                        if producer and register in reads:
+                            problems.append((pin.get('plan', file_name) + ' in ' + file_name,
+                                             'grafted arm: %s is computed for the merge at %s by '
+                                             '\"%s\" and then re-written by \"%s\" before the jump, '
+                                             'which %s still reads - a register whose role moved '
+                                             'between the two releases'
+                                             % (register, match.group(1), producer, texts[inner],
+                                                texts[merge])))
+    return checked
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -1667,6 +1782,7 @@ def main():
     check_pinned_fields(pins, args, problems)
     check_custom_surfaces(args.output, problems)
     flow = check_type_flow(touched, args.output, problems)
+    grafted = check_grafted_arm_roles(pins, args.output, problems, touched)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -1695,10 +1811,11 @@ def main():
                     print('   %-15s %s' % (key, json.dumps(detail[key], ensure_ascii=False)[:400]))
         else:
             print('   ', detail)
-    print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)%s;'
-          ' findings: %d'
+    print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
+          '%s; grafted arms: %d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
-             flow, '' if control is None else ', control tree: %d' % control, len(problems)))
+             flow, '' if control is None else ', control tree: %d' % control, grafted,
+             len(problems)))
     return 1 if problems else 0
 
 
