@@ -17,10 +17,10 @@
   2 条 `VpnTags` emitter 修正、1 条 194→214 HTTP-client selector 迁移和 2 条 VPN readiness 顺序修正）、
   `hunk-contracts.json`（9 条无法用形状比较表达的规则）、`delta-gaps.json`（引用审计结果）
 - 定制 hunk 的验收门：`scripts/verify_214_custom_hunks.py` 从 194 增量重新推导每个条目（指令形状与帧增长、载荷字面量、
-  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面、寄存器类型、复制 emitter、VPN readiness 顺序和首页测速 client selector；
+  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面、寄存器类型、复制 emitter、VPN readiness 顺序、首页测速及 WAN GeoIP client selector；
   寄存器类型检查另对 214 上游整棵树跑 0 命中对照），由 `scripts/migrate_214.py` 强制执行；
-  `scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（21 行：1 行控制 + 20 项变异；其中 8 项复刻已记录的真机故障，
-  另 2 项分别覆盖 readiness 与 selector 快照静态回归假设，不冒充本轮设备根因证明），证明这道门会变红而不是空转
+  `scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性（22 行：1 行控制 + 21 项变异；其中 8 项复刻已记录的真机故障，
+  另 3 项覆盖 readiness、latency selector 和 WAN GeoIP selector 静态回归，不冒充设备根因证明），证明这道门会变红而不是空转
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ## 本地构建
@@ -249,8 +249,8 @@ time=... level=fatal msg="Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,
   这 1356 个被复制的 smali 上跑两条判定 —— 符号扩展陷阱，以及"拼接列表的方法里，分隔符必须在第一轮跳过"（识别方式是方法内
   出现 `OR,(` 这类列表开引号、索引从 0 起步并自增）。坏的那版报 2 条，修正后 0 条；194 对照树同样各 1 条，说明这不是本跳引入的，
   而是复制路径没人审。
-- emitter 自检新增两项后，self-test 有 21 行（1 行控制 + 20 项变异）：把守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
-  `or-int/lit16 …, 0xc800` → 必须报 `emitter literal`。这两项只动 `VpnTags.smali`；第 20 行测试异步 readiness 回归，第 21 行测试 194→214 selector hunk 丢失。
+- emitter 自检新增两项后，self-test 有 22 行（1 行控制 + 21 项变异）：把守卫改回 `if-nez` → 必须报 `emitter separator`；把 `const`+`or-int/2addr` 折回
+  `or-int/lit16 …, 0xc800` → 必须报 `emitter literal`。这两项只动 `VpnTags.smali`；第 20 行测试异步 readiness 回归，第 21 行测试 194→214 selector hunk 丢失，第 22 行测试 WAN GeoIP 客户端绕过共享 app selector。
 
 ### VPN 首页 Google `--`：readiness 与 selector 快照是两条不同路径
 
@@ -264,11 +264,31 @@ readiness 顺序本身仍值得保留：`BoxVpnService.doStart()` 原先先写 `
 
 针对可静态确认的迁移回退，`manual-pins.json` 新增 `smali/lw4.smali` fixup，将 214 `Llw4.<init>` 的 `ProxySelector.getDefault()` 改回定制版的 `VpnAppProxy.sel()`；selector 是随 `active` 动态切换的 singleton，不会在 client 创建时固定旧默认值。验收门第 14 项会核对 194 upstream/customized、194→214 class map、214 upstream/candidate、`Lav2.g` 的 Google 请求链；self-test 第 21 行把该调用改回 `getDefault()`，必须报 `VPN latency client selector`。第 13 项 readiness gate 与第 20 行异步 waiter 变异仍保留，但它与 selector 快照是两条独立路径。上述静态修复没有设备签字；`Lav2` 在该轮首次初始化的具体时刻、Google 探测的请求/响应结果，以及修复包上的 `[app-proxy] proxying google.com` 仍待同轮真机日志确认。
 
+### WAN IP 与 Google 延迟不一致：手动轮 ready 后刷新仍显示中国 IP
+
+用户新提供的 MIUI 日志截图显示：23:58:23.300 的同一小段里依次出现 `proxying baidu.com`、`google.com`、`api-ipv4.ip.sb`、`cloudflare.com`、`api-ipv6.ip.sb`，23:58:25.004 又出现 `proxying ipwho.is`；此前均有 `app traffic goes through 127.0.0.1:7890`。候选 `VpnAppProxy.select()` 仅在 `active=true` 时打印 `proxying`，并在这之后为对应 URI 返回 loopback proxy 配置。这证明这些 host 当时到达 selector 并被选为本地代理目标；**不证明每个 socket 连上该端口、HTTP 请求/响应成功或 Mihomo 的最终出口**。`app traffic goes through` 只表示 readiness waiter 的本地端口探测曾成功，也不代表截图中每个请求成功。
+
+另一张 23:59:48.074 的截图在同一轮 `app traffic` / Web 面板日志之后只看到 `proxying google.com`，没有 WAN provider 的 `proxying` 行。它既不能证明 WAN 卡片已刷新，也不能证明没有发出 WAN 请求：当 `active=false` 时 selector 会无日志地委托原始 `ProxySelector`；请求也可能在到达选择点前失败。用户已补充对应关系：日志较多的 23:58 轮是 BoxProxy 开机自启开启且系统允许 App 自启；日志较少的 23:59 轮是开机自启关闭、手动启动。用户此前确认 23:59 截图所示手动轮是先打开 Home、VPN ready 后未刷新 WAN；随后又补充了一个手动测试：VPN ready 后明确重新触发 WAN 查询，界面仍显示中国 IP。这个新结果不能再仅用“没有刷新、沿用旧 IP”解释；但这次重查的 APK 版本、selector 记录和 Mihomo 出站日志尚未提供。
+
+214 静态链路为：`py2` 分别请求 `https://api-ipv4.ip.sb/geoip`、`https://api-ipv6.ip.sb/geoip` → `ty2.g` → `ty2.b` → 静态 `ty2.e`（由 `xc0.e` 构造的 `Llw4` 客户端）；收到 IP 后，`ty2.a` 可按需调用 `ty2.d` 向 `ipwho.is` 查详情，仍经 `ty2.b` 和同一个 client。没有发现这条请求绑定另一条 Android `Network`。`ty2.g` 不缓存 ip.sb 公网 IP 响应；`ty2.d` 的内存表缓存按 IP + 语言查到的地理详情。当前结果存在进程内 `ty2.c` StateFlow 中。
+
+关键兼容点：Home 首次读取 `ty2.c` 会触发 `ty2` 类初始化；`ty2.<clinit>` 同时构造并缓存 `ty2.e:Llw4`。若设备 APK 仍带旧 `Llw4.<init>`（将 `ProxySelector.getDefault()` 保存到 final 字段），那么即使之后 VPN ready、用户再次触发 WAN 查询，这个已缓存 client 仍可能走原 selector，而不是 `VpnAppProxy`。194→214 迁移 fixup 已把构造器改为 `VpnAppProxy.sel()` 动态 singleton；但该修复只在包含当前候选改动的 APK 中生效，工作区/CI 不会自动更新用户安装的包。因而“ready 后重查仍中国”首先需要核对安装包是否含这项修复，以及重查时有没有 `proxying api-ipv4.ip.sb` / `api-ipv6.ip.sb` 选择行。
+
+首页的 `hw.t` Compose effect 在 Home IP 卡片组合时检查 LAN/WAN 两个模型是否已初始化；WAN 未初始化时会调用 `ty2.e`。`home_ip_mode` 从 SharedPreferences 读取（默认 `wan`）；`zy2` 的模式回调保存选择，并在对应模型尚未加载时启动相应查询。没有发现 `VpnAppProxy.activate()` 直接触发新 GeoIP 请求。候选 selector 在 `active=false` 时会静默委托原始 process selector，所以 23:59 那轮未刷新时，首次查询确实可能在 VPN 激活前走原 selector、再留在进程 StateFlow。
+
+不过，用户现在报告了 VPN ready 后明确再次触发 WAN、结果仍为中国；这使“只因 UI 保留旧结果”不足以解释新测试。接下来要分两类：若该 APK 在 Home 首次组合时已创建旧式 `Llw4`，且没有 selector fix，后续刷新仍可能因缓存的 final selector 直连；若安装包已包含动态 selector 修复且刷新后出现 `proxying api-ipv4/6.ip.sb`，则 selector 只证明选择了 loopback proxy，最终中国出口需要从 Mihomo 的该 host 规则/outbound、所选节点出口和 HTTP 响应核实。当前没有新测试的 APK 版本、WAN provider selector 行或核心日志，不能在两者间定因。
+
+启动入口也已静态比对：App 的「Auto Start On Boot」经 `BootReceiver` / `BootTask` 检查开关、VPN 模式与权限，等待约 3 秒后以 `START` action 拉起 `BoxVpnService`；手动 `VpnBridge.startVpn()` 在权限已给时也以 `START` action 启动（需授权则先走 `VpnPrepareActivity`）。`BoxVpnService.onStartCommand()` 对这两种 `START` 都排入 `VpnTask`，最终进入同一个 `doStart()`。Android Always-on / 系统重绑走 `VpnPrefs.onSystemBind()` 与 `AUTO` action；系统 sticky null-intent restart 则经过 `autoStart()` 的设置校验后也进入 `doStart()`。按用户补充，这两轮比较的是 BoxProxy 开机自启开关和系统 App 自启授权；没有证据说明 Android Always-on VPN 也开启。`boot_auto_start` 只决定 BootTask 是否发起启动，`home_ip_mode` 则是另一项 SharedPreferences；没有发现 BootTask 或 VPN service 直接触发 `ty2.e`。入口日志自然不同，但没有发现这些入口为 Google/WAN 选择不同 HTTP client 或不同 `VpnAppProxy` selector 的分支；共用同一 readiness waiter。App 自动启动有 3 秒网络等待，手动启动没有这段延迟，但其本身不能证明连接或出口不同。
+
+现在的关键分叉是**设备 APK 是否包含 `Llw4` 动态 selector fix**，以及包含修复时 Mihomo 对 GeoIP 域名选择了什么出口，而不只是 UI 有没有刷新：手动轮先开 Home 会让 `ty2.<clinit>` 提前创建 `ty2.e`。若旧 APK 把原始 `ProxySelector` 固定在该 client 中，即使 VPN ready 后重新发请求，也可能仍走系统原 selector；这正是当前 194→214 selector fixup 要修复的情况。若设备已安装含 fix 的 APK，且重查日志显示 `proxying api-ipv4/6.ip.sb`，则需要查这些 host 在 Mihomo 的 rule / outbound 及实际 HTTP 返回，可能是国内直连组、选中的中国节点或其他策略。23:58 较多 provider 选择记录与 Home 在 VPN ready 后查询相符，但没有响应 IP；目前仍需安装包版本和同轮日志来区分。
+
+为防迁移以后把 WAN helper 改回另一条 client，验收门第 15 项现在静态核验 `ip.sb → ty2.g → ty2.b → ty2.e/Llw4` 及 `ipwho.is → ty2.b` 链，并验证公网 IP 不从地理详情缓存中取；self-test 第 22 行把 `ty2.b` 的 client 字段改掉，必须报 `VPN WAN GeoIP client selector`。这是回归门，不替代设备签字。
+
 另一个问题是不同轮次、不能混为一谈：`run.zip.txt` 的 `mihomo.log` 在 2026-11-26 19:58:21 明确报 `rules[5] ... payloadRule error` 后退出；同轮 `runs.log` 显示 `[pump] process rules translated ...`、随后 pump 因 `ECONNRESET` 停止，并在 19:58:24 看到 `/proc/2835/fd/3` 已不存在。此轮核心根本没成功运行，`VpnAppProxy` readiness 无机会证明 Google 是否走代理。这条独立配置故障来自 `PROCESS-NAME-REGEX` 被 `VpnTags` 写成 `OR,(,(...)`：两处已由受审 `scopedFixups` 修正，并由 `VpnTagsTest` 在**迁移候选实际 smali**上测出无空元素、括号平衡、IPv6 tag 与 pump 字节一致。
 
-本轮在新目录完整运行 `python3 scripts/migrate_214.py --output .tools/arena-probe-214-selector --gate-selftest`：porter `51/51`、`errors []`、`additions 1363`；6 条单文件 fixup 各命中一次。Hunk gate：9 contracts、37 touched files、type-flow 0 findings、上游 control 0，VPN proxy readiness 与 latency selector 检查均为 1；21 行 self-test 全通过。7 个 smali checker 均通过（候选 10108 类；return-object 的 4 个冲突都已存在于 214 upstream）。`vpn-src/test/run-config-rewriters.sh` 也以该候选为输入通过，包含实际 smali 上的 `VpnTagsTest`；快照安全测试 8/8 通过。当前变更的 Python 语法、pin JSON 与 `git diff --check` 亦已通过。
+此前的 214 候选完整迁移为 porter `51/51`、`errors []`、`additions 1363`；6 条单文件 fixup 各命中一次，7 个 smali checker 均通过（候选 10108 类；return-object 的 4 个冲突都已存在于 214 upstream）。本次给 selector gate 增加 WAN GeoIP 客户端链后，直接验证结果为：9 contracts、37 touched files、type-flow 0 findings、上游 control 0；VPN proxy readiness、latency selector、WAN GeoIP selector 各 1；22 行 self-test 全通过。`vpn-src/test/run-config-rewriters.sh`（含候选 Smali 上的 `VpnTagsTest`）和快照安全测试 8/8 先前均通过；本次 Python 语法与 gate/self-test 也通过。
 
-仍未完成：当前没有 Android 设备，未用修复后的 APK 做 VPN/TUN 实测，也未确认 `[app-proxy] proxying google.com` 是否出现；本次验证是完整候选迁移、smali 静态门和宿主 rewriter 测试，不等同于设备根因签字或完整 APK 安装验证。已发布的 214 包不会被这次工作区改动自动替换。
+设备侧用户已报告：在开机自启关闭、先开 Home 再启动 VPN 的手动测试中，VPN ready 后明确重新触发 WAN 查询，显示 IP 仍为中国。此前 23:58 自启轮有多个 host 的 loopback selector 选择记录，23:59 手动截图只看到 Google 的选择记录；但后者是刷新前截图，不能当作新查询日志。此新结果排除了“仅仅因为那次没有刷新”作为完整解释，却尚未证明请求走到哪个 selector/outbound 或 HTTP 返回了什么。下一步需要对齐这次刷新时安装的 APK version/build（是否含本分支 selector fix）、`runs.log` 中两个 ip.sb host 与 `request failed` 记录，以及 Mihomo connection/rule/outbound；如已含修复且 `proxying api-ipv4/6.ip.sb` 出现，应优先查核心规则和实际出口。
 
 ## CI 产物与设备验证
 
