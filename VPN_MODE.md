@@ -86,7 +86,7 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 ## App 自身流量（延迟检测 / IP 检测 / Web 面板）
 
 内核与 App 同一个 UID，必须把 App 排除在 VPN 之外，否则内核的出站连接会绕回 VPN。
-若没有 App 侧的重路由，App 自己发的请求（首页延迟、WAN 检测、Web 面板里的延迟/网络信息）会直连，不走代理。
+副作用是 App 自己发的请求（首页延迟、WAN 检测、Web 面板里的延迟/网络信息）直连，不走代理。
 
 处理方式：VPN 运行期间，把 App 自己的请求指向内核的本地代理端口，VPN 仍然排除 App。
 
@@ -94,18 +94,12 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
   配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
 - `VpnAppProxy`：
   - `BoxVpnService.doStart()` 在 `VpnTask` 后台线程里同步运行本地端口 waiter，然后才发布 `running` / `notifyStatus()`；`VpnAppProxy$T.run()` 必须成功连上本地端口才调用 `activate()`（日志 `[app-proxy] …` 写入 `runs.log`）。这避免状态触发的测速与激活竞态；若配置没有可用端口或 waiter 用完 80 次尝试仍失败，VPN 服务仍会报告 running，本应用请求会继续直连；
-  - `ProxySelector`：139 基线 OkHttp 的 `fd2.g` 取用 `Lab0.f` 构造的 `Lib4`，默认 selector 为 `VpnAppProxy.sel()`。214 映射中 194 `Lul4;` → 214 `Llw4;`；迁移 pin 也必须把其 `ProxySelector.getDefault()` 还原为 `VpnAppProxy.sel()`。214 的 `Lav2.<clinit>` 会提前构造并缓存首页延迟 client；若保留全局默认值，client 可能在 VPN 激活前缓存旧 selector，之后即使 readiness 完成也不会自动切换。`VpnAppProxy.sel()` 返回随 `active` 状态切换的 singleton。WAN IP 检测同样使用 `Lty2.e` / `Llw4` client：`py2` 的 `api-ipv4/6.ip.sb/geoip` 经 `ty2.g → ty2.b`，`ipwho.is` 详情经 `ty2.d → ty2.b`；不另绑 Android `Network`。迁移 gate 第 15 项核验此路径。`HttpURLConnection` 也走该 selector；127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
+  - `ProxySelector`：139 基线 OkHttp 的 `fd2.g` 取用 `Lab0.f` 构造的 `Lib4`，默认 selector 为 `VpnAppProxy.sel()`。214 映射中 194 `Lul4;` → 214 `Llw4;`；迁移 pin 也必须把其 `ProxySelector.getDefault()` 还原为 `VpnAppProxy.sel()`。214 的 `Lav2.<clinit>` 会提前构造并缓存首页延迟 client；若保留全局默认值，client 可能在 VPN 激活前缓存旧 selector，之后即使 readiness 完成也不会自动切换。`VpnAppProxy.sel()` 返回随 `active` 状态切换的 singleton。`HttpURLConnection` 也走该 selector；127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
   - WebView：通过 `ProxyController` 的同一套边界接口做代理覆盖（`127.0.0.1`、`localhost`、`<local>` 直连），
     Web 面板里的请求也走内核。
 - 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
 
-排查时请保留**与测试同一轮**的 `runs.log`、APK version、首页显示值和核心日志：`[app-proxy] app traffic goes through 127.0.0.1:<port>` 表示 readiness waiter 曾成功激活；`[app-proxy] proxying <host>` 表示 App selector 为该 host 返回了指向 loopback 的 proxy 配置。它是**路由选择点**日志，不证明 socket 成功连上本地端口、HTTP 请求成功、响应 IP 是什么，或 Mihomo 最终选择了哪个 outbound；规则仍可能按 host 将 Google、ip.sb 或 ipwho.is 分到不同出口。每次 activation 最多记录前 12 个外部 host；缺少某行本身也不能倒推“没有测试”或“请求直连”。旧 23:19 轮已有 readiness 行、没有 Google selector 行，用户确认当轮确实手动测过。
-
-新增设备日志的 23:58 轮记录了 `api-ipv4.ip.sb`、`api-ipv6.ip.sb`、`ipwho.is` 和 Google 的 `proxying` 行，证明这些 host 在那轮被 App selector 选为 loopback proxy 目标；不证明端口连接、HTTP 成功或出口 IP。用户确认这轮较多日志对应 BoxProxy 开机自启开启且系统允许 App 自启。23:59 轮只看到 `proxying google.com`，没有 WAN provider 选择行；用户确认这是关闭开机自启后的手动启动，并且先打开 Home、VPN ready 后没有刷新 WAN。这也不能判定 WAN 是否曾在 VPN 未激活时查询，因为 `active=false` 时 selector 会静默委托原 selector。
-
-`ty2.g` 每次实际执行都会请求 ip.sb；当前 `ty2.d` 内存表只缓存“给定 IP + 语言”的地理详情，不缓存 ip.sb 返回的公网 IP，但 `ty2.c` StateFlow 会在进程内保留已发布结果。Home 页面组合时的 effect 会在尚未初始化时启动 LAN / WAN 查询，模式回调也会按状态触发；VPN selector 激活本身没有直接调用新的 GeoIP 查询。因此，早先 23:59 截图对应的那次手动顺序（Home 先打开、ready 后未刷新）与“首次查询可能在 ready 前发出、结果留在 UI 状态”相符，但这只是该轮的假设。用户后来补充了**另一轮**手动复测：ready 后明确重触发 WAN，结果仍显示中国；这不能只用旧 UI 状态解释。现在应先核对该轮 APK 是否包含本分支的 `Llw4` 构造器 selector fix：Home 首次组合会初始化并缓存 `ty2.e`，旧构造器若在 activation 前把 `ProxySelector.getDefault()` 存入 final 字段，后续刷新也可能仍使用原 selector；当前迁移候选将其改为 `VpnAppProxy.sel()` 动态 singleton。若该 APK 已含修复且同轮日志出现 `proxying api-ipv4.ip.sb` / `api-ipv6.ip.sb`，这只证明 selector 返回了指向 loopback 的 proxy 配置，仍需结合请求失败/HTTP 响应 IP 和 Mihomo 对应连接的 rule/outbound 才能解释中国结果。迁移 gate 第 14、15 项分别核验 Google latency 与 WAN GeoIP 使用动态 selector；静态门不代表设备已安装修复包或请求成功。
-
-启动入口也不是同一标签：App 的开机自启由 `BootReceiver` / `BootTask` 检查偏好与 VPN 权限、等待约 3 秒后以 `START` 拉起服务；手动 `VpnBridge.startVpn()` 权限就绪后也走 `START`。两者最终共用 `BoxVpnService.doStart()`；Android Always-on / 系统重绑走 `AUTO`，sticky null-intent restart 经 `autoStart()` 检查后也归到 `doStart()`。按用户补充，这两轮对比的是 App 开机自启开关与系统 App 自启授权，不代表 Android Always-on VPN 开启。日志可因入口不同而不同，但当前静态代码没有显示它们切换 Google/WAN 的 HTTP client 或 selector。更关键的可检验点是：每轮先打开 Home 还是先看到 readiness、是否显式刷新 WAN、刷新时具体显示什么。
+排查时请保留**与测试同一轮**的 `runs.log` 和 APK version：`[app-proxy] app traffic goes through 127.0.0.1:<port>` 表示 readiness waiter 曾成功激活；`[app-proxy] proxying google.com` 表示请求实际向 App selector 询问目标路由。即使用户已等待并手动测速，后者仍可能缺失：client 可能在 VPN 激活前缓存了全局默认 selector，或请求在到达 selector 前失败；缺少该行不能倒推“没有测试”。23:19 轮已有 readiness 行、没有 Google selector 行，用户确认当轮确实手动测过。迁移 gate 现在核验 214 的 `Llw4` 也保留 `VpnAppProxy.sel()`；修复包应再用同轮日志确认 `proxying google.com`，并在需要时检查 `request failed: google.com via ...`。
 
 限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了

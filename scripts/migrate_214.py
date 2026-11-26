@@ -125,14 +125,12 @@ def main():
         # register types at reads (the walk ART runs, which caught a shipped 214
         # verifier failure), both sides of hand-placed arm contracts, /range call
         # staging, copied custom interface implementations, copied rule emitters,
-        # VPN app-proxy readiness ordering, preservation of the 194 selector
-        # customization in the 214 global latency client, and the homepage WAN
-        # GeoIP client path through that same selector. These guard distinct
-        # concerns: readiness ordering prevents status-triggered probes racing the
-        # waiter; the client gates prevent eager clients from snapshotting the old
-        # process-wide selector and keep the WAN refresh path on that dynamic client.
-        # They are static checks, not proof that a refresh ran, the request succeeded,
-        # or the selected core outbound caused a displayed IP.
+        # VPN app-proxy readiness ordering, and preservation of the 194 selector
+        # customization in the 214 global latency client.  These guard distinct
+        # paths: readiness ordering prevents status-triggered probes racing the
+        # waiter, while the client hunk prevents a pre-activation construction
+        # from snapshotting the old process-wide selector.  Both are static checks,
+        # not device confirmation of the Google failure's exact cause.
         # The type walk is also run over the pristine 214 tree, which must report
         # nothing: a finding there means the walk is wrong, not the release.  This replaces
         # the "seven checkers are the gate" arrangement, which assembled and

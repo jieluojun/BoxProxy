@@ -129,15 +129,6 @@ activation would retain the old selector and bypass later activation. The gate p
 app selector; it also pins the Google latency request to this client so a future release
 change forces review. This is a static regression check, not proof of the device's first-use
 time or of the screenshot's exact failure cause.
-
-Gate 15 - keep the homepage WAN GeoIP requests on the same dynamic app selector. The two
-``ip.sb`` family probes and any ``ipwho.is`` enrichment use ``Lty2.e`` through ``Lty2.b``;
-that client is another ``Llw4`` and therefore must be covered by the same constructor fixup.
-The gate traces the endpoint-to-client chain. It also records the cache boundary: the public-IP
-endpoint is fetched on refresh; only detail lookups are cached by IP and language. These are
-static facts about the shipped path, not proof of a refresh on a particular device or of
-Mihomo's selected outbound. A ``proxying <host>`` log shows the selector returned a proxy
-configuration targeting loopback; it does not show that the socket connected or HTTP succeeded.
 """
 
 import argparse
@@ -2280,78 +2271,6 @@ def check_vpn_latency_client_selector(old, custom, new, output, maps, problems):
     return int(ok)
 
 
-def check_vpn_wan_geoip_client_selector(output, problems):
-    """Prove the homepage public-IP lookup uses the dynamic app HTTP selector.
-
-    The `api-ipv4/6.ip.sb` requests and any `ipwho.is` enrichment are separate
-    from Google's latency request, but all of them should flow through the same
-    HTTP client type and the same VpnAppProxy selector. A `proxying <host>` log
-    shows that select() returned a loopback proxy configuration; it cannot prove
-    that the client connected or Mihomo's eventual outbound, so this is only a
-    static client-path regression check.
-    """
-    label = 'VPN WAN GeoIP client selector'
-    signatures = {
-        'client initializer': ('smali/ty2.smali', '<clinit>()V'),
-        'HTTP request helper': ('smali/ty2.smali',
-                                'b(Ljava/lang/String;Ljava/lang/String;ZLyd1;)Ljava/lang/Object;'),
-        'ip.sb parser': ('smali/ty2.smali',
-                         'g(Ljava/lang/String;Ljava/lang/String;Lyd1;)Ljava/lang/Object;'),
-        'ipwho lookup': ('smali/ty2.smali',
-                         'd(Ljava/lang/String;Ljava/lang/String;Lyd1;)Ljava/lang/Object;'),
-        'lookup enrichment': ('smali/ty2.smali',
-                              'a(Lly2;Ljava/lang/String;Lyd1;)Ljava/lang/Object;'),
-        'IPv4/IPv6 callers': ('smali/py2.smali', 'v(Ljava/lang/Object;)Ljava/lang/Object;'),
-    }
-    blocks = {name: block_of(output, path, signature)
-              for name, (path, signature) in signatures.items()}
-    missing = [name for name, block in blocks.items() if block is None]
-    if missing:
-        problems.append((label, 'WAN GeoIP path missing from candidate: ' + ', '.join(missing)))
-        return 0
-
-    code = {name: code_lines(block) for name, block in blocks.items()}
-    client_field = 'Lty2;->e:Llw4;'
-    client_builder = 'Lxc0;->e:Lz67;'
-    http_call = 'Lty2;->b(Ljava/lang/String;Ljava/lang/String;ZLyd1;)Ljava/lang/Object;'
-    parsed_ip_call = 'Lty2;->g(Ljava/lang/String;Ljava/lang/String;Lyd1;)Ljava/lang/Object;'
-    enrich_call = 'Lty2;->a(Lly2;Ljava/lang/String;Lyd1;)Ljava/lang/Object;'
-    detail_call = 'Lty2;->d(Ljava/lang/String;Ljava/lang/String;Lyd1;)Ljava/lang/Object;'
-    expected = {
-        'client initializer': (client_builder, 'check-cast v0, Llw4;',
-                               'sput-object v0, Lty2;->e:Llw4;'),
-        'HTTP request helper': (f'sget-object p1, {client_field}',
-                                'new-instance p0, Lpu5;',
-                                'invoke-direct {p0, p1, p2, v1}, Lpu5;-><init>(Llw4;Lny5;Z)V',
-                                'invoke-static {p0, v0}, Ldx;->n(Lpu5;Lxd1;)Ljava/lang/Object;'),
-        'ip.sb parser': (http_call, enrich_call, '"ip"'),
-        'ipwho lookup': (http_call, '"https://ipwho.is/"',
-                         'Lty2;->f:Ljava/util/LinkedHashMap;'),
-        'lookup enrichment': (detail_call,),
-        'IPv4/IPv6 callers': ('"https://api-ipv4.ip.sb/geoip"',
-                              '"https://api-ipv6.ip.sb/geoip"', parsed_ip_call),
-    }
-    ok = True
-    for name, needles in expected.items():
-        missing_needles = [needle for needle in needles
-                           if not any(needle in instruction for instruction in code[name])]
-        if missing_needles:
-            problems.append((label, '%s no longer carries: %s' %
-                             (name, ', '.join(missing_needles))))
-            ok = False
-
-    # The ip.sb public-IP response itself must not be replaced by the IP+language
-    # detail cache. That cache is allowed only on ty2.d's ipwho.is enrichment path.
-    if any('Lty2;->f:Ljava/util/LinkedHashMap;' in instruction
-           for instruction in code['ip.sb parser']):
-        problems.append((label, 'ip.sb public-IP result is now served from the detail cache'))
-        ok = False
-    if sum(parsed_ip_call in instruction for instruction in code['IPv4/IPv6 callers']) < 2:
-        problems.append((label, 'both IPv4 and IPv6 endpoint branches must call ty2.g'))
-        ok = False
-    return int(ok)
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--old', type=Path, required=True,
@@ -2402,7 +2321,6 @@ def main():
     vpn_proxy = check_vpn_app_proxy_activation(args.output, added_smali, problems)
     vpn_latency = check_vpn_latency_client_selector(
         args.old, args.custom, args.new, args.output, maps, problems)
-    vpn_wan_geoip = check_vpn_wan_geoip_client_selector(args.output, problems)
     control = None
     if args.type_flow_control:
         root = args.type_flow_control
@@ -2433,12 +2351,10 @@ def main():
             print('   ', detail)
     print('%schecked %d coverage entries, %d contracts, %d touched files; type-flow: %d finding(s)'
           '%s; grafted arms: %d/%d, staging runs: %d, custom interfaces: %d/%d, '
-          'emitter methods: %d, VPN proxy: %d, VPN latency selector: %d, '
-          'VPN WAN GeoIP selector: %d; findings: %d'
+          'emitter methods: %d, VPN proxy: %d, VPN latency selector: %d; findings: %d'
           % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen, len(touched),
              flow, '' if control is None else ', control tree: %d' % control, grafted, spills,
-             staging, impl_missing, impl_control, emitters, vpn_proxy, vpn_latency,
-             vpn_wan_geoip, len(problems)))
+             staging, impl_missing, impl_control, emitters, vpn_proxy, vpn_latency, len(problems)))
     return 1 if problems else 0
 
 

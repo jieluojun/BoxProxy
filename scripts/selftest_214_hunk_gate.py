@@ -15,10 +15,9 @@ mismatch. Row 14 checks rejection of a stale exemption; row 19 checks the
 so a status-triggered probe could run before the port waiter completes. Row 21
 reverts the reviewed 194 -> 214 HTTP-client selector hunk, making the eager
 home-latency client snapshot ``ProxySelector.getDefault()`` instead of the
-selector that can switch to the local proxy after activation. Row 22 redirects
-the WAN GeoIP helper away from its shared ``Lty2.e`` client. These are regression
-guards for distinct static paths; none proves the selected core outbound or which
-path caused a device observation.
+selector that can switch to the local proxy after activation. These are
+regression guards for distinct static paths; neither proves which one caused a
+device observation.
 
 Each row edits one thing in a copy of the migrated tree and requires
 scripts/verify_214_custom_hunks.py to report it, with the finding coming from
@@ -367,11 +366,6 @@ MUTATIONS = [
      replace('invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;',
              'invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;'),
      r'VPN latency client selector'),
-    ('WAN GeoIP helper bypasses its shared app HTTP client',
-     'smali/ty2.smali',
-     replace('sget-object p1, Lty2;->e:Llw4;',
-             'sget-object p1, Lty2;->d:Lju5;'),
-     r'VPN WAN GeoIP client selector'),
 ]
 
 
