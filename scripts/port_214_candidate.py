@@ -476,62 +476,95 @@ def significant(line):
     return bool(text) and not text.startswith(DEBUG_PREFIXES)
 
 
+def placement_key(placement):
+    """The reviewed region a placement owns: its coverage entry and its method.
+
+    One coverage entry can own several regions - two ends of a method the
+    customization edited in both places, or a region this release moved into a
+    sibling method - so the fire count is per region, not per plan prefix.
+    """
+    target = placement.get('target')
+    return 'placement: ' + placement['plan'] + (':' + target['method'] if target else '')
+
+
 def apply_reviewed_placement(placement, target, target_body, path, target_sig, audit):
-    """Insert the reviewed instructions behind the reviewed anchor, nothing else."""
+    """Insert the reviewed instructions behind the reviewed anchor, nothing else.
+
+    A placement is how this hop reviews a region the generic alignment cannot be
+    trusted with.  It comes in two shapes:
+
+    *   ``anchor`` + ``insert`` - the reviewed instructions go behind a
+        instruction (or a sequence of them, when R8 duplicated a loop body) that
+        has to be unique in the target method; ``pruneAfter`` lets the reviewed
+        block stand in for the target's own instructions there.
+    *   ``replace`` - the reviewed list *is* the method body.  Used where the
+        customization rewrote a small whole method (a static initializer) and
+        the new release changed the same method on its own, so no anchor
+        survives: the reviewer states the result, and the fidelity of that
+        result is what the hunk verifier then proves.
+    """
     audit_prune = []
-    # an anchor is one instruction, or a sequence of them: a loop body that R8
-    # duplicated needs its surrounding lines to be named as well
-    anchor = placement['anchor']
-    window = [line.strip() for line in (anchor if isinstance(anchor, list) else [anchor])]
-    hits = [index for index in range(len(target_body) - len(window) + 1)
-            if [line.strip() for line in target_body[index:index + len(window)]] == window]
-    if len(hits) != 1:
-        return False, ('reviewed placement anchor %r is present %d time(s), need exactly 1'
-                       % (window, len(hits)))
-    hits = [hits[0] + len(window) - 1]
     insert = [line.rstrip() for line in placement['insert']]
-    # the first instruction of a hunk is usually an ordinary move-result, so the
-    # proof that the port already happened is the marker the customization
-    # leaves behind: a label it defines, or a call into com.box.app
-    markers = {line.strip() for line in insert
-               if re.fullmatch(r'\s*:[A-Za-z_][\w]*', line)}
-    markers |= {line.strip() for line in insert if 'Lcom/box/' in line}
-    if markers and any(line.strip() in markers for line in target_body):
-        return False, 'reviewed placement is already applied'
-    # a label the inserted code defines may not exist yet, and a label it jumps
-    # to has to belong to the target method unless the insert itself provides it
-    defined = {line.strip() for line in insert if re.fullmatch(r'\s*:[A-Za-z_][\w]*', line)}
-    existing = {line.strip() for line in target_body}
-    for label in sorted(defined):
-        if label in existing:
-            return False, 'reviewed placement label is already taken: ' + label
-    jumped = {match.group(0) for line in insert if line.strip().startswith(('goto', 'if-'))
-              for match in re.finditer(r':[A-Za-z_][\w]*', line)}
-    for label in sorted(jumped - defined):
-        if label not in existing:
-            return False, 'reviewed placement jumps to an unknown label: ' + label
-    body = list(target_body)
-    # a hunk that REPLACED upstream instructions cannot be expressed as an
-    # insertion alone: the reviewed anchor names the instruction the replaced
-    # block follows, and pruneAfter says how many of the target's own
-    # instructions the reviewed block stands in for.  Counting from the anchor
-    # keeps this independent of how the surrounding code was scheduled.
-    prune = int(placement.get('pruneAfter', 0))
-    if prune:
-        # count significant instructions, not raw lines: Apktool leaves the
-        # .line bookkeeping between them, and deleting it would shift the
-        # debug info of everything that follows
-        start = hits[0] + 1
-        seen, end = 0, start
-        while end < len(target_body) and seen < prune:
-            if significant(target_body[end]):
-                seen += 1
-            end += 1
-        if seen < prune:
-            return False, 'reviewed placement has nothing to prune behind its anchor'
-        audit_prune.append([line.strip() for line in target_body[start:end] if significant(line)])
-        del body[start:end]
-    body[hits[0] + 1:hits[0] + 1] = insert
+    if placement.get('replace'):
+        body = list(insert)
+    else:
+        # an anchor is one instruction, or a sequence of them: a loop body that R8
+        # duplicated needs its surrounding lines to be named as well
+        anchor = placement['anchor']
+        window = [line.strip() for line in (anchor if isinstance(anchor, list) else [anchor])]
+        hits = [index for index in range(len(target_body) - len(window) + 1)
+                if [line.strip() for line in target_body[index:index + len(window)]] == window]
+        if len(hits) != 1:
+            return False, ('reviewed placement anchor %r is present %d time(s), need exactly 1'
+                           % (window, len(hits)))
+        hits = [hits[0] + len(window) - 1]
+        # the first instruction of a hunk is usually an ordinary move-result, so the
+        # proof that the port already happened is the marker the customization
+        # leaves behind: a label it defines, or a call into com.box.app
+        markers = {line.strip() for line in insert
+                   if re.fullmatch(r'\s*:[A-Za-z_][\w]*', line)}
+        markers |= {line.strip() for line in insert if 'Lcom/box/' in line}
+        if markers and any(line.strip() in markers for line in target_body):
+            return False, 'reviewed placement is already applied'
+        # a label the inserted code defines may not exist yet, and a label it jumps
+        # to has to belong to the target method unless the insert itself provides it
+        defined = {line.strip() for line in insert if re.fullmatch(r'\s*:[A-Za-z_][\w]*', line)}
+        existing = {line.strip() for line in target_body}
+        for label in sorted(defined):
+            if label in existing:
+                return False, 'reviewed placement label is already taken: ' + label
+        jumped = {match.group(0) for line in insert if line.strip().startswith(('goto', 'if-'))
+                  for match in re.finditer(r':[A-Za-z_][\w]*', line)}
+        for label in sorted(jumped - defined):
+            if label not in existing:
+                return False, 'reviewed placement jumps to an unknown label: ' + label
+        body = list(target_body)
+        # a hunk that REPLACED upstream instructions cannot be expressed as an
+        # insertion alone: the reviewed anchor names the instruction the replaced
+        # block follows, and pruneAfter says how many of the target's own
+        # instructions the reviewed block stands in for.  Counting from the anchor
+        # keeps this independent of how the surrounding code was scheduled.
+        anchor_at = hits[0] + 1
+        prune = int(placement.get('pruneAfter', 0))
+        if placement.get('replaceAnchor'):
+            # the reviewed block stands in for the anchor instruction itself
+            anchor_at = hits[0] - len(window) + 1
+            prune += len(window)
+        if prune:
+            # count significant instructions, not raw lines: Apktool leaves the
+            # .line bookkeeping between them, and deleting it would shift the
+            # debug info of everything that follows
+            start = anchor_at
+            seen, end = 0, start
+            while end < len(target_body) and seen < prune:
+                if significant(target_body[end]):
+                    seen += 1
+                end += 1
+            if seen < prune:
+                return False, 'reviewed placement has nothing to prune at its anchor'
+            audit_prune.append([line.strip() for line in target_body[start:end] if significant(line)])
+            del body[start:end]
+        body[anchor_at:anchor_at] = insert
     needed = placement.get('registers')
     if needed:
         index, current = get_locals(body)
@@ -548,11 +581,38 @@ def apply_reviewed_placement(placement, target, target_body, path, target_sig, a
     if not replace_block(path, target_sig, new_block):
         return False, 'reviewed placement could not replace the method block'
     audit.append({'old': placement['plan'], 'new': placement.get('evidence', ''),
-                  'placement': True, 'anchor': window, 'inserts': len(insert),
+                  'placement': True, 'method': target_sig,
+                  'replace': bool(placement.get('replace')),
+                  'anchor': placement.get('anchor'), 'inserts': len(insert),
                   'pruned': [line for group in audit_prune for line in group]})
-    MANUAL_HITS['placement: ' + placement['plan']] += 1
+    MANUAL_HITS[placement_key(placement)] += 1
     return True, {'inserts': len(insert), 'deletes': 0,
                   'unmappedRegisters': [], 'alignment': 1.0}
+
+
+def apply_reviewed_placements(placements, path, default_sig, audit):
+    """Apply every reviewed region this coverage entry owns, in the reviewed order.
+
+    A customization can touch two distant regions of one method, and R8 can split
+    a method so that the region lands in a sibling of the mapped target; each
+    region is therefore reviewed on its own, with an optional ``target.method``
+    naming the method it belongs to now.  The placements are applied one after
+    another, each on the body the previous one produced, so two regions of the
+    same method compose instead of fighting over the same block.
+    """
+    total = 0
+    for placement in placements:
+        sig = (placement.get('target') or {}).get('method', default_sig)
+        target = find_block(path, sig)
+        if target is None:
+            return False, ('the reviewed placement names %s as the method it belongs to, '
+                           'and that method is not in %s' % (sig, path.name))
+        ok, result = apply_reviewed_placement(placement, target, target.splitlines()[1:-1],
+                                               path, sig, audit)
+        if not ok:
+            return False, result
+        total += result['inserts']
+    return True, {'inserts': total, 'deletes': 0, 'unmappedRegisters': [], 'alignment': 1.0}
 
 
 def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, audit):
@@ -587,12 +647,14 @@ def patch_method(plan, mapper, old_root, custom_root, out_root, r_old, r_new, au
     # that one method, because a delta taken out of a differently scheduled
     # method can align just as well one instruction later - and an inserted
     # branch that lands after a `move-result` reads a register that no longer
-    # holds what the branch expects.  The anchor, not the score, decides.
-    placement = next((item for item in PINS['placements']
-                      if plan['old'].startswith(item['plan'])), None)
-    if placement:
-        return apply_reviewed_placement(placement, target, target_body,
-                                        out_root / plan['targetFile'], target_sig, audit)
+    # holds what the branch expects.  The anchor, not the score, decides.  A
+    # method the customization changed in two places carries two placements, and
+    # they are applied in the reviewed order.
+    placements = [item for item in PINS['placements']
+                  if plan['old'].startswith(item['plan'])]
+    if placements:
+        return apply_reviewed_placements(placements, out_root / plan['targetFile'],
+                                         target_sig, audit)
 
     # The customized "unrestricted battery" row sits in the 171 auto-start
     # service page (eu0 case3).  The 176 upstream removed that case from the
@@ -3035,11 +3097,16 @@ def main():
     for name in sorted(CHECKS):
         if not report.get('checked_' + name, 1):
             report['errors'].append('CHECK ' + name + ': did not run')
-    for placement in PINS['placements']:
-        name = 'placement: ' + placement['plan']
-        if MANUAL_HITS.get(name, 0) != 1:
-            report['errors'].append('PLACEMENT %s: expected 1 hit(s) but got %d'
-                                    % (placement['plan'], MANUAL_HITS.get(name, 0)))
+    expected_regions = collections.Counter(placement_key(item) for item in PINS['placements'])
+    # the placements are the rules that actually ran on this hop, so the report
+    # carries their fire counts; manualHits below only ever lists the legacy
+    # 176-era rules, which are deliberately inactive here
+    report['placementHits'] = {name: MANUAL_HITS.get(name, 0)
+                               for name in sorted(expected_regions)}
+    for name, count in sorted(expected_regions.items()):
+        if MANUAL_HITS.get(name, 0) != count:
+            report['errors'].append('PLACEMENT %s: expected %d hit(s) but got %d'
+                                    % (name, count, MANUAL_HITS.get(name, 0)))
     for name, expected in EXPECTED_MANUAL_HITS.items():
         if name not in ACTIVE_RULES:
             continue

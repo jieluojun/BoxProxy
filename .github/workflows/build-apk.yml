@@ -1,7 +1,7 @@
 name: Build APK
 
 # 构建 214 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
-#   pinned 171 -> 194（定制增量来源）-> reviewed 194 -> 214 port -> reference scan -> apktool b -> align/sign/upload
+#   pinned 171 -> 194（定制增量来源）-> reviewed 194 -> 214 port -> custom-hunk gate + reference scan -> apktool b -> align/sign/upload
 # Apktool 2.9.3 必须与 pinned snapshot 一致；升级时需重新反编译并同步 sha256。
 
 on:

@@ -30,6 +30,8 @@
     "coverageExclusions": "migration/coverage-exclusions.json",
     "portReport": "migration/port-report.json",
     "requiredClasses": "migration/required-classes.json",
-    "notes": "51 of 51 coverage entries replayed clean (references, labels, move-result, branch offsets, register moves, register flow, return types); the battery toggle row is withheld, see migration/coverage-exclusions.json; verify_214_custom_hunks.py still carries 194-era expectations."
+    "notes": "51 of 51 coverage entries replayed clean (references, labels, move-result, branch offsets, register moves, register flow, return types); the battery toggle row is withheld, see migration/coverage-exclusions.json. The custom hunks are gated by migration/hunk-contracts.json plus scripts/verify_214_custom_hunks.py, which re-derives every entry from the 194 delta (instruction shape, payload literals, the reviewed splice recomputed from the 214 upstream, the register/encoding law, the contracts, the custom-only surfaces) and is enforced by scripts/migrate_214.py; scripts/selftest_214_hunk_gate.py corrupts one reviewed property at a time to prove the gate goes red.",
+    "hunkContracts": "migration/hunk-contracts.json",
+    "hunkGate": "scripts/verify_214_custom_hunks.py"
   }
 }

@@ -12,8 +12,12 @@
 - [171 完整迁移计划](upstream/26.11.16.25abc84/migration/full.json)
 - [214 迁移输入](upstream/26.11.23.aa98568/migration/)：`class-map.json`（7128 类，一对一）、
   `class-map-review.json`（10 处人工修正及其证据）、`coverage.json`（51 个方法 + 1363 个新增文件 +
-  1 项明示撤回）、`manual-pins.json`（13 个成员 pin、2 个字段 pin、2 个新增字段、4 处人工落位）、
-  `delta-gaps.json`（引用审计结果）
+  1 项明示撤回）、`manual-pins.json`（13 个成员 pin、2 个字段 pin、2 个新增字段、8 处人工落位：
+  4 处锚点插入、2 处整方法重写、2 处落在同族兄弟方法）、`hunk-contracts.json`（9 条无法用形状比较表达的
+  规则）、`delta-gaps.json`（引用审计结果）
+- 定制 hunk 的验收门：`scripts/verify_214_custom_hunks.py` 从 194 增量重新推导每个条目（指令形状、载荷字面量、
+  按 214 上游重算的人工落位、寄存器/编码法则、契约、仅定制面），由 `scripts/migrate_214.py` 强制执行；
+  `scripts/selftest_214_hunk_gate.py` 逐条破坏一项已评审属性，证明这道门会变红而不是空转
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ## 本地构建
@@ -22,6 +26,7 @@
 复现 171 → 194 定制树作为增量来源，全过程只读仓库内已提交的输入。`scripts/build.sh` 不带参数时仍默认构建 139 的 `decompiled/`。
 
 ```sh
+# 加 --gate-selftest 会额外逐条破坏一项已评审属性，确认验收门确实会变红
 python3 scripts/migrate_214.py --output .tools/local-214
 PROJECT_DIR=.tools/local-214/decompiled \
   OUT_DIR=.tools/local-214-build bash scripts/build.sh

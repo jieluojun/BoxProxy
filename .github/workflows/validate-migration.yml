@@ -170,7 +170,12 @@ jobs:
           if [[ -f .tools/ported-214/decompiled/apktool.yml ]]; then
             echo ">> pinned 214 migration restored from cache"
           else
-            python3 scripts/migrate_214.py --output .tools/ported-214
+            # migrate_214.py enforces the custom-hunk gate inside the migration;
+            # --gate-selftest additionally corrupts one reviewed property at a time
+            # and requires the gate to report it.  A cache hit skips both, which is
+            # sound because the cache key below covers scripts/** and both pinned
+            # snapshots, i.e. every input the gate reads.
+            python3 scripts/migrate_214.py --output .tools/ported-214 --gate-selftest
           fi
           version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' .tools/ported-214/decompiled/apktool.yml | head -n 1 | tr -d '\r')"
           version_code="$(sed -n 's/^  versionCode:[[:space:]]*//p' .tools/ported-214/decompiled/apktool.yml | head -n 1 | tr -d '\r')"

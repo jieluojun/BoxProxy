@@ -1,28 +1,89 @@
 #!/usr/bin/env python3
-"""Verify that every 171 customization hunk survived the 171 -> 176 port.
+"""Verify that every 194 customization hunk survived the 194 -> 214 port.
 
-The port applies the difference between the 171 upstream tree and the 171
-customized tree onto the 176 upstream tree.  A text/LCS driven patcher can
-mis-anchor a hunk, split one hunk into several, or drop it entirely while
-still producing a tree that assembles and passes a reference check.
+The porter replays the difference between the 194 upstream tree and the 194
+customized tree onto the 214 upstream tree.  An alignment-driven patcher can
+mis-anchor a hunk, split one hunk into several, silently renumber a register
+window, or drop a hunk entirely while still producing a tree that assembles and
+passes the reference checkers.  The seven ``check_smali_*`` checkers prove the
+tree is *well formed*; they cannot prove it is *the intended customization*.
 
-This script therefore compares the *shape* of the change instead of its
-position:
+This script proves the second half.  It carries no release names of its own:
+every expectation about the upstream is read from the reviewed inputs of the hop
+(``migration/coverage.json``, the resolved maps, ``manual-pins.json`` and
+``hunk-contracts.json``), so the same file gates the next release once its
+``migration/`` directory exists.  What it does name outright is the custom
+surface - the helper scripts and ``com.box.app`` classes this project ships and
+therefore owns (gate 6) - because those are not re-derived per release: a copy
+step can break them, so their invariants are asserted here, not by a diff.
 
-*   the canonical instruction sequence of the 171 upstream method,
-*   the canonical instruction sequence of the 171 customized method,
-*   the canonical instruction sequence of the 176 upstream method,
-*   the canonical instruction sequence of the migrated 176 method.
+Gate 1 - shape parity.  For each coverage entry, the canonical instruction
+shapes that ``194 upstream -> 194 customized`` inserted (and removed) must
+appear, in the same order and multiplicity, as the shapes that ``214 upstream
+-> migrated 214`` inserted (and removed).  Canonicalization normalizes every
+type, member and field reference to a placeholder and every register to ``r``,
+so a hunk counts as preserved only when its instruction shapes really match.
 
-The inserted instructions of ``171 upstream -> 171 customized`` must appear,
-in the same order and with the same multiplicity, as the inserted
-instructions of ``176 upstream -> migrated 176`` once every type, member and
-field reference has been rewritten to the 176 name space.
+Gate 2 - literal parity.  Shape canonicalization hides the one thing that
+actually carries the feature's meaning: its constants.  Every string payload,
+integer constant and ``Lcom/box/`` reference the 194 hunk adds or removes must
+be added or removed the same way in 214.  This is the gate that catches a
+reviewed insert whose text drifted from the reviewed source - a mistyped asset
+regex assembles, passes every reference checker, builds, installs, and then
+matches no release at run time.
 
-Canonicalization normalizes every reference to a placeholder and every
-register to ``r``, so a hunk only counts as preserved when its instruction
-shapes really match.
+Gate 3 - placement fidelity.  A reviewed placement in ``migration/manual-pins.json``
+states where a hunk belongs, and the verifier recomputes the splice from the 214
+upstream tree, requiring the migrated method to be exactly it, line for line,
+after the file's scoped fixups.  Five reviewed shapes cover what this hop needs:
+``anchor`` + ``insert`` (a unique instruction the block follows), ``pruneAfter``
+(the reviewed block stands in for the target's own instructions there),
+``replaceAnchor`` (it stands in for the anchor instruction itself, which is how a
+hunk that rewrote one instruction of a long method is expressed), ``replace``
+(the reviewed list *is* the method body, for a small method the customization
+rewrote as a whole while the release edited the same method on its own), and
+``registers`` (the frame the reviewed block needs, grown explicitly because a
+hunk that adds elements to an array has to grow the frame with it, which no text
+splice can infer).  ``target.method`` names the method the region belongs to when
+this release moved it into a sibling of the mapped method, and a placement may
+declare ``relocated``: literals the 194 hunk contributed to the mapped method and
+that this release cannot carry there are then required in the method named
+instead, so the exemption is itself checked.  A placement is a reviewed
+*position*, never a reviewed *result*: the porter cannot drift away from it, and
+the pins file cannot drift away from the 194 hunk, which gate 2 proves.
+
+The frame gate compares the *difference* the 194 hunk made (``.locals``, array
+window arities, array build counts, slot collisions, self-clobbered
+initializers) with the difference the port made, because absolute counts mean
+nothing on R8 output.  An entry whose hunks are reviewed placements is exempt
+here: gate 3 already pins those bodies line for line and gate 4 bounds their
+registers, so re-deriving a frame delta for them would only restate the pins.
+Every other entry is held to it - that is the gate that catches a splice growing
+a list without growing the frame or the array that collects it.
+
+Gate 4 - the smali encoding law.  The Dalvik 35c/35ms, 12x, 22t and const/4
+encodings address only v0-v15, so a scratch register above v15 needs the
+``/range``, ``/from16`` or 8-bit form; smali rejects the difference and only
+``apktool b`` notices.  The gate also requires every register a touched method
+reads to fit in ``.locals`` plus the parameter words.
+
+Gate 5 - contracts.  The rules a hunk-shape comparison cannot express live in
+``migration/hunk-contracts.json``: cross-file expectations (the core registry
+keeps its order), absence expectations (a relocated row left no residue),
+declaration uniqueness, call sites, resource ids, and feature invariants whose
+own host moved out of the coverage set.  A contract names its anchor in 194
+terms - a class, a method, a field, a needle - and the verifier resolves it
+into 214 through the very class map the porter used, translating every
+``L…;`` token inside a needle the same way and matching registers by shape
+rather than by number.  Only where the map cannot name the owner (an R8 facade)
+does a contract carry a reviewed ``on214`` override, with its evidence.
+
+Gate 6 - custom-only surfaces.  The customization's own assets, helper scripts
+and ``com.box.app`` classes are copied, not ported, but they carry invariants
+that a copy step can break (the IPv6 pump tagging, the root boot script, the
+VPN helper's home healing), so they are re-checked against the built tree.
 """
+
 import argparse
 import collections
 import difflib
@@ -32,1019 +93,1133 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from port_194_candidate import (Mapper, public_map, sig_lines, find_block,
-                               check_core_version_rules_whitelist)
+from port_214_candidate import (Mapper, get_locals, method_blocks, parameter_words,
+                               public_map, sig_lines)
 
-ANDROID_TYPES = re.compile(r'^L(?:java|android|kotlin|javax|junit|org/json|org/xml)/')
-METHOD_RE = re.compile(r'^\.method.*?^\.end method', re.M | re.S)
+# --------------------------------------------------------------------------------------
+# shared parsing helpers
+# --------------------------------------------------------------------------------------
 
-# The 176 upstream forces two of the 171 hunks to differ in shape.  Every
-# entry documents why the instruction shapes cannot match and names the
-# checks that replace the shape comparison for that hunk.
-ALLOWED_DIFFERENCES = {
-    'Lk;->u(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;': {
-        'reason': 'the 194 k.a method inlined the 176 k.y menu builder into a '
-                  '.locals 44 frame and the restore rule bumps it to 48; the '
-                  'non-range invoke and filled-new-array forms cannot encode '
-                  'the v44-v47 locals, so the restore item is assembled with '
-                  'contiguous range forms and a move cascade (checked by '
-                  'check_restore_menu_range_form)',
-        'checks': ['restore_menu_range_form'],
-    },
-    'Lzu5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;': {
-        'reason': 'the CfgNav.wrap hooks arrive from the 171 frame where '
-                  'they wrapped the freshly created scene holder (x65, an '
-                  'l92) with a Context read from the typed zu5.l field; '
-                  'the 194 sv5 has no Context field and its Object slot u '
-                  'carries a String, so the hooks take the Context from '
-                  'the stock narrowed registers (v8/v29) instead and wrap '
-                  'the vv5 holder in place (checked by '
-                  'cfgnav_wrap_narrowing)',
-        'checks': ['cfgnav_wrap_narrowing'],
-    },
-    'Lpd1;->d(Ljava/io/File;Lda1;)Ljava/lang/Object;': {
-        'reason': 'the 176 upstream moved the core version probe into the Lxe1 '
-                  'coroutine, so the 171 shell hunk has no counterpart to be '
-                  'transplanted into; the port reimplements the 171 probe for '
-                  '176 and runs it through the 176 shell executor',
-        'checks': ['core_version_probe'],
-    },
-    'Lpd1;->g(Ljava/lang/String;Lda1;)Ljava/lang/Object;': {
-        'reason': 'the 176 upstream removed the direct release URL lookup, so '
-                  'the port routes the DingTalk release through the 176 '
-                  'Lsb1.c(repo, tag, ctx)',
-        'checks': ['dingtalk_release_lookup'],
-    },
-    'Leu0;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;': {
-        'reason': 'the 176 upstream dropped the171 case3 auto-start service '
-                  'page from this compose factory and moved the page into its '
-                  'own wq4 class, so the customized battery row cannot be '
-                  'inserted into iu0.a at all; the port relocates the row '
-                  'into wq4.a (checked by check_176_contracts) and this check '
-                  'only proves that iu0.a carries no residue of it',
-        'checks': ['battery_row_relocated_out_of_iu0'],
-    },
-    'Luu0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;': {
-        'reason': 'the 171 dynamic core install bypassed the generic updater '
-                  'entry filter (the pd1 branch went straight to the '
-                  'prefix-tolerant r6.l extractor), so the reviewed 171 diff '
-                  'carries no counterpart for relaxing the 176 filter; the '
-                  'port adds a "<core>-<suffix>" fallback to the j-blank '
-                  'branch of the 176 entry filter because the jieluojun '
-                  'sing-box tarballs store the binary under its full release '
-                  'name',
-        'checks': ['entry_filter_prefix'],
-    },
-    'Lqc0;->f(Lda1;)Ljava/lang/Object;': {
-        'reason': 'the assembled root boot script execs "$boxctl" bare '
-                  'while only the /storage/emulated/* branch chmod\'d its '
-                  'variant, so a stale no-x files/box/bin/boxctl failed '
-                  'with EACCES even for root; and run_dir was mkdir\'d '
-                  'as root, blocking the app-uid VPN from creating '
-                  'box/run/mihomo.log. The migrated script now chmods '
-                  'the exec target unconditionally and chowns run_dir '
-                  'to the app data dir owner (checked by '
-                  'root_boot_script_hardening)',
-        'checks': ['root_boot_script_hardening'],
-    },
-    'Lqc0;->k()Lfc0;': {
-        'reason': 'the reviewed 171 diff replaced the private getFilesDir '
-                  'base with an unconditional Android/data external base, but '
-                  'the reviewed final decision keeps the private files '
-                  'directory for BOTH modes: a granted root always used it '
-                  '(the stock BoxProxy layout) and the no-root mode moves '
-                  'off Android/data onto the same private tree, so the port '
-                  'drops the external-first transplant entirely and keeps '
-                  'the stock target head; the custom and migrated shapes '
-                  'cannot match because the custom carries the external arm '
-                  'the migrated method must not have',
-        'checks': ['private_working_directory'],
-    },
-}
-
-# The 171 core version probe script, byte for byte, as the 171 customization
-# stores it in the probe string.
-CORE_PROBE_MARKERS = (
-    'core_path=\\"$core\\"',
-    '/storage/emulated/*)',
-    '_real_core=\\"/data/media/${core_path#/storage/emulated/}\\"',
-    'chmod 755 \\"$_real_core\\"',
-    'bpld \\"$(dirname \\"$core_path\\")\\" \\"$_bp_seed\\"',
-    'LD_LIBRARY_PATH=\\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\\"',
-    "_version_args='version --version -v'",
-    "_version_args='-version version --version -v'",
-    "_version_args='--version -v version'",
-)
-
-# The 171 archive matcher accepts a "<core>-<suffix>" archive whose payload
-# is at least 1 MiB.
-ARCHIVE_MATCHER_MARKERS = (
-    'invoke-virtual {p1, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;',
-    'invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z',
-    'const-wide/32 v6, 0x100000',
-    'cmp-long v6, v4, v6',
-)
+STRING_RE = re.compile(r'^const-string(?:/jumbo)? +\S+, +"((?:[^"\\]|\\.)*)"')
+INT_RE = re.compile(r'^const(?:/4|/16|/32|/high16)? +\S+, +(-?0x[0-9a-fA-F]+|-?\d+)')
+WIDE_RE = re.compile(r'^const-wide(?:/16|/32)? +\S+, +(-?0x[0-9a-fA-F]+)')
+BOX_RE = re.compile(r'Lcom/box/[A-Za-z0-9_/$-]+;(?:->[A-Za-z0-9_$<>-]+)?')
+TYPE_TOKEN_RE = re.compile(r'\[[A-Z]|L[^;]+;|[ZBCSIFJ]')
+DEBUG_PREFIXES = ('.line ', '.local ', '.end local ', '.restart local ',
+                  '.param ', '.end param ', '.source ', '.prologue')
 
 
-def method_text(path, signature):
-    block = find_block(path, signature)
-    return '' if block is None else block
+def is_code(line):
+    """True for a line the dex encoder sees (no debug bookkeeping)."""
+    code = line.strip()
+    return bool(code) and not code.startswith('.') and not code.startswith('#')
 
 
-def require(migrated_text, needles, label, problems, name):
-    for needle in needles:
-        if needle not in migrated_text:
-            problems.append((name, '%s: %r is missing' % (label, needle)))
+def code_lines(text):
+    return [line.strip() for line in text.splitlines() if is_code(line)]
 
 
-def forbid(migrated_text, needles, label, problems, name):
-    for needle in needles:
-        if needle in migrated_text:
-            problems.append((name, '%s: %r must not appear' % (label, needle)))
-
-
-def check_core_version_probe(custom, migrated, problems, name):
-    """The 176 core version probe keeps the whole 171 customization."""
-    require(migrated, CORE_PROBE_MARKERS, 'probe script', problems, name)
-    require(migrated, (
-        'invoke-static {p0}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;',
-        'invoke-static {p0}, Lcn6;->m0(Ljava/lang/String;)Ljava/lang/String;',
-        'invoke-static {p1, p2, v0, p0}, Lto5;->f(JLea1;Ljava/lang/String;)Ljava/lang/Object;',
-        'check-cast p0, Lko5;',
-    ), 'probe wiring', problems, name)
-    # In 194 the stock ke1.d legitimately calls the te1 version coroutine,
-    # so there is no superseded host reference to forbid here.
-    # The probe script itself has to be the one the 171 customization used.
-    script = None
-    for line in custom.splitlines():
-        stripped = line.strip()
-        if stripped.startswith('const-string p0, "') and 'core_path=' in stripped:
-            script = stripped
-            break
-    if script is None:
-        problems.append((name, 'the 171 customization no longer carries a probe script'))
-    elif script not in migrated:
-        problems.append((name, 'the 171 probe script was not carried over unchanged'))
-
-
-def check_dingtalk_release_lookup(custom, migrated, problems, name):
-    """The DingTalk release lookup uses the 176 release API."""
-    require(migrated, (
-        'const-string v0, "jieluojun/mihomo"',
-        'const-string v1, "Prerelease-Alpha"',
-        'Lrb1;->c(Ljava/lang/String;Ljava/lang/String;Lfa1;)Ljava/lang/Object;',
-    ), 'release lookup', problems, name)
-    forbid(migrated, (
-        'https://api.github.com/repos/jieluojun/mihomo/releases/tags/Prerelease-Alpha',
-    ), 'removed release URL', problems, name)
-
-
-def check_entry_filter_prefix(custom, migrated, problems, name):
-    """The j-blank entry filter falls back to "<core>-<suffix>" prefixes.
-
-    The jieluojun sing-box tarballs store the binary under its full release
-    name ("sing-box-<version>-android-arm64-v8a-ebpf"), so an exact basename
-    comparison never matches; the filter must keep the exact check first and
-    then accept a "<core>-" prefixed basename, mirroring the 171 archive
-    matcher.  The probe wrapper in the same method is asserted by
-    check_176_contracts.
-    """
-    require(migrated, (
-        'invoke-virtual {v14, v9}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z',
-        'move-result v10',
-        'if-nez v10, :boxproxy_entry_match',
-        'const-string v10, "-"',
-        'invoke-virtual {v9, v10}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;',
-        'move-result-object v10',
-        'invoke-virtual {v14, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z',
-        'if-eqz v10, :cond_47',
-        ':boxproxy_entry_match',
-    ), 'entry filter prefix fallback', problems, name)
-    # The exact comparison has to stay the first guard: the prefix path may
-    # only run when the basename is not already equal to the core name.
-    exact = migrated.find(
-        'invoke-virtual {v14, v9}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z')
-    fallback = migrated.find('if-nez v10, :boxproxy_entry_match')
-    if not (0 <= exact < fallback):
-        problems.append((name,
-                         'entry filter prefix fallback: the exact basename '
-                         'comparison no longer guards the prefix path'))
-
-
-def check_private_working_directory(custom, migrated, problems, name):
-    """uc0.k builds the box/ tree from the private files dir in both modes.
-
-    The reviewed decision keeps the stock BoxProxy base: root and no-root
-    alike run from getFilesDir() (box.db via jb0.a, bin/run/state,
-    boxctl/boxbpf all derive from this one builder), and nothing in the
-    method may reach for the Android/data external directory or for the
-    discarded sticky decision (uc0.g/uc0.h, the box_dir preferences, the
-    PATH su scan) again.
-    """
-    for forbidden in ('getExternalFilesDir', 'box_dir', '"PATH"',
-                      'Lvc0;->g:Z', 'Lvc0;->h:Z', ':box_dir_'):
-        if forbidden in migrated:
-            problems.append((name,
-                             'private working directory: %r must not appear '
-                             'in vc0.k' % forbidden))
-    match = re.search(r'\.method public static k\(\)Llc0;\n(.*?)\.end method',
-                      migrated, re.S)
-    if not match:
-        problems.append((name, 'private working directory: vc0.k() is missing'))
-        return
-    block = match.group(1)
-    required = (
-        'invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;',
-        'const-string v2, "box"',
-        'new-instance v1, Ljava/io/File;',
-        'invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V',
-    )
-    for needle in required:
-        if needle not in block:
-            problems.append((name,
-                             'private working directory: %r is missing from '
-                             'vc0.k' % needle))
-    # The historic VerifyError guard still applies to the straight-line
-    # stock head: v1 is allocated first, the base is resolved before the
-    # literal, and File.<init> runs last with registers both already held.
-    body_lines = [line.strip() for line in block.splitlines()]
-    order = [
-        'new-instance v1, Ljava/io/File;',
-        'invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;',
-        'const-string v2, "box"',
-        'invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V',
-    ]
-    positions = []
-    for needle in order:
-        hits = [i for i, line in enumerate(body_lines) if line == needle]
-        if not hits:
-            return  # already reported as missing above
-        positions.append(hits[0])
-    if positions != sorted(positions):
-        problems.append((name,
-                         'private working directory: the allocation, the '
-                         'stock base, the literal and File.<init> are out '
-                         'of order: %r' % positions))
-    if body_lines.count(order[1]) != 1:
-        problems.append((name,
-                         'private working directory: expected exactly one '
-                         'getFilesDir base in vc0.k'))
-
-
-def check_battery_row_relocated_out_of_iu0(custom, migrated, problems, name):
-    """The171 battery row belongs to the page iu0.a no longer hosts.
-
-    ``custom`` is the customized 171 eu0.a, ``migrated`` the migrated iu0.a.
-    The row itself is asserted inside wq4.a by ``check_176_contracts``; here
-    only the absence from iu0.a is proven, so a future regression that
-    re-runs the generic delta against iu0.a fails even if the wq4 row is
-    still present.
-    """
-    require(custom, ('BattToggle', 'VpnPrefs;->battOn()Z'),
-            '171 battery row', problems, name)
-    forbid(migrated, ('BattToggle', '0x13f2fb70', 'VpnPrefs;->battOn()Z'),
-           'relocated battery row residue', problems, name)
-
-
-def check_restore_menu_range_form(custom, migrated, problems, name):
-    """The 194 inlined k.a frame keeps the menu pair in the bumped v44-v47
-    locals; non-range invoke and filled-new-array cannot encode registers
-    above v15, so the restore item must be assembled through contiguous
-    range forms with the move-object cascade."""
-    if 'invoke-direct/range {v44 .. v46}, Lnw4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V' not in migrated:
-        problems.append((name, 'restore pair is not built with the reviewed range form'))
-    if 'filled-new-array/range {v44 .. v47}, [Lnw4;' not in migrated:
-        problems.append((name, 'restore array is not built with the reviewed range form'))
-    if migrated.count('move-object/from16 v44, v3') != 1:
-        problems.append((name, 'restore array window cascade is missing'))
-
-
-def check_cfgnav_wrap_narrowing(custom, migrated, problems, name):
-    """Both CfgNav.wrap hooks must wrap the freshly created vv5 holder and
-    return the result into the same slot (ja2 implements ra2, so the
-    factory's ra2 parameter accepts it). The Context must come from the
-    stock's own narrowed registers - check-cast v8 before site 1 and
-    check-cast v29 before site 2 - never from sv5.u, whose Object slot
-    carries a String at runtime and would throw ClassCastException."""
-    if migrated.count(
-            'invoke-static/range {v14 .. v16}, Lcom/box/app/cfg/CfgNav;->wrap(') != 2:
-        problems.append((name, 'expected exactly both CfgNav.wrap hooks'))
-    if migrated.count(
-            'move-object/from16 v14, v7\nmove-object/from16 v15, v1\n'
-            'move-object/from16 v16, v8\n') != 1:
-        problems.append((name, 'site 1 does not wrap the v7 holder with v1/v8'))
-    if migrated.count(
-            'move-object/from16 v14, v6\nmove-object/from16 v15, v1\n'
-            'move-object/from16 v16, v29\n') != 1:
-        problems.append((name, 'site 2 does not wrap the v6 holder with v1/v29'))
-    for holder in ('v7', 'v6'):
-        if ('Lcom/box/app/cfg/CfgNav;->wrap(Lja2;Lfw5;Landroid/content/Context;)Lja2;\n'
-                'move-result-object ' + holder) not in migrated:
-            problems.append((name, 'the wrap result does not return to the ' + holder + ' holder slot'))
-    if 'Lsv5;->u:Ljava/lang/Object;\ncheck-cast v13, Landroid/content/Context;' in migrated:
-        problems.append((name, 'the hook still reads the Context from sv5.u (a String slot)'))
-    for stale in (
-            'move-object/from16 v15, v7\nmove-object/from16 v16, v4',
-            'move-object/from16 v14, v6\nmove-object/from16 v15, v0',
-            'move-object/from16 v15, v0\nmove-object/from16 v16, v4',
-            'move-result-object v41\nmove-object/from16 v14',
-            'move-result-object v42\nmove-object/from16 v14'):
-        if stale in migrated:
-            problems.append((name, 'a wrap hook still uses a stale frame'))
-
-
-def root_boot_script_hardening(custom_text, migrated_text, problems, name):
-    """The migrated root boot script must chmod the bare boxctl exec
-    target (root still needs one x bit; only the /storage/emulated/*
-    variant was chmod'd) and must chown box/run to the app data dir
-    owner (a root mkdir there blocked the app-uid VPN from creating
-    mihomo.log)."""
-    if 'esac\\n              chmod 755 \\"$boxctl\\" 2>/dev/null || true\\n              \\"$boxctl\\" $_bh' not in migrated_text:
-        problems.append((name, 'root boot execs boxctl without a chmod 755 first'))
-    if migrated_text.count('chown -R ') < 2 or '${db%/*}' not in migrated_text:
-        problems.append((name, 'root boot does not chown -R the box tree to the app data dir owner'))
-    if 'chown \\"$(stat -c %u:%g \\"${boxctl%%/files/*}\\"' not in migrated_text:
-        problems.append((name, 'root boot does not chown run_dir to the app data dir owner'))
-    if 'mkdir -p \\"$run_dir\\" 2>/dev/null || exit 1' not in migrated_text:
-        problems.append((name, 'root boot lost the run_dir mkdir'))
-
-
-def check_root_boot_hardening(output, problems):
-    """The assembled root boot script must chmod its bare boxctl exec
-    target (root still needs one x bit; only the /storage/emulated/*
-    variant was chmod'd) and must hand box/run to the app data dir owner
-    (a root mkdir there blocked the app-uid VPN from creating
-    mihomo.log)."""
-    exec_pat = '$_bh --db \\"$db\\" boot >> '
-    owner = None
-    for p in (output / 'smali').rglob('*.smali'):
-        text = p.read_text(errors='replace')
-        if exec_pat in text:
-            owner = p
-            break
-    if owner is None:
-        problems.append(('root_boot_hardening', 'no root boot script (bare boxctl exec) found'))
-        return
-    text = owner.read_text(errors='replace')
-    if 'esac\\n              chmod 755 \\"$boxctl\\" 2>/dev/null || true\\n              \\"$boxctl\\" $_bh' not in text:
-        problems.append((name_of(owner), 'root boot execs boxctl without a chmod 755 first'))
-    if text.count('chown -R ') < 2 or '${db%/*}' not in text:
-        problems.append((name_of(owner), 'root boot does not chown -R the box tree to the app data dir owner'))
-    if 'chown \\"$(stat -c %u:%g \\"${boxctl%%/files/*}\\"' not in text:
-        problems.append((name_of(owner), 'root boot does not chown run_dir to the app data dir owner'))
-
-
-def name_of(path):
-    return path.name
-
-
-def check_vpn_status_identity_tolerance(output, problems):
-    """The 194 status probe jn.O validates the box.identity file that only
-    a root-managed boxctl run writes; a VPN (no-root) session never
-    produces it, so O rejected every live core: the UI reported the
-    service stopped and the start action surfaced a detail-less generic
-    failure while the tunnel was actually up (171 had no identity
-    concept). The migrated probe must accept a missing/blank identity
-    (p6 null/blank returns true) while keeping the /proc checks."""
-    path = output / 'smali' / 'jn.smali'
+def block_of(root, file_name, signature):
+    path = root / file_name
     if not path.is_file():
-        problems.append(('vpn_status_identity_tolerance', 'jn.smali is missing'))
-        return
-    block = method_text(path, 'O(Ljava/lang/String;Ljava/lang/String;'
-                        'Lob1;Ljava/lang/String;Ljava/lang/String;'
-                        'Ljava/lang/String;Ljava/lang/String;'
-                        'Ljava/lang/String;Ljava/lang/Long;'
-                        'Ljava/lang/Long;J)Z')
-    if not block:
-        problems.append(('vpn_status_identity_tolerance',
-                         'the jn.O status probe is missing'))
-        return
-    require(block, (
-        'move/from16 p2, v2',
-        'if-eqz p6, :goto_2',
-        'if-eqz p6, :cond_0',
-        'Lbn6;->Q0(Ljava/lang/CharSequence;)Z',
-        'if-nez v9, :goto_2',
-        'if-nez v9, :cond_0',
-    ), 'identity tolerance', problems, 'vpn_status_identity_tolerance')
-    forbid(block, ('if-eqz p6, :cond_7',),
-           'identity gate', problems, 'vpn_status_identity_tolerance')
+        return None
+    return method_blocks(path.read_text(errors='replace')).get(signature)
 
 
-ALLOWED_CHECKS = {
-    'root_boot_script_hardening': root_boot_script_hardening,
-    'cfgnav_wrap_narrowing': check_cfgnav_wrap_narrowing,
-    'restore_menu_range_form': check_restore_menu_range_form,
-    'core_version_probe': check_core_version_probe,
-    'dingtalk_release_lookup': check_dingtalk_release_lookup,
-    'battery_row_relocated_out_of_iu0': check_battery_row_relocated_out_of_iu0,
-    'entry_filter_prefix': check_entry_filter_prefix,
-    'private_working_directory': check_private_working_directory,
-}
+RESOURCE_ID_RE = re.compile(r'^0x7f[0-9a-f]{6}$')
 
 
-def canonical(body, resources):
-    """Instruction shapes of a method body with all references normalized."""
-    result = []
-    for _, line, shape in sig_lines(body, resources, 'generic'):
-        result.append(shape)
+def literals(lines, resources=None):
+    """The constants and custom references a set of instructions carries.
+
+    The keys are plain ``kind:value`` strings so a reviewed tolerance can name
+    them straight from JSON: ``s:`` a const-string payload, ``i:``/``w:`` an
+    integer or wide constant in decimal, ``b:`` a reference into com.box.
+    """
+    result = collections.Counter()
+    for line in lines:
+        match = STRING_RE.match(line)
+        if match:
+            result['s:' + match.group(1)] += 1
+            continue
+        match = INT_RE.match(line)
+        if match:
+            text = match.group(1)
+            if resources is not None and RESOURCE_ID_RE.match(text.lstrip('-')):
+                # a resource id renumbers with every release, its name does not
+                named = resources.get(text if text.startswith('0x')
+                                       else '0x%08x' % int(text, 0))
+                if named is not None:
+                    result['@' + named] += 1
+                    continue
+            result['i:' + _number(text)] += 1
+            continue
+        match = WIDE_RE.match(line)
+        if match:
+            result['w:' + _number(match.group(1))] += 1
+        for ref in BOX_RE.findall(line):
+            result['b:' + ref] += 1
     return result
 
 
-def inserted_shapes(before, after):
-    """Instructions that the change from *before* to *after* introduced."""
+def _number(text):
+    return str(int(text, 0) if text.startswith(('-0x', '0x')) else int(text))
+
+
+def shapes(body, resources):
+    return [shape for _, _, shape in sig_lines(body, resources, 'generic') if shape]
+
+
+def delta(before, after):
+    """(inserted, removed) canonical shapes, or literals, of a change."""
     matcher = difflib.SequenceMatcher(None, before, after, autojunk=False)
-    added = []
-    for tag, _, _, j1, j2 in matcher.get_opcodes():
+    added, removed = [], []
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
         if tag in ('insert', 'replace'):
             added.extend(after[j1:j2])
-    return added
-
-
-def removed_shapes(before, after):
-    matcher = difflib.SequenceMatcher(None, before, after, autojunk=False)
-    removed = []
-    for tag, i1, i2, _, _ in matcher.get_opcodes():
         if tag in ('delete', 'replace'):
             removed.extend(before[i1:i2])
-    return removed
+    return added, removed
 
 
-def method_body(path, signature):
-    block = find_block(path, signature)
-    if block is None:
-        return None
-    return block.splitlines()[1:-1]
+# --------------------------------------------------------------------------------------
+# the 194 -> 214 resolver used by the contract gate
+# --------------------------------------------------------------------------------------
+
+class Resolver:
+    """Names the 214 counterpart of a 194 class, member, field or needle."""
+
+    def __init__(self, maps, old_root, new_root):
+        self.map = {category: {old: item['new'] for old, item in maps.get(category, {}).items()}
+                    for category in ('types', 'fields', 'members')}
+        self.mapper = Mapper({}, maps)
+        self.old_root, self.new_root = old_root, new_root
+        self._blocks = {}
+        self._files = {}
+
+    # ---- file lookup ------------------------------------------------------------
+    def path(self, root, descriptor):
+        if (root, descriptor) not in self._files:
+            name = descriptor[1:-1] + '.smali'
+            found = None
+            for directory in sorted(root.glob('smali*')):
+                candidate = directory / name
+                if candidate.is_file():
+                    found = candidate
+                    break
+            self._files[(root, descriptor)] = found
+        return self._files[(root, descriptor)]
+
+    def rel(self, root, descriptor):
+        path = self.path(root, descriptor)
+        return None if path is None else str(path.relative_to(root))
+
+    # ---- members ----------------------------------------------------------------
+    def blocks(self, root, descriptor):
+        key = (root, descriptor)
+        if key not in self._blocks:
+            path = self.path(root, descriptor)
+            self._blocks[key] = (method_blocks(path.read_text(errors='replace'))
+                                 if path is not None else {})
+        return self._blocks[key]
+
+    def type(self, descriptor):
+        return self.map['types'].get(descriptor, descriptor)
+
+    def member(self, old_class, old_signature, root=None):
+        """Return (new_class, new_signature, how) for a 194 member.
+
+        A direct hit in the reviewed member map wins.  Otherwise the member was
+        renamed with the release, so the parameter shape is compared inside the
+        mapped class: R8 keeps signatures stable per class even while it shuffles
+        the single-letter names.  When the release narrowed the signature as well,
+        only the primitive words and the object count are compared, which still
+        singles out the probe and helper methods the contracts point at.
+        """
+        direct = self.map['members'].get(old_class + '->' + old_signature)
+        if direct:
+            new_class, new_signature = direct.split('->', 1)
+            return new_class, new_signature, 'member-map'
+        new_class = self.type(old_class)
+        want = self.tokens(old_signature, translate=True)
+        returns = old_signature.rpartition(')')[2]
+        for how, strict in (('param-shape', True), ('primitive-shape', False)):
+            candidates = self.candidates(root or self.new_root, new_class, want,
+                                         returns, strict)
+            if len(candidates) == 1:
+                return new_class, candidates[0], how
+            if candidates:
+                return new_class, None, 'ambiguous %s: %s' % (how, candidates[:4])
+        return new_class, None, 'unresolved'
+
+    def tokens(self, signature, translate=False):
+        """The parameter types of a signature, mapped into 214 on request."""
+        inner = signature.partition('(')[2].rpartition(')')[0]
+        tokens = tuple(TYPE_TOKEN_RE.findall(inner))
+        if not translate:
+            return tokens
+        return tuple(self.map['types'].get(token, token) for token in tokens)
+
+    def candidates(self, root, new_class, want, returns, strict):
+        result = []
+        for signature in self.blocks(root, new_class):
+            got = self.tokens(signature)
+            if strict:
+                if got != want:
+                    continue
+            else:
+                if (tuple(token for token in got if len(token) == 1)
+                        != tuple(token for token in want if len(token) == 1)):
+                    continue
+                if len(got) - len([t for t in got if len(t) == 1]) != \
+                        len(want) - len([t for t in want if len(t) == 1]):
+                    continue
+            if signature.rpartition(')')[2] != returns:
+                continue
+            result.append(signature)
+        return result
+
+    def field(self, old_ref):
+        return self.map['fields'].get(old_ref)
+
+    def needle(self, pattern):
+        """Translate every reference in a reviewed needle into the 214 name space."""
+        return self.mapper.line(pattern)
+
+    def find(self, old_class, old_signature, contract, problems, where):
+        """Resolve a contract anchor, honouring a reviewed ``on214`` override."""
+        override = contract.get('on214') or {}
+        new_class = override.get('class')
+        new_signature = override.get('method')
+        how = 'reviewed override'
+        if not new_class:
+            new_class = self.type(old_class) if old_class else None
+            how = 'type-map'
+        if old_signature and not new_signature:
+            if old_class:
+                new_class, new_signature, resolved = self.member(old_class, old_signature)
+                how = resolved if new_signature else resolved
+            else:
+                new_signature, how = old_signature, 'literal'
+        if new_signature is None and not (contract.get('where') or {}).get('wholeClass'):
+            problems.append((where, 'cannot resolve the 214 counterpart (%s: %s); '
+                                    'add an on214 override with its evidence'
+                             % (how, new_class)))
+            return None, None, None
+        file_name = self.rel(self.new_root, new_class)
+        if override.get('file'):
+            file_name = override['file']
+        if file_name is None:
+            problems.append((where, 'the 214 class %s named by the %s resolution has no smali file'
+                             % (new_class, how)))
+            return None, None, None
+        return file_name, new_signature, how
 
 
-def significant(text):
-    """Instruction lines of a method without labels and debug directives."""
-    result = []
-    for line in text.splitlines():
-        code = line.strip()
-        if not code or code.startswith('.'):
+# --------------------------------------------------------------------------------------
+# pattern language of the contract gate
+# --------------------------------------------------------------------------------------
+
+REGISTER_TOKEN_RE = re.compile(r'\b[vp]\d+\b')
+
+
+def compile_needle(pattern):
+    """A reviewed needle becomes a register-agnostic regex.
+
+    Registers written as ``v12``/``p3`` match any register, because the frame a
+    release hands the customization is a property of that release.  ``*``
+    matches a run of any tokens.  Labels, literals and opcodes stay exact.
+    """
+    escaped = REGISTER_TOKEN_RE.sub('\x00', pattern)
+    body = '\x00'.join(re.escape(part) for part in escaped.split('\x00'))
+    body = body.replace(re.escape('*'), r'.*')
+    return re.compile(body)
+
+
+def lines_matching(text, pattern):
+    regex = compile_needle(pattern)
+    return [line for line in code_lines(text) if regex.search(line)]
+
+
+def require_lines(text, needles, resolver, label, problems, scope='block'):
+    for needle in needles:
+        mapped = resolver.needle(needle)
+        haystack = text if scope == 'file' else '\n'.join(code_lines(text))
+        if not lines_matching(haystack, mapped):
+            problems.append((label, 'missing: %s' % mapped))
+
+
+def forbid_lines(text, needles, resolver, label, problems, scope='block'):
+    for needle in needles:
+        mapped = resolver.needle(needle)
+        haystack = text if scope == 'file' else '\n'.join(code_lines(text))
+        hits = lines_matching(haystack, mapped)
+        if hits:
+            problems.append((label, 'forbidden: %s (found %r)' % (mapped, hits[0])))
+
+
+def check_order(text, groups, resolver, label, problems):
+    lines = code_lines(text)
+    for group in groups:
+        positions = []
+        usable = True
+        for needle in group:
+            mapped = resolver.needle(needle)
+            regex = compile_needle(mapped)
+            hits = [index for index, line in enumerate(lines) if regex.search(line)]
+            if len(hits) != 1:
+                problems.append((label, 'order anchor %s matches %d lines, need exactly 1'
+                                 % (mapped, len(hits))))
+                usable = False
+                break
+            positions.append(hits[0])
+        if usable and positions != sorted(positions):
+            problems.append((label, 'out of order: %s' % json.dumps(
+                [resolver.needle(needle) for needle in group])))
+
+
+def check_counts(text, expectations, resolver, label, problems):
+    lines = code_lines(text)
+    for needle, expected in expectations:
+        mapped = resolver.needle(needle)
+        regex = compile_needle(mapped)
+        found = sum(1 for line in lines if regex.search(line))
+        operator = str(expected)
+        if isinstance(expected, list):
+            operator, expected = expected[0], expected[1]
+        if operator == '==':
+            ok = found == expected
+        elif operator == '>=':
+            ok = found >= expected
+        elif operator == '<=':
+            ok = found <= expected
+        else:
+            raise ValueError('unknown count operator %r' % operator)
+        if not ok:
+            problems.append((label, 'count of %s is %d, expected %s %d'
+                             % (mapped, found, operator, expected)))
+
+
+def check_resources(text, spec, output, resolver, label, problems):
+    """Resource ids are reviewed by name, never by number."""
+    resources = public_map(output / 'res/values/public.xml')
+    by_name = {value: key for key, value in resources.items()}
+    lines = code_lines(text)
+    for entry in spec['named']:
+        name = entry['name'] if isinstance(entry, dict) else entry
+        pattern = entry['pattern'] if isinstance(entry, dict) else '"%s"' % name
+        resource = by_name.get(name)
+        if resource is None:
+            problems.append((label, '%s does not resolve in public.xml' % name))
             continue
-        result.append(code)
+        if not any(resource in line and compile_needle(pattern).search(line) for line in lines):
+            problems.append((label, 'the id %s of %s is not loaded by this method'
+                             % (resource, name)))
+
+
+def check_const_set(text, spec, label, problems):
+    """The const-strings of one shape, compared as a reviewed multiset.
+
+    ``exact`` requires the set to be identical; ``contains`` only requires every
+    reviewed constant to be present with its reviewed multiplicity, which is the
+    right reading when the release itself adds constants next to the ones the
+    customization owns.
+    """
+    regex = re.compile(spec['match'])
+    expect = collections.Counter(spec['expect'])
+    found = collections.Counter()
+    for line in code_lines(text):
+        match = STRING_RE.match(line)
+        if match and regex.fullmatch(match.group(1)):
+            found[match.group(1)] += 1
+    if spec.get('mode') == 'contains':
+        missing = expect - found
+        if missing:
+            problems.append((label, 'the reviewed constants are missing: %r'
+                             % dict(missing)))
+        return
+    if found != expect:
+        problems.append((label, 'const-string set differs: missing %r, extra %r'
+                         % (dict(expect - found), dict(found - expect))))
+
+
+def run_contract(contract, resolver, output, problems, old_root, custom_root, trace=None):
+    label = contract['id']
+    where = contract.get('where', {})
+    old_class, old_signature = where.get('class'), where.get('method')
+    file_name, new_signature, how = resolver.find(old_class, old_signature, contract,
+                                                   problems, label)
+    if file_name is None:
+        return 0
+    path = output / file_name
+    if not path.is_file():
+        problems.append((label, 'the migrated tree has no %s' % file_name))
+        return 0
+    if new_signature and not where.get('wholeClass'):
+        block = method_blocks(path.read_text(errors='replace')).get(new_signature)
+        if block is None:
+            problems.append((label, 'the migrated %s does not declare %s (resolved by %s)'
+                             % (file_name, new_signature, how)))
+            return 0
+        text = block
+    else:
+        text = path.read_text(errors='replace')
+    scope = 'file' if where.get('wholeClass') or not new_signature else 'block'
+    if trace is not None:
+        trace.append('%-30s %s -> %s  [%s]' % (label, old_class or '', new_signature or '', how))
+    seen = 1
+
+    require_lines(text, contract.get('require', []), resolver, label, problems, scope)
+    forbid_lines(text, contract.get('forbid', []), resolver, label, problems, scope)
+    check_order(text, contract.get('order', []), resolver, label, problems)
+    check_counts(text, contract.get('counts', []), resolver, label, problems)
+    if contract.get('constSet'):
+        check_const_set(text, contract['constSet'], label, problems)
+    if contract.get('resources'):
+        check_resources(text, contract['resources'], output, resolver, label, problems)
+
+    for spec in contract.get('headers', []):
+        signature = resolver.needle(spec['signature'])
+        declared = signature.partition('->')[2] or signature
+        signature = signature
+        pattern = re.compile(r'^\.method[^\n]*' + re.escape(declared) + r'\s*$', re.M)
+        owners, counted = [], 0
+        for candidate in sorted(output.rglob('*.smali')):
+            text = candidate.read_text(errors='replace')
+            if pattern.search(text.replace(declared, declared)):
+                counted += 1
+                owners.append(candidate)
+        expected = spec.get('exactly', 1)
+        if counted != expected:
+            problems.append((label, '%s is declared in %d class file(s), expected %d'
+                             % (signature, counted, expected)))
+        for role, key in (('declaredBy', 'declared'), ('referencedBy', 'reference')):
+            for owner in spec.get(role, []):
+                relative = resolver.rel(output, resolver.type(owner))
+                if relative is None:
+                    problems.append((label, 'the 214 owner %s of the contract has no smali file'
+                                     % owner))
+                    continue
+                path = output / relative
+                text = path.read_text(errors='replace')
+                if key == 'declared':
+                    if not pattern.search(text):
+                        problems.append((label, '%s no longer declares %s'
+                                         % (relative, declared)))
+                elif signature not in text:
+                    problems.append((label, '%s no longer references %s'
+                                     % (relative, signature)))
+
+        minimum = spec.get('minCallers')
+        if minimum is not None:
+            callers = [path for path in output.rglob('*.smali')
+                       if signature in path.read_text(errors='replace')]
+            if len(callers) < minimum:
+                problems.append((label, '%s is referenced by %d file(s), expected at least %d'
+                                 % (signature, len(callers), minimum)))
+    for spec in contract.get('declarations', []):
+        needle = resolver.needle(spec['declaration'])
+        found = []
+        for candidate in output.rglob('*.smali'):
+            if re.search(needle, candidate.read_text(errors='replace')):
+                found.append(candidate)
+        expected = spec.get('exactly')
+        if expected is not None and len(found) != expected:
+            problems.append((label, '%s is declared in %d files, expected %d'
+                             % (needle, len(found), expected)))
+        for owner in spec.get('owners', []):
+            owner_path = resolver.path(output, resolver.type(owner))
+            if owner_path not in found:
+                problems.append((label, 'the 214 call site or owner %s of %s is gone'
+                                 % (owner, needle)))
+    for spec in contract.get('fields', []):
+        owner = resolver.path(output, resolver.type(spec['class']))
+        declaration = resolver.needle(spec['declaration'])
+        if owner is None or not old_root:
+            problems.append((label, 'the owner of field %s is missing' % declaration))
+            continue
+        text = owner.read_text(errors='replace')
+        hits = [line for line in text.splitlines() if line.strip() == declaration.strip()]
+        if len(hits) != spec.get('exactly', 1):
+            problems.append((label, '%s is declared %d time(s) in %s'
+                             % (declaration, len(hits), owner.name)))
+    if contract.get('customSide'):
+        # a reviewed decision that the 194 hunk carries something the 214 host
+        # must not: prove the 194 side still has it, so the rule cannot rot
+        for entry in contract['customSide']:
+            source = resolver.path(custom_root or old_root, entry['class'])
+            if source is None:
+                continue
+            text = source.read_text(errors='replace')
+            if entry.get('method'):
+                blocks = method_blocks(text)
+                text = blocks.get(entry['method'], '')
+            if entry['require'] and entry['require'] not in text:
+                problems.append((label, 'the 194 side no longer carries %r, so this '
+                                        'contract can no longer prove anything'
+                                 % entry['require']))
+    return seen
+
+
+# --------------------------------------------------------------------------------------
+# gate 4 - the register encoding law
+# --------------------------------------------------------------------------------------
+
+# Encodings whose register operands are four bits wide, and therefore stop at
+# v15: 35c/35ms (the non-range invoke and filled-new-array forms), 12x (move,
+# */2addr), 22t (the two-register if) and 11n (const/4).  Every other format
+# this file has to care about carries an 8-bit register field.
+BRACE_LIST_OPCODES = re.compile(r'^(invoke-[a-z]+|filled-new-array)$')
+TWO_REGISTER_OPCODES = {'move', 'move-object', 'move-wide',
+                        'if-eq', 'if-ne', 'if-lt', 'if-ge', 'if-gt', 'if-le'}
+ONE_REGISTER_OPCODES = {'const/4'}
+REGISTER_RE = re.compile(r'\b([vp])(\d+)\b')
+
+
+def operand_part(line):
+    """The register operands of an instruction, without its references.
+
+    ``invoke-static {v7, v6}, Lf17;->p0(Ljava/lang/CharSequence;C)Z`` names a
+    member whose letter is a register-shaped token, so the reference and any
+    string payload are cut away before the operand scan.
+    """
+    code = re.sub(r'"(?:[^"\\]|\\.)*"', '""', line.split('#')[0])
+    match = re.search(r'(L[A-Za-z0-9_/$-]+;|:\w+)', code)
+    return code[:match.start()] if match else code
+
+
+def max_register(line, locals_count):
+    result = -1
+    for match in REGISTER_RE.finditer(operand_part(line)):
+        index = int(match.group(2))
+        if match.group(1) == 'p':
+            index += locals_count
+        result = max(result, index)
     return result
 
 
-def check_vpn_home_writability(output, problems):
-    name = 'assets/vpn/box-vpn.sh'
-    path = output / name
-    if not path.is_file():
-        problems.append((name, 'VPN helper script missing'))
-        return
-    text = path.read_text()
-    # The helper must heal root-owned leftovers (sing-box's cache.db) before
-    # exec'ing the core and fall back to an app-writable home mirror when the
-    # core home directory itself is not writable.
-    for needle in ('ensure_home "$home"', 'home-mirror', 'dropped unwritable', 'cache.db-journal'):
-        if needle not in text:
-            problems.append((name, 'VPN helper does not heal unwritable core homes (%s missing)' % needle))
-
-
-def check_singbox_compare_default(output, problems):
-    name = 'smali/mm0.smali'
-    path = output / name
-    if not path.is_file():
-        problems.append((name, 'core-sources/compare class missing'))
-        return
-    text = path.read_text()
-    regex = (r'(?im)^sing-box\s+(?:version\s+)?v?(\d+\.\d+\.\d+'
-             r'(?:-[0-9A-Za-z.]+)*?)(?:-zero)?(?:\+[0-9A-Za-z.-]+)?'
-             r'(?:\s|$)')
-    smali = regex.replace('\\', '\\\\')
-    if 'const-string p0, "' + smali + '"' not in text:
-        problems.append((name, 'sing-box default compare regex not replaced with the hardened pattern'))
-    if ':goto_sing_full' in text:
-        problems.append((name, 'stale goto_sing_full bypass label left in place'))
-    init_call = ('invoke-direct {v0, v2, p0, v4, v1}, Lwe1;-><init>'
-                 '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V')
-    if text.count(init_call) != 2:
-        problems.append((name, 'sing-box default regex path must inline exactly one extra we1 <init> (got %d)'
-                         % text.count(init_call)))
-    if text.count('return-object v0') < 2:
-        problems.append((name, 'sing-box default regex path does not return on its own'))
-
-
-def check_176_contracts(output, problems):
-    """Regression checks for the 176 contracts the port has to preserve."""
-
-    def declared(signature):
-        found = []
-        for path in output.rglob('*.smali'):
-            for match in METHOD_RE.finditer(path.read_text(errors='replace')):
-                header = match.group(0).splitlines()[0]
-                if signature in header:
-                    found.append((path, match.group(0)))
-        return found
-
-    def only(signature, label):
-        found = declared(signature)
-        if len(found) != 1:
-            problems.append((label, 'expected exactly one declaration, found %d' % len(found)))
-            return None
-        return found[0][1]
-
-    def in_file(file_name, signature, label):
-        path = output / 'smali' / file_name
+def check_encoding_law(touched, output, problems):
+    """Registers the dex encodings cannot hold are a build failure, not a style note."""
+    for file_name, signatures in sorted(touched.items()):
+        path = output / file_name
         if not path.is_file():
-            problems.append((label, 'the owning class %s is missing' % file_name))
-            return None
-        block = find_block(path, signature)
-        if block is None:
-            problems.append((label, 'the method %s is missing' % signature))
-            return None
-        return block
-
-    # The core registry has to keep the nine customized cores in the reviewed
-    # order.  A mis-ordered or shortened registry still assembles and still
-    # passes the reference check, but it hands the wrong core id to the UI.
-    registry = in_file('c67.smali', '<clinit>()V', 'Lc67;-><clinit>()V')
-    if registry is not None:
-        names = ['mihomo', 'mihomo_smart', 'mihomo_dingtalk', 'sing-box',
-                 'sing-box_ref1nd', 'sing-box_dingtalk', 'xray', 'v2fly', 'hysteria']
-        ids = ['0384', '0385', '0590', '0386', '0387', '0591', '038a', '0389', '0383']
-        for index, name in enumerate(names):
-            if 'const-string v%d, "%s"' % (index, name) not in registry:
-                problems.append(('Lc67;-><clinit>()V',
-                                 'core %s is missing or not at index %d' % (name, index)))
-        require(registry, (
-            'filled-new-array/range {v0 .. v8}, [Ljava/lang/String;',
-            'filled-new-array/range {v1 .. v9}, [Ljava/lang/Integer;',
-            'sput-object v0, Lc67;->a:Ljava/util/List;',
-            'sput-object v0, Lc67;->b:Ljava/util/List;',
-        ), 'core registry', problems, 'Lc67;-><clinit>()V')
-        resources = public_map(output / 'res/values/public.xml')
-        id_by_name = {value: key for key, value in resources.items()}
-        for name in names:
-            expected = 'string.proxy_core_' + name.replace('-', '_')
-            resource = id_by_name.get(expected)
-            if resource is None:
-                problems.append(('Lc67;-><clinit>()V',
-                                 '%s does not resolve in public.xml' % expected))
-            elif 'const v0, %s' % resource not in registry:
-                problems.append(('Lc67;-><clinit>()V',
-                                 'core id %s for %s is missing from the registry'
-                                 % (resource, name)))
-
-    # The customized VPN enum publishes the new "vpn" constant in its own
-    # register and lists it in front of the six upstream constants.
-    vpn = in_file('ef5.smali', '<clinit>()V', 'Lef5;-><clinit>()V')
-    if vpn is not None:
-        require(vpn, (
-            'const-string v9, "vpn"',
-            'const-string v8, "Vpn"',
-            'invoke-direct {v6, v7, v8, v9}, Lef5;-><init>(ILjava/lang/String;Ljava/lang/String;)V',
-            'sput-object v6, Lef5;->t:Lef5;',
-            'const/4 v7, 0x7',
-            'new-array v7, v7, [Lef5;',
-            'aput-object v6, v7, v8',
-            'aput-object v0, v7, v8',
-            'aput-object v5, v7, v8',
-        ), 'vpn enum', problems, 'Lef5;-><clinit>()V')
-        forbid(vpn, ('const-string v6, "vpn"',), 'vpn enum', problems, 'Lef5;-><clinit>()V')
-        if '.locals 10' not in vpn:
-            problems.append(('Lef5;-><clinit>()V',
-                             'the vpn constant needs a tenth local register'))
-        field = output / 'smali' / 'ef5.smali'
-        if '.field public static final enum t:Lef5;' not in field.read_text(errors='replace'):
-            problems.append(('Lef5;->t:Lef5;',
-                             'the vpn constant is not published through the static field t'))
-
-    # The settings list localizes the hidden-entry label before the item
-    # object is created; the label lookup must not overwrite that object.
-    settings = in_file('cc3.smali',
-                       'R(ZZZZLg95;ZZZZLfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lfa2;Lu92;Lib2;)Ljava/util/List;',
-                       'Lcc3;->R(...)')
-    if settings is not None:
-        lines = significant(settings)
-        label = [i for i, line in enumerate(lines)
-                 if 'Lcom/box/app/vpn/VpnPrefs;->items(' in line]
-        item = [i for i, line in enumerate(lines) if line == 'new-instance v1, Lvs1;']
-        if len(label) != 1 or len(item) != 1:
-            problems.append(('Lcc3;->R(...)',
-                             'expected exactly one VpnPrefs.items call and one item instance'))
-        elif not label[0] < item[0]:
-            problems.append(('Lcc3;->R(...)',
-                             'the localized label lookup overwrites the settings item object'))
-        else:
-            window = lines[max(0, label[0] - 4):item[0]]
-            if not any(line.startswith('const v1, 0x7f0f') for line in window):
-                problems.append(('Lcc3;->R(...)',
-                                 'the localized label id is not loaded before the lookup'))
-
-    # The core path is read into v10, which is the register the 176 call
-    # expects; a wider register does not assemble.
-    core_path = in_file('a75.smali', 'invoke(Ljava/lang/Object;)Ljava/lang/Object;',
-                        'La75;->invoke(...)')
-    if core_path is not None:
-        require(core_path, ('iget-object v10, v2, Ljc0;->h:Ljava/lang/String;',),
-                'core path', problems, 'La75;->invoke(...)')
-        forbid(core_path, ('const-string v10, ""', 'iget-object v27, v2,'),
-                'core path', problems, 'La75;->invoke(...)')
-        if '.locals 27' not in core_path:
-            problems.append(('La75;->invoke(...)', 'the register frame changed'))
-
-    # The core detail probe keeps its 176 signature and its 176 call sites.
-    probes = declared('d(Ljava/io/File;Lfa1;)Ljava/lang/Object;')
-    if len(probes) != 1:
-        problems.append(('Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;',
-                         'expected exactly one declaration, found %d' % len(probes)))
-    else:
-        path, block = probes[0]
-        if path.name != 'ke1.smali':
-            problems.append(('Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;',
-                             'unexpected owner file %s' % path.name))
-        if 'instance-of v0, p2, Lge1;' not in block:
-            problems.append(('Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;',
-                             'the coroutine state check is gone'))
-        if 'invoke-direct {v0, p0, p2}, Lge1;-><init>(Lke1;Lfa1;)V' not in block:
-            problems.append(('Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;',
-                             'the 194 continuation contract is broken'))
-        callers = []
-        for other in output.rglob('*.smali'):
-            text = other.read_text(errors='replace')
-            if 'Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;' in text:
-                callers.append(other.name)
-        for expected in ('ge1.smali', 'ke1.smali'):
-            if expected not in callers:
-                problems.append(('Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;',
-                                 'the 194 call site %s is gone' % expected))
-
-    # The 176 version probe coroutine keeps its signature and its own call.
-    versions = declared('a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;')
-    if len(versions) != 1:
-        problems.append(('Lte1;->a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;',
-                         'expected exactly one declaration, found %d' % len(versions)))
-    else:
-        path, _ = versions[0]
-        if path.name != 'te1.smali':
-            problems.append(('Lte1;->a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;',
-                             'unexpected owner file %s' % path.name))
-        called = False
-        for other in output.rglob('*.smali'):
-            if 'Lte1;->a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;' \
-                    in other.read_text(errors='replace'):
-                called = True
-        if not called:
-            problems.append(('Lte1;->a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;',
-                             'the 194 coroutine is no longer called'))
-
-    # The archive matcher keeps the 171 prefix and payload rules.
-    matchers = declared('p(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;Z)V')
-    if len(matchers) != 1:
-        problems.append(('Lu6;->p(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;Z)V',
-                         'expected exactly one declaration, found %d' % len(matchers)))
-    else:
-        _, block = matchers[0]
-        require(block, ARCHIVE_MATCHER_MARKERS, 'archive matcher', problems,
-                'Lu6;->p(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;Z)V')
-        if 'if-eqz v3, :' in block:
-            problems.append(('Lu6;->p(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;Z)V',
-                             'the exact name comparison is still in front of the matcher'))
-
-    # The core version rule resolver has to accept the reviewed DingTalk
-    # repositories: without them both DingTalk sources fall back to the
-    # unsupported-source rules and lose their version number.
-    try:
-        check_core_version_rules_whitelist(output)
-    except Exception as exc:
-        problems.append(('Lmm0;->H(Lle1;)Lwe1;',
-                         'the core version rule resolver lost the DingTalk repositories: %r'
-                         % (exc,)))
-
-    # The root detail probe keeps the wrapped script builder.
-    probes = declared('invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;')
-    wrapped = 0
-    for path, block in probes:
-        lines = significant(block)
-        for index, line in enumerate(lines):
-            if line != 'invoke-static {v2}, Lcn6;->m0(Ljava/lang/String;)Ljava/lang/String;':
+            continue
+        blocks = method_blocks(path.read_text(errors='replace'))
+        for signature in signatures:
+            block = blocks.get(signature)
+            if block is None:
                 continue
-            following = lines[index + 1:index + 3]
-            if following == ['move-result-object v2',
-                             'invoke-static {v2}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;']:
-                wrapped += 1
-            else:
-                problems.append((path.name,
-                                 'the LdFix probe wrapper does not consume the script builder result'))
-    if wrapped != 1:
-        problems.append(('Lyu0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;',
-                         'expected exactly one wrapped probe script, found %d' % wrapped))
-
-    # The working directory stays the private files dir in both modes, and
-    # the straight-line stock head has to keep the historic VerifyError
-    # guard: the base is resolved before the const-string / new-instance
-    # pair, so no path reaches File.<init> with an undefined v1.  Nothing
-    # may reintroduce the Android/data arm or the discarded sticky
-    # decision (uc0.g/uc0.h, the box_dir preferences, the PATH su scan).
-    external = in_file('vc0.smali', 'k()Llc0;', 'Lvc0;->k()')
-    if external is not None:
-        uc0_text = (output / 'smali/vc0.smali').read_text(errors='replace')
-        for residue in ('.field public static volatile g:Z',
-                        '.field public static volatile h:Z'):
-            if residue in uc0_text:
-                problems.append(('Lvc0;->k()',
-                                 'the discarded sticky decision field %r is '
-                                 'still declared on vc0' % residue))
-        for residue in ('getExternalFilesDir', 'box_dir', '"PATH"',
-                        'Lvc0;->g:Z', 'Lvc0;->h:Z', ':box_dir_'):
-            if residue in external:
-                problems.append(('Lvc0;->k()',
-                                 'the working directory head still carries %r'
-                                 % residue))
-        lines = significant(external)
-        anchors = {
-            'base': 'invoke-virtual {v0}, Landroid/content/Context;'
-                    '->getFilesDir()Ljava/io/File;',
-            'literal': 'const-string v2, "box"',
-            'allocate': 'new-instance v1, Ljava/io/File;',
-            'construct': 'invoke-direct {v1, v0, v2}, Ljava/io/File;'
-                         '-><init>(Ljava/io/File;Ljava/lang/String;)V',
-        }
-        positions = {}
-        for anchor_name, needle in anchors.items():
-            hits = [i for i, line in enumerate(lines) if line == needle]
-            if len(hits) != 1:
-                problems.append(('Lvc0;->k()',
-                                 '%s appears %d times, expected exactly once'
-                                 % (needle, len(hits))))
-            else:
-                positions[anchor_name] = hits[0]
-        wanted = ['allocate', 'base', 'literal', 'construct']
-        if all(anchor_name in positions for anchor_name in wanted):
-            sequence = [positions[anchor_name] for anchor_name in wanted]
-            if sequence != sorted(sequence):
-                problems.append(('Lvc0;->k()',
-                                 'the allocation, the private base, the '
-                                 'literal and File.<init> are out of '
-                                 'order: %r' % list(zip(wanted, sequence))))
-
-    # The customized "unrestricted battery" row moved with its host page: the
-    # 176 upstream dropped the171 case3 auto-start service page from the iu0
-    # factory and rebuilt that page as wq4.a, so the row has to live in wq4.a
-    # between the auto-start row and the accelerated download row, spelled in
-    # wq4's own register allocation (state v4, flag v3, row object v15, dead
-    # temporaries v9 and v16..v25).  A generic re-run of the delta would put
-    # the row back into iu0.a where v7 holds a boolean, which the verifier
-    # rejects as a non-reference register.
-    iu0_row = in_file('ut0.smali',
-                      'a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-                      'Lut0;->a(...)')
-    if iu0_row is not None:
-        for residue in ('BattToggle', '0x13f2fb70', 'VpnPrefs;->battOn'):
-            if residue in iu0_row:
-                problems.append(('Lut0;->a(...)',
-                                 'the relocated battery row left %r in ut0.a'
-                                 % residue))
-    wq4_row = in_file('bq4.smali',
-                      'a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-                      'Lbq4;->a(...)')
-    if wq4_row is not None:
-        lines = significant(wq4_row)
-        resources = public_map(output / 'res/values/public.xml')
-        title_id = {value: key for key, value in resources.items()}.get(
-            'string.service_battery_unrestricted_title')
-        if title_id is None:
-            problems.append(('Lbq4;->a(...)',
-                             'the battery title resource is missing from public.xml'))
-            title_id = '0x7f0f055b'
-        row = [
-            'const v9, 0x13f2fb70',
-            'invoke-virtual {v4, v9}, Lib2;->g0(I)V',
-            'const v9, ' + title_id,
-            'invoke-static {v9, v4}, Lya3;->c0(ILib2;)Ljava/lang/String;',
-            'move-result-object v35',
-            'move-object/from16 v36, v14',
-            'invoke-static {}, Lcom/box/app/vpn/BattToggle;->create()'
-            'Lcom/box/app/vpn/BattToggle;',
-            'move-result-object v34',
-            'invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battOn()Z',
-            'move-result v33',
-            'const/16 v37, 0x0',
-            'const/high16 v39, 0xc00000',
-            'move-object/from16 v38, v4',
-            'const/16 v40, 0x0',
-            'const/16 v41, 0x3f78',
-            'invoke-static/range {v33 .. v41}, Lms6;->a(ZLfa2;'
-            'Ljava/lang/String;Lyz0;ZLib2;III)V',
-            'invoke-virtual {v4, v3}, Lib2;->r(Z)V',
-            'const/16 v9, 0xe',
-        ]
-        anchor = 'const v9, -0x533ee63'
-        hits = [i for i, line in enumerate(lines) if line == anchor]
-        if len(hits) != 1:
-            problems.append(('Lbq4;->a(...)',
-                             'battery row anchor %r appears %d times, expected '
-                             'exactly once' % (anchor, len(hits))))
-        else:
-            start = hits[0] - len(row)
-            if start < 0 or lines[start:hits[0]] != row:
-                problems.append(('Lbq4;->a(...)',
-                                 'the battery unrestricted row is not the '
-                                 'block directly in front of %r' % anchor))
-        if sum(1 for line in lines if 'BattToggle' in line) != 1:
-            problems.append(('Lbq4;->a(...)',
-                             'BattToggle must appear exactly once in bq4.a'))
-
-    # The VPN modeRes shortcut has to keep the mode result in the register
-    # the shared row lookup reads as its third argument (v15), not in the
-    # enum register v13: the jump path into :goto_6 must arrive with v13 as
-    # the row id, v14 as the flag and v15 as the string resource, and the
-    # fall through path has to keep the enum in v13 for the dispatch.
-    ra1_mode = in_file('pa1.smali',
-                       'a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-                       'Lpa1;->a(...)')
-    if ra1_mode is not None:
-        lines = significant(ra1_mode)
-        shortcut = [
-            'check-cast v13, Lef5;',
-            'invoke-static {v13}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lef5;)I',
-            'move-result v14',
-            'if-eqz v14, :cond_pv_novpn',
-            'const v13, -0x1c301169',
-            'const/4 v15, 0x0',
-            'goto :goto_6',
-            ':cond_pv_novpn',
-        ]
-        found = None
-        for index in range(len(lines) - len(shortcut) + 1):
-            if lines[index:index + len(shortcut)] == shortcut:
-                found = index
-                break
-        if found is None:
-            problems.append(('Lpa1;->a(...)',
-                             'the modeRes shortcut block is missing or has '
-                             'the wrong register layout'))
-        for index, line in enumerate(lines):
-            if 'VpnBridge;->modeRes' in line and index + 1 < len(lines) \
-                    and lines[index + 1] != 'move-result v14':
-                problems.append(('Lpa1;->a(...)',
-                                 'the modeRes result must land in v14, found '
-                                 '%r' % lines[index + 1]))
+            header = block.splitlines()[0]
+            index, locals_count = get_locals(block.splitlines()[1:])
+            words = parameter_words(header)
+            capacity = locals_count + words
+            widest = -1
+            for line in code_lines(block):
+                opcode = line.split()[0]
+                widest = max(widest, max_register(line, locals_count))
+                if max_register(line, locals_count) < 16:
+                    continue
+                if BRACE_LIST_OPCODES.match(opcode):
+                    why = 'the non-range %s encodes at most five v0-v15 registers' % opcode
+                elif opcode in TWO_REGISTER_OPCODES or opcode.endswith('2addr'):
+                    why = 'the 12x/22t form %s encodes only v0-v15 registers' % opcode
+                elif opcode in ONE_REGISTER_OPCODES:
+                    why = '%s encodes only v0-v15 registers' % opcode
+                else:
+                    continue
+                problems.append((file_name + ' ' + signature,
+                                 '%s cannot be assembled: %s' % (why, line)))
+            if widest >= capacity:
+                problems.append((file_name + ' ' + signature,
+                                 'the method touches v%d but .locals %d plus %d parameter '
+                                 'word(s) only address v0-v%d'
+                                 % (widest, locals_count, words, capacity - 1)))
 
 
+# --------------------------------------------------------------------------------------
+# gate 6 - the customization's own surfaces
+# --------------------------------------------------------------------------------------
 
-def check_pump_ipv6_tagging(output, problems):
-    """IPv6 must stay enabled under process rules and be tagged like IPv4.
+def resolver_path(root, descriptor):
+    """smali*/<name>.smali of one class descriptor, or None."""
+    name = descriptor[1:-1] + '.smali'
+    for directory in sorted(Path(root).glob('smali*')):
+        candidate = directory / name
+        if candidate.is_file():
+            return candidate
+    return None
 
-    VpnPump.ipv6() no longer gates on `active`, the pump gained v6
-    forward/reverse/lookup twins that rewrite fdfe:dcba:9876::1 to
-    fdfe:dcba:9876::c8NN, and VpnTags.expr() emits the v6 twin of every
-    per-app SRC-IP-CIDR tag.
+
+def check_pinned_fields(pins, args, problems):
+    """A pinned or added field has to be declared exactly once by the 214 class.
+
+    The 194 hunk that writes such a field is already covered by the shape gate;
+    what cannot be covered there is the declaration itself, because it lives in
+    the class header outside every method body.  An added field additionally has
+    to be absent from the upstream tree - a field the release already declares
+    under another name would otherwise be duplicated, and the second ``.field``
+    is what smali calls a duplicate definition on.
     """
-    pump_name = 'smali/com/box/app/vpn/VpnPump.smali'
-    pump_path = output / pump_name
-    if not pump_path.is_file():
-        problems.append((pump_name, 'VpnPump.smali missing'))
+    for old_ref, spec in sorted((pins.get('fields') or {}).items()):
+        new_ref = spec['new']
+        descriptor, member = new_ref.split('->', 1)
+        name, _, _ = member.partition(':')
+        path = resolver_path(args.output, descriptor)
+        if path is None:
+            problems.append((old_ref, 'the 214 owner %s of the pinned field has no smali file'
+                             % descriptor))
+            continue
+        hits = [line for line in path.read_text(errors='replace').splitlines()
+                if line.strip().startswith('.field')
+                and re.search(r'\b' + re.escape(name) + r':', line)]
+        if len(hits) != 1:
+            problems.append((old_ref, '%s is declared %d time(s) in %s, expected exactly 1'
+                             % (name, len(hits), path.name)))
+    for spec in pins.get('addedFields') or []:
+        path = resolver_path(args.output, spec['class'])
+        upstream = resolver_path(args.new, spec['class'])
+        declaration = spec['declaration'].strip()
+        if path is None:
+            problems.append((spec['class'], 'the 214 owner of the added field has no smali file'))
+            continue
+        if len([line for line in path.read_text(errors='replace').splitlines()
+                if line.strip() == declaration]) != 1:
+            problems.append((spec['class'], '%s is not declared exactly once in %s'
+                             % (declaration, path.name)))
+        if upstream is not None and declaration in upstream.read_text(errors='replace'):
+            problems.append((spec['class'], '%s is already declared by the 214 upstream, so it '
+                                            'is not an added field of this hop' % declaration))
+
+
+def check_custom_surfaces(output, problems):
+    """Invariants of files the port copies rather than ports."""
+    script = output / 'assets/vpn/box-vpn.sh'
+    if script.is_file():
+        text = script.read_text(errors='replace')
+        for needle in ('ensure_home "$home"', 'home-mirror', 'dropped unwritable',
+                       'cache.db-journal'):
+            if needle not in text:
+                problems.append((str(script.relative_to(output)),
+                                 'the VPN helper no longer heals unwritable core homes '
+                                 '(%r missing)' % needle))
+    else:
+        problems.append(('assets/vpn/box-vpn.sh', 'the VPN helper script is missing'))
+
+    exec_pat = '$_bh --db \\"$db\\" boot >> '
+    owner = next((path for path in sorted(output.rglob('*.smali'))
+                  if exec_pat in path.read_text(errors='replace')), None)
+    if owner is None:
+        problems.append(('root_boot_hardening', 'no root boot script (bare boxctl exec) found'))
+    else:
+        text = owner.read_text(errors='replace')
+        for needle, why in (
+            ('esac\\n              chmod 755 \\"$boxctl\\" 2>/dev/null || true'
+             '\\n              \\"$boxctl\\" $_bh',
+             'the root boot execs boxctl without a chmod 755 first'),
+            ('chown \\"$(stat -c %u:%g \\"${boxctl%%/files/*}\\"',
+             'the root boot does not chown run_dir to the app data dir owner')):
+            if needle not in text:
+                problems.append((owner.name, why))
+        if text.count('chown -R ') < 2 or '${db%/*}' not in text:
+            problems.append((owner.name,
+                             'the root boot does not chown -R the box tree to the '
+                             'app data dir owner'))
+
+    pump = output / 'smali/com/box/app/vpn/VpnPump.smali'
+    tags = output / 'smali/com/box/app/vpn/VpnTags.smali'
+    if not pump.is_file() or not tags.is_file():
+        problems.append(('com.box.app.vpn', 'VpnPump.smali or VpnTags.smali is missing'))
         return
-    pump = pump_path.read_text()
+    text = pump.read_text(errors='replace')
     for needle in ('->forward6([BI)V', '->reverse6([BI)V', '->lookup6(I[BII)I',
-                   'Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;',
-                   'Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;',
-                   ' (IPv6 flows are tagged too)'):
-        if needle not in pump:
-            problems.append((pump_name, 'missing IPv6 tagging element: %r' % needle))
-    # ART rejects plain `move` on reference-typed registers (copy-cat1) with a
-    # VerifyError at class load; forward6's byte[]/this copies must be
-    # move-object/from16, while the int copy must stay a plain move (the
-    # opposite mix-up is rejected the same way).
-    for needle in ('move-object/from16 v13, p1', 'move-object/from16 v15, p0',
-                   'move/from16 v14, p2'):
-        if needle not in pump:
-            problems.append((pump_name, 'forward6 entry copy wrong: %r' % needle))
-    for needle in ('move/from16 v13, p1', 'move/from16 v15, p0',
-                   'move-object/from16 v14, p2'):
-        if needle in pump:
-            problems.append((pump_name, 'forward6 reference/int copy swapped: %r' % needle))
-    # shl-long's shift amount is a 32-bit Integer operand: a const-wide leaves
-    # v18 as "Low-half Constant" and ART rejects the method
-    # ("register v18 has type Low-half Constant but expected Integer"), while
-    # cmp-long compares wide pairs and needs the const-wide form.
-    for needle in ('const/16 v18, 0x20', 'const/16 v18, 0x10',
-                   'const-wide/16 v18, 0x7d0', 'const-wide/16 v18, 0x7530'):
-        if needle not in pump:
-            problems.append((pump_name, 'forward6 constant form wrong: %r' % needle))
-    for needle in ('const-wide/16 v18, 0x20', 'const-wide/16 v18, 0x10',
-                   'const/16 v18, 0x7d0', 'const/16 v18, 0x7530'):
-        if needle in pump:
-            problems.append((pump_name, 'forward6 constant form swapped: %r' % needle))
-    if ' (IPv6 is disabled while they are in use)' in pump:
-        problems.append((pump_name, 'stale IPv6-disabled log text left in place'))
-    start = pump.find('.method public static ipv6(Z)Z')
-    end = pump.find('.end method', start)
+                    'Lcom/box/app/vpn/VpnPump;->tcp6:Ljava/util/HashMap;',
+                    'Lcom/box/app/vpn/VpnPump;->udp6:Ljava/util/HashMap;',
+                    ' (IPv6 flows are tagged too)'):
+        if needle not in text:
+            problems.append((str(pump.relative_to(output)),
+                             'missing IPv6 tagging element: %r' % needle))
+    start = text.find('.method public static ipv6(Z)Z')
+    end = text.find('.end method', start)
     if start < 0 or end < 0:
-        problems.append((pump_name, 'ipv6(Z)Z method missing'))
+        problems.append((str(pump.relative_to(output)), 'ipv6(Z)Z is missing'))
     else:
-        body = pump[start:end]
+        body = text[start:end]
         if '->active:Z' in body:
-            problems.append((pump_name, 'ipv6(Z)Z still gates on VpnPump.active'))
+            problems.append((str(pump.relative_to(output)),
+                             'ipv6(Z)Z still gates on VpnPump.active'))
         if 'Lcom/box/app/vpn/VpnSb;->on:Z' not in body:
-            problems.append((pump_name, 'ipv6(Z)Z must keep the sing-box no-IPv6 gate'))
-    tags_name = 'smali/com/box/app/vpn/VpnTags.smali'
-    tags_path = output / tags_name
-    if not tags_path.is_file():
-        problems.append((tags_name, 'VpnTags.smali missing'))
-        return
-    tags = tags_path.read_text()
-    if 'fdfe:dcba:9876::' not in tags:
-        problems.append((tags_name, 'ip6() tag prefix fdfe:dcba:9876:: missing'))
-    if '.method private static ip6(I)Ljava/lang/String;' not in tags:
-        problems.append((tags_name, 'ip6() method missing'))
-    start = tags.find('.method private expr(I)Ljava/lang/String;')
-    end = tags.find('.end method', start)
-    if start < 0 or end < 0:
-        problems.append((tags_name, 'expr(I) method missing'))
-    else:
-        body = tags[start:end]
-        if 'VpnTags;->ip6(I)Ljava/lang/String;' not in body:
-            problems.append((tags_name, 'expr() must emit the v6 twin of every tag'))
-        if '/128)' not in body:
-            problems.append((tags_name, 'expr() must emit /128 v6 CIDRs'))
+            problems.append((str(pump.relative_to(output)),
+                             'ipv6(Z)Z dropped the sing-box no-IPv6 gate'))
+    tags_text = tags.read_text(errors='replace')
+    if 'fdfe:dcba:9876::' not in tags_text:
+        problems.append((str(tags.relative_to(output)), 'the ip6() tag prefix is missing'))
+    if '.method private static ip6(I)Ljava/lang/String;' not in tags_text:
+        problems.append((str(tags.relative_to(output)), 'the ip6() method is missing'))
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--old', type=Path, default=Path('.tools/cmp/decompiled'))
-    parser.add_argument('--new', type=Path, default=Path('.tools/upstream-173/decompiled'))
-    parser.add_argument('--custom', type=Path, default=Path('.tools/customized-171/decompiled'))
-    parser.add_argument('--output', type=Path, default=Path('.tools/migrated-176'))
-    parser.add_argument('--coverage', type=Path,
-                        default=Path('upstream/26.11.17.73f2816/migration/coverage.json'))
-    parser.add_argument('--maps', type=Path, default=Path('.tools/resolved-maps-173-reviewed.json'))
-    args = parser.parse_args()
+# --------------------------------------------------------------------------------------
+# the hop
+# --------------------------------------------------------------------------------------
 
-    maps = json.loads(args.maps.read_text())
-    coverage = json.loads(args.coverage.read_text())
-    r_old = public_map(args.old / 'res/values/public.xml')
-    r_custom = public_map(args.custom / 'res/values/public.xml')
-    r_new = public_map(args.new / 'res/values/public.xml')
-    r_migrated = public_map(args.output / 'res/values/public.xml')
+def placements_for(pins, old_method):
+    """Every reviewed placement this coverage entry owns, in the reviewed order."""
+    return [item for item in pins.get('placements', [])
+            if old_method.startswith(item['plan'])]
 
-    problems = []
-    checked = 0
+
+def placement_groups(placements, default_sig):
+    """The reviewed regions of one coverage entry, grouped by target method.
+
+    A placement may carry ``target.method``: the method the region belongs to in
+    this release, when R8 moved it into a sibling of the mapped method.  Regions
+    of the same method stay in the reviewed order, because the later one is
+    anchored in the body the earlier one produced.
+    """
+    groups = collections.OrderedDict()
+    for placement in placements:
+        sig = (placement.get('target') or {}).get('method', default_sig)
+        groups.setdefault(sig, []).append(placement)
+    return list(groups.values())
+
+
+def expected_splice(target_block, placements, file_name, pins):
+    """Recompute what the migrated method has to be, from the 214 upstream alone.
+
+    The recomputation follows the porter's own rules - a unique anchor, the
+    reviewed insert behind it, the target's own instructions pruned away where
+    the reviewed block stands in for them, a frame grown only when the placement
+    says so - but it reads them off the reviewed file rather than off the
+    porter's state, and it re-derives the result for the *next* placement out of
+    the body the previous one produced.  The comparison is line for line.
+    """
+    header = target_block.splitlines()[0]
+    body = target_block.splitlines()[1:-1]
+    for placement in placements:
+        insert = [line.rstrip() for line in placement['insert']]
+        if placement.get('replace'):
+            body = list(insert)
+        else:
+            window = [line.strip() for line in
+                      (placement['anchor'] if isinstance(placement['anchor'], list)
+                       else [placement['anchor']])]
+            hits = [index for index in range(len(body) - len(window) + 1)
+                    if [line.strip() for line in body[index:index + len(window)]] == window]
+            if len(hits) != 1:
+                return None, ('the reviewed anchor %r is present %d time(s) in the 214 method'
+                              % (window, len(hits)))
+            anchor = hits[0] + len(window) - 1
+            insert_at = anchor + 1
+            prune = int(placement.get('pruneAfter', 0))
+            if placement.get('replaceAnchor'):
+                # the reviewed block stands in for the anchor instruction itself
+                insert_at = anchor - len(window) + 1
+                prune += len(window)
+            if prune:
+                seen, end = 0, insert_at
+                while end < len(body) and seen < prune:
+                    if is_code(body[end]):
+                        seen += 1
+                    end += 1
+                if seen < prune:
+                    return None, ('the 214 method has fewer than %d instruction(s) at the '
+                                 'reviewed anchor' % prune)
+                del body[insert_at:end]
+            body[insert_at:insert_at] = insert
+        needed = placement.get('registers')
+        if needed:
+            index, current = get_locals(body)
+            if index is None:
+                return None, 'the placement asks for registers but the method has no .locals'
+            if current < needed:
+                body[index] = '    .locals %d' % needed
+            elif current > needed:
+                return None, ('the placement expects %d register(s), the 214 method declares %d'
+                              % (needed, current))
+    block = header + '\n' + '\n'.join(body) + '\n.end method'
+    for fixup in (pins.get('scopedFixups') or {}).get(file_name, []):
+        block = block.replace(fixup['wrong'], fixup['right'])
+    return block, None
+
+
+def check_hop(args, coverage, maps, pins, problems, resolver):
+    resources = {name: public_map(root / 'res/values/public.xml')
+                 for name, root in (('old', args.old), ('custom', args.custom),
+                                    ('new', args.new), ('output', args.output))}
+    touched = collections.defaultdict(set)
+    for plan in coverage['completed']:
+        touched[plan['targetFile']].add(plan['new'].split('->', 1)[1])
+
+    for plan in coverage['completed']:
+        old_class, old_sig = plan['old'].split('->', 1)
+        new_class, new_sig = plan['new'].split('->', 1)
+        base = block_of(args.old, plan['sourceFile'], old_sig)
+        custom = block_of(args.custom, plan['sourceFile'], old_sig)
+        target = block_of(args.new, plan['targetFile'], new_sig)
+        migrated = block_of(args.output, plan['targetFile'], new_sig)
+        label = plan['old']
+        if custom is None or migrated is None:
+            problems.append((label, 'the 194 customized or the migrated method block is missing'))
+            continue
+        if plan['mode'] == 'added':
+            if target is not None:
+                problems.append((label, 'the 214 upstream already declares an added method'))
+            if shapes(code_lines(custom), resources['custom']) != \
+                    shapes(code_lines(migrated), resources['output']):
+                problems.append((label, 'the added method body is not the customized one'))
+            expected = literals(code_lines(custom), resources['custom'])
+            actual = literals(code_lines(migrated), resources['output'])
+            if expected != actual:
+                problems.append((label, {'missing': dict(expected - actual),
+                                         'extra': dict(actual - expected)}))
+            continue
+        if base is None or target is None:
+            problems.append((label, 'the 194 upstream or the 214 upstream method is missing'))
+            continue
+
+        placements = placements_for(pins, plan['old'])
+        expected_added, expected_removed = (
+            collections.Counter(literals(code_lines(custom), resources['custom'])
+                                 - literals(code_lines(base), resources['old'])),
+            collections.Counter(literals(code_lines(base), resources['old'])
+                                 - literals(code_lines(custom), resources['custom'])))
+        actual_added, actual_removed = (
+            collections.Counter(literals(code_lines(migrated), resources['output'])
+                                 - literals(code_lines(target), resources['new'])),
+            collections.Counter(literals(code_lines(target), resources['new'])
+                                 - literals(code_lines(migrated), resources['output'])))
+        tolerances = collections.Counter()
+        for placement in placements:
+            for key, value in (placement.get('tolerates') or {}).items():
+                tolerances[key] += value
+        missing = (expected_added - actual_added - tolerances)
+        extra = (actual_added - expected_added - tolerances)
+        lost = (expected_removed - actual_removed - tolerances)
+        spurious = (actual_removed - expected_removed - tolerances)
+        # a reviewed relocation: the region the 194 hunk changed here lives in
+        # another method in this release, so its literals are expected to be
+        # absent here - and they are then required to be present there, which is
+        # what turns the exemption into a check rather than an excuse.
+        for placement in placements:
+            note = placement.get('relocated')
+            if not note:
+                continue
+            to = note['to']
+            # like a contract's on214 override, the relocation names the method as
+            # THIS release spells it, with the evidence for that in the pins file
+            to_class, to_sig = to['class'], to['method']
+            carried = collections.Counter()
+            where = resolver.rel(args.output, to_class)
+            if where is None:
+                problems.append((label, 'relocation target %s has no smali file' % to_class))
+            else:
+                block = block_of(args.output, where, to_sig)
+                if block is None:
+                    problems.append((label, 'the relocation target %s->%s is missing'
+                                     % (to_class, to_sig)))
+                else:
+                    carried = literals(code_lines(block), resources['output'])
+            for key in note['literals']:
+                bucket = missing if key in missing else (lost if key in lost else None)
+                if bucket is None:
+                    continue
+                if carried[key] < 1:
+                    problems.append((label, 'the relocated literal %s… is not carried by %s '
+                                            'either' % (key[:40], to_class + '->' + to_sig)))
+                    continue
+                del bucket[key]
+                carried[key] -= 1
+        if missing or extra or lost or spurious:
+            problems.append((label, {'literal': True, 'missing': dict(missing),
+                                     'extra': dict(extra), 'lost': dict(lost),
+                                     'spurious': dict(spurious)}))
+
+        # Gate 3, per reviewed region.  A placement may name the method its
+        # region belongs to now (the mapped one by default, or a sibling method
+        # of the same file when this release split the 194 method in two), so
+        # every region is recomputed from the 214 upstream method it was spliced
+        # into and compared, byte for byte, with what the port produced there.
+        # Regions of one method are chained in the reviewed order, which is also
+        # what the porter does.
+        if placements:
+            for group in placement_groups(placements, new_sig):
+                sig = (group[0].get('target') or {}).get('method', new_sig)
+                upstream = block_of(args.new, plan['targetFile'], sig)
+                produced = block_of(args.output, plan['targetFile'], sig)
+                if upstream is None or produced is None:
+                    problems.append((label, 'placement: the %s method %s is missing'
+                                      % ('214 upstream' if upstream is None else 'migrated', sig)))
+                    continue
+                block, why = expected_splice(upstream, group, plan['targetFile'], pins)
+                if block is None:
+                    problems.append((label, 'placement: ' + why))
+                    continue
+                if block != produced.rstrip():
+                    want, got = block.splitlines(), produced.rstrip().splitlines()
+                    first = next((i for i in range(max(len(want), len(got)))
+                                  if (want[i:i + 1] or [''])[0] != (got[i:i + 1] or [''])[0]), None)
+                    problems.append((label, {
+                        'placement': 'the migrated %s is not the reviewed splice' % sig,
+                        'method': sig,
+                        'firstDifference': first,
+                        'expected': (want[first:first + 4] if first is not None else []),
+                        'actual': (got[first:first + 4] if first is not None else []),
+                        'lengths': [len(want), len(got)]}))
+            continue
+
+        base_shapes = shapes(code_lines(base), resources['old'])
+        custom_shapes = shapes(code_lines(custom), resources['custom'])
+        target_shapes = shapes(code_lines(target), resources['new'])
+        migrated_shapes = shapes(code_lines(migrated), resources['output'])
+        expected_added, expected_removed = delta(base_shapes, custom_shapes)
+        actual_added, actual_removed = delta(target_shapes, migrated_shapes)
+        report = {
+            'missing': dict(collections.Counter(expected_added) - collections.Counter(actual_added)),
+            'extra': dict(collections.Counter(actual_added) - collections.Counter(expected_added)),
+            'lost': dict(collections.Counter(expected_removed) - collections.Counter(actual_removed)),
+            'spurious': dict(collections.Counter(actual_removed) - collections.Counter(expected_removed)),
+        }
+        if any(report.values()):
+            problems.append((label, report))
+    return touched
+
+
+
+# --------------------------------------------------------------------------------------
+# gates 2b/2c/2d - the frame and window arithmetic a shape comparison erases
+# --------------------------------------------------------------------------------------
+
+BUILD_RE = re.compile(r'^filled-new-array(?:/range)?\s+(\{[^}]*\})')
+NEW_ARRAY_RE = re.compile(r'^new-array\s+\S+,\s*\S+,\s*\[')
+ARITY_RE = re.compile(r'^filled-new-array/range\s+\{\s*v(\d+)\s*\.\.\s*v(\d+)\s*\}')
+PAYLOAD_STR_RE = re.compile(r'^const-string(?:/jumbo)?\s+(\S+),\s*"((?:[^"\\]|\\.)*)"')
+PAYLOAD_CONST_RE = re.compile(r'^const(?:/4|/16|/32|/high16)?\s+(\S+),\s*(\S+)')
+BOX_CONST_RE = re.compile(r'^const-wide(?:/16|/32)?\s+(\S+\s*,\s*\S+);?')
+MOVE_RESULT_RE = re.compile(r'^move-result(?:-object|-wide)?\s+(\S+)')
+NEW_INSTANCE_RE = re.compile(r'^new-instance\s+(\S+),\s*(\S+)')
+INIT_RE = re.compile(r'^invoke-direct\s+\{([^}]*)\},\s*(\S+)-><init>')
+REGISTER_ONLY = re.compile(r'^v(\d+)$')
+
+
+def slot_of(token):
+    match = REGISTER_ONLY.match(token.strip())
+    return int(match.group(1)) if match else None
+
+
+def window_of(brace):
+    """The registers a ``{vA .. vB}`` or ``{vA, vB}`` operand covers."""
+    inner = brace.strip('{}')
+    if '..' in inner:
+        first, last = inner.split('..')
+        a, b = slot_of(first), slot_of(last)
+        return list(range(a, b + 1)) if a is not None and b is not None else []
+    return [slot for slot in (slot_of(part) for part in inner.split(',')) if slot is not None]
+
+
+def frame_of(lines):
+    """The multiset of array-window arities and the number of array builds."""
+    arities = collections.Counter()
+    builds = 0
+    for line in lines:
+        match = ARITY_RE.match(line)
+        if match:
+            arities[int(match.group(2)) - int(match.group(1)) + 1] += 1
+            builds += 1
+        elif line.startswith('filled-new-array'):
+            arities[len(window_of(line.split(None, 1)[1].strip()))] += 1
+            builds += 1
+        elif NEW_ARRAY_RE.match(line):
+            builds += 1
+    return arities, builds
+
+
+def _dst(line):
+    match = re.match(r'^\S+\s+(\S+),', line)
+    return slot_of(match.group(1)) if match else None
+
+
+def slot_collisions(lines):
+    """Payloads that land in the same array slot between two builds.
+
+    Apktool leaves R8's register reuse intact, so a stock method legitimately
+    writes a window register twice for other reasons; the number of findings is
+    therefore never compared on its own - only the difference the port made has
+    to match the difference the customization made on the previous release.
+    """
+    findings = 0
+    span = []
+    for line in lines:
+        if line.startswith(':'):
+            continue
+        build = BUILD_RE.match(line)
+        if build:
+            window = [slot for slot in window_of(build.group(1)) if slot is not None]
+            seen = {}
+            for slot, value in span:
+                if slot in window:
+                    if seen.get(slot) not in (None, value):
+                        findings += 1
+                    seen[slot] = value
+            if len(seen) > len(window):
+                findings += len(seen) - len(window)
+            span = []
+            continue
+        match = PAYLOAD_STR_RE.match(line)
+        if match:
+            slot = slot_of(match.group(1))
+            if slot is not None:
+                span.append((slot, 's:' + match.group(2)))
+            continue
+        match = PAYLOAD_CONST_RE.match(line)
+        if match:
+            span.append(('pending', match.group(2)))
+            continue
+        match = MOVE_RESULT_RE.match(line)
+        if match and span and span[-1][0] == 'pending':
+            _, value = span.pop()
+            slot = slot_of(match.group(1))
+            if slot is not None:
+                span.append((slot, 'v:' + value))
+    return findings
+
+
+def init_clobbers(lines):
+    """A ``new-instance`` whose register is written before its ``<init>`` runs.
+
+    The verifier rejects the resulting type mix with a VerifyError at class
+    load, and an aput of the wrong object is silent corruption; either way the
+    half-initialized object is what the class ships.
+    """
+    findings = []
+    pending = None
+    for line in lines:
+        match = NEW_INSTANCE_RE.match(line)
+        if match:
+            pending = (slot_of(match.group(1)), match.group(2), line)
+            continue
+        if pending is not None and pending[0] is None:
+            pending = None
+        if pending is None or pending[0] is None:
+            continue
+        slot, owner, _ = pending
+        init = INIT_RE.match(line)
+        if init:
+            regs = [slot_of(part) for part in init.group(1).split(',')]
+            if init.group(2) != owner or regs[:1] != [slot]:
+                findings.append('the object built as %s (%s) is initialized on %s'
+                                % (owner, pending[2], init.group(2)))
+            pending = None
+            continue
+        if re.match(r'^(invoke-virtual|invoke-static|invoke-super|invoke-interface|iput|'
+                    r'sput|aput|aget|iget|return|throw|monitor|check-cast|instance-of)', line):
+            continue
+        if _dst(line) == slot and not line.startswith('nop'):
+            findings.append('%s overwrites the fresh object in %s before its <init>'
+                            % (line, pending[2]))
+            pending = None
+    return findings
+
+
+def check_frame_parity(coverage, args, pins, problems):
+    """The port has to grow the frame and the array windows exactly as the
+    customization did on the previous release.
+
+    Canonical shapes erase register numbers, and R8 hands each release a
+    different frame, so "the hunk added two elements" is only visible in the
+    *difference* the change made: ``.locals``, the multiset of range-window
+    arities, the number of array builds, the number of array-slot collisions
+    and the number of self-clobbered objects.  Each of those is compared as a
+    difference, so a port that inserts two cores into an eight-slot array, or
+    that adds a constant without growing ``.locals``, fails here even though it
+    assembles and passes every reference checker.
+    """
     for plan in coverage['completed']:
         old_sig = plan['old'].split('->', 1)[1]
         new_sig = plan['new'].split('->', 1)[1]
-        base = method_body(args.old / plan['sourceFile'], old_sig)
-        custom = method_body(args.custom / plan['sourceFile'], old_sig)
-        target = method_body(args.new / plan['targetFile'], new_sig)
-        migrated = method_body(args.output / plan['targetFile'], new_sig)
+        base = block_of(args.old, plan['sourceFile'], old_sig)
+        custom = block_of(args.custom, plan['sourceFile'], old_sig)
+        target = block_of(args.new, plan['targetFile'], new_sig)
+        migrated = block_of(args.output, plan['targetFile'], new_sig)
         if None in (base, custom, target, migrated):
-            problems.append((plan['old'], 'method block missing'))
             continue
-        checked += 1
-
-        allowed = ALLOWED_DIFFERENCES.get(plan['old'])
-        if allowed:
-            custom_text = method_text(args.custom / plan['sourceFile'], old_sig)
-            migrated_text = method_text(args.output / plan['targetFile'], new_sig)
-            for check in allowed['checks']:
-                ALLOWED_CHECKS[check](custom_text, migrated_text, problems, plan['old'])
+        def difference(before, after):
+            left_lines, right_lines = code_lines(before), code_lines(after)
+            left_arity, left_builds = frame_of(left_lines)
+            right_arity, right_builds = frame_of(right_lines)
+            left_local = get_locals(before.splitlines()[1:])[1]
+            right_local = get_locals(after.splitlines()[1:])[1]
+            return (right_local - left_local,
+                    right_arity - left_arity,
+                    left_arity - right_arity,
+                    right_builds - left_builds,
+                    slot_collisions(right_lines) - slot_collisions(left_lines),
+                    len(init_clobbers(right_lines)) - len(init_clobbers(left_lines)))
+        wanted, got = difference(base, custom), difference(target, migrated)
+        if placements_for(pins, plan['old']):
+            # a placement is reviewed line by line by gate 3, and its frame is
+            # bounded by gate 4, so its own numbers are the reviewed result
             continue
+        if (wanted[:4] != got[:4] or got[4] > wanted[4] or got[5] > wanted[5]):
+            label = ('frame: the 194 hunk changed .locals/array windows %s, the port %s'
+                     % (json.dumps([wanted[0], dict(wanted[1]), dict(wanted[2]), wanted[3],
+                                     wanted[4], wanted[5]]),
+                        json.dumps([got[0], dict(got[1]), dict(got[2]), got[3], got[4],
+                                    got[5]])))
+            problems.append((plan['old'], label))
 
-        base_shapes = canonical(base, r_old)
-        custom_shapes = canonical(custom, r_custom)
-        target_shapes = canonical(target, r_new)
-        migrated_shapes = canonical(migrated, r_migrated)
 
-        expected_added = collections.Counter(inserted_shapes(base_shapes, custom_shapes))
-        actual_added = collections.Counter(inserted_shapes(target_shapes, migrated_shapes))
-        expected_removed = collections.Counter(removed_shapes(base_shapes, custom_shapes))
-        actual_removed = collections.Counter(removed_shapes(target_shapes, migrated_shapes))
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('--old', type=Path, required=True,
+                        help='the reviewed 194 upstream tree')
+    parser.add_argument('--custom', type=Path, required=True,
+                        help='the 194 tree as the customization ships it')
+    parser.add_argument('--new', type=Path, required=True,
+                        help='the 214 upstream tree')
+    parser.add_argument('--output', type=Path, required=True,
+                        help='the migrated 214 candidate tree')
+    parser.add_argument('--coverage', type=Path, required=True)
+    parser.add_argument('--maps', type=Path, required=True)
+    parser.add_argument('--pins', type=Path, required=True)
+    parser.add_argument('--contracts', type=Path, required=True)
+    parser.add_argument('--explain', action='store_true',
+                        help='print how every contract anchor resolved')
+    args = parser.parse_args()
 
-        missing = expected_added - actual_added
-        extra = actual_added - expected_added
-        lost = expected_removed - actual_removed
-        spurious = actual_removed - expected_removed
-        if missing or extra or lost or spurious:
-            report = {
-                'old': plan['old'],
-                'new': plan['new'],
-                'missing': dict(missing),
-                'extra': dict(extra),
-                'lost': dict(lost),
-                'spurious': dict(spurious),
-            }
-            problems.append((plan['old'], report))
+    coverage = json.loads(args.coverage.read_text())
+    maps = json.loads(args.maps.read_text())
+    pins = json.loads(args.pins.read_text())
+    contracts = json.loads(args.contracts.read_text())
+    resolver = Resolver(maps, args.old, args.output)
 
-    print('checked %d of %d coverage entries' % (checked, len(coverage['completed'])))
-    check_176_contracts(args.output, problems)
-    check_root_boot_hardening(args.output, problems)
-    check_vpn_status_identity_tolerance(args.output, problems)
-    check_vpn_home_writability(args.output, problems)
-    check_singbox_compare_default(args.output, problems)
-    check_pump_ipv6_tagging(args.output, problems)
+    problems = []
+    touched = check_hop(args, coverage, maps, pins, problems, resolver)
+    check_frame_parity(coverage, args, pins, problems)
+    check_encoding_law(touched, args.output, problems)
+
+    seen = 0
+    trace = [] if args.explain else None
+    for contract in contracts['contracts']:
+        seen += run_contract(contract, resolver, args.output, problems, args.old,
+                             args.custom, trace)
+    check_pinned_fields(pins, args, problems)
+    check_custom_surfaces(args.output, problems)
+    if args.explain:
+        print('contract resolutions:')
+        for entry in trace:
+            print('   ' + entry)
+
     for name, detail in problems:
         print('MISMATCH', name)
         if isinstance(detail, dict):
-            for key in ('missing', 'extra', 'lost', 'spurious'):
-                if detail[key]:
-                    print('   %-9s %s' % (key, json.dumps(detail[key], ensure_ascii=False)))
+            for key in ('literal', 'placement', 'firstDifference', 'lengths',
+                        'missing', 'extra', 'lost', 'spurious', 'expected', 'actual'):
+                if detail.get(key) not in (None, {}, [], False):
+                    print('   %-15s %s' % (key, json.dumps(detail[key], ensure_ascii=False)[:400]))
         else:
             print('   ', detail)
-    print('mismatches: %d' % len(problems))
+    print('%schecked %d coverage entries, %d contracts, %d touched files; findings: %d'
+          % ('' if not problems else 'FAILED: ', len(coverage['completed']), seen,
+             len(touched), len(problems)))
     return 1 if problems else 0
 
 
