@@ -1,7 +1,7 @@
 name: Build APK
 
-# 构建 194 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
-#   pinned 171 snapshot -> reviewed 171 -> 194 port -> reference scan -> apktool b -> align/sign/upload
+# 构建 214 完整迁移候选；仓库 decompiled/ 是 139 基线，不是本工作流的 APK 输入：
+#   pinned 171 -> 194（定制增量来源）-> reviewed 194 -> 214 port -> custom-hunk gate + reference scan -> apktool b -> align/sign/upload
 # Apktool 2.9.3 必须与 pinned snapshot 一致；升级时需重新反编译并同步 sha256。
 
 on:
@@ -31,7 +31,8 @@ env:
   APKTOOL_VERSION: "2.9.3"
   # 官方 apktool_2.9.3.jar 的 sha256（与发行包大小 23254968 字节对应，已交叉验证）
   APKTOOL_SHA256: "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
-  PROJECT_DIR: ".tools/ci-194/decompiled"
+  PROJECT_DIR: ".tools/ci-214/decompiled"
+  UNSIGNED_APK: ".tools/ci-unsigned/BoxProxy-214-unsigned.apk"
 
 jobs:
   build:
@@ -42,23 +43,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # The candidate is fully determined by the pinned snapshots and the
-      # migration scripts; cache it so repeat builds skip the ~60s
-      # extract/replay/maps/port/verify pipeline (the key hashes every input).
-      - name: Cache pinned 194 migration candidate
+      # A cache miss runs the full migration, custom-hunk gate, mutation
+      # self-test and all Smali checkers inside migrate_214.py. The exact key
+      # covers every pinned snapshot and script read by that pipeline, so a hit
+      # is the same already-validated candidate; don't rescan 10k files on every
+      # routine APK rebuild.
+      - name: Cache pinned 214 migration candidate
+        id: candidate-cache
         uses: actions/cache@v6
         with:
-          path: .tools/ci-194
-          key: ci-194-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'scripts/**') }}
+          path: .tools/ci-214
+          key: ci-214-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'upstream/26.11.23.aa98568/**', 'scripts/**') }}
 
-      - name: Generate the pinned 194 migration candidate
+      - name: Generate the pinned 214 migration candidate
         shell: bash
         run: |
           set -euo pipefail
-          if [[ -f "$PROJECT_DIR/apktool.yml" ]]; then
-            echo ">> pinned 194 candidate restored from cache; skipping regeneration"
+          if [[ "${{ steps.candidate-cache.outputs.cache-hit }}" == "true" ]]; then
+            echo ">> pinned 214 candidate restored from exact-input cache; validation already passed"
+            test -f "$PROJECT_DIR/apktool.yml"
           else
-            python3 scripts/migrate_194.py --output .tools/ci-194
+            python3 scripts/migrate_214.py --output .tools/ci-214 --gate-selftest
           fi
           test -f "$PROJECT_DIR/apktool.yml"
 
@@ -79,8 +84,8 @@ jobs:
             echo "::error::failed to parse versionName/versionCode from $PROJECT_DIR/apktool.yml"
             exit 1
           fi
-          if [[ "$version_code" != "194" || "$version_name" != "26.11.19.bf82603" ]]; then
-            echo "::error::refusing to build non-194 project ($version_name / $version_code)"
+          if [[ "$version_code" != "214" || "$version_name" != "26.11.23.aa98568" ]]; then
+            echo "::error::refusing to build non-214 project ($version_name / $version_code)"
             exit 1
           fi
           echo "version_name=${version_name}" >> "$GITHUB_OUTPUT"
@@ -106,33 +111,28 @@ jobs:
           echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
           java -jar "$jar" --version
 
-      - name: Validate internal smali member references
-        run: python3 scripts/check_smali_references.py "$PROJECT_DIR"
-
-      - name: Reject duplicate or dangling Smali labels
-        run: python3 scripts/check_smali_labels.py "$PROJECT_DIR"
-
-      - name: Reject misplaced move-result instructions
-        run: python3 scripts/check_smali_move_result.py "$PROJECT_DIR"
-
-      - name: Reject zero-offset Smali branches
-        run: python3 scripts/check_smali_branch_offsets.py "$PROJECT_DIR"
-
-      - name: Reject verifier-unsafe object register moves
-        run: python3 scripts/check_smali_reference_moves.py "$PROJECT_DIR"
-
-      - name: Reject undefined register reads on any control flow path
-        run: python3 scripts/check_smali_register_flow.py "$PROJECT_DIR"
-
-      - name: Reject return-object values that fail ART verification
-        run: python3 scripts/check_smali_return_types.py "$PROJECT_DIR"
+      # Cache the expensive Apktool/Smali assembly separately from signing.
+      # When source inputs and the tool version are unchanged, a manual rebuild
+      # only needs alignment, signing and APK verification.
+      - name: Cache assembled unsigned APK
+        id: unsigned-cache
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.UNSIGNED_APK }}
+          key: ci-unsigned-214-${{ env.APKTOOL_VERSION }}-${{ env.APKTOOL_SHA256 }}-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'upstream/26.11.23.aa98568/**', 'scripts/**', '.github/workflows/build-apk.yml') }}
 
       - name: Build unsigned APK with apktool
+        if: steps.unsigned-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
           set -euo pipefail
-          java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$RUNNER_TEMP/unsigned.apk"
-          ls -lh "$RUNNER_TEMP/unsigned.apk"
+          mkdir -p "$(dirname "$UNSIGNED_APK")"
+          java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$UNSIGNED_APK"
+          ls -lh "$UNSIGNED_APK"
+
+      - name: Verify cached unsigned APK
+        shell: bash
+        run: test -s "$UNSIGNED_APK"
 
       - name: Align, sign and verify
         id: sign
@@ -184,7 +184,7 @@ jobs:
           # ---- zipalign -> sign -> verify ----
           mkdir -p "$GITHUB_WORKSPACE/artifacts"
           out="$GITHUB_WORKSPACE/artifacts/BoxProxy-${{ steps.ver.outputs.version_name }}-rebuilt.apk"
-          "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
+          "${bt}zipalign" -f -p 4 "$UNSIGNED_APK" "$RUNNER_TEMP/aligned.apk"
           "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
           "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
             --ks-pass env:KS_PASS --key-pass env:KEY_PASS \
@@ -245,4 +245,4 @@ jobs:
           gh release create "${{ github.ref_name }}" artifacts/*.apk artifacts/*.sha256 \
             --repo "${{ github.repository }}" --verify-tag \
             --title "BoxProxy ${{ github.ref_name }}" \
-            --notes "由 GitHub Actions 从 upstream/26.11.19.bf82603 的 194 完整迁移候选回编译（apktool ${APKTOOL_VERSION} + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"
+            --notes "由 GitHub Actions 从 upstream/26.11.23.aa98568 的 214 完整迁移候选回编译（apktool ${APKTOOL_VERSION} + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"

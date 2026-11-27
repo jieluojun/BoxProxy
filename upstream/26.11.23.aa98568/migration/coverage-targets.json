@@ -1,0 +1,9 @@
+{
+ "note": "Reviewed member targets for the 194 -> 214 hop, for methods whose class has no one-to-one map entry.",
+ "members": {
+  "Lmm0;->H(Lle1;)Lwe1;": {
+   "new": "Lix;->F(Lii1;)Lti1;",
+   "evidence": "Lmm0; is a static facade whose methods R8 distributed in 214; Lix;->F(Lii1;)Lti1; is the only method in the tree with that mapped signature (Lle1;->Lii1;, Lwe1;->Lti1;), and Lix; is where the sibling facades Lgn; and Lmm; landed"
+  }
+ }
+}

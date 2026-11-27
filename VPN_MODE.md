@@ -56,7 +56,13 @@
   1. 启动时应用读取 `files/vpn/config.yaml`，把每个 PROCESS 子句换成对应的 `SRC-IP-CIDR,172.19.200.N/32`，结果写到 `files/vpn/config.run.yaml`（核心用这个文件启动，原配置不改动）。包名按本机已安装应用匹配：`PROCESS-NAME` 按包名忽略大小写相等，`PROCESS-NAME-REGEX` 用 Java 正则（忽略大小写、部分匹配）。
   2. TUN 描述符改由应用读取（`VpnPump`），对每条新连接调用 `ConnectivityManager.getConnectionOwnerUid()` 得到 UID，再把该包的源地址 `172.19.0.1` 改写成该应用对应的标签地址 `172.19.200.N`（重算 IP/TCP/UDP 校验和）后，经 SEQPACKET socketpair 交给内核；内核回包的目的地址再改回 `172.19.0.1`。
   3. 内核按 `SRC-IP-CIDR` 命中规则，所以可以指定任意策略组。
-  限制：只处理 IPv4（使用该功能时 VPN 不再声明 IPv6）；分片包、ICMP 不打标记；`PROCESS-PATH*`、`rule-providers` 里的 PROCESS 规则不翻译；应用清单在启动时读取，新装应用需重启 VPN；数据多经过一次 Java 层，大流量下比不用 PROCESS 规则时耗电更多；配置里没有 PROCESS 规则时完全不启用这一层。排查：`runs.log` 里 `[pump]` 开头的行会列出翻译结果和前 40 条连接的 uid/标签。
+  4. 改写出来的文本有两处必须成立，而它们只能靠测试守住（`apktool b` 与安装都不读这段字符串）：内核要能按
+     `TYPE,(a),(b)` 逐层切开它（列表里混进一个空元素，内核就在启动前 `payloadRule error` 退出），以及 IPv6 的
+     tag 地址要等于 `VpnPump.forward6` 写进包里的两个字节 `0xC8,tag`，即 `fdfe:dcba:9876::c8NN`——写成
+     `or-int/lit16 …, 0xc800` 会因符号扩展变成 `::ffffc801`，规则就永远不命中，而且不报任何错。
+     前者由 `vpn-src/test/VpnTagsTest.java` 在**产物 smali** 上验（assemble→dex→enjarify 后按内核的切分规则逐层
+     比较），214 跳的门 `check_copied_emitters` 在迁移树上再验一遍。
+  限制：sing-box 路径不处理 IPv6（只有它不声明 IPv6），mihomo 路径 IPv4/IPv6 一样打 tag；分片包、ICMP 不打标记；`PROCESS-PATH*`、`rule-providers` 里的 PROCESS 规则不翻译；应用清单在启动时读取，新装应用需重启 VPN；数据多经过一次 Java 层，大流量下比不用 PROCESS 规则时耗电更多；配置里没有 PROCESS 规则时完全不启用这一层。排查：`runs.log` 里 `[pump]` 开头的行会列出翻译结果和前 40 条连接的 uid/标签。
 
 ## 自动覆写（启动配置）在 VPN 模式下的生效方式
 
@@ -80,23 +86,26 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 ## App 自身流量（延迟检测 / IP 检测 / Web 面板）
 
 内核与 App 同一个 UID，必须把 App 排除在 VPN 之外，否则内核的出站连接会绕回 VPN。
-副作用是 App 自己发的请求（首页延迟、WAN 检测、Web 面板里的延迟/网络信息）直连，不走代理。
+没有应用侧代理时，App 自己发的请求会绕过 TUN、直接走网络。
 
-处理方式：VPN 运行期间，把 App 自己的请求指向内核的本地代理端口，VPN 仍然排除 App。
+**当前仍是候选解释，尚未设备确认：**你刚反馈刷新检查时只有 `google.com` 在内核日志中出现，其它域名没有事务。若当时 Mihomo 连接/访问日志确实正常开启，这表示其它请求没有到达 Mihomo（因此不是内核里的 `DIRECT` 规则结果）；但单凭“无记录”仍不能区分 App 没发起该请求、日志未记录，或连接绕过本地代理。
+
+静态追踪确认：首页延迟在 `fg` 里用 `Lav2.g`，WAN/IP 在 `ty2.g()` → `ty2.b()` 里用 `Lty2.e`；两者是不同的缓存 OkHttp 客户端。前一版只把默认 selector 改成稳定的 `VpnAppProxy.sel()`，但你报告它没有解决问题。新发现的缺口是：OkHttp 可能在再次调用 selector 之前，直接复用连接池里 VPN 启动前建立的同主机直连连接；稳定 selector 并不会自动清掉旧连接。候选修正是在这两个探针的每次请求中，VPN active 时克隆原 OkHttp 配置并换成 `maxIdleConnections=0` 的新连接池，同时保留当前 live selector；非 VPN 时仍使用原客户端。迁移门会核验两个请求都实际使用克隆客户端。这个机制与缺日志现象吻合，但仍不是已确认根因或已验证的出站结果；也不能用 `[app-proxy]` selector 日志代替 Mihomo 事务记录。
 
 - `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
   配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
 - `VpnAppProxy`：
-  - 内核存活后等本地端口可连接，再启用（日志 `[app-proxy] …` 写入 `runs.log`）；
-  - `ProxySelector`：App 内置的 OkHttp（`z84` 构建时改用 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，
-    127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
-  - WebView：通过 `ProxyController` 的同一套边界接口做代理覆盖（`127.0.0.1`、`localhost`、`<local>` 直连），
-    Web 面板里的请求也走内核。
+  - 内核进程启动后还要等本地代理端口接受连接才置 `active`；无端口、超时或等待期间，请求仍可能直连，这是启动窗口/失败回退，不是本次 OkHttp 修复能消除的路径；
+  - 默认 OkHttp 客户端使用上述稳定 selector；首页延迟和 WAN/IP 两条探针路径还会在 VPN active 时用新的零 idle 连接池构造单次请求客户端，避免沿用 VPN 启动前的 OkHttp 直连池。其它 OkHttp 调用不受这项探针隔离改动影响；
+  - 本版本 `i94` 中的外部 URL 下载另走无参数 `URL.openConnection()` 创建 `HttpURLConnection`，未见显式 `Proxy.NO_PROXY`，依赖进程默认 selector。静态审计确认调用点与 activate/stop 的默认 selector 路径，但它实际采用 selector、是否复用平台连接、是否到达 Mihomo 仍需独立验证；
+  - `fz5` 的 `URL.openConnection()` 来自 `ClassLoader.getResource()`，用于读取 classpath/JAR 本地资源，不是远端请求；
+  - Web 面板通过 `ProxyController` 设 WebView 代理覆盖，切换 HTTP/SOCKS loopback endpoint，并将 `127.0.0.1`、`localhost`、`<local>` 设为绕过项；停止 VPN 时清除覆盖。静态门检查这条调用链，但 WebView provider 支持及真实流量仍待设备验证。
+  - 扫描候选 Smali 的 Socket/HTTP 调用点：`a71` 的 Socket 是 OkHttp 路由连接实现，按 route 中的 `Proxy` 建连；`VpnAppProxy$T` 只用 Socket 探测本机代理端口；`VpnNet.openRelay` 直连 `127.0.0.1:<relayPort>`，用于实验内核的 TUN→SOCKS 转发。它们都不是 `fg`/`ty2` 的 Home 请求实现。扫描命中 `i94` 一处外部 `HttpURLConnection`、WebView 的独立代理覆盖，未找到 Cronet 调用点或另一处应用层 HTTP stack；反射/native 代码及真机行为不由这项静态扫描排除。
 - 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
 
-限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
+限制：应用自建且不经 OkHttp/URLConnection/WebView 覆盖的 Socket 或 Cronet 请求不会走该 selector；候选中的 OkHttp `NO_PROXY` 用法位于 hostless/空 selector fallback，另有一个始终直连的 `hv4` fallback selector，但共享 client 构造器会先取非空的 `VpnAppProxy.sel()`（其 singleton 始终存在）。配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
-`mixed-port` 时，该端口也会对局域网开放。需在真机验证。
+`mixed-port` 时，该端口也会对局域网开放。`proxying <host>` 只证明 selector 选择，不证明连接成功或 Mihomo 出口。需在真机验证。
 
 ## sing-box / xray / v2fly / hysteria 内核（实验性）
 

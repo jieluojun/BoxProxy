@@ -1,0 +1,249 @@
+{
+  "ok": 51,
+  "errors": [],
+  "whole": 14,
+  "patch": 36,
+  "added": 1,
+  "fields": 2,
+  "additions": 1363,
+  "toast": 26,
+  "manifest": 15,
+  "semanticFixes": [],
+  "addedFields": [
+    "Lbr5; .field public static final enum t:Lbr5;",
+    "Lh96; .field public cfgD:Z"
+  ],
+  "referenceFixups": {
+    "    if-nez v2, :cond_sep": 1,
+    "    or-int/lit16 p0, p0, 0xc800": 1,
+    "    filled-new-array/range {v3 .. v10}, [Lii1;": 1
+  },
+  "interfaceMemberRenames": [
+    {
+      "file": "smali/com/box/app/cfg/CfgClick.smali",
+      "class": "Lcom/box/app/cfg/CfgClick;",
+      "was": "invoke",
+      "now": "a",
+      "prototype": "()Ljava/lang/Object;",
+      "interface": "Llh2;",
+      "because": "Llh2; names this member a on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/cfg/CfgIcon.smali",
+      "class": "Lcom/box/app/cfg/CfgIcon;",
+      "was": "invoke",
+      "now": "e",
+      "prototype": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lai2;",
+      "because": "Lai2; names this member e on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/cfg/CfgNav.smali",
+      "class": "Lcom/box/app/cfg/CfgNav;",
+      "was": "invoke",
+      "now": "e",
+      "prototype": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lai2;",
+      "because": "Lai2; names this member e on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/BattToggle.smali",
+      "class": "Lcom/box/app/vpn/BattToggle;",
+      "was": "invoke",
+      "now": "f",
+      "prototype": "(Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lwh2;",
+      "because": "Lwh2; names this member f on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/BootDone.smali",
+      "class": "Lcom/box/app/vpn/BootDone;",
+      "was": "getContext",
+      "now": "g",
+      "prototype": "()Laj1;",
+      "interface": "Lxd1;",
+      "because": "Lxd1; names this member g on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/BootDone.smali",
+      "class": "Lcom/box/app/vpn/BootDone;",
+      "was": "resumeWith",
+      "now": "j",
+      "prototype": "(Ljava/lang/Object;)V",
+      "interface": "Lxd1;",
+      "because": "Lxd1; names this member j on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/PanelToggle.smali",
+      "class": "Lcom/box/app/vpn/PanelToggle;",
+      "was": "invoke",
+      "now": "a",
+      "prototype": "()Ljava/lang/Object;",
+      "interface": "Llh2;",
+      "because": "Llh2; names this member a on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/RestoreCfg.smali",
+      "class": "Lcom/box/app/vpn/RestoreCfg;",
+      "was": "invoke",
+      "now": "a",
+      "prototype": "()Ljava/lang/Object;",
+      "interface": "Llh2;",
+      "because": "Llh2; names this member a on the interface it is reached through"
+    },
+    {
+      "file": "smali/com/box/app/vpn/RestoreCfg.smali",
+      "class": "Lcom/box/app/vpn/RestoreCfg;",
+      "was": "invoke",
+      "now": "f",
+      "prototype": "(Ljava/lang/Object;)Ljava/lang/Object;",
+      "interface": "Lwh2;",
+      "because": "Lwh2; names this member f on the interface it is reached through"
+    }
+  ],
+  "pins": {
+    "types": {},
+    "fields": {
+      "Lef5;->t:Lef5;": "Lbr5;->t:Lbr5;",
+      "Lzh5;->i:Lql6;": "Lju5;->h:Lpz6;"
+    },
+    "members": {
+      "Lya3;->c0(ILib2;)Ljava/lang/String;": "Lxl3;->U(ILzi2;)Ljava/lang/String;",
+      "Lgn;->p(Lu92;Lw04;ZZJFFFLyz0;Lib2;II)V": "Ldw;->i(Llh2;Lbb4;ZZJFFFLs21;Lzi2;II)V",
+      "Lmm;->X(ILra2;Lib2;)Lyz0;": "Lix;->u0(ILii2;Lzi2;)Ls21;",
+      "Lhs;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J": "Lnx;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+      "Lj23;->q(Ljava/lang/Object;Ljava/lang/Object;)Z": "Lob3;->s(Ljava/lang/Object;Ljava/lang/Object;)Z",
+      "Lnn;->t()Landroid/content/Context;": "Lob3;->B()Landroid/content/Context;",
+      "Lsa3;->Q(Ljava/lang/Object;)Lgx4;": "Lml3;->B(Ljava/lang/Object;)Lz75;",
+      "Lsa3;->G(Lib2;)Luv0;": "Lrj3;->H(Lzi2;)Lny0;",
+      "Lne1;->c()Ljava/util/ArrayList;": "Lki1;->d()Ljava/util/ArrayList;",
+      "Lne1;->d()Ljava/util/ArrayList;": "Lki1;->f()Ljava/util/ArrayList;",
+      "Lne1;->e(Ljava/lang/String;)Ljava/lang/String;": "Lki1;->g(Ljava/lang/String;)Ljava/lang/String;",
+      "Lne1;->f(Ljava/util/ArrayList;Z)V": "Lki1;->h(Ljava/util/ArrayList;Z)V",
+      "Lne1;->g(Lle1;)V": "Lki1;->i(Lii1;)V"
+    },
+    "addedFields": 2,
+    "placements": [
+      "Lc67;-><clinit>()V",
+      "Lef5;-><clinit>()V",
+      "Lpa1;->a(",
+      "Lne1;->c(",
+      "Lu6;->p(",
+      "Luu0;->invokeSuspend(",
+      "Luu0;->invokeSuspend(",
+      "Luu0;->invokeSuspend("
+    ],
+    "referenceFixups": 0,
+    "scopedFixups": {
+      "smali/ki1.smali": 1,
+      "smali/com/box/app/vpn/VpnTags.smali": 2
+    }
+  },
+  "registerRenames": [
+    {
+      "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
+      "was": "move-result-object p1",
+      "line": "move-result-object p0",
+      "registers": [
+        "p1->p0"
+      ],
+      "kind": "preserved line"
+    },
+    {
+      "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
+      "was": "invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+      "line": "invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+      "registers": [
+        "p1->p0"
+      ],
+      "kind": "preserved line"
+    },
+    {
+      "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
+      "was": "check-cast p0, Ljava/lang/String;",
+      "line": "check-cast p2, Ljava/lang/String;",
+      "registers": [
+        "p0->p2"
+      ],
+      "kind": "preserved line"
+    },
+    {
+      "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
+      "was": "if-nez p0, :cond_4",
+      "line": "if-nez v1, :cond_4",
+      "registers": [
+        "p0->v1"
+      ],
+      "kind": "preserved line"
+    },
+    {
+      "method": "Lhi1;->d(Ljava/io/File;Lyd1;)Ljava/lang/Object;",
+      "was": "return-object p0",
+      "line": "return-object v1",
+      "registers": [
+        "p0->v1"
+      ],
+      "kind": "preserved line"
+    },
+    {
+      "method": "Ljk5;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "was": "invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "line": "    invoke-static {v15}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "registers": [
+        "v14->v15"
+      ],
+      "replaced": "invoke-virtual {v15}, Ljava/lang/Enum;->ordinal()I",
+      "kind": "replaced line"
+    }
+  ],
+  "registerRealignments": [
+    {
+      "method": "Ljk5;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "was": "invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "line": "    invoke-static {v15}, Lcom/box/app/vpn/VpnBridge;->key(Lef5;)I",
+      "registers": [
+        "v14->v15"
+      ],
+      "replaced": "invoke-virtual {v15}, Ljava/lang/Enum;->ordinal()I",
+      "kind": "replaced line"
+    }
+  ],
+  "graftScratch": [
+    {
+      "was": "v14 v15 v16",
+      "now": "v49 v50 v51",
+      "call": "invoke-static/range {v49 .. v51}",
+      "because": [
+        "v16 is read below by \"move-object/from16 v31, v16\""
+      ],
+      "method": "Lv86;->e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+      "block": "5 lines"
+    }
+  ],
+  "manualHits": {},
+  "inactiveRules": [
+    "archive matcher",
+    "battery unrestricted row",
+    "core path probe",
+    "core registry",
+    "coroutine states",
+    "entry filter",
+    "field h register",
+    "private working directory",
+    "probe wrapper",
+    "restore menu k",
+    "restore menu q75",
+    "settings list",
+    "vpn enum",
+    "vpn mode res shortcut"
+  ],
+  "placementHits": {
+    "placement: Lc67;-><clinit>()V": 1,
+    "placement: Lef5;-><clinit>()V": 1,
+    "placement: Lne1;->c(": 1,
+    "placement: Lpa1;->a(": 1,
+    "placement: Lu6;->p(": 1,
+    "placement: Luu0;->invokeSuspend(": 1,
+    "placement: Luu0;->invokeSuspend(:z(Ljava/lang/Object;)Ljava/lang/Object;": 2
+  }
+}

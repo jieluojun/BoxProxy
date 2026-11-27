@@ -1,0 +1,213 @@
+{
+  "note": [
+    "Reviewed regression contracts of the 194 -> 214 hop, read by",
+    "scripts/verify_214_custom_hunks.py. A contract states something the hunk",
+    "shape and literal comparison cannot see: an absence (a relocated row left",
+    "no residue), a cross-file pairing (the probe script is wrapped by the same",
+    "method that builds it), a declaration that has to stay unique, a resource",
+    "id that has to be reachable by name, or a constant set that is the feature.",
+    "",
+    "Every anchor is written in 194 terms - the class, the member, the field and",
+    "the needle as the reviewed 194 tree spells them - and the verifier resolves",
+    "it into 214 through migration/class-map.json (reviewed by",
+    "class-map-review.json), preferring the reviewed member map and falling back",
+    "to the parameter shape inside the mapped class. Registers are matched by",
+    "shape, never by number, because the frame a release hands the customization",
+    "is a property of that release. Only where the map cannot name an owner - an",
+    "R8 facade dissolved into its caller - does a contract carry a reviewed",
+    "on214 override with its evidence."
+  ],
+  "contracts": [
+    {
+      "id": "core-version-rule-whitelist",
+      "note": "the version rule resolver must keep accepting the reviewed repositories",
+      "where": {
+        "class": "Lmm0;",
+        "method": "H(Lle1;)Lwe1;"
+      },
+      "on214": {
+        "class": "Lix;",
+        "method": "F(Lii1;)Lti1;",
+        "evidence": "Lmm0; is a static facade R8 dissolved into Lix;, so the class map has no owner for it; the reviewed coverage target Lmm0;->H -> Lix;->F names the 214 resolver"
+      },
+      "constSet": {
+        "match": "^[\\w.-]+/[\\w.-]+$",
+        "expect": [
+          "metacubex/mihomo",
+          "vernesong/mihomo",
+          "jieluojun/mihomo",
+          "jieluojun/mihomo",
+          "sagernet/sing-box",
+          "ref1nd/sing-box-releases",
+          "jieluojun/sing-box",
+          "v2fly/v2ray-core",
+          "xtls/xray-core",
+          "apernet/hysteria"
+        ],
+        "mode": "contains",
+        "note": "contains: the two DingTalk repositories are the customization's own, and the resolver has to keep seeing each of them; jieluojun/mihomo arrives twice, once in the whitelist and once in the smart-build branch. 214 adds its own meow-rs pair next to them, which is the upstream's business, not a lost constant."
+      }
+    },
+    {
+      "id": "singbox-compare-default",
+      "note": "the hardened sing-box version pattern replaces the stock default; the 194 hop additionally counted `return-object v0` in the file, which is a register number of that release and is now proved by the shape gate instead",
+      "where": {
+        "class": "Lmm0;",
+        "wholeClass": true
+      },
+      "on214": {
+        "class": "Lix;",
+        "evidence": "the compare helper lives in the class the facade Lmm0; was folded into; the reviewed coverage target maps Lmm0;->H to Lix;->F, and the class carries the whole version-pattern logic in 194 as well"
+      },
+      "require": [
+        "const-string *\"(?im)^sing-box\\\\s+(?:version\\\\s+)?v?(\\\\d+\\\\.\\\\d+\\\\.\\\\d+(?:-[0-9A-Za-z.]+)*?)(?:-zero)?(?:\\\\+[0-9A-Za-z.-]+)?(?:\\\\s|$)\""
+      ],
+      "forbid": [
+        ":goto_sing_full"
+      ],
+      "counts": [
+        [
+          "Lwe1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          [
+            ">=",
+            2
+          ]
+        ]
+      ],
+      "customSide": [
+        {
+          "class": "Lmm0;",
+          "require": "const-string p0, \"(?im)^sing-box"
+        }
+      ]
+    },
+    {
+      "id": "vpn-status-identity-tolerance",
+      "note": "a no-root session never writes box.identity, so the status probe must treat a blank identity as present",
+      "where": {
+        "class": "Ljn;",
+        "method": "O(Ljava/lang/String;Ljava/lang/String;Lob1;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;J)Z"
+      },
+      "require": [
+        "Lbn6;->Q0(Ljava/lang/CharSequence;)Z"
+      ]
+    },
+    {
+      "id": "private-working-directory",
+      "note": "box/ is built from getFilesDir() in both modes; the discarded external arm and sticky decision may not come back",
+      "where": {
+        "class": "Lvc0;",
+        "method": "k()Llc0;"
+      },
+      "require": [
+        "invoke-virtual {*}, Landroid/content/Context;->getFilesDir()Ljava/io/File;",
+        "const-string *, \"box\""
+      ],
+      "counts": [
+        [
+          "getFilesDir()Ljava/io/File;",
+          [
+            "==",
+            1
+          ]
+        ]
+      ],
+      "forbid": [
+        "getExternalFilesDir",
+        "box_dir",
+        "\"PATH\"",
+        ":box_dir_"
+      ]
+    },
+    {
+      "id": "probe-script-wrapping",
+      "note": "the LdFix probe wrapper has to be assembled exactly where the 194 customization assembled it: once per script-building site, and the site this release has is the core-detail continuation",
+      "counts": [
+        [
+          "Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;",
+          [
+            "==",
+            1
+          ]
+        ]
+      ],
+      "on214": {
+        "class": "Lmx0;",
+        "method": "z(Ljava/lang/Object;)Ljava/lang/Object;",
+        "evidence": "the 194 wrapper sits in Luu0;->invokeSuspend; this release assembles that script in the sibling method Lmx0;->z, which is where the placement puts the call. The parameter shape of the two methods is identical, so the reviewed coverage target alone could not tell them apart - the count is what proves the call was spliced and not merely compiled."
+      },
+      "where": {
+        "method": "v(Ljava/lang/Object;)Ljava/lang/Object;"
+      }
+    },
+    {
+      "id": "core-version-probe-signature",
+      "note": "the version probe coroutine keeps one declaration and stays called from its own class",
+      "where": {
+        "class": "Lte1;",
+        "method": "a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;"
+      },
+      "headers": [
+        {
+          "signature": "Lte1;->a(Ljava/lang/String;Ljava/lang/String;Lgo;Lfa1;)Ljava/lang/Object;",
+          "exactly": 1,
+          "minCallers": 1,
+          "note": "referenced by its own class and by the coroutine machinery that resumes it; 194 asserted the same via Lke1;/Lge1; owners",
+          "declaredBy": [
+            "Lte1;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core-detail-probe-signature",
+      "note": "the core detail probe keeps one declaration, its coroutine state check and its continuation owner",
+      "where": {
+        "class": "Lke1;",
+        "method": "d(Ljava/io/File;Lfa1;)Ljava/lang/Object;"
+      },
+      "headers": [
+        {
+          "signature": "Lke1;->d(Ljava/io/File;Lfa1;)Ljava/lang/Object;",
+          "exactly": 1,
+          "referencedBy": [
+            "Lke1;",
+            "Lge1;"
+          ],
+          "declaredBy": [
+            "Lke1;"
+          ]
+        }
+      ],
+      "require": [
+        "instance-of *, *, Lge1;"
+      ]
+    },
+    {
+      "id": "battery-row-absent",
+      "note": "KNOWN GAP of this hop: the unrestricted-battery row is excluded (coverage-exclusions.json) until it is rewritten against the 214 row emitter. The contract pins the gap so a half-applied row cannot land silently in either host.",
+      "where": {
+        "class": "Lut0;",
+        "method": "a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+      },
+      "forbid": [
+        "BattToggle",
+        "0x13f2fb70",
+        "Lcom/box/app/vpn/VpnPrefs;->battOn"
+      ]
+    },
+    {
+      "id": "battery-row-absent-compose-slot",
+      "note": "the 214 host of the relocated row (Lbq4;->a -> Lw05;->c) must stay clean while the row is excluded",
+      "where": {
+        "class": "Lbq4;",
+        "method": "a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+      },
+      "forbid": [
+        "BattToggle",
+        "0x13f2fb70",
+        "Lcom/box/app/vpn/VpnPrefs;->battOn"
+      ]
+    }
+  ]
+}

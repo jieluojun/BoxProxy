@@ -1,0 +1,71 @@
+{
+ "old": ".tools/upstream-194-src/decompiled",
+ "custom": ".tools/ci-194/decompiled",
+ "new": ".tools/upstream-214-src",
+ "filesScanned": 9891,
+ "referencesChecked": 9264,
+ "gaps": [
+  {
+   "pin": "Lef5;->t:Lef5;",
+   "kind": "field",
+   "mappedTo": "Lbr5;->t:Lef5;",
+   "files": [
+    "smali/com/box/app/vpn/VpnBridge.smali",
+    "smali/ef5.smali",
+    "smali/m46.smali",
+    "smali/pd5.smali"
+   ]
+  },
+  {
+   "pin": "Lfw5;->cfgD:Z",
+   "kind": "field",
+   "mappedTo": "Lh96;->cfgD:Z",
+   "files": [
+    "smali/fw5.smali"
+   ]
+  },
+  {
+   "pin": "Lgn;->p(Lu92;Lw04;ZZJFFFLyz0;Lib2;II)V",
+   "kind": "member",
+   "mappedTo": "Lgn;->p(Lu92;Lw04;ZZJFFFLyz0;Lib2;II)V",
+   "files": [
+    "smali/com/box/app/cfg/CfgNav.smali"
+   ]
+  },
+  {
+   "pin": "Lmm;->X(ILra2;Lib2;)Lyz0;",
+   "kind": "member",
+   "mappedTo": "Lmm;->X(ILra2;Lib2;)Lyz0;",
+   "files": [
+    "smali/com/box/app/cfg/CfgNav.smali"
+   ]
+  },
+  {
+   "pin": "Lms6;->a(ZLfa2;Ljava/lang/String;Lyz0;ZLib2;III)V",
+   "kind": "member",
+   "mappedTo": "Lms6;->a(ZLfa2;Ljava/lang/String;Lyz0;ZLib2;III)V",
+   "files": [
+    "smali/bq4.smali"
+   ]
+  },
+  {
+   "pin": "Lya3;->c0(ILib2;)Ljava/lang/String;",
+   "kind": "member",
+   "mappedTo": "Lti3;->c0(ILib2;)Ljava/lang/String;",
+   "files": [
+    "smali/bq4.smali",
+    "smali/cc3.smali",
+    "smali/j85.smali",
+    "smali/k.smali"
+   ]
+  },
+  {
+   "pin": "Lzh5;->i:Lql6;",
+   "kind": "field",
+   "mappedTo": "Lzh5;->i:Lql6;",
+   "files": [
+    "smali/com/box/app/vpn/VpnPrefs.smali"
+   ]
+  }
+ ]
+}

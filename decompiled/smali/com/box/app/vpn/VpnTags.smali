@@ -431,7 +431,7 @@
 
     if-ge v2, v3, :cond_done
 
-    if-nez v2, :cond_sep
+    if-eqz v2, :cond_sep
 
     const-string v3, ","
 
@@ -577,7 +577,9 @@
 .method private static ip6(I)Ljava/lang/String;
     .registers 4
 
-    or-int/lit16 p0, p0, 0xc800
+    const v0, 0xc800
+
+    or-int/2addr p0, v0
 
     invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 

@@ -1,0 +1,451 @@
+{
+  "note": "Reviewed placement and release-scoped runtime-fix data for the 194 -> 214 hop. The porter replays the tree delta generically and consults this file for the handful of decisions that cannot be derived from a score: a reference the class map cannot name, a field the customization introduces, an insertion whose anchor the alignment could land one instruction off, or a small shared-runtime fix that exists only in the 214 base. Every entry states the evidence, and the porter and hunk gate prove it resolves and fires exactly once.",
+  "types": {},
+  "fields": {
+    "Lef5;->t:Lef5;": {
+      "new": "Lbr5;->t:Lbr5;",
+      "evidence": "the customization appends a seventh vpn mode constant to the enum; 194 Lef5; had k..p upstream plus the added t, 214 spells the same enum as Lbr5; with j..o, so the added constant continues the shifted lettering at t (Lbr5; declares no t field, and its <clinit> is replaced by the replayed Lef5;-><clinit>()V hunk that assigns it)"
+    },
+    "Lzh5;->i:Lql6;": {
+      "new": "Lju5;->h:Lpz6;",
+      "evidence": "VpnPrefs reads the captured StateFlow out of the continuation wrapper it hands to a coroutine: 194 Lzh5;->i:Lql6;, and the 214 image of that wrapper (Lju5;, see the class map review) names the same captured field h:Lpz6; - the letter differs because R8 renamed the wrapper, not because the slot did"
+    }
+  },
+  "members": {
+    "Lya3;->c0(ILib2;)Ljava/lang/String;": {
+      "new": "Lxl3;->U(ILzi2;)Ljava/lang/String;",
+      "evidence": "the string-resource lookup the settings rows use; 214 has no Lti3;->c0, and Lxl3;->U is its image (same int-id plus parameter object shape, called from the same row builders)"
+    },
+    "Lgn;->p(Lu92;Lw04;ZZJFFFLyz0;Lib2;II)V": {
+      "new": "Ldw;->i(Llh2;Lbb4;ZZJFFFLs21;Lzi2;II)V",
+      "evidence": "the compose Row intrinsic CfgNav calls; R8 rewrote its body so no digest matches, and of the two methods with that shape Ldw;->i and Lla4;->b, only Ldw;->i takes the Ls21; (image of Lyz0;) slot argument the call site passes - Lla4;->b takes Lai2;"
+    },
+    "Lmm;->X(ILra2;Lib2;)Lyz0;": {
+      "new": "Lix;->u0(ILii2;Lzi2;)Ls21;",
+      "evidence": "the remember/derivedStateOf facade the config editor navigation uses; Lmm; has no 214 image class, and Lix;->u0 is the only static with that mapped signature"
+    },
+    "Lhs;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J": {
+      "new": "Lnx;->C(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+      "evidence": "the stream copy helper used by the config export/import paths: Lhs; is a name R8 reused in 214 for an unrelated 2-method class, while Lnx;->C has the identical body and signature (the merge that also took Lmm; into Lix;)"
+    },
+    "Lj23;->q(Ljava/lang/Object;Ljava/lang/Object;)Z": {
+      "new": "Lob3;->s(Ljava/lang/Object;Ljava/lang/Object;)Z",
+      "evidence": "null-safe equality: 214 reuses the name Lj23; for a class with 4 methods and no identical body; the inlined home of the helper is Lob3;, whose s(Object,Object)Z is it"
+    },
+    "Lnn;->t()Landroid/content/Context;": {
+      "new": "Lob3;->B()Landroid/content/Context;",
+      "evidence": "the application-context accessor the same custom code reaches for; it lives in the same class the equality helper was inlined into"
+    },
+    "Lsa3;->Q(Ljava/lang/Object;)Lgx4;": {
+      "new": "Lml3;->B(Ljava/lang/Object;)Lz75;",
+      "evidence": "the result-wrapping call of the root-service bridge (Lgx4; -> Lz75;)"
+    },
+    "Lsa3;->G(Lib2;)Luv0;": {
+      "new": "Lrj3;->H(Lzi2;)Lny0;",
+      "evidence": "the flow-collection call of the same bridge; Lrj3;->M(Lzi2;)Lkr7; is the decoy with the same arity"
+    },
+    "Lne1;->c()Ljava/util/ArrayList;": {
+      "new": "Lki1;->d()Ljava/util/ArrayList;",
+      "evidence": "the update-source list builder: Lne1; has no 214 image class of its own and Lki1; shifted every member name, so the reference cannot be resolved by the tree-diff member votes (it would silently land on Lki1;->d, the 194 body of c, only for the ones that happen to keep their letter)"
+    },
+    "Lne1;->d()Ljava/util/ArrayList;": {
+      "new": "Lki1;->f()Ljava/util/ArrayList;",
+      "evidence": "same shift; Lki1;->f()Ljava/util/ArrayList; is the image of the 194 Lne1;->d body (coverage pairs them at body-ratio 0.796), while an unmapped Lne1;->d would resolve to Lki1;->d, the image of Lne1;->c"
+    },
+    "Lne1;->e(Ljava/lang/String;)Ljava/lang/String;": {
+      "new": "Lki1;->g(Ljava/lang/String;)Ljava/lang/String;",
+      "evidence": "same shift; the asset-name helper is Lki1;->g"
+    },
+    "Lne1;->f(Ljava/util/ArrayList;Z)V": {
+      "new": "Lki1;->h(Ljava/util/ArrayList;Z)V",
+      "evidence": "same shift; writing the source list back is Lki1;->h (214 has no Lki1;->f with that signature)"
+    },
+    "Lne1;->g(Lle1;)V": {
+      "new": "Lki1;->i(Lii1;)V",
+      "evidence": "same shift; the single-source update is Lki1;->i"
+    }
+  },
+  "addedFields": [
+    {
+      "class": "Lbr5;",
+      "declaration": ".field public static final enum t:Lbr5;",
+      "evidence": "the customization appends a seventh vpn mode constant to the enum; 194 Lef5; had k..p upstream plus the added t, 214 spells the same enum as Lbr5; with j..o, so the added constant continues the shifted lettering at t (Lbr5; declares no t field, and its <clinit> is replaced by the replayed Lef5;-><clinit>()V hunk that assigns it)"
+    },
+    {
+      "class": "Lh96;",
+      "declaration": ".field public cfgD:Z",
+      "evidence": "the config-dirty flag the 194 customization added to the config object (Lfw5;->cfgD:Z); 214 spells that class as Lh96; and its field list stops at y:Lz75;, so the flag has to be re-introduced"
+    }
+  ],
+  "referenceFixups": [],
+  "scopedFixups": {
+    "smali/ki1.smali": [
+      {
+        "wrong": "    filled-new-array/range {v3 .. v10}, [Lii1;",
+        "right": "    filled-new-array/range {v3 .. v12}, [Lii1;",
+        "evidence": "the two reviewed DingTalk elements occupy v11 and v12"
+      }
+    ],
+    "smali/com/box/app/vpn/VpnTags.smali": [
+      {
+        "wrong": "    if-nez v2, :cond_sep",
+        "right": "    if-eqz v2, :cond_sep",
+        "evidence": "expr() joins the tag rules of one clause with a comma, and the branch that skips that separator has its polarity flipped in the copied 171 payload: `if-nez` jumps past the append when the index is NOT zero, so the comma is emitted before the first element instead of between elements. The rule the core then reads starts its OR payload with an empty element, and mihomo aborts before the VPN comes up with `Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,(SRC-IP-CIDR,...))),...] error: payloadRule error`. vpn-src/src/com/box/app/vpn/VpnTags.java has always said `if (i > 0)`; this realigns the shipped smali with its own source"
+      },
+      {
+        "wrong": "    or-int/lit16 p0, p0, 0xc800",
+        "right": "    const v0, 0xc800\n\n    or-int/2addr p0, v0",
+        "evidence": "a smali 2-int/lit16 literal is signed, so this ORs 0xffffc800 and ip6() spells tag 1 fdfe:dcba:9876::ffffc801 while VpnPump.forward6 tags the packet bytes with 0xC8,tag, i.e. ::c801 - every IPv6 process rule would then miss for ever, silently. D8 compiles the Java `0xC800 | tag` into exactly these two instructions (VpnPump.smali has `const v6, 0xc800` for the same expression), so this is the generated shape, not a new invention"
+      }
+    ],
+    "smali/lw4.smali": [
+      {
+        "wrong": "    invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;",
+        "right": "    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;",
+        "evidence": "the 214 shared OkHttp client constructor caches ProxySelector.getDefault() in every default client, while VPN activation changes only the process default later; the Home latency client Lav2.g, WAN/IP client Lty2.e, and other default OkHttp clients all use this constructor with a null builder selector. Bind that common default once to VpnAppProxy.sel(), whose singleton selects dynamically from VpnAppProxy.active, while preserving the existing non-null builder-selector branch. This changes route selection for new connections only; it does not invalidate pre-VPN sockets already in the OkHttp pool."
+      }
+    ],
+    "smali/com/box/app/vpn/VpnAppProxy.smali": [
+      {
+        "wrong": "# Appends a line to runs.log.\n.method public static log",
+        "right": ".method public static probeClient(Llw4;)Llw4;\n    .locals 6\n\n    sget-boolean v0, Lcom/box/app/vpn/VpnAppProxy;->active:Z\n\n    if-eqz v0, :cond_probe_direct\n\n    invoke-virtual {p0}, Llw4;->a()Lkw4;\n\n    move-result-object v0\n\n    new-instance v1, Lzy7;\n\n    const/4 v2, 0x0\n\n    const-wide/16 v3, 0x1\n\n    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;\n\n    invoke-direct {v1, v2, v3, v4, v5}, Lzy7;-><init>(IJLjava/util/concurrent/TimeUnit;)V\n\n    iput-object v1, v0, Lkw4;->b:Lzy7;\n\n    new-instance v1, Llw4;\n\n    invoke-direct {v1, v0}, Llw4;-><init>(Lkw4;)V\n\n    return-object v1\n\n    :cond_probe_direct\n    return-object p0\n.end method\n\n# Appends a line to runs.log.\n.method public static log",
+        "evidence": "the live selector fix cannot make OkHttp consult ProxySelector.select() when it reuses an already pooled direct connection. In this release Lzy7 is OkHttp's ConnectionPool and Llw4.a() clones the existing client's full configuration. For active VPN probe calls, clone that configuration with a fresh pool whose maxIdleConnections is zero; the clone keeps the same live selector but cannot reuse pre-activation direct sockets. When inactive, return the original client unchanged."
+      }
+    ],
+    "smali/fg.smali": [
+      {
+        "wrong": "    invoke-static {}, Ljava/lang/System;->nanoTime()J\n\n    .line 200\n    .line 201\n    .line 202\n    move-result-wide v2\n\n    .line 203\n    sget-object p0, Lav2;->g:Llw4;\n\n    .line 204\n    .line 205\n    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;\n\n    .line 206\n    .line 207\n    .line 208\n    new-instance v0, Lpu5;",
+        "right": "    sget-object p0, Lav2;->g:Llw4;\n\n    invoke-static {p0}, Lcom/box/app/vpn/VpnAppProxy;->probeClient(Llw4;)Llw4;\n\n    move-result-object p0\n\n    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;\n\n    invoke-static {}, Ljava/lang/System;->nanoTime()J\n\n    .line 200\n    .line 201\n    .line 202\n    move-result-wide v2\n\n    .line 206\n    .line 207\n    .line 208\n    new-instance v0, Lpu5;",
+        "evidence": "fg builds each Home latency call from Lav2.g. Pass the cached client through probeClient before starting the latency timer so active VPN tests get a fresh zero-idle connection pool without including client-clone overhead in the measured network time."
+      }
+    ],
+    "smali/ty2.smali": [
+      {
+        "wrong": "    sget-object p1, Lty2;->e:Llw4;\n\n    .line 73\n    .line 74\n    new-instance p2, Lny5;",
+        "right": "    sget-object p1, Lty2;->e:Llw4;\n\n    invoke-static {p1}, Lcom/box/app/vpn/VpnAppProxy;->probeClient(Llw4;)Llw4;\n\n    move-result-object p1\n\n    .line 73\n    .line 74\n    new-instance p2, Lny5;",
+        "evidence": "ty2.b executes the WAN/IP request through the cached Lty2.e client. Replace only the per-call client while VPN mode is active, before constructing the OkHttp call; the fresh pool prevents an earlier direct connection from being reused."
+      }
+    ]
+  },
+  "runtimeContracts": {
+    "sharedOkHttpAppProxy": {
+      "clientFile": "smali/lw4.smali",
+      "clientConstructor": "<init>(Lkw4;)V",
+      "builderSelectorField": "Lkw4;->m:Ljava/net/ProxySelector;",
+      "clientSelectorField": "Llw4;->l:Ljava/net/ProxySelector;",
+      "selectorFactory": "Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;",
+      "builderFactory": {
+        "file": "smali/xc0.smali",
+        "method": "a(JJLjava/lang/Long;ZLxr1;I)Llw4;"
+      },
+      "homeClients": [
+        {
+          "field": "Lav2;->g:Llw4;",
+          "lazyField": "Lxc0;->f:Lz67;",
+          "requestFile": "smali/fg.smali"
+        },
+        {
+          "field": "Lty2;->e:Llw4;",
+          "lazyField": "Lxc0;->e:Lz67;",
+          "requestFile": "smali/ty2.smali"
+        }
+      ],
+      "dispatcherFile": "smali/pu5.smali",
+      "selectorCarrierFile": "smali/av5.smali",
+      "selectorCarrierField": "Lav5;->p:Ljava/net/ProxySelector;",
+      "connectionRouteFile": "smali/wk0.smali",
+      "routeSelectorField": "Lq7;->g:Ljava/net/ProxySelector;",
+      "selectorCallFile": "smali/bv5.smali",
+      "selectorImplFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
+      "evidence": "214 Home latency and WAN/IP calls use the two listed static clients; both are lazy default clients from xc0.a. OkHttp stores the chosen selector in Llw4.l; pu5 passes it to Lav5, wk0 carries Lav5.p into q7.g, and bv5 calls ProxySelector.select when selecting a new route. VpnAppProxy.sel() returns its singleton; select() reads active, delegates to orig while inactive, keeps local endpoints direct, and selects the configured loopback proxy for active external routes. A pooled same-host connection can be reused before select() runs again, so this selector trace alone is not proof of the actual transaction route."
+    },
+    "probeConnectionPoolIsolation": {
+      "helperFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
+      "helperMethod": "probeClient(Llw4;)Llw4;",
+      "activeField": "Lcom/box/app/vpn/VpnAppProxy;->active:Z",
+      "clientBuilderCall": "Llw4;->a()Lkw4;",
+      "builderPoolField": "Lkw4;->b:Lzy7;",
+      "poolConstructor": "Lzy7;-><init>(IJLjava/util/concurrent/TimeUnit;)V",
+      "poolIdleLimit": 0,
+      "clientConstructor": "Llw4;-><init>(Lkw4;)V",
+      "requests": [
+        {
+          "file": "smali/fg.smali",
+          "method": "v(Ljava/lang/Object;)Ljava/lang/Object;",
+          "clientField": "Lav2;->g:Llw4;"
+        },
+        {
+          "file": "smali/ty2.smali",
+          "method": "b(Ljava/lang/String;Ljava/lang/String;ZLyd1;)Ljava/lang/Object;",
+          "clientField": "Lty2;->e:Llw4;"
+        }
+      ],
+      "evidence": "The route selector is consulted only when OkHttp chooses a route. In this release qu5.e() can reuse a same-host pooled connection when the immutable Address still matches; the stable VpnAppProxy selector object is the same before and after activation, while an existing direct route is stored on the connection. For only the two Home/IP probe call sites, probeClient clones the full OkHttp client configuration and swaps in a ConnectionPool with maxIdleConnections=0 while active. The clone retains the live ProxySelector but cannot borrow a pre-VPN direct socket; outside VPN mode the helper returns the original client. This is a migration-safe candidate fix, not runtime proof that the device has installed or exercised it."
+    },
+    "directUrlOpenConnections": {
+      "openConnectionPrefix": "Ljava/net/URL;->openConnection(",
+      "paths": [
+        {
+          "file": "smali/i94.smali",
+          "method": "v(Ljava/lang/Object;)Ljava/lang/Object;",
+          "kind": "external-http",
+          "callerFile": "smali/n97.smali",
+          "callerMethod": "h(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Lyd1;)Ljava/lang/Object;",
+          "activationRunnableFile": "smali/com/box/app/vpn/VpnAppProxy$T.smali",
+          "evidence": "The coroutine builds a URL from the caller-supplied String and opens a no-argument HttpURLConnection; it does not pass Proxy.NO_PROXY or retain an app-owned selector. This is an external request and depends on the platform URL handler's process-default selector once VpnAppProxy.activate() installs it."
+        },
+        {
+          "file": "smali/fz5.smali",
+          "method": "q(Lr85;)Lgx6;",
+          "kind": "classpath-resource",
+          "evidence": "The URL comes from ClassLoader.getResource() and is read as a classpath/JAR resource; it is not an external HTTP request and should not be counted as an app traffic bypass."
+        }
+      ],
+      "evidence": "An inventory of every URL.openConnection call in this release-specific tree; new or removed call sites must be reviewed. The dynamic HTTP path follows the global URLConnection proxy route after the T runnable confirms the local port accepts a connection; the class-loader resource path is local."
+    },
+    "webViewAppProxy": {
+      "implementationFile": "smali/com/box/app/vpn/VpnAppProxy.smali",
+      "runnableFile": "smali/com/box/app/vpn/VpnAppProxy$T.smali",
+      "webViewMethod": "webview(Z)V",
+      "activateMethod": "activate(I)V",
+      "stopMethod": "stop()V",
+      "setProxyBoundary": "ProxyControllerBoundaryInterface;->setProxyOverride(",
+      "clearProxyBoundary": "ProxyControllerBoundaryInterface;->clearProxyOverride(",
+      "bypassHosts": ["localhost", "127.0.0.1", "<local>"],
+      "evidence": "VpnAppProxy.activate() posts WebView mode 2 after the local port is ready; VpnAppProxy$T.run() applies the ProxyController override using the configured loopback HTTP/SOCKS endpoint and bypasses local panel hosts. VpnAppProxy.stop() posts mode 3 to clear the override. This is a static path check; WebView provider support and actual panel egress still require device confirmation."
+    }
+  },
+  "windowRewrites": [],
+  "placements": [
+    {
+      "plan": "Lc67;-><clinit>()V",
+      "replace": true,
+      "insert": [
+        "    .locals 11",
+        "    const-string v0, \"mihomo\"",
+        "    const-string v1, \"mihomo_smart\"",
+        "    const-string v2, \"mihomo_dingtalk\"",
+        "    const-string v3, \"sing-box\"",
+        "    const-string v4, \"sing-box_ref1nd\"",
+        "    const-string v5, \"sing-box_dingtalk\"",
+        "    const-string v6, \"meow\"",
+        "    const-string v7, \"xray\"",
+        "    const-string v8, \"v2fly\"",
+        "    const-string v9, \"hysteria\"",
+        "    filled-new-array/range {v0 .. v9}, [Ljava/lang/String;",
+        "    move-result-object v0",
+        "    invoke-static {v0}, Lix;->e0([Ljava/lang/Object;)Ljava/util/List;",
+        "    move-result-object v0",
+        "    sput-object v0, Ljm7;->a:Ljava/util/List;",
+        "    const v0, 0x7f0f0377",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v1",
+        "    const v0, 0x7f0f0378",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v2",
+        "    const v0, 0x7f0f0578",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v3",
+        "    const v0, 0x7f0f0379",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v4",
+        "    const v0, 0x7f0f037a",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v5",
+        "    const v0, 0x7f0f0579",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v6",
+        "    const v0, 0x7f0f0376",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v7",
+        "    const v0, 0x7f0f037d",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v8",
+        "    const v0, 0x7f0f037c",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v9",
+        "    const v0, 0x7f0f0375",
+        "    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;",
+        "    move-result-object v10",
+        "    filled-new-array/range {v1 .. v10}, [Ljava/lang/Integer;",
+        "    move-result-object v0",
+        "    invoke-static {v0}, Lix;->e0([Ljava/lang/Object;)Ljava/util/List;",
+        "    move-result-object v0",
+        "    sput-object v0, Ljm7;->b:Ljava/util/List;",
+        "    return-void"
+      ],
+      "evidence": "the customization rewrites this static initializer as a whole: it lists the cores the UI may select, and the reviewed 194 decision puts the two DingTalk cores directly behind their stock siblings. 214 added a ninth stock core (meow) to the same list, so the 194 body cannot be transplanted: the generic alignment replayed the 194 insert lines onto 214 scheduling and left the element array at eight slots for ten names, which silently drops mihomo_dingtalk and xray and pairs the remaining names with the wrong string ids. The reviewed body states the merged list - the eight 214 stock cores in their own order with mihomo_dingtalk after mihomo_smart and sing-box_dingtalk after sing-box_ref1nd - with an eleven-register frame, a ten-slot name array and the ten boxed ids in the same order. Every id is taken from the merged public.xml by resource name (string.proxy_core_*), never copied as a number, so the release renumbers without touching this file."
+    },
+    {
+      "plan": "Lef5;-><clinit>()V",
+      "anchor": "    sput-object v5, Lbr5;->o:Lbr5;",
+      "pruneAfter": 2,
+      "registers": 10,
+      "insert": [
+        "    new-instance v6, Lbr5;",
+        "    const/4 v7, 0x0",
+        "    const-string v8, \"Vpn\"",
+        "    const-string v9, \"vpn\"",
+        "    invoke-direct {v6, v7, v8, v9}, Lbr5;-><init>(ILjava/lang/String;Ljava/lang/String;)V",
+        "    sput-object v6, Lbr5;->t:Lbr5;",
+        "    const/4 v7, 0x7",
+        "    new-array v7, v7, [Lbr5;",
+        "    const/4 v8, 0x0",
+        "    aput-object v6, v7, v8",
+        "    const/4 v8, 0x1",
+        "    aput-object v0, v7, v8",
+        "    const/4 v8, 0x2",
+        "    aput-object v1, v7, v8",
+        "    const/4 v8, 0x3",
+        "    aput-object v2, v7, v8",
+        "    const/4 v8, 0x4",
+        "    aput-object v3, v7, v8",
+        "    const/4 v8, 0x5",
+        "    aput-object v4, v7, v8",
+        "    const/4 v8, 0x6",
+        "    aput-object v5, v7, v8",
+        "    move-object v0, v7"
+      ],
+      "evidence": "the seventh vpn mode constant and the enlarged values() array are one reviewed block: the 214 upstream builds the six stock constants into v0..v5 and lets `filled-new-array/range {v0 .. v5}` collect them, while the customization needs a seventh constant plus an array that is written slot by slot. The generic alignment replayed the 194 lines onto that frame and put the new name into v6 - the register that holds the new-instance - so the enum was constructed from a String and `aput-object` stored a String into [Lbr5;, which ART rejects when the class is first touched; the frame was also left at nine registers. The reviewed block builds the constant into its own v6 with the name and mode id in v8/v9, grows the frame to ten registers, and stands in for the two stock instructions that collected the array (pruneAfter 2), leaving the sput-object of Lbr5;->p and the values() provider behind it untouched."
+    },
+    {
+      "plan": "Lpa1;->a(",
+      "anchor": "check-cast v14, Lbr5;",
+      "insert": [
+        "    invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lbr5;)I",
+        "    move-result v15",
+        "    if-eqz v15, :cond_pv_novpn",
+        "    const v14, -0x1c301169",
+        "    move-object/from16 v22, v4",
+        "    const/4 v4, 0x0",
+        "    goto :goto_6",
+        "    :cond_pv_novpn"
+      ],
+      "evidence": "the vpn mode resource shortcut has to sit between the enum cast and the null guard the ordinal dispatch puts in front of it: the generic alignment landed the same seven lines one instruction later, which clobbers the enum register with the modeRes result (the verifier then reads getClass()/ordinal() on an Int) and leaves the resource register unset on the jump path. 214 keeps the enum in v14, and its arm reads the merge as `invoke-static {v1, v14, v15, v1, v4}, Lp92;->n(Lzi2;IILzi2;Z)Ljava/lang/String;`: v14 is the invalidation key, v15 is the string resource id and v4 the flag. So the shortcut tests the modeRes result in v15, writes its own key into v14 and zeroes v4 for the flag - and must NOT carry 194's `const/4 v15, 0x0`, which was 194's flag write and here zeroes the id again before the jump: that is what made the shipped 214 build crash with `Resources$NotFoundException: String resource ID #0x0` when the row composed. And it must carry 214's own register spill: every one of the six stock arms that reach :goto_6 (five `goto`s plus one fall-through) does `move-object/from16 v22, v4` before `const/4 v4, 0x0`, because the tail at .line 573 is `invoke-static/range {v16 .. v32}, Lv74;->d(...)`, where v22 is the `Lyw1;` argument, so the flag register is live at the merge. 194 zeroed an idle register and needed no spill, and the first version of this block copied that habit - v22 kept whatever the earlier block left, which on the first composition of the row was null, and `v74.d`'s `Object.getClass()` null check threw `NullPointerException ... on a null object reference` at `ba1.c:573` on the device. The literal delta this block carries against 194 is one extra `0x0` write, which the two sides already agree on, so no reviewed tolerance is needed here. The -0x1c301169 literal is the hasChanged key of this row, the same one 194 writes."
+    },
+    {
+      "plan": "Lne1;->c(",
+      "anchor": "move-object/from16 v10, v22",
+      "insert": [
+        "    new-instance v11, Lii1;",
+        "    const-string v12, \"mihomo_dingtalk\"",
+        "    const-string v13, \"Mihomo Smart + eBPF + \\u9489\\u9489\\u76f4\\u8fde\"",
+        "    const-string v14, \"mihomo\"",
+        "    const-string v15, \"github\"",
+        "    const-string v16, \"jieluojun/mihomo\"",
+        "    const-string v17, \"tag\"",
+        "    const-string v18, \"Prerelease-Alpha\"",
+        "    const-string v19, \"mihomo-android-arm64-v8-alpha-smart-[A-Za-z0-9._-]+\\\\.gz\"",
+        "    const/16 v20, 0x1",
+        "    const-string v21, \"\"",
+        "    const-string v22, \"\"",
+        "    const/16 v23, 0x0",
+        "    invoke-direct/range {v11 .. v23}, Lii1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;I)V",
+        "    new-instance v12, Lii1;",
+        "    const-string v13, \"sing-box_dingtalk\"",
+        "    const-string v14, \"Sing-Box Smart + eBPF + \\u9489\\u9489\\u76f4\\u8fde\"",
+        "    const-string v15, \"sing-box\"",
+        "    const-string v16, \"github\"",
+        "    const-string v17, \"jieluojun/sing-box\"",
+        "    const-string v18, \"latest\"",
+        "    const-string v19, \"\"",
+        "    const-string v20, \"sing-box-.+-android-arm64-v8a-ebpf\\\\.tar\\\\.gz\"",
+        "    const/16 v21, 0x1",
+        "    const-string v22, \"\"",
+        "    const-string v23, \"\"",
+        "    const/16 v24, 0x0",
+        "    invoke-direct/range {v12 .. v24}, Lii1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;I)V"
+      ],
+      "evidence": "the two DingTalk core sources are appended to the release list right before the array is filled, reusing the argument windows the previous elements just consumed (v11..v23 and v12..v24 in 214, where 194 used v22..v34 and v35..v47 with a 48-register frame) - the 214 method needs no frame growth because it already addresses v24, so the .locals bump the 194 hunk carried is dropped and the two objects land in v11 and v12, the two slots the array range has to grow to (see the scoped fixup of the filled-new-array line)."
+    },
+    {
+      "plan": "Lu6;->p(",
+      "anchor": "invoke-static {v3, p1}, Lob3;->s(Ljava/lang/Object;Ljava/lang/Object;)Z",
+      "pruneAfter": 2,
+      "insert": [
+        "    move-result v6",
+        "    if-nez v6, :boxproxy_match",
+        "    const-string v6, \"-\"",
+        "    invoke-virtual {p1, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;",
+        "    move-result-object v6",
+        "    invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+        "    move-result v6",
+        "    if-eqz v6, :cond_7",
+        "    const-wide/32 v6, 0x100000",
+        "    cmp-long v6, v4, v6",
+        "    if-ltz v6, :cond_7",
+        "    :boxproxy_match"
+      ],
+      "evidence": "the archive-name match: a downloaded asset whose name is the release name plus \"-\" is taken when it is at least 1 MiB. 214 kept the same shape (v3 the path, v4/v5 the size, v6/v7 free afterwards in a .locals 8 frame), so the 194 block is copied verbatim behind the equals call, replacing its move-result/if-eqz pair. the generic alignment kept the two upstream instructions the 194 hunk had replaced, so the test ran on a register the insertion never wrote; the reviewed block names the anchor and the pruned lines instead of hoping the score lines them up"
+    },
+    {
+      "plan": "Luu0;->invokeSuspend(",
+      "target": {
+        "method": "z(Ljava/lang/Object;)Ljava/lang/Object;"
+      },
+      "replaceAnchor": true,
+      "anchor": "    const-string v8, \"\\n            core_version=\\\"\\\"\\n            if [ -x \\\"$core_path\\\" ]; then\\n                core_version=\\\"$(\\\"$core_path\\\" --version 2>/dev/null | head -n 1)\\\"\\n                [ -z \\\"$core_version\\\" ] && core_version=\\\"$(\\\"$core_path\\\" -v 2>/dev/null | head -n 1)\\\"\\n                [ -z \\\"$core_version\\\" ] && core_version=\\\"$(\\\"$core_path\\\" version 2>/dev/null | head -n 1)\\\"\\n            fi\\n            echo \\\"$core_version\\\"\\n            echo \\'\\n---SEP---\\n\\'\\n            echo \"",
+      "insert": [
+        "    const-string v8, \"\\n            # Match the root service's executable path (emulated storage may be noexec).\\n            case \\\"$core_path\\\" in\\n                /storage/emulated/*)\\n                    _real_core=\\\"/data/media/${core_path#/storage/emulated/}\\\"\\n                    if [ -f \\\"$_real_core\\\" ]; then\\n                        chmod 755 \\\"$_real_core\\\" >/dev/null 2>&1\\n                        [ -x \\\"$_real_core\\\" ] && core_path=\\\"$_real_core\\\"\\n                    fi\\n                    ;;\\n            esac\\n            core_version=\\\"\\\"\\n            _version_dynamic=0\\n            case \\\"${core_path##*/}\\\" in\\n                sing-box|sing-box_*|sing-box-*|xray|v2fly|hysteria) _version_dynamic=1;;\\n            esac\\n            # Read the version live on every open; no version-result cache.\\n            if [ -x \\\"$core_path\\\" ]; then\\n                # Try the executable first. Static/working cores need no linker scan.\\n                _bp_read_version(){\\n                    if _version_output=\\\"$(\\\"$core_path\\\" \\\"$1\\\" 2>/dev/null </dev/null)\\\"; then\\n                        core_version=\\\"$(printf '%s\\\\n' \\\"$_version_output\\\" | head -n 1)\\\"\\n                        [ -n \\\"$core_version\\\" ]\\n                    else\\n                        return 1\\n                    fi\\n                }\\n                case \\\"${core_path##*/}\\\" in\\n                    sing-box|sing-box_*|sing-box-*|xray|hysteria) _version_args='version --version -v';;\\n                    v2fly) _version_args='-version version --version -v';;\\n                    *) _version_args='--version -v version';;\\n                esac\\n                _version_resolved=0\\n                for _arg in $_version_args; do\\n                    _bp_read_version \\\"$_arg\\\" && break\\n                    if [ \\\"$_version_dynamic\\\" = 1 ] && [ \\\"$_version_resolved\\\" = 0 ]; then\\n                        _version_resolved=1\\n                        # Only the active binary, not every installed dynamic core.\\n                        _lp=\\\"$(bpld \\\"$(dirname \\\"$core_path\\\")\\\" \\\"$_bp_seed\\\" \\\"${core_path##*/}\\\")\\\"\\n                        [ -n \\\"$_lp\\\" ] && export LD_LIBRARY_PATH=\\\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\\\"\\n                        _bp_read_version \\\"$_arg\\\" && break\\n                    fi\\n                done\\n            fi\\n            echo \\\"$core_version\\\"\\n            echo '\\n---SEP---\\n'\\n            echo \""
+      ],
+      "evidence": "the customization rewrote the version-probe chunk of the core-detail shell script in place: the same register, the same position in the concatenation, one different string. It is expressed as a replacement of the stock instruction (replaceAnchor) rather than as an insertion, because keeping both chunks would concatenate two version probes into one script and let the stock `if [ -x \"$core_path\" ]` block decide core_version after the hardened one. Anchored on the whole stock instruction, so any release that edits that string has to be reviewed again instead of silently drifting."
+    },
+    {
+      "plan": "Luu0;->invokeSuspend(",
+      "target": {
+        "method": "z(Ljava/lang/Object;)Ljava/lang/Object;"
+      },
+      "anchor": "    invoke-static {v0}, Lg17;->X(Ljava/lang/String;)Ljava/lang/String;",
+      "insert": [
+        "    move-result-object v0",
+        "    invoke-static {v0}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;"
+      ],
+      "evidence": "the two instructions that make the assembled script go through the LdFix wrapper: the reviewed text is `move-result-object` + `invoke-static`, so the string the method was about to hand to the shell executor is consumed into v0 and replaced by the wrapper result, which the method's own following move-result-object then picks up. The anchor is the obfuscated string-mangling call the script passes through in this release (194 Lcn6;->m0, 214 Lg17;->X) - naming it rather than the position is what keeps the splice off the StringBuilder calls around it."
+    },
+    {
+      "plan": "Luu0;->invokeSuspend(",
+      "anchor": [
+        ":goto_17",
+        "invoke-virtual {v12, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z"
+      ],
+      "pruneAfter": 2,
+      "insert": [
+        "    move-result v16",
+        "    if-nez v16, :boxproxy_entry_match",
+        "    move-object/from16 v17, v14",
+        "    const-string v18, \"-\"",
+        "    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;",
+        "    move-result-object v17",
+        "    move-object/from16 v16, v12",
+        "    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+        "    move-result v16",
+        "    if-eqz v16, :cond_1e",
+        "    :boxproxy_entry_match"
+      ],
+      "evidence": "the same match on the core-entry name inside the download coroutine. 214 swapped the equals operands (v12 is the file name, v14 the entry name read from Lii1;->c) and writes the result into the receiver register, which the customization still needs - so the block is written against 214 own allocation, on v16, v17 and v18, none of which is read again anywhere later in the method; the two calls are written in their /range form because the non-range invoke formats only encode registers v0-v15, which the assembler rejects outright and :cond_1e as the skip target. the generic alignment kept the two upstream instructions the 194 hunk had replaced, so the test ran on a register the insertion never wrote; the reviewed block names the anchor and the pruned lines instead of hoping the score lines them up the anchor names the :goto_17 label in front of the call because R8 kept a second, unrelated Object->equals(v12, v14) pair later in the same coroutine",
+      "relocated": {
+        "to": {
+          "class": "Lmx0;",
+          "method": "z(Ljava/lang/Object;)Ljava/lang/Object;"
+        },
+        "literals": [
+          "s:\\n            # Match the root service's executable path (emulated storage may be noexec).\\n            case \\\"$core_path\\\" in\\n                /storage/emulated/*)\\n                    _real_core=\\\"/data/media/${core_path#/storage/emulated/}\\\"\\n                    if [ -f \\\"$_real_core\\\" ]; then\\n                        chmod 755 \\\"$_real_core\\\" >/dev/null 2>&1\\n                        [ -x \\\"$_real_core\\\" ] && core_path=\\\"$_real_core\\\"\\n                    fi\\n                    ;;\\n            esac\\n            core_version=\\\"\\\"\\n            _version_dynamic=0\\n            case \\\"${core_path##*/}\\\" in\\n                sing-box|sing-box_*|sing-box-*|xray|v2fly|hysteria) _version_dynamic=1;;\\n            esac\\n            # Read the version live on every open; no version-result cache.\\n            if [ -x \\\"$core_path\\\" ]; then\\n                # Try the executable first. Static/working cores need no linker scan.\\n                _bp_read_version(){\\n                    if _version_output=\\\"$(\\\"$core_path\\\" \\\"$1\\\" 2>/dev/null </dev/null)\\\"; then\\n                        core_version=\\\"$(printf '%s\\\\n' \\\"$_version_output\\\" | head -n 1)\\\"\\n                        [ -n \\\"$core_version\\\" ]\\n                    else\\n                        return 1\\n                    fi\\n                }\\n                case \\\"${core_path##*/}\\\" in\\n                    sing-box|sing-box_*|sing-box-*|xray|hysteria) _version_args='version --version -v';;\\n                    v2fly) _version_args='-version version --version -v';;\\n                    *) _version_args='--version -v version';;\\n                esac\\n                _version_resolved=0\\n                for _arg in $_version_args; do\\n                    _bp_read_version \\\"$_arg\\\" && break\\n                    if [ \\\"$_version_dynamic\\\" = 1 ] && [ \\\"$_version_resolved\\\" = 0 ]; then\\n                        _version_resolved=1\\n                        # Only the active binary, not every installed dynamic core.\\n                        _lp=\\\"$(bpld \\\"$(dirname \\\"$core_path\\\")\\\" \\\"$_bp_seed\\\" \\\"${core_path##*/}\\\")\\\"\\n                        [ -n \\\"$_lp\\\" ] && export LD_LIBRARY_PATH=\\\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\\\"\\n                        _bp_read_version \\\"$_arg\\\" && break\\n                    fi\\n                done\\n            fi\\n            echo \\\"$core_version\\\"\\n            echo '\\n---SEP---\\n'\\n            echo ",
+          "b:Lcom/box/app/cfg/LdFix;->wrapProbe"
+        ],
+        "evidence": "the 194 method carries three regions: the entry filter (the placement above), the version-probe script chunk it replaced, and the m0/wrapProbe pair that wraps the assembled script. 214 still assembles that script, but not in the mapped method - R8 split the 194 invokeSuspend body, and the script half of it is now Lmx0;->z().  The two probe regions are therefore reviewed placements on that sibling method, and the verifier demands the literals this entry no longer carries here in the method that carries them now.",
+        "note": "only the two literals this region actually contributed are demanded of the relocation target; the bare \"-\" belongs to the entry filter, which stays in this method and is checked there."
+      },
+      "tolerates": {
+        "s:\\n            core_version=\\\"\\\"\\n            if [ -x \\\"$core_path\\\" ]; then\\n                core_version=\\\"$(\\\"$core_path\\\" --version 2>/dev/null | head -n 1)\\\"\\n                [ -z \\\"$core_version\\\" ] && core_version=\\\"$(\\\"$core_path\\\" -v 2>/dev/null | head -n 1)\\\"\\n                [ -z \\\"$core_version\\\" ] && core_version=\\\"$(\\\"$core_path\\\" version 2>/dev/null | head -n 1)\\\"\\n            fi\\n            echo \\\"$core_version\\\"\\n            echo \\'\\n---SEP---\\n\\'\\n            echo ": 1
+      },
+      "toleratesNote": "the 194 hunk *replaced* this stock script chunk; 214 does not carry that chunk in this method any more, so the version it removed has nothing to be removed from here. The replacement text is not tolerated - relocated.literals requires it to turn up in Lhi1;->d."
+    }
+  ],
+  "mergedTypes": {
+    "Lln;": "the matcher maps Lln; to Lix;; the reviewed coverage target Lmm0;->H -> Lix;->F shares it",
+    "Lmm0;": "R8 dissolved this static facade into Lix;; the one member the customization needs is supplied as a reviewed coverage target, so Lix; legitimately has two owners"
+  },
+  "rules": [],
+  "checks": [],
+  "placementNote": "placements are applied in this order, and several may own the same method: each is applied to the body the previous one produced."
+}

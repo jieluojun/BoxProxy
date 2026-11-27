@@ -543,6 +543,32 @@
 
     iget-object v9, p0, Lcom/box/app/vpn/BoxVpnService;->fPid:Ljava/io/File;
 
+    # Repair root-owned box/run files before the app-uid shell redirects runs.log.
+    move-object v0, v9
+
+    invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->repairRunDir(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_run_dir_ready
+
+    const-string v0, "VPN \u8fd0\u884c\u76ee\u5f55\u6743\u9650\u65e0\u6cd5\u4fee\u590d"
+
+    const-string v1, "Cannot repair VPN run-directory permissions"
+
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->fail(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_run_dir_ready
     const-string v0, "vpn/box-vpn.sh"
 
     invoke-static {p0, v0, v8}, Lcom/box/app/vpn/VpnShell;->copyAsset(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Z

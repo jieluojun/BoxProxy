@@ -398,6 +398,89 @@ def name_of(path):
     return path.name
 
 
+def check_vpn_run_dir_ownership_repair(output, problems):
+    """The VPN service must repair root-owned run logs before its app-uid prepare."""
+    name = 'vpn_run_dir_ownership_repair'
+    bridge_path = output / 'smali/com/box/app/vpn/VpnBridge.smali'
+    service_path = output / 'smali/com/box/app/vpn/BoxVpnService.smali'
+    if not bridge_path.is_file() or not service_path.is_file():
+        problems.append((name, 'VpnBridge.smali or BoxVpnService.smali is missing'))
+        return
+    bridge = method_text(bridge_path, 'repairRunDir(Ljava/io/File;)Z')
+    service = method_text(service_path, 'doStart()V')
+    if not bridge or not service:
+        problems.append((name, 'repairRunDir or BoxVpnService.doStart is missing'))
+        return
+
+    require(bridge, (
+        'Ljava/io/File;->mkdirs()Z',
+        'Ljava/io/File;->canWrite()Z',
+        'Ljava/io/File;->canExecute()Z',
+        'const-string v2, "runs.log"',
+        'Landroid/system/Os;->getuid()I',
+        'Landroid/system/Os;->getgid()I',
+        '/system/bin/mkdir -p',
+        '/system/bin/chown -R',
+        '/system/bin/chmod -R u+rwX',
+        '2>> \'"',
+        'VpnPrefs;->note(Ljava/lang/String;)V',
+        'const-string v8, "su"',
+        'const-string v8, "-c"',
+        'const-wide/16 v8, 0x1e',
+        'VpnShell;->code(Ljava/util/List;J)I',
+        'if-nez v2, :cond_vpn_run_dir_bad',
+    ), 'run-directory repair', problems, name)
+
+    if 'stat -c %u:%g' in bridge or 'Landroid/content/Context;->getFilesDir()Ljava/io/File;' in bridge:
+        problems.append((name, 'run-directory owner must come from android.system.Os.getuid/getgid, not shell stat'))
+    if 'VPN run-dir repair: su exit=' not in bridge or '2>> ' not in bridge:
+        problems.append((name, 'root repair must log its su result and shell diagnostics'))
+
+    shell_path = output / 'smali/com/box/app/vpn/VpnShell.smali'
+    shell_code = method_text(shell_path, 'code(Ljava/util/List;J)I') if shell_path.is_file() else ''
+    if not shell_code or not re.search(
+            r'invoke-virtual \{v1\}, Ljava/lang/Process;->exitValue\(\)I\s+'
+            r'move-result v0', shell_code):
+        problems.append((name, 'VpnShell.code must return the completed process exit status'))
+    if shell_code and ('const/4 v0, -0x1' not in shell_code or 'return v0' not in shell_code):
+        problems.append((name, 'VpnShell.code must retain a nonzero failure sentinel and return it'))
+    if shell_code and ('/dev/null' not in shell_code
+                       or 'ProcessBuilder$Redirect;->to(Ljava/io/File;)' not in shell_code
+                       or 'ProcessBuilder$Redirect;->DISCARD:' in shell_code):
+        problems.append((name, 'VpnShell.code must use the Android-compatible /dev/null redirect'))
+    if shell_code and ('VpnShell.code exception:' not in shell_code
+                       or 'VpnShell.code timed out' not in shell_code):
+        problems.append((name, 'VpnShell.code must record launch exceptions and timeouts'))
+
+    su_at = bridge.find('const-string v8, "su"')
+    if su_at >= 0 and not any(
+            marker in bridge[:su_at] for marker in (
+                'if-eqz v2, :cond_vpn_run_dir_repair',
+                'if-eqz v2, :cond_vpn_run_dir_ready')):
+        problems.append((name, 'root repair is not gated by the app-uid permission fast path'))
+    code_at = bridge.find('VpnShell;->code(Ljava/util/List;J)I')
+    verify_at = bridge.find(':cond_vpn_run_dir_verify', code_at)
+    status_at = bridge.find('move-result v2', code_at)
+    branch_at = bridge.find('if-nez v2, :cond_vpn_run_dir_bad', code_at)
+    if (code_at >= 0 and (status_at < code_at or branch_at < status_at
+                          or verify_at < branch_at
+                          or 'Ljava/io/File;->canWrite()Z' not in bridge[verify_at:])):
+        problems.append((name, 'exit code zero must continue to app-uid write verification; nonzero must fail'))
+
+    call_at = service.find('VpnBridge;->repairRunDir(Ljava/io/File;)Z')
+    prepare_at = service.find('const-string v0, "prepare"')
+    helper_at = service.find('VpnShell;->copyAsset(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Z')
+    if call_at < 0 or prepare_at < 0 or helper_at < 0 or not call_at < helper_at < prepare_at:
+        problems.append((name, 'BoxVpnService.doStart must repair box/run before extracting/running prepare'))
+    if call_at >= 0:
+        before_call = service[:call_at]
+        if ('->fPid:Ljava/io/File;' not in before_call
+                or 'Ljava/io/File;->getParentFile()Ljava/io/File;' not in before_call):
+            problems.append((name, 'repairRunDir is not passed the run directory beside box.pid'))
+        if 'if-nez v0, :cond_run_dir_ready' not in service[call_at:prepare_at]:
+            problems.append((name, 'VPN startup does not fail visibly when run-dir repair fails'))
+
+
 def check_vpn_status_identity_tolerance(output, problems):
     """The 194 status probe jn.O validates the box.identity file that only
     a root-managed boxctl run writes; a VPN (no-root) session never
@@ -1032,6 +1115,7 @@ def main():
     print('checked %d of %d coverage entries' % (checked, len(coverage['completed'])))
     check_176_contracts(args.output, problems)
     check_root_boot_hardening(args.output, problems)
+    check_vpn_run_dir_ownership_repair(args.output, problems)
     check_vpn_status_identity_tolerance(args.output, problems)
     check_vpn_home_writability(args.output, problems)
     check_singbox_compare_default(args.output, problems)
