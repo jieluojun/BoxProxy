@@ -244,8 +244,8 @@ time=... level=fatal msg="Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,
 - 宿主测试 `vpn-src/test/VpnTagsTest.java`（由 `run-config-rewriters.sh` 跑）测的是**产物里的那份 smali**：把 `VpnTags*.smali`
   与已有的三个 rewriter 一起 assemble 成 dex、enjarify 成 jar，再用 `stubs/android` 里的签名喂一个假 `PackageManager`，
   然后按内核的做法逐层切分它生成的规则，要求任何深度都没有空元素、括号平衡、IPv6 tag 与 `VpnPump` 写的字节一致，
-  未安装的 App 落到 `255.255.255.255/32`。这两处错误它都能各报一条；它跑在 `validate-migration.yml`（该 workflow 触发路径含
-  `decompiled/**`），而 `decompiled/` 不参与 214 复现，所以那半边由门负责。
+  未安装的 App 落到 `255.255.255.255/32`。这两处错误它都能各报一条；该宿主测试由 `run-config-rewriters.sh` 执行，
+  但不属于当前唯一启用的 `Build APK` 工作流（`decompiled/` 也不参与 214 复现），因此它不会在每次 APK 构建中自动运行。
 - 验收门第 12 项 `check_copied_emitters`（摘要行新增 `emitter methods: <扫到的规则拼接方法数>`）：在 `coverage.added`
   这 1356 个被复制的 smali 上跑两条判定 —— 符号扩展陷阱，以及"拼接列表的方法里，分隔符必须在第一轮跳过"（识别方式是方法内
   出现 `OR,(` 这类列表开引号、索引从 0 起步并自增）。坏的那版报 2 条，修正后 0 条；194 对照树同样各 1 条，说明这不是本跳引入的，
@@ -262,15 +262,15 @@ time=... level=fatal msg="Parse config error: rules[5] [AND,(NETWORK,UDP),(OR,(,
 
 ## CI 产物与设备验证
 
-两个工作流分工明确，避免同一跳被重复验证：
+当前 GitHub Actions 只保留一个工作流：
 
-| 工作流 | 触发 | 独占覆盖 |
+| 工作流 | 触发 | 覆盖 |
 | --- | --- | --- |
-| `Build APK`（`build-apk.yml`） | push（`upstream/**`、`scripts/**`、tag `v*`）与同名 PR | 从固定的 171/194/214 快照生成 214 迁移候选（不读 `decompiled/`），在其中强制执行 hunk 门 + 上游对照 + `--gate-selftest` 变异电池与 7 个 smali 检查器，随后回编译、对齐、签名并上传/发布 APK |
-| `Validate full customized migration`（`validate-migration.yml`） | PR（另含 `decompiled/**`、`vpn-src/test/**`） | 快照安全测试、宿主 ECJ+enjarify 的新模型/辅助类/接线/全量 smali 组装测试、内置 sing-box、Xray、V2Fly、Hysteria rewriter 的 smali 测试，以及 171 / 176 / 194 三跳的完整复现 |
+| `Build APK`（`build-apk.yml`） | 手动；main 分支 push、`v*` tag；针对 main 的 PR（限定 `upstream/**`、`scripts/**` 或此工作流文件变更） | 生成固定 214 候选；缓存未命中时运行迁移、hunk 门、上游对照、`--gate-selftest` 与 7 个 Smali 检查器；随后回编译、对齐、签名并上传/发布 APK |
 
-214 这一跳不再在两边各跑一遍：迁移脚本不读 `vpn-src/**` 与 `decompiled/**`，因此按上表切分后，任何能改变 214 树的
-路径改动仍会被 `Build APK` 的门覆盖；`Build APK` 的候选缓存键哈希了门读取的每一个输入，所以缓存命中即等于门已在这组输入上跑过。
+214 候选缓存按三份固定上游快照和 `scripts/**` 的内容精确键控；命中时跳过已在相同输入上通过的迁移与静态检查。另有未签名 APK 缓存，输入和 Apktool 版本未变时可跳过 Apktool 组装，但对齐、签名、APK 验证与上传仍每次执行。缓存可能被 GitHub 清理；冷缓存时仍会完整重跑验证和组装，不能保证每次都只有几十秒。
+
+此前的 `Validate full customized migration` 工作流已移除，因此快照安全测试、宿主 ECJ+enjarify / rewriter 测试以及 171 / 176 / 194 三跳复现不再由 Actions 自动执行；这些测试不属于当前 `Build APK` 触发路径。`Build APK` 的 214 迁移脚本不读 `vpn-src/**` 或 `decompiled/**`，并在缓存未命中时自行执行该候选的门与检查器。
 
 CI artifact 是签名后的产物：使用仓库签名 Secrets（若已配置），否则使用临时 debug 密钥；签名模式会写入构建摘要。
 这与本地 unsigned APK 的对齐/签名状态不同，也不代表真机兼容性已经验证。

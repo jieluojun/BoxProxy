@@ -24,7 +24,9 @@ permissions:
   contents: read
 
 concurrency:
-  group: build-apk-${{ github.ref }}
+  # A manual dispatch for a PR branch and that PR's event share the same head SHA,
+  # so only one expensive build runs; keep tags isolated from branch builds.
+  group: build-apk-${{ github.event.pull_request.head.sha || github.sha }}-${{ github.ref_type }}
   cancel-in-progress: true
 
 env:
@@ -32,6 +34,7 @@ env:
   # 官方 apktool_2.9.3.jar 的 sha256（与发行包大小 23254968 字节对应，已交叉验证）
   APKTOOL_SHA256: "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
   PROJECT_DIR: ".tools/ci-214/decompiled"
+  UNSIGNED_APK: ".tools/ci-unsigned/BoxProxy-214-unsigned.apk"
 
 jobs:
   build:
@@ -42,22 +45,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # The candidate is fully determined by the pinned snapshots and the
-      # migration scripts; cache it so repeat builds skip the ~60s
-      # extract/replay/maps/port/verify pipeline (the key hashes every input).
-      #
-      # This step is the one and only place the 214 hop is validated, for pushes and
-      # for pull requests alike: `scripts/migrate_214.py` regenerates the candidate
-      # from the pinned inputs, runs the custom-hunk gate (with its control pass over
-      # the pristine upstream tree) and the seven smali checkers before it copies the
-      # tree out, and `--gate-selftest` corrupts one reviewed property at a time to
-      # prove the gate goes red rather than being vacuous.  validate-migration.yml
-      # used to rebuild this hop a second time and now covers only the earlier hops
-      # and the host-side tests, which nothing else runs.  A cache hit skips them
-      # because the key above hashes every input they read; a cache populated by a
-      # run that failed before publishing has no `apktool.yml`, which the test below
-      # turns into a hard failure rather than a build of a stale tree.
+      # A cache miss runs the full migration, custom-hunk gate, mutation
+      # self-test and all Smali checkers inside migrate_214.py. The exact key
+      # covers every pinned snapshot and script read by that pipeline, so a hit
+      # is the same already-validated candidate; don't rescan 10k files on every
+      # routine APK rebuild.
       - name: Cache pinned 214 migration candidate
+        id: candidate-cache
         uses: actions/cache@v6
         with:
           path: .tools/ci-214
@@ -67,17 +61,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [[ -f "$PROJECT_DIR/apktool.yml" ]]; then
-            echo ">> pinned 214 candidate restored from cache; the gate and its self-test ran when it was generated"
+          if [[ "${{ steps.candidate-cache.outputs.cache-hit }}" == "true" ]]; then
+            echo ">> pinned 214 candidate restored from exact-input cache; validation already passed"
+            test -f "$PROJECT_DIR/apktool.yml"
           else
             python3 scripts/migrate_214.py --output .tools/ci-214 --gate-selftest
           fi
           test -f "$PROJECT_DIR/apktool.yml"
-
-      # the return-type scan is only meaningful against the tree the port started
-      # from: upstream 214 itself has four conflicts it inherited from R8
-      - name: Extract the pinned 214 upstream tree (baseline for the return-type scan)
-        run: python3 scripts/upstream_snapshot.py upstream/26.11.23.aa98568 --extract .tools/ci-214-upstream
 
       - name: Setup JDK 17
         uses: actions/setup-java@v6
@@ -123,35 +113,28 @@ jobs:
           echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
           java -jar "$jar" --version
 
-      - name: Validate internal smali member references
-        run: python3 scripts/check_smali_references.py "$PROJECT_DIR"
-
-      - name: Reject duplicate or dangling Smali labels
-        run: python3 scripts/check_smali_labels.py "$PROJECT_DIR"
-
-      - name: Reject misplaced move-result instructions
-        run: python3 scripts/check_smali_move_result.py "$PROJECT_DIR"
-
-      - name: Reject zero-offset Smali branches
-        run: python3 scripts/check_smali_branch_offsets.py "$PROJECT_DIR"
-
-      - name: Reject verifier-unsafe object register moves
-        run: python3 scripts/check_smali_reference_moves.py "$PROJECT_DIR"
-
-      - name: Reject undefined register reads on any control flow path
-        run: python3 scripts/check_smali_register_flow.py "$PROJECT_DIR"
-
-      - name: Reject return-object values that fail ART verification
-        run: |
-          python3 scripts/check_smali_return_types.py "$PROJECT_DIR" \
-            --baseline .tools/ci-214-upstream/decompiled
+      # Cache the expensive Apktool/Smali assembly separately from signing.
+      # When source inputs and the tool version are unchanged, a manual rebuild
+      # only needs alignment, signing and APK verification.
+      - name: Cache assembled unsigned APK
+        id: unsigned-cache
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.UNSIGNED_APK }}
+          key: ci-unsigned-214-${{ env.APKTOOL_VERSION }}-${{ env.APKTOOL_SHA256 }}-${{ hashFiles('upstream/26.11.16.25abc84/**', 'upstream/26.11.19.bf82603/**', 'upstream/26.11.23.aa98568/**', 'scripts/**', '.github/workflows/build-apk.yml') }}
 
       - name: Build unsigned APK with apktool
+        if: steps.unsigned-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
           set -euo pipefail
-          java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$RUNNER_TEMP/unsigned.apk"
-          ls -lh "$RUNNER_TEMP/unsigned.apk"
+          mkdir -p "$(dirname "$UNSIGNED_APK")"
+          java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$UNSIGNED_APK"
+          ls -lh "$UNSIGNED_APK"
+
+      - name: Verify cached unsigned APK
+        shell: bash
+        run: test -s "$UNSIGNED_APK"
 
       - name: Align, sign and verify
         id: sign
@@ -203,7 +186,7 @@ jobs:
           # ---- zipalign -> sign -> verify ----
           mkdir -p "$GITHUB_WORKSPACE/artifacts"
           out="$GITHUB_WORKSPACE/artifacts/BoxProxy-${{ steps.ver.outputs.version_name }}-rebuilt.apk"
-          "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
+          "${bt}zipalign" -f -p 4 "$UNSIGNED_APK" "$RUNNER_TEMP/aligned.apk"
           "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
           "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
             --ks-pass env:KS_PASS --key-pass env:KEY_PASS \
