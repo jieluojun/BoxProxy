@@ -24,9 +24,7 @@ permissions:
   contents: read
 
 concurrency:
-  # A manual dispatch for a PR branch and that PR's event share the same head SHA,
-  # so only one expensive build runs; keep tags isolated from branch builds.
-  group: build-apk-${{ github.event.pull_request.head.sha || github.sha }}-${{ github.ref_type }}
+  group: build-apk-${{ github.ref }}
   cancel-in-progress: true
 
 env:
