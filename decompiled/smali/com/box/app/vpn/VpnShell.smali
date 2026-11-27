@@ -125,7 +125,15 @@
 
     invoke-direct {v1, p0}, Ljava/lang/ProcessBuilder;-><init>(Ljava/util/List;)V
 
-    sget-object v2, Ljava/lang/ProcessBuilder$Redirect;->DISCARD:Ljava/lang/ProcessBuilder$Redirect;
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "/dev/null"
+
+    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v2}, Ljava/lang/ProcessBuilder$Redirect;->to(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;
+
+    move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/ProcessBuilder;->redirectOutput(Ljava/lang/ProcessBuilder$Redirect;)Ljava/lang/ProcessBuilder;
 
@@ -152,6 +160,12 @@
     :cond_timeout
     invoke-virtual {v1}, Ljava/lang/Process;->destroy()V
 
+    const-string v0, "VpnShell.code timed out"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    const/4 v0, -0x1
+
     :goto_end
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
@@ -161,6 +175,26 @@
 
     :catch_0
     move-exception v1
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "VpnShell.code exception: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     const/4 v0, -0x1
 

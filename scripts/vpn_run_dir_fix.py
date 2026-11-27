@@ -363,16 +363,112 @@ SERVICE_CALL = r'''    # Repair root-owned box/run files before the app-uid shel
 '''
 
 
+SHELL_REDIRECT_OLD = r'''    sget-object v2, Ljava/lang/ProcessBuilder$Redirect;->DISCARD:Ljava/lang/ProcessBuilder$Redirect;
+
+    invoke-virtual {v1, v2}, Ljava/lang/ProcessBuilder;->redirectOutput(Ljava/lang/ProcessBuilder$Redirect;)Ljava/lang/ProcessBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/ProcessBuilder;->redirectError(Ljava/lang/ProcessBuilder$Redirect;)Ljava/lang/ProcessBuilder;
+'''
+
+SHELL_REDIRECT_NEW = r'''    new-instance v2, Ljava/io/File;
+
+    const-string v3, "/dev/null"
+
+    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v2}, Ljava/lang/ProcessBuilder$Redirect;->to(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/ProcessBuilder;->redirectOutput(Ljava/lang/ProcessBuilder$Redirect;)Ljava/lang/ProcessBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/ProcessBuilder;->redirectError(Ljava/lang/ProcessBuilder$Redirect;)Ljava/lang/ProcessBuilder;
+'''
+
+SHELL_TIMEOUT_OLD = r'''    :cond_timeout
+    invoke-virtual {v1}, Ljava/lang/Process;->destroy()V
+
+    :goto_end
+'''
+
+SHELL_TIMEOUT_NEW = r'''    :cond_timeout
+    invoke-virtual {v1}, Ljava/lang/Process;->destroy()V
+
+    const-string v0, "VpnShell.code timed out"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    const/4 v0, -0x1
+
+    :goto_end
+'''
+
+SHELL_CATCH_OLD = r'''    :catch_0
+    move-exception v1
+
+    const/4 v0, -0x1
+
+    goto :goto_ret
+'''
+
+SHELL_CATCH_NEW = r'''    :catch_0
+    move-exception v1
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "VpnShell.code exception: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    const/4 v0, -0x1
+
+    goto :goto_ret
+'''
+
+
+def patch_vpn_shell(shell_text):
+    """Avoid Android-incompatible Redirect.DISCARD and retain startup failures."""
+    signature = '.method public static code(Ljava/util/List;J)I\n'
+    start = shell_text.find(signature)
+    if start < 0:
+        raise ValueError('VpnShell.code method is missing')
+    end = shell_text.index('.end method', start) + len('.end method')
+    method = shell_text[start:end]
+    for old in (SHELL_REDIRECT_OLD, SHELL_TIMEOUT_OLD, SHELL_CATCH_OLD):
+        if method.count(old) != 1:
+            raise ValueError('VpnShell.code compatibility/diagnostic anchor is missing or ambiguous')
+    method = method.replace(SHELL_REDIRECT_OLD, SHELL_REDIRECT_NEW, 1)
+    method = method.replace(SHELL_TIMEOUT_OLD, SHELL_TIMEOUT_NEW, 1)
+    method = method.replace(SHELL_CATCH_OLD, SHELL_CATCH_NEW, 1)
+    return shell_text[:start] + method + shell_text[end:]
+
+
 def install(out_root):
-    """Append the repair helper and run it before BoxVpnService prepares VPN."""
+    """Repair box/run and patch the bounded root shell launch for Android APIs."""
     out_root = Path(out_root)
     bridge = out_root / 'smali/com/box/app/vpn/VpnBridge.smali'
     service = out_root / 'smali/com/box/app/vpn/BoxVpnService.smali'
-    if not bridge.is_file() or not service.is_file():
-        raise ValueError('VpnBridge.smali or BoxVpnService.smali is missing')
+    shell = out_root / 'smali/com/box/app/vpn/VpnShell.smali'
+    if not bridge.is_file() or not service.is_file() or not shell.is_file():
+        raise ValueError('VpnBridge.smali, BoxVpnService.smali, or VpnShell.smali is missing')
 
     bridge_text = bridge.read_text(errors='replace')
     service_text = service.read_text(errors='replace')
+    shell_text = shell.read_text(errors='replace')
     signature = '.method public static repairRunDir(Ljava/io/File;)Z'
     if signature in bridge_text:
         raise ValueError('VpnBridge.repairRunDir already exists in the migration output')
@@ -381,6 +477,7 @@ def install(out_root):
     if service_text.count(SERVICE_ANCHOR) != 1:
         raise ValueError('the BoxVpnService.doStart run-directory anchor is missing or ambiguous')
 
+    patched_shell = patch_vpn_shell(shell_text)
     replacement = (
         '    iget-object v9, p0, Lcom/box/app/vpn/BoxVpnService;->fPid:Ljava/io/File;\n\n'
         + SERVICE_CALL + '    const-string v0, "vpn/box-vpn.sh"\n'
@@ -388,5 +485,6 @@ def install(out_root):
     service_text = service_text.replace(SERVICE_ANCHOR, replacement, 1)
     bridge.write_text(bridge_text.rstrip() + '\n\n' + METHOD)
     service.write_text(service_text)
-    return ('VPN doStart repairs box/run to the Android process UID/GID when '
-            'app-UID access to runs.log is missing; su errors are logged')
+    shell.write_text(patched_shell)
+    return ('VPN doStart repairs box/run to the Android process UID/GID; '
+            'VpnShell uses the API-compatible /dev/null redirect and logs su errors')

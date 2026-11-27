@@ -444,6 +444,13 @@ def check_vpn_run_dir_ownership_repair(output, problems):
         problems.append((name, 'VpnShell.code must return the completed process exit status'))
     if shell_code and ('const/4 v0, -0x1' not in shell_code or 'return v0' not in shell_code):
         problems.append((name, 'VpnShell.code must retain a nonzero failure sentinel and return it'))
+    if shell_code and ('/dev/null' not in shell_code
+                       or 'ProcessBuilder$Redirect;->to(Ljava/io/File;)' not in shell_code
+                       or 'ProcessBuilder$Redirect;->DISCARD:' in shell_code):
+        problems.append((name, 'VpnShell.code must use the Android-compatible /dev/null redirect'))
+    if shell_code and ('VpnShell.code exception:' not in shell_code
+                       or 'VpnShell.code timed out' not in shell_code):
+        problems.append((name, 'VpnShell.code must record launch exceptions and timeouts'))
 
     su_at = bridge.find('const-string v8, "su"')
     if su_at >= 0 and not any(

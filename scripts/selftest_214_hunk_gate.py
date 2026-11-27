@@ -379,6 +379,11 @@ MUTATIONS = [
      replace('Landroid/system/Os;->getuid()I',
              'Landroid/system/Os;->getpid()I'),
      r'vpn_run_dir_ownership_repair'),
+    ('VPN shell uses a nonportable process-output redirect',
+     'smali/com/box/app/vpn/VpnShell.smali',
+     replace('const-string v3, "/dev/null"',
+             'const-string v3, "/dev/zero"'),
+     r'vpn_run_dir_ownership_repair'),
 ]
 
 
